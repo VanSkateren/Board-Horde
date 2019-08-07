@@ -107,15 +107,15 @@ namespace Core.PlayerSystems.Movement
 			graphic.transform.Rotate (360 * (__speed / _circumference) * Time.fixedDeltaTime, 0, 0);
 		}
 
-		private void OnDrawGizmosSelected()
+		private void DrawGizmos()
 		{
-			Gizmos.color = new Color(0, 1, 0, 1);
 			Vector3 __direction = graphic.TransformDirection(-Vector3.up) * (this.radius);
-			Gizmos.DrawRay(graphic.position, __direction);
-
-			Gizmos.color = new Color(0, 0, 1, 1);
+			Vector3 __position = graphic.position;
+			
+			CGDebug.DrawRay(__position, __direction).Color(new Color(0, 1, 0, 1));
+			
 			__direction = graphic.TransformDirection(-Vector3.up) * (this.maxSuspension);
-			Gizmos.DrawRay(new Vector3(graphic.position.x, graphic.position.y - radius, graphic.position.z), __direction);
+			CGDebug.DrawRay(new Vector3(__position.x, __position.y - radius, __position.z), __direction).Color(new Color(0, 0, 1, 1));
 		}
 	}
 }
