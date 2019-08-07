@@ -598,3 +598,30 @@ MonoBehaviour:
     Background: {fileID: 0}
     IsBackgroundRecursive: 0
     IsBackgroundCustom: 0
+  - Type: 1
+    Key: Assets/[Source]/Scripts/[Core]
+    SmallIcon: {fileID: 2800000, guid: 0b7e8970cd9b4d548883dc5b4f4997c0, type: 3}
+    LargeIcon: {fileID: 2800000, guid: ca744735eea12d84b8369b456104295c, type: 3}
+    IsIconRecursive: 0
+    IsIconCustom: 0
+    Background: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsBackgroundCustom: 0
+  - Type: 1
+    Key: Assets/[Source]/Scripts/[Core]/Utilities
+    SmallIcon: {fileID: 2800000, guid: 1612a9a28938d5f4fb545a9a3b56d7f5, type: 3}
+    LargeIcon: {fileID: 2800000, guid: 3ecdef047d5d0e948a76bc59c32016ad, type: 3}
+    IsIconRecursive: 0
+    IsIconCustom: 0
+    Background: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsBackgroundCustom: 0
+  - Type: 1
+    Key: Assets/[Source]/Scripts/[Core]/PlayerSystems
+    SmallIcon: {fileID: 2800000, guid: dfde2f29f9439a34e8e6b974131c8257, type: 3}
+    LargeIcon: {fileID: 2800000, guid: 4391436276f19034686c2ba1ba3863e2, type: 3}
+    IsIconRecursive: 0
+    IsIconCustom: 0
+    Background: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsBackgroundCustom: 0

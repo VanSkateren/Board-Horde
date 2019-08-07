@@ -8,7 +8,7 @@ using CommonGames.Utilities.CGTK;
 
 namespace Core.PlayerSystems.Movement
 {
-	public class RaycastWheel : MonoBehaviour
+	public class RaycastWheel
 	{
 
 		// Simple Vehicle Raycast wheel
@@ -34,24 +34,26 @@ namespace Core.PlayerSystems.Movement
 		private void Awake()
 		{
 			_circumference = (radius * 2) * Mathf.PI;
-			_parent = transform.root.GetComponent<Rigidbody>();
+			_parent = Skateboard.Instance.Transform.GetComponent<Rigidbody>();
 		}
 
 		private void FixedUpdate()
 		{
+			if(!Skateboard.InstanceExists) return;
+			
 			GetGround();
 		}
 
 		private void GetGround()
 		{
 			_grounded = false;
-			Vector3 __downwards = transform.TransformDirection(-Vector3.up);
+			Vector3 __downwards = graphic.TransformDirection(-Vector3.up);
 			RaycastHit __hit;
 
 			// down = local downwards direction
-			Vector3 __down = transform.TransformDirection(Vector3.down);
+			Vector3 __down = graphic.TransformDirection(Vector3.down);
 
-			if (UnityEngine.Physics.Raycast(transform.position, __downwards, out __hit, radius + maxSuspension))
+			if (UnityEngine.Physics.Raycast(graphic.position, __downwards, out __hit, radius + maxSuspension))
 			{
 
 				_grounded = true;
@@ -67,13 +69,13 @@ namespace Core.PlayerSystems.Movement
 				Vector3 __force = __compression * spring * -__downwards;
 				// velocity at point of contact transformed into local space
 
-				Vector3 __t = transform.InverseTransformDirection(__velocityAtTouch);
+				Vector3 __t = graphic.InverseTransformDirection(__velocityAtTouch);
 
 				// local x and z directions = 0
 				__t.z = __t.x = 0;
 
 				// back to world space * -damping
-				Vector3 __damping = transform.TransformDirection(__t) * -damper;
+				Vector3 __damping = graphic.TransformDirection(__t) * -damper;
 				Vector3 __finalForce = __force + __damping;
 
 				// VERY simple turning - force rigidbody in direction of wheel
@@ -81,35 +83,39 @@ namespace Core.PlayerSystems.Movement
 				__t.y = 0;
 				__t.z = 0;
 
-				__t = transform.TransformDirection(__t);
+				__t = graphic.TransformDirection(__t);
 
 				//_parent.AddForceAtPosition(__finalForce + (__t), __hit.point);
 
-				if (graphic) graphic.position = transform.position + (__down * (__hit.distance - radius));
+				if (graphic) graphic.position = graphic.position + (__down * (__hit.distance - radius));
 			}
 			else
 			{
-				if (graphic) graphic.position = transform.position + (__down * maxSuspension);
+				if (graphic) graphic.position = graphic.position + (__down * maxSuspension);
 			}
 
 			float __speed = _parent.velocity.magnitude;
 
-			if (graphic)
-			{
-				//graphic.transform.localEulerAngles = new Vector3 (graphic.transform.localEulerAngles.x, wheelAngle, graphic.transform.localEulerAngles.z); 
-				//graphic.transform.Rotate (360 * (speed / circumference) * Time.fixedDeltaTime, 0, 0); 
-			}
+			if (!graphic) return;
+
+			Transform transform = graphic.transform;
+			Vector3 localEulerAngles = transform.localEulerAngles;
+			
+			localEulerAngles = new Vector3 (localEulerAngles.x, wheelAngle, localEulerAngles.z);
+			transform.localEulerAngles = localEulerAngles;
+			
+			graphic.transform.Rotate (360 * (__speed / _circumference) * Time.fixedDeltaTime, 0, 0);
 		}
 
 		private void OnDrawGizmosSelected()
 		{
 			Gizmos.color = new Color(0, 1, 0, 1);
-			Vector3 __direction = transform.TransformDirection(-Vector3.up) * (this.radius);
-			Gizmos.DrawRay(transform.position, __direction);
+			Vector3 __direction = graphic.TransformDirection(-Vector3.up) * (this.radius);
+			Gizmos.DrawRay(graphic.position, __direction);
 
 			Gizmos.color = new Color(0, 0, 1, 1);
-			__direction = transform.TransformDirection(-Vector3.up) * (this.maxSuspension);
-			Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y - radius, transform.position.z), __direction);
+			__direction = graphic.TransformDirection(-Vector3.up) * (this.maxSuspension);
+			Gizmos.DrawRay(new Vector3(graphic.position.x, graphic.position.y - radius, graphic.position.z), __direction);
 		}
 	}
 }

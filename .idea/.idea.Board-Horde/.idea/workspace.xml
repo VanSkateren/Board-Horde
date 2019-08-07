@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="198e5302-eabe-4f29-a307-3bb7cdbfaf60" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Data/RainbowFoldersSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Data/RainbowFoldersSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+              <folding>
+                <marker date="1565169589848" expanded="true" signature="6:471" ph="..." />
+                <marker date="1565169589848" expanded="true" signature="510:15737" ph="{...}" />
+                <marker date="1565169589848" expanded="true" signature="553:15735" ph="{...}" />
+                <marker date="1565169589848" expanded="true" signature="559:2804" ph="Variables" />
+                <marker date="1565169589848" expanded="true" signature="580:1192" ph="Serialized" />
+                <marker date="1565169589848" expanded="true" signature="652:808" ph="/* [BoxGroup(&quot;References/SceneReferences&quot;, showLabel: false)] ... */" />
+                <marker date="1565169589848" expanded="false" signature="1198:2121" ph="Non-Serialized" />
+                <marker date="1565169589848" expanded="true" signature="1868:1997" ph="/* Don't serialize this so the value is lost on an editor script recompile. ... */" />
+                <marker date="1565169589848" expanded="false" signature="2128:2487" ph="Local Classes" />
+                <marker date="1565169589848" expanded="true" signature="2181:2201" ph="{...}" />
+                <marker date="1565169589848" expanded="true" signature="2235:2281" ph="{...}" />
+                <marker date="1565169589848" expanded="true" signature="2337:2471" ph="{...}" />
+                <marker date="1565169589848" expanded="false" signature="2493:2790" ph="Consts" />
+                <marker date="1565169589848" expanded="false" signature="2808:15732" ph="/*Handles movement state transitions and enter/exit callbacks ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+              <folding>
+                <marker date="1565170121493" expanded="false" signature="6:182" ph="..." />
+                <marker date="1565170121493" expanded="true" signature="221:3421" ph="{...}" />
+                <marker date="1565170121493" expanded="true" signature="250:3419" ph="{...}" />
+                <marker date="1565170121493" expanded="true" signature="704:827" ph="{...}" />
+                <marker date="1565170121493" expanded="true" signature="857:927" ph="{...}" />
+                <marker date="1565170121493" expanded="true" signature="955:2959" ph="{...}" />
+                <marker date="1565170121493" expanded="true" signature="1273:2441" ph="{...}" />
+                <marker date="1565170121493" expanded="true" signature="1418:1514" ph="/* calculate spring compression ... */" />
+                <marker date="1565170121493" expanded="true" signature="2449:2540" ph="{...}" />
+                <marker date="1565170121493" expanded="true" signature="2998:3416" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+              <folding>
+                <marker date="1565169490096" expanded="false" signature="6:471" ph="..." />
+                <marker date="1565169490096" expanded="true" signature="511:16118" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="562:16116" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="571:4845" ph="Variables" />
+                <marker date="1565169490096" expanded="true" signature="719:792" ph="/// The Transform of the character motor ... " />
+                <marker date="1565169490096" expanded="true" signature="874:1023" ph="/// The character's goal position in its movement calculations (always up-to-date during the character update pha ... " />
+                <marker date="1565169490096" expanded="true" signature="1125:1244" ph="/// The character's up direction (always up-to-date during the character update phase) ... " />
+                <marker date="1565169490096" expanded="true" signature="1328:1452" ph="/// The character's forward direction (always up-to-date during the character update phase) ... " />
+                <marker date="1565169490096" expanded="true" signature="1551:1673" ph="/// The character's right direction (always up-to-date during the character update phase) ... " />
+                <marker date="1565169490096" expanded="false" signature="1764:4458" ph="State Info" />
+                <marker date="1565169490096" expanded="true" signature="1788:1960" ph="/// Represents the entire state of a character motor that is pertinent for simulation. ... " />
+                <marker date="1565169490096" expanded="true" signature="2006:2358" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="2362:2460" ph="/// Contains all the information for the motor's grounding status ... " />
+                <marker date="1565169490096" expanded="true" signature="2492:3307" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="2843:3303" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="3313:3427" ph="/// Contains the simulation-relevant information for the motor's grounding status ... " />
+                <marker date="1565169490096" expanded="true" signature="3468:4084" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="3734:4080" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="4090:4169" ph="/// Contains the current grounding information ... " />
+                <marker date="1565169490096" expanded="true" signature="4256:4336" ph="/// Contains the previous grounding information ... " />
+                <marker date="1565169490096" expanded="false" signature="4464:4823" ph="Local Classes" />
+                <marker date="1565169490096" expanded="true" signature="4517:4537" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="4571:4617" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="4673:4807" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="4851:16113" ph="Methods" />
+                <marker date="1565169490096" expanded="false" signature="4870:5846" ph="Public API" />
+                <marker date="1565169490096" expanded="true" signature="4892:5831" ph="/* public void AddPushForce(float force) ... */" />
+                <marker date="1565169490096" expanded="true" signature="5852:16097" ph="Character Controller" />
+                <marker date="1565169490096" expanded="true" signature="5968:7007" ph="State Handling" />
+                <marker date="1565169490096" expanded="true" signature="6150:6347" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="6493:6671" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="6515:6667" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="6813:6991" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="6835:6987" ph="{...}" />
+                <marker date="1565169490096" expanded="false" signature="7013:14355" ph="Update Loops" />
+                <marker date="1565169490096" expanded="true" signature="7039:7225" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1565169490096" expanded="true" signature="7292:7300" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="7306:7497" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1565169490096" expanded="true" signature="7563:7571" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="7619:7895" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1565169490096" expanded="true" signature="7973:8624" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="8011:8138" ph="{...}" />
+                <marker date="1565169490096" expanded="false" signature="8143:8620" ph="Handling" />
+                <marker date="1565169490096" expanded="true" signature="8240:8602" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="8251:8597" ph="/* Quaternion __fromRotation = Quaternion.LookRotation(motor.CharacterForward, motor.CharacterUp), ... */" />
+                <marker date="1565169490096" expanded="true" signature="8633:8906" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1565169490096" expanded="true" signature="8995:13985" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="9033:9434" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="9144:9218" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="9228:9299" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="9439:13981" ph="/* ##region Handling ... */" />
+                <marker date="1565169490096" expanded="true" signature="14053:14339" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="14179:14208" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="14295:14335" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="14428:14562" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="14623:14832" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="14661:14828" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="14838:14913" ph="/// Sets the character's position directly ... " />
+                <marker date="1565169490096" expanded="true" signature="14990:15188" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="15136:15184" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="15191:15266" ph="/// Sets the character's rotation directly ... " />
+                <marker date="1565169490096" expanded="true" signature="15346:15545" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="15389:15464" ph="/* _initialSimulationRotation = rotation; ... */" />
+                <marker date="1565169490096" expanded="true" signature="15493:15541" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="15548:15636" ph="/// Sets the character's position and rotation directly ... " />
+                <marker date="1565169490096" expanded="true" signature="15745:16083" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="15811:15895" ph="/* _initialSimulationPosition = position; ... */" />
+                <marker date="1565169490096" expanded="true" signature="15993:16079" ph="{...}" />
+                <marker date="1565169490096" expanded="true" signature="16003:16074" ph="/* InitialTickPosition = position; ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1208" />
+    <option name="y" value="213" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="AssemblyExplorer" />
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
+        <option name="show-project-names" value="true" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="198e5302-eabe-4f29-a307-3bb7cdbfaf60" name="Default Changelist" comment="" />
+      <created>1565169207202</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565169207202</updated>
+      <workItem from="1565169216130" duration="904000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="904000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24986681" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="NuGet" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding>
+            <marker date="1565169490096" expanded="false" signature="6:471" ph="..." />
+            <marker date="1565169490096" expanded="true" signature="511:16118" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="562:16116" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="571:4845" ph="Variables" />
+            <marker date="1565169490096" expanded="true" signature="719:792" ph="/// The Transform of the character motor ... " />
+            <marker date="1565169490096" expanded="true" signature="874:1023" ph="/// The character's goal position in its movement calculations (always up-to-date during the character update pha ... " />
+            <marker date="1565169490096" expanded="true" signature="1125:1244" ph="/// The character's up direction (always up-to-date during the character update phase) ... " />
+            <marker date="1565169490096" expanded="true" signature="1328:1452" ph="/// The character's forward direction (always up-to-date during the character update phase) ... " />
+            <marker date="1565169490096" expanded="true" signature="1551:1673" ph="/// The character's right direction (always up-to-date during the character update phase) ... " />
+            <marker date="1565169490096" expanded="false" signature="1764:4458" ph="State Info" />
+            <marker date="1565169490096" expanded="true" signature="1788:1960" ph="/// Represents the entire state of a character motor that is pertinent for simulation. ... " />
+            <marker date="1565169490096" expanded="true" signature="2006:2358" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="2362:2460" ph="/// Contains all the information for the motor's grounding status ... " />
+            <marker date="1565169490096" expanded="true" signature="2492:3307" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="2843:3303" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="3313:3427" ph="/// Contains the simulation-relevant information for the motor's grounding status ... " />
+            <marker date="1565169490096" expanded="true" signature="3468:4084" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="3734:4080" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="4090:4169" ph="/// Contains the current grounding information ... " />
+            <marker date="1565169490096" expanded="true" signature="4256:4336" ph="/// Contains the previous grounding information ... " />
+            <marker date="1565169490096" expanded="false" signature="4464:4823" ph="Local Classes" />
+            <marker date="1565169490096" expanded="true" signature="4517:4537" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="4571:4617" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="4673:4807" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="4851:16113" ph="Methods" />
+            <marker date="1565169490096" expanded="false" signature="4870:5846" ph="Public API" />
+            <marker date="1565169490096" expanded="true" signature="4892:5831" ph="/* public void AddPushForce(float force) ... */" />
+            <marker date="1565169490096" expanded="true" signature="5852:16097" ph="Character Controller" />
+            <marker date="1565169490096" expanded="true" signature="5968:7007" ph="State Handling" />
+            <marker date="1565169490096" expanded="true" signature="6150:6347" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="6493:6671" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="6515:6667" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="6813:6991" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="6835:6987" ph="{...}" />
+            <marker date="1565169490096" expanded="false" signature="7013:14355" ph="Update Loops" />
+            <marker date="1565169490096" expanded="true" signature="7039:7225" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1565169490096" expanded="true" signature="7292:7300" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="7306:7497" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1565169490096" expanded="true" signature="7563:7571" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="7619:7895" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1565169490096" expanded="true" signature="7973:8624" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="8011:8138" ph="{...}" />
+            <marker date="1565169490096" expanded="false" signature="8143:8620" ph="Handling" />
+            <marker date="1565169490096" expanded="true" signature="8240:8602" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="8251:8597" ph="/* Quaternion __fromRotation = Quaternion.LookRotation(motor.CharacterForward, motor.CharacterUp), ... */" />
+            <marker date="1565169490096" expanded="true" signature="8633:8906" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1565169490096" expanded="true" signature="8995:13985" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="9033:9434" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="9144:9218" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="9228:9299" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="9439:13981" ph="/* ##region Handling ... */" />
+            <marker date="1565169490096" expanded="true" signature="14053:14339" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="14179:14208" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="14295:14335" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="14428:14562" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="14623:14832" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="14661:14828" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="14838:14913" ph="/// Sets the character's position directly ... " />
+            <marker date="1565169490096" expanded="true" signature="14990:15188" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="15136:15184" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="15191:15266" ph="/// Sets the character's rotation directly ... " />
+            <marker date="1565169490096" expanded="true" signature="15346:15545" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="15389:15464" ph="/* _initialSimulationRotation = rotation; ... */" />
+            <marker date="1565169490096" expanded="true" signature="15493:15541" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="15548:15636" ph="/// Sets the character's position and rotation directly ... " />
+            <marker date="1565169490096" expanded="true" signature="15745:16083" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="15811:15895" ph="/* _initialSimulationPosition = position; ... */" />
+            <marker date="1565169490096" expanded="true" signature="15993:16079" ph="{...}" />
+            <marker date="1565169490096" expanded="true" signature="16003:16074" ph="/* InitialTickPosition = position; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding>
+            <marker date="1565169589848" expanded="true" signature="6:471" ph="..." />
+            <marker date="1565169589848" expanded="true" signature="510:15737" ph="{...}" />
+            <marker date="1565169589848" expanded="true" signature="553:15735" ph="{...}" />
+            <marker date="1565169589848" expanded="true" signature="559:2804" ph="Variables" />
+            <marker date="1565169589848" expanded="true" signature="580:1192" ph="Serialized" />
+            <marker date="1565169589848" expanded="true" signature="652:808" ph="/* [BoxGroup(&quot;References/SceneReferences&quot;, showLabel: false)] ... */" />
+            <marker date="1565169589848" expanded="false" signature="1198:2121" ph="Non-Serialized" />
+            <marker date="1565169589848" expanded="true" signature="1868:1997" ph="/* Don't serialize this so the value is lost on an editor script recompile. ... */" />
+            <marker date="1565169589848" expanded="false" signature="2128:2487" ph="Local Classes" />
+            <marker date="1565169589848" expanded="true" signature="2181:2201" ph="{...}" />
+            <marker date="1565169589848" expanded="true" signature="2235:2281" ph="{...}" />
+            <marker date="1565169589848" expanded="true" signature="2337:2471" ph="{...}" />
+            <marker date="1565169589848" expanded="false" signature="2493:2790" ph="Consts" />
+            <marker date="1565169589848" expanded="false" signature="2808:15732" ph="/*Handles movement state transitions and enter/exit callbacks ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+          <folding>
+            <marker date="1565170121493" expanded="false" signature="6:182" ph="..." />
+            <marker date="1565170121493" expanded="true" signature="221:3421" ph="{...}" />
+            <marker date="1565170121493" expanded="true" signature="250:3419" ph="{...}" />
+            <marker date="1565170121493" expanded="true" signature="704:827" ph="{...}" />
+            <marker date="1565170121493" expanded="true" signature="857:927" ph="{...}" />
+            <marker date="1565170121493" expanded="true" signature="955:2959" ph="{...}" />
+            <marker date="1565170121493" expanded="true" signature="1273:2441" ph="{...}" />
+            <marker date="1565170121493" expanded="true" signature="1418:1514" ph="/* calculate spring compression ... */" />
+            <marker date="1565170121493" expanded="true" signature="2449:2540" ph="{...}" />
+            <marker date="1565170121493" expanded="true" signature="2998:3416" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
