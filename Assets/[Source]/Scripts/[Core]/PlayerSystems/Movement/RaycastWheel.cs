@@ -26,21 +26,22 @@ namespace Core.PlayerSystems.Movement
 		private float _circumference;
 
 		private float _contactPatchArea;
-		private Rigidbody _parent;
+		private Rigidbody _rigidbody;
 		private bool _grounded = false;
 
 		public bool IsGrounded => _grounded;
 
-		private void Awake()
+		private void Setup()
 		{
 			_circumference = (radius * 2) * Mathf.PI;
-			_parent = Skateboard.Instance.Transform.GetComponent<Rigidbody>();
+			_rigidbody = Skateboard.Instance.Rigidbody;
 		}
 
 		private void FixedUpdate()
 		{
 			if(!Skateboard.InstanceExists) return;
 			
+			Setup();
 			GetGround();
 		}
 
@@ -48,17 +49,16 @@ namespace Core.PlayerSystems.Movement
 		{
 			_grounded = false;
 			Vector3 __downwards = graphic.TransformDirection(-Vector3.up);
-			RaycastHit __hit;
 
 			// down = local downwards direction
 			Vector3 __down = graphic.TransformDirection(Vector3.down);
 
-			if (UnityEngine.Physics.Raycast(graphic.position, __downwards, out __hit, radius + maxSuspension))
+			if (UnityEngine.Physics.Raycast(graphic.position, __downwards, out RaycastHit __hit, radius + maxSuspension))
 			{
 
 				_grounded = true;
 				// the velocity at point of contact
-				Vector3 __velocityAtTouch = _parent.GetPointVelocity(__hit.point);
+				Vector3 __velocityAtTouch = _rigidbody.GetPointVelocity(__hit.point);
 
 				// calculate spring compression
 				// difference in positions divided by total suspension range
@@ -79,13 +79,13 @@ namespace Core.PlayerSystems.Movement
 				Vector3 __finalForce = __force + __damping;
 
 				// VERY simple turning - force rigidbody in direction of wheel
-				__t = _parent.transform.InverseTransformDirection(__velocityAtTouch);
+				__t = _rigidbody.transform.InverseTransformDirection(__velocityAtTouch);
 				__t.y = 0;
 				__t.z = 0;
 
 				__t = graphic.TransformDirection(__t);
 
-				//_parent.AddForceAtPosition(__finalForce + (__t), __hit.point);
+				//_rigidbody.AddForceAtPosition(__finalForce + (__t), __hit.point);
 
 				if (graphic) graphic.position = graphic.position + (__down * (__hit.distance - radius));
 			}
@@ -94,15 +94,15 @@ namespace Core.PlayerSystems.Movement
 				if (graphic) graphic.position = graphic.position + (__down * maxSuspension);
 			}
 
-			float __speed = _parent.velocity.magnitude;
+			float __speed = _rigidbody.velocity.magnitude;
 
 			if (!graphic) return;
 
-			Transform transform = graphic.transform;
-			Vector3 localEulerAngles = transform.localEulerAngles;
+			Transform __transform = graphic.transform;
+			Vector3 __localEulerAngles = __transform.localEulerAngles;
 			
-			localEulerAngles = new Vector3 (localEulerAngles.x, wheelAngle, localEulerAngles.z);
-			transform.localEulerAngles = localEulerAngles;
+			__localEulerAngles = new Vector3 (__localEulerAngles.x, wheelAngle, __localEulerAngles.z);
+			__transform.localEulerAngles = __localEulerAngles;
 			
 			graphic.transform.Rotate (360 * (__speed / _circumference) * Time.fixedDeltaTime, 0, 0);
 		}
