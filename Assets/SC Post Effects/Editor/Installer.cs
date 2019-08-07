@@ -1000,7 +1000,7 @@ namespace SCPE
             COMPATIBLE = false;
             UNTESTED = false;
 #endif
-#if UNITY_2019_2_OR_NEWER // >= 2019.2
+#if UNITY_2019_3_OR_NEWER // >= 2019.2
             UNTESTED = true;
             COMPATIBLE = false;
 #endif

@@ -93,7 +93,7 @@ namespace SCPE
 
             if (SCPE.pipeline != SCPE.RenderPipeline.Legacy)
             {
-                if (mode.value.intValue < 2)
+                if (mode.value.intValue < 2 && mode.overrideState.boolValue == true)
                 {
                     EditorGUILayout.HelpBox("This solver in not available when using the a Scriptable Render Pipeline, because it doesn't render traditional depth normals", MessageType.Error);
                     return;

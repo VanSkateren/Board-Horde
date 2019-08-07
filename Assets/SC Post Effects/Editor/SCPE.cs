@@ -27,7 +27,7 @@ namespace SCPE
         public const string DEFINE_SYMBOL = "SCPE";
         private const string ASSET_UNITY_VERSION = "561";
 
-        public const string INSTALLED_VERSION = "1.0.0";
+        public const string INSTALLED_VERSION = "1.0.1";
 
         public const string MIN_UNITY_VERSION = "5.6.1";
 

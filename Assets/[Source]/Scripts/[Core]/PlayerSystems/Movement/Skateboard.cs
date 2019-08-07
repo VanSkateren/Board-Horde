@@ -23,9 +23,9 @@ namespace Core.PlayerSystems.Movement
 	{
 	    #region Variables
 
-		[BoxGroup("Wheels")]
+		[BoxGroup("Wheels", showLabel: false)]
 		
-		[SerializeField] private Transform[] wheelPositions;
+		[SerializeField] private RaycastWheel[] wheels = new RaycastWheel[4];
 		
 	    public Player Player { get; set; }
 		
@@ -205,6 +205,75 @@ namespace Core.PlayerSystems.Movement
         	SoundManager.Instance.PlayPushOff(0.01f);
         }
         */
+		
+		[PublicAPI]
+		public bool IsColliderValidForCollisions(Collider coll)
+		{
+			if (Player.configs.ignoredColliders.Count == 0) return true;
+		
+			return !Player.configs.ignoredColliders.Contains(coll);
+		}
+		
+		[PublicAPI]
+		public void AddVelocity(Vector3 velocity)
+		{
+			switch (CurrentCharacterState)
+			{
+				case CharacterState.Default:
+				{
+					//_internalVelocityAdd += velocity;
+					break;
+				}
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+		}
+		
+		/// <summary>
+		/// Sets the character's position directly
+		/// </summary>
+		public void SetPosition(Vector3 position, bool bypassInterpolation = true)
+		{
+			Transform.position = position;
+			//_initialSimulationPosition = position;
+			TransientPosition = position;
+
+			if (bypassInterpolation)
+			{
+				//InitialTickPosition = position;
+			}
+		}
+		/// <summary>
+		/// Sets the character's rotation directly
+		/// </summary>
+		public void SetRotation(Quaternion rotation, bool bypassInterpolation = true)
+		{
+			Transform.rotation = rotation;
+			//_initialSimulationRotation = rotation;
+			//TransientRotation = rotation;
+
+			if (bypassInterpolation)
+			{
+				//InitialTickRotation = rotation;
+			}
+		}
+		/// <summary>
+		/// Sets the character's position and rotation directly
+		/// </summary>
+		public void SetPositionAndRotation(Vector3 position, Quaternion rotation, bool bypassInterpolation = true)
+		{
+			Transform.SetPositionAndRotation(position, rotation);
+			//_initialSimulationPosition = position;
+			//_initialSimulationRotation = rotation;
+			TransientPosition = position;
+			//TransientRotation = rotation;
+
+			if (bypassInterpolation)
+			{
+				//InitialTickPosition = position;
+				//InitialTickRotation = rotation;
+			}
+		}
 
 
 		#endregion
@@ -259,7 +328,13 @@ namespace Core.PlayerSystems.Movement
 		#endregion
 		
 		#region Update Loops
-		
+
+		public void FixedUpdate()
+		{
+			wheels.For(wheel => wheel.Update());
+		}
+
+
 		/// <inheritdoc />
 		/// <summary>
 		/// (Called by KinematicCharacterMotor during its update cycle)
@@ -476,75 +551,6 @@ namespace Core.PlayerSystems.Movement
 		}
 		
 		#endregion
-
-		[PublicAPI]
-		public bool IsColliderValidForCollisions(Collider coll)
-		{
-			if (Player.configs.ignoredColliders.Count == 0) return true;
-		
-			return !Player.configs.ignoredColliders.Contains(coll);
-		}
-		
-		[PublicAPI]
-		public void AddVelocity(Vector3 velocity)
-		{
-			switch (CurrentCharacterState)
-			{
-				case CharacterState.Default:
-				{
-					//_internalVelocityAdd += velocity;
-					break;
-				}
-				default:
-					throw new ArgumentOutOfRangeException();
-			}
-		}
-		
-		/// <summary>
-		/// Sets the character's position directly
-		/// </summary>
-		public void SetPosition(Vector3 position, bool bypassInterpolation = true)
-		{
-			Transform.position = position;
-			//_initialSimulationPosition = position;
-			TransientPosition = position;
-
-			if (bypassInterpolation)
-			{
-				//InitialTickPosition = position;
-			}
-		}
-		/// <summary>
-		/// Sets the character's rotation directly
-		/// </summary>
-		public void SetRotation(Quaternion rotation, bool bypassInterpolation = true)
-		{
-			Transform.rotation = rotation;
-			//_initialSimulationRotation = rotation;
-			//TransientRotation = rotation;
-
-			if (bypassInterpolation)
-			{
-				//InitialTickRotation = rotation;
-			}
-		}
-		/// <summary>
-		/// Sets the character's position and rotation directly
-		/// </summary>
-		public void SetPositionAndRotation(Vector3 position, Quaternion rotation, bool bypassInterpolation = true)
-		{
-			Transform.SetPositionAndRotation(position, rotation);
-			//_initialSimulationPosition = position;
-			//_initialSimulationRotation = rotation;
-			TransientPosition = position;
-			//TransientRotation = rotation;
-
-			if (bypassInterpolation)
-			{
-				//InitialTickPosition = position;
-				//InitialTickRotation = rotation;
-			}
-		}
 
 		#endregion
 		

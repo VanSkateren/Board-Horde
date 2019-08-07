@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="198e5302-eabe-4f29-a307-3bb7cdbfaf60" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,103 +41,106 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+            <state relative-caret-position="780">
+              <caret line="55" column="26" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="26" />
               <folding>
-                <marker date="1565170447272" expanded="false" signature="6:182" ph="..." />
-                <marker date="1565170447272" expanded="true" signature="221:3425" ph="{...}" />
-                <marker date="1565170447272" expanded="true" signature="250:3423" ph="{...}" />
-                <marker date="1565170447272" expanded="true" signature="707:807" ph="{...}" />
-                <marker date="1565170447272" expanded="true" signature="837:919" ph="{...}" />
-                <marker date="1565170447272" expanded="true" signature="947:2963" ph="{...}" />
-                <marker date="1565170447272" expanded="true" signature="1265:2442" ph="{...}" />
-                <marker date="1565170447272" expanded="true" signature="1413:1509" ph="/* calculate spring compression ... */" />
-                <marker date="1565170447272" expanded="true" signature="2450:2541" ph="{...}" />
-                <marker date="1565170447272" expanded="true" signature="3002:3420" ph="{...}" />
+                <marker date="1565171529685" expanded="true" signature="6:438" ph="..." />
+                <marker date="1565171529685" expanded="true" signature="477:3811" ph="{...}" />
+                <marker date="1565171529685" expanded="true" signature="522:3809" ph="{...}" />
+                <marker date="1565171529685" expanded="true" signature="529:1076" ph="Variables" />
+                <marker date="1565171529685" expanded="true" signature="1080:3806" ph="Methods" />
+                <marker date="1565171529685" expanded="true" signature="1121:1221" ph="{...}" />
+                <marker date="1565171529685" expanded="true" signature="1245:1344" ph="{...}" />
+                <marker date="1565171529685" expanded="true" signature="1372:3340" ph="{...}" />
+                <marker date="1565171529685" expanded="true" signature="1661:2821" ph="{...}" />
+                <marker date="1565171529685" expanded="true" signature="1810:1906" ph="/* calculate spring compression ... */" />
+                <marker date="1565171529685" expanded="true" signature="2829:2902" ph="{...}" />
+                <marker date="1565171529685" expanded="true" signature="3369:3790" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="211" column="8" selection-start-line="211" selection-start-column="8" selection-end-line="211" selection-end-column="8" />
+            <state relative-caret-position="360">
+              <caret line="333" column="12" selection-start-line="333" selection-start-column="12" selection-end-line="333" selection-end-column="12" />
               <folding>
-                <marker date="1565170235916" expanded="false" signature="6:471" ph="..." />
-                <marker date="1565170235916" expanded="true" signature="511:16086" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="562:16084" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="571:4818" ph="Variables" />
-                <marker date="1565170235916" expanded="true" signature="719:787" ph="/// The Transform of the skateboard ... " />
-                <marker date="1565170235916" expanded="true" signature="843:916" ph="/// The Transform of the character motor ... " />
-                <marker date="1565170235916" expanded="true" signature="972:1121" ph="/// The character's goal position in its movement calculations (always up-to-date during the character update pha ... " />
-                <marker date="1565170235916" expanded="true" signature="1196:1315" ph="/// The character's up direction (always up-to-date during the character update phase) ... " />
-                <marker date="1565170235916" expanded="true" signature="1371:1495" ph="/// The character's forward direction (always up-to-date during the character update phase) ... " />
-                <marker date="1565170235916" expanded="true" signature="1556:1678" ph="/// The character's right direction (always up-to-date during the character update phase) ... " />
-                <marker date="1565170235916" expanded="false" signature="1737:4431" ph="State Info" />
-                <marker date="1565170235916" expanded="true" signature="1761:1933" ph="/// Represents the entire state of a character motor that is pertinent for simulation. ... " />
-                <marker date="1565170235916" expanded="true" signature="1979:2331" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="2335:2433" ph="/// Contains all the information for the motor's grounding status ... " />
-                <marker date="1565170235916" expanded="true" signature="2465:3280" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="2816:3276" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="3286:3400" ph="/// Contains the simulation-relevant information for the motor's grounding status ... " />
-                <marker date="1565170235916" expanded="true" signature="3441:4057" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="3707:4053" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="4063:4142" ph="/// Contains the current grounding information ... " />
-                <marker date="1565170235916" expanded="true" signature="4229:4309" ph="/// Contains the previous grounding information ... " />
-                <marker date="1565170235916" expanded="false" signature="4437:4796" ph="Local Classes" />
-                <marker date="1565170235916" expanded="true" signature="4490:4510" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="4544:4590" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="4646:4780" ph="{...}" />
-                <marker date="1565170235916" expanded="true" signature="4824:16081" ph="Methods" />
-                <marker date="1565170235916" expanded="false" signature="4843:5819" ph="Public API" />
-                <marker date="1565170235916" expanded="true" signature="4865:5804" ph="/* public void AddPushForce(float force) ... */" />
-                <marker date="1565170235916" expanded="false" signature="5825:16065" ph="Character Controller" />
-                <marker date="1565170235916" expanded="false" signature="5941:6980" ph="State Handling" />
-                <marker date="1565170235916" expanded="false" signature="6123:6320" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="6466:6644" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="6488:6640" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="6786:6964" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="6808:6960" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="6986:14328" ph="Update Loops" />
-                <marker date="1565170235916" expanded="false" signature="7012:7198" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565170235916" expanded="false" signature="7265:7273" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="7279:7470" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565170235916" expanded="false" signature="7536:7544" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="7592:7868" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565170235916" expanded="false" signature="7946:8597" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="7984:8111" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="8116:8593" ph="Handling" />
-                <marker date="1565170235916" expanded="false" signature="8213:8575" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="8224:8570" ph="/* Quaternion __fromRotation = Quaternion.LookRotation(motor.CharacterForward, motor.CharacterUp), ... */" />
-                <marker date="1565170235916" expanded="false" signature="8606:8879" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565170235916" expanded="false" signature="8968:13958" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="9006:9407" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="9117:9191" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="9201:9272" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="9412:13954" ph="/* ##region Handling ... */" />
-                <marker date="1565170235916" expanded="false" signature="14026:14312" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="14152:14181" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="14268:14308" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="14401:14535" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="14596:14805" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="14634:14801" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="14811:14886" ph="/// Sets the character's position directly ... " />
-                <marker date="1565170235916" expanded="false" signature="14963:15159" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="15107:15155" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="15162:15237" ph="/// Sets the character's rotation directly ... " />
-                <marker date="1565170235916" expanded="false" signature="15317:15515" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="15359:15434" ph="/* _initialSimulationRotation = rotation; ... */" />
-                <marker date="1565170235916" expanded="false" signature="15463:15511" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="15518:15606" ph="/// Sets the character's position and rotation directly ... " />
-                <marker date="1565170235916" expanded="false" signature="15715:16051" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="15780:15864" ph="/* _initialSimulationPosition = position; ... */" />
-                <marker date="1565170235916" expanded="false" signature="15961:16047" ph="{...}" />
-                <marker date="1565170235916" expanded="false" signature="15971:16042" ph="/* InitialTickPosition = position; ... */" />
+                <marker date="1565171525265" expanded="true" signature="6:471" ph="..." />
+                <marker date="1565171525265" expanded="true" signature="511:16199" ph="{...}" />
+                <marker date="1565171525265" expanded="true" signature="562:16197" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="571:4853" ph="Variables" />
+                <marker date="1565171525265" expanded="false" signature="754:822" ph="/// The Transform of the skateboard ... " />
+                <marker date="1565171525265" expanded="false" signature="878:951" ph="/// The Transform of the character motor ... " />
+                <marker date="1565171525265" expanded="false" signature="1007:1156" ph="/// The character's goal position in its movement calculations (always up-to-date during the character update pha ... " />
+                <marker date="1565171525265" expanded="false" signature="1231:1350" ph="/// The character's up direction (always up-to-date during the character update phase) ... " />
+                <marker date="1565171525265" expanded="false" signature="1406:1530" ph="/// The character's forward direction (always up-to-date during the character update phase) ... " />
+                <marker date="1565171525265" expanded="false" signature="1591:1713" ph="/// The character's right direction (always up-to-date during the character update phase) ... " />
+                <marker date="1565171525265" expanded="false" signature="1772:4466" ph="State Info" />
+                <marker date="1565171525265" expanded="false" signature="1796:1968" ph="/// Represents the entire state of a character motor that is pertinent for simulation. ... " />
+                <marker date="1565171525265" expanded="false" signature="2014:2366" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="2370:2468" ph="/// Contains all the information for the motor's grounding status ... " />
+                <marker date="1565171525265" expanded="false" signature="2500:3315" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="2851:3311" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="3321:3435" ph="/// Contains the simulation-relevant information for the motor's grounding status ... " />
+                <marker date="1565171525265" expanded="false" signature="3476:4092" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="3742:4088" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="4098:4177" ph="/// Contains the current grounding information ... " />
+                <marker date="1565171525265" expanded="false" signature="4264:4344" ph="/// Contains the previous grounding information ... " />
+                <marker date="1565171525265" expanded="false" signature="4472:4831" ph="Local Classes" />
+                <marker date="1565171525265" expanded="false" signature="4525:4545" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="4579:4625" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="4681:4815" ph="{...}" />
+                <marker date="1565171525265" expanded="true" signature="4859:16194" ph="Methods" />
+                <marker date="1565171525265" expanded="false" signature="4878:7579" ph="Public API" />
+                <marker date="1565171525265" expanded="false" signature="4900:5839" ph="/* public void AddPushForce(float force) ... */" />
+                <marker date="1565171525265" expanded="false" signature="5914:6048" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="6109:6318" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="6147:6314" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="6324:6399" ph="/// Sets the character's position directly ... " />
+                <marker date="1565171525265" expanded="false" signature="6476:6672" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="6620:6668" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="6675:6750" ph="/// Sets the character's rotation directly ... " />
+                <marker date="1565171525265" expanded="false" signature="6830:7028" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="6872:6947" ph="/* _initialSimulationRotation = rotation; ... */" />
+                <marker date="1565171525265" expanded="false" signature="6976:7024" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="7031:7119" ph="/// Sets the character's position and rotation directly ... " />
+                <marker date="1565171525265" expanded="false" signature="7228:7564" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="7293:7377" ph="/* _initialSimulationPosition = position; ... */" />
+                <marker date="1565171525265" expanded="false" signature="7474:7560" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="7484:7555" ph="/* InitialTickPosition = position; ... */" />
+                <marker date="1565171525265" expanded="true" signature="7585:16178" ph="Character Controller" />
+                <marker date="1565171525265" expanded="false" signature="7701:8740" ph="State Handling" />
+                <marker date="1565171525265" expanded="false" signature="7883:8080" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="8226:8404" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="8248:8400" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="8546:8724" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="8568:8720" ph="{...}" />
+                <marker date="1565171525265" expanded="true" signature="8746:16164" ph="Update Loops" />
+                <marker date="1565171525265" expanded="true" signature="8795:8843" ph="{...}" />
+                <marker date="1565171525265" expanded="true" signature="8848:9034" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1565171525265" expanded="false" signature="9101:9109" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="9115:9306" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1565171525265" expanded="false" signature="9372:9380" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="9428:9704" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1565171525265" expanded="false" signature="9782:10433" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="9820:9947" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="9952:10429" ph="Handling" />
+                <marker date="1565171525265" expanded="false" signature="10049:10411" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="10060:10406" ph="/* Quaternion __fromRotation = Quaternion.LookRotation(motor.CharacterForward, motor.CharacterUp), ... */" />
+                <marker date="1565171525265" expanded="false" signature="10442:10715" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1565171525265" expanded="false" signature="10804:15794" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="10842:11243" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="10953:11027" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="11037:11108" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="11248:15790" ph="/* ##region Handling ... */" />
+                <marker date="1565171525265" expanded="false" signature="15862:16148" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="15988:16017" ph="{...}" />
+                <marker date="1565171525265" expanded="false" signature="16104:16144" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -153,8 +160,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" />
       </list>
     </option>
   </component>
@@ -227,12 +234,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565169207202</updated>
-      <workItem from="1565169216130" duration="1325000" />
+      <workItem from="1565169216130" duration="3682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1325000" />
+    <option name="totallyTimeSpent" value="3682000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -311,100 +318,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="211" column="8" selection-start-line="211" selection-start-column="8" selection-end-line="211" selection-end-column="8" />
+        <state relative-caret-position="780">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="26" />
           <folding>
-            <marker date="1565170235916" expanded="false" signature="6:471" ph="..." />
-            <marker date="1565170235916" expanded="true" signature="511:16086" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="562:16084" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="571:4818" ph="Variables" />
-            <marker date="1565170235916" expanded="true" signature="719:787" ph="/// The Transform of the skateboard ... " />
-            <marker date="1565170235916" expanded="true" signature="843:916" ph="/// The Transform of the character motor ... " />
-            <marker date="1565170235916" expanded="true" signature="972:1121" ph="/// The character's goal position in its movement calculations (always up-to-date during the character update pha ... " />
-            <marker date="1565170235916" expanded="true" signature="1196:1315" ph="/// The character's up direction (always up-to-date during the character update phase) ... " />
-            <marker date="1565170235916" expanded="true" signature="1371:1495" ph="/// The character's forward direction (always up-to-date during the character update phase) ... " />
-            <marker date="1565170235916" expanded="true" signature="1556:1678" ph="/// The character's right direction (always up-to-date during the character update phase) ... " />
-            <marker date="1565170235916" expanded="false" signature="1737:4431" ph="State Info" />
-            <marker date="1565170235916" expanded="true" signature="1761:1933" ph="/// Represents the entire state of a character motor that is pertinent for simulation. ... " />
-            <marker date="1565170235916" expanded="true" signature="1979:2331" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="2335:2433" ph="/// Contains all the information for the motor's grounding status ... " />
-            <marker date="1565170235916" expanded="true" signature="2465:3280" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="2816:3276" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="3286:3400" ph="/// Contains the simulation-relevant information for the motor's grounding status ... " />
-            <marker date="1565170235916" expanded="true" signature="3441:4057" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="3707:4053" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="4063:4142" ph="/// Contains the current grounding information ... " />
-            <marker date="1565170235916" expanded="true" signature="4229:4309" ph="/// Contains the previous grounding information ... " />
-            <marker date="1565170235916" expanded="false" signature="4437:4796" ph="Local Classes" />
-            <marker date="1565170235916" expanded="true" signature="4490:4510" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="4544:4590" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="4646:4780" ph="{...}" />
-            <marker date="1565170235916" expanded="true" signature="4824:16081" ph="Methods" />
-            <marker date="1565170235916" expanded="false" signature="4843:5819" ph="Public API" />
-            <marker date="1565170235916" expanded="true" signature="4865:5804" ph="/* public void AddPushForce(float force) ... */" />
-            <marker date="1565170235916" expanded="false" signature="5825:16065" ph="Character Controller" />
-            <marker date="1565170235916" expanded="false" signature="5941:6980" ph="State Handling" />
-            <marker date="1565170235916" expanded="false" signature="6123:6320" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="6466:6644" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="6488:6640" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="6786:6964" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="6808:6960" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="6986:14328" ph="Update Loops" />
-            <marker date="1565170235916" expanded="false" signature="7012:7198" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-            <marker date="1565170235916" expanded="false" signature="7265:7273" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="7279:7470" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-            <marker date="1565170235916" expanded="false" signature="7536:7544" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="7592:7868" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-            <marker date="1565170235916" expanded="false" signature="7946:8597" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="7984:8111" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="8116:8593" ph="Handling" />
-            <marker date="1565170235916" expanded="false" signature="8213:8575" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="8224:8570" ph="/* Quaternion __fromRotation = Quaternion.LookRotation(motor.CharacterForward, motor.CharacterUp), ... */" />
-            <marker date="1565170235916" expanded="false" signature="8606:8879" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-            <marker date="1565170235916" expanded="false" signature="8968:13958" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="9006:9407" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="9117:9191" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="9201:9272" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="9412:13954" ph="/* ##region Handling ... */" />
-            <marker date="1565170235916" expanded="false" signature="14026:14312" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="14152:14181" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="14268:14308" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="14401:14535" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="14596:14805" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="14634:14801" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="14811:14886" ph="/// Sets the character's position directly ... " />
-            <marker date="1565170235916" expanded="false" signature="14963:15159" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="15107:15155" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="15162:15237" ph="/// Sets the character's rotation directly ... " />
-            <marker date="1565170235916" expanded="false" signature="15317:15515" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="15359:15434" ph="/* _initialSimulationRotation = rotation; ... */" />
-            <marker date="1565170235916" expanded="false" signature="15463:15511" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="15518:15606" ph="/// Sets the character's position and rotation directly ... " />
-            <marker date="1565170235916" expanded="false" signature="15715:16051" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="15780:15864" ph="/* _initialSimulationPosition = position; ... */" />
-            <marker date="1565170235916" expanded="false" signature="15961:16047" ph="{...}" />
-            <marker date="1565170235916" expanded="false" signature="15971:16042" ph="/* InitialTickPosition = position; ... */" />
+            <marker date="1565171529685" expanded="true" signature="6:438" ph="..." />
+            <marker date="1565171529685" expanded="true" signature="477:3811" ph="{...}" />
+            <marker date="1565171529685" expanded="true" signature="522:3809" ph="{...}" />
+            <marker date="1565171529685" expanded="true" signature="529:1076" ph="Variables" />
+            <marker date="1565171529685" expanded="true" signature="1080:3806" ph="Methods" />
+            <marker date="1565171529685" expanded="true" signature="1121:1221" ph="{...}" />
+            <marker date="1565171529685" expanded="true" signature="1245:1344" ph="{...}" />
+            <marker date="1565171529685" expanded="true" signature="1372:3340" ph="{...}" />
+            <marker date="1565171529685" expanded="true" signature="1661:2821" ph="{...}" />
+            <marker date="1565171529685" expanded="true" signature="1810:1906" ph="/* calculate spring compression ... */" />
+            <marker date="1565171529685" expanded="true" signature="2829:2902" ph="{...}" />
+            <marker date="1565171529685" expanded="true" signature="3369:3790" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+        <state relative-caret-position="360">
+          <caret line="333" column="12" selection-start-line="333" selection-start-column="12" selection-end-line="333" selection-end-column="12" />
           <folding>
-            <marker date="1565170447272" expanded="false" signature="6:182" ph="..." />
-            <marker date="1565170447272" expanded="true" signature="221:3425" ph="{...}" />
-            <marker date="1565170447272" expanded="true" signature="250:3423" ph="{...}" />
-            <marker date="1565170447272" expanded="true" signature="707:807" ph="{...}" />
-            <marker date="1565170447272" expanded="true" signature="837:919" ph="{...}" />
-            <marker date="1565170447272" expanded="true" signature="947:2963" ph="{...}" />
-            <marker date="1565170447272" expanded="true" signature="1265:2442" ph="{...}" />
-            <marker date="1565170447272" expanded="true" signature="1413:1509" ph="/* calculate spring compression ... */" />
-            <marker date="1565170447272" expanded="true" signature="2450:2541" ph="{...}" />
-            <marker date="1565170447272" expanded="true" signature="3002:3420" ph="{...}" />
+            <marker date="1565171525265" expanded="true" signature="6:471" ph="..." />
+            <marker date="1565171525265" expanded="true" signature="511:16199" ph="{...}" />
+            <marker date="1565171525265" expanded="true" signature="562:16197" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="571:4853" ph="Variables" />
+            <marker date="1565171525265" expanded="false" signature="754:822" ph="/// The Transform of the skateboard ... " />
+            <marker date="1565171525265" expanded="false" signature="878:951" ph="/// The Transform of the character motor ... " />
+            <marker date="1565171525265" expanded="false" signature="1007:1156" ph="/// The character's goal position in its movement calculations (always up-to-date during the character update pha ... " />
+            <marker date="1565171525265" expanded="false" signature="1231:1350" ph="/// The character's up direction (always up-to-date during the character update phase) ... " />
+            <marker date="1565171525265" expanded="false" signature="1406:1530" ph="/// The character's forward direction (always up-to-date during the character update phase) ... " />
+            <marker date="1565171525265" expanded="false" signature="1591:1713" ph="/// The character's right direction (always up-to-date during the character update phase) ... " />
+            <marker date="1565171525265" expanded="false" signature="1772:4466" ph="State Info" />
+            <marker date="1565171525265" expanded="false" signature="1796:1968" ph="/// Represents the entire state of a character motor that is pertinent for simulation. ... " />
+            <marker date="1565171525265" expanded="false" signature="2014:2366" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="2370:2468" ph="/// Contains all the information for the motor's grounding status ... " />
+            <marker date="1565171525265" expanded="false" signature="2500:3315" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="2851:3311" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="3321:3435" ph="/// Contains the simulation-relevant information for the motor's grounding status ... " />
+            <marker date="1565171525265" expanded="false" signature="3476:4092" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="3742:4088" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="4098:4177" ph="/// Contains the current grounding information ... " />
+            <marker date="1565171525265" expanded="false" signature="4264:4344" ph="/// Contains the previous grounding information ... " />
+            <marker date="1565171525265" expanded="false" signature="4472:4831" ph="Local Classes" />
+            <marker date="1565171525265" expanded="false" signature="4525:4545" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="4579:4625" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="4681:4815" ph="{...}" />
+            <marker date="1565171525265" expanded="true" signature="4859:16194" ph="Methods" />
+            <marker date="1565171525265" expanded="false" signature="4878:7579" ph="Public API" />
+            <marker date="1565171525265" expanded="false" signature="4900:5839" ph="/* public void AddPushForce(float force) ... */" />
+            <marker date="1565171525265" expanded="false" signature="5914:6048" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="6109:6318" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="6147:6314" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="6324:6399" ph="/// Sets the character's position directly ... " />
+            <marker date="1565171525265" expanded="false" signature="6476:6672" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="6620:6668" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="6675:6750" ph="/// Sets the character's rotation directly ... " />
+            <marker date="1565171525265" expanded="false" signature="6830:7028" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="6872:6947" ph="/* _initialSimulationRotation = rotation; ... */" />
+            <marker date="1565171525265" expanded="false" signature="6976:7024" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="7031:7119" ph="/// Sets the character's position and rotation directly ... " />
+            <marker date="1565171525265" expanded="false" signature="7228:7564" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="7293:7377" ph="/* _initialSimulationPosition = position; ... */" />
+            <marker date="1565171525265" expanded="false" signature="7474:7560" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="7484:7555" ph="/* InitialTickPosition = position; ... */" />
+            <marker date="1565171525265" expanded="true" signature="7585:16178" ph="Character Controller" />
+            <marker date="1565171525265" expanded="false" signature="7701:8740" ph="State Handling" />
+            <marker date="1565171525265" expanded="false" signature="7883:8080" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="8226:8404" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="8248:8400" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="8546:8724" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="8568:8720" ph="{...}" />
+            <marker date="1565171525265" expanded="true" signature="8746:16164" ph="Update Loops" />
+            <marker date="1565171525265" expanded="true" signature="8795:8843" ph="{...}" />
+            <marker date="1565171525265" expanded="true" signature="8848:9034" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1565171525265" expanded="false" signature="9101:9109" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="9115:9306" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1565171525265" expanded="false" signature="9372:9380" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="9428:9704" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1565171525265" expanded="false" signature="9782:10433" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="9820:9947" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="9952:10429" ph="Handling" />
+            <marker date="1565171525265" expanded="false" signature="10049:10411" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="10060:10406" ph="/* Quaternion __fromRotation = Quaternion.LookRotation(motor.CharacterForward, motor.CharacterUp), ... */" />
+            <marker date="1565171525265" expanded="false" signature="10442:10715" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1565171525265" expanded="false" signature="10804:15794" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="10842:11243" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="10953:11027" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="11037:11108" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="11248:15790" ph="/* ##region Handling ... */" />
+            <marker date="1565171525265" expanded="false" signature="15862:16148" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="15988:16017" ph="{...}" />
+            <marker date="1565171525265" expanded="false" signature="16104:16144" ph="{...}" />
           </folding>
         </state>
       </provider>

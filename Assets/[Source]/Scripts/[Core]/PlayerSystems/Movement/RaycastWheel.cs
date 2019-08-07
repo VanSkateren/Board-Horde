@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,57 +7,74 @@ using CommonGames.Utilities;
 using CommonGames.Utilities.Extensions;
 using CommonGames.Utilities.CGTK;
 
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+
+using JetBrains.Annotations;
+
+using EaseType = CommonGames.Utilities.CGTK.Greasy.EaseType;
+using Greasy = CommonGames.Utilities.CGTK.Greasy.Greasy;
+using static UnityEngine.Physics;
+
 namespace Core.PlayerSystems.Movement
 {
+	[Serializable]
 	public class RaycastWheel
 	{
 
+		#region Variables
+		
 		// Simple Vehicle Raycast wheel
 
-		public Transform graphic;
-
-		public float mass = 1.0f;
-		public float radius = 1.0f;
-		public float maxSuspension = 0.2f;
-		public float spring = 100.0f;
-		public float damper = 0.0f;
-
-		public float wheelAngle = 0f;
+		[BoxGroup] public Transform axle;
+		[BoxGroup] public Transform graphic;
+		[Space]
+		[BoxGroup] public float mass = 1.0f;
+		[BoxGroup] public float radius = 1.0f;
+		[BoxGroup] public float maxSuspension = 0.2f;
+		[BoxGroup] public float spring = 100.0f;
+		[BoxGroup] public float damper = 0.0f;
+		[BoxGroup] public float wheelAngle = 0f;
 
 		private float _circumference;
 
 		private float _contactPatchArea;
 		private Rigidbody _rigidbody;
-		private bool _grounded = false;
 
-		public bool IsGrounded => _grounded;
+		[PublicAPI]
+		public bool IsGrounded { get; private set; } = false;
+		
+		#endregion
 
+		#region Methods
+		
 		private void Setup()
 		{
 			_circumference = (radius * 2) * Mathf.PI;
 			_rigidbody = Skateboard.Instance.Rigidbody;
 		}
 
-		private void FixedUpdate()
+		public void Update()
 		{
 			if(!Skateboard.InstanceExists) return;
 			
 			Setup();
 			GetGround();
+			DrawGizmos();
 		}
 
 		private void GetGround()
 		{
-			_grounded = false;
+			IsGrounded = false;
 			Vector3 __downwards = graphic.TransformDirection(-Vector3.up);
 
 			// down = local downwards direction
 			Vector3 __down = graphic.TransformDirection(Vector3.down);
 
-			if (UnityEngine.Physics.Raycast(graphic.position, __downwards, out RaycastHit __hit, radius + maxSuspension))
+			if (Raycast(graphic.position, __downwards, out RaycastHit __hit, radius + maxSuspension))
 			{
 
-				_grounded = true;
+				IsGrounded = true;
 				// the velocity at point of contact
 				Vector3 __velocityAtTouch = _rigidbody.GetPointVelocity(__hit.point);
 
@@ -87,11 +105,11 @@ namespace Core.PlayerSystems.Movement
 
 				//_rigidbody.AddForceAtPosition(__finalForce + (__t), __hit.point);
 
-				if (graphic) graphic.position = graphic.position + (__down * (__hit.distance - radius));
+				if (graphic) graphic.position += (__down * (__hit.distance - radius));
 			}
 			else
 			{
-				if (graphic) graphic.position = graphic.position + (__down * maxSuspension);
+				if (graphic) graphic.position += (__down * maxSuspension);
 			}
 
 			float __speed = _rigidbody.velocity.magnitude;
@@ -117,5 +135,7 @@ namespace Core.PlayerSystems.Movement
 			__direction = graphic.TransformDirection(-Vector3.up) * (this.maxSuspension);
 			CGDebug.DrawRay(new Vector3(__position.x, __position.y - radius, __position.z), __direction).Color(new Color(0, 0, 1, 1));
 		}
+		
+		#endregion
 	}
 }

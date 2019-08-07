@@ -62,7 +62,8 @@ namespace SCPE
         {
             var sheet = context.propertySheets.Get(shader);
 
-            if (settings.lut.value) sheet.properties.SetTexture("_LUT", settings.lut.value);
+            var lutTexture = settings.lut.value == null ? RuntimeUtilities.blackTexture : settings.lut.value;
+            sheet.properties.SetTexture("_LUT", lutTexture);
             float luminanceThreshold = QualitySettings.activeColorSpace == ColorSpace.Gamma ? Mathf.LinearToGammaSpace(settings.luminanceThreshold.value) : settings.luminanceThreshold.value;
 
             Vector4 ditherParams = new Vector4(0f, settings.tiling, luminanceThreshold, settings.intensity);

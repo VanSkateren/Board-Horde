@@ -168,9 +168,15 @@ namespace SCPE
                     {
                         SCPE.CheckGradientImportSettings(fogColorGradient);
 
+                        GUILayout.Space(5f);
                         //Gradient preview
-                        Rect rect = GUILayoutUtility.GetRect(1, 12, "TextField");
-                        EditorGUI.DrawTextureTransparent(rect, fogColorGradient.value.objectReferenceValue as Texture2D);
+                        using (new EditorGUILayout.HorizontalScope())
+                        {
+                            EditorGUILayout.LabelField("Near", GUILayout.MaxWidth(32f));
+                            Rect rect = GUILayoutUtility.GetRect(1, 12, "TextField");
+                            EditorGUI.DrawTextureTransparent(rect, fogColorGradient.value.objectReferenceValue as Texture2D);
+                            EditorGUILayout.LabelField("Far", GUILayout.MaxWidth(30f));
+                        }
 
                         EditorGUILayout.BeginHorizontal();
                         {
@@ -180,7 +186,7 @@ namespace SCPE
                             }
                             EditorGUI.EndDisabledGroup();
                             gradientUseFarClipPlane.overrideState.boolValue = true;
-                            gradientUseFarClipPlane.value.boolValue = !GUILayout.Toggle(!gradientUseFarClipPlane.value.boolValue, "Automatic", EditorStyles.miniButton);
+                            gradientUseFarClipPlane.value.boolValue = !GUILayout.Toggle(!gradientUseFarClipPlane.value.boolValue, new GUIContent("Automatic", "Distance will be set by the camera's far clipping plane"), EditorStyles.miniButton);
                         }
                         EditorGUILayout.EndHorizontal();
 
@@ -207,6 +213,10 @@ namespace SCPE
             EditorGUILayout.EndFadeGroup();
 
             PropertyField(distanceFog);
+            if (colorMode.value.intValue == 1 && distanceFog.value.boolValue == false && heightFog.value.boolValue)
+            {
+                EditorGUILayout.HelpBox("Distance fog must be enabled when using the Gradient Texture color mode. Height fog only will not be colored correctly", MessageType.Warning);
+            }
             if (distanceFog.value.boolValue)
             {
                 PropertyField(useRadialDistance, new GUIContent("Radial"));

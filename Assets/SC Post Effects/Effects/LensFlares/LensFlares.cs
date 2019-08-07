@@ -109,24 +109,9 @@ namespace SCPE
             sheet.properties.SetFloat("_HaloWidth", settings.haloWidth);
             sheet.properties.SetFloat("_ChromaticAbberation", settings.chromaticAbberation);
 
+            sheet.properties.SetTexture("_ColorTex", settings.colorTex.value ? settings.colorTex : Texture2D.whiteTexture as Texture);
 
-            if (settings.colorTex.value)
-            {
-                sheet.properties.SetTexture("_ColorTex", settings.colorTex);
-            }
-            else
-            {
-                sheet.properties.SetTexture("_ColorTex", Texture2D.whiteTexture);
-            }
-            if (settings.maskTex.value)
-            {
-                sheet.properties.SetTexture("_MaskTex", settings.maskTex);
-            }
-            else
-            {
-                sheet.properties.SetTexture("_MaskTex", Texture2D.whiteTexture);
-
-            }
+            sheet.properties.SetTexture("_MaskTex", settings.maskTex.value ? settings.maskTex : Texture2D.whiteTexture as Texture);
 
             context.command.GetTemporaryRT(emissionTex, context.width, context.height, 0, FilterMode.Bilinear, RenderTextureFormat.DefaultHDR);
             context.command.BlitFullscreenTriangle(context.source, emissionTex, sheet, (int)Pass.LuminanceDiff);
@@ -139,8 +124,8 @@ namespace SCPE
             // get two smaller RTs
             int blurredID = Shader.PropertyToID("_Temp1");
             int blurredID2 = Shader.PropertyToID("_Temp2");
-            cmd.GetTemporaryRT(blurredID, context.width/2, context.height/2, 0, FilterMode.Bilinear);
-            cmd.GetTemporaryRT(blurredID2, context.width/2, context.height/2, 0, FilterMode.Bilinear);
+            cmd.GetTemporaryRT(blurredID, context.width / 2, context.height / 2, 0, FilterMode.Bilinear);
+            cmd.GetTemporaryRT(blurredID2, context.width / 2, context.height / 2, 0, FilterMode.Bilinear);
 
             // downsample screen copy into smaller RT, release screen RT
             cmd.Blit(flaresTex, blurredID);

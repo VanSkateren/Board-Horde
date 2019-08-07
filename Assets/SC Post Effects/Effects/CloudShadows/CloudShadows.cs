@@ -77,7 +77,8 @@ namespace SCPE
             Camera cam = context.camera;
             CloudShadows.isOrtho = context.camera.orthographic;
 
-            sheet.properties.SetTexture("_NoiseTex", (settings.texture.value) ? settings.texture : Texture2D.whiteTexture as Texture);
+            var noiseTexture = settings.texture.value == null ? RuntimeUtilities.whiteTexture : settings.texture.value;
+            sheet.properties.SetTexture("_NoiseTex", noiseTexture);
 
             var p = GL.GetGPUProjectionMatrix(cam.projectionMatrix, false);
             p[2, 3] = p[3, 2] = 0.0f;
