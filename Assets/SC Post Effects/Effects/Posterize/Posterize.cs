@@ -30,7 +30,7 @@ namespace SCPE
 
     internal sealed class PosterizeRenderer : PostProcessEffectRenderer<Posterize>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

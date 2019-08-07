@@ -35,7 +35,7 @@ namespace Dreamteck.Splines
         private float[] lifetimes = new float[0];
         private int particleCount = 0;
         private int birthIndex = 0;
-        SplineResult evaluateResult = new SplineResult();
+        private SplineResult evaluateResult = new SplineResult();
 
         protected override void Awake() 
         {
@@ -107,7 +107,7 @@ namespace Dreamteck.Splines
             if (_particleSystem == null) _particleSystem = GetComponent<ParticleSystem>();
         }
 
-        void HandleParticle(int index)
+        private void HandleParticle(int index)
         {
             float lifePercent = particles[index].remainingLifetime / particles[index].startLifetime;
 
@@ -128,12 +128,12 @@ namespace Dreamteck.Splines
             particles[index].remainingLifetime = controllers[index].remainingLifetime;
         }
 
-        void OnParticleDie(int index)
+        private void OnParticleDie(int index)
         {
 
         }
 
-        void OnParticleBorn(int index)
+        private void OnParticleBorn(int index)
         {
             birthIndex++;
             double percent = 0.0;

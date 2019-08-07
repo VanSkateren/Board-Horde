@@ -32,7 +32,7 @@ namespace Dreamteck.Splines
         private int index = 0;
         [SerializeField]
         [HideInInspector]
-        System.Random randomizer;
+        private System.Random randomizer;
         
         public ObjectSequence(){
             randomizer = new System.Random(_randomSeed);

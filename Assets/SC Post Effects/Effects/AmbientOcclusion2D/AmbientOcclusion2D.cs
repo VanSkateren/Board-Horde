@@ -58,10 +58,10 @@ namespace SCPE
 
     internal sealed class AmbientOcclusion2DRenderer : PostProcessEffectRenderer<AmbientOcclusion2D>
     {
-        Shader shader;
+        private Shader shader;
         private int aoTexID;
         private int screenCopyID;
-        RenderTexture aoRT;
+        private RenderTexture aoRT;
 
         public override void Init()
         {
@@ -74,7 +74,7 @@ namespace SCPE
             base.Release();
         }
 
-        enum Pass
+        private enum Pass
         {
             LuminanceDiff,
             Blur,

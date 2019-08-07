@@ -8,8 +8,8 @@ namespace Dreamteck.Splines
 {
     public class SplineTracer : SplineUser
     {
-        Trigger[] triggerInvokeQueue = new Trigger[0];
-        int addTriggerIndex = 0;
+        private Trigger[] triggerInvokeQueue = new Trigger[0];
+        private int addTriggerIndex = 0;
         public enum PhysicsMode { Transform, Rigidbody, Rigidbody2D }
         public PhysicsMode physicsMode
         {

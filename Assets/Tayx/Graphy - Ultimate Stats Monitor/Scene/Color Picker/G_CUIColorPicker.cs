@@ -220,8 +220,8 @@ namespace Tayx.Graphy.CustomizationScene
             var b = ( rng.Next() % 1000 ) / 1000.0f;
             Color = new Color( r, g, b );
         }
-    
-        void Awake()
+
+        private void Awake()
         {
             Color = new Color32(255, 0, 0, 128);
         }
@@ -238,7 +238,7 @@ namespace Tayx.Graphy.CustomizationScene
             });
         }
 
-        void Update()
+        private void Update()
         {
             if (_update != null) { _update(); }
         }

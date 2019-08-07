@@ -56,7 +56,7 @@ namespace SCPE
 
     internal sealed class OverlayRenderer : PostProcessEffectRenderer<Overlay>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

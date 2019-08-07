@@ -508,7 +508,7 @@ namespace Dreamteck.Splines {
 #endif
         }
 
-        IEnumerator UpdateSubscribersRoutine()
+        private IEnumerator UpdateSubscribersRoutine()
         {
             while (rebuild) yield return null;
             UpdateSubscribers();
@@ -625,7 +625,7 @@ namespace Dreamteck.Splines {
             if (updateMethod == UpdateMethod.FixedUpdate) RunMain();
         }
 
-        void UpdateSubscribers()
+        private void UpdateSubscribers()
         {
             for (int i = subscribers.Length - 1; i >= 0; i--)
             {

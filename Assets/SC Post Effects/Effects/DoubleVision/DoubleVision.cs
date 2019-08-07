@@ -48,7 +48,7 @@ namespace SCPE
 
     internal sealed class DoubleVisionRenderer : PostProcessEffectRenderer<DoubleVision>
     {
-        Shader DoubleVisionShader;
+        private Shader DoubleVisionShader;
 
         public override void Init()
         {

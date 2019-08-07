@@ -5,6 +5,7 @@
     using UnityEngine;
     
     using Object = UnityEngine.Object;
+    using static UnityEngine.Random;
     
     public static partial class CGDebug
     {
@@ -29,8 +30,8 @@
             }
             
             audioSource.clip = DingAudioClip;
-            audioSource.volume = UnityEngine.Random.Range(Volume.minValue, Volume.maxValue);
-            audioSource.pitch = UnityEngine.Random.Range(Pitch.minValue, Pitch.maxValue);
+            audioSource.volume = Range(Volume.minValue, Volume.maxValue);
+            audioSource.pitch = Range(Pitch.minValue, Pitch.maxValue);
             audioSource.Play();
         }
         
@@ -42,8 +43,8 @@
             }
             
             audioSource.clip = DingAudioClip;
-            audioSource.volume = UnityEngine.Random.Range(Volume.minValue, Volume.maxValue);
-            audioSource.pitch = UnityEngine.Random.Range(Pitch.minValue, Pitch.maxValue);
+            audioSource.volume = Range(Volume.minValue, Volume.maxValue);
+            audioSource.pitch = Range(Pitch.minValue, Pitch.maxValue);
             audioSource.Play();
         }
         
@@ -61,9 +62,9 @@
                 this.maxValue = maxValue;
             }
         }
-    
-        private static AudioClip _dingAudioClip;
+        
         private static AudioClip DingAudioClip => _dingAudioClip ?? CreateAudioClip();
+        private static AudioClip _dingAudioClip;
     
         private static readonly RangedFloat Volume = new RangedFloat(0.9f, 1f);
 

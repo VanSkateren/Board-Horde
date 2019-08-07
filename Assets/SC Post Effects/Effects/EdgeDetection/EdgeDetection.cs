@@ -87,8 +87,7 @@ namespace SCPE
 
     internal sealed class EdgeDetectionRenderer : PostProcessEffectRenderer<EdgeDetection>
     {
-
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

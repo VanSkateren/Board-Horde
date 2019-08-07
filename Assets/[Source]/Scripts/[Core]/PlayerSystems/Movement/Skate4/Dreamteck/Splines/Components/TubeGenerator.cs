@@ -182,7 +182,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        void Generate()
+        private void Generate()
         {
             int vertexIndex = 0;
             ResetUVDistance();
@@ -207,7 +207,7 @@ namespace Dreamteck.Splines
             MeshUtility.GeneratePlaneTriangles(ref tsMesh.triangles, _sides, clippedSamples.Length, false);
         }
 
-        void GenerateFlatCaps()
+        private void GenerateFlatCaps()
         {
             //Start Cap
             for (int i = 0; i < _sides+1; i++)
@@ -250,7 +250,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        void GenerateRoundCaps()
+        private void GenerateRoundCaps()
         {
             //Start Cap
             Vector3 center = clippedSamples[0].position;

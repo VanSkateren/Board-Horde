@@ -53,7 +53,7 @@ namespace CommonGames.Utilities.Extensions
             return GetWorldSpaceScale(lodGroup.transform) * lodGroup.size;
         }
 
-        static int GetCurrentLOD(LOD[] lods, int maxLOD, float relativeHeight, Camera camera = null)
+        private static int GetCurrentLOD(LOD[] lods, int maxLOD, float relativeHeight, Camera camera = null)
         {
             int lodIndex = maxLOD;
 
@@ -70,7 +70,7 @@ namespace CommonGames.Utilities.Extensions
             return lodIndex;
         }
 
-        static float GetWorldSpaceScale(Transform t)
+        private static float GetWorldSpaceScale(Transform t)
         {
             Vector3 scale = t.lossyScale;
             float largestAxis = Mathf.Abs(scale.x);
@@ -79,7 +79,7 @@ namespace CommonGames.Utilities.Extensions
             return largestAxis;
         }
 
-        static float DistanceToRelativeHeight(Camera camera, float distance, float size)
+        private static float DistanceToRelativeHeight(Camera camera, float distance, float size)
         {
             if (camera.orthographic){ return size * 0.5F / camera.orthographicSize; }
 
@@ -88,7 +88,7 @@ namespace CommonGames.Utilities.Extensions
             return relativeHeight;
         }
 
-        static float GetRelativeHeight(this LODGroup lodGroup, Camera camera)
+        private static float GetRelativeHeight(this LODGroup lodGroup, Camera camera)
         {
             float distance = (lodGroup.transform.TransformPoint(lodGroup.localReferencePoint) - camera.transform.position).magnitude;
             return DistanceToRelativeHeight(camera, distance, lodGroup.GetWorldSpaceSize());

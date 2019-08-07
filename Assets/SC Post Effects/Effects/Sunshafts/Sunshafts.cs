@@ -125,10 +125,10 @@ namespace SCPE
 
     internal sealed class SunshaftsRenderer : PostProcessEffectRenderer<Sunshafts>
     {
-        Shader shader;
+        private Shader shader;
         private int skyboxBufferID;
 
-        enum Pass
+        private enum Pass
         {
             SkySource,
             RadialBlur,

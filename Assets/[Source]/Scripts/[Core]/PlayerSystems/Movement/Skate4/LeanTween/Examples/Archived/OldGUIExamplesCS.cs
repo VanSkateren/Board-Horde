@@ -18,7 +18,7 @@ public class OldGUIExamplesCS : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
 		w = Screen.width;
 		h = Screen.height;
 		buttonRect1 = new LTRect(0.10f*w, 0.8f*h, 0.2f*w, 0.14f*h );
@@ -37,7 +37,7 @@ public class OldGUIExamplesCS : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnGUI () {
+	private void OnGUI () {
 		GUI.DrawTexture( grumpyRect.rect, grumpy);
 
 		Rect staticRect = new Rect(0.0f*w, 0.0f*h, 0.2f*w, 0.14f*h);

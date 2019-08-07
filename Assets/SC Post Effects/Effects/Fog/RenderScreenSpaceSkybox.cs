@@ -106,7 +106,7 @@ namespace SCPE
             skyboxCam.targetTexture = skyboxRT;
         }
 
-        void CreateSkyboxRT()
+        private void CreateSkyboxRT()
         {
             //Use traditional RenderTexture, which has mipmaps
             skyboxRT = new RenderTexture(thisCam.pixelWidth / downsamples, thisCam.pixelHeight / downsamples, 0, RenderTextureFormat.ARGB32);
@@ -150,7 +150,7 @@ namespace SCPE
     [CustomEditor(typeof(RenderScreenSpaceSkybox))]
     public class RenderScreenSpaceSkyboxInspector : Editor
     {
-        RenderScreenSpaceSkybox script;
+        private RenderScreenSpaceSkybox script;
 
         private void OnEnable()
         {

@@ -228,12 +228,12 @@ namespace Dreamteck.Splines
         }
 #endif
 
-        void Awake()
+private void Awake()
         {
             tsTransform = new TS_Transform(this.transform);
         }
 
-        void LateUpdate()
+private void LateUpdate()
         {
             method = SplineUser.UpdateMethod.LateUpdate;
             Run();
@@ -241,7 +241,7 @@ namespace Dreamteck.Splines
             lateUpdateRebuild = false;
         }
 
-        void Update()
+private void Update()
         {
             method = SplineUser.UpdateMethod.Update;
             Run();
@@ -272,7 +272,7 @@ namespace Dreamteck.Splines
         }
 #endif
 
-        void OnEnable()
+private void OnEnable()
         {
             if (rebuildPending)
             {

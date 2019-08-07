@@ -46,7 +46,7 @@ namespace SCPE
 
     internal sealed class DitheringRenderer : PostProcessEffectRenderer<Dithering>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

@@ -331,9 +331,8 @@ namespace Core.PlayerSystems.Movement
 
 		public void FixedUpdate()
 		{
-			wheels.For(wheel => wheel.Update());
+			//wheels.For(wheel => wheel.Update());
 		}
-
 
 		/// <inheritdoc />
 		/// <summary>

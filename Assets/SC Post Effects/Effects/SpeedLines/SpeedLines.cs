@@ -46,7 +46,7 @@ namespace SCPE
 
     internal sealed class SpeedLinesRenderer : PostProcessEffectRenderer<SpeedLines>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

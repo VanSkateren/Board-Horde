@@ -19,8 +19,8 @@ namespace Dreamteck.Splines
         private List<TS_Mesh> combineMeshes = new List<TS_Mesh>();
         private int meshCount = 0;
 
-        Matrix4x4 vertexMatrix = new Matrix4x4();
-        Matrix4x4 normalMatrix = new Matrix4x4();
+        private Matrix4x4 vertexMatrix = new Matrix4x4();
+        private Matrix4x4 normalMatrix = new Matrix4x4();
 
 #if UNITY_EDITOR
         public override void EditorAwake()
@@ -92,7 +92,7 @@ namespace Dreamteck.Splines
             Generate();
         }
 
-        void Generate()
+        private void Generate()
         {
             meshCount = 0;
             for (int i = 0; i < channels.Count; i++)
@@ -693,7 +693,7 @@ namespace Dreamteck.Splines
                 Rebuild();
             }
 
-            void Init()
+            private void Init()
             {
                 _minScale = _maxScale = Vector3.one;
                 _minOffset = _maxOffset = Vector3.zero;
@@ -830,7 +830,7 @@ namespace Dreamteck.Splines
                 if (owner != null) owner.Rebuild(false);
             }
 
-            void Refresh()
+            private void Refresh()
             {
                 for (int i = 0; i < meshes.Count; i++) meshes[i].Refresh();
                 Rebuild();
@@ -1164,7 +1164,7 @@ namespace Dreamteck.Splines
                     GroupVertices();
                 }
 
-                void FlipFaces()
+                private void FlipFaces()
                 {
                     TS_Mesh temp = new TS_Mesh();
                     temp.normals = normals;
@@ -1175,7 +1175,7 @@ namespace Dreamteck.Splines
                     temp = null;
                 }
 
-                void DoubleSided()
+                private void DoubleSided()
                 {
                     TS_Mesh temp = new TS_Mesh();
                     temp.vertices = vertices;
@@ -1254,7 +1254,7 @@ namespace Dreamteck.Splines
                     }
                 }
 
-                void CalculateBounds()
+                private void CalculateBounds()
                 {
                     Vector3 min = Vector3.zero;
                     Vector3 max = Vector3.zero;
@@ -1315,7 +1315,7 @@ namespace Dreamteck.Splines
                     CalculateTangents();
                 }
 
-                void TransformVertices()
+                private void TransformVertices()
                 {
                     Matrix4x4 vertexMatrix = new Matrix4x4();
                     vertexMatrix.SetTRS(_offset, Quaternion.Euler(_rotation), _scale);
@@ -1335,7 +1335,7 @@ namespace Dreamteck.Splines
                     }
                 }
 
-                void GroupVertices()
+                private void GroupVertices()
                 {
                     vertexGroups = new List<VertexGroup>();
                     for (int i = 0; i < vertices.Length; i++)
@@ -1357,7 +1357,7 @@ namespace Dreamteck.Splines
                     }
                 }
 
-                int FindInsertIndex(Vector3 pos, float value)
+                private int FindInsertIndex(Vector3 pos, float value)
                 {
                     int lower = 0;
                     int upper = vertexGroups.Count - 1;
@@ -1372,7 +1372,7 @@ namespace Dreamteck.Splines
                     return lower;
                 }
 
-                void CalculateTangents()
+                private void CalculateTangents()
                 {
                     if (vertices.Length == 0)
                     {

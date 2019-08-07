@@ -57,8 +57,8 @@ namespace SCPE
 
     internal sealed class TiltShiftRenderer : PostProcessEffectRenderer<TiltShift>
     {
-        Shader shader;
-        int screenCopyID;
+        private Shader shader;
+        private int screenCopyID;
 
         public override void Init()
         {

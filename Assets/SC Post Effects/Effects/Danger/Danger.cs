@@ -39,7 +39,7 @@ namespace SCPE
 
     internal sealed class DangerRenderer : PostProcessEffectRenderer<Danger>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

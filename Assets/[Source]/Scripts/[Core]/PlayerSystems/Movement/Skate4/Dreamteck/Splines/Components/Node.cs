@@ -98,17 +98,17 @@ namespace Dreamteck.Splines
 
         private TS_Transform tsTransform;
 
-        void Awake()
+        private void Awake()
         {
             tsTransform = new TS_Transform(transform);
         }
 
-        void LateUpdate()
+        private void LateUpdate()
         {
             Run();
         }
 
-        void Update()
+        private void Update()
         {
             Run();
         }
@@ -171,7 +171,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        void OnDestroy()
+        private void OnDestroy()
         {
             ClearConnections();
         }

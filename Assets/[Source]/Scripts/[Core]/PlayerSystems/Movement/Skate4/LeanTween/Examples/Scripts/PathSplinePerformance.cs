@@ -22,7 +22,7 @@ public class PathSplinePerformance : MonoBehaviour {
 	private float carAdd;
 	private float trackPosition; // ratio 0,1 of the avatars position on the track
 
-	void Start () {
+	private void Start () {
 		Application.targetFrameRate = 240;
 
 		// Make the track from the provided transforms
@@ -49,8 +49,8 @@ public class PathSplinePerformance : MonoBehaviour {
 		// Optional technique to show the trails in game
 		LeanTween.moveSpline( trackTrailRenderers, track, tracerSpeed ).setOrientToPath(true).setRepeat(-1);
 	}
-	
-	void Update () {
+
+	private void Update () {
 		// Switch tracks on keyboard input
 		float turn = Input.GetAxis("Horizontal");
 		if(Input.anyKeyDown){
@@ -76,13 +76,13 @@ public class PathSplinePerformance : MonoBehaviour {
 	}
 
 	// Use this for visualizing what the track looks like in the editor (for a full suite of spline tools check out the LeanTween Editor)
-	void OnDrawGizmos(){
+	private void OnDrawGizmos(){
 		if(track!=null)
 			track.drawGizmo( Color.red );
 	}
 
 	// Make your own LeanAudio sounds at http://leanaudioplay.dentedpixel.com
-	void playSwish(){
+	private void playSwish(){
 		AnimationCurve volumeCurve = new AnimationCurve( new Keyframe(0f, 0.005464481f, 1.83897f, 0f), new Keyframe(0.1114856f, 2.281785f, 0f, 0f), new Keyframe(0.2482903f, 2.271654f, 0f, 0f), new Keyframe(0.3f, 0.01670286f, 0f, 0f));
 		AnimationCurve frequencyCurve = new AnimationCurve( new Keyframe(0f, 0.00136725f, 0f, 0f), new Keyframe(0.1482391f, 0.005405405f, 0f, 0f), new Keyframe(0.2650336f, 0.002480127f, 0f, 0f));
 

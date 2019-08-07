@@ -126,7 +126,7 @@ namespace Dreamteck.Splines
         }
 
 
-        void GenerateVertices()
+        private void GenerateVertices()
         {
             int vertexCount = (_slices + 1) * clippedSamples.Length;
             AllocateMesh(vertexCount, _slices * (clippedSamples.Length-1) * 6);

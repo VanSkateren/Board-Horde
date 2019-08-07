@@ -413,9 +413,9 @@ namespace Dreamteck.Splines
         [HideInInspector]
         private ObjectControl[] spawned = new ObjectControl[0];
 
-        SplineResult evaluateResult = new SplineResult();
+        private SplineResult evaluateResult = new SplineResult();
 
-        System.Random randomizer, randomizer2, rotationRandomizer, scaleRandomizer;
+        private System.Random randomizer, randomizer2, rotationRandomizer, scaleRandomizer;
 
         public void Clear()
         {
@@ -521,7 +521,7 @@ namespace Dreamteck.Splines
         }
 
 
-        IEnumerator InstantiateAllWithDelay()
+        private IEnumerator InstantiateAllWithDelay()
         {
             if (computer == null) yield break;
             if (objects.Length == 0) yield break;

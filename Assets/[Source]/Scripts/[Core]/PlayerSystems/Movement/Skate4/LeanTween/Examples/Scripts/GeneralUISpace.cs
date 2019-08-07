@@ -23,7 +23,7 @@ public class GeneralUISpace : MonoBehaviour {
 
 	public RectTransform rawImageRect;
 
-	void Start () {
+	private void Start () {
 		// Time.timeScale = 1f/4f;
 		
 		// *********** Main Window **********

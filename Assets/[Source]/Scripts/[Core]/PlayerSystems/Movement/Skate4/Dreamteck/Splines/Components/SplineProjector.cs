@@ -138,7 +138,8 @@ namespace Dreamteck.Splines
         [SerializeField]
         [HideInInspector]
         private TS_Transform finalTarget;
-        double traceFromA = -1.0, traceToA = -1.0, traceFromB = -1.0;
+
+        private double traceFromA = -1.0, traceToA = -1.0, traceFromB = -1.0;
 
         [SerializeField]
         [HideInInspector]

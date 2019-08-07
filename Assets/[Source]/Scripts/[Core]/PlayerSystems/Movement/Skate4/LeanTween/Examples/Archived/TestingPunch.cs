@@ -8,13 +8,13 @@ public class TestingPunch : MonoBehaviour {
     public float overShootValue = 1f;
 
     private LTDescr descr;
-	
-	void Start () {
+
+    private void Start () {
 	   //LeanTween.rotateAround(gameObject, gameObject.transform.rotation.eulerAngles, 360f, 5f).setDelay(1f).setEase(LeanTweenType.easeOutBounce);
         Debug.Log( "exported curve:" + curveToString(exportCurve) );
 	}
 
-	void Update () 
+    private void Update () 
     {        
         LeanTween.dtManual = Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Q))
@@ -141,36 +141,36 @@ public class TestingPunch : MonoBehaviour {
         }
 	}
 
-    static void tweenStatically( GameObject gameObject ){
+    private static void tweenStatically( GameObject gameObject ){
         Debug.Log("Starting to tween...");
         LeanTween.value(gameObject, (val)=>{
             Debug.Log("tweening val:"+val);
         }, 0f, 1f, 1f);
     }
 
-    void enterMiniGameStart( object val ){
+    private void enterMiniGameStart( object val ){
         object[] arr = (object [])val;
         int lvl = int.Parse((string)arr[0]);
         Debug.Log("level:"+lvl);
     }
 
-    void updateColor( Color c ){
+    private void updateColor( Color c ){
         GameObject l = GameObject.Find("LCharacter");
         // Debug.Log("new col:"+c);
         l.GetComponent<Renderer>().material.color = c;
     }
 
-    void delayedMethod( object myVal ){
+    private void delayedMethod( object myVal ){
         string castBack = myVal as string;
         Debug.Log("delayed call:"+Time.time +" myVal:"+castBack);
     }
 
-    void destroyOnComp( object p ){
+    private void destroyOnComp( object p ){
       GameObject g = (GameObject)p;
       Destroy( g );
     }
 
-    string curveToString( AnimationCurve curve) {
+    private string curveToString( AnimationCurve curve) {
         string str = "";
         for(int i = 0; i < curve.length; i++){
             str += "new Keyframe("+curve[i].time+"f, "+curve[i].value+"f)";

@@ -135,19 +135,18 @@ namespace SCPE
 
     internal sealed class FogRenderer : PostProcessEffectRenderer<Fog>
     {
+        private Shader shader;
 
-        Shader shader;
-
-        struct MipLevel
+        private struct MipLevel
         {
             internal int down;
             internal int up;
         }
 
-        MipLevel[] m_Pyramid;
-        const int k_MaxPyramidSize = 16;
+        private MipLevel[] m_Pyramid;
+        private const int k_MaxPyramidSize = 16;
 
-        enum Pass
+        private enum Pass
         {
             Prefilter,
             Downsample,

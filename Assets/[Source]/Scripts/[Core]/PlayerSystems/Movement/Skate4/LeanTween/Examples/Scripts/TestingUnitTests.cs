@@ -32,13 +32,13 @@ namespace DentedPixel.LTExamples
         private float timeElapsedIgnoreTimeScale;
         private bool pauseTweenDidFinish = false;
 
-        void Awake()
+        private void Awake()
         {
             boxNoCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
             Destroy(boxNoCollider.GetComponent(typeof(BoxCollider)) as Component);
         }
 
-        void Start()
+        private void Start()
         {
             //          Time.timeScale = 0.25f;
 
@@ -282,7 +282,7 @@ namespace DentedPixel.LTExamples
             return cube;
         }
 
-        IEnumerator timeBasedTesting()
+        private IEnumerator timeBasedTesting()
         {
             yield return new WaitForEndOfFrame();
 
@@ -525,7 +525,7 @@ namespace DentedPixel.LTExamples
             StartCoroutine(lotsOfCancels());
         }
 
-        IEnumerator lotsOfCancels()
+        private IEnumerator lotsOfCancels()
         {
             yield return new WaitForEndOfFrame();
 
@@ -604,7 +604,7 @@ namespace DentedPixel.LTExamples
             StartCoroutine(pauseTimeNow());
         }
 
-        IEnumerator pauseTimeNow()
+        private IEnumerator pauseTimeNow()
         {
             yield return new WaitForSeconds(0.5f);
             Time.timeScale = 0;
@@ -618,26 +618,26 @@ namespace DentedPixel.LTExamples
             }).setUseEstimatedTime(true);
         }
 
-        void rotateRepeatFinished()
+        private void rotateRepeatFinished()
         {
             if (Mathf.Abs(cube3.transform.eulerAngles.z) < 0.0001f)
                 rotateRepeatAngle++;
             rotateRepeat++;
         }
 
-        void rotateRepeatAllFinished()
+        private void rotateRepeatAllFinished()
         {
             LeanTest.expect(rotateRepeatAngle == 3, "ROTATE AROUND MULTIPLE", "expected 3 times received " + rotateRepeatAngle + " times");
             LeanTest.expect(rotateRepeat == 3, "ROTATE REPEAT", "expected 3 times received " + rotateRepeat + " times");
             LeanTest.expect(cube3 == null, "DESTROY ON COMPLETE", "cube3:" + cube3);
         }
 
-        void eventGameObjectCalled(LTEvent e)
+        private void eventGameObjectCalled(LTEvent e)
         {
             eventGameObjectWasCalled = true;
         }
 
-        void eventGeneralCalled(LTEvent e)
+        private void eventGeneralCalled(LTEvent e)
         {
             eventGeneralWasCalled = true;
         }

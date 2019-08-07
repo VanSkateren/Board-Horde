@@ -31,7 +31,7 @@ namespace SCPE
 
     internal sealed class PixelizeRenderer : PostProcessEffectRenderer<Pixelize>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

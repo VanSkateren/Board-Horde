@@ -18,7 +18,7 @@ public class GeneralAdvancedTechniques : MonoBehaviour {
 	private Vector3[] circleLrg = new Vector3[]{ new Vector3(25f,0f,0f), new Vector3(22.76418f,12.51472f,0f), new Vector3(24.94595f,7.247467f,0f), new Vector3(17.67767f,17.67767f,0f), new Vector3(17.67767f,17.67767f,0f), new Vector3(7.247467f,24.94595f,0f), new Vector3(12.51471f,22.76418f,0f), new Vector3(-1.092785E-06f,25f,0f), new Vector3(-1.092785E-06f,25f,0f), new Vector3(-12.51472f,22.76418f,0f), new Vector3(-7.247468f,24.94594f,0f), new Vector3(-17.67767f,17.67767f,0f), new Vector3(-17.67767f,17.67767f,0f), new Vector3(-24.94594f,7.247468f,0f), new Vector3(-22.76418f,12.51471f,0f), new Vector3(-25f,-2.185569E-06f,0f), new Vector3(-25f,-2.185569E-06f,0f), new Vector3(-22.76418f,-12.51472f,0f), new Vector3(-24.94594f,-7.247472f,0f), new Vector3(-17.67767f,-17.67767f,0f), new Vector3(-17.67767f,-17.67767f,0f), new Vector3(-7.247469f,-24.94594f,0f), new Vector3(-12.51471f,-22.76418f,0f), new Vector3(2.98122E-07f,-25f,0f), new Vector3(2.98122E-07f,-25f,0f), new Vector3(12.51472f,-22.76418f,0f), new Vector3(7.24747f,-24.94594f,0f), new Vector3(17.67768f,-17.67766f,0f), new Vector3(17.67768f,-17.67766f,0f), new Vector3(24.94595f,-7.247465f,0f), new Vector3(22.76418f,-12.51472f,0f), new Vector3(25f,4.371139E-06f,0f) };
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
 		// Recursion - Set a objects value and have it recursively effect it's children
 		LeanTween.alpha( avatarRecursive, 0f, 1f).setRecursive(true).setLoopPingPong();
 		LeanTween.alpha( avatar2dRecursive, 0f, 1f).setRecursive(true).setLoopPingPong();

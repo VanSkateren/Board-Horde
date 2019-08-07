@@ -99,7 +99,7 @@ namespace Dreamteck.Splines
             if (autoFollow && !autoStartPosition) ApplyMotion();
         }
 
-        void AutoFollow()
+        private void AutoFollow()
         {
             switch (followMode)
             {

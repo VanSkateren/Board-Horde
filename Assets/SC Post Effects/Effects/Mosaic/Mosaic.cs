@@ -43,7 +43,7 @@ namespace SCPE
 
     internal sealed class MosaicRenderer : PostProcessEffectRenderer<Mosaic>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

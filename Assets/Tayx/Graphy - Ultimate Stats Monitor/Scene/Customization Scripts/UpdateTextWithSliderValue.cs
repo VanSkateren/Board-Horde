@@ -41,7 +41,7 @@ namespace Tayx.Graphy.CustomizationScene
 
         #region Methods -> Unity Callbacks
 
-        void Start()
+		private void Start()
 		{
 			m_text = GetComponent<Text>();
 

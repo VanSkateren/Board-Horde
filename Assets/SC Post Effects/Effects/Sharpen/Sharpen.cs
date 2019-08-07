@@ -36,7 +36,7 @@ namespace SCPE
 
     internal sealed class SharpenRenderer : PostProcessEffectRenderer<Sharpen>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

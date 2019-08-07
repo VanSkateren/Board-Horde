@@ -9,7 +9,7 @@ namespace KinematicCharacterController.Examples
         public Rigidbody ToLaunch;
         public float Force;
 
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {

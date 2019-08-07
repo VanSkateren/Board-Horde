@@ -59,7 +59,7 @@ namespace SCPE
 
     internal sealed class LUTRenderer : PostProcessEffectRenderer<LUT>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

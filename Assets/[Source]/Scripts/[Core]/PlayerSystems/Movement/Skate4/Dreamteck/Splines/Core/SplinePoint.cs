@@ -39,7 +39,7 @@ namespace Dreamteck.Splines{
             return result;
         }
 
-        static void GetInterpolatedTangents(SplinePoint a, SplinePoint b, float t, out Vector3 t1, out Vector3 t2)
+        private static void GetInterpolatedTangents(SplinePoint a, SplinePoint b, float t, out Vector3 t1, out Vector3 t2)
         {
             Vector3 P0_1 = (1f - t) * a.position + t * a.tangent2;
             Vector3 P1_2 = (1f - t) * a.tangent2 + t * b.tangent;

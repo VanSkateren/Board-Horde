@@ -174,8 +174,8 @@ namespace Dreamteck.Splines
         private bool _hasStartMesh = false;
         private bool _hasEndMesh = false;
 
-        Matrix4x4 vertexMatrix = new Matrix4x4();
-        Matrix4x4 normalMatrix = new Matrix4x4();
+        private Matrix4x4 vertexMatrix = new Matrix4x4();
+        private Matrix4x4 normalMatrix = new Matrix4x4();
 
         public bool hasAnyMesh
         {
@@ -335,7 +335,7 @@ namespace Dreamteck.Splines
             Rebuild(false);
         }
 
-        void CheckMeshes()
+        private void CheckMeshes()
         {
             _hasAnyMesh = false;
             _hasStartMesh = false;
@@ -378,7 +378,7 @@ namespace Dreamteck.Splines
             Generate();
         }
 
-        void Generate()
+        private void Generate()
         {
             random = new System.Random(_randomSeed);
             useLastResult = false;
@@ -537,7 +537,7 @@ namespace Dreamteck.Splines
         /// <summary>
         /// Creates the mesh array that will be referenced when extruding the meshes. Elements 0 and 1 are the start and end cap meshes
         /// </summary>
-        void UpdateExtrudableMeshes()
+        private void UpdateExtrudableMeshes()
         {
             iterations = 0;
             if (_startMesh != null) iterations++;
@@ -566,7 +566,7 @@ namespace Dreamteck.Splines
             UpdateEndExtrudeMesh();
         }
 
-        void UpdateStartExtrudeMesh()
+        private void UpdateStartExtrudeMesh()
         {
             MirrorMethod lastMirror = MirrorMethod.None;
             if (extrudableMeshes[0] != null) lastMirror = extrudableMeshes[0].mirror;
@@ -583,7 +583,7 @@ namespace Dreamteck.Splines
             if (extrudableMeshes[0] != null) extrudableMeshes[0].mirror = lastMirror;
         }
 
-        void UpdateEndExtrudeMesh()
+        private void UpdateEndExtrudeMesh()
         {
             MirrorMethod lastMirror = MirrorMethod.None;
             lastMirror = MirrorMethod.None;
@@ -774,7 +774,7 @@ namespace Dreamteck.Splines
                 CalculateTangents();
             }
 
-            void GroupVertices(Axis axis)
+            private void GroupVertices(Axis axis)
             {
                 vertexGroups = new List<VertexGroup>();
                 int ax = (int)axis;
@@ -803,7 +803,7 @@ namespace Dreamteck.Splines
                 }
             }
 
-            int FindInsertIndex(Vector3 pos, float value)
+            private int FindInsertIndex(Vector3 pos, float value)
             {
                 int lower = 0;
                 int upper = vertexGroups.Count - 1;
@@ -818,7 +818,7 @@ namespace Dreamteck.Splines
                 return lower;
             }
 
-            void CalculateTangents()
+            private void CalculateTangents()
             {
                 if (vertices.Length == 0)
                 {

@@ -68,10 +68,10 @@ namespace SCPE
 
     public sealed class LensFlaresRenderer : PostProcessEffectRenderer<LensFlares>
     {
-        Shader shader;
+        private Shader shader;
         private int emissionTex;
         private int flaresTex;
-        RenderTexture aoRT;
+        private RenderTexture aoRT;
 
         public override void Init()
         {
@@ -85,7 +85,7 @@ namespace SCPE
             base.Release();
         }
 
-        enum Pass
+        private enum Pass
         {
             LuminanceDiff,
             Ghosting,

@@ -16,7 +16,7 @@ namespace Dreamteck.Splines
         }
 #endif
 
-        void Start()
+private void Start()
         {
             //Write initialization code here
         }

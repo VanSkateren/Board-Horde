@@ -143,7 +143,7 @@ public class NGSS_Directional : MonoBehaviour
         }
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         isInitialized = false;
 
@@ -158,7 +158,7 @@ public class NGSS_Directional : MonoBehaviour
         }
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         if (IsNotSupported())
         {
@@ -170,7 +170,7 @@ public class NGSS_Directional : MonoBehaviour
         Init();
     }
 
-    void Init()
+    private void Init()
     {
         if (isInitialized) { return; }
 
@@ -188,7 +188,7 @@ public class NGSS_Directional : MonoBehaviour
         isInitialized = true;
     }
 
-    bool IsNotSupported()
+    private bool IsNotSupported()
     {
 #if UNITY_2018_1_OR_NEWER
         return (SystemInfo.graphicsDeviceType == GraphicsDeviceType.OpenGLES2);
@@ -199,7 +199,7 @@ public class NGSS_Directional : MonoBehaviour
 #endif
     }
 
-    void Update()
+    private void Update()
     {
         if (Application.isPlaying && NGSS_NO_UPDATE_ON_PLAY && isSetup) { return; }
 

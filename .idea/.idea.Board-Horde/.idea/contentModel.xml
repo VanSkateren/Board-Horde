@@ -357,6 +357,15 @@
                     <e p="KartController.cs" t="Include" />
                   </e>
                   <e p="Skateboard.cs" t="Include" />
+                  <e p="Wheel" t="Include">
+                    <e p="Editor" t="Include">
+                      <e p="WheelControllerInspector.cs" t="Include" />
+                    </e>
+                    <e p="WheelController.API.cs" t="Include" />
+                    <e p="WheelController.cs" t="Include" />
+                    <e p="WheelController.Debug.cs" t="Include" />
+                    <e p="WheelController.FrictionPreset.cs" t="Include" />
+                  </e>
                 </e>
               </e>
               <e p="Utilities" t="Include">
@@ -2055,6 +2064,18 @@
             <e p="version.txt" t="Include" />
           </e>
         </e>
+        <e p="Samples" t="Include">
+          <e p="Polybrush" t="Include">
+            <e p="1.0.0" t="Include">
+              <e p="Shader Examples (Standard)" t="Include">
+                <e p="Shader" t="Include">
+                  <e p="StandardTextureBlend.shader" t="Include" />
+                  <e p="StandardVertexColor.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="SC Post Effects" t="Include">
           <e p="_Demo" t="Include">
             <e p="Scripts" t="Include">
@@ -2064,11 +2085,6 @@
             </e>
             <e p="Textures" t="Include">
               <e p="License.txt" t="Include" />
-            </e>
-          </e>
-          <e p="_Samples" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="VolumeTrigger.cs" t="Include" />
             </e>
           </e>
           <e p="Changelog.txt" t="Include" />

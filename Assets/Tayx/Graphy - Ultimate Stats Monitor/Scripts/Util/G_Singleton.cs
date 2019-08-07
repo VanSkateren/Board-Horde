@@ -104,7 +104,7 @@ namespace Tayx.Graphy.Utils
 
         #region Methods -> Unity Callbacks
 
-        void Awake()
+        private void Awake()
         {
             if (_instance != null)
             {
@@ -125,7 +125,7 @@ namespace Tayx.Graphy.Utils
         ///   even after stopping playing the Application. Really bad!
         /// So, this was made to be sure we're not creating that buggy ghost object.
         /// </summary>
-        void OnDestroy()
+        private void OnDestroy()
         {
             _applicationIsQuitting = true;
         }

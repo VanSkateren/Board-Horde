@@ -60,7 +60,8 @@ namespace DG.Tweening
 
         /// <summary>Used internally by the editor</summary>
         public static event Action<DOTweenAnimation> OnReset;
-        static void Dispatch_OnReset(DOTweenAnimation anim) { if (OnReset != null) OnReset(anim); }
+
+        private static void Dispatch_OnReset(DOTweenAnimation anim) { if (OnReset != null) OnReset(anim); }
 
         #endregion
 
@@ -105,12 +106,12 @@ namespace DG.Tweening
         public ScrambleMode optionalScrambleMode = ScrambleMode.None;
         public string optionalString;
 
-        bool _tweenCreated; // TRUE after the tweens have been created
-        int _playCount = -1; // Used when calling DOPlayNext
+        private bool _tweenCreated; // TRUE after the tweens have been created
+        private int _playCount = -1; // Used when calling DOPlayNext
 
         #region Unity Methods
 
-        void Awake()
+        private void Awake()
         {
             if (!isActive || !isValid) return;
 
@@ -122,7 +123,7 @@ namespace DG.Tweening
             }
         }
 
-        void Start()
+        private void Start()
         {
             if (_tweenCreated || !isActive || !isValid) return;
 
@@ -130,12 +131,12 @@ namespace DG.Tweening
             _tweenCreated = true;
         }
 
-        void Reset()
+        private void Reset()
         {
             Dispatch_OnReset(this);
         }
 
-        void OnDestroy()
+        private void OnDestroy()
         {
             if (tween != null && tween.IsActive()) tween.Kill();
             tween = null;
@@ -677,13 +678,13 @@ namespace DG.Tweening
         #region Private
 
         // Returns the gameObject whose target component should be animated
-        GameObject GetTweenGO()
+        private GameObject GetTweenGO()
         {
             return targetIsSelf ? this.gameObject : targetGO;
         }
 
         // Re-evaluate relative position of path
-        void ReEvaluateRelativeTween()
+        private void ReEvaluateRelativeTween()
         {
             GameObject tweenGO = GetTweenGO();
             if (tweenGO == null) {

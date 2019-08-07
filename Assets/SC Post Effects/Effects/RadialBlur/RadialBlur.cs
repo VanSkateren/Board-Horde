@@ -39,7 +39,7 @@ namespace SCPE
 
     internal sealed class RadialBlurRenderer : PostProcessEffectRenderer<RadialBlur>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

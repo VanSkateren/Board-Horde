@@ -38,7 +38,7 @@ namespace KinematicCharacterController.Examples
             _isFixedUpdateThisFrame = true;
         }
 
-        void Update()
+        private void Update()
         {
             // Regular frames
             _framesCount++;

@@ -224,7 +224,8 @@ namespace DG.Tweening
             public override bool keepWaiting { get {
                 return t.active && !t.IsComplete();
             }}
-            readonly Tween t;
+
+            private readonly Tween t;
             public WaitForCompletion(Tween tween)
             {
                 t = tween;
@@ -236,7 +237,8 @@ namespace DG.Tweening
             public override bool keepWaiting { get {
                 return t.active && (!t.playedOnce || t.position * (t.CompletedLoops() + 1) > 0);
             }}
-            readonly Tween t;
+
+            private readonly Tween t;
             public WaitForRewind(Tween tween)
             {
                 t = tween;
@@ -248,7 +250,8 @@ namespace DG.Tweening
             public override bool keepWaiting { get {
                 return t.active;
             }}
-            readonly Tween t;
+
+            private readonly Tween t;
             public WaitForKill(Tween tween)
             {
                 t = tween;
@@ -260,8 +263,9 @@ namespace DG.Tweening
             public override bool keepWaiting { get {
                 return t.active && t.CompletedLoops() < elapsedLoops;
             }}
-            readonly Tween t;
-            readonly int elapsedLoops;
+
+            private readonly Tween t;
+            private readonly int elapsedLoops;
             public WaitForElapsedLoops(Tween tween, int elapsedLoops)
             {
                 t = tween;
@@ -274,8 +278,9 @@ namespace DG.Tweening
             public override bool keepWaiting { get {
                 return t.active && t.position * (t.CompletedLoops() + 1) < position;
             }}
-            readonly Tween t;
-            readonly float position;
+
+            private readonly Tween t;
+            private readonly float position;
             public WaitForPosition(Tween tween, float position)
             {
                 t = tween;
@@ -288,7 +293,8 @@ namespace DG.Tweening
             public override bool keepWaiting { get {
                 return t.active && !t.playedOnce;
             }}
-            readonly Tween t;
+
+            private readonly Tween t;
             public WaitForStart(Tween tween)
             {
                 t = tween;

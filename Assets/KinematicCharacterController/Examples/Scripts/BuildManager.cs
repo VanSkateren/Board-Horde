@@ -7,7 +7,7 @@ public class BuildManager : MonoBehaviour
     public GameObject WebGLCanvas;
     public GameObject WarningPanel;
 
-    void Awake()
+    private void Awake()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
         WebGLCanvas.SetActive(true);

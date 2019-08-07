@@ -56,8 +56,7 @@ namespace SCPE
 
     internal sealed class CloudShadowsRenderer : PostProcessEffectRenderer<CloudShadows>
     {
-
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

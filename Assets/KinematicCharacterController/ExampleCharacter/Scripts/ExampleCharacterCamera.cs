@@ -53,13 +53,13 @@ namespace KinematicCharacterController.Examples
 
         private const int MaxObstructions = 32;
 
-        void OnValidate()
+        private void OnValidate()
         {
             DefaultDistance = Mathf.Clamp(DefaultDistance, MinDistance, MaxDistance);
             DefaultVerticalAngle = Mathf.Clamp(DefaultVerticalAngle, MinVerticalAngle, MaxVerticalAngle);
         }
 
-        void Awake()
+        private void Awake()
         {
             Transform = this.transform;
 

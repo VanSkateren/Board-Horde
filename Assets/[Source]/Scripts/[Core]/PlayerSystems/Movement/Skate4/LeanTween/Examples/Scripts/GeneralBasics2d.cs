@@ -9,7 +9,7 @@ public class GeneralBasics2d : MonoBehaviour {
 
 	#if !(UNITY_3_5 || UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2)
 
-	void Start () {
+	private void Start () {
 		// Setup
 		GameObject avatarRotate = createSpriteDude( "avatarRotate", new Vector3(-2.51208f,10.7119f,-14.37754f));
 		GameObject avatarScale = createSpriteDude( "avatarScale", new Vector3(2.51208f,10.2119f,-14.37754f));
@@ -34,8 +34,8 @@ public class GeneralBasics2d : MonoBehaviour {
 		// Call methods after a certain time period
 		LeanTween.delayedCall(gameObject, 0.2f, advancedExamples);
 	}
-	
-	GameObject createSpriteDude( string name, Vector3 pos, bool hasParticles = true ){
+
+	private GameObject createSpriteDude( string name, Vector3 pos, bool hasParticles = true ){
 		GameObject go = new GameObject(name);
 		SpriteRenderer ren = go.AddComponent<SpriteRenderer>();
 		go.GetComponent<SpriteRenderer>().color = new Color(0f,181f/255f,1f);
@@ -53,7 +53,7 @@ public class GeneralBasics2d : MonoBehaviour {
 	// Advanced Examples
 	// It might be best to master the basics first, but this is included to tease the many possibilies LeanTween provides.
 
-	void advancedExamples(){
+	private void advancedExamples(){
 		LeanTween.delayedCall(gameObject, 14f, ()=>{
 			for(int i=0; i < 10; i++){
 				// Instantiate Container

@@ -25,7 +25,7 @@ public class PathSplineEndless : MonoBehaviour {
 	private float pushTrackAhead = 0f;
 	private float randomIter = 0f;
 
-	void Start () {
+	private void Start () {
 
 		// Setup initial track points
 		for(int i = 0; i < 4; i++){
@@ -38,8 +38,8 @@ public class PathSplineEndless : MonoBehaviour {
 			pushTrackAhead = val;
 		});
 	}
-	
-	void Update () {
+
+	private void Update () {
 
 		float zLastDist = (trackPts[ trackPts.Count - 1].z - transform.position.z);
 		if(zLastDist < 200f){ // if the last node is too close we'll add in a new point and refresh the spline
@@ -71,7 +71,7 @@ public class PathSplineEndless : MonoBehaviour {
 	}
 
 	// Simple object queuing system
-	GameObject objectQueue( GameObject[] arr, ref int lastIter ){
+	private GameObject objectQueue( GameObject[] arr, ref int lastIter ){
 		lastIter = lastIter>=arr.Length-1 ? 0 : lastIter+1;
 		
 		// Reset scale and rotation for a new animation
@@ -80,7 +80,7 @@ public class PathSplineEndless : MonoBehaviour {
 		return arr[ lastIter ];
 	}
 
-	void addRandomTrackPoint(){
+	private void addRandomTrackPoint(){
 		float randX = Mathf.PerlinNoise(0f, randomIter);
 		randomIter += randomIterWidth;
 
@@ -105,7 +105,7 @@ public class PathSplineEndless : MonoBehaviour {
 		zIter++;
 	}
 
-	void refreshSpline(){
+	private void refreshSpline(){
 		track = new LTSpline( trackPts.ToArray() );
 		carIter = track.ratioAtPoint( car.transform.position ); // we created a new spline so we need to update the cars iteration point on this new spline
 		// Debug.Log("distance:"+track.distance+" carIter:"+carIter);
@@ -113,7 +113,7 @@ public class PathSplineEndless : MonoBehaviour {
 	}
 
 	// Make your own LeanAudio sounds at http://leanaudioplay.dentedpixel.com
-	void playSwish(){
+	private void playSwish(){
 		AnimationCurve volumeCurve = new AnimationCurve( new Keyframe(0f, 0.005464481f, 1.83897f, 0f), new Keyframe(0.1114856f, 2.281785f, 0f, 0f), new Keyframe(0.2482903f, 2.271654f, 0f, 0f), new Keyframe(0.3f, 0.01670286f, 0f, 0f));
 		AnimationCurve frequencyCurve = new AnimationCurve( new Keyframe(0f, 0.00136725f, 0f, 0f), new Keyframe(0.1482391f, 0.005405405f, 0f, 0f), new Keyframe(0.2650336f, 0.002480127f, 0f, 0f));
 

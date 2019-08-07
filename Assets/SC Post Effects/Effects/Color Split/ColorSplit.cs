@@ -45,7 +45,7 @@ namespace SCPE
 
     internal sealed class ColorSplitRenderer : PostProcessEffectRenderer<ColorSplit>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {
