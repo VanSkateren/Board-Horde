@@ -22,6 +22,18 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   activeScene:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  sceneAssets: []
+    sceneAsset: {fileID: 102900000, guid: b253397a4bfe8844fb4f2672339a7448, type: 3}
+    scenePath: Assets/[Source]/Scenes/Main/Gameplay_Main.unity
+  sceneAssets:
+  - asset:
+      sceneAsset: {fileID: 102900000, guid: 76c68125135e07549ad28c5c829dc318, type: 3}
+      scenePath: Assets/[Source]/Scenes/Main/Lighting_Main.unity
+    loadScene: 1
+  - asset:
+      sceneAsset: {fileID: 102900000, guid: 489f9a6c9ab905049a5629fa7bac342d, type: 3}
+      scenePath: Assets/[Source]/Scenes/Main/Environment_Main.unity
+    loadScene: 1
+  - asset:
+      sceneAsset: {fileID: 102900000, guid: b253397a4bfe8844fb4f2672339a7448, type: 3}
+      scenePath: Assets/[Source]/Scenes/Main/Gameplay_Main.unity
+    loadScene: 1

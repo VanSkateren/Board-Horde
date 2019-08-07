@@ -46,7 +46,7 @@ namespace Sirenix.OdinInspector.Editor.Drawers
                     .HasNoParameters()
                     .TryGetMember(out member, out this.errorMessage))
                 {
-                    System.Type type = member.GetReturnType();
+                    var type = member.GetReturnType();
                     if (type == typeof(int))
                     {
                         this.intMinGetter = new InspectorPropertyValueGetter<int>(this.Property, this.Attribute.MinMember);
@@ -66,7 +66,7 @@ namespace Sirenix.OdinInspector.Editor.Drawers
                     .HasNoParameters()
                     .TryGetMember(out member, out this.errorMessage))
                 {
-                    System.Type type = member.GetReturnType();
+                    var type = member.GetReturnType();
                     if (type == typeof(int))
                     {
                         this.intMaxGetter = new InspectorPropertyValueGetter<int>(this.Property, this.Attribute.MaxMember);

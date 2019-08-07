@@ -22,15 +22,15 @@ namespace Sirenix.Utilities
         [InitializeOnLoadMethod]
         private static void AssureScriptingDefineSymbol()
         {
-            BuildTargetGroup currentTarget = EditorUserBuildSettings.selectedBuildTargetGroup;
+            var currentTarget = EditorUserBuildSettings.selectedBuildTargetGroup;
 
             if (currentTarget == BuildTargetGroup.Unknown)
             {
                 return;
             }
 
-            string definesString = PlayerSettings.GetScriptingDefineSymbolsForGroup(currentTarget).Trim();
-            string[] defines = definesString.Split(';');
+            var definesString = PlayerSettings.GetScriptingDefineSymbolsForGroup(currentTarget).Trim();
+            var defines = definesString.Split(';');
 
             if (defines.Contains(DEFINE) == false)
             {

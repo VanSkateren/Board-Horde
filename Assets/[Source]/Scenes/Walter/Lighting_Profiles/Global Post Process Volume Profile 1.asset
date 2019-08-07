@@ -12,34 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aca6b5f0da8ca64cb69109b860c1891, type: 3}
   m_Name: LightStreaks
   m_EditorClassIdentifier: 
-  active: 0
-  enabled:
-    overrideState: 1
-    value: 1
-  quality:
-    overrideState: 1
-    value: 1
-  debug:
-    overrideState: 1
-    value: 0
-  intensity:
-    overrideState: 1
-    value: 1
-  luminanceThreshold:
-    overrideState: 0
-    value: 1
-  direction:
-    overrideState: 0
-    value: -1
-  blur:
-    overrideState: 0
-    value: 1
-  iterations:
-    overrideState: 0
-    value: 2
-  downscaling:
-    overrideState: 0
-    value: 2
 --- !u!114 &-5243224539355023254
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -78,19 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9088dd6886f40464899c14cceff9fb5d, type: 3}
   m_Name: BlackBars
   m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  mode:
-    overrideState: 1
-    value: 0
-  size:
-    overrideState: 1
-    value: 1
-  maxSize:
-    overrideState: 1
-    value: 0.1
 --- !u!114 &-3909086493907559030
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -191,7 +150,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 0
+    value: 15
   tint:
     overrideState: 0
     value: 0
@@ -209,7 +168,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: 1
+    value: 0.8
   contrast:
     overrideState: 1
     value: 5
@@ -1461,51 +1420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77cf0493be372ef4d91d2ba45ed0ba64, type: 3}
   m_Name: LensFlares
   m_EditorClassIdentifier: 
-  active: 0
-  enabled:
-    overrideState: 1
-    value: 1
-  debug:
-    overrideState: 0
-    value: 0
-  intensity:
-    overrideState: 1
-    value: 0.5
-  luminanceThreshold:
-    overrideState: 0
-    value: 1
-  iterations:
-    overrideState: 0
-    value: 2
-  distance:
-    overrideState: 0
-    value: 1.5
-  falloff:
-    overrideState: 0
-    value: 10
-  haloSize:
-    overrideState: 0
-    value: 0
-  haloWidth:
-    overrideState: 0
-    value: 70
-  maskTex:
-    overrideState: 1
-    value: {fileID: 2800000, guid: b0860ff85f5d4e040b7596fafe2d7c8f, type: 3}
-    defaultState: 1
-  chromaticAbberation:
-    overrideState: 1
-    value: 10
-  colorTex:
-    overrideState: 1
-    value: {fileID: 2800000, guid: af4273a5206164b4fa126b91bc0f5e78, type: 3}
-    defaultState: 1
-  blur:
-    overrideState: 0
-    value: 2
-  passes:
-    overrideState: 0
-    value: 3
 --- !u!114 &-2217884456712462218
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1552,13 +1466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab22b3400d2f8464d9d467a4e5f30570, type: 3}
   m_Name: Sharpen
   m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  amount:
-    overrideState: 1
-    value: 0.5
 --- !u!114 &-1233965318089663776
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1571,43 +1478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e1b3a3f18dad1429c9ecc7e1db2274, type: 3}
   m_Name: Sunshafts
   m_EditorClassIdentifier: 
-  active: 0
-  enabled:
-    overrideState: 1
-    value: 1
-  useCasterColor:
-    overrideState: 1
-    value: 1
-  useCasterIntensity:
-    overrideState: 1
-    value: 0
-  blendMode:
-    overrideState: 1
-    value: 1
-  resolution:
-    overrideState: 1
-    value: 2
-  highQuality:
-    overrideState: 1
-    value: 1
-  sunThreshold:
-    overrideState: 1
-    value: {r: 0, g: 0, b: 0, a: 1}
-  sunColor:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
-  sunShaftIntensity:
-    overrideState: 1
-    value: 15.06
-  falloff:
-    overrideState: 1
-    value: 0.5
-  length:
-    overrideState: 1
-    value: 10
-  noiseStrength:
-    overrideState: 0
-    value: 0
 --- !u!114 &-559662157468298024
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1676,16 +1546,9 @@ MonoBehaviour:
   - {fileID: 1510607306728078212}
   - {fileID: -3909086493907559030}
   - {fileID: -3440735941035805212}
-  - {fileID: -2420356338098904458}
-  - {fileID: -1489213119492975439}
-  - {fileID: 6090123061623930953}
-  - {fileID: -6357493082597432120}
-  - {fileID: 2622934929856154590}
   - {fileID: -2217884456712462218}
   - {fileID: 2467046513072996005}
   - {fileID: 5906963576897872943}
-  - {fileID: -4490843520569874377}
-  - {fileID: -1233965318089663776}
 --- !u!114 &1510607306728078212
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1770,26 +1633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74b981ab35fcb1468c7aaf9752b24e1, type: 3}
   m_Name: CloudShadows
   m_EditorClassIdentifier: 
-  active: 0
-  enabled:
-    overrideState: 1
-    value: 1
-  texture:
-    overrideState: 1
-    value: {fileID: 2800000, guid: 32ef32965c344ed4c9af86f0dc15661a, type: 3}
-    defaultState: 1
-  size:
-    overrideState: 1
-    value: 0.5
-  density:
-    overrideState: 1
-    value: 0.5
-  speed:
-    overrideState: 1
-    value: 0.3
-  direction:
-    overrideState: 1
-    value: {x: 0.25, y: 1}
 --- !u!114 &2891505536406034628
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1852,19 +1695,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8c351b9ce52154fba0d0580007d570, type: 3}
   m_Name: Kuwahara
   m_EditorClassIdentifier: 
-  active: 0
-  enabled:
-    overrideState: 1
-    value: 1
-  mode:
-    overrideState: 0
-    value: 0
-  radius:
-    overrideState: 0
-    value: 5
-  invertFadeDistance:
-    overrideState: 0
-    value: 0
-  fadeDistance:
-    overrideState: 0
-    value: 1000

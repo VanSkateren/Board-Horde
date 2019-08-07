@@ -35,15 +35,15 @@ namespace Sirenix.OdinInspector.Editor
                 return;
             }
 
-            string assemblyDir = SirenixAssetPaths.SirenixAssembliesPath;
-            string aotDir = assemblyDir + "NoEmitAndNoEditor/";
-            string jitDir = assemblyDir + "NoEditor/";
-            List<string> aotAssemblies = new List<string>();
-            List<string> jitAssemblies = new List<string>();
-            string[] paths = AssetDatabase.GetAllAssetPaths();
+            var assemblyDir = SirenixAssetPaths.SirenixAssembliesPath;
+            var aotDir = assemblyDir + "NoEmitAndNoEditor/";
+            var jitDir = assemblyDir + "NoEditor/";
+            var aotAssemblies = new List<string>();
+            var jitAssemblies = new List<string>();
+            var paths = AssetDatabase.GetAllAssetPaths();
             for (int i = 0; i < paths.Length; i++)
             {
-                string p = paths[i];
+                var p = paths[i];
                 if (p.StartsWith(assemblyDir))
                 {
                     if (!p.EndsWith(".dll", System.StringComparison.InvariantCultureIgnoreCase)) continue;
@@ -61,7 +61,7 @@ namespace Sirenix.OdinInspector.Editor
             AssetDatabase.StartAssetEditing();
             try
             {
-                BuildTarget platform = EditorUserBuildSettings.activeBuildTarget;
+                var platform = EditorUserBuildSettings.activeBuildTarget;
 
                 if (AssemblyImportSettingsUtilities.IsJITSupported(
                     platform,
