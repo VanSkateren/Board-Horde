@@ -2,135 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="198e5302-eabe-4f29-a307-3bb7cdbfaf60" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Clouds.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Clouds/SCPE_Clouds_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Clouds/SCPE_Clouds_01.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Clouds/SCPE_Clouds_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Clouds/SCPE_Clouds_02.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_BloodSplatter1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_BloodSplatter1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_BloodSplatter2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_BloodSplatter2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_BloodSplatter3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_BloodSplatter3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_BloodSplatter4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_BloodSplatter4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_Frost.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_Frost.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_Ice.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Danger/SCPE_Ice.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherBayern16x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherBayern16x16.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherBayern4x4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherBayern4x4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherBlueNoise.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherBlueNoise.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherDots.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherDots.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherHalftone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherHalftone.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherPerlin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherPerlin.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherStripes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherStripes.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherWeave.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/DitheringPaterns/DitherWeave.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/FogGradient.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/FogGradient.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/GameboyGradient.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/GameboyGradient.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/LensflareGradient.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/LensflareGradient.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/NightVisionGradient.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/NightVisionGradient.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/RainbowGradient.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/RainbowGradient.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/ThermalGradient.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Gradients/ThermalGradient.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/Araphao.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/Araphao.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/Aspen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/Aspen.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/Humble.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/Humble.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/Sedona.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/Sedona.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/_Neutral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/LUT/_Neutral.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Lensflares.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Lensflares/LensflareMask1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Lensflares/LensflareMask1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Noise.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Noise/AnisotropicNoise.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Noise/AnisotropicNoise.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Noise/FogNoise.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Noise/FogNoise.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Noise/SpeedNoise.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Noise/SpeedNoise.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Overlays.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Overlays/SCPE_Binoculars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Overlays/SCPE_Binoculars.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Overlays/SCPE_SciFiHelmet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Overlays/SCPE_SciFiHelmet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Comic.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Comic.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_NightVision.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_NightVision.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Painterly.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Painterly.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Psychedelic.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Psychedelic.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Retro.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Retro.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Underwater.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Profiles/SCPE_Underwater.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_ClearIce.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_ClearIce.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_CrackedGlass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_CrackedGlass.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_Frost.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_Frost.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_Scratches.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_Scratches.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_Shards.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_Shards.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_WaterDrops.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/RefractionMaps/SCPE_WaterDrops.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Scripts/VolumeTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/Scripts/VolumeTrigger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/SketchStrokes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/SketchStrokes/Sketch_Charcoal_RG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/SketchStrokes/Sketch_Charcoal_RG.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/SketchStrokes/Sketch_Lines_RG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/SketchStrokes/Sketch_Lines_RG.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/SketchStrokes/Sketch_Strokes_RG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Samples/SketchStrokes/Sketch_Strokes_RG.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Art/Meshes/Skateboard/Skateboard.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Art/Meshes/Skateboard/Skateboard.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Environment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Environment.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Lighting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Lighting.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Managers.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Managers.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-5550">
@@ -343,6 +218,31 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+              <folding>
+                <marker date="1565215568099" expanded="false" signature="6:66" ph="..." />
+                <marker date="1565215568099" expanded="true" signature="99:6037" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="158:6035" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="173:289" ph="/// Visual representation of the wheel and it's more important Vectors. ... " />
+                <marker date="1565215568099" expanded="true" signature="325:4704" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="1070:1441" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="1126:1427" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="1735:4694" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="2550:4680" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="2802:3067" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="3124:3588" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="4714:4863" ph="/// Draw a wheel radius on both side of the wheel, interconected with lines perpendicular to wheel axle. ... " />
+                <marker date="1565215568099" expanded="true" signature="4988:6029" ph="{...}" />
+                <marker date="1565215568099" expanded="true" signature="5345:6019" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -439,7 +339,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="454">
-              <caret line="333" column="50" lean-forward="true" selection-start-line="333" selection-start-column="50" selection-end-line="333" selection-end-column="50" />
+              <caret line="333" column="50" selection-start-line="333" selection-start-column="50" selection-end-line="333" selection-end-column="50" />
               <folding>
                 <marker date="1565214901746" expanded="true" signature="6:471" ph="..." />
                 <marker date="1565214901746" expanded="true" signature="511:16200" ph="{...}" />
@@ -541,6 +441,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.EncodedAudio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -551,6 +452,7 @@
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs" />
       </list>
     </option>
   </component>
@@ -561,9 +463,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1666" />
-    <option name="y" value="243" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
   </component>
@@ -630,12 +532,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1565169207202</updated>
-      <workItem from="1565169216130" duration="11735000" />
+      <workItem from="1565169216130" duration="12956000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11735000" />
+    <option name="totallyTimeSpent" value="12956000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -647,7 +549,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -865,7 +767,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
-          <caret line="333" column="50" lean-forward="true" selection-start-line="333" selection-start-column="50" selection-end-line="333" selection-end-column="50" />
+          <caret line="333" column="50" selection-start-line="333" selection-start-column="50" selection-end-line="333" selection-end-column="50" />
           <folding>
             <marker date="1565214901746" expanded="true" signature="6:471" ph="..." />
             <marker date="1565214901746" expanded="true" signature="511:16200" ph="{...}" />
@@ -1086,6 +988,29 @@
             <marker date="1546703747000" expanded="true" signature="49377:49456" ph="{...}" />
             <marker date="1546703747000" expanded="true" signature="49476:49561" ph="/// Determines if layer is in layermask. ... " />
             <marker date="1546703747000" expanded="true" signature="49634:49714" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <marker date="1565215568099" expanded="false" signature="6:66" ph="..." />
+            <marker date="1565215568099" expanded="true" signature="99:6037" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="158:6035" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="173:289" ph="/// Visual representation of the wheel and it's more important Vectors. ... " />
+            <marker date="1565215568099" expanded="true" signature="325:4704" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="1070:1441" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="1126:1427" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="1735:4694" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="2550:4680" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="2802:3067" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="3124:3588" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="4714:4863" ph="/// Draw a wheel radius on both side of the wheel, interconected with lines perpendicular to wheel axle. ... " />
+            <marker date="1565215568099" expanded="true" signature="4988:6029" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="5345:6019" ph="{...}" />
           </folding>
         </state>
       </provider>
