@@ -34,14 +34,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 				}
@@ -49,38 +49,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.x : this.augmentedInput.pos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.x : augmentedInput.pos.x);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.x : this.augmentedInput.pos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.x : augmentedInput.pos.x);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 				}
@@ -98,14 +98,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -113,25 +113,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -139,25 +139,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -175,14 +175,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.y : -this.augmentedInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.y : -augmentedInput.prevPos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.prevPos.y : this.augmentedInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.prevPos.y : augmentedInput.prevPos.y);
 						break;
 					}
 				}
@@ -190,38 +190,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.prevPos.y : this.augmentedInput.prevPos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.prevPos.y : augmentedInput.prevPos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.y : -this.augmentedInput.prevPos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.y : -augmentedInput.prevPos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.y : -this.augmentedInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.y : -augmentedInput.prevPos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.prevPos.y : this.augmentedInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.prevPos.y : augmentedInput.prevPos.y);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.y : this.augmentedInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.y : augmentedInput.prevPos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.prevPos.y : -this.augmentedInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.prevPos.y : -augmentedInput.prevPos.y);
 						break;
 					}
 				}
@@ -239,14 +239,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.x : -this.augmentedInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.x : -augmentedInput.prevPos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.x : -this.augmentedInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.x : -augmentedInput.prevPos.x);
 						break;
 					}
 				}
@@ -254,38 +254,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.prevPos.x : this.augmentedInput.prevPos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.prevPos.x : augmentedInput.prevPos.x);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.prevPos.x : this.augmentedInput.prevPos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.prevPos.x : augmentedInput.prevPos.x);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.x : -this.augmentedInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.x : -augmentedInput.prevPos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.x : -this.augmentedInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.x : -augmentedInput.prevPos.x);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.x : -this.augmentedInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.x : -augmentedInput.prevPos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.prevPos.x : -this.augmentedInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.prevPos.x : -augmentedInput.prevPos.x);
 						break;
 					}
 				}
@@ -299,7 +299,7 @@ public class StickInput : MonoBehaviour
 		get
 		{
 			float single = 0f;
-			if (!this.IsRightStick)
+			if (!IsRightStick)
 			{
 				switch (SettingsManager.Instance.controlType)
 				{
@@ -307,12 +307,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -augmentedInput.pos.y);
 							break;
 						}
 					}
@@ -320,12 +320,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -augmentedInput.pos.y);
 							break;
 						}
 					}
@@ -352,12 +352,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : 0f);
 							break;
 						}
 					}
@@ -365,12 +365,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : 0f);
 							break;
 						}
 					}
@@ -378,12 +378,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 							break;
 						}
 					}
@@ -402,14 +402,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : 0f);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : 0f);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -417,25 +417,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : augmentedInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : 0f);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : 0f);
 						break;
 					}
 				}
@@ -443,9 +443,9 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 						else
@@ -454,9 +454,9 @@ public class StickInput : MonoBehaviour
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 					else
@@ -475,7 +475,7 @@ public class StickInput : MonoBehaviour
 		get
 		{
 			float single = 0f;
-			if (!this.IsRightStick)
+			if (!IsRightStick)
 			{
 				switch (SettingsManager.Instance.controlType)
 				{
@@ -483,12 +483,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : 0f);
 							break;
 						}
 					}
@@ -496,12 +496,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : 0f);
 							break;
 						}
 					}
@@ -509,12 +509,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 					}
@@ -528,12 +528,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : augmentedInput.pos.y);
 							break;
 						}
 					}
@@ -541,12 +541,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : augmentedInput.pos.y);
 							break;
 						}
 					}
@@ -578,14 +578,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : 0f);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : 0f);
 						break;
 					}
 				}
@@ -593,25 +593,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : 0f);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : 0f);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : 0f);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -619,25 +619,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
 							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
 						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : 0f);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -655,27 +655,27 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (this.IsPopStick)
+					if (IsPopStick)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -683,68 +683,68 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (this.IsPopStick)
+						if (IsPopStick)
 						{
-							if (!this.IsRightStick)
+							if (!IsRightStick)
 							{
-								single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+								single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 								break;
 							}
 							else
 							{
-								single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+								single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 								break;
 							}
 						}
-						else if (!this.IsRightStick)
+						else if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 							break;
 						}
 					}
-					else if (this.IsPopStick)
+					else if (IsPopStick)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsPopStick)
+					if (!IsPopStick)
 					{
 						break;
 					}
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -753,37 +753,13 @@ public class StickInput : MonoBehaviour
 		}
 	}
 
-	public float AugmentedPopSpeed
-	{
-		get
-		{
-			return this.AugmentedPopToeVel.y;
-		}
-	}
+	public float AugmentedPopSpeed => AugmentedPopToeVel.y;
 
-	public float AugmentedPopToeSpeed
-	{
-		get
-		{
-			return this.AugmentedPopToeVel.magnitude;
-		}
-	}
+	public float AugmentedPopToeSpeed => AugmentedPopToeVel.magnitude;
 
-	public Vector2 AugmentedPopToeVector
-	{
-		get
-		{
-			return Vector2.ClampMagnitude(new Vector2(this.AugmentedToeAxis, this.AugmentedSetupDir), 1f);
-		}
-	}
+	public Vector2 AugmentedPopToeVector => Vector2.ClampMagnitude(new Vector2(AugmentedToeAxis, AugmentedSetupDir), 1f);
 
-	public Vector2 AugmentedPopToeVel
-	{
-		get
-		{
-			return new Vector2(this.AugmentedToeAxisVel, this.AugmentedSetupDirVel);
-		}
-	}
+	public Vector2 AugmentedPopToeVel => new Vector2(AugmentedToeAxisVel, AugmentedSetupDirVel);
 
 	public float AugmentedSetupDir
 	{
@@ -794,14 +770,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -809,38 +785,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.y : this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.y : augmentedInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.y : -this.augmentedInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.y : -augmentedInput.pos.y);
 						break;
 					}
 				}
@@ -858,14 +834,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.y : -this.augmentedInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.y : -augmentedInput.maxVelLastUpdate.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.maxVelLastUpdate.y : this.augmentedInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.maxVelLastUpdate.y : augmentedInput.maxVelLastUpdate.y);
 						break;
 					}
 				}
@@ -873,38 +849,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.maxVelLastUpdate.y : this.augmentedInput.maxVelLastUpdate.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.maxVelLastUpdate.y : augmentedInput.maxVelLastUpdate.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.y : -this.augmentedInput.maxVelLastUpdate.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.y : -augmentedInput.maxVelLastUpdate.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.y : -this.augmentedInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.y : -augmentedInput.maxVelLastUpdate.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.maxVelLastUpdate.y : this.augmentedInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.maxVelLastUpdate.y : augmentedInput.maxVelLastUpdate.y);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.y : this.augmentedInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.y : augmentedInput.maxVelLastUpdate.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.maxVelLastUpdate.y : -this.augmentedInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.maxVelLastUpdate.y : -augmentedInput.maxVelLastUpdate.y);
 						break;
 					}
 				}
@@ -922,14 +898,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 				}
@@ -937,38 +913,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.x : this.augmentedInput.pos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.x : augmentedInput.pos.x);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.pos.x : this.augmentedInput.pos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.pos.x : augmentedInput.pos.x);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.pos.x : -this.augmentedInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.pos.x : -augmentedInput.pos.x);
 						break;
 					}
 				}
@@ -986,14 +962,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.x : -this.augmentedInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.x : -augmentedInput.maxVelLastUpdate.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.x : -this.augmentedInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.x : -augmentedInput.maxVelLastUpdate.x);
 						break;
 					}
 				}
@@ -1001,38 +977,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.maxVelLastUpdate.x : this.augmentedInput.maxVelLastUpdate.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.maxVelLastUpdate.x : augmentedInput.maxVelLastUpdate.x);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.augmentedInput.maxVelLastUpdate.x : this.augmentedInput.maxVelLastUpdate.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -augmentedInput.maxVelLastUpdate.x : augmentedInput.maxVelLastUpdate.x);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.x : -this.augmentedInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.x : -augmentedInput.maxVelLastUpdate.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.x : -this.augmentedInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.x : -augmentedInput.maxVelLastUpdate.x);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.x : -this.augmentedInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.x : -augmentedInput.maxVelLastUpdate.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.augmentedInput.maxVelLastUpdate.x : -this.augmentedInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? augmentedInput.maxVelLastUpdate.x : -augmentedInput.maxVelLastUpdate.x);
 						break;
 					}
 				}
@@ -1041,13 +1017,7 @@ public class StickInput : MonoBehaviour
 		}
 	}
 
-	public float AugmentedToeSpeed
-	{
-		get
-		{
-			return this.AugmentedPopToeVel.x;
-		}
-	}
+	public float AugmentedToeSpeed => AugmentedPopToeVel.x;
 
 	public float FlipDir
 	{
@@ -1058,14 +1028,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 				}
@@ -1073,38 +1043,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.x : this.rawInput.pos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.x : rawInput.pos.x);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.x : this.rawInput.pos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.x : rawInput.pos.x);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 				}
@@ -1122,14 +1092,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 				}
@@ -1137,25 +1107,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 				}
@@ -1163,25 +1133,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 				}
@@ -1192,26 +1162,14 @@ public class StickInput : MonoBehaviour
 
 	public bool HoldingManual
 	{
-		get
-		{
-			return this._holdingManual;
-		}
-		set
-		{
-			this._holdingManual = value;
-		}
+		get => _holdingManual;
+		set => _holdingManual = value;
 	}
 
 	public bool HoldingNoseManual
 	{
-		get
-		{
-			return this._holdingNoseManual;
-		}
-		set
-		{
-			this._holdingNoseManual = value;
-		}
+		get => _holdingNoseManual;
+		set => _holdingNoseManual = value;
 	}
 
 	public bool IsFrontFoot
@@ -1247,14 +1205,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.y : -this.rawInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.y : -rawInput.prevPos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.prevPos.y : this.rawInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.prevPos.y : rawInput.prevPos.y);
 						break;
 					}
 				}
@@ -1262,38 +1220,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.prevPos.y : this.rawInput.prevPos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.prevPos.y : rawInput.prevPos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.y : -this.rawInput.prevPos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.y : -rawInput.prevPos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.y : -this.rawInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.y : -rawInput.prevPos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.prevPos.y : this.rawInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.prevPos.y : rawInput.prevPos.y);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.y : this.rawInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.y : rawInput.prevPos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.prevPos.y : -this.rawInput.prevPos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.prevPos.y : -rawInput.prevPos.y);
 						break;
 					}
 				}
@@ -1311,14 +1269,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.x : -this.rawInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.x : -rawInput.prevPos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.x : -this.rawInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.x : -rawInput.prevPos.x);
 						break;
 					}
 				}
@@ -1326,38 +1284,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.prevPos.x : this.rawInput.prevPos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.prevPos.x : rawInput.prevPos.x);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.prevPos.x : this.rawInput.prevPos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.prevPos.x : rawInput.prevPos.x);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.x : -this.rawInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.x : -rawInput.prevPos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.x : -this.rawInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.x : -rawInput.prevPos.x);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.x : -this.rawInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.x : -rawInput.prevPos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.prevPos.x : -this.rawInput.prevPos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.prevPos.x : -rawInput.prevPos.x);
 						break;
 					}
 				}
@@ -1371,7 +1329,7 @@ public class StickInput : MonoBehaviour
 		get
 		{
 			float single = 0f;
-			if (!this.IsRightStick)
+			if (!IsRightStick)
 			{
 				switch (SettingsManager.Instance.controlType)
 				{
@@ -1379,12 +1337,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -rawInput.pos.y);
 							break;
 						}
 					}
@@ -1392,12 +1350,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -rawInput.pos.y);
 							break;
 						}
 					}
@@ -1424,12 +1382,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : 0f);
 							break;
 						}
 					}
@@ -1437,12 +1395,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : 0f);
 							break;
 						}
 					}
@@ -1450,12 +1408,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 							break;
 						}
 					}
@@ -1467,14 +1425,8 @@ public class StickInput : MonoBehaviour
 
 	public int ManualFrameCount
 	{
-		get
-		{
-			return this._manualFrameCount;
-		}
-		set
-		{
-			this._manualFrameCount = value;
-		}
+		get => _manualFrameCount;
+		set => _manualFrameCount = value;
 	}
 
 	public float NollieSetupDir
@@ -1486,14 +1438,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : 0f);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : 0f);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : rawInput.pos.y);
 						break;
 					}
 				}
@@ -1501,25 +1453,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : rawInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : 0f);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : 0f);
 						break;
 					}
 				}
@@ -1527,9 +1479,9 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 						else
@@ -1538,9 +1490,9 @@ public class StickInput : MonoBehaviour
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 					else
@@ -1559,7 +1511,7 @@ public class StickInput : MonoBehaviour
 		get
 		{
 			float single = 0f;
-			if (!this.IsRightStick)
+			if (!IsRightStick)
 			{
 				switch (SettingsManager.Instance.controlType)
 				{
@@ -1567,12 +1519,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : 0f);
 							break;
 						}
 					}
@@ -1580,12 +1532,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : 0f);
 							break;
 						}
 					}
@@ -1593,12 +1545,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 					}
@@ -1612,12 +1564,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : rawInput.pos.y);
 							break;
 						}
 					}
@@ -1625,12 +1577,12 @@ public class StickInput : MonoBehaviour
 					{
 						if (PlayerController.Instance.IsSwitch)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : rawInput.pos.y);
 							break;
 						}
 					}
@@ -1655,14 +1607,8 @@ public class StickInput : MonoBehaviour
 
 	public int NoseManualFrameCount
 	{
-		get
-		{
-			return this._noseManualFrameCount;
-		}
-		set
-		{
-			this._noseManualFrameCount = value;
-		}
+		get => _noseManualFrameCount;
+		set => _noseManualFrameCount = value;
 	}
 
 	public float OllieSetupDir
@@ -1674,14 +1620,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : 0f);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : 0f);
 						break;
 					}
 				}
@@ -1689,25 +1635,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : 0f);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : 0f);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : 0f);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : 0f);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : -rawInput.pos.y);
 						break;
 					}
 				}
@@ -1715,25 +1661,25 @@ public class StickInput : MonoBehaviour
 				{
 					if (!PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
 							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : 0f);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
 						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? 0f : 0f);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 				}
@@ -1751,27 +1697,27 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (this.IsPopStick)
+					if (IsPopStick)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 				}
@@ -1779,68 +1725,68 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (this.IsPopStick)
+						if (IsPopStick)
 						{
-							if (!this.IsRightStick)
+							if (!IsRightStick)
 							{
-								single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+								single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 								break;
 							}
 							else
 							{
-								single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+								single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 								break;
 							}
 						}
-						else if (!this.IsRightStick)
+						else if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 							break;
 						}
 					}
-					else if (this.IsPopStick)
+					else if (IsPopStick)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsPopStick)
+					if (!IsPopStick)
 					{
 						break;
 					}
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 				}
@@ -1849,37 +1795,13 @@ public class StickInput : MonoBehaviour
 		}
 	}
 
-	public float PopSpeed
-	{
-		get
-		{
-			return this.PopToeVel.y;
-		}
-	}
+	public float PopSpeed => PopToeVel.y;
 
-	public float PopToeSpeed
-	{
-		get
-		{
-			return this.PopToeVel.magnitude;
-		}
-	}
+	public float PopToeSpeed => PopToeVel.magnitude;
 
-	public Vector2 PopToeVector
-	{
-		get
-		{
-			return Vector2.ClampMagnitude(new Vector2(this.ToeAxis, this.SetupDir), 1f);
-		}
-	}
+	public Vector2 PopToeVector => Vector2.ClampMagnitude(new Vector2(ToeAxis, SetupDir), 1f);
 
-	public Vector2 PopToeVel
-	{
-		get
-		{
-			return new Vector2(this.ToeAxisVel, this.SetupDirVel);
-		}
-	}
+	public Vector2 PopToeVel => new Vector2(ToeAxisVel, SetupDirVel);
 
 	public float SetupDir
 	{
@@ -1890,14 +1812,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 				}
@@ -1905,38 +1827,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.y : this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.y : rawInput.pos.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.y : -this.rawInput.pos.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.y : -rawInput.pos.y);
 						break;
 					}
 				}
@@ -1954,14 +1876,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.y : -this.rawInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.y : -rawInput.maxVelLastUpdate.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.maxVelLastUpdate.y : this.rawInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.maxVelLastUpdate.y : rawInput.maxVelLastUpdate.y);
 						break;
 					}
 				}
@@ -1969,38 +1891,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.maxVelLastUpdate.y : this.rawInput.maxVelLastUpdate.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.maxVelLastUpdate.y : rawInput.maxVelLastUpdate.y);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.y : -this.rawInput.maxVelLastUpdate.y);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.y : -rawInput.maxVelLastUpdate.y);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.y : -this.rawInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.y : -rawInput.maxVelLastUpdate.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.maxVelLastUpdate.y : this.rawInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.maxVelLastUpdate.y : rawInput.maxVelLastUpdate.y);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.y : this.rawInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.y : rawInput.maxVelLastUpdate.y);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.maxVelLastUpdate.y : -this.rawInput.maxVelLastUpdate.y);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.maxVelLastUpdate.y : -rawInput.maxVelLastUpdate.y);
 						break;
 					}
 				}
@@ -2018,14 +1940,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 				}
@@ -2033,38 +1955,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.x : this.rawInput.pos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.x : rawInput.pos.x);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.pos.x : this.rawInput.pos.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.pos.x : rawInput.pos.x);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.pos.x : -this.rawInput.pos.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.pos.x : -rawInput.pos.x);
 						break;
 					}
 				}
@@ -2082,14 +2004,14 @@ public class StickInput : MonoBehaviour
 			{
 				case SettingsManager.ControlType.Same:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.x : -this.rawInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.x : -rawInput.maxVelLastUpdate.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.x : -this.rawInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.x : -rawInput.maxVelLastUpdate.x);
 						break;
 					}
 				}
@@ -2097,38 +2019,38 @@ public class StickInput : MonoBehaviour
 				{
 					if (PlayerController.Instance.IsSwitch)
 					{
-						if (!this.IsRightStick)
+						if (!IsRightStick)
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.maxVelLastUpdate.x : this.rawInput.maxVelLastUpdate.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.maxVelLastUpdate.x : rawInput.maxVelLastUpdate.x);
 							break;
 						}
 						else
 						{
-							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -this.rawInput.maxVelLastUpdate.x : this.rawInput.maxVelLastUpdate.x);
+							single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -rawInput.maxVelLastUpdate.x : rawInput.maxVelLastUpdate.x);
 							break;
 						}
 					}
-					else if (!this.IsRightStick)
+					else if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.x : -this.rawInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.x : -rawInput.maxVelLastUpdate.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.x : -this.rawInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.x : -rawInput.maxVelLastUpdate.x);
 						break;
 					}
 				}
 				case SettingsManager.ControlType.Simple:
 				{
-					if (!this.IsRightStick)
+					if (!IsRightStick)
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.x : -this.rawInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.x : -rawInput.maxVelLastUpdate.x);
 						break;
 					}
 					else
 					{
-						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.rawInput.maxVelLastUpdate.x : -this.rawInput.maxVelLastUpdate.x);
+						single = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? rawInput.maxVelLastUpdate.x : -rawInput.maxVelLastUpdate.x);
 						break;
 					}
 				}
@@ -2137,13 +2059,7 @@ public class StickInput : MonoBehaviour
 		}
 	}
 
-	public float ToeSpeed
-	{
-		get
-		{
-			return this.PopToeVel.x;
-		}
-	}
+	public float ToeSpeed => PopToeVel.x;
 
 	public StickInput()
 	{
@@ -2151,58 +2067,58 @@ public class StickInput : MonoBehaviour
 
 	private void Awake()
 	{
-		this.InitializeRawData();
+		InitializeRawData();
 	}
 
 	private void InitializeRawData()
 	{
-		this.rawInput.pos = Vector2.zero;
-		this.rawInput.prevPos = Vector2.zero;
-		this.rawInput.lastPos = Vector2.zero;
-		this.rawInput.avgSpeedLastUpdate = 0f;
-		this.augmentedInput.pos = Vector2.zero;
-		this.augmentedInput.prevPos = Vector2.zero;
-		this.augmentedInput.lastPos = Vector2.zero;
-		this.augmentedInput.avgSpeedLastUpdate = 0f;
+		rawInput.pos = Vector2.zero;
+		rawInput.prevPos = Vector2.zero;
+		rawInput.lastPos = Vector2.zero;
+		rawInput.avgSpeedLastUpdate = 0f;
+		augmentedInput.pos = Vector2.zero;
+		augmentedInput.prevPos = Vector2.zero;
+		augmentedInput.lastPos = Vector2.zero;
+		augmentedInput.avgSpeedLastUpdate = 0f;
 	}
 
 	private void LerpFootDir()
 	{
-		this._toeAxisLerp = Mathf.Lerp(this._toeAxisLerp, this.ToeAxis, Time.deltaTime * 10f);
-		this._forwardDirLerp = Mathf.Lerp(this._forwardDirLerp, this.ForwardDir, Time.deltaTime * 10f);
+		_toeAxisLerp = Mathf.Lerp(_toeAxisLerp, ToeAxis, Time.deltaTime * 10f);
+		_forwardDirLerp = Mathf.Lerp(_forwardDirLerp, ForwardDir, Time.deltaTime * 10f);
 	}
 
 	private void OnFlipStickCentered()
 	{
-		if (!this._flipStickCentered)
+		if (!_flipStickCentered)
 		{
-			if (this.rawInput.lastPos.magnitude < 0.05f && this.rawInput.prevPos.magnitude < 0.05f && this.rawInput.pos.magnitude < 0.05f && this.rawInput.avgSpeedLastUpdate < 5f)
+			if (rawInput.lastPos.magnitude < 0.05f && rawInput.prevPos.magnitude < 0.05f && rawInput.pos.magnitude < 0.05f && rawInput.avgSpeedLastUpdate < 5f)
 			{
-				this._flipStickCentered = true;
+				_flipStickCentered = true;
 				PlayerController.Instance.playerSM.OnFlipStickCenteredSM();
 				return;
 			}
 		}
-		else if (this.rawInput.pos.magnitude > 0.05f || this.rawInput.avgSpeedLastUpdate < 5f)
+		else if (rawInput.pos.magnitude > 0.05f || rawInput.avgSpeedLastUpdate < 5f)
 		{
-			this._flipStickCentered = false;
+			_flipStickCentered = false;
 		}
 	}
 
 	private void OnPopStickCentered()
 	{
-		if (!this._popStickCentered)
+		if (!_popStickCentered)
 		{
-			if (this.rawInput.lastPos.magnitude < 0.05f && this.rawInput.prevPos.magnitude < 0.05f && this.rawInput.pos.magnitude < 0.05f && this.rawInput.avgSpeedLastUpdate < 1f)
+			if (rawInput.lastPos.magnitude < 0.05f && rawInput.prevPos.magnitude < 0.05f && rawInput.pos.magnitude < 0.05f && rawInput.avgSpeedLastUpdate < 1f)
 			{
-				this._popStickCentered = true;
+				_popStickCentered = true;
 				PlayerController.Instance.playerSM.OnPopStickCenteredSM();
 				return;
 			}
 		}
-		else if (this.rawInput.pos.magnitude > 0.05f || this.rawInput.avgSpeedLastUpdate < 5f)
+		else if (rawInput.pos.magnitude > 0.05f || rawInput.avgSpeedLastUpdate < 5f)
 		{
-			this._popStickCentered = false;
+			_popStickCentered = false;
 		}
 	}
 
@@ -2225,82 +2141,82 @@ public class StickInput : MonoBehaviour
 	{
 		if (SettingsManager.Instance.controlType != SettingsManager.ControlType.Simple)
 		{
-			if (this.IsRightStick)
+			if (IsRightStick)
 			{
-				PlayerController.Instance.SetRightSteezeWeight(this.rawInput.pos.magnitude);
+				PlayerController.Instance.SetRightSteezeWeight(rawInput.pos.magnitude);
 				return;
 			}
-			PlayerController.Instance.SetLeftSteezeWeight(this.rawInput.pos.magnitude);
+			PlayerController.Instance.SetLeftSteezeWeight(rawInput.pos.magnitude);
 			return;
 		}
 		if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 		{
 			if (!PlayerController.Instance.IsSwitch)
 			{
-				if (this.IsRightStick)
+				if (IsRightStick)
 				{
-					PlayerController.Instance.SetRightSteezeWeight(this.rawInput.pos.magnitude);
+					PlayerController.Instance.SetRightSteezeWeight(rawInput.pos.magnitude);
 					return;
 				}
-				PlayerController.Instance.SetLeftSteezeWeight(this.rawInput.pos.magnitude);
+				PlayerController.Instance.SetLeftSteezeWeight(rawInput.pos.magnitude);
 				return;
 			}
-			if (this.IsRightStick)
+			if (IsRightStick)
 			{
-				PlayerController.Instance.SetLeftSteezeWeight(this.rawInput.pos.magnitude);
+				PlayerController.Instance.SetLeftSteezeWeight(rawInput.pos.magnitude);
 				return;
 			}
-			PlayerController.Instance.SetRightSteezeWeight(this.rawInput.pos.magnitude);
+			PlayerController.Instance.SetRightSteezeWeight(rawInput.pos.magnitude);
 			return;
 		}
 		if (!PlayerController.Instance.IsSwitch)
 		{
-			if (this.IsRightStick)
+			if (IsRightStick)
 			{
-				PlayerController.Instance.SetLeftSteezeWeight(this.rawInput.pos.magnitude);
+				PlayerController.Instance.SetLeftSteezeWeight(rawInput.pos.magnitude);
 				return;
 			}
-			PlayerController.Instance.SetRightSteezeWeight(this.rawInput.pos.magnitude);
+			PlayerController.Instance.SetRightSteezeWeight(rawInput.pos.magnitude);
 			return;
 		}
-		if (this.IsRightStick)
+		if (IsRightStick)
 		{
-			PlayerController.Instance.SetRightSteezeWeight(this.rawInput.pos.magnitude);
+			PlayerController.Instance.SetRightSteezeWeight(rawInput.pos.magnitude);
 			return;
 		}
-		PlayerController.Instance.SetLeftSteezeWeight(this.rawInput.pos.magnitude);
+		PlayerController.Instance.SetLeftSteezeWeight(rawInput.pos.magnitude);
 	}
 
 	public void StickUpdate(bool p_right, InputThread _inputThread)
 	{
-		this.UpdateRawInput(p_right, _inputThread);
-		this.UpdateInterpretedInput(p_right);
-		if (this.rawInput.pos.magnitude < 0.1f && this.rawInput.avgVelLastUpdate.magnitude < 5f)
+		UpdateRawInput(p_right, _inputThread);
+		UpdateInterpretedInput(p_right);
+		if (rawInput.pos.magnitude < 0.1f && rawInput.avgVelLastUpdate.magnitude < 5f)
 		{
-			this.OnStickCenteredUpdate(p_right);
+			OnStickCenteredUpdate(p_right);
 		}
-		if (!this.IsPopStick)
+		if (!IsPopStick)
 		{
 			PlayerController.Instance.playerSM.OnFlipStickUpdateSM();
-			this.OnFlipStickCentered();
+			OnFlipStickCentered();
 			PlayerController.Instance.DebugPopStick(false, p_right);
 		}
 		else
 		{
 			PlayerController.Instance.playerSM.OnPopStickUpdateSM();
-			this.OnPopStickCentered();
+			OnPopStickCentered();
 			PlayerController.Instance.DebugPopStick(true, p_right);
 		}
 		PlayerController.Instance.OnManualUpdate(this);
 		PlayerController.Instance.OnNoseManualUpdate(this);
-		this.LerpFootDir();
-		PlayerController.Instance.SetInAirFootPlacement(this._toeAxisLerp, this._forwardDirLerp, this.IsFrontFoot);
-		this.SteezeIKWeights();
+		LerpFootDir();
+		PlayerController.Instance.SetInAirFootPlacement(_toeAxisLerp, _forwardDirLerp, IsFrontFoot);
+		SteezeIKWeights();
 	}
 
 	private void UpdateInterpretedInput(bool p_right)
 	{
-		this.IsRightStick = p_right;
+		IsRightStick = p_right;
 	}
 
 	private void UpdateRawInput(bool _right, InputThread _inputThread)
@@ -2309,47 +2225,47 @@ public class StickInput : MonoBehaviour
 		Vector2 vector21;
 		Vector2 vector22;
 		Vector2 vector23;
-		this.rawInput.stick = (_right ? StickInput.InputData.Stick.Right : StickInput.InputData.Stick.Left);
-		this.rawInput.lastPos = this.rawInput.prevPos;
-		this.rawInput.prevPos = this.rawInput.pos;
+		rawInput.stick = (_right ? StickInput.InputData.Stick.Right : StickInput.InputData.Stick.Left);
+		rawInput.lastPos = rawInput.prevPos;
+		rawInput.prevPos = rawInput.pos;
 		vector2 = (_right ? _inputThread.lastPosRight : _inputThread.lastPosLeft);
-		this.rawInput.pos = vector2;
+		rawInput.pos = vector2;
 		vector21 = (_right ? _inputThread.maxVelLastUpdateRight : _inputThread.maxVelLastUpdateLeft);
-		this.rawInput.maxVelLastUpdate = vector21;
-		this.rawInput.radialVel = (this.rawInput.pos.magnitude - this.rawInput.prevPos.magnitude) / Time.deltaTime;
-		this.augmentedInput.stick = (_right ? StickInput.InputData.Stick.Right : StickInput.InputData.Stick.Left);
-		this.augmentedInput.lastPos = this.augmentedInput.prevPos;
-		this.augmentedInput.prevPos = this.augmentedInput.pos;
+		rawInput.maxVelLastUpdate = vector21;
+		rawInput.radialVel = (rawInput.pos.magnitude - rawInput.prevPos.magnitude) / Time.deltaTime;
+		augmentedInput.stick = (_right ? StickInput.InputData.Stick.Right : StickInput.InputData.Stick.Left);
+		augmentedInput.lastPos = augmentedInput.prevPos;
+		augmentedInput.prevPos = augmentedInput.pos;
 		vector22 = (_right ? Mathd.RotateVector2(_inputThread.lastPosRight, PlayerController.Instance.playerSM.GetAugmentedAngleSM(this)) : Mathd.RotateVector2(_inputThread.lastPosLeft, PlayerController.Instance.playerSM.GetAugmentedAngleSM(this)));
-		this.augmentedInput.pos = vector22;
+		augmentedInput.pos = vector22;
 		vector23 = (_right ? Mathd.RotateVector2(_inputThread.maxVelLastUpdateRight, PlayerController.Instance.playerSM.GetAugmentedAngleSM(this)) : Mathd.RotateVector2(_inputThread.maxVelLastUpdateLeft, PlayerController.Instance.playerSM.GetAugmentedAngleSM(this)));
-		this.augmentedInput.maxVelLastUpdate = vector23;
+		augmentedInput.maxVelLastUpdate = vector23;
 		if (SettingsManager.Instance.controlType != SettingsManager.ControlType.Same && SettingsManager.Instance.controlType != SettingsManager.ControlType.Swap)
 		{
-			if (this.IsRightStick)
+			if (IsRightStick)
 			{
-				this.IsFrontFoot = false;
+				IsFrontFoot = false;
 				return;
 			}
-			this.IsFrontFoot = true;
+			IsFrontFoot = true;
 			return;
 		}
 		if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 		{
-			if (this.IsRightStick)
+			if (IsRightStick)
 			{
-				this.IsFrontFoot = false;
+				IsFrontFoot = false;
 				return;
 			}
-			this.IsFrontFoot = true;
+			IsFrontFoot = true;
 			return;
 		}
-		if (this.IsRightStick)
+		if (IsRightStick)
 		{
-			this.IsFrontFoot = true;
+			IsFrontFoot = true;
 			return;
 		}
-		this.IsFrontFoot = false;
+		IsFrontFoot = false;
 	}
 
 	public struct InputData

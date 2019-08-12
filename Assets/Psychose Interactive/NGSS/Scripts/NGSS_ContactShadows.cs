@@ -187,7 +187,7 @@ public class NGSS_ContactShadows : MonoBehaviour
         if (IsNotSupported())
         {
             Debug.LogWarning("Unsupported graphics API, NGSS requires at least SM3.0 or higher and DX9 is not supported.", this);
-            this.enabled = false;
+            enabled = false;
             return;
         }
 

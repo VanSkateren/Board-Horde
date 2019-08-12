@@ -272,13 +272,7 @@ namespace RootMotion.Dynamics
             /// </summary>
             public UnityEvent unityEvent;
 
-            public bool switchBehaviour
-            {
-                get
-                {
-                    return switchToBehaviour != string.Empty && switchToBehaviour != empty;
-                }
-            }
+            public bool switchBehaviour => switchToBehaviour != string.Empty && switchToBehaviour != empty;
             private const string empty = "";
 
             public void Trigger(PuppetMaster puppetMaster, bool switchBehaviourEnabled = true)

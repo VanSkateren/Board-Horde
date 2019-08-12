@@ -58,8 +58,8 @@ namespace RootMotion.FinalIK {
 		/// </summary>
 		public void Initiate(Transform transform) {
 			this.transform = transform;
-			this.position = transform.position;
-			this.rotation = transform.eulerAngles;
+			position = transform.position;
+			rotation = transform.eulerAngles;
 		}
 
 		/// <summary>

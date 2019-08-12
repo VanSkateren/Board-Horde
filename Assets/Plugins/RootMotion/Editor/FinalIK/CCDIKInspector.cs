@@ -10,7 +10,7 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(CCDIK))]
 	public class CCDIKInspector : IKInspector {
 
-		private CCDIK script { get { return target as CCDIK; }}
+		private CCDIK script => target as CCDIK;
 
 		protected override MonoBehaviour GetMonoBehaviour(out int executionOrder) {
 			executionOrder = 9997;

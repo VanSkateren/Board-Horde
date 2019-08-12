@@ -15,8 +15,8 @@ public class GrindCollisions : MonoBehaviour
 	{
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Grindable"))
 		{
-			this.lastCollision = collision.contacts[0].point;
-			this.isColliding = true;
+			lastCollision = collision.contacts[0].point;
+			isColliding = true;
 		}
 	}
 
@@ -24,7 +24,7 @@ public class GrindCollisions : MonoBehaviour
 	{
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Grindable"))
 		{
-			this.isColliding = false;
+			isColliding = false;
 		}
 	}
 
@@ -32,8 +32,8 @@ public class GrindCollisions : MonoBehaviour
 	{
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Grindable"))
 		{
-			this.lastCollision = collision.contacts[0].point;
-			this.isColliding = true;
+			lastCollision = collision.contacts[0].point;
+			isColliding = true;
 		}
 	}
 }

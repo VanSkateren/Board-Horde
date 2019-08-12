@@ -15,22 +15,10 @@ namespace KinematicCharacterController.Walkthrough.ClimbingLadders
         public Transform TopReleasePoint;
 
         // Gets the position of the bottom point of the ladder segment
-        public Vector3 BottomAnchorPoint
-        {
-            get
-            {
-                return transform.position + transform.TransformVector(LadderSegmentBottom);
-            }
-        }
+        public Vector3 BottomAnchorPoint => transform.position + transform.TransformVector(LadderSegmentBottom);
 
         // Gets the position of the top point of the ladder segment
-        public Vector3 TopAnchorPoint
-        {
-            get
-            {
-                return transform.position + transform.TransformVector(LadderSegmentBottom) + (transform.up * LadderSegmentLength);
-            }
-        }
+        public Vector3 TopAnchorPoint => transform.position + transform.TransformVector(LadderSegmentBottom) + (transform.up * LadderSegmentLength);
 
         public Vector3 ClosestPointOnLadderSegment(Vector3 fromPoint, out float onSegmentState)
         {

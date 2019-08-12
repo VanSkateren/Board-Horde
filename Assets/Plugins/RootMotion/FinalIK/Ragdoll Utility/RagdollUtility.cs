@@ -364,7 +364,7 @@ namespace RootMotion.FinalIK {
 		}
 
 		// Is the character currently in ragdoll mode?
-		private bool isRagdoll { get { return !rigidbones[0].r.isKinematic && !animator.enabled; }}
+		private bool isRagdoll => !rigidbones[0].r.isKinematic && !animator.enabled;
 
 		// Store position and rotation deltas for all the rigidbodies
 		private void RecordVelocities() {

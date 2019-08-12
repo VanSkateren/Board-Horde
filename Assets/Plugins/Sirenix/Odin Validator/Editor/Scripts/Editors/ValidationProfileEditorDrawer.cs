@@ -31,57 +31,57 @@ namespace Sirenix.OdinValidator.Editor
 
         protected override void Initialize()
         {
-            this.menuTreeWidth = this.GetPersistentValue<float>("menuTreeWidth", 380);
-            this.columns = new List<ResizableColumn>() { ResizableColumn.FlexibleColumn(this.menuTreeWidth.Value, 80), ResizableColumn.DynamicColumn(0, 200) };
-            this.runner = new ValidationRunner();
-            this.overview = new ValidationOverview();
-            this.editor = this.ValueEntry.SmartValue;
-            this.profile = this.editor.Profile;
-            this.sourceProperty = this.Property.Children["selectedSourceTarget"];
-            this.validationProfileTree = new ValidationProfileTree();
-            this.overviewToggle = this.GetPersistentValue<bool>("overviewToggle", true);
+            menuTreeWidth = this.GetPersistentValue<float>("menuTreeWidth", 380);
+            columns = new List<ResizableColumn>() { ResizableColumn.FlexibleColumn(menuTreeWidth.Value, 80), ResizableColumn.DynamicColumn(0, 200) };
+            runner = new ValidationRunner();
+            overview = new ValidationOverview();
+            editor = ValueEntry.SmartValue;
+            profile = editor.Profile;
+            sourceProperty = Property.Children["selectedSourceTarget"];
+            validationProfileTree = new ValidationProfileTree();
+            overviewToggle = this.GetPersistentValue<bool>("overviewToggle", true);
 
-            this.validationProfileTree.Selection.SelectionChanged += (x) =>
+            validationProfileTree.Selection.SelectionChanged += (x) =>
             {
                 if (x == SelectionChangedType.ItemAdded)
                 {
-                    object value = this.validationProfileTree.Selection.SelectedValue;
+                    object value = validationProfileTree.Selection.SelectedValue;
                     ValidationProfileResult result = value as ValidationProfileResult;
                     if (result != null)
                     {
-                        this.editor.SetTarget(result.GetSource());
+                        editor.SetTarget(result.GetSource());
 
                     }
                     else
                     {
-                        this.editor.SetTarget(value);
+                        editor.SetTarget(value);
                     }
                 }
             };
 
-            this.overview.OnProfileResultSelected += result =>
+            overview.OnProfileResultSelected += result =>
             {
-                OdinMenuItem mi = this.validationProfileTree.GetMenuItemForObject(result);
+                OdinMenuItem mi = validationProfileTree.GetMenuItemForObject(result);
                 mi.Select();
                 object source = result.GetSource();
-                this.editor.SetTarget(source);
+                editor.SetTarget(source);
             };
 
-            this.validationProfileTree.AddProfileRecursive(this.ValueEntry.SmartValue.Profile);
+            validationProfileTree.AddProfileRecursive(ValueEntry.SmartValue.Profile);
 
-            OdinMenuTree.ActiveMenuTree = this.validationProfileTree;
+            OdinMenuTree.ActiveMenuTree = validationProfileTree;
 
-            if (this.editor.ScanProfileImmediatelyWhenOpening)
+            if (editor.ScanProfileImmediatelyWhenOpening)
             {
-                this.editor.ScanProfileImmediatelyWhenOpening = false;
-                this.ScanProfile(this.editor.Profile);
+                editor.ScanProfileImmediatelyWhenOpening = false;
+                ScanProfile(editor.Profile);
             }
         }
 
         protected override void DrawPropertyLayout(GUIContent label)
         {
             // Save menuTreeWidth.
-            this.menuTreeWidth.Value = this.columns[0].ColWidth;
+            menuTreeWidth.Value = columns[0].ColWidth;
 
             // Bottom Slide Toggle Bits:
             Rect overviewSlideRect = new Rect();
@@ -91,7 +91,7 @@ namespace Sirenix.OdinValidator.Editor
             GUILayout.BeginHorizontal(GUILayoutOptions.ExpandHeight());
             {
                 topRect = GUIHelper.GetCurrentLayoutRect();
-                GUITableUtilities.ResizeColumns(topRect, this.columns);
+                GUITableUtilities.ResizeColumns(topRect, columns);
 
                 // Bottom Slide Toggle Bits:
                 // The bottom slide-rect toggle needs to be drawn above, but is placed below.
@@ -99,60 +99,60 @@ namespace Sirenix.OdinValidator.Editor
                 overviewSlideRect.width += 4;
                 toggleOverviewBtnRect = overviewSlideRect.AlignCenter(100).AlignBottom(14);
                 EditorGUIUtility.AddCursorRect(toggleOverviewBtnRect, MouseCursor.Arrow);
-                if (SirenixEditorGUI.IconButton(toggleOverviewBtnRect.AddY(-2), this.overviewToggle.Value ? EditorIcons.TriangleDown : EditorIcons.TriangleUp))
+                if (SirenixEditorGUI.IconButton(toggleOverviewBtnRect.AddY(-2), overviewToggle.Value ? EditorIcons.TriangleDown : EditorIcons.TriangleUp))
                 {
-                    this.overviewToggle.Value = !this.overviewToggle.Value;
+                    overviewToggle.Value = !overviewToggle.Value;
                 }
 
-                if (this.overviewToggle.Value)
+                if (overviewToggle.Value)
                 {
-                    this.overviewHeight -= SirenixEditorGUI.SlideRect(overviewSlideRect.SetXMax(toggleOverviewBtnRect.xMin), MouseCursor.SplitResizeUpDown).y;
-                    this.overviewHeight -= SirenixEditorGUI.SlideRect(overviewSlideRect.SetXMin(toggleOverviewBtnRect.xMax), MouseCursor.SplitResizeUpDown).y;
+                    overviewHeight -= SirenixEditorGUI.SlideRect(overviewSlideRect.SetXMax(toggleOverviewBtnRect.xMin), MouseCursor.SplitResizeUpDown).y;
+                    overviewHeight -= SirenixEditorGUI.SlideRect(overviewSlideRect.SetXMin(toggleOverviewBtnRect.xMax), MouseCursor.SplitResizeUpDown).y;
                 }
 
                 // Left menu tree
-                GUILayout.BeginVertical(GUILayoutOptions.Width(this.columns[0].ColWidth).ExpandHeight());
+                GUILayout.BeginVertical(GUILayoutOptions.Width(columns[0].ColWidth).ExpandHeight());
                 {
                     EditorGUI.DrawRect(GUIHelper.GetCurrentLayoutRect(), SirenixGUIStyles.EditorWindowBackgroundColor);
-                    this.validationProfileTree.Draw();
+                    validationProfileTree.Draw();
                 }
                 GUILayout.EndVertical();
 
                 // Draw selected
                 GUILayout.BeginVertical();
                 {
-                    this.DrawTopBarButtons();
-                    this.DrawSelectedTests();
+                    DrawTopBarButtons();
+                    DrawSelectedTests();
                 }
                 GUILayout.EndVertical();
-                GUITableUtilities.DrawColumnHeaderSeperators(topRect, this.columns, SirenixGUIStyles.BorderColor);
+                GUITableUtilities.DrawColumnHeaderSeperators(topRect, columns, SirenixGUIStyles.BorderColor);
             }
             GUILayout.EndHorizontal();
 
             // Bottom Slide Toggle Bits:
-            if (this.overviewToggle.Value)
+            if (overviewToggle.Value)
             {
                 GUILayoutUtility.GetRect(0, 4); // Slide Area.
             }
 
             EditorGUI.DrawRect(overviewSlideRect, SirenixGUIStyles.BorderColor);
             EditorGUI.DrawRect(toggleOverviewBtnRect.AddY(-overviewSlideRect.height), SirenixGUIStyles.BorderColor);
-            SirenixEditorGUI.IconButton(toggleOverviewBtnRect.AddY(-2), this.overviewToggle.Value ? EditorIcons.TriangleDown : EditorIcons.TriangleUp);
+            SirenixEditorGUI.IconButton(toggleOverviewBtnRect.AddY(-2), overviewToggle.Value ? EditorIcons.TriangleDown : EditorIcons.TriangleUp);
 
             // Overview
-            if (this.overviewToggle.Value)
+            if (overviewToggle.Value)
             {
-                GUILayout.BeginVertical(GUILayout.Height(this.overviewHeight));
+                GUILayout.BeginVertical(GUILayout.Height(overviewHeight));
                 {
-                    this.overview.DrawOverview();
+                    overview.DrawOverview();
                 }
                 GUILayout.EndVertical();
 
                 if (Event.current.type == EventType.Repaint)
                 {
-                    this.overviewHeight = Mathf.Max(50, this.overviewHeight);
+                    overviewHeight = Mathf.Max(50, overviewHeight);
                     float height = GUIHelper.CurrentWindow.position.height - overviewSlideRect.yMax;
-                    this.overviewHeight = Mathf.Min(this.overviewHeight, height);
+                    overviewHeight = Mathf.Min(overviewHeight, height);
                 }
             }
         }
@@ -162,13 +162,13 @@ namespace Sirenix.OdinValidator.Editor
             EditorApplication.delayCall += () =>
             {
                 List<ValidationProfileResult> results = new List<ValidationProfileResult>();
-                this.validationProfileTree.CleanProfile(profile);
+                validationProfileTree.CleanProfile(profile);
 
                 try
                 {
-                    foreach (ValidationProfileResult result in profile.Validate(this.runner))
+                    foreach (ValidationProfileResult result in profile.Validate(runner))
                     {
-                        this.validationProfileTree.AddResultToTree(result);
+                        validationProfileTree.AddResultToTree(result);
                         results.Add(result);
 
                         if (GUIHelper.DisplaySmartUpdatingCancellableProgressBar(result.Profile.Name, result.Name, result.Progress))
@@ -180,21 +180,21 @@ namespace Sirenix.OdinValidator.Editor
                 finally
                 {
                     EditorUtility.ClearProgressBar();
-                    this.overview.ProfileResults = results;
-                    this.overview.Update();
-                    this.validationProfileTree.MarkDirty();
-                    this.validationProfileTree.UpdateMenuTree();
-                    this.validationProfileTree.AddErrorAndWarningIcons();
+                    overview.ProfileResults = results;
+                    overview.Update();
+                    validationProfileTree.MarkDirty();
+                    validationProfileTree.UpdateMenuTree();
+                    validationProfileTree.AddErrorAndWarningIcons();
                 }
             };
         }
 
         private void DrawSelectedTests()
         {
-            this.scrollPos = GUILayout.BeginScrollView(this.scrollPos, GUIStyle.none);
+            scrollPos = GUILayout.BeginScrollView(scrollPos, GUIStyle.none);
             GUILayout.BeginVertical(SirenixGUIStyles.ContentPadding);
-            GUIHelper.PushLabelWidth(this.columns.Last().ColWidth * 0.33f);
-            this.sourceProperty.Draw(null);
+            GUIHelper.PushLabelWidth(columns.Last().ColWidth * 0.33f);
+            sourceProperty.Draw(null);
             GUIHelper.PopLabelWidth();
             GUILayout.EndVertical();
             GUILayout.EndScrollView();
@@ -202,7 +202,7 @@ namespace Sirenix.OdinValidator.Editor
 
         private void DrawTopBarButtons()
         {
-            string btnName = "Run " + this.profile.Name;
+            string btnName = "Run " + profile.Name;
             float width = GUI.skin.button.CalcSize(GUIHelper.TempContent(btnName)).x + 10;
             Rect rect = GUIHelper.GetCurrentLayoutRect().AlignRight(width);
             rect.x -= 5;
@@ -212,11 +212,11 @@ namespace Sirenix.OdinValidator.Editor
             GUIHelper.PushColor(Color.green);
             if (GUI.Button(rect, btnName))
             {
-                this.ScanProfile(this.profile);
+                ScanProfile(profile);
             }
             GUIHelper.PopColor();
 
-            object selectedValue = this.validationProfileTree.Selection.SelectedValue;
+            object selectedValue = validationProfileTree.Selection.SelectedValue;
 
             if (selectedValue is ValidationProfileResult)
             {

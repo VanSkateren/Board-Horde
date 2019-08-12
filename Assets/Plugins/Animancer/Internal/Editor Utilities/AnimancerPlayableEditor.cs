@@ -27,7 +27,7 @@ namespace Animancer.Editor
         [NonSerialized]
         private IAnimancerComponent[] _Targets;
         /// <summary><see cref="UnityEditor.Editor.targets"/> casted to <see cref="IAnimancerComponent"/>.</summary>
-        public IAnimancerComponent[] Targets { get { return _Targets; } }
+        public IAnimancerComponent[] Targets => _Targets;
 
         /// <summary>The serialized backing field for the target's <see cref="Animator"/> reference.</summary>
         [NonSerialized]

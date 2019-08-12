@@ -25,7 +25,7 @@ namespace UltEvents
                     _Event = new UltEvent();
                 return _Event;
             }
-            set { _Event = value; }
+            set => _Event = value;
         }
 
         /************************************************************************************************************************/

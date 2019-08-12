@@ -32,7 +32,9 @@ namespace Tayx.Graphy.CustomizationScene
 {
     public class G_CUIColorPicker : MonoBehaviour
     {
-        public Color Color { get { return _color; } set { Setup( value ); } }
+        public Color Color { get => _color;
+            set => Setup( value );
+        }
         
         public void SetOnValueChangeCallback( System.Action<Color> onValueChange )
         {

@@ -90,25 +90,25 @@ namespace RootMotion.FinalIK {
 			public float volume;
 			public Vector3 S, B;
 			
-			public Vector3 o { get { return tetrahedron[0]; }}
-			public Vector3 a { get { return tetrahedron[1]; }}
-			public Vector3 b { get { return tetrahedron[2]; }}
-			public Vector3 c { get { return tetrahedron[3]; }}
-			
+			public Vector3 o => tetrahedron[0];
+			public Vector3 a => tetrahedron[1];
+			public Vector3 b => tetrahedron[2];
+			public Vector3 c => tetrahedron[3];
+
 			public ReachCone(Vector3 _o, Vector3 _a, Vector3 _b, Vector3 _c) {
-				this.tetrahedron = new Vector3[4];
-				this.tetrahedron[0] = _o; // Origin
-				this.tetrahedron[1] = _a; // Axis
-				this.tetrahedron[2] = _b; // Limit Point 1
-				this.tetrahedron[3] = _c; // Limit Point 2
+				tetrahedron = new Vector3[4];
+				tetrahedron[0] = _o; // Origin
+				tetrahedron[1] = _a; // Axis
+				tetrahedron[2] = _b; // Limit Point 1
+				tetrahedron[3] = _c; // Limit Point 2
 				
-				this.volume = 0;
-				this.S = Vector3.zero;
-				this.B = Vector3.zero;
+				volume = 0;
+				S = Vector3.zero;
+				B = Vector3.zero;
 			}
 			
-			public bool isValid { get { return volume > 0; }}
-			
+			public bool isValid => volume > 0;
+
 			public void Calculate() {
 				Vector3 crossAB = Vector3.Cross(a, b);
 				volume = Vector3.Dot(crossAB, c) / 6.0f;
@@ -127,8 +127,8 @@ namespace RootMotion.FinalIK {
 			public float tangentWeight;
 			
 			public LimitPoint() {
-				this.point = Vector3.forward;
-				this.tangentWeight = 1;
+				point = Vector3.forward;
+				tangentWeight = 1;
 			}
 		}
 		

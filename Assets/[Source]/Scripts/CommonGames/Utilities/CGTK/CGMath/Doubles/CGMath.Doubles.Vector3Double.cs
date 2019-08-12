@@ -24,11 +24,11 @@
                     switch (index)
                     {
                         case 0:
-                            return this.x;
+                            return x;
                         case 1:
-                            return this.y;
+                            return y;
                         case 2:
-                            return this.z;
+                            return z;
                         default:
                             throw new IndexOutOfRangeException("Invalid index!");
                     }
@@ -38,13 +38,13 @@
                     switch (index)
                     {
                         case 0:
-                            this.x = value;
+                            x = value;
                             break;
                         case 1:
-                            this.y = value;
+                            y = value;
                             break;
                         case 2:
-                            this.z = value;
+                            z = value;
                             break;
                         default:
                             throw new IndexOutOfRangeException("Invalid Vector3d index!");
@@ -52,11 +52,11 @@
                 }
             }
 
-            public Vector3Double normalized => Vector3Double.Normalize(this);
+            public Vector3Double normalized => Normalize(this);
 
-            public double magnitude => Math.Sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+            public double magnitude => Math.Sqrt(x * x + y * y + z * z);
 
-            public double sqrMagnitude => this.x * this.x + this.y * this.y + this.z * this.z;
+            public double sqrMagnitude => x * x + y * y + z * z;
 
             public static Vector3Double zero => new Vector3Double(0d, 0d, 0d);
 
@@ -93,16 +93,16 @@
 
             public Vector3Double(Vector3 v3)
             {
-                this.x = (double) v3.x;
-                this.y = (double) v3.y;
-                this.z = (double) v3.z;
+                x = (double) v3.x;
+                y = (double) v3.y;
+                z = (double) v3.z;
             }
 
             public Vector3Double(double x, double y)
             {
                 this.x = x;
                 this.y = y;
-                this.z = 0d;
+                z = 0d;
             }
 
             public static Vector3Double operator +(Vector3Double a, Vector3Double b)
@@ -137,12 +137,12 @@
 
             public static bool operator ==(Vector3Double lhs, Vector3Double rhs)
             {
-                return (double) Vector3Double.SqrMagnitude(lhs - rhs) < 0.0 / 1.0;
+                return (double) SqrMagnitude(lhs - rhs) < 0.0 / 1.0;
             }
 
             public static bool operator !=(Vector3Double lhs, Vector3Double rhs)
             {
-                return (double) Vector3Double.SqrMagnitude(lhs - rhs) >= 0.0 / 1.0;
+                return (double) SqrMagnitude(lhs - rhs) >= 0.0 / 1.0;
             }
 
             public static explicit operator Vector3(Vector3Double vector3Double)
@@ -152,7 +152,7 @@
 
             public static Vector3Double Lerp(Vector3Double from, Vector3Double to, double t)
             {
-                t = CGMath.Clamp01(t);
+                t = Clamp01(t);
                 return new Vector3Double(from.x + (to.x - from.x) * t, from.y + (to.y - from.y) * t,
                     from.z + (to.z - from.z) * t);
             }
@@ -209,7 +209,7 @@
                 double smoothTime, double maxSpeed)
             {
                 double deltaTime = (double) Time.deltaTime;
-                return Vector3Double.SmoothDamp(current, target, ref currentVelocity, smoothTime, maxSpeed, deltaTime);
+                return SmoothDamp(current, target, ref currentVelocity, smoothTime, maxSpeed, deltaTime);
             }
 
             public static Vector3Double SmoothDamp(Vector3Double current, Vector3Double target, ref Vector3Double currentVelocity,
@@ -217,7 +217,7 @@
             {
                 double deltaTime = (double) Time.deltaTime;
                 const double maxSpeed = double.PositiveInfinity;
-                return Vector3Double.SmoothDamp(current, target, ref currentVelocity, smoothTime, maxSpeed, deltaTime);
+                return SmoothDamp(current, target, ref currentVelocity, smoothTime, maxSpeed, deltaTime);
             }
 
             public static Vector3Double SmoothDamp(Vector3Double current, Vector3Double target, ref Vector3Double currentVelocity,
@@ -231,13 +231,13 @@
                 Vector3Double vector = current - target;
                 Vector3Double vector3_1 = target;
                 double maxLength = maxSpeed * smoothTime;
-                Vector3Double vector3_2 = Vector3Double.ClampMagnitude(vector, maxLength);
+                Vector3Double vector3_2 = ClampMagnitude(vector, maxLength);
                 target = current - vector3_2;
                 Vector3Double vector3_3 = (currentVelocity + num1 * vector3_2) * deltaTime;
                 currentVelocity = (currentVelocity - num1 * vector3_3) * num3;
                 Vector3Double vector3_4 = target + (vector3_2 + vector3_3) * num3;
                 
-                if (!(Vector3Double.Dot(vector3_1 - current, vector3_4 - vector3_1) > 0.0)) return vector3_4;
+                if (!(Dot(vector3_1 - current, vector3_4 - vector3_1) > 0.0)) return vector3_4;
                 
                 vector3_4 = vector3_1;
                 currentVelocity = (vector3_4 - vector3_1) / deltaTime;
@@ -247,9 +247,9 @@
 
             public void Set(double new_x, double new_y, double new_z)
             {
-                this.x = new_x;
-                this.y = new_y;
-                this.z = new_z;
+                x = new_x;
+                y = new_y;
+                z = new_z;
             }
 
             public static Vector3Double Scale(Vector3Double a, Vector3Double b)
@@ -259,9 +259,9 @@
 
             public void Scale(Vector3Double scale)
             {
-                this.x *= scale.x;
-                this.y *= scale.y;
-                this.z *= scale.z;
+                x *= scale.x;
+                y *= scale.y;
+                z *= scale.z;
             }
 
             public static Vector3Double Cross(Vector3Double lhs, Vector3Double rhs)
@@ -272,7 +272,7 @@
 
             public override int GetHashCode()
             {
-                return this.x.GetHashCode() ^ this.y.GetHashCode() << 2 ^ this.z.GetHashCode() >> 2;
+                return x.GetHashCode() ^ y.GetHashCode() << 2 ^ z.GetHashCode() >> 2;
             }
 
             public override bool Equals(object other)
@@ -280,37 +280,37 @@
                 if (!(other is Vector3Double))
                     return false;
                 Vector3Double vector3Double = (Vector3Double) other;
-                if (this.x.Equals(vector3Double.x) && this.y.Equals(vector3Double.y))
-                    return this.z.Equals(vector3Double.z);
+                if (x.Equals(vector3Double.x) && y.Equals(vector3Double.y))
+                    return z.Equals(vector3Double.z);
                 return false;
             }
 
             public static Vector3Double Reflect(Vector3Double inDirection, Vector3Double inNormal)
             {
-                return -2d * Vector3Double.Dot(inNormal, inDirection) * inNormal + inDirection;
+                return -2d * Dot(inNormal, inDirection) * inNormal + inDirection;
             }
 
             public static Vector3Double Normalize(Vector3Double value)
             {
-                double num = Vector3Double.Magnitude(value);
+                double num = Magnitude(value);
                 if (num > 9.99999974737875E-06)
                     return value / num;
-                return Vector3Double.zero;
+                return zero;
             }
 
             public void Normalize()
             {
-                double num = Vector3Double.Magnitude(this);
+                double num = Magnitude(this);
                 if (num > 9.99999974737875E-06)
                     this = this / num;
                 else
-                    this = Vector3Double.zero;
+                    this = zero;
             }
 
             // TODO : fix formatting
             public override string ToString()
             {
-                return $"({this.x},{this.y},{this.z})";
+                return $"({x},{y},{z})";
             }
 
             public static double Dot(Vector3Double lhs, Vector3Double rhs)
@@ -320,20 +320,20 @@
 
             public static Vector3Double Project(Vector3Double vector, Vector3Double onNormal)
             {
-                double num = Vector3Double.Dot(onNormal, onNormal);
+                double num = Dot(onNormal, onNormal);
                 if (num < 1.40129846432482E-45d)
-                    return Vector3Double.zero;
-                return onNormal * Vector3Double.Dot(vector, onNormal) / num;
+                    return zero;
+                return onNormal * Dot(vector, onNormal) / num;
             }
 
             public static Vector3Double Exclude(Vector3Double excludeThis, Vector3Double fromThat)
             {
-                return fromThat - Vector3Double.Project(fromThat, excludeThis);
+                return fromThat - Project(fromThat, excludeThis);
             }
 
             public static double Angle(Vector3Double from, Vector3Double to)
             {
-                return CGMath.Acos(CGMath.Clamp(Vector3Double.Dot(from.normalized, to.normalized), -1d, 1d)) * 57.29578d;
+                return Acos(Clamp(Dot(from.normalized, to.normalized), -1d, 1d)) * 57.29578d;
             }
 
             public static double Distance(Vector3Double a, Vector3Double b)

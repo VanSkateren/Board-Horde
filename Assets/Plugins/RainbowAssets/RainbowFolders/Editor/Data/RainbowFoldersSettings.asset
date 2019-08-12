@@ -221,15 +221,6 @@ MonoBehaviour:
     IsBackgroundRecursive: 0
     IsBackgroundCustom: 0
   - Type: 0
-    Key: Physics
-    SmallIcon: {fileID: 2800000, guid: 4ef89ce156656d34db888f242f39fd64, type: 3}
-    LargeIcon: {fileID: 2800000, guid: 64b02a3a6dbb44c4b89617aebf9c3119, type: 3}
-    IsIconRecursive: 0
-    IsIconCustom: 0
-    Background: {fileID: 0}
-    IsBackgroundRecursive: 0
-    IsBackgroundCustom: 0
-  - Type: 0
     Key: Flares
     SmallIcon: {fileID: 2800000, guid: b3234aceffe9f9b4d9a996be7f0bb931, type: 3}
     LargeIcon: {fileID: 2800000, guid: 39bbe70e6f465fe4682184eda239d9ae, type: 3}

@@ -136,7 +136,7 @@ namespace Klak.Math
         public DTween(float position, float omega)
         {
             this.position = position;
-            this.velocity = 0;
+            velocity = 0;
             this.omega = omega;
         }
 
@@ -163,7 +163,7 @@ namespace Klak.Math
         public DTweenVector2(Vector2 position, float omega)
         {
             this.position = position;
-            this.velocity = Vector2.zero;
+            velocity = Vector2.zero;
             this.omega = omega;
         }
 
@@ -188,7 +188,7 @@ namespace Klak.Math
         public DTweenVector3(Vector3 position, float omega)
         {
             this.position = position;
-            this.velocity = Vector3.zero;
+            velocity = Vector3.zero;
             this.omega = omega;
         }
 
@@ -213,7 +213,7 @@ namespace Klak.Math
         public DTweenQuaternion(Quaternion rotation, float omega)
         {
             this.rotation = rotation;
-            this.velocity = Vector4.zero;
+            velocity = Vector4.zero;
             this.omega = omega;
         }
 

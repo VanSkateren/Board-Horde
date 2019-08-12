@@ -2,10 +2,299 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="198e5302-eabe-4f29-a307-3bb7cdbfaf60" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KinematicCharacterController/Core/KinematicCharacterMotor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KinematicCharacterController/Core/KinematicCharacterMotor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KinematicCharacterController/Core/PhysicsMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KinematicCharacterController/Core/PhysicsMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyCharacterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyCharacterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyLadder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/KinematicCharacterController/Walkthrough/14- Climbing Ladders/Scripts/MyLadder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/AnimancerComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/AnimancerComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/01 Basics/03 Sequence Coroutine/SequenceCoroutine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/01 Basics/03 Sequence Coroutine/SequenceCoroutine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/03 Locomotion/01 Walk And Run/IdleAndWalk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/03 Locomotion/01 Walk And Run/IdleAndWalk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/03 Locomotion/02 Linear Blending/LinearBlendTreeLocomotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/03 Locomotion/02 Linear Blending/LinearBlendTreeLocomotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/03 Locomotion/02 Linear Blending/LinearMixerLocomotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/03 Locomotion/02 Linear Blending/LinearMixerLocomotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/03 Locomotion/03 Directional Blending/SpiderBotAdvanced.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/03 Locomotion/03 Directional Blending/SpiderBotAdvanced.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/01 Creatures/BasicCreature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/01 Creatures/BasicCreature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/01 Creatures/BasicCreatureState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/01 Creatures/BasicCreatureState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/02 Interrupt Management/InterruptableCreature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/02 Interrupt Management/InterruptableCreature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/02 Interrupt Management/InterruptableCreatureState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/02 Interrupt Management/InterruptableCreatureState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/03 Brains/BrainsCreature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/03 Brains/BrainsCreature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/03 Brains/BrainsCreatureBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/03 Brains/BrainsCreatureBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/03 Brains/BrainsCreatureStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/03 Brains/BrainsCreatureStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/03 Brains/States/BrainsCreatureState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/03 Brains/States/BrainsCreatureState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/Creature States/PlatformerCreatureState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/Creature States/PlatformerCreatureState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/Creature States/PlatformerIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/Creature States/PlatformerIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/Creature States/PlatformerJumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/Creature States/PlatformerJumpState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/Health.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/PlatformerCreature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/PlatformerCreature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/PlatformerCreatureBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/06 State Machines/05 Platformer/PlatformerCreatureBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/08 Inverse Kinematics/02 Uneven Ground/ObstacleTreadmill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/08 Inverse Kinematics/02 Uneven Ground/ObstacleTreadmill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/08 Inverse Kinematics/02 Uneven Ground/RaycastFootIK.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Examples/08 Inverse Kinematics/02 Uneven Ground/RaycastFootIK.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/AnimancerLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/AnimancerLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/AnimancerNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/AnimancerNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/AnimancerPlayable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/AnimancerPlayable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/AnimancerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/AnimancerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/ClipState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/ClipState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Controller States/ControllerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Controller States/ControllerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Controller States/FloatControllerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Controller States/FloatControllerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Controller States/Vector2ControllerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Controller States/Vector2ControllerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Controller States/Vector3ControllerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Controller States/Vector3ControllerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Editor Utilities/AnimancerPlayableEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Editor Utilities/AnimancerPlayableEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Editor Utilities/ParametizedAnimancerStateDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Editor Utilities/ParametizedAnimancerStateDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/CartesianMixerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/CartesianMixerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/DirectionalMixerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/DirectionalMixerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/LinearMixerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/LinearMixerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/ManualMixerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/ManualMixerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/MixerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/MixerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/MixerStateT.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/Mixer States/MixerStateT.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/SoloAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Internal/SoloAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/NamedAnimancerComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/NamedAnimancerComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/AnimancerTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/AnimancerTransition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/DirectionalAnimationSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/DirectionalAnimationSet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/DirectionalAnimationSet8.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/DirectionalAnimationSet8.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/ExposedCurve.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/ExposedCurve.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/PixelPerfectPositioning.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/PixelPerfectPositioning.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/State Machine/InputBuffer1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/State Machine/InputBuffer1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/State Machine/InputBuffer2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/State Machine/InputBuffer2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/State Machine/StateMachine2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Animancer/Utilities/State Machine/StateMachine2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/GitHub/Editor/ExtensionLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/GitHub/Editor/ExtensionLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/Modern UI Pack/Scripts/RadialSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/Modern UI Pack/Scripts/RadialSlider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/Modern UI Pack/Scripts/RangeSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/Modern UI Pack/Scripts/RangeSlider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/Modern UI Pack/Scripts/UIGradient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/Modern UI Pack/Scripts/UIGradient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/Attributes/ModifierID.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/Attributes/ModifierID.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/Modifiers/FreeModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/Modifiers/FreeModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/Modifiers/OnlyOneEdgeModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/Modifiers/OnlyOneEdgeModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/Modifiers/UniformModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/Modifiers/UniformModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/ProceduralImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/ProceduralUIImage/Scripts/ProceduralImage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/UIGradient/Scripts/UIGradient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/ProceduralUI/UIGradient/Scripts/UIGradient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/Element Adder Menu/GenericElementAdderMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/Element Adder Menu/GenericElementAdderMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/GenericListAdaptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/GenericListAdaptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/ReorderableListControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/ReorderableListControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/ReorderableListGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/ReorderableListGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/ReorderableListStyles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/ReorderableListStyles.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/SerializedPropertyAdaptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/!Core/ReorderableList/Editor/SerializedPropertyAdaptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Data/RainbowFoldersSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Data/RainbowFoldersSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Scripts/Prefs/RainbowFoldersPreferences.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Scripts/Prefs/RainbowFoldersPreferences.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Scripts/RainbowFoldersBrowserIcons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Scripts/RainbowFoldersBrowserIcons.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Rewired/Examples/ControlRemapping1/Scripts/ControlRemappingDemo1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Rewired/Examples/ControlRemapping1/Scripts/ControlRemappingDemo1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Rewired/Examples/SimpleCombinedKeyboardMouseRemapping/Scripts/SimpleCombinedKeyboardMouseRemapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Rewired/Examples/SimpleCombinedKeyboardMouseRemapping/Scripts/SimpleCombinedKeyboardMouseRemapping.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Rewired/Examples/SimpleControlRemapping/Scripts/SimpleControlRemapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Rewired/Examples/SimpleControlRemapping/Scripts/SimpleControlRemapping.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Rewired/Integration/UnityUI/RewiredPointerInputModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Rewired/Integration/UnityUI/RewiredPointerInputModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Rewired/Integration/UnityUI/RewiredStandaloneInputModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Rewired/Integration/UnityUI/RewiredStandaloneInputModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Rewired/Internal/Scripts/DataStorage/UserDataStore_PlayerPrefs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Rewired/Internal/Scripts/DataStorage/UserDataStore_PlayerPrefs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Rewired/Internal/Scripts/Misc/ExternalTools.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Rewired/Internal/Scripts/Misc/ExternalTools.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/AimIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/AimIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/AimPoserInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/AimPoserInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/ArmIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/ArmIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/BipedIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/BipedIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/CCDIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/CCDIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/FABRIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/FABRIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/FABRIKRootInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/FABRIKRootInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/FingerRigInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/FingerRigInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/FullBodyBipedIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/FullBodyBipedIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/IK Jobs/AimIKJInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/IK Jobs/AimIKJInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/IK Jobs/CCDIKJInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/IK Jobs/CCDIKJInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/IKExecutionOrderInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/IKExecutionOrderInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/InteractionTargetInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/InteractionTargetInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/InteractionTriggerInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/InteractionTriggerInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/LegIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/LegIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/LimbIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/LimbIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/LookAtIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/LookAtIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitAngleInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitAngleInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitHingeInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitHingeInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitPolygonalInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitPolygonalInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitSplineInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/RotationLimitSplineInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/TrigonometricIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/TrigonometricIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/VRIKInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/VRIKInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/_DEMOS/BendGoalInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/FinalIK/_DEMOS/BendGoalInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/PuppetMaster/PuppetMasterHumanoidConfigInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/PuppetMaster/PuppetMasterHumanoidConfigInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/PuppetMaster/PuppetMasterInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/PuppetMaster/PuppetMasterInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/PuppetMaster/_DEMOS/CharacterMeleeDemoInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/PuppetMaster/_DEMOS/CharacterMeleeDemoInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/PuppetMaster/_DEMOS/CharacterPuppetInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/PuppetMaster/_DEMOS/CharacterPuppetInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/RagdollManager/BipedRagdollCreatorInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/RagdollManager/BipedRagdollCreatorInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/RagdollManager/RagdollEditorInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/RagdollManager/RagdollEditorInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/Shared Demo Scripts/CameraControllerInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/Shared Demo Scripts/CameraControllerInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/Shared Scripts/CommentsInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/Shared Scripts/CommentsInspector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/Shared Scripts/InspectorCommentDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/Shared Scripts/InspectorCommentDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/Shared Scripts/LargeHeaderDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Editor/Shared Scripts/LargeHeaderDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Constraints/Constraint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Constraints/Constraint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Constraints/ConstraintPositionOffset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Constraints/ConstraintPositionOffset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Constraints/ConstraintRotationOffset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Constraints/ConstraintRotationOffset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Finger Rig/FingerRig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Finger Rig/FingerRig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Grounder/Grounding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Grounder/Grounding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Grounder/GroundingLeg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Grounder/GroundingLeg.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Jobs/AimIKJ/AimIKJ.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Jobs/AimIKJ/AimIKJ.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKMapping.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverAim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverAim.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFABRIK.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFABRIK.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFullBodyBiped.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverFullBodyBiped.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverHeuristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverHeuristic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverLookAt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverLookAt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRArm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRArm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRFootstep.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRFootstep.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRLeg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRLeg.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRLocomotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRLocomotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRSpine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/IK Solvers/IKSolverVRSpine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/InteractionSystem/InteractionEffector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/InteractionSystem/InteractionEffector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/InteractionSystem/InteractionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/InteractionSystem/InteractionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/InteractionSystem/InteractionTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/InteractionSystem/InteractionTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Ragdoll Utility/RagdollUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Ragdoll Utility/RagdollUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Rotation Limits/RotationLimit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Rotation Limits/RotationLimit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Rotation Limits/RotationLimitPolygonal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Rotation Limits/RotationLimitPolygonal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/AimController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/AimController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/HitReaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/HitReaction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/LookAtController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/LookAtController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/OffsetModifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/OffsetModifier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/OffsetModifierVRIK.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/OffsetModifierVRIK.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/Recoil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/Tools/Recoil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/Scripts/MechSpiderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/Scripts/MechSpiderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/Scripts/MechSpiderLeg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/CCD IK/Scripts/MechSpiderLeg.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/CharacterController3rdPerson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/CharacterController3rdPerson.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/KissingRig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/KissingRig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/PickUp2Handed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_DEMOS/FBBIK/Scripts/PickUp2Handed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Behaviours/BehaviourBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Behaviours/BehaviourBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Muscle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Muscle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Prop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/Prop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/PuppetMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/PuppetMaster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/PuppetMasterSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/PuppetMasterSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/PuppetMasterStates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/Scripts/PuppetMasterStates.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/CharacterAnimationMeleeDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/CharacterAnimationMeleeDemo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/PropDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/PropDemo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/Respawning.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/Respawning.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/UserControlAIMelee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/UserControlAIMelee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/CharacterAnimationBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/CharacterAnimationBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/CharacterAnimationThirdPerson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Scripts/Character Controllers/CharacterAnimationThirdPerson.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Scripts/BipedLimbOrientations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Scripts/BipedLimbOrientations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Scripts/BipedReferences.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Scripts/BipedReferences.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Scripts/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Scripts/Singleton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Scripts/SolverManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Scripts/SolverManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/AssemblyImportSettingsAutomation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/AssemblyImportSettingsAutomation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/BuildAOTAutomation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor/BuildAOTAutomation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Automation/AutomatedValidationHook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Automation/AutomatedValidationHook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Automation/OnBuildValidationHook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Automation/OnBuildValidationHook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Automation/OnPlayValidationHook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Automation/OnPlayValidationHook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Automation/OnProjectStartupValidationHook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Automation/OnProjectStartupValidationHook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Editors/ValidationProfileManagerOverview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Editors/ValidationProfileManagerOverview.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Profiles/ValidationProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Profiles/ValidationProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Profiles/ValidationProfileAsset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Validator/Editor/Scripts/Profiles/ValidationProfileAsset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Math/Runtime/Interpolator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Math/Runtime/Interpolator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Math/Runtime/NoiseGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Math/Runtime/NoiseGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Math/Runtime/XXHash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Math/Runtime/XXHash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Motion/Runtime/BrownianMotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Motion/Runtime/BrownianMotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Motion/Runtime/ConstantMotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Motion/Runtime/ConstantMotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Motion/Runtime/SmoothFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Motion/Runtime/SmoothFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Editor/Patcher/Graph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Editor/Patcher/Graph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Editor/Patcher/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Editor/Patcher/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Runtime/Basic/FloatAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Runtime/Basic/FloatAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Runtime/Filter/Delay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Runtime/Filter/Delay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Runtime/System/NodeBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/SuperButton/Klak/Wiring/Runtime/System/NodeBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/CollisionEvents2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/CollisionEvents2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/CollisionEvents3D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/CollisionEvents3D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/DelayedUltEventHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/DelayedUltEventHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/LifeCycleEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/LifeCycleEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/TriggerEvents2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/TriggerEvents2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/TriggerEvents3D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/TriggerEvents3D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/UltEventHolder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/UltEventHolder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/UpdateEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Event Holders/UpdateEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/PersistentArgument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/PersistentArgument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/PersistentCall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/PersistentCall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent0.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent0.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEvent4.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEventBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Events/UltEventBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Inspector/Clipboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Inspector/Clipboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Inspector/DrawerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Inspector/DrawerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Inspector/ObjectPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UltEvents/Inspector/ObjectPicker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/Editor/GUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/Editor/GUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/Editor/Installer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/Editor/Installer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/Editor/InstallerWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/Editor/InstallerWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/Editor/SCPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/Editor/SCPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/Effects/LUT/Editor/LUTExtracter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/Effects/LUT/Editor/LUTExtracter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scene/Color Picker/G_CUIColorPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scene/Color Picker/G_CUIColorPicker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Audio/G_AudioMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Audio/G_AudioMonitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Fps/G_FpsMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Fps/G_FpsMonitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/GraphyDebugger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/GraphyDebugger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/GraphyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/GraphyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Ram/G_RamMonitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Ram/G_RamMonitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Util/G_FloatString.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Util/G_FloatString.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Util/G_Intstring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tayx/Graphy - Ultimate Stats Monitor/Scripts/Util/G_Intstring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Environment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Environment.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Tools/UnityEvent Editor Extended/Editor/UnityEventDrawerEx.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Tools/UnityEvent Editor Extended/Editor/UnityEventDrawerEx.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Drawing/Runtime/Gizmos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Drawing/Runtime/Gizmos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/Extensions/GeneralExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/Extensions/GeneralExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/Extensions/Rendering/Rendering.BitmapExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/Extensions/Rendering/Rendering.BitmapExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Shaders/GradientController/GradientController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/Shaders/GradientController/GradientController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Shaders/GradientController/GradientHandle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/Shaders/GradientController/GradientHandle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Board/BoardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Board/BoardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Board/DeckSounds.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Board/DeckSounds.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Board/Grind/GrindTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Board/Grind/GrindTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Board/PlayerPrefsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Board/PlayerPrefsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/COMController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/COMController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/EdgeColliderGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/EdgeColliderGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/Editor/SplineUserEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/Editor/SplineUserEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/Editor/SplineUserSubEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/Editor/SplineUserSubEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/ExtrudeMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/ExtrudeMesh.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/LengthCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/LengthCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/MeshGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/MeshGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/ObjectBender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/ObjectBender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/ObjectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/ObjectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/PathGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/PathGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/PolygonColliderGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/PolygonColliderGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineComputer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineComputer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineFollower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineMesh.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplinePositioner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplinePositioner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineProjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineProjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineTracer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineTracer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SplineUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SurfaceGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/SurfaceGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/TubeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/TubeGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/WaveformGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Components/WaveformGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/CustomOffsetModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/CustomOffsetModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/CustomRotationModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/CustomRotationModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/IO/SplineParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/IO/SplineParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/ObjectSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/ObjectSequence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/Spline.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/Spline.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/SplineAddress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/SplineAddress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/SplinePoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/SplinePoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/TransformModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Core/TransformModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/CustomOffsetModuleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/CustomOffsetModuleEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/CustomRotationModuleEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/CustomRotationModuleEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/SplineEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/SplineEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/SplinePointDefaultEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/SplinePointDefaultEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/SplinePreset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/SplinePreset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/Tools/LevelTerrainTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Editor/Tools/LevelTerrainTool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Utilities/Editor/WelcomeWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Utilities/Editor/WelcomeWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Utilities/TS_Mesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Utilities/TS_Mesh.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Utilities/TS_Transform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Utilities/TS_Transform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/InputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/InputThread.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/InputThread.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/LeanTween/Framework/LTDescr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/LeanTween/Framework/LTDescr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/LeanTween/Framework/LeanTween.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/LeanTween/Framework/LeanTween.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Mathd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Mathd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Misc/Dbg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Misc/Dbg.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/MusicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/MusicController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/PromptController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/PromptController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/SettingsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/SettingsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/SkaterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/SkaterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/SoundManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/StickInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/StickInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Trajectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Trajectory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/TriggerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/TriggerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/VacuumBreather/PidController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/VacuumBreather/PidController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/VacuumBreather/PidQuaternionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/VacuumBreather/PidQuaternionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/VacuumBreather/PidVector3Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/VacuumBreather/PidVector3Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.API.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.API.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.FrictionPreset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.FrictionPreset.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,404 +303,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-              <folding>
-                <marker date="1565179930455" expanded="true" signature="6:471" ph="..." />
-                <marker date="1565179930455" expanded="true" signature="510:15737" ph="{...}" />
-                <marker date="1565179930455" expanded="true" signature="553:15735" ph="{...}" />
-                <marker date="1565179930455" expanded="true" signature="559:2804" ph="Variables" />
-                <marker date="1565179930455" expanded="true" signature="580:1192" ph="Serialized" />
-                <marker date="1565179930455" expanded="true" signature="652:808" ph="/* [BoxGroup(&quot;References/SceneReferences&quot;, showLabel: false)] ... */" />
-                <marker date="1565179930455" expanded="false" signature="1198:2121" ph="Non-Serialized" />
-                <marker date="1565179930455" expanded="true" signature="1868:1997" ph="/* Don't serialize this so the value is lost on an editor script recompile. ... */" />
-                <marker date="1565179930455" expanded="false" signature="2128:2487" ph="Local Classes" />
-                <marker date="1565179930455" expanded="true" signature="2181:2201" ph="{...}" />
-                <marker date="1565179930455" expanded="true" signature="2235:2281" ph="{...}" />
-                <marker date="1565179930455" expanded="true" signature="2337:2471" ph="{...}" />
-                <marker date="1565179930455" expanded="false" signature="2493:2790" ph="Consts" />
-                <marker date="1565179930455" expanded="false" signature="2808:15732" ph="/*Handles movement state transitions and enter/exit callbacks ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="175" column="48" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="48" />
-              <folding>
-                <marker date="1565187524378" expanded="true" signature="6:438" ph="..." />
-                <marker date="1565187524378" expanded="true" signature="477:6173" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="522:6171" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="529:1112" ph="Variables" />
-                <marker date="1565187524378" expanded="true" signature="1116:6168" ph="Methods" />
-                <marker date="1565187524378" expanded="true" signature="1157:1257" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="1281:1380" ph="{...}" />
-                <marker date="1565187524378" expanded="false" signature="1384:3351" ph="/* private void GetGround() ... */" />
-                <marker date="1565187524378" expanded="true" signature="3381:5264" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="3661:4847" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="3829:3925" ph="/* calculate spring compression ... */" />
-                <marker date="1565187524378" expanded="true" signature="4868:4943" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="5031:5260" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="5041:5255" ph="/* graphic.axle.localEulerAngles = new Vector3 (graphic.axle.localEulerAngles.x, wheelAngle, graphic.axle.localEu ... */" />
-                <marker date="1565187524378" expanded="true" signature="5293:5711" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="5752:6152" ph="{...}" />
-                <marker date="1565187524378" expanded="true" signature="6175:9383" ph="/* using System.Collections; ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5550">
-              <caret line="34" column="95" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
-              <folding>
-                <marker date="1546703747000" expanded="false" signature="6:128" ph="..." />
-                <marker date="1546703747000" expanded="true" signature="161:49744" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="239:49742" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="454:540" ph="/// Forward (longitudinal) friction info. ... " />
-                <marker date="1546703747000" expanded="true" signature="627:705" ph="/// Side (lateral) friction info. ... " />
-                <marker date="1546703747000" expanded="true" signature="792:995" ph="/// Array of rays and related data that are shot each frame to detect surface features. ... " />
-                <marker date="1546703747000" expanded="true" signature="1167:1275" ph="/// Number of raycasts in the forward / longitudinal direction. ... " />
-                <marker date="1546703747000" expanded="true" signature="1394:1494" ph="/// Number of raycasts in the side / lateral direction. ... " />
-                <marker date="1546703747000" expanded="true" signature="1619:1698" ph="/// True if wheel touching ground. ... " />
-                <marker date="1546703747000" expanded="true" signature="1923:1999" ph="/// Root object of the vehicle. ... " />
-                <marker date="1546703747000" expanded="true" signature="2111:2336" ph="/// If enabled mesh collider mimicking the shape of rim and wheel will be positioned so that wheel can not pass t ... " />
-                <marker date="1546703747000" expanded="true" signature="2389:2458" ph="/// Side of the vehicle. ... " />
-                <marker date="1546703747000" expanded="true" signature="2483:2594" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="2604:2674" ph="/// Side the wheel is on. ... " />
-                <marker date="1546703747000" expanded="true" signature="2755:2837" ph="/// Current active preset enum value. ... " />
-                <marker date="1546703747000" expanded="true" signature="2922:3002" ph="/// Current active friction preset. ... " />
-                <marker date="1546703747000" expanded="true" signature="3064:3184" ph="/// Contains point in which wheel touches ground. Not valid if !isGrounded. ... " />
-                <marker date="1546703747000" expanded="true" signature="3342:3500" ph="/// Enables some wheel behaviors specific to tracked vehicles, specifically the fact that there is no wheel spin. ... " />
-                <marker date="1546703747000" expanded="true" signature="3580:3756" ph="/// Only for tracked vehicles that use NVP wheel enlargement. ... " />
-                <marker date="1546703747000" expanded="true" signature="6090:7409" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="6575:6862" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="6906:7077" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="7454:9199" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="8186:8886" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="8293:8851" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="9235:9853" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="9547:9843" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="9888:10036" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="10098:10608" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="10619:10759" ph="/// Searches for wheel hit point by iterating WheelScan() function to the requested scan depth. ... " />
-                <marker date="1546703747000" expanded="true" signature="10792:15001" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="11323:12603" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="11569:12589" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="12620:14689" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="12720:13528" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="13718:14616" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="13913:14558" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="14375:14536" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="14755:14991" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="15051:17560" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="15527:16752" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="15618:16738" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="16809:16893" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="17602:20971" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="17784:19324" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="18007:18162" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="18183:18543" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="18646:18860" ph="/* If the spring is overcompressed remember the value for later force calculation and set spring to 0. ... */" />
-                <marker date="1546703747000" expanded="true" signature="18900:19077" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="19136:19310" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="19341:19549" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="20026:20437" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="20454:20913" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="21008:23718" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="22336:22713" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="22447:22577" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="22598:22698" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="22841:23429" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="22982:23203" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="23224:23415" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="23509:23708" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="23729:23836" ph="/// Does lateral and longitudinal slip and force calculations. ... " />
-                <marker date="1546703747000" expanded="true" signature="23874:31222" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="24056:24255" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="24272:24355" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="24650:24730" ph="/* Side slip ... */" />
-                <marker date="1546703747000" expanded="true" signature="24823:25278" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="25292:25375" ph="/* Forward slip ... */" />
-                <marker date="1546703747000" expanded="true" signature="25779:26098" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="26316:26481" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="26498:26612" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="27943:28051" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="28798:29060" ph="/* Limit how much residual velocity a wheel can have. Too much will cause wheel to spin for long time after motor ... */" />
-                <marker date="1546703747000" expanded="true" signature="29755:30263" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="29874:30023" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="30280:30346" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="30587:30720" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="30760:30893" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="30993:31132" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="31233:31360" ph="/// Updates force values, calculates force vector and applies it to the rigidbody. ... " />
-                <marker date="1546703747000" expanded="true" signature="31396:35992" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="31430:35982" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="31461:31921" ph="/* Use alternate normal when encountering obstracles that have sharp edges in which case raycastHit.normal will a ... */" />
-                <marker date="1546703747000" expanded="true" signature="32697:35968" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="33152:34452" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="35692:35950" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="35773:35928" ph="{...}" />
-                <marker date="1546703747000" expanded="false" signature="36003:43207" ph="Classes" />
-                <marker date="1546703747000" expanded="true" signature="36148:36248" ph="/// All info related to longitudinal force calculation. ... " />
-                <marker date="1546703747000" expanded="true" signature="36308:36554" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="36565:36630" ph="/// Suspension part. ... " />
-                <marker date="1546703747000" expanded="true" signature="36688:36932" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="36943:37008" ph="/// Suspension part. ... " />
-                <marker date="1546703747000" expanded="true" signature="37066:37686" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="37697:37804" ph="/// Contains everything wheel related, including rim and tire. ... " />
-                <marker date="1546703747000" expanded="true" signature="37861:41074" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="39190:39309" ph="/// Calculation of static parameters and creation of rim collider. ... " />
-                <marker date="1546703747000" expanded="true" signature="39364:40763" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="39991:40749" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="40849:41064" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="41085:41176" ph="/// Contains RaycastHit and extended hit data. ... " />
-                <marker date="1546703747000" expanded="true" signature="41236:43188" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="41668:41779" ph="/// The point of contact between the wheel and the ground. ... " />
-                <marker date="1546703747000" expanded="true" signature="41812:41936" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="41846:41922" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="41950:42042" ph="/// The normal at the point of contact  ... " />
-                <marker date="1546703747000" expanded="true" signature="42076:42206" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="42110:42192" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="42220:42316" ph="/// The direction the wheel is pointing in. ... " />
-                <marker date="1546703747000" expanded="true" signature="42369:42461" ph="/// Tire slip in the rolling direction. ... " />
-                <marker date="1546703747000" expanded="true" signature="42513:42606" ph="/// The sideways direction of the wheel. ... " />
-                <marker date="1546703747000" expanded="true" signature="42660:42752" ph="/// The slip in the sideways direction. ... " />
-                <marker date="1546703747000" expanded="true" signature="42805:42923" ph="/// The magnitude of the force being applied for the contact. [N] ... " />
-                <marker date="1546703747000" expanded="true" signature="43046:43178" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="43080:43164" ph="{...}" />
-                <marker date="1546703747000" expanded="false" signature="43218:49735" ph="Functions" />
-                <marker date="1546703747000" expanded="true" signature="43389:44381" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="44423:44780" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="44500:44745" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="44563:44640" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="44661:44731" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="44841:45008" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="45070:45233" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="45293:47789" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="45992:47538" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="46064:46226" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="46247:46407" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="47097:47147" ph="/* Triangles (double sided) ... */" />
-                <marker date="1546703747000" expanded="true" signature="47800:47878" ph="/// Average of multiple Vector3's ... " />
-                <marker date="1546703747000" expanded="true" signature="47940:48137" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="48033:48087" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="48148:48472" ph="/// Calculates an angle between two vectors in relation a normal. ... " />
-                <marker date="1546703747000" expanded="true" signature="48541:48702" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="48712:49051" ph="/// Determines on what side of the vehicle a point is.  ... " />
-                <marker date="1546703747000" expanded="true" signature="49138:49466" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="49282:49360" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="49377:49456" ph="{...}" />
-                <marker date="1546703747000" expanded="true" signature="49476:49561" ph="/// Determines if layer is in layermask. ... " />
-                <marker date="1546703747000" expanded="true" signature="49634:49714" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Ackermann.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="-1499">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
-                <marker date="1565215568099" expanded="false" signature="6:66" ph="..." />
-                <marker date="1565215568099" expanded="true" signature="99:6037" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="158:6035" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="173:289" ph="/// Visual representation of the wheel and it's more important Vectors. ... " />
-                <marker date="1565215568099" expanded="true" signature="325:4704" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="1070:1441" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="1126:1427" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="1735:4694" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="2550:4680" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="2802:3067" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="3124:3588" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="4714:4863" ph="/// Draw a wheel radius on both side of the wheel, interconected with lines perpendicular to wheel axle. ... " />
-                <marker date="1565215568099" expanded="true" signature="4988:6029" ph="{...}" />
-                <marker date="1565215568099" expanded="true" signature="5345:6019" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="137" selection-start-line="137" selection-end-line="137" />
-              <folding>
-                <marker date="1565185909344" expanded="false" signature="6:603" ph="..." />
-                <marker date="1565185909344" expanded="true" signature="642:16940" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="727:16938" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="733:2994" ph="Variables" />
-                <marker date="1565185909344" expanded="false" signature="754:1279" ph="Serialized" />
-                <marker date="1565185909344" expanded="false" signature="1285:2311" ph="Non-Serialized" />
-                <marker date="1565185909344" expanded="true" signature="1938:2036" ph="/* [SerializeField] [ReadOnly] ... */" />
-                <marker date="1565185909344" expanded="true" signature="2058:2187" ph="/* Don't serialize this so the value is lost on an editor script recompile. ... */" />
-                <marker date="1565185909344" expanded="false" signature="2318:2677" ph="Local Classes" />
-                <marker date="1565185909344" expanded="true" signature="2371:2391" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="2425:2471" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="2527:2661" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="2683:2980" ph="Consts" />
-                <marker date="1565185909344" expanded="true" signature="2998:16932" ph="Methods" />
-                <marker date="1565185909344" expanded="true" signature="3142:3365" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="3390:3564" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="3423:3457" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="3625:4041" ph="Input Handling" />
-                <marker date="1565185909344" expanded="true" signature="3696:4024" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="3707:4020" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="4045:16754" ph="Character Controller" />
-                <marker date="1565185909344" expanded="false" signature="4161:5200" ph="State Handling" />
-                <marker date="1565185909344" expanded="true" signature="4343:4540" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="4686:4864" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="4708:4860" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="5006:5184" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="5028:5180" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="5206:14197" ph="Update Loops" />
-                <marker date="1565185909344" expanded="true" signature="5232:5418" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565185909344" expanded="true" signature="5485:5493" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="5499:5690" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565185909344" expanded="true" signature="5756:6578" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="5794:6574" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="5973:6017" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="6145:6338" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="6241:6287" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="6348:6486" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="6626:6902" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565185909344" expanded="true" signature="6980:8436" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="7018:7518" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="7144:7219" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="7259:7435" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="7523:8432" ph="Handling" />
-                <marker date="1565185909344" expanded="true" signature="7620:8414" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="7632:7918" ph="/* Vector3 __smoothedLookInputDirection = Vector3.Slerp(motor.CharacterForward, _lookInputVector, ... */" />
-                <marker date="1565185909344" expanded="true" signature="8115:8245" ph="/* float __angle = Quaternion.Angle(__fromRotation, __toRotation); ... */" />
-                <marker date="1565185909344" expanded="true" signature="8442:8715" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565185909344" expanded="true" signature="8804:13807" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="8842:9247" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="8959:9031" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="9041:9110" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="9252:13803" ph="Handling" />
-                <marker date="1565185909344" expanded="true" signature="9345:10662" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="9586:9957" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="10733:12318" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="10804:12160" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="11026:11303" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="11721:11773" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="11783:12105" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="12386:13785" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="12493:13575" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="12797:13569" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="13000:13077" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="13875:14181" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="14013:14040" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="14139:14177" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="14411:15435" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="15076:15431" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="15269:15348" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="15510:15630" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="15691:15898" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="15729:15894" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="15902:16737" ph="Interface Implementations" />
-                <marker date="1565185909344" expanded="true" signature="16080:16092" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="16239:16251" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="16471:16483" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="16517:16550" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="16595:16628" ph="{...}" />
-                <marker date="1565185909344" expanded="true" signature="16709:16721" ph="{...}" />
-                <marker date="1565185909344" expanded="false" signature="16758:16916" ph="Debugging" />
-                <marker date="1565185909344" expanded="true" signature="16799:16902" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="333" column="50" selection-start-line="333" selection-start-column="50" selection-end-line="333" selection-end-column="50" />
-              <folding>
-                <marker date="1565214901746" expanded="true" signature="6:471" ph="..." />
-                <marker date="1565214901746" expanded="true" signature="511:16200" ph="{...}" />
-                <marker date="1565214901746" expanded="true" signature="562:16198" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="571:4853" ph="Variables" />
-                <marker date="1565214901746" expanded="false" signature="754:822" ph="/// The Transform of the skateboard ... " />
-                <marker date="1565214901746" expanded="false" signature="878:951" ph="/// The Transform of the character motor ... " />
-                <marker date="1565214901746" expanded="false" signature="1007:1156" ph="/// The character's goal position in its movement calculations (always up-to-date during the character update pha ... " />
-                <marker date="1565214901746" expanded="false" signature="1231:1350" ph="/// The character's up direction (always up-to-date during the character update phase) ... " />
-                <marker date="1565214901746" expanded="false" signature="1406:1530" ph="/// The character's forward direction (always up-to-date during the character update phase) ... " />
-                <marker date="1565214901746" expanded="false" signature="1591:1713" ph="/// The character's right direction (always up-to-date during the character update phase) ... " />
-                <marker date="1565214901746" expanded="false" signature="1772:4466" ph="State Info" />
-                <marker date="1565214901746" expanded="false" signature="1796:1968" ph="/// Represents the entire state of a character motor that is pertinent for simulation. ... " />
-                <marker date="1565214901746" expanded="false" signature="2014:2366" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="2370:2468" ph="/// Contains all the information for the motor's grounding status ... " />
-                <marker date="1565214901746" expanded="false" signature="2500:3315" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="2851:3311" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="3321:3435" ph="/// Contains the simulation-relevant information for the motor's grounding status ... " />
-                <marker date="1565214901746" expanded="false" signature="3476:4092" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="3742:4088" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="4098:4177" ph="/// Contains the current grounding information ... " />
-                <marker date="1565214901746" expanded="false" signature="4264:4344" ph="/// Contains the previous grounding information ... " />
-                <marker date="1565214901746" expanded="false" signature="4472:4831" ph="Local Classes" />
-                <marker date="1565214901746" expanded="false" signature="4525:4545" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="4579:4625" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="4681:4815" ph="{...}" />
-                <marker date="1565214901746" expanded="true" signature="4859:16195" ph="Methods" />
-                <marker date="1565214901746" expanded="false" signature="4878:7579" ph="Public API" />
-                <marker date="1565214901746" expanded="false" signature="4900:5839" ph="/* public void AddPushForce(float force) ... */" />
-                <marker date="1565214901746" expanded="false" signature="5914:6048" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="6109:6318" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="6147:6314" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="6324:6399" ph="/// Sets the character's position directly ... " />
-                <marker date="1565214901746" expanded="false" signature="6476:6672" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="6620:6668" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="6675:6750" ph="/// Sets the character's rotation directly ... " />
-                <marker date="1565214901746" expanded="false" signature="6830:7028" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="6872:6947" ph="/* _initialSimulationRotation = rotation; ... */" />
-                <marker date="1565214901746" expanded="false" signature="6976:7024" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="7031:7119" ph="/// Sets the character's position and rotation directly ... " />
-                <marker date="1565214901746" expanded="false" signature="7228:7564" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="7293:7377" ph="/* _initialSimulationPosition = position; ... */" />
-                <marker date="1565214901746" expanded="false" signature="7474:7560" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="7484:7555" ph="/* InitialTickPosition = position; ... */" />
-                <marker date="1565214901746" expanded="true" signature="7585:16179" ph="Character Controller" />
-                <marker date="1565214901746" expanded="false" signature="7701:8740" ph="State Handling" />
-                <marker date="1565214901746" expanded="false" signature="7883:8080" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="8226:8404" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="8248:8400" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="8546:8724" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="8568:8720" ph="{...}" />
-                <marker date="1565214901746" expanded="true" signature="8746:16165" ph="Update Loops" />
-                <marker date="1565214901746" expanded="true" signature="8795:8845" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="8849:9035" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565214901746" expanded="false" signature="9102:9110" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="9116:9307" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565214901746" expanded="false" signature="9373:9381" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="9429:9705" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565214901746" expanded="false" signature="9783:10434" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="9821:9948" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="9953:10430" ph="Handling" />
-                <marker date="1565214901746" expanded="false" signature="10050:10412" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="10061:10407" ph="/* Quaternion __fromRotation = Quaternion.LookRotation(motor.CharacterForward, motor.CharacterUp), ... */" />
-                <marker date="1565214901746" expanded="false" signature="10443:10716" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1565214901746" expanded="false" signature="10805:15795" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="10843:11244" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="10954:11028" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="11038:11109" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="11249:15791" ph="/* ##region Handling ... */" />
-                <marker date="1565214901746" expanded="false" signature="15863:16149" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="15989:16018" ph="{...}" />
-                <marker date="1565214901746" expanded="false" signature="16105:16145" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="6:82" ph="..." />
+                <marker date="1565622854277" expanded="true" signature="106:4302" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="110:194" ph="/// An implementation of Ackermann steering mechanism ... " />
+                <marker date="1565622854277" expanded="true" signature="234:4300" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="1011:1047" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="1072:1135" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="1186:1745" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="1529:1623" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="1646:1741" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="1788:2089" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="1810:1945" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="1953:2085" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="2188:2366" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="2445:3400" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="2585:2669" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="2689:3021" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="3044:3376" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="3431:4296" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="3643:3963" ph="{...}" />
+                <marker date="1565622854277" expanded="true" signature="3996:4281" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -425,6 +343,7 @@
       <find>_grounded</find>
       <find>transform</find>
       <find>Grounded</find>
+      <find>motorTorqueForSpeed</find>
     </findStrings>
     <replaceStrings>
       <replace>axle</replace>
@@ -438,9 +357,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Ackermann.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.EncodedAudio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -453,6 +373,10 @@
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs" />
+        <option value="$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Aerodynamics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Vehicle.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AI/Demo/Scripts/AIDemo.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Ackermann.cs" />
       </list>
     </option>
   </component>
@@ -463,27 +387,17 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1253" />
+    <option name="y" value="346" />
     <option name="width" value="1936" />
     <option name="height" value="1096" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="UnityExplorer" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="FileSystemExplorer" />
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="AssemblyExplorer" />
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
-        <option name="show-project-names" value="true" />
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
@@ -533,11 +447,13 @@
       <option name="presentableId" value="Default" />
       <updated>1565169207202</updated>
       <workItem from="1565169216130" duration="12956000" />
+      <workItem from="1565566447725" duration="964000" />
+      <workItem from="1565613435057" duration="5445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12956000" />
+    <option name="totallyTimeSpent" value="19365000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -549,20 +465,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="7" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24986681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -570,11 +478,19 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Unity" order="11" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,35 +538,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-          <folding>
-            <marker date="1565179930455" expanded="true" signature="6:471" ph="..." />
-            <marker date="1565179930455" expanded="true" signature="510:15737" ph="{...}" />
-            <marker date="1565179930455" expanded="true" signature="553:15735" ph="{...}" />
-            <marker date="1565179930455" expanded="true" signature="559:2804" ph="Variables" />
-            <marker date="1565179930455" expanded="true" signature="580:1192" ph="Serialized" />
-            <marker date="1565179930455" expanded="true" signature="652:808" ph="/* [BoxGroup(&quot;References/SceneReferences&quot;, showLabel: false)] ... */" />
-            <marker date="1565179930455" expanded="false" signature="1198:2121" ph="Non-Serialized" />
-            <marker date="1565179930455" expanded="true" signature="1868:1997" ph="/* Don't serialize this so the value is lost on an editor script recompile. ... */" />
-            <marker date="1565179930455" expanded="false" signature="2128:2487" ph="Local Classes" />
-            <marker date="1565179930455" expanded="true" signature="2181:2201" ph="{...}" />
-            <marker date="1565179930455" expanded="true" signature="2235:2281" ph="{...}" />
-            <marker date="1565179930455" expanded="true" signature="2337:2471" ph="{...}" />
-            <marker date="1565179930455" expanded="false" signature="2493:2790" ph="Consts" />
-            <marker date="1565179930455" expanded="false" signature="2808:15732" ph="/*Handles movement state transitions and enter/exit callbacks ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/Upgrade README (3.2 to 3.3).txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/Upgrade README (3.2 to 3.3).txt" />
     <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
+        <state relative-caret-position="1620">
           <caret line="175" column="48" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="48" />
           <folding>
             <marker date="1565187524378" expanded="true" signature="6:438" ph="..." />
@@ -674,9 +565,180 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="34" column="95" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
+          <folding>
+            <marker date="1565621931704" expanded="false" signature="6:128" ph="..." />
+            <marker date="1565621931704" expanded="true" signature="161:49420" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="239:49418" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="454:540" ph="/// Forward (longitudinal) friction info. ... " />
+            <marker date="1565621931704" expanded="true" signature="627:705" ph="/// Side (lateral) friction info. ... " />
+            <marker date="1565621931704" expanded="true" signature="792:995" ph="/// Array of rays and related data that are shot each frame to detect surface features. ... " />
+            <marker date="1565621931704" expanded="true" signature="1167:1275" ph="/// Number of raycasts in the forward / longitudinal direction. ... " />
+            <marker date="1565621931704" expanded="true" signature="1394:1494" ph="/// Number of raycasts in the side / lateral direction. ... " />
+            <marker date="1565621931704" expanded="true" signature="1619:1698" ph="/// True if wheel touching ground. ... " />
+            <marker date="1565621931704" expanded="true" signature="1923:1999" ph="/// Root object of the vehicle. ... " />
+            <marker date="1565621931704" expanded="true" signature="2111:2336" ph="/// If enabled mesh collider mimicking the shape of rim and wheel will be positioned so that wheel can not pass t ... " />
+            <marker date="1565621931704" expanded="true" signature="2389:2458" ph="/// Side of the vehicle. ... " />
+            <marker date="1565621931704" expanded="true" signature="2483:2594" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="2604:2674" ph="/// Side the wheel is on. ... " />
+            <marker date="1565621931704" expanded="true" signature="2755:2837" ph="/// Current active preset enum value. ... " />
+            <marker date="1565621931704" expanded="true" signature="2922:3002" ph="/// Current active friction preset. ... " />
+            <marker date="1565621931704" expanded="true" signature="3064:3184" ph="/// Contains point in which wheel touches ground. Not valid if !isGrounded. ... " />
+            <marker date="1565621931704" expanded="true" signature="3342:3500" ph="/// Enables some wheel behaviors specific to tracked vehicles, specifically the fact that there is no wheel spin. ... " />
+            <marker date="1565621931704" expanded="true" signature="3580:3756" ph="/// Only for tracked vehicles that use NVP wheel enlargement. ... " />
+            <marker date="1565621931704" expanded="true" signature="6090:7409" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="6575:6862" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="6906:7077" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="7454:9199" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="8186:8886" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="8293:8851" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="9235:9853" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="9547:9843" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="9888:10036" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="10098:10608" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="10619:10759" ph="/// Searches for wheel hit point by iterating WheelScan() function to the requested scan depth. ... " />
+            <marker date="1565621931704" expanded="true" signature="10792:15001" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="11323:12603" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="11569:12589" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="12620:14689" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="12720:13528" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="13718:14616" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="13913:14558" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="14375:14536" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="14755:14991" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="15051:17560" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="15527:16752" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="15618:16738" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="16809:16893" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="17602:20971" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="17784:19324" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="18007:18162" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="18183:18543" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="18646:18860" ph="/* If the spring is overcompressed remember the value for later force calculation and set spring to 0. ... */" />
+            <marker date="1565621931704" expanded="true" signature="18900:19077" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="19136:19310" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="19341:19549" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="20026:20437" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="20454:20913" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="21008:23718" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="22336:22713" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="22447:22577" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="22598:22698" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="22841:23429" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="22982:23203" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="23224:23415" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="23509:23708" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="23729:23836" ph="/// Does lateral and longitudinal slip and force calculations. ... " />
+            <marker date="1565621931704" expanded="true" signature="23874:31222" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="24056:24255" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="24272:24355" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="24650:24730" ph="/* Side slip ... */" />
+            <marker date="1565621931704" expanded="true" signature="24823:25278" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="25292:25375" ph="/* Forward slip ... */" />
+            <marker date="1565621931704" expanded="true" signature="25779:26098" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="26316:26481" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="26498:26612" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="27943:28051" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="28798:29060" ph="/* Limit how much residual velocity a wheel can have. Too much will cause wheel to spin for long time after motor ... */" />
+            <marker date="1565621931704" expanded="true" signature="29755:30263" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="29874:30023" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="30280:30346" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="30587:30720" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="30760:30893" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="30993:31132" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="31233:31360" ph="/// Updates force values, calculates force vector and applies it to the rigidbody. ... " />
+            <marker date="1565621931704" expanded="true" signature="31396:35992" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="31430:35982" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="31461:31921" ph="/* Use alternate normal when encountering obstracles that have sharp edges in which case raycastHit.normal will a ... */" />
+            <marker date="1565621931704" expanded="true" signature="32697:35968" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="33152:34452" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="35692:35950" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="35773:35928" ph="{...}" />
+            <marker date="1565621931704" expanded="false" signature="36003:42883" ph="Classes" />
+            <marker date="1565621931704" expanded="true" signature="36148:36248" ph="/// All info related to longitudinal force calculation. ... " />
+            <marker date="1565621931704" expanded="true" signature="36308:36554" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="36565:36630" ph="/// Suspension part. ... " />
+            <marker date="1565621931704" expanded="true" signature="36688:36932" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="36943:37008" ph="/// Suspension part. ... " />
+            <marker date="1565621931704" expanded="true" signature="37066:37686" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="37697:37804" ph="/// Contains everything wheel related, including rim and tire. ... " />
+            <marker date="1565621931704" expanded="true" signature="37861:41074" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="39190:39309" ph="/// Calculation of static parameters and creation of rim collider. ... " />
+            <marker date="1565621931704" expanded="true" signature="39364:40763" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="39991:40749" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="40849:41064" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="41085:41176" ph="/// Contains RaycastHit and extended hit data. ... " />
+            <marker date="1565621931704" expanded="true" signature="41236:42864" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="41668:41779" ph="/// The point of contact between the wheel and the ground. ... " />
+            <marker date="1565621931704" expanded="true" signature="41812:41828" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="41817:41828" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="41842:41934" ph="/// The normal at the point of contact  ... " />
+            <marker date="1565621931704" expanded="true" signature="41968:41990" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="41972:41990" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="42004:42100" ph="/// The direction the wheel is pointing in. ... " />
+            <marker date="1565621931704" expanded="true" signature="42153:42245" ph="/// Tire slip in the rolling direction. ... " />
+            <marker date="1565621931704" expanded="true" signature="42297:42390" ph="/// The sideways direction of the wheel. ... " />
+            <marker date="1565621931704" expanded="true" signature="42444:42536" ph="/// The slip in the sideways direction. ... " />
+            <marker date="1565621931704" expanded="true" signature="42589:42707" ph="/// The magnitude of the force being applied for the contact. [N] ... " />
+            <marker date="1565621931704" expanded="true" signature="42830:42854" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="42834:42854" ph="{...}" />
+            <marker date="1565621931704" expanded="false" signature="42894:49411" ph="Functions" />
+            <marker date="1565621931704" expanded="true" signature="43065:44057" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="44099:44456" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="44176:44421" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="44239:44316" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="44337:44407" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="44517:44684" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="44746:44909" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="44969:47465" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="45668:47214" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="45740:45902" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="45923:46083" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="46773:46823" ph="/* Triangles (double sided) ... */" />
+            <marker date="1565621931704" expanded="true" signature="47476:47554" ph="/// Average of multiple Vector3's ... " />
+            <marker date="1565621931704" expanded="true" signature="47616:47813" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="47709:47763" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="47824:48148" ph="/// Calculates an angle between two vectors in relation a normal. ... " />
+            <marker date="1565621931704" expanded="true" signature="48217:48378" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="48388:48727" ph="/// Determines on what side of the vehicle a point is.  ... " />
+            <marker date="1565621931704" expanded="true" signature="48814:49142" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="48958:49036" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="49053:49132" ph="{...}" />
+            <marker date="1565621931704" expanded="true" signature="49152:49237" ph="/// Determines if layer is in layermask. ... " />
+            <marker date="1565621931704" expanded="true" signature="49310:49390" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding>
+            <marker date="1565215568099" expanded="false" signature="6:66" ph="..." />
+            <marker date="1565215568099" expanded="true" signature="99:6037" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="158:6035" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="173:289" ph="/// Visual representation of the wheel and it's more important Vectors. ... " />
+            <marker date="1565215568099" expanded="true" signature="325:4704" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="1070:1441" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="1126:1427" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="1735:4694" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="2550:4680" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="2802:3067" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="3124:3588" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="4714:4863" ph="/// Draw a wheel radius on both side of the wheel, interconected with lines perpendicular to wheel axle. ... " />
+            <marker date="1565215568099" expanded="true" signature="4988:6029" ph="{...}" />
+            <marker date="1565215568099" expanded="true" signature="5345:6019" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="255">
           <caret line="137" selection-start-line="137" selection-end-line="137" />
           <folding>
             <marker date="1565185909344" expanded="false" signature="6:603" ph="..." />
@@ -766,7 +828,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
+        <state relative-caret-position="555">
           <caret line="333" column="50" selection-start-line="333" selection-start-column="50" selection-end-line="333" selection-end-column="50" />
           <folding>
             <marker date="1565214901746" expanded="true" signature="6:471" ph="..." />
@@ -844,173 +906,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5550">
-          <caret line="34" column="95" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
+        <state>
           <folding>
-            <marker date="1546703747000" expanded="false" signature="6:128" ph="..." />
-            <marker date="1546703747000" expanded="true" signature="161:49744" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="239:49742" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="454:540" ph="/// Forward (longitudinal) friction info. ... " />
-            <marker date="1546703747000" expanded="true" signature="627:705" ph="/// Side (lateral) friction info. ... " />
-            <marker date="1546703747000" expanded="true" signature="792:995" ph="/// Array of rays and related data that are shot each frame to detect surface features. ... " />
-            <marker date="1546703747000" expanded="true" signature="1167:1275" ph="/// Number of raycasts in the forward / longitudinal direction. ... " />
-            <marker date="1546703747000" expanded="true" signature="1394:1494" ph="/// Number of raycasts in the side / lateral direction. ... " />
-            <marker date="1546703747000" expanded="true" signature="1619:1698" ph="/// True if wheel touching ground. ... " />
-            <marker date="1546703747000" expanded="true" signature="1923:1999" ph="/// Root object of the vehicle. ... " />
-            <marker date="1546703747000" expanded="true" signature="2111:2336" ph="/// If enabled mesh collider mimicking the shape of rim and wheel will be positioned so that wheel can not pass t ... " />
-            <marker date="1546703747000" expanded="true" signature="2389:2458" ph="/// Side of the vehicle. ... " />
-            <marker date="1546703747000" expanded="true" signature="2483:2594" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="2604:2674" ph="/// Side the wheel is on. ... " />
-            <marker date="1546703747000" expanded="true" signature="2755:2837" ph="/// Current active preset enum value. ... " />
-            <marker date="1546703747000" expanded="true" signature="2922:3002" ph="/// Current active friction preset. ... " />
-            <marker date="1546703747000" expanded="true" signature="3064:3184" ph="/// Contains point in which wheel touches ground. Not valid if !isGrounded. ... " />
-            <marker date="1546703747000" expanded="true" signature="3342:3500" ph="/// Enables some wheel behaviors specific to tracked vehicles, specifically the fact that there is no wheel spin. ... " />
-            <marker date="1546703747000" expanded="true" signature="3580:3756" ph="/// Only for tracked vehicles that use NVP wheel enlargement. ... " />
-            <marker date="1546703747000" expanded="true" signature="6090:7409" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="6575:6862" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="6906:7077" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="7454:9199" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="8186:8886" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="8293:8851" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="9235:9853" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="9547:9843" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="9888:10036" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="10098:10608" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="10619:10759" ph="/// Searches for wheel hit point by iterating WheelScan() function to the requested scan depth. ... " />
-            <marker date="1546703747000" expanded="true" signature="10792:15001" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="11323:12603" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="11569:12589" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="12620:14689" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="12720:13528" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="13718:14616" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="13913:14558" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="14375:14536" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="14755:14991" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="15051:17560" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="15527:16752" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="15618:16738" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="16809:16893" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="17602:20971" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="17784:19324" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="18007:18162" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="18183:18543" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="18646:18860" ph="/* If the spring is overcompressed remember the value for later force calculation and set spring to 0. ... */" />
-            <marker date="1546703747000" expanded="true" signature="18900:19077" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="19136:19310" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="19341:19549" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="20026:20437" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="20454:20913" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="21008:23718" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="22336:22713" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="22447:22577" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="22598:22698" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="22841:23429" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="22982:23203" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="23224:23415" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="23509:23708" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="23729:23836" ph="/// Does lateral and longitudinal slip and force calculations. ... " />
-            <marker date="1546703747000" expanded="true" signature="23874:31222" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="24056:24255" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="24272:24355" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="24650:24730" ph="/* Side slip ... */" />
-            <marker date="1546703747000" expanded="true" signature="24823:25278" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="25292:25375" ph="/* Forward slip ... */" />
-            <marker date="1546703747000" expanded="true" signature="25779:26098" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="26316:26481" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="26498:26612" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="27943:28051" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="28798:29060" ph="/* Limit how much residual velocity a wheel can have. Too much will cause wheel to spin for long time after motor ... */" />
-            <marker date="1546703747000" expanded="true" signature="29755:30263" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="29874:30023" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="30280:30346" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="30587:30720" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="30760:30893" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="30993:31132" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="31233:31360" ph="/// Updates force values, calculates force vector and applies it to the rigidbody. ... " />
-            <marker date="1546703747000" expanded="true" signature="31396:35992" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="31430:35982" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="31461:31921" ph="/* Use alternate normal when encountering obstracles that have sharp edges in which case raycastHit.normal will a ... */" />
-            <marker date="1546703747000" expanded="true" signature="32697:35968" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="33152:34452" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="35692:35950" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="35773:35928" ph="{...}" />
-            <marker date="1546703747000" expanded="false" signature="36003:43207" ph="Classes" />
-            <marker date="1546703747000" expanded="true" signature="36148:36248" ph="/// All info related to longitudinal force calculation. ... " />
-            <marker date="1546703747000" expanded="true" signature="36308:36554" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="36565:36630" ph="/// Suspension part. ... " />
-            <marker date="1546703747000" expanded="true" signature="36688:36932" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="36943:37008" ph="/// Suspension part. ... " />
-            <marker date="1546703747000" expanded="true" signature="37066:37686" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="37697:37804" ph="/// Contains everything wheel related, including rim and tire. ... " />
-            <marker date="1546703747000" expanded="true" signature="37861:41074" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="39190:39309" ph="/// Calculation of static parameters and creation of rim collider. ... " />
-            <marker date="1546703747000" expanded="true" signature="39364:40763" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="39991:40749" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="40849:41064" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="41085:41176" ph="/// Contains RaycastHit and extended hit data. ... " />
-            <marker date="1546703747000" expanded="true" signature="41236:43188" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="41668:41779" ph="/// The point of contact between the wheel and the ground. ... " />
-            <marker date="1546703747000" expanded="true" signature="41812:41936" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="41846:41922" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="41950:42042" ph="/// The normal at the point of contact  ... " />
-            <marker date="1546703747000" expanded="true" signature="42076:42206" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="42110:42192" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="42220:42316" ph="/// The direction the wheel is pointing in. ... " />
-            <marker date="1546703747000" expanded="true" signature="42369:42461" ph="/// Tire slip in the rolling direction. ... " />
-            <marker date="1546703747000" expanded="true" signature="42513:42606" ph="/// The sideways direction of the wheel. ... " />
-            <marker date="1546703747000" expanded="true" signature="42660:42752" ph="/// The slip in the sideways direction. ... " />
-            <marker date="1546703747000" expanded="true" signature="42805:42923" ph="/// The magnitude of the force being applied for the contact. [N] ... " />
-            <marker date="1546703747000" expanded="true" signature="43046:43178" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="43080:43164" ph="{...}" />
-            <marker date="1546703747000" expanded="false" signature="43218:49735" ph="Functions" />
-            <marker date="1546703747000" expanded="true" signature="43389:44381" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="44423:44780" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="44500:44745" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="44563:44640" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="44661:44731" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="44841:45008" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="45070:45233" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="45293:47789" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="45992:47538" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="46064:46226" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="46247:46407" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="47097:47147" ph="/* Triangles (double sided) ... */" />
-            <marker date="1546703747000" expanded="true" signature="47800:47878" ph="/// Average of multiple Vector3's ... " />
-            <marker date="1546703747000" expanded="true" signature="47940:48137" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="48033:48087" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="48148:48472" ph="/// Calculates an angle between two vectors in relation a normal. ... " />
-            <marker date="1546703747000" expanded="true" signature="48541:48702" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="48712:49051" ph="/// Determines on what side of the vehicle a point is.  ... " />
-            <marker date="1546703747000" expanded="true" signature="49138:49466" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="49282:49360" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="49377:49456" ph="{...}" />
-            <marker date="1546703747000" expanded="true" signature="49476:49561" ph="/// Determines if layer is in layermask. ... " />
-            <marker date="1546703747000" expanded="true" signature="49634:49714" ph="{...}" />
+            <marker date="1565179930455" expanded="true" signature="6:471" ph="..." />
+            <marker date="1565179930455" expanded="true" signature="510:15737" ph="{...}" />
+            <marker date="1565179930455" expanded="true" signature="553:15735" ph="{...}" />
+            <marker date="1565179930455" expanded="true" signature="559:2804" ph="Variables" />
+            <marker date="1565179930455" expanded="true" signature="580:1192" ph="Serialized" />
+            <marker date="1565179930455" expanded="true" signature="652:808" ph="/* [BoxGroup(&quot;References/SceneReferences&quot;, showLabel: false)] ... */" />
+            <marker date="1565179930455" expanded="false" signature="1198:2121" ph="Non-Serialized" />
+            <marker date="1565179930455" expanded="true" signature="1868:1997" ph="/* Don't serialize this so the value is lost on an editor script recompile. ... */" />
+            <marker date="1565179930455" expanded="false" signature="2128:2487" ph="Local Classes" />
+            <marker date="1565179930455" expanded="true" signature="2181:2201" ph="{...}" />
+            <marker date="1565179930455" expanded="true" signature="2235:2281" ph="{...}" />
+            <marker date="1565179930455" expanded="true" signature="2337:2471" ph="{...}" />
+            <marker date="1565179930455" expanded="false" signature="2493:2790" ph="Consts" />
+            <marker date="1565179930455" expanded="false" signature="2808:15732" ph="/*Handles movement state transitions and enter/exit callbacks ... */" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Ackermann.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Aerodynamics.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="-165" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/AntiRoll.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Brakes.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/CenterOfMassAssigner.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/KeyboardPlayer.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Motor.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/WheelRenderer.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Wheel.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/VehicleInput.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Vehicle.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Scripts/Steering.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AI/Scripts/AIPlayer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-450" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AI/Demo/Scripts/AIDemo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Ackermann.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1499">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
-            <marker date="1565215568099" expanded="false" signature="6:66" ph="..." />
-            <marker date="1565215568099" expanded="true" signature="99:6037" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="158:6035" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="173:289" ph="/// Visual representation of the wheel and it's more important Vectors. ... " />
-            <marker date="1565215568099" expanded="true" signature="325:4704" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="1070:1441" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="1126:1427" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="1735:4694" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="2550:4680" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="2802:3067" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="3124:3588" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="4714:4863" ph="/// Draw a wheel radius on both side of the wheel, interconected with lines perpendicular to wheel axle. ... " />
-            <marker date="1565215568099" expanded="true" signature="4988:6029" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="5345:6019" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="6:82" ph="..." />
+            <marker date="1565622854277" expanded="true" signature="106:4302" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="110:194" ph="/// An implementation of Ackermann steering mechanism ... " />
+            <marker date="1565622854277" expanded="true" signature="234:4300" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="1011:1047" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="1072:1135" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="1186:1745" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="1529:1623" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="1646:1741" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="1788:2089" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="1810:1945" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="1953:2085" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="2188:2366" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="2445:3400" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="2585:2669" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="2689:3021" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="3044:3376" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="3431:4296" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="3643:3963" ph="{...}" />
+            <marker date="1565622854277" expanded="true" signature="3996:4281" ph="{...}" />
           </folding>
         </state>
       </provider>

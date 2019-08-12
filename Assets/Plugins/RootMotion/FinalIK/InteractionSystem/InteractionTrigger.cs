@@ -76,15 +76,11 @@ namespace RootMotion.FinalIK {
 			public bool fixYAxis;
 			
 			// Returns the 2D offset as 3D vector.
-			public Vector3 offset3D { get { return new Vector3(offset.x, 0f, offset.y); }}
-			
+			public Vector3 offset3D => new Vector3(offset.x, 0f, offset.y);
+
 			// Returns the default direction of this character position in world space.
-			public Vector3 direction3D { 
-				get { 
-					return Quaternion.AngleAxis(angleOffset, Vector3.up) * Vector3.forward;
-				}
-			}
-			
+			public Vector3 direction3D => Quaternion.AngleAxis(angleOffset, Vector3.up) * Vector3.forward;
+
 			// Is the character in range with this character position?
 			public bool IsInRange(Transform character, Transform trigger, out float error) {
 				// Do not use this character position, trigger is still valid

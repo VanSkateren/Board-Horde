@@ -102,8 +102,8 @@ namespace Borodar.RainbowFolders.Editor
 
             public override string Value
             {
-                get { return EditorPrefs.GetString(Key, DefaultValue); }
-                set { EditorPrefs.SetString(Key, value); }
+                get => EditorPrefs.GetString(Key, DefaultValue);
+                set => EditorPrefs.SetString(Key, value);
             }
 
             public override void Draw()
@@ -124,10 +124,7 @@ namespace Borodar.RainbowFolders.Editor
                     var index = EditorPrefs.GetInt(Key, (int) DefaultValue);
                     return (Enum.IsDefined(typeof(EventModifiers), index)) ? (EventModifiers) index : DefaultValue;
                 }
-                set
-                {
-                    EditorPrefs.SetInt(Key, (int) value);
-                }
+                set => EditorPrefs.SetInt(Key, (int) value);
             }
 
             public override void Draw() {

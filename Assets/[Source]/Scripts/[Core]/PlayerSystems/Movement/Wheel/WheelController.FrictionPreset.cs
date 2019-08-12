@@ -26,13 +26,7 @@ namespace NWH.WheelController3D
             public Vector4 BCDE;
             [SerializeField]
             private AnimationCurve curve;
-            public AnimationCurve Curve
-            {
-                get
-                {
-                    return curve;
-                }
-            }
+            public AnimationCurve Curve => curve;
 
 
             /* PRESETS

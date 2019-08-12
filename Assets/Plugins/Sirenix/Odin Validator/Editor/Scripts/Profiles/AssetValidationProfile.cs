@@ -40,10 +40,10 @@ namespace Sirenix.OdinValidator.Editor
 
         public IEnumerable<string> GetAllAssetsToValidate()
         {
-            if (this.AssetPaths == null) yield break;
-            List<string> allAssetPaths = this.AssetPaths.ToList();
-            List<string> allExcludeAssetPaths = this.ExcludeAssetPaths.ToList();
-            foreach (UnityEngine.Object item in this.ExcludeAssetReferences.Where(x => x))
+            if (AssetPaths == null) yield break;
+            List<string> allAssetPaths = AssetPaths.ToList();
+            List<string> allExcludeAssetPaths = ExcludeAssetPaths.ToList();
+            foreach (UnityEngine.Object item in ExcludeAssetReferences.Where(x => x))
             {
                 string path = AssetDatabase.GetAssetPath(item);
                 if (!string.IsNullOrEmpty(path))
@@ -71,7 +71,7 @@ namespace Sirenix.OdinValidator.Editor
             excludeMap.AddRange(excludeAssetPaths);
             if (excludeDirectories.Length > 0)
             {
-                List<string> guids = this.SearchFilters.SelectMany(x => AssetDatabase.FindAssets(x, excludeDirectories)).ToList();
+                List<string> guids = SearchFilters.SelectMany(x => AssetDatabase.FindAssets(x, excludeDirectories)).ToList();
                 List<string> assets = guids.Select(x => AssetDatabase.GUIDToAssetPath(x)).ToList();
                 excludeMap.AddRange(assets);
             }
@@ -82,7 +82,7 @@ namespace Sirenix.OdinValidator.Editor
 
             if (addDirectories.Length > 0)
             {
-                List<string> guids = this.SearchFilters.SelectMany(x => AssetDatabase.FindAssets(x, addDirectories)).ToList();
+                List<string> guids = SearchFilters.SelectMany(x => AssetDatabase.FindAssets(x, addDirectories)).ToList();
                 List<string> assets = guids.Select(x => AssetDatabase.GUIDToAssetPath(x)).ToList();
 
                 foreach (string asset in assets)
@@ -105,7 +105,7 @@ namespace Sirenix.OdinValidator.Editor
 
         public override IEnumerable<ValidationProfileResult> Validate(ValidationRunner runner)
         {
-            List<string> assetPaths = this.GetAllAssetsToValidate().ToList();
+            List<string> assetPaths = GetAllAssetsToValidate().ToList();
 
             float step = 1f / assetPaths.Count;
             for (int i = 0; i < assetPaths.Count; i++)

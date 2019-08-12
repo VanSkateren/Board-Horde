@@ -68,38 +68,38 @@ namespace Klak.Motion
         #region Public Properties
 
         public TranslationMode translationMode {
-            get { return _translationMode; }
-            set { _translationMode = value; }
+            get => _translationMode;
+            set => _translationMode = value;
         }
 
         public Vector3 translationVector {
-            get { return _translationVector; }
-            set { _translationVector = value; }
+            get => _translationVector;
+            set => _translationVector = value;
         }
 
         public float translationSpeed {
-            get { return _translationSpeed; }
-            set { _translationSpeed = value; }
+            get => _translationSpeed;
+            set => _translationSpeed = value;
         }
 
         public RotationMode rotationMode {
-            get { return _rotationMode; }
-            set { _rotationMode = value; }
+            get => _rotationMode;
+            set => _rotationMode = value;
         }
 
         public Vector3 rotationAxis {
-            get { return _rotationAxis; }
-            set { _rotationAxis = value; }
+            get => _rotationAxis;
+            set => _rotationAxis = value;
         }
 
         public float rotationSpeed {
-            get { return _rotationSpeed; }
-            set { _rotationSpeed = value; }
+            get => _rotationSpeed;
+            set => _rotationSpeed = value;
         }
 
         public bool useLocalCoordinate {
-            get { return _useLocalCoordinate; }
-            set { _useLocalCoordinate = value; }
+            get => _useLocalCoordinate;
+            set => _useLocalCoordinate = value;
         }
 
         #endregion

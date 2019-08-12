@@ -10,7 +10,7 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(LookAtIK))]
 	public class LookAtIKInspector : IKInspector {
 		
-		private LookAtIK script { get { return target as LookAtIK; }}
+		private LookAtIK script => target as LookAtIK;
 
 		protected override MonoBehaviour GetMonoBehaviour(out int executionOrder) {
 			executionOrder = 9997;

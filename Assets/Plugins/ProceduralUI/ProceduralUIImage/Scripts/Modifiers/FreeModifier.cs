@@ -6,12 +6,8 @@ public class FreeModifier : ProceduralImageModifier {
 	[SerializeField]private Vector4 radius;
 
 	public Vector4 Radius {
-		get {
-			return radius;
-		}
-		set {
-			radius = value;
-		}
+		get => radius;
+		set => radius = value;
 	}
 
 	#region implemented abstract members of ProceduralImageModifier

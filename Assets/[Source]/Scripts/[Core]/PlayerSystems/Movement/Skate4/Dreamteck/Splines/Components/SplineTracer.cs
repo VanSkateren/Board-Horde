@@ -13,7 +13,7 @@ namespace Dreamteck.Splines
         public enum PhysicsMode { Transform, Rigidbody, Rigidbody2D }
         public PhysicsMode physicsMode
         {
-            get { return _physicsMode; }
+            get => _physicsMode;
             set
             {
                 _physicsMode = value;
@@ -51,10 +51,7 @@ namespace Dreamteck.Splines
         /// <summary>
         /// Returns the unmodified result from the evaluation
         /// </summary>
-        public SplineResult result
-        {
-            get { return _result; }
-        }
+        public SplineResult result => _result;
 
         /// <summary>
         /// Returns the offsetted evaluation result from the current follow position
@@ -77,7 +74,7 @@ namespace Dreamteck.Splines
 
         public Spline.Direction direction
         {
-            get { return _direction; }
+            get => _direction;
             set
             {
                 if (value != _direction)
@@ -88,13 +85,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        public double clampedPercent
-        {
-            get
-            {
-                return ClipPercent(_result.percent);
-            }
-        }
+        public double clampedPercent => ClipPercent(_result.percent);
 
         [HideInInspector]
         public bool applyDirectionRotation = true;
@@ -143,36 +134,36 @@ namespace Dreamteck.Splines
         [System.Obsolete("Deprecated in version 1.0.7. Use motion.applyPosition instead")]
         public bool applyPosition
         {
-            get { return motion.applyPosition; }
-            set { motion.applyPosition = value; }
+            get => motion.applyPosition;
+            set => motion.applyPosition = value;
         }
 
         [System.Obsolete("Deprecated in version 1.0.7. Use motion.applyRotation instead")]
         public bool applyRotation
         {
-            get { return motion.applyRotation; }
-            set { motion.applyRotation = value; }
+            get => motion.applyRotation;
+            set => motion.applyRotation = value;
         }
 
         [System.Obsolete("Deprecated in version 1.0.7. Use motion.applyScale instead")]
         public bool applyScale
         {
-            get { return motion.applyScale; }
-            set { motion.applyScale = value; }
+            get => motion.applyScale;
+            set => motion.applyScale = value;
         }
 
         [System.Obsolete("Deprecated in version 1.0.7. User motion.offset instead")]
         public Vector2 offset
         {
-            get { return motion.offset; }
-            set { motion.offset = value; }
+            get => motion.offset;
+            set => motion.offset = value;
         }
 
         [System.Obsolete("Deprecated in version 1.0.7. User motion.rotationOffset instead")]
         public Vector3 rotationOffset
         {
-            get { return motion.rotationOffset; }
-            set { motion.rotationOffset = value; }
+            get => motion.rotationOffset;
+            set => motion.rotationOffset = value;
         }
 
 #if UNITY_EDITOR

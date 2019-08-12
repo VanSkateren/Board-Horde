@@ -23,11 +23,7 @@ namespace RootMotion.Demos {
 		}
 
 		// Is the animator playing the grounded state?
-		public virtual bool animationGrounded { 
-			get {
-				return true;
-			}
-		}
+		public virtual bool animationGrounded => true;
 
 		// Gets angle around y axis from a world space direction
 		public float GetAngleFromForward(Vector3 worldDirection) {

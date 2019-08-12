@@ -8,8 +8,8 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(FingerRig))]
 	public class FingerRigInspector : Editor {
 
-		private FingerRig script { get { return target as FingerRig; }}
-		
+		private FingerRig script => target as FingerRig;
+
 		private int selected = -1;
 		private MonoScript monoScript;
 

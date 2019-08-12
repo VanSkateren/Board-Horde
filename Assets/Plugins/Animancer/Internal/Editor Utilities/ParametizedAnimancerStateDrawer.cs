@@ -14,7 +14,7 @@ namespace Animancer.Editor
         /************************************************************************************************************************/
 
         /// <summary>The number of parameters being managed by the target state.</summary>
-        public virtual int ParameterCount { get { return 0; } }
+        public virtual int ParameterCount => 0;
 
         /// <summary>Returns the name of a parameter being managed by the target state.</summary>
         /// <exception cref="NotSupportedException">Thrown if the target state doesn't manage any parameters.</exception>

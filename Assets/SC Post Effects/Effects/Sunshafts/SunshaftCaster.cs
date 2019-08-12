@@ -25,11 +25,11 @@ namespace SCPE
 
         private void OnEnable()
         {
-            sunPosition = this.transform.position;
+            sunPosition = transform.position;
 
             if (!sunLight)
             {
-                sunLight = this.GetComponent<Light>();
+                sunLight = GetComponent<Light>();
                 if (sunLight)
                 {
                     color = sunLight.color;

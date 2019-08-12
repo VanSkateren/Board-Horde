@@ -7,7 +7,7 @@ namespace RootMotion {
 	[CustomEditor(typeof(Comments))]
 	public class CommentsInspector : Editor {
 	
-		private Comments script { get { return target as Comments; }}
+		private Comments script => target as Comments;
 		private GUIStyle style = new GUIStyle();
 		
 		// Black and white

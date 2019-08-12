@@ -59,7 +59,7 @@ namespace Dreamteck.Splines
             {
                 if(controllers[i].computer == spline)
                 {
-                    GameObject.DestroyImmediate(controllers[i].gameObject);
+                    Object.DestroyImmediate(controllers[i].gameObject);
                     controllers.RemoveAt(i);
                     i--;
                     continue;
@@ -219,7 +219,7 @@ namespace Dreamteck.Splines
             foreach (ObjectController controller in controllers)
             {
                 controller.transform.parent = controller.computer.transform;
-                GameObject.DestroyImmediate(controller);
+                Object.DestroyImmediate(controller);
             }
             controllers.Clear();
         }
@@ -227,7 +227,7 @@ namespace Dreamteck.Splines
         protected override void Cancel()
         {
             base.Cancel();
-            foreach(ObjectController controller in controllers) GameObject.DestroyImmediate(controller.gameObject);
+            foreach(ObjectController controller in controllers) Object.DestroyImmediate(controller.gameObject);
             controllers.Clear();
         }
 

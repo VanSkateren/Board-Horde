@@ -37,30 +37,24 @@ namespace RootMotion {
 		/// <summary>
 		/// Gets the local bend directions of the standard UMA skeleton.
 		/// </summary>
-		public static BipedLimbOrientations UMA {
-			get {
-				return new BipedLimbOrientations(
-					new LimbOrientation(Vector3.forward, Vector3.forward, Vector3.forward), 
-					new LimbOrientation(Vector3.forward, Vector3.forward, Vector3.back), 
-					new LimbOrientation(Vector3.forward, Vector3.forward, Vector3.down), 
-					new LimbOrientation(Vector3.forward, Vector3.forward, Vector3.down)
-					);
-			}
-		}
-		
+		public static BipedLimbOrientations UMA =>
+			new BipedLimbOrientations(
+				new LimbOrientation(Vector3.forward, Vector3.forward, Vector3.forward), 
+				new LimbOrientation(Vector3.forward, Vector3.forward, Vector3.back), 
+				new LimbOrientation(Vector3.forward, Vector3.forward, Vector3.down), 
+				new LimbOrientation(Vector3.forward, Vector3.forward, Vector3.down)
+			);
+
 		/// <summary>
 		/// Gets the local bend directions of the standard 3ds Max Biped skeleton.
 		/// </summary>
-		public static BipedLimbOrientations MaxBiped {
-			get {
-				return new BipedLimbOrientations(
-					new LimbOrientation(Vector3.down, Vector3.down, Vector3.down), 
-					new LimbOrientation(Vector3.down, Vector3.down, Vector3.up), 
-					new LimbOrientation(Vector3.up, Vector3.up, Vector3.back), 
-					new LimbOrientation(Vector3.up, Vector3.up, Vector3.back)
-					);
-			}
-		}
+		public static BipedLimbOrientations MaxBiped =>
+			new BipedLimbOrientations(
+				new LimbOrientation(Vector3.down, Vector3.down, Vector3.down), 
+				new LimbOrientation(Vector3.down, Vector3.down, Vector3.up), 
+				new LimbOrientation(Vector3.up, Vector3.up, Vector3.back), 
+				new LimbOrientation(Vector3.up, Vector3.up, Vector3.back)
+			);
 
 		/*
 		/// <summary>

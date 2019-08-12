@@ -45,7 +45,7 @@ namespace Klak.Wiring
 
         [Inlet]
         public float timeScale {
-            set { _timeScale = value; }
+            set => _timeScale = value;
         }
         
         [Inlet]

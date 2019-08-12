@@ -27,13 +27,13 @@ public class ForeGrounder : MonoBehaviour
 		while (true)
 		{
 			yield return new WaitForSeconds(1f);
-			IntPtr activeWindow = ForeGrounder.GetActiveWindow();
+			IntPtr activeWindow = GetActiveWindow();
 			if (foreGrounder.window != activeWindow)
 			{
 				bool zero = foreGrounder.window == IntPtr.Zero;
 				UnityEngine.Debug.Log(string.Concat("Set to foreground. ptr zero:", zero.ToString()));
-				ForeGrounder.SetForegroundWindow(foreGrounder.window);
-				ForeGrounder.BringWindowToTop(foreGrounder.window);
+				SetForegroundWindow(foreGrounder.window);
+				BringWindowToTop(foreGrounder.window);
 			}
 		}
 	}
@@ -49,8 +49,8 @@ public class ForeGrounder : MonoBehaviour
 
 	private void Start()
 	{
-		this.window = ForeGrounder.GetActiveWindow();
-		base.StartCoroutine(this.Checker());
+		window = GetActiveWindow();
+		StartCoroutine(Checker());
 	}
 
 	[DllImport("user32.dll", CharSet=CharSet.None, ExactSpelling=false)]

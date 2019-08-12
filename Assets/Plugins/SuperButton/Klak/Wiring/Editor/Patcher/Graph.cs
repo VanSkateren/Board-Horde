@@ -46,19 +46,13 @@ namespace Klak.Wiring.Patcher
         #region Public member properties and methods
 
         // Current editing state
-        public bool isEditing {
-            get { return _isEditing; }
-        }
+        public bool isEditing => _isEditing;
 
         // Is the graph is actually available?
-        public bool isValid {
-            get { return _patch != null; }
-        }
+        public bool isValid => _patch != null;
 
         // Get source patch
-        public Wiring.Patch patch {
-            get { return _patch; }
-        }
+        public Wiring.Patch patch => _patch;
 
         // Create a specialized editor GUI for this graph.
         public GraphGUI GetEditor()
@@ -107,7 +101,7 @@ namespace Klak.Wiring.Patcher
             _patch = null;
 
             // Retrieve the patch object based on the instance ID.
-            foreach (var obj in GameObject.FindObjectsOfType<Wiring.Patch>())
+            foreach (var obj in FindObjectsOfType<Wiring.Patch>())
             {
                 if (obj.GetInstanceID() == _patchInstanceID)
                 {

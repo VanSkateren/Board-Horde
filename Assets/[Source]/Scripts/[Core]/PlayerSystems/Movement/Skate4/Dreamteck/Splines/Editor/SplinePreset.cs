@@ -13,7 +13,7 @@ namespace Dreamteck.Splines
         public float x, y, z;
         public Vector3 vector
         {
-            get { return new Vector3(x, y, z); }
+            get => new Vector3(x, y, z);
             set { }
         }
 
@@ -31,7 +31,7 @@ namespace Dreamteck.Splines
         public float r, g, b, a;
         public Color color
         {
-            get { return new Color(r, g, b, a); }
+            get => new Color(r, g, b, a);
             set { }
         }
         public S_Color(Color input)

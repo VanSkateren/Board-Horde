@@ -13,10 +13,7 @@ namespace Dreamteck.Splines
         protected string title = "";
         protected SplineUserEditor parentEditor = null;
 
-        public bool isOpen
-        {
-            get { return foldout; }
-        }
+        public bool isOpen => foldout;
 
         public SplineUserSubEditor(SplineUserEditor parent)
         {

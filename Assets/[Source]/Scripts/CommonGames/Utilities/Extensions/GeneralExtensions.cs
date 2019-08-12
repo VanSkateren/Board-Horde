@@ -221,19 +221,13 @@ namespace CommonGames.Utilities.Extensions
         public T[] this[int i]
         {
             get => data[i];
-            set
-            {
-                data[i] = value;
-            }
+            set => data[i] = value;
         }
 
         public T this[int i, int j]
         {
             get => data[i][j];
-            set
-            {
-                data[i][j] = value;
-            }
+            set => data[i][j] = value;
         }
 
         public int Length => data.Length;

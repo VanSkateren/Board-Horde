@@ -128,22 +128,13 @@ namespace RootMotion.FinalIK {
 			public Quaternion rotation { get; private set; }
 
 			private bool hasShoulder;
-			private VirtualBone shoulder { get { return bones[0]; }}
-			private VirtualBone upperArm { 
-				get { 
-					return bones[hasShoulder? 1: 0]; 
-				}
-			}
-			private VirtualBone forearm { 
-				get { 
-					return bones[hasShoulder? 2: 1]; 
-				}
-			}
-			private VirtualBone hand { 
-				get { 
-					return bones[hasShoulder? 3: 2]; 
-				}
-			}
+			private VirtualBone shoulder => bones[0];
+
+			private VirtualBone upperArm => bones[hasShoulder? 1: 0];
+
+			private VirtualBone forearm => bones[hasShoulder? 2: 1];
+
+			private VirtualBone hand => bones[hasShoulder? 3: 2];
 			private Vector3 chestForwardAxis;
 			private Vector3 chestUpAxis;
 			private Quaternion chestRotation = Quaternion.identity;
@@ -169,7 +160,7 @@ namespace RootMotion.FinalIK {
 					IKRotation = handRotation;
 					rotation = IKRotation;
 
-					this.hasShoulder = hasShoulders;
+					hasShoulder = hasShoulders;
 
 					bones = new VirtualBone[hasShoulder? 4: 3];
 
@@ -179,9 +170,9 @@ namespace RootMotion.FinalIK {
 						bones[2] = new VirtualBone(forearmPosition, forearmRotation);
 						bones[3] = new VirtualBone(handPosition, handRotation);
 					} else {
-						this.bones[0] = new VirtualBone(upperArmPosition, upperArmRotation);
-						this.bones[1] = new VirtualBone(forearmPosition, forearmRotation);
-						this.bones[2] = new VirtualBone(handPosition, handRotation);
+						bones[0] = new VirtualBone(upperArmPosition, upperArmRotation);
+						bones[1] = new VirtualBone(forearmPosition, forearmRotation);
+						bones[2] = new VirtualBone(handPosition, handRotation);
 					}
 
 					chestForwardAxis = Quaternion.Inverse(rootRotation) * (rotations[0] * Vector3.forward);

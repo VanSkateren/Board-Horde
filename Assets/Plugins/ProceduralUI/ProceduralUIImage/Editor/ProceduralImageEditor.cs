@@ -227,7 +227,7 @@ namespace UnityEditor.UI
                         MoveComponentBehind((item as ProceduralImage), (item as ProceduralImage).GetComponent<ProceduralImageModifier>());
                     }
                     //Exit GUI prevents Unity from trying to draw destroyed components editor;
-                    EditorGUIUtility.ExitGUI();
+                    GUIUtility.ExitGUI();
                 }
             }
             else{
@@ -242,7 +242,7 @@ namespace UnityEditor.UI
                         MoveComponentBehind((item as ProceduralImage), (item as ProceduralImage).GetComponent<ProceduralImageModifier>());
                     }
                     //Exit GUI prevents Unity from trying to draw destroyed components editor;
-                    EditorGUIUtility.ExitGUI();
+                    GUIUtility.ExitGUI();
                 }
             }
         }

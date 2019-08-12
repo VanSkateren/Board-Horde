@@ -27,10 +27,7 @@ namespace NWH.WheelController3D
         /// </summary>
         public float brakeTorque
         {
-            get
-            {
-                return wheel.brakeTorque;
-            }
+            get => wheel.brakeTorque;
             set
             {
                 if (value >= 0)
@@ -66,14 +63,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public float mass
         {
-            get
-            {
-                return wheel.mass;
-            }
-            set
-            {
-                wheel.mass = value;
-            }
+            get => wheel.mass;
+            set => wheel.mass = value;
         }
 
         /// <summary>
@@ -82,14 +73,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public float motorTorque
         {
-            get
-            {
-                return wheel.motorTorque;
-            }
-            set
-            {
-                wheel.motorTorque = value;
-            }
+            get => wheel.motorTorque;
+            set => wheel.motorTorque = value;
         }
 
         /// <summary>
@@ -99,10 +84,7 @@ namespace NWH.WheelController3D
         /// </summary>
         public float radius
         {
-            get
-            {
-                return tireRadius;
-            }
+            get => tireRadius;
             set
             {
                 tireRadius = value;
@@ -115,14 +97,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public float rimOffset
         {
-            get
-            {
-                return wheel.rimOffset;
-            }
-            set
-            {
-                wheel.rimOffset = value;
-            }
+            get => wheel.rimOffset;
+            set => wheel.rimOffset = value;
         }
 
         /// <summary>
@@ -130,10 +106,7 @@ namespace NWH.WheelController3D
         /// </summary>
         public float tireRadius
         {
-            get
-            {
-                return wheel.tireRadius;
-            }
+            get => wheel.tireRadius;
             set
             {
                 wheel.tireRadius = value;
@@ -146,10 +119,7 @@ namespace NWH.WheelController3D
         /// </summary>
         public float tireWidth
         {
-            get
-            {
-                return wheel.width;
-            }
+            get => wheel.width;
             set
             {
                 wheel.width = value;
@@ -160,13 +130,7 @@ namespace NWH.WheelController3D
         /// <summary>
         /// Rotations per minute of the wheel around the axle. [rpm]
         /// </summary>
-        public float rpm
-        {
-            get
-            {
-                return wheel.rpm;
-            }
-        }
+        public float rpm => wheel.rpm;
 
 
         /// <summary>
@@ -174,14 +138,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public float steerAngle
         {
-            get
-            {
-                return wheel.steerAngle;
-            }
-            set
-            {
-                wheel.steerAngle = value;
-            }
+            get => wheel.steerAngle;
+            set => wheel.steerAngle = value;
         }
 
 
@@ -194,7 +152,7 @@ namespace NWH.WheelController3D
         /// <returns></returns>
         public bool GetGroundHit(out WheelHit hit)
         {
-            hit = this.wheelHit;
+            hit = wheelHit;
             return hasHit;
         }
 
@@ -206,13 +164,7 @@ namespace NWH.WheelController3D
         /// Camber angle of the wheel. [deg]
         /// Negative angle means that the top of the wheel in closer to the vehicle than the bottom.
         /// </summary>
-        public float camber
-        {
-            get
-            {
-                return wheel.camberAngle;
-            }
-        }
+        public float camber => wheel.camberAngle;
 
         /// <summary>
         /// Sets linear camber betwen the two values.
@@ -249,48 +201,24 @@ namespace NWH.WheelController3D
         /// <summary>
         /// Returns value in range [0,1] where 1 means spring is fully compressed.
         /// </summary>
-        public float springCompression
-        {
-            get
-            {
-                return 1f - spring.compressionPercent;
-            }
-        }
+        public float springCompression => 1f - spring.compressionPercent;
 
 
         /// <summary>
         /// Spring velocity in relation to local vertical axis. [m/s]
         /// Positive on rebound (extension), negative on bump (compression).
         /// </summary>
-        public float springVelocity
-        {
-            get
-            {
-                return spring.velocity;
-            }
-        }
+        public float springVelocity => spring.velocity;
 
         /// <summary>
         /// True when spring is fully compressed, i.e. there is no more spring travel.
         /// </summary>
-        public bool springBottomedOut
-        {
-            get
-            {
-                return spring.bottomedOut;
-            }
-        }
+        public bool springBottomedOut => spring.bottomedOut;
 
         /// <summary>
         /// True when spring is fully extended.
         /// </summary>
-        public bool springOverExtended
-        {
-            get
-            {
-                return spring.overExtended;
-            }
-        }
+        public bool springOverExtended => spring.overExtended;
 
         /// <summary>
         /// Current spring force. [N]
@@ -298,14 +226,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public float suspensionForce
         {
-            get
-            {
-                return spring.force;
-            }
-            set
-            {
-                spring.force = value;
-            }
+            get => spring.force;
+            set => spring.force = value;
         }
 
         /// <summary>
@@ -313,14 +235,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public float springMaximumForce
         {
-            get
-            {
-                return spring.maxForce;
-            }
-            set
-            {
-                spring.maxForce = value;
-            }
+            get => spring.maxForce;
+            set => spring.maxForce = value;
         }
 
         /// <summary>
@@ -328,14 +244,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public AnimationCurve springCurve
         {
-            get
-            {
-                return spring.forceCurve;
-            }
-            set
-            {
-                spring.forceCurve = value;
-            }
+            get => spring.forceCurve;
+            set => spring.forceCurve = value;
         }
 
         /// <summary>
@@ -343,37 +253,19 @@ namespace NWH.WheelController3D
         /// </summary>
         public float springLength
         {
-            get
-            {
-                return spring.maxLength;
-            }
-            set
-            {
-                spring.maxLength = value;
-            }
+            get => spring.maxLength;
+            set => spring.maxLength = value;
         }
 
         /// <summary>
         /// Current length (travel) of spring.
         /// </summary>
-        public float springTravel
-        {
-            get
-            {
-                return spring.length;
-            }
-        }
+        public float springTravel => spring.length;
 
         /// <summary>
         /// Point in which spring and swingarm are in contact.
         /// </summary>
-        public Vector3 springTravelPoint
-        {
-            get
-            {
-                return transform.position - transform.up * spring.length;
-            }
-        }
+        public Vector3 springTravelPoint => transform.position - transform.up * spring.length;
 
         #endregion
 
@@ -382,27 +274,15 @@ namespace NWH.WheelController3D
         /// <summary>
         /// Current damper force.
         /// </summary>
-        public float damperForce
-        {
-            get
-            {
-                return damper.force;
-            }
-        }
+        public float damperForce => damper.force;
 
         /// <summary>
         /// Rebounding force at 1 m/s spring velocity
         /// </summary>
         public float damperUnitReboundForce
         {
-            get
-            {
-                return damper.unitReboundForce;
-            }
-            set
-            {
-                damper.unitReboundForce = value;
-            }
+            get => damper.unitReboundForce;
+            set => damper.unitReboundForce = value;
         }
 
         /// <summary>
@@ -410,14 +290,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public float damperUnitBumpForce
         {
-            get
-            {
-                return damper.unitBumpForce;
-            }
-            set
-            {
-                damper.unitBumpForce = value;
-            }
+            get => damper.unitBumpForce;
+            set => damper.unitBumpForce = value;
         }
 
         /// <summary>
@@ -425,14 +299,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public AnimationCurve damperCurve
         {
-            get
-            {
-                return damper.dampingCurve;
-            }
-            set
-            {
-                damper.dampingCurve = value;
-            }
+            get => damper.dampingCurve;
+            set => damper.dampingCurve = value;
         }
 
         #endregion
@@ -444,14 +312,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public Friction forwardFriction
         {
-            get
-            {
-                return fFriction;
-            }
-            set
-            {
-                fFriction = value;
-            }
+            get => fFriction;
+            set => fFriction = value;
         }
 
         /// <summary>
@@ -459,24 +321,12 @@ namespace NWH.WheelController3D
         /// </summary>
         public Friction sideFriction
         {
-            get
-            {
-                return sFriction;
-            }
-            set
-            {
-                sFriction = value;
-            }
+            get => sFriction;
+            set => sFriction = value;
         }
 
 
-        public float MaxPutDownForce
-        {
-            get
-            {
-                return maxPutDownForce;
-            }
-        }
+        public float MaxPutDownForce => maxPutDownForce;
 
 
         public void SetActiveFrictionPreset(FrictionPreset fp)
@@ -505,36 +355,21 @@ namespace NWH.WheelController3D
         /// </summary>
         public Side VehicleSide
         {
-            get
-            {
-                return vehicleSide;
-            }
-            set
-            {
-                vehicleSide = value;
-            }
+            get => vehicleSide;
+            set => vehicleSide = value;
         }
 
         /// <summary>
         /// Returns vehicle speed in meters per second [m/s], multiply by 3.6 for [kph] or by 2.24 for [mph].
         /// </summary>
-        public float speed
-        {
-            get
-            {
-                return fFriction.speed;
-            }
-        }
+        public float speed => fFriction.speed;
 
         /// <summary>
         /// Ground scan resolution in forward direction.
         /// </summary>
         public int ForwardScanResolution
         {
-            get
-            {
-                return forwardScanResolution;
-            }
+            get => forwardScanResolution;
             set
             {
                 forwardScanResolution = value;
@@ -553,10 +388,7 @@ namespace NWH.WheelController3D
         /// </summary>
         public int SideToSideScanResolution
         {
-            get
-            {
-                return sideToSideScanResolution;
-            }
+            get => sideToSideScanResolution;
             set
             {
                 sideToSideScanResolution = value;
@@ -574,14 +406,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public GameObject Parent
         {
-            get
-            {
-                return parent;
-            }
-            set
-            {
-                parent = value;
-            }
+            get => parent;
+            set => parent = value;
         }
 
         /// <summary>
@@ -589,14 +415,8 @@ namespace NWH.WheelController3D
         /// </summary>
         public GameObject Visual
         {
-            get
-            {
-                return wheel.visual;
-            }
-            set
-            {
-                wheel.visual = value;
-            }
+            get => wheel.visual;
+            set => wheel.visual = value;
         }
 
         /// <summary>
@@ -605,52 +425,28 @@ namespace NWH.WheelController3D
         /// </summary>
         public GameObject NonRotating
         {
-            get
-            {
-                return wheel.nonRotating;
-            }
-            set
-            {
-                wheel.nonRotating = value;
-            }
+            get => wheel.nonRotating;
+            set => wheel.nonRotating = value;
         }
 
         /// <summary>
         /// Returns velocity at the wheel's center position in [m/s].
         /// </summary>
-        public Vector3 pointVelocity
-        {
-            get
-            {
-                return parentRigidbody.GetPointVelocity(wheel.worldPosition);
-            }
-        }
+        public Vector3 pointVelocity => parentRigidbody.GetPointVelocity(wheel.worldPosition);
 
         /// <summary>
         /// Returns angular velocity of the wheel in radians. Multiply by wheel radius to get linear speed.
         /// </summary>
-        public float angularVelocity
-        {
-            get
-            {
-                return wheel.angularVelocity;
-            }
-        }
+        public float angularVelocity => wheel.angularVelocity;
 
         /// <summary>
         /// Layers that will be ignored when doing ground detection.
         /// </summary>
         public LayerMask ScanIgnoreLayers
         {
-            get
-            {
-                return scanIgnoreLayers;
-            }
+            get => scanIgnoreLayers;
 
-            set
-            {
-                scanIgnoreLayers = value;
-            }
+            set => scanIgnoreLayers = value;
         }
 
         #endregion

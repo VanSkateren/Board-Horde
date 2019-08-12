@@ -22,29 +22,29 @@ public class CameraFollowAndMove : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		this.cam.transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(this.skater.position - this.cam.transform.position, Vector3.up), Vector3.up);
+		cam.transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(skater.position - cam.transform.position, Vector3.up), Vector3.up);
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (!this.follow)
+		if (!follow)
 		{
-			this.follow = true;
-			this.khAnim.Play(this.line.name);
+			follow = true;
+			khAnim.Play(line.name);
 		}
 	}
 
 	private void Start()
 	{
-		this.cam.fieldOfView = 40f;
+		cam.fieldOfView = 40f;
 	}
 
 	private void Update()
 	{
 		if (PlayerController.Instance.inputController.player.GetButtonDown("X"))
 		{
-			this.khAnim.Play(this.reset.name);
-			this.follow = false;
+			khAnim.Play(reset.name);
+			follow = false;
 		}
 	}
 }

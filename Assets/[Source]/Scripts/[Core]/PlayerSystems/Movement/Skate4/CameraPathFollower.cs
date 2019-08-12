@@ -21,16 +21,16 @@ public class CameraPathFollower : MonoBehaviour
 
 	private void Update()
 	{
-		if (this.began)
+		if (began)
 		{
-			this.lerp = this.lerp + Time.deltaTime * this.speed;
-			this.lerp = Mathf.Clamp(this.lerp, 0f, 1f);
-			this.cam.position = Vector3.Lerp(this.pointA.position, this.pointB.position, this.lerp);
-			this.cam.rotation = Quaternion.Slerp(this.pointA.rotation, this.pointB.rotation, this.lerp);
+			lerp = lerp + Time.deltaTime * speed;
+			lerp = Mathf.Clamp(lerp, 0f, 1f);
+			cam.position = Vector3.Lerp(pointA.position, pointB.position, lerp);
+			cam.rotation = Quaternion.Slerp(pointA.rotation, pointB.rotation, lerp);
 		}
 		else if (Input.GetKeyDown(KeyCode.Space))
 		{
-			this.began = true;
+			began = true;
 			return;
 		}
 	}

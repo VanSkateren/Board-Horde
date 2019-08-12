@@ -21,17 +21,14 @@ namespace Sirenix.OdinValidator.Editor
         [ShowInInspector]
         private bool EnabledProp
         {
-            get
-            {
-                return this.Enabled;
-            }
+            get => Enabled;
 
             set
             {
-                if (value != this.Enabled)
+                if (value != Enabled)
                 {
-                    this.Enabled = value;
-                    this.OnEnabledChanged();
+                    Enabled = value;
+                    OnEnabledChanged();
                 }
             }
         }
@@ -55,49 +52,49 @@ namespace Sirenix.OdinValidator.Editor
         {
             get
             {
-                if (this.Validations == null || this.Validations.Count == 0)
-                    this.Validations = new List<AutomatedValidation>() { new AutomatedValidation() };
+                if (Validations == null || Validations.Count == 0)
+                    Validations = new List<AutomatedValidation>() { new AutomatedValidation() };
 
-                return this.Validations[0];
+                return Validations[0];
             }
             set
             {
-                if (this.Validations == null || this.Validations.Count == 0)
-                    this.Validations = new List<AutomatedValidation>() { new AutomatedValidation() };
+                if (Validations == null || Validations.Count == 0)
+                    Validations = new List<AutomatedValidation>() { new AutomatedValidation() };
 
-                this.Validations[0] = value;
+                Validations[0] = value;
             }
         }
 
         private bool ShowPlayModeWarning()
         {
-            return this.Enabled && this.Hook is OnPlayValidationHook && (this.Validation.HasActionFlag(AutomatedValidation.Action.OpenValidatorIfError) || this.Validation.HasActionFlag(AutomatedValidation.Action.OpenValidatorIfWarning));
+            return Enabled && Hook is OnPlayValidationHook && (Validation.HasActionFlag(AutomatedValidation.Action.OpenValidatorIfError) || Validation.HasActionFlag(AutomatedValidation.Action.OpenValidatorIfWarning));
         }
 
-        public string Name { get { return this.Hook.Name; } }
+        public string Name => Hook.Name;
 
         public AutomatedValidationHook(IValidationHook hook)
         {
-            this.Hook = hook;
+            Hook = hook;
         }
 
         public void SetupHook()
         {
-            this.Hook.Hook(this.OnHookExecuting);
+            Hook.Hook(OnHookExecuting);
         }
 
         public void Unhook()
         {
-            this.Hook.Unhook(this.OnHookExecuting);
+            Hook.Unhook(OnHookExecuting);
         }
 
         private void OnEnabledChanged()
         {
-            this.Hook.Unhook(this.OnHookExecuting);
+            Hook.Unhook(OnHookExecuting);
 
-            if (this.Enabled)
+            if (Enabled)
             {
-                this.Hook.Hook(this.OnHookExecuting);
+                Hook.Hook(OnHookExecuting);
             }
         }
 
@@ -109,7 +106,7 @@ namespace Sirenix.OdinValidator.Editor
 
             try
             {
-                foreach (AutomatedValidation validation in this.Validations)
+                foreach (AutomatedValidation validation in Validations)
                 {
                     bool openValidatorWindow = false;
                     IValidationProfile actuallyFailingProfile = null;
@@ -120,7 +117,7 @@ namespace Sirenix.OdinValidator.Editor
                         {
                             foreach (ValidationProfileResult result in profile.Validate(runner))
                             {
-                                if (GUIHelper.DisplaySmartUpdatingCancellableProgressBar("Executing Validation Hook: " + this.Name + " (Profile: " + profile.Name + ")", result.Name, result.Progress))
+                                if (GUIHelper.DisplaySmartUpdatingCancellableProgressBar("Executing Validation Hook: " + Name + " (Profile: " + profile.Name + ")", result.Name, result.Progress))
                                 {
                                     // Cancel validation
                                     return;
@@ -175,7 +172,7 @@ namespace Sirenix.OdinValidator.Editor
                                     {
                                         actuallyFailingProfile = profile;
 
-                                        if (!this.FinishValidationOnFailures)
+                                        if (!FinishValidationOnFailures)
                                         {
                                             return;
                                         }
@@ -188,17 +185,17 @@ namespace Sirenix.OdinValidator.Editor
                     {
                         if (openValidatorWindow)
                         {                           
-                            if (this.Hook is OnPlayValidationHook)
+                            if (Hook is OnPlayValidationHook)
                             {
                                 stopTriggeringEvent = true;
                             }   
 
-                            this.OpenValidator(validation.ProfilesToRun, actuallyFailingProfile);
+                            OpenValidator(validation.ProfilesToRun, actuallyFailingProfile);
                         }
 
                         if (stopTriggeringEvent)
                         {
-                            this.Hook.StopTriggeringEvent();
+                            Hook.StopTriggeringEvent();
                         }
                     }
                 }
@@ -225,7 +222,7 @@ namespace Sirenix.OdinValidator.Editor
             {
                 profile = new ValidationCollectionProfile()
                 {
-                    Name = "Failed '" + this.Name + "' hook profiles",
+                    Name = "Failed '" + Name + "' hook profiles",
                     Description = "These are the profiles that failed when the hook was executed",
                     Profiles = profilesToRun.Cast<ValidationProfileAsset>().ToArray()
                 };
@@ -243,7 +240,7 @@ namespace Sirenix.OdinValidator.Editor
 
         public override string ToString()
         {
-            return this.Hook.Name;
+            return Hook.Name;
         }
     }
 }

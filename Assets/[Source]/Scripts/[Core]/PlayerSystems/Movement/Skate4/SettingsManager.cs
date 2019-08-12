@@ -37,13 +37,7 @@ public class SettingsManager : MonoBehaviour
 
 	public SettingsManager.ControlType controlType;
 
-	public static SettingsManager Instance
-	{
-		get
-		{
-			return SettingsManager._instance;
-		}
-	}
+	public static SettingsManager Instance => _instance;
 
 	public SettingsManager()
 	{
@@ -51,35 +45,35 @@ public class SettingsManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if (!(SettingsManager._instance != null) || !(SettingsManager._instance != this))
+		if (!(_instance != null) || !(_instance != this))
 		{
-			SettingsManager._instance = this;
+			_instance = this;
 		}
 		else
 		{
-			UnityEngine.Object.Destroy(base.gameObject);
+			Destroy(gameObject);
 		}
-		this.SetStance((PlayerPrefs.GetInt("stance", 0) == 0 ? SettingsManager.Stance.Regular : SettingsManager.Stance.Goofy));
+		SetStance((PlayerPrefs.GetInt("stance", 0) == 0 ? SettingsManager.Stance.Regular : SettingsManager.Stance.Goofy));
 	}
 
 	public void SetStance(SettingsManager.Stance p_stance)
 	{
-		this.stance = p_stance;
-		PlayerPrefs.SetInt("stance", (this.stance == SettingsManager.Stance.Regular ? 0 : 1));
-		if (this.stance == SettingsManager.Stance.Goofy)
+		stance = p_stance;
+		PlayerPrefs.SetInt("stance", (stance == SettingsManager.Stance.Regular ? 0 : 1));
+		if (stance == SettingsManager.Stance.Goofy)
 		{
 			PlayerController.Instance.skaterController.finalIk.solver.leftLegChain.bendConstraint.bendGoal = PlayerController.Instance.skaterController.goofyLeftKneeGuide;
 			PlayerController.Instance.skaterController.finalIk.solver.rightLegChain.bendConstraint.bendGoal = PlayerController.Instance.skaterController.goofyRightKneeGuide;
-			this._skaterAnimator.runtimeAnimatorController = this._goofyAnim;
-			this._steezeAnimator.runtimeAnimatorController = this._goofySteezeAnim;
-			this._ikAnimator.runtimeAnimatorController = this._goofyIkAnim;
+			_skaterAnimator.runtimeAnimatorController = _goofyAnim;
+			_steezeAnimator.runtimeAnimatorController = _goofySteezeAnim;
+			_ikAnimator.runtimeAnimatorController = _goofyIkAnim;
 			return;
 		}
 		PlayerController.Instance.skaterController.finalIk.solver.leftLegChain.bendConstraint.bendGoal = PlayerController.Instance.skaterController.regsLeftKneeGuide;
 		PlayerController.Instance.skaterController.finalIk.solver.rightLegChain.bendConstraint.bendGoal = PlayerController.Instance.skaterController.regsRightKneeGuide;
-		this._skaterAnimator.runtimeAnimatorController = this._regularAnim;
-		this._steezeAnimator.runtimeAnimatorController = this._regularSteezeAnim;
-		this._ikAnimator.runtimeAnimatorController = this._regularIkAnim;
+		_skaterAnimator.runtimeAnimatorController = _regularAnim;
+		_steezeAnimator.runtimeAnimatorController = _regularSteezeAnim;
+		_ikAnimator.runtimeAnimatorController = _regularIkAnim;
 	}
 
 	public enum ControlType

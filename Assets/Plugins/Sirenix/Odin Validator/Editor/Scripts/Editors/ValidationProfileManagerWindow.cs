@@ -57,45 +57,45 @@ namespace Sirenix.OdinValidator.Editor
 
         protected override void Initialize()
         {
-            this.WindowPadding = new Vector4(0, 0, 0, 0);
-            if (this.pager == null)
+            WindowPadding = new Vector4(0, 0, 0, 0);
+            if (pager == null)
             {
-                this.pager = new SlidePageNavigationHelper<object>();
-                this.pager.PushPage(new ValidationProfileManagerOverview(this.pager), "Overview");
+                pager = new SlidePageNavigationHelper<object>();
+                pager.PushPage(new ValidationProfileManagerOverview(pager), "Overview");
             }
         }
 
         protected override void DrawEditors()
         {
-            SirenixEditorGUI.DrawSolidRect(new Rect(0, 0, this.position.width, this.position.height), SirenixGUIStyles.DarkEditorBackground);
+            SirenixEditorGUI.DrawSolidRect(new Rect(0, 0, position.width, position.height), SirenixGUIStyles.DarkEditorBackground);
 
             // Draw top pager:
             Rect rect = GUIHelper.GetCurrentLayoutRect().AlignTop(34);
             SirenixEditorGUI.DrawSolidRect(rect, SirenixGUIStyles.EditorWindowBackgroundColor);
             SirenixEditorGUI.DrawBorders(rect, 0, 0, 0, 1);
-            this.pager.DrawPageNavigation(rect.AlignCenterY(20).HorizontalPadding(10));
+            pager.DrawPageNavigation(rect.AlignCenterY(20).HorizontalPadding(10));
 
             // Draw pages:
-            this.pager.BeginGroup();
+            pager.BeginGroup();
             int i = 0;
-            foreach (SlidePageNavigationHelper<object>.Page page in this.pager.EnumeratePages)
+            foreach (SlidePageNavigationHelper<object>.Page page in pager.EnumeratePages)
             {
                 if (page.BeginPage())
                 {
                     GUILayout.BeginVertical(GUILayoutOptions.ExpandHeight(true));
                     GUILayout.Space(30);
-                    this.DrawEditor(i);
+                    DrawEditor(i);
                     GUILayout.EndVertical();
                 }
                 page.EndPage();
                 i++;
             }
-            this.pager.EndGroup();
+            pager.EndGroup();
         }
 
         protected override IEnumerable<object> GetTargets()
         {
-            return this.pager.EnumeratePages.Select(x => x.Value);
+            return pager.EnumeratePages.Select(x => x.Value);
         }
     }
 }

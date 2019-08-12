@@ -38,8 +38,8 @@ namespace Animancer.Examples
             /// </summary>
             public float PlayDuration
             {
-                get { return _PlayDuration; }
-                set { _PlayDuration = value; }
+                get => _PlayDuration;
+                set => _PlayDuration = value;
             }
 
             /************************************************************************************************************************/

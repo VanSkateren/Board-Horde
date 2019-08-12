@@ -57,7 +57,7 @@ namespace Dreamteck.Splines
 
         private void UpdateNodes()
         {
-            Node[] nodes = GameObject.FindObjectsOfType<Node>();
+            Node[] nodes = Object.FindObjectsOfType<Node>();
             EditorUtility.ClearProgressBar();
             for (int i = 0; i < nodes.Length; i++)
             {
@@ -71,7 +71,7 @@ namespace Dreamteck.Splines
 
         private void UpdateUsers()
         {
-            SplineUser[] users = GameObject.FindObjectsOfType<SplineUser>();
+            SplineUser[] users = Object.FindObjectsOfType<SplineUser>();
             EditorUtility.ClearProgressBar();
             for (int i = 0; i < users.Length; i++)
             {
@@ -86,7 +86,7 @@ namespace Dreamteck.Splines
 
         private void UpdateMeshGenerators()
         {
-            MeshGenerator[] users = GameObject.FindObjectsOfType<MeshGenerator>();
+            MeshGenerator[] users = Object.FindObjectsOfType<MeshGenerator>();
             EditorUtility.ClearProgressBar();
             for (int i = 0; i < users.Length; i++)
             {
@@ -101,7 +101,7 @@ namespace Dreamteck.Splines
 
         private void UpdateComputers()
         {
-            SplineComputer[] computers = GameObject.FindObjectsOfType<SplineComputer>();
+            SplineComputer[] computers = Object.FindObjectsOfType<SplineComputer>();
             EditorUtility.ClearProgressBar();
             for (int i = 0; i < computers.Length; i++)
             {

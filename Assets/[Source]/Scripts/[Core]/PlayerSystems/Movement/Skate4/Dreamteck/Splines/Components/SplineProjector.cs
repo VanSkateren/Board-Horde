@@ -11,7 +11,7 @@ namespace Dreamteck.Splines
         public enum Mode {Accurate, Cached}
         public Mode mode
         {
-            get { return _mode; }
+            get => _mode;
             set
             {
                 if(value != _mode)
@@ -24,7 +24,7 @@ namespace Dreamteck.Splines
 
         public bool autoProject
         {
-            get { return _autoProject; }
+            get => _autoProject;
             set
             {
                 if(value != _autoProject)
@@ -37,7 +37,7 @@ namespace Dreamteck.Splines
 
         public int subdivide
         {
-            get { return _subdivide; }
+            get => _subdivide;
             set
             {
                 if (value != _subdivide)
@@ -51,7 +51,7 @@ namespace Dreamteck.Splines
         public Transform projectTarget
         {
             get {
-                if (_projectTarget == null) return this.transform;
+                if (_projectTarget == null) return transform;
                 return _projectTarget; 
             }
             set
@@ -68,7 +68,7 @@ namespace Dreamteck.Splines
         [System.Obsolete("Deprecated in 1.0.8. Use targetObject instead")]
         public Transform target
         {
-            get { return targetObject.transform; }
+            get => targetObject.transform;
             set
             {
                 if (value != applyTarget)
@@ -130,10 +130,7 @@ namespace Dreamteck.Splines
 
 
         [System.Obsolete("Deprecated in 1.0.8. Use result instead.")]
-        public SplineResult projectResult
-        {
-            get { return result; }
-        }
+        public SplineResult projectResult => result;
 
         [SerializeField]
         [HideInInspector]
@@ -187,7 +184,7 @@ namespace Dreamteck.Splines
         private void GetProjectTarget()
         {
             if (_projectTarget != null) finalTarget = new TS_Transform(_projectTarget);
-            else finalTarget = new TS_Transform(this.transform);
+            else finalTarget = new TS_Transform(transform);
         }
 
         protected override void LateRun()

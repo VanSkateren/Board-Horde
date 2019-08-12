@@ -15,21 +15,13 @@ public class OnlyOneEdgeModifier : ProceduralImageModifier {
 	}
 
 	public float Radius {
-		get {
-			return radius;
-		}
-		set {
-			radius = value;
-		}
+		get => radius;
+		set => radius = value;
 	}
 
 	public ProceduralImageEdge Side {
-		get {
-			return side;
-		}
-		set {
-			side = value;
-		}
+		get => side;
+		set => side = value;
 	}
 
 	#region implemented abstract members of ProceduralImageModifier

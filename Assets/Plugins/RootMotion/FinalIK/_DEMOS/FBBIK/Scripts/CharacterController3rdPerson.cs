@@ -42,17 +42,9 @@ namespace RootMotion.Demos {
 		}
 
 		// Convert the input axis to a vector
-		private static Vector3 inputVector {
-			get {
-				return new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-			}
-		}
+		private static Vector3 inputVector => new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
 		// Convert the raw input axis to a vector
-		private static Vector3 inputVectorRaw {
-			get {
-				return new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-			}
-		}
+		private static Vector3 inputVectorRaw => new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
 	}
 }

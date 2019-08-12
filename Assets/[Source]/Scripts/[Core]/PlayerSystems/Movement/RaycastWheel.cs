@@ -187,23 +187,23 @@ namespace Core.PlayerSystems.Movement
 
 		private void DrawGizmos()
 		{
-			Vector3 __direction = axle.TransformDirection(-Vector3.up) * (this.radius);
+			Vector3 __direction = axle.TransformDirection(-Vector3.up) * (radius);
 			Vector3 __position = graphic.position;
 			
 			CGDebug.DrawRay(__position, __direction).Color(new Color(0, 1, 0, 1));
 			
-			__direction = graphic.TransformDirection(-Vector3.up) * (this.maxSuspension);
+			__direction = graphic.TransformDirection(-Vector3.up) * (maxSuspension);
 			CGDebug.DrawRay(new Vector3(__position.x, __position.y - radius, __position.z), __direction).Color(new Color(0, 0, 1, 1));
 		}
 		
 		private void OnDrawGizmosSelected()
 		{
 			Gizmos.color = new Color(0, 1, 0, 1);
-			Vector3 __direction = axle.TransformDirection(-Vector3.up) * (this.radius);
+			Vector3 __direction = axle.TransformDirection(-Vector3.up) * (radius);
 			Gizmos.DrawRay(axle.position, __direction);
 
 			Gizmos.color = new Color(0, 0, 1, 1);
-			__direction = axle.TransformDirection(-Vector3.up) * (this.maxSuspension);
+			__direction = axle.TransformDirection(-Vector3.up) * (maxSuspension);
 			Gizmos.DrawRay(new Vector3(axle.position.x, axle.position.y - radius, axle.position.z), __direction);
 		}
 		

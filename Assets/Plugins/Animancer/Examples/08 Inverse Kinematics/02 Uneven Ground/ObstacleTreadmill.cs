@@ -100,8 +100,8 @@ namespace Animancer.Examples
 
         public float Slope
         {
-            get { return _Ground.localEulerAngles.z; }
-            set { _Ground.localEulerAngles = new Vector3(0, 0, value); }
+            get => _Ground.localEulerAngles.z;
+            set => _Ground.localEulerAngles = new Vector3(0, 0, value);
         }
 
         /************************************************************************************************************************/

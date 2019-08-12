@@ -14,7 +14,7 @@ namespace Dreamteck.Splines
         public Iteration iteration = Iteration.Ordered;
         public int randomSeed
         {
-            get { return _randomSeed; }
+            get => _randomSeed;
             set
             {
                 if (value != _randomSeed)

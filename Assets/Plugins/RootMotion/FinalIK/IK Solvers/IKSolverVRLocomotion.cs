@@ -340,29 +340,13 @@ namespace RootMotion.FinalIK {
 				rightFootRotation = footsteps[1].rotation;
 			}
 
-			public Vector3 leftFootstepPosition {
-				get {
-					return footsteps[0].position;
-				}
-			}
-			
-			public Vector3 rightFootstepPosition {
-				get {
-					return footsteps[1].position;
-				}
-			}
-			
-			public Quaternion leftFootstepRotation {
-				get {
-					return footsteps[0].rotation;
-				}
-			}
-			
-			public Quaternion rightFootstepRotation {
-				get {
-					return footsteps[1].rotation;
-				}
-			}
+			public Vector3 leftFootstepPosition => footsteps[0].position;
+
+			public Vector3 rightFootstepPosition => footsteps[1].position;
+
+			public Quaternion leftFootstepRotation => footsteps[0].rotation;
+
+			public Quaternion rightFootstepRotation => footsteps[1].rotation;
 
 			private bool StepBlocked(Vector3 fromPosition, Vector3 toPosition, Vector3 rootPosition) {
 				if (blockingLayers == -1 || !blockingEnabled) return false;

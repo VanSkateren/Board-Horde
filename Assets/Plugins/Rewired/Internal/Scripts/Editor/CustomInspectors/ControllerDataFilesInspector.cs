@@ -17,7 +17,7 @@ namespace Rewired.Editor {
 
         private void OnEnable() {
             internalEditor = new Rewired.Editor.ControllerDataFilesInspector_Internal(this);
-            base.Enabled();
+            Enabled();
         }
     }
 }

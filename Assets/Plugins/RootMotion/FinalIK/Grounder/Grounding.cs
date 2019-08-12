@@ -139,11 +139,7 @@ namespace RootMotion.FinalIK {
 		/// <summary>
 		/// Is the RaycastHit from the root grounded?
 		/// </summary>
-		public bool rootGrounded {
-			get {
-				return rootHit.distance < maxStep * 2f;
-			}
-		}
+		public bool rootGrounded => rootHit.distance < maxStep * 2f;
 
 		/// <summary>
 		/// Raycasts or sphereCasts to find the root ground point. Distance of the Ray/Sphere cast is maxDistanceMlp x maxStep. Use this instead of rootHit if the Grounder is weighed out/disabled and not updated.
@@ -305,12 +301,8 @@ namespace RootMotion.FinalIK {
 		}
 		
 		// The up vector in solver rotation space.
-		public Vector3 up {
-			get {
-				return (useRootRotation? root.up: Vector3.up);
-			}
-		}
-		
+		public Vector3 up => (useRootRotation? root.up: Vector3.up);
+
 		// Gets the vertical offset between two vectors in solver rotation space
 		public float GetVerticalOffset(Vector3 p1, Vector3 p2) {
 			if (useRootRotation) {

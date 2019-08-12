@@ -48,10 +48,10 @@ namespace RootMotion.FinalIK {
 			}
 
 			public void Read(Vector3 position, Quaternion rotation) {
-				this.readPosition = position;
-				this.readRotation = rotation;
-				this.solverPosition = position;
-				this.solverRotation = rotation;
+				readPosition = position;
+				readRotation = rotation;
+				solverPosition = position;
+				solverRotation = rotation;
 			}
 
 			public static void SwingRotation(VirtualBone[] bones, int index, Vector3 swingTarget, float weight = 1f) {
@@ -205,7 +205,7 @@ namespace RootMotion.FinalIK {
 				}
 				
 				for (int i = 0; i < bones.Length - 1; i++) {
-					VirtualBone.SwingRotation(bones, i, bones[i + 1].solverPosition);
+					SwingRotation(bones, i, bones[i + 1].solverPosition);
 				}
 			}
 
@@ -228,9 +228,9 @@ namespace RootMotion.FinalIK {
 
 						if (weight >= 1) {
 							//bones[i].transform.rotation = targetRotation;
-							VirtualBone.RotateBy(bones, i, rotation);
+							RotateBy(bones, i, rotation);
 						} else {
-							VirtualBone.RotateBy(bones, i, Quaternion.Lerp(Quaternion.identity, rotation, weight));
+							RotateBy(bones, i, Quaternion.Lerp(Quaternion.identity, rotation, weight));
 						}
 					}
 				}

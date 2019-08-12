@@ -10,7 +10,7 @@ namespace Dreamteck.Splines
     {
         public float expand
         {
-            get { return _expand; }
+            get => _expand;
             set
             {
                 if (value != _expand)
@@ -23,7 +23,7 @@ namespace Dreamteck.Splines
 
         public float extrude
         {
-            get { return _extrude; }
+            get => _extrude;
             set
             {
                 if (value != _extrude)
@@ -36,7 +36,7 @@ namespace Dreamteck.Splines
 
         public double extrudeClipFrom
         {
-            get { return _extrudeFrom; }
+            get => _extrudeFrom;
             set
             {
                 if (value != _extrudeFrom)
@@ -49,7 +49,7 @@ namespace Dreamteck.Splines
 
         public double extrudeClipTo
         {
-            get { return _extrudeTo; }
+            get => _extrudeTo;
             set
             {
                 if (value != _extrudeTo)
@@ -62,7 +62,7 @@ namespace Dreamteck.Splines
 
         public Vector2 sideUvScale
         {
-            get { return _sideUvScale; }
+            get => _sideUvScale;
             set
             {
                 if (value != _sideUvScale)
@@ -76,7 +76,7 @@ namespace Dreamteck.Splines
 
         public Vector2 sideUvOffset
         {
-            get { return _sideUvOffset; }
+            get => _sideUvOffset;
             set
             {
                 if (value != _sideUvOffset)
@@ -89,7 +89,7 @@ namespace Dreamteck.Splines
 
         public SplineComputer extrudeComputer
         {
-            get { return _extrudeComputer; }
+            get => _extrudeComputer;
             set
             {
                 if (value != _extrudeComputer)
@@ -104,7 +104,7 @@ namespace Dreamteck.Splines
 
         public bool uniformUvs
         {
-            get { return _uniformUvs; }
+            get => _uniformUvs;
             set
             {
                 if (value != _uniformUvs)

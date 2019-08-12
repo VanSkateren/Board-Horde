@@ -64,8 +64,8 @@ namespace SCPE
 
         public static string HEADER_IMG_PATH
         {
-            get { return SessionState.GetString(SCPE.ASSET_ABRV + "_HEADER_IMG_PATH", string.Empty); }
-            set { SessionState.SetString(SCPE.ASSET_ABRV + "_HEADER_IMG_PATH", value); }
+            get => SessionState.GetString(SCPE.ASSET_ABRV + "_HEADER_IMG_PATH", string.Empty);
+            set => SessionState.SetString(SCPE.ASSET_ABRV + "_HEADER_IMG_PATH", value);
         }
 
         public static void DrawStatusBox(GUIContent content, string status, SCPE_GUI.Status type, bool boxed = true)
@@ -230,7 +230,7 @@ namespace SCPE
 
         public static void DrawLogLine(string text)
         {
-            EditorGUILayout.LabelField(new GUIContent(text, CheckMark), SCPE_GUI.LogText);
+            EditorGUILayout.LabelField(new GUIContent(text, CheckMark), LogText);
         }
 
         public static void DrawLogLine(string text, SCPE_GUI.Status status = Status.Ok)
@@ -261,10 +261,10 @@ namespace SCPE
         public static void DrawWindowHeader(float windowWidth, float windowHeight)
         {
             Rect headerRect = new Rect(0, 0, windowWidth, windowHeight / 6.5f);
-            if (SCPE_GUI.HeaderImg)
+            if (HeaderImg)
             {
-                UnityEngine.GUI.DrawTexture(headerRect, SCPE_GUI.HeaderImg, ScaleMode.ScaleToFit);
-                GUILayout.Space(SCPE_GUI.HeaderImg.height / 4 + 65);
+                UnityEngine.GUI.DrawTexture(headerRect, HeaderImg, ScaleMode.ScaleToFit);
+                GUILayout.Space(HeaderImg.height / 4 + 65);
             }
             else
             {
@@ -394,13 +394,13 @@ namespace SCPE
                     versionText = (PackageVersionCheck.IS_UPDATED) ? "Latest version" : "New version available";
                 }
 
-                SCPE_GUI.DrawStatusBox(new GUIContent("Package version " + SCPE.INSTALLED_VERSION, EditorGUIUtility.IconContent("cs Script Icon").image), versionText, versionStatus);
+                DrawStatusBox(new GUIContent("Package version " + SCPE.INSTALLED_VERSION, EditorGUIUtility.IconContent("cs Script Icon").image), versionText, versionStatus);
 
                 if (!PackageVersionCheck.IS_UPDATED)
                 {
                     using (new EditorGUILayout.HorizontalScope())
                     {
-                        if (SCPE_GUI.DrawActionBox("Update to " + PackageVersionCheck.fetchedVersionString, EditorGUIUtility.IconContent("BuildSettings.Standalone.Small").image))
+                        if (DrawActionBox("Update to " + PackageVersionCheck.fetchedVersionString, EditorGUIUtility.IconContent("BuildSettings.Standalone.Small").image))
                         {
                             SCPE.OpenStorePage();
                         }
@@ -420,7 +420,7 @@ namespace SCPE
                 string tooltip = (UnityVersionCheck.COMPATIBLE) ? "Tested with the current package version" : "This version is not compatible";
                 tooltip = (UnityVersionCheck.UNTESTED) ? "This version has not been tested, issues may arise" : tooltip;
 
-                SCPE_GUI.DrawStatusBox(new GUIContent("Unity " + UnityVersionCheck.UnityVersion, EditorGUIUtility.IconContent("UnityLogo").image, tooltip), versionText, versionStatus);
+                DrawStatusBox(new GUIContent("Unity " + UnityVersionCheck.UnityVersion, EditorGUIUtility.IconContent("UnityLogo").image, tooltip), versionText, versionStatus);
             }
 
             public static void DrawPlatform()
@@ -428,7 +428,7 @@ namespace SCPE
                 string compatibilityText = SCPE.IsCompatiblePlatform ? "Compatible" : "Unsupported";
                 SCPE_GUI.Status compatibilityStatus = SCPE.IsCompatiblePlatform ? SCPE_GUI.Status.Ok : SCPE_GUI.Status.Error;
 
-                SCPE_GUI.DrawStatusBox(TargetPlatform(), compatibilityText, compatibilityStatus);
+                DrawStatusBox(TargetPlatform(), compatibilityText, compatibilityStatus);
             }
 
             public static void DrawColorSpace()
@@ -436,7 +436,7 @@ namespace SCPE
                 string colorText = (UnityEditor.PlayerSettings.colorSpace == ColorSpace.Linear) ? "Linear" : "Linear is recommended";
                 SCPE_GUI.Status folderStatus = (UnityEditor.PlayerSettings.colorSpace == ColorSpace.Linear) ? SCPE_GUI.Status.Ok : SCPE_GUI.Status.Warning;
 
-                SCPE_GUI.DrawStatusBox(new GUIContent("Color space", EditorGUIUtility.IconContent("d_PreTextureRGB").image), colorText, folderStatus);
+                DrawStatusBox(new GUIContent("Color space", EditorGUIUtility.IconContent("d_PreTextureRGB").image), colorText, folderStatus);
             }
 
             public static void DrawPipeline()
@@ -470,7 +470,7 @@ namespace SCPE
                     compatibilityStatus = SCPE_GUI.Status.Error;
                 }
 
-                SCPE_GUI.DrawStatusBox(new GUIContent(pipelineName, EditorGUIUtility.IconContent("d_Profiler.Rendering").image), pipelineText, compatibilityStatus);
+                DrawStatusBox(new GUIContent(pipelineName, EditorGUIUtility.IconContent("d_Profiler.Rendering").image), pipelineText, compatibilityStatus);
 #endif
             }
 
@@ -490,7 +490,7 @@ namespace SCPE
                 ppsText = (PostProcessingInstallation.PPSVersionStatus == PostProcessingInstallation.Version.Outdated) ? "Outdated" : ppsText;
                 ppsStatus = (PostProcessingInstallation.PPSVersionStatus == PostProcessingInstallation.Version.Outdated) ? SCPE_GUI.Status.Warning : ppsStatus;
 #endif
-                SCPE_GUI.DrawStatusBox(new GUIContent(ppsLabel, EditorGUIUtility.IconContent("Camera Gizmo").image), ppsText, ppsStatus);
+                DrawStatusBox(new GUIContent(ppsLabel, EditorGUIUtility.IconContent("Camera Gizmo").image), ppsText, ppsStatus);
 
                 if (PostProcessingInstallation.IS_INSTALLED == false)
                 {
@@ -520,7 +520,7 @@ namespace SCPE
                     {
                         if (PostProcessingInstallation.Config == PostProcessingInstallation.Configuration.GitHub)
                         {
-                            if (SCPE_GUI.DrawActionBox(string.IsNullOrEmpty(PostProcessingInstallation.PACKAGE_PATH) ? "Download" : "Install", EditorGUIUtility.IconContent("BuildSettings.Standalone.Small").image))
+                            if (DrawActionBox(string.IsNullOrEmpty(PostProcessingInstallation.PACKAGE_PATH) ? "Download" : "Install", EditorGUIUtility.IconContent("BuildSettings.Standalone.Small").image))
                             {
                                 //Download
                                 if (PostProcessingInstallation.PACKAGE_PATH.Contains(".unitypackage") == false)
@@ -543,7 +543,7 @@ namespace SCPE
                         }
                         else
                         {
-                            if (SCPE_GUI.DrawActionBox("Install " + PostProcessingInstallation.LATEST_COMPATIBLE_VERSION, EditorGUIUtility.IconContent("BuildSettings.Standalone.Small").image))
+                            if (DrawActionBox("Install " + PostProcessingInstallation.LATEST_COMPATIBLE_VERSION, EditorGUIUtility.IconContent("BuildSettings.Standalone.Small").image))
                             {
                                 PostProcessingInstallation.InstallPackage();
                             }
@@ -558,7 +558,7 @@ namespace SCPE
                         {
                             EditorGUILayout.LabelField(new GUIContent(" Package location", EditorGUIUtility.IconContent("d_UnityLogo").image));
 
-                            EditorGUILayout.TextField(PostProcessingInstallation.PACKAGE_PATH, SCPE_GUI.PathField, GUILayout.MaxWidth(180f));
+                            EditorGUILayout.TextField(PostProcessingInstallation.PACKAGE_PATH, PathField, GUILayout.MaxWidth(180f));
 
                             if (GUILayout.Button("...", GUILayout.MaxWidth(30f)))
                             {
@@ -579,7 +579,7 @@ namespace SCPE
                     {
                         if (PostProcessingInstallation.Config == PostProcessingInstallation.Configuration.PackageManager && PostProcessingInstallation.PPSVersionStatus == PostProcessingInstallation.Version.Outdated)
                         {
-                            if (SCPE_GUI.DrawActionBox("Update to " + PostProcessingInstallation.LATEST_COMPATIBLE_VERSION, EditorGUIUtility.IconContent("BuildSettings.Standalone.Small").image))
+                            if (DrawActionBox("Update to " + PostProcessingInstallation.LATEST_COMPATIBLE_VERSION, EditorGUIUtility.IconContent("BuildSettings.Standalone.Small").image))
                             {
                                 PostProcessingInstallation.InstallPackage();
                             }
@@ -663,7 +663,7 @@ namespace SCPE
                 {
                     EditorGUILayout.LabelField(text);
 
-                    value = BoolSwitchGUI.Draw(value);
+                    value = Draw(value);
                 }
 
                 return value;
@@ -675,7 +675,7 @@ namespace SCPE
                 {
                     EditorGUILayout.LabelField(content);
 
-                    value = BoolSwitchGUI.Draw(value);
+                    value = Draw(value);
                 }
 
                 return value;

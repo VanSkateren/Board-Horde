@@ -14,7 +14,7 @@ namespace Dreamteck.Splines
     {
         public int slices
         {
-            get { return _slices; }
+            get => _slices;
             set
             {
                 if (value != _slices)

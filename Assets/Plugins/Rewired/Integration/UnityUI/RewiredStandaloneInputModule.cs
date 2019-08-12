@@ -242,15 +242,15 @@ namespace Rewired.Integration.UnityUI {
         /// (Optional) Link the Rewired Input Manager here for easier access to Player ids, etc.
         /// </summary>
         public InputManager_Base RewiredInputManager {
-            get { return rewiredInputManager; }
-            set { rewiredInputManager = value; }
+            get => rewiredInputManager;
+            set => rewiredInputManager = value;
         }
 
         /// <summary>
         /// Allow all Rewired game Players to control the UI. This does not include the System Player. If enabled, this setting overrides individual Player Ids set in Rewired Player Ids.
         /// </summary>
         public bool UseAllRewiredGamePlayers {
-            get { return useAllRewiredGamePlayers; }
+            get => useAllRewiredGamePlayers;
             set {
                 bool changed = value != useAllRewiredGamePlayers;
                 useAllRewiredGamePlayers = value;
@@ -262,7 +262,7 @@ namespace Rewired.Integration.UnityUI {
         /// Allow the Rewired System Player to control the UI.
         /// </summary>
         public bool UseRewiredSystemPlayer {
-            get { return useRewiredSystemPlayer; }
+            get => useRewiredSystemPlayer;
             set {
                 bool changed = value != useRewiredSystemPlayer;
                 useRewiredSystemPlayer = value;
@@ -274,7 +274,7 @@ namespace Rewired.Integration.UnityUI {
         /// Returns a clone of the array.
         /// </summary>
         public int[] RewiredPlayerIds {
-            get { return (int[])rewiredPlayerIds.Clone(); }
+            get => (int[])rewiredPlayerIds.Clone();
             set {
                 rewiredPlayerIds = (value != null ? (int[])value.Clone() : new int[0]);
                 SetupRewiredVars();
@@ -285,8 +285,8 @@ namespace Rewired.Integration.UnityUI {
         /// Allow only Players with Player.isPlaying = true to control the UI.
         /// </summary>
         public bool UsePlayingPlayersOnly {
-            get { return usePlayingPlayersOnly; }
-            set { usePlayingPlayersOnly = value; }
+            get => usePlayingPlayersOnly;
+            set => usePlayingPlayersOnly = value;
         }
 
         /// <summary>
@@ -294,9 +294,7 @@ namespace Rewired.Integration.UnityUI {
         /// Each Player that owns a Player Mouse must also be allowed to control the UI or the Player Mouse will not function.
         /// </summary>
         public List<Rewired.Components.PlayerMouse> PlayerMice {
-            get {
-                return new List<Rewired.Components.PlayerMouse>(playerMice);
-            }
+            get => new List<Rewired.Components.PlayerMouse>(playerMice);
             set {
                 if(value == null) {
                     playerMice = new List<Rewired.Components.PlayerMouse>();
@@ -312,41 +310,39 @@ namespace Rewired.Integration.UnityUI {
         /// Makes an axis press always move only one UI selection. Enable if you do not want to allow scrolling through UI elements by holding an axis direction.
         /// </summary>
         public bool MoveOneElementPerAxisPress {
-            get { return moveOneElementPerAxisPress; }
-            set { moveOneElementPerAxisPress = value; }
+            get => moveOneElementPerAxisPress;
+            set => moveOneElementPerAxisPress = value;
         }
 
         /// <summary>
         /// Allows the mouse to be used to select elements.
         /// </summary>
         public bool allowMouseInput {
-            get { return m_allowMouseInput; }
-            set { m_allowMouseInput = value; }
+            get => m_allowMouseInput;
+            set => m_allowMouseInput = value;
         }
 
         /// <summary>
         /// Allows the mouse to be used to select elements if the device also supports touch control.
         /// </summary>
         public bool allowMouseInputIfTouchSupported {
-            get { return m_allowMouseInputIfTouchSupported; }
-            set { m_allowMouseInputIfTouchSupported = value; }
+            get => m_allowMouseInputIfTouchSupported;
+            set => m_allowMouseInputIfTouchSupported = value;
         }
 
         /// <summary>
         /// Allows touch input to be used to select elements.
         /// </summary>
         public bool allowTouchInput {
-            get { return m_allowTouchInput; }
-            set { m_allowTouchInput = value; }
+            get => m_allowTouchInput;
+            set => m_allowTouchInput = value;
         }
 
         /// <summary>
         /// If enabled, Action Ids will be used to set the Actions. If disabled, string names will be used to set the Actions.
         /// </summary>
         public bool SetActionsById {
-            get {
-                return setActionsById;
-            }
+            get => setActionsById;
             set {
                 if(setActionsById == value) return;
                 setActionsById = value;
@@ -358,9 +354,7 @@ namespace Rewired.Integration.UnityUI {
         /// Name of the horizontal axis for movement (if axis events are used).
         /// </summary>
         public int HorizontalActionId {
-            get {
-                return horizontalActionId;
-            }
+            get => horizontalActionId;
             set {
                 if(value == horizontalActionId) return;
                 horizontalActionId = value;
@@ -374,9 +368,7 @@ namespace Rewired.Integration.UnityUI {
         /// Name of the vertical axis for movement (if axis events are used).
         /// </summary>
         public int VerticalActionId {
-            get {
-                return verticalActionId;
-            }
+            get => verticalActionId;
             set {
                 if(value == verticalActionId) return;
                 verticalActionId = value;
@@ -390,9 +382,7 @@ namespace Rewired.Integration.UnityUI {
         /// Name of the action used to submit.
         /// </summary>
         public int SubmitActionId {
-            get {
-                return submitActionId;
-            }
+            get => submitActionId;
             set {
                 if(value == submitActionId) return;
                 submitActionId = value;
@@ -406,9 +396,7 @@ namespace Rewired.Integration.UnityUI {
         /// Name of the action used to cancel.
         /// </summary>
         public int CancelActionId {
-            get {
-                return cancelActionId;
-            }
+            get => cancelActionId;
             set {
                 if(value == cancelActionId) return;
                 cancelActionId = value;
@@ -426,12 +414,7 @@ namespace Rewired.Integration.UnityUI {
             }
         }
 
-        private bool isTouchAllowed {
-            get {
-                // if (!isTouchSupported) return false; // Removed because Unity Remote will return touches even on platforms that report touch not supported and returning on this will break it.
-                return m_allowTouchInput;
-            }
-        }
+        private bool isTouchAllowed => m_allowTouchInput;
 
         #endregion
 
@@ -449,39 +432,39 @@ namespace Rewired.Integration.UnityUI {
         /// </summary>
         [Obsolete("allowActivationOnMobileDevice has been deprecated. Use forceModuleActive instead")]
         public bool allowActivationOnMobileDevice {
-            get { return m_ForceModuleActive; }
-            set { m_ForceModuleActive = value; }
+            get => m_ForceModuleActive;
+            set => m_ForceModuleActive = value;
         }
 
         /// <summary>
         /// Forces the module to always be active.
         /// </summary>
         public bool forceModuleActive {
-            get { return m_ForceModuleActive; }
-            set { m_ForceModuleActive = value; }
+            get => m_ForceModuleActive;
+            set => m_ForceModuleActive = value;
         }
 
         // <summary>
         /// Number of selection changes allowed per second when a movement button/axis is held in a direction.
         /// </summary>
         public float inputActionsPerSecond {
-            get { return m_InputActionsPerSecond; }
-            set { m_InputActionsPerSecond = value; }
+            get => m_InputActionsPerSecond;
+            set => m_InputActionsPerSecond = value;
         }
 
         /// <summary>
         /// Delay in seconds before vertical/horizontal movement starts repeating continouously when a movement direction is held.
         /// </summary>
         public float repeatDelay {
-            get { return m_RepeatDelay; }
-            set { m_RepeatDelay = value; }
+            get => m_RepeatDelay;
+            set => m_RepeatDelay = value;
         }
 
         /// <summary>
         /// Name of the horizontal axis for movement (if axis events are used).
         /// </summary>
         public string horizontalAxis {
-            get { return m_HorizontalAxis; }
+            get => m_HorizontalAxis;
             set {
                 if(m_HorizontalAxis == value) return;
                 m_HorizontalAxis = value;
@@ -495,7 +478,7 @@ namespace Rewired.Integration.UnityUI {
         /// Name of the vertical axis for movement (if axis events are used).
         /// </summary>
         public string verticalAxis {
-            get { return m_VerticalAxis; }
+            get => m_VerticalAxis;
             set {
                 if(m_VerticalAxis == value) return;
                 m_VerticalAxis = value;
@@ -509,7 +492,7 @@ namespace Rewired.Integration.UnityUI {
         /// Name of the action used to submit.
         /// </summary>
         public string submitButton {
-            get { return m_SubmitButton; }
+            get => m_SubmitButton;
             set {
                 if(m_SubmitButton == value) return;
                 m_SubmitButton = value;
@@ -523,7 +506,7 @@ namespace Rewired.Integration.UnityUI {
         /// Name of the action used to cancel.
         /// </summary>
         public string cancelButton {
-            get { return m_CancelButton; }
+            get => m_CancelButton;
             set {
                 if(m_CancelButton == value) return;
                 m_CancelButton = value;
@@ -1163,9 +1146,9 @@ namespace Rewired.Integration.UnityUI {
             // Set up Rewired Players
             if (useAllRewiredGamePlayers) {
                 IList<Rewired.Player> rwPlayers = useRewiredSystemPlayer ? Rewired.ReInput.players.AllPlayers : Rewired.ReInput.players.Players;
-                this.playerIds = new int[rwPlayers.Count];
+                playerIds = new int[rwPlayers.Count];
                 for (int i = 0; i < rwPlayers.Count; i++) {
-                    this.playerIds[i] = rwPlayers[i].id;
+                    playerIds[i] = rwPlayers[i].id;
                 }
             } else {
                 bool foundSystem = false;
@@ -1302,11 +1285,11 @@ namespace Rewired.Integration.UnityUI {
             }
             private PlayerSetting(PlayerSetting other) {
                 if(other == null) throw new ArgumentNullException("other");
-                this.playerId = other.playerId;
-                this.playerMice = new List<Components.PlayerMouse>();
+                playerId = other.playerId;
+                playerMice = new List<Components.PlayerMouse>();
                 if(other.playerMice != null) {
                     foreach(var m in other.playerMice) {
-                        this.playerMice.Add(m);
+                        playerMice.Add(m);
                     }
                 }
             }

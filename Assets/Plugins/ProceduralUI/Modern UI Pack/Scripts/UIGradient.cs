@@ -32,7 +32,7 @@ namespace UnityEngine.UI
             #region Properties
             public Blend BlendMode
             {
-                get { return _blendMode; }
+                get => _blendMode;
                 set
                 {
                     _blendMode = value;
@@ -42,7 +42,7 @@ namespace UnityEngine.UI
 
             public UnityEngine.Gradient EffectGradient
             {
-                get { return _effectGradient; }
+                get => _effectGradient;
                 set
                 {
                     _effectGradient = value;
@@ -52,7 +52,7 @@ namespace UnityEngine.UI
 
             public Type GradientType
             {
-                get { return _gradientType; }
+                get => _gradientType;
                 set
                 {
                     _gradientType = value;
@@ -62,7 +62,7 @@ namespace UnityEngine.UI
 
             public float Offset
             {
-                get { return _offset; }
+                get => _offset;
                 set
                 {
                     _offset = value;

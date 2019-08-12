@@ -22,13 +22,7 @@ namespace Dreamteck.Splines
         private bool drag = false;
         private bool finalize = false;
 
-        public bool isDragging
-        {
-            get
-            {
-                return drag && rect.width >= minimumRectSize && rect.height >= minimumRectSize;
-            }
-        }
+        public bool isDragging => drag && rect.width >= minimumRectSize && rect.height >= minimumRectSize;
 
 
         public override bool SceneEdit(ref SplinePoint[] points, ref List<int> selected)

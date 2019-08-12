@@ -20,7 +20,7 @@ public class PlayerState_Bailed : PlayerState_OffBoard
 	{
 		PlayerController.Instance.DoBailDelay();
 		PlayerController.Instance.skaterController.skaterRigidbody.useGravity = true;
-		this._hips = PlayerController.Instance.respawn.puppetMaster.muscles[0].rigidbody;
+		_hips = PlayerController.Instance.respawn.puppetMaster.muscles[0].rigidbody;
 	}
 
 	public override void Exit()
@@ -40,18 +40,18 @@ public class PlayerState_Bailed : PlayerState_OffBoard
 	public override void Update()
 	{
 		base.Update();
-		if (Vector3.ProjectOnPlane(this._hips.velocity, Vector3.up).magnitude >= 0.5f)
+		if (Vector3.ProjectOnPlane(_hips.velocity, Vector3.up).magnitude >= 0.5f)
 		{
-			if (this._hips.velocity.y <= -1f)
+			if (_hips.velocity.y <= -1f)
 			{
-				this._fallTarget = 0.35f;
+				_fallTarget = 0.35f;
 			}
 			else
 			{
-				this._fallTarget = 1f;
+				_fallTarget = 1f;
 			}
-			this._fallBlend = Mathf.Lerp(this._fallBlend, this._fallTarget, Time.fixedDeltaTime * 10f);
-			PlayerController.Instance.animationController.SetValue("FallBlend", this._fallBlend);
+			_fallBlend = Mathf.Lerp(_fallBlend, _fallTarget, Time.fixedDeltaTime * 10f);
+			PlayerController.Instance.animationController.SetValue("FallBlend", _fallBlend);
 		}
 		else if (PlayerController.Instance.respawn.puppetMaster.isAlive)
 		{

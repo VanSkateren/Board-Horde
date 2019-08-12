@@ -21,7 +21,7 @@ namespace Animancer
         /// <summary>The animation to extract the curve from.</summary>
         public AnimationClip Clip
         {
-            get { return _Clip; }
+            get => _Clip;
             set
             {
                 if (value != null)
@@ -48,11 +48,8 @@ namespace Animancer
         /// <summary>[Editor-Only] The name of the curve to extract.</summary>
         public string PropertyName
         {
-            get { return _PropertyName; }
-            set
-            {
-                _PropertyName = value;
-            }
+            get => _PropertyName;
+            set => _PropertyName = value;
         }
 #endif
 
@@ -66,7 +63,7 @@ namespace Animancer
         /// </summary>
         public AnimationCurve Curve
         {
-            get { return _Curve; }
+            get => _Curve;
             set
             {
                 if (value == null)

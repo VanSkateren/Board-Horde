@@ -30,7 +30,7 @@ namespace Sirenix.OdinValidator.Editor
         {
             UnityEditorEventUtility.DelayAction(() =>
             {
-                foreach (AutomatedValidationHook item in OdinValidationConfig.Instance.Hooks)
+                foreach (AutomatedValidationHook item in Instance.Hooks)
                 {
                     if (item.Enabled)
                     {
@@ -53,8 +53,8 @@ namespace Sirenix.OdinValidator.Editor
         {
             HashSet<Type> notTheseHooks = new HashSet<Type>();
 
-            if (this.Hooks != null)
-                notTheseHooks.AddRange(this.Hooks.Where(n => n.Hook != null).Select(n => n.Hook.GetType()));
+            if (Hooks != null)
+                notTheseHooks.AddRange(Hooks.Where(n => n.Hook != null).Select(n => n.Hook.GetType()));
 
             List<Type> availableHookTypes = AssemblyUtilities.GetTypes(AssemblyTypeFlags.CustomTypes)
                 .Where(type => !type.IsAbstract && !type.IsInterface && !notTheseHooks.Contains(type) && typeof(IValidationHook).IsAssignableFrom(type) && type.GetConstructor(Type.EmptyTypes) != null).ToList();
@@ -71,21 +71,21 @@ namespace Sirenix.OdinValidator.Editor
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            UnitySerializationUtility.DeserializeUnityObject(this, ref this.serializationData);
+            UnitySerializationUtility.DeserializeUnityObject(this, ref serializationData);
 
-            if (this.Hooks == null)
+            if (Hooks == null)
             {
-                this.Hooks = new List<AutomatedValidationHook>();
+                Hooks = new List<AutomatedValidationHook>();
             }
             else
             {
-                this.Hooks.RemoveAll(n => n.Hook == null);
+                Hooks.RemoveAll(n => n.Hook == null);
             }
         }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
-            UnitySerializationUtility.SerializeUnityObject(this, ref this.serializationData);
+            UnitySerializationUtility.SerializeUnityObject(this, ref serializationData);
         }
 
         DataFormat IOverridesSerializationFormat.GetFormatToSerializeAs(bool isPlayer)
@@ -102,7 +102,7 @@ namespace Sirenix.OdinValidator.Editor
             {
                 if (newProfile != null)
                 {
-                    this.MainValidationProfiles.Add(newProfile);
+                    MainValidationProfiles.Add(newProfile);
                     InspectorUtilities.RegisterUnityObjectDirty(this);
                 }
             });
@@ -111,12 +111,12 @@ namespace Sirenix.OdinValidator.Editor
         [Button("Reset Default Profiles", ButtonSizes.Medium), HorizontalGroup(0.5f)]
         public void ResetMainProfilesToDefault()
         {
-            this.ResetData(false);
+            ResetData(false);
         }
 
         protected override void OnConfigAutoCreated()
         {
-            this.ResetData(true);
+            ResetData(true);
         }
 
         private TAsset GetOrCreateValidationProfileSubAsset<TAsset, TProfile>(TProfile newProfile, bool overridePreExistingProfile)
@@ -128,7 +128,7 @@ namespace Sirenix.OdinValidator.Editor
 
             if (asset == null)
             {
-                asset = ScriptableObject.CreateInstance<TAsset>();
+                asset = CreateInstance<TAsset>();
                 asset.Profile = newProfile;
                 asset.name = newProfile.Name;
                 AssetDatabase.AddObjectToAsset(asset, this);
@@ -146,7 +146,7 @@ namespace Sirenix.OdinValidator.Editor
 
         private void ResetData(bool overridePreExistingProfileAssets)
         {
-            AssetValidationProfileAsset scanAllAssets = this.GetOrCreateValidationProfileSubAsset<AssetValidationProfileAsset, AssetValidationProfile>(new AssetValidationProfile()
+            AssetValidationProfileAsset scanAllAssets = GetOrCreateValidationProfileSubAsset<AssetValidationProfileAsset, AssetValidationProfile>(new AssetValidationProfile()
             {
                 Name = "Scan All Assets",
                 Description = "Scans all prefabs and scriptable objects in the project",
@@ -154,28 +154,28 @@ namespace Sirenix.OdinValidator.Editor
                 SearchFilters = new string[] { "t:Prefab", "t:ScriptableObject" }
             }, overridePreExistingProfileAssets);
 
-            SceneValidationProfileAsset scanAllScenes = this.GetOrCreateValidationProfileSubAsset<SceneValidationProfileAsset, SceneValidationProfile>(new SceneValidationProfile()
+            SceneValidationProfileAsset scanAllScenes = GetOrCreateValidationProfileSubAsset<SceneValidationProfileAsset, SceneValidationProfile>(new SceneValidationProfile()
             {
                 Name = "Scan All Scenes",
                 Description = "Scans all scenes in the project",
                 ScenePaths = new string[] { "Assets" }
             }, overridePreExistingProfileAssets);
 
-            ValidationCollectionProfileAsset scanEntireProject = this.GetOrCreateValidationProfileSubAsset<ValidationCollectionProfileAsset, ValidationCollectionProfile>(new ValidationCollectionProfile()
+            ValidationCollectionProfileAsset scanEntireProject = GetOrCreateValidationProfileSubAsset<ValidationCollectionProfileAsset, ValidationCollectionProfile>(new ValidationCollectionProfile()
             {
                 Name = "Scan Entire Project",
                 Description = "Scans all prefabs, scriptable objects and scenes in the project",
                 Profiles = new ValidationProfileAsset[] { scanAllAssets, scanAllScenes }
             }, overridePreExistingProfileAssets);
 
-            SceneValidationProfileAsset scanOpenScenes = this.GetOrCreateValidationProfileSubAsset<SceneValidationProfileAsset, SceneValidationProfile>(new SceneValidationProfile()
+            SceneValidationProfileAsset scanOpenScenes = GetOrCreateValidationProfileSubAsset<SceneValidationProfileAsset, SceneValidationProfile>(new SceneValidationProfile()
             {
                 Name = "Scan Open Scenes",
                 Description = "Scans all open scenes, without going through scene asset dependencies.",
                 IncludeOpenScenes = true,
             }, overridePreExistingProfileAssets);
 
-            SceneValidationProfileAsset scanScenesFromBuildOptions = this.GetOrCreateValidationProfileSubAsset<SceneValidationProfileAsset, SceneValidationProfile>(new SceneValidationProfile()
+            SceneValidationProfileAsset scanScenesFromBuildOptions = GetOrCreateValidationProfileSubAsset<SceneValidationProfileAsset, SceneValidationProfile>(new SceneValidationProfile()
             {
                 Name = "Scan Scenes From Build Options",
                 Description = "Scans all scenes from build options, including scene asset dependencies.",
@@ -222,7 +222,7 @@ namespace Sirenix.OdinValidator.Editor
                 }
             };
 
-            this.MainValidationProfiles = new List<IValidationProfile>()
+            MainValidationProfiles = new List<IValidationProfile>()
             {
                 scanEntireProject,
                 scanAllAssets,
@@ -231,7 +231,7 @@ namespace Sirenix.OdinValidator.Editor
                 scanScenesFromBuildOptions,
             };
 
-            this.Hooks = new List<AutomatedValidationHook>()
+            Hooks = new List<AutomatedValidationHook>()
             {
                 onPlayHook,
                 onBuild,

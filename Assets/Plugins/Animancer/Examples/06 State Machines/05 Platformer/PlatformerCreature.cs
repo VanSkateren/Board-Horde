@@ -22,31 +22,31 @@ namespace Animancer.Examples
 
         [SerializeField]
         private AnimancerComponent _Animancer;
-        public AnimancerComponent Animancer { get { return _Animancer; } }
+        public AnimancerComponent Animancer => _Animancer;
 
         [SerializeField]
         private SpriteRenderer _Renderer;
-        public SpriteRenderer Renderer { get { return _Renderer; } }
+        public SpriteRenderer Renderer => _Renderer;
 
         [SerializeField]
         private PlatformerCreatureBrain _Brain;
-        public PlatformerCreatureBrain Brain { get { return _Brain; } }
+        public PlatformerCreatureBrain Brain => _Brain;
 
         [SerializeField]
         private Rigidbody2D _Rigidbody;
-        public Rigidbody2D Rigidbody { get { return _Rigidbody; } }
+        public Rigidbody2D Rigidbody => _Rigidbody;
 
         [SerializeField]
         private GroundDetector2D _GroundDetector;
-        public GroundDetector2D GroundDetector { get { return _GroundDetector; } }
+        public GroundDetector2D GroundDetector => _GroundDetector;
 
         [SerializeField]
         private Health _Health;
-        public Health Health { get { return _Health; } }
+        public Health Health => _Health;
 
         [SerializeField]
         private PlatformerCreatureState _Idle;
-        public PlatformerCreatureState Idle { get { return _Idle; } }
+        public PlatformerCreatureState Idle => _Idle;
 
         // Stats.
         // Mana.

@@ -62,77 +62,92 @@ namespace RootMotion.FinalIK {
 		/// <summary>
 		/// Gets the body effector.
 		/// </summary>
-		public IKEffector bodyEffector { get { return GetEffector(FullBodyBipedEffector.Body); }}
+		public IKEffector bodyEffector => GetEffector(FullBodyBipedEffector.Body);
+
 		/// <summary>
 		/// Gets the left shoulder effector.
 		/// </summary>
-		public IKEffector leftShoulderEffector { get { return GetEffector(FullBodyBipedEffector.LeftShoulder); }}
+		public IKEffector leftShoulderEffector => GetEffector(FullBodyBipedEffector.LeftShoulder);
+
 		/// <summary>
 		/// Gets the right shoulder effector.
 		/// </summary>
-		public IKEffector rightShoulderEffector { get { return GetEffector(FullBodyBipedEffector.RightShoulder); }}
+		public IKEffector rightShoulderEffector => GetEffector(FullBodyBipedEffector.RightShoulder);
+
 		/// <summary>
 		/// Gets the left thigh effector.
 		/// </summary>
-		public IKEffector leftThighEffector { get { return GetEffector(FullBodyBipedEffector.LeftThigh); }}
+		public IKEffector leftThighEffector => GetEffector(FullBodyBipedEffector.LeftThigh);
+
 		/// <summary>
 		/// Gets the right thigh effector.
 		/// </summary>
-		public IKEffector rightThighEffector { get { return GetEffector(FullBodyBipedEffector.RightThigh); }}
+		public IKEffector rightThighEffector => GetEffector(FullBodyBipedEffector.RightThigh);
+
 		/// <summary>
 		/// Gets the left hand effector.
 		/// </summary>
-		public IKEffector leftHandEffector { get { return GetEffector(FullBodyBipedEffector.LeftHand); }}
+		public IKEffector leftHandEffector => GetEffector(FullBodyBipedEffector.LeftHand);
+
 		/// <summary>
 		/// Gets the right hand effector.
 		/// </summary>
-		public IKEffector rightHandEffector { get { return GetEffector(FullBodyBipedEffector.RightHand); }}
+		public IKEffector rightHandEffector => GetEffector(FullBodyBipedEffector.RightHand);
+
 		/// <summary>
 		/// Gets the left foot effector.
 		/// </summary>
-		public IKEffector leftFootEffector { get { return GetEffector(FullBodyBipedEffector.LeftFoot); }}
+		public IKEffector leftFootEffector => GetEffector(FullBodyBipedEffector.LeftFoot);
+
 		/// <summary>
 		/// Gets the right foot effector.
 		/// </summary>
-		public IKEffector rightFootEffector { get { return GetEffector(FullBodyBipedEffector.RightFoot); }}
-		
+		public IKEffector rightFootEffector => GetEffector(FullBodyBipedEffector.RightFoot);
+
 		/// <summary>
 		/// Gets the left arm chain.
 		/// </summary>
-		public FBIKChain leftArmChain { get { return chain[1]; }}
+		public FBIKChain leftArmChain => chain[1];
+
 		/// <summary>
 		/// Gets the right arm chain.
 		/// </summary>
-		public FBIKChain rightArmChain { get { return chain[2]; }}
+		public FBIKChain rightArmChain => chain[2];
+
 		/// <summary>
 		/// Gets the left leg chain.
 		/// </summary>
-		public FBIKChain leftLegChain { get { return chain[3]; }}
+		public FBIKChain leftLegChain => chain[3];
+
 		/// <summary>
 		/// Gets the right leg chain.
 		/// </summary>
-		public FBIKChain rightLegChain { get { return chain[4]; }}
+		public FBIKChain rightLegChain => chain[4];
 
 		/// <summary>
 		/// Gets the left arm IK mapping.
 		/// </summary>
-		public IKMappingLimb leftArmMapping { get { return limbMappings[0]; }}
+		public IKMappingLimb leftArmMapping => limbMappings[0];
+
 		/// <summary>
 		/// Gets the right arm IK mapping.
 		/// </summary>
-		public IKMappingLimb rightArmMapping { get { return limbMappings[1]; }}
+		public IKMappingLimb rightArmMapping => limbMappings[1];
+
 		/// <summary>
 		/// Gets the left leg IK mapping.
 		/// </summary>
-		public IKMappingLimb leftLegMapping { get { return limbMappings[2]; }}
+		public IKMappingLimb leftLegMapping => limbMappings[2];
+
 		/// <summary>
 		/// Gets the right leg IK mapping.
 		/// </summary>
-		public IKMappingLimb rightLegMapping { get { return limbMappings[3]; }}
+		public IKMappingLimb rightLegMapping => limbMappings[3];
+
 		/// <summary>
 		/// Gets the head IK mapping.
 		/// </summary>
-		public IKMappingBone headMapping { get { return boneMappings[0]; }}
+		public IKMappingBone headMapping => boneMappings[0];
 
 		/// <summary>
 		/// Sets chain weights for the specified chain.

@@ -29,9 +29,7 @@ namespace Borodar.ReorderableList {
 		/// <summary>
 		/// Gets the control ID of the list that is currently being drawn.
 		/// </summary>
-		public static int CurrentListControlID {
-			get { return ReorderableListControl.CurrentListControlID; }
-		}
+		public static int CurrentListControlID => ReorderableListControl.CurrentListControlID;
 
 		/// <summary>
 		/// Gets the position of the list control that is currently being drawn.
@@ -41,17 +39,13 @@ namespace Borodar.ReorderableList {
 		/// type events when using reorderable list controls with automatic layout.</para>
 		/// </remarks>
 		/// <see cref="CurrentItemTotalPosition"/>
-		public static Rect CurrentListPosition {
-			get { return ReorderableListControl.CurrentListPosition; }
-		}
+		public static Rect CurrentListPosition => ReorderableListControl.CurrentListPosition;
 
 		/// <summary>
 		/// Gets the zero-based index of the list item that is currently being drawn;
 		/// or a value of -1 if no item is currently being drawn.
 		/// </summary>
-		public static int CurrentItemIndex {
-			get { return ReorderableListControl.CurrentItemIndex; }
-		}
+		public static int CurrentItemIndex => ReorderableListControl.CurrentItemIndex;
 
 		/// <summary>
 		/// Gets the total position of the list item that is currently being drawn.
@@ -62,9 +56,7 @@ namespace Borodar.ReorderableList {
 		/// </remarks>
 		/// <see cref="CurrentItemIndex"/>
 		/// <see cref="CurrentListPosition"/>
-		public static Rect CurrentItemTotalPosition {
-			get { return ReorderableListControl.CurrentItemTotalPosition; }
-		}
+		public static Rect CurrentItemTotalPosition => ReorderableListControl.CurrentItemTotalPosition;
 
 		#region Basic Item Drawers
 

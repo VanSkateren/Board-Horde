@@ -379,7 +379,7 @@ namespace RootMotion.FinalIK {
 
 		// Called when interaction is started with this InteractionObject
 		public void OnStartInteraction(InteractionSystem interactionSystem) {
-			this.lastUsedInteractionSystem = interactionSystem;
+			lastUsedInteractionSystem = interactionSystem;
 		}
 
 		// Applies the weight curves and multipliers to the FBBIK solver

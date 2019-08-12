@@ -48,23 +48,17 @@ namespace Klak.Wiring.Patcher
         #region Public member properties and methods
 
         // Runtime instance access
-        public Wiring.NodeBase runtimeInstance {
-            get { return _runtimeInstance; }
-        }
+        public Wiring.NodeBase runtimeInstance => _runtimeInstance;
 
         // Validity check
-        public bool isValid {
-            get { return _runtimeInstance != null; }
-        }
+        public bool isValid => _runtimeInstance != null;
 
         #endregion
 
         #region Overridden virtual methods
 
         // Node display title
-        public override string title {
-            get { return _runtimeInstance.name; }
-        }
+        public override string title => _runtimeInstance.name;
 
         // Removal from a graph
         public override void RemovingFromGraph()

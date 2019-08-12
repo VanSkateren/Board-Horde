@@ -9,7 +9,7 @@ namespace Dreamteck.Splines{
         public enum Type {SmoothMirrored, Broken, SmoothFree};
         public Type type
         {
-            get { return _type; }
+            get => _type;
             set
             {
                 _type = value;

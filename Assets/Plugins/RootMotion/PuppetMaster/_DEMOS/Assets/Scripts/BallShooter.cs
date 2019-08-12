@@ -14,7 +14,7 @@ namespace RootMotion.Demos {
 
 		void Update () {
 			if (Input.GetKeyDown(keyCode)) {
-				GameObject b = (GameObject)GameObject.Instantiate(ball, transform.position + transform.rotation * spawnOffset, transform.rotation);
+				GameObject b = (GameObject)Instantiate(ball, transform.position + transform.rotation * spawnOffset, transform.rotation);
 				var r = b.GetComponent<Rigidbody>();
 
 				if (r != null) {

@@ -88,10 +88,7 @@ namespace RootMotion.FinalIK
 
         public Vector3 axis
         {
-            get
-            {
-                return new Vector3(axisX, axisY, axisZ);
-            }
+            get => new Vector3(axisX, axisY, axisZ);
             set
             {
                 axisX = value.x;
@@ -102,10 +99,7 @@ namespace RootMotion.FinalIK
 
         public Vector3 poleAxis
         {
-            get
-            {
-                return new Vector3(poleAxisX, poleAxisY, poleAxisZ);
-            }
+            get => new Vector3(poleAxisX, poleAxisY, poleAxisZ);
             set
             {
                 poleAxisX = value.x;
@@ -220,7 +214,7 @@ namespace RootMotion.FinalIK
 
             job.Dispose();
             graph.Destroy();
-            Object.Destroy(target);
+            Destroy(target);
         }
     }
 }

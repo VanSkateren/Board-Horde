@@ -30,7 +30,7 @@ namespace Dreamteck.Splines
         public enum Space { World, Local };
         public Space space
         {
-            get { return _space; }
+            get => _space;
             set
             {
                 if (value != _space) Rebuild();
@@ -39,10 +39,7 @@ namespace Dreamteck.Splines
         }
         public Spline.Type type
         {
-            get
-            {
-                return spline.type;
-            }
+            get => spline.type;
 
             set
             {
@@ -57,7 +54,7 @@ namespace Dreamteck.Splines
 
         public double precision
         {
-            get { return spline.precision; }
+            get => spline.precision;
             set
             {
                 if (value != spline.precision)
@@ -75,7 +72,7 @@ namespace Dreamteck.Splines
 
         public AnimationCurve customValueInterpolation
         {
-            get { return spline.customValueInterpolation; }
+            get => spline.customValueInterpolation;
             set
             {
                 spline.customValueInterpolation = value;
@@ -85,7 +82,7 @@ namespace Dreamteck.Splines
 
         public AnimationCurve customNormalInterpolation
         {
-            get { return spline.customNormalInterpolation; }
+            get => spline.customNormalInterpolation;
             set
             {
                 spline.customNormalInterpolation = value;
@@ -93,37 +90,13 @@ namespace Dreamteck.Splines
             }
         }
 
-        public int iterations
-        {
-            get
-            {
-                return spline.iterations;
-            }
-        }
+        public int iterations => spline.iterations;
 
-        public double moveStep
-        {
-            get
-            {
-                return spline.moveStep;
-            }
-        }
+        public double moveStep => spline.moveStep;
 
-        public bool isClosed
-        {
-            get
-            {
-                return spline.isClosed;
-            }
-        }
+        public bool isClosed => spline.isClosed;
 
-        public int pointCount
-        {
-            get
-            {
-                return spline.points.Length;
-            }
-        }
+        public int pointCount => spline.points.Length;
 
         public Morph morph
         {
@@ -135,10 +108,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        public NodeLink[] nodeLinks
-        {
-            get { return _nodeLinks; }
-        }
+        public NodeLink[] nodeLinks => _nodeLinks;
 
         public bool hasMorph
         {
@@ -155,7 +125,7 @@ namespace Dreamteck.Splines
         public Vector3 position
         {
             get {
-                if (tsTransform == null) return this.transform.position;
+                if (tsTransform == null) return transform.position;
                 return tsTransform.position; }
                }
         /// <summary>
@@ -164,7 +134,7 @@ namespace Dreamteck.Splines
         public Quaternion rotation
         {
             get {
-                if (tsTransform == null) return this.transform.rotation;
+                if (tsTransform == null) return transform.rotation;
                 return tsTransform.rotation; 
             }
         }
@@ -174,7 +144,7 @@ namespace Dreamteck.Splines
         public Vector3 scale
         {
             get {
-                if (tsTransform == null) return this.transform.localScale;
+                if (tsTransform == null) return transform.localScale;
                 return tsTransform.scale; 
             }
         }
@@ -182,13 +152,7 @@ namespace Dreamteck.Splines
         /// <summary>
         /// returns the number of subscribers this computer has
         /// </summary>
-        public int subscriberCount
-        {
-            get
-            {
-                return subscribers.Length;
-            }
-        }
+        public int subscriberCount => subscribers.Length;
 
         [HideInInspector]
         [SerializeField]
@@ -230,7 +194,7 @@ namespace Dreamteck.Splines
 
 private void Awake()
         {
-            tsTransform = new TS_Transform(this.transform);
+            tsTransform = new TS_Transform(transform);
         }
 
 private void LateUpdate()
@@ -1374,25 +1338,25 @@ private void OnEnable()
         private Vector3 TransformPoint(Vector3 point)
         {
             if (tsTransform != null && tsTransform.transform != null) return tsTransform.TransformPoint(point);
-            else return this.transform.TransformPoint(point);
+            else return transform.TransformPoint(point);
         }
 
         private Vector3 InverseTransformPoint(Vector3 point)
         {
             if (tsTransform != null && tsTransform.transform != null) return tsTransform.InverseTransformPoint(point);
-            else return this.transform.InverseTransformPoint(point);
+            else return transform.InverseTransformPoint(point);
         }
 
         private Vector3 TransformDirection(Vector3 direction)
         {
             if (tsTransform != null && tsTransform.transform != null) return tsTransform.TransformDirection(direction);
-            else return this.transform.TransformDirection(direction);
+            else return transform.TransformDirection(direction);
         }
 
         private Vector3 InverseTransformDirection(Vector3 direction)
         {
             if (tsTransform != null && tsTransform.transform != null) return tsTransform.InverseTransformDirection(direction);
-            else return this.transform.InverseTransformDirection(direction);
+            else return transform.InverseTransformDirection(direction);
         }
     }
 }

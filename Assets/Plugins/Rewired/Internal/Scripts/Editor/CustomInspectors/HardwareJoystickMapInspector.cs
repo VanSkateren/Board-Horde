@@ -17,7 +17,7 @@ namespace Rewired.Editor {
         
         private void OnEnable() {
             internalEditor = new HardwareJoystickMapInspector_Internal(this);
-            base.Enabled();
+            Enabled();
         }
     }
 }

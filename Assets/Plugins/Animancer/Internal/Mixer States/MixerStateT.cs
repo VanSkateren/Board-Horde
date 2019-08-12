@@ -27,7 +27,7 @@ namespace Animancer
         /// <summary>The value used to calculate the weights of the <see cref="States"/>.</summary>
         public TParameter Parameter
         {
-            get { return _Parameter; }
+            get => _Parameter;
             set
             {
                 _Parameter = value;

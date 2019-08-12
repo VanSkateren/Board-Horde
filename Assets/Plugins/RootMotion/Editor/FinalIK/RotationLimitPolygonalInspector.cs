@@ -23,7 +23,7 @@ namespace RootMotion.FinalIK {
 			Z
 		}
 		
-		private RotationLimitPolygonal script { get { return target as RotationLimitPolygonal; }}
+		private RotationLimitPolygonal script => target as RotationLimitPolygonal;
 		private RotationLimitPolygonal clone;
 		private int selectedPoint = -1, deletePoint = -1, addPoint = -1;
 		private float degrees = 90;

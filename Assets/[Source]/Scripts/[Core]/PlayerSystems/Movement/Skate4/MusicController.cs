@@ -11,13 +11,7 @@ public class MusicController : MonoBehaviour
 
 	private static MusicController _instance;
 
-	public static MusicController Instance
-	{
-		get
-		{
-			return MusicController._instance;
-		}
-	}
+	public static MusicController Instance => _instance;
 
 	public MusicController()
 	{
@@ -25,29 +19,29 @@ public class MusicController : MonoBehaviour
 
 	private void Awake()
 	{
-		if (!(MusicController._instance != null) || !(MusicController._instance != this))
+		if (!(_instance != null) || !(_instance != this))
 		{
-			MusicController._instance = this;
+			_instance = this;
 		}
 		else
 		{
-			UnityEngine.Object.Destroy(base.gameObject);
+			Destroy(gameObject);
 		}
-		this.startingVol = this.audioSource.volume;
+		startingVol = audioSource.volume;
 	}
 
 	public void PlayGameMusic()
 	{
-		this.audioSource.clip = this.tracks[1];
-		this.audioSource.Play();
-		this.audioSource.volume = 0f;
+		audioSource.clip = tracks[1];
+		audioSource.Play();
+		audioSource.volume = 0f;
 		Debug.Log("play");
 	}
 
 	public void PlayTitleTrack()
 	{
-		this.audioSource.clip = this.tracks[0];
-		this.audioSource.Play();
-		this.audioSource.volume = this.startingVol;
+		audioSource.clip = tracks[0];
+		audioSource.Play();
+		audioSource.volume = startingVol;
 	}
 }

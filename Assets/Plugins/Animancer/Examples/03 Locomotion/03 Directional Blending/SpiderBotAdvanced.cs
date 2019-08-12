@@ -35,7 +35,7 @@ namespace Animancer.Examples
 
         [SerializeField]
         private AnimancerComponent _Animancer;
-        public AnimancerComponent Animancer { get { return _Animancer; } }
+        public AnimancerComponent Animancer => _Animancer;
 
         [SerializeField]
         private AnimationClip _WakeUp;

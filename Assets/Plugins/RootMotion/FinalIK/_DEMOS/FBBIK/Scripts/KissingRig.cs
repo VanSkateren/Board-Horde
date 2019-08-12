@@ -74,11 +74,7 @@ namespace RootMotion.Demos {
 			}
 
 			// Get the neck bone
-			private Transform neck {
-				get {
-					return ik.solver.spineMapping.spineBones[ik.solver.spineMapping.spineBones.Length - 1];
-				}
-			}
+			private Transform neck => ik.solver.spineMapping.spineBones[ik.solver.spineMapping.spineBones.Length - 1];
 
 			// Placing an effector so that an arbitrary Transform (target) ends up at targetPosition
 			private void InverseTransformEffector(FullBodyBipedEffector effector, Transform target, Vector3 targetPosition, float weight) {

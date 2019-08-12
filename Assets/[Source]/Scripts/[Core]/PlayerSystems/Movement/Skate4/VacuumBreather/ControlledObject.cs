@@ -30,22 +30,22 @@ namespace VacuumBreather
 
 		private void Awake()
 		{
-			this._currentTransform = base.transform;
-			this._objectRigidbody = base.GetComponent<Rigidbody>();
+			_currentTransform = transform;
+			_objectRigidbody = GetComponent<Rigidbody>();
 		}
 
 		private void FixedUpdate()
 		{
-			Quaternion desiredOrientation = this.DesiredOrientation;
-			if (this._currentTransform == null || this._objectRigidbody == null)
+			Quaternion desiredOrientation = DesiredOrientation;
+			if (_currentTransform == null || _objectRigidbody == null)
 			{
 				return;
 			}
-			this._pidController.Kp = this.Kp;
-			this._pidController.Ki = this.Ki;
-			this._pidController.Kd = this.Kd;
-			Vector3 vector3 = this._pidController.ComputeRequiredAngularAcceleration(this._currentTransform.rotation, this.DesiredOrientation, this._objectRigidbody.angularVelocity, Time.fixedDeltaTime * 0.25f);
-			this._objectRigidbody.AddTorque(vector3, ForceMode.Acceleration);
+			_pidController.Kp = Kp;
+			_pidController.Ki = Ki;
+			_pidController.Kd = Kd;
+			Vector3 vector3 = _pidController.ComputeRequiredAngularAcceleration(_currentTransform.rotation, DesiredOrientation, _objectRigidbody.angularVelocity, Time.fixedDeltaTime * 0.25f);
+			_objectRigidbody.AddTorque(vector3, ForceMode.Acceleration);
 		}
 	}
 }

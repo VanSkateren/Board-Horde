@@ -13,7 +13,7 @@ namespace RootMotion {
 
 		public LargeHeader (string name) {
 			this.name = name;
-			this.color = "white";
+			color = "white";
 		}
 
 		public LargeHeader (string name, string color) {

@@ -36,10 +36,7 @@ namespace Animancer.Examples
 
         /************************************************************************************************************************/
 
-        public override float MovementSpeed
-        {
-            get { return Creature.Brain.IsRunning ? _RunSpeed : _WalkSpeed; }
-        }
+        public override float MovementSpeed => Creature.Brain.IsRunning ? _RunSpeed : _WalkSpeed;
 
         /************************************************************************************************************************/
 

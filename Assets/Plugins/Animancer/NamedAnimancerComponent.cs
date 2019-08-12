@@ -34,8 +34,8 @@ namespace Animancer
         /// </summary>
         public bool PlayAutomatically
         {
-            get { return _PlayAutomatically; }
-            set { _PlayAutomatically = value; }
+            get => _PlayAutomatically;
+            set => _PlayAutomatically = value;
         }
 
         /************************************************************************************************************************/
@@ -52,7 +52,7 @@ namespace Animancer
         /// </summary>
         public AnimationClip[] Animations
         {
-            get { return _Animations; }
+            get => _Animations;
             set
             {
                 CreateStates(_Animations);

@@ -32,7 +32,7 @@ namespace Animancer
         /// </summary>
         public Animator Animator
         {
-            get { return _Animator; }
+            get => _Animator;
             set
             {
                 _Animator = value;
@@ -54,7 +54,7 @@ namespace Animancer
         /// </summary>
         public AnimationClip Clip
         {
-            get { return _Clip; }
+            get => _Clip;
             set
             {
                 _Clip = value;
@@ -78,8 +78,8 @@ namespace Animancer
         /// </summary>
         public bool StopOnDisable
         {
-            get { return !_Animator.keepAnimatorControllerStateOnDisable; }
-            set { _Animator.keepAnimatorControllerStateOnDisable = !value; }
+            get => !_Animator.keepAnimatorControllerStateOnDisable;
+            set => _Animator.keepAnimatorControllerStateOnDisable = !value;
         }
 #endif
 
@@ -104,7 +104,7 @@ namespace Animancer
         /// </summary>
         public bool IsPlaying
         {
-            get { return _IsPlaying; }
+            get => _IsPlaying;
             set
             {
                 _IsPlaying = value;
@@ -131,7 +131,7 @@ namespace Animancer
         /// <exception cref="ArgumentException">Thrown if this component is not yet <see cref="Awake"/>.</exception>
         public float Speed
         {
-            get { return _Speed; }
+            get => _Speed;
             set
             {
                 _Speed = value;
@@ -155,7 +155,7 @@ namespace Animancer
         /// <exception cref="ArgumentException">Thrown if this component is not yet <see cref="Awake"/>.</exception>
         public bool FootIK
         {
-            get { return _FootIK; }
+            get => _FootIK;
             set
             {
                 _FootIK = value;
@@ -171,7 +171,7 @@ namespace Animancer
         /// <exception cref="ArgumentException">Thrown if this component is not yet <see cref="Awake"/>.</exception>
         public float Time
         {
-            get { return (float)_Playable.GetTime(); }
+            get => (float)_Playable.GetTime();
             set
             {
                 // We need to call SetTime twice to ensure that animation events aren't triggered incorrectly.
@@ -196,14 +196,14 @@ namespace Animancer
         /// <exception cref="ArgumentException">Thrown if this component is not yet <see cref="Awake"/>.</exception>
         public float NormalizedTime
         {
-            get { return Time / _Clip.length; }
-            set { Time = value * _Clip.length; }
+            get => Time / _Clip.length;
+            set => Time = value * _Clip.length;
         }
 
         /************************************************************************************************************************/
 
         /// <summary>Indicates whether the <see cref="PlayableGraph"/> is valid.</summary>
-        public bool IsInitialised { get { return _Graph.IsValid(); } }
+        public bool IsInitialised => _Graph.IsValid();
 
         /************************************************************************************************************************/
         #endregion

@@ -47,58 +47,58 @@ public class PlayerState_InAir : PlayerState_OnBoard
 
 	public PlayerState_InAir(int p_popped)
 	{
-		this._popped = true;
+		_popped = true;
 	}
 
 	public PlayerState_InAir(bool p_wasGrinding)
 	{
-		this._wasGrinding = p_wasGrinding;
+		_wasGrinding = p_wasGrinding;
 	}
 
 	public PlayerState_InAir(bool p_wasGrinding, int p_popped)
 	{
-		this._wasGrinding = p_wasGrinding;
-		this._popped = true;
+		_wasGrinding = p_wasGrinding;
+		_popped = true;
 	}
 
 	public PlayerState_InAir(bool p_wasGrinding, bool p_caughtLeft, bool p_caughtRight, bool p_popped)
 	{
-		this._popped = p_popped;
-		this._wasGrinding = p_wasGrinding;
-		this._caughtLeft = p_caughtLeft;
-		this._caughtRight = p_caughtRight;
-		if (!this._caughtRight && this._caughtLeft)
+		_popped = p_popped;
+		_wasGrinding = p_wasGrinding;
+		_caughtLeft = p_caughtLeft;
+		_caughtRight = p_caughtRight;
+		if (!_caughtRight && _caughtLeft)
 		{
 			PlayerController.Instance.SetRightIKLerpTarget(1f, 1f);
 			PlayerController.Instance.SetRightSteezeWeight(1f);
 			PlayerController.Instance.SetMaxSteezeRight(1f);
-			this._caughtBoth = false;
+			_caughtBoth = false;
 		}
-		if (!this._caughtLeft && this._caughtRight)
+		if (!_caughtLeft && _caughtRight)
 		{
 			PlayerController.Instance.SetLeftIKLerpTarget(1f, 1f);
 			PlayerController.Instance.SetLeftSteezeWeight(1f);
 			PlayerController.Instance.SetMaxSteezeLeft(1f);
-			this._caughtBoth = false;
+			_caughtBoth = false;
 		}
 	}
 
 	public PlayerState_InAir(bool p_wasGrinding, bool p_canGrind)
 	{
-		this._wasGrinding = p_wasGrinding;
-		this._canGrind = p_canGrind;
+		_wasGrinding = p_wasGrinding;
+		_canGrind = p_canGrind;
 	}
 
 	public PlayerState_InAir(bool p_wasGrinding, bool p_canGrind, SplineComputer p_spline)
 	{
-		this._wasGrinding = p_wasGrinding;
-		this._canGrind = p_canGrind;
-		this._spline = p_spline;
+		_wasGrinding = p_wasGrinding;
+		_canGrind = p_canGrind;
+		_spline = p_spline;
 	}
 
 	public override bool CanGrind()
 	{
-		return this._canGrind;
+		return _canGrind;
 	}
 
 	private void CatchBoth()
@@ -111,9 +111,9 @@ public class PlayerState_InAir : PlayerState_OnBoard
 		PlayerController.Instance.SetLeftIKLerpTarget(0f, 0f);
 		PlayerController.Instance.SetLeftSteezeWeight(0f);
 		PlayerController.Instance.SetMaxSteezeLeft(0f);
-		this._caughtLeft = true;
-		this._caughtRight = true;
-		this._caughtBoth = true;
+		_caughtLeft = true;
+		_caughtRight = true;
+		_caughtBoth = true;
 		PlayerController.Instance.SetRightIKRotationWeight(1f);
 		PlayerController.Instance.SetLeftIKRotationWeight(1f);
 		PlayerController.Instance.SetMaxSteeze(0f);
@@ -167,17 +167,17 @@ public class PlayerState_InAir : PlayerState_OnBoard
 
 	public override bool IsInImpactState()
 	{
-		return this._predictedCollision;
+		return _predictedCollision;
 	}
 
 	public override bool LeftFootOff()
 	{
-		return !this._caughtLeft;
+		return !_caughtLeft;
 	}
 
 	public override void OnAllWheelsDown()
 	{
-		this.TransitionToNextState();
+		TransitionToNextState();
 	}
 
 	public override void OnCollisionEnterEvent()
@@ -190,103 +190,103 @@ public class PlayerState_InAir : PlayerState_OnBoard
 
 	public override void OnFirstWheelDown()
 	{
-		if (this._wasGrinding)
+		if (_wasGrinding)
 		{
-			this.SwitchToBoardMaster();
+			SwitchToBoardMaster();
 			return;
 		}
-		this.TransitionToNextState();
+		TransitionToNextState();
 	}
 
 	public override void OnGrindDetected()
 	{
-		if (this._canGrind)
+		if (_canGrind)
 		{
-			base.DoTransition(typeof(PlayerState_Grinding), null);
+			DoTransition(typeof(PlayerState_Grinding), null);
 		}
 	}
 
 	public override void OnManualExit()
 	{
-		this._manualling = false;
+		_manualling = false;
 		PlayerController.Instance.AnimSetManual(false, PlayerController.Instance.AnimGetManualAxis());
 	}
 
 	public override void OnManualUpdate(StickInput p_popStick, StickInput p_flipStick)
 	{
-		if (!this._wasGrinding)
+		if (!_wasGrinding)
 		{
 			PlayerController.Instance.AnimSetManual(true, Mathf.Lerp(PlayerController.Instance.AnimGetManualAxis(), p_popStick.ForwardDir, Time.deltaTime * 10f));
-			this._manualling = true;
-			this._noseManualling = false;
-			this._popStick = p_popStick;
-			this._flipStick = p_flipStick;
+			_manualling = true;
+			_noseManualling = false;
+			_popStick = p_popStick;
+			_flipStick = p_flipStick;
 		}
 	}
 
 	public override void OnNoseManualExit()
 	{
-		this._noseManualling = false;
+		_noseManualling = false;
 		PlayerController.Instance.AnimSetNoseManual(false, PlayerController.Instance.AnimGetManualAxis());
 	}
 
 	public override void OnNoseManualUpdate(StickInput p_popStick, StickInput p_flipStick)
 	{
-		if (!this._wasGrinding)
+		if (!_wasGrinding)
 		{
 			PlayerController.Instance.AnimSetNoseManual(true, Mathf.Lerp(PlayerController.Instance.AnimGetManualAxis(), p_popStick.ForwardDir, Time.deltaTime * 10f));
-			this._popStick = p_popStick;
-			this._flipStick = p_flipStick;
-			this._noseManualling = true;
-			this._manualling = false;
+			_popStick = p_popStick;
+			_flipStick = p_flipStick;
+			_noseManualling = true;
+			_manualling = false;
 		}
 	}
 
 	public override void OnPredictedCollisionEvent()
 	{
-		this.PredictedNextState();
+		PredictedNextState();
 	}
 
 	public override void OnStickFixedUpdate(StickInput p_leftStick, StickInput p_rightStick)
 	{
-		if (!this._caughtLeft || !this._caughtRight)
+		if (!_caughtLeft || !_caughtRight)
 		{
-			this._leftToeAxis = (this._caughtLeft ? p_leftStick.ToeAxis * 1.5f : 0f);
-			this._rightToeAxis = (this._caughtRight ? p_rightStick.ToeAxis * 1.5f : 0f);
-			this._leftForwardDir = (this._caughtLeft ? p_leftStick.ForwardDir * 2f : 0f);
-			this._rightForwardDir = (this._caughtRight ? p_rightStick.ForwardDir * 2f : 0f);
+			_leftToeAxis = (_caughtLeft ? p_leftStick.ToeAxis * 1.5f : 0f);
+			_rightToeAxis = (_caughtRight ? p_rightStick.ToeAxis * 1.5f : 0f);
+			_leftForwardDir = (_caughtLeft ? p_leftStick.ForwardDir * 2f : 0f);
+			_rightForwardDir = (_caughtRight ? p_rightStick.ForwardDir * 2f : 0f);
 			switch (SettingsManager.Instance.controlType)
 			{
 				case SettingsManager.ControlType.Same:
 				{
 					if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 					{
-						PlayerController.Instance.SetFrontPivotRotation(this._rightToeAxis);
-						PlayerController.Instance.SetBackPivotRotation(this._leftToeAxis);
-						PlayerController.Instance.SetPivotForwardRotation((this._leftForwardDir + this._rightForwardDir) * 0.7f, 15f);
-						PlayerController.Instance.SetPivotSideRotation(this._leftToeAxis - this._rightToeAxis);
+						PlayerController.Instance.SetFrontPivotRotation(_rightToeAxis);
+						PlayerController.Instance.SetBackPivotRotation(_leftToeAxis);
+						PlayerController.Instance.SetPivotForwardRotation((_leftForwardDir + _rightForwardDir) * 0.7f, 15f);
+						PlayerController.Instance.SetPivotSideRotation(_leftToeAxis - _rightToeAxis);
 						return;
 					}
-					PlayerController.Instance.SetFrontPivotRotation(-this._leftToeAxis);
-					PlayerController.Instance.SetBackPivotRotation(-this._rightToeAxis);
+					PlayerController.Instance.SetFrontPivotRotation(-_leftToeAxis);
+					PlayerController.Instance.SetBackPivotRotation(-_rightToeAxis);
 					PlayerController.Instance.SetPivotForwardRotation((p_leftStick.ForwardDir + p_rightStick.ForwardDir) * 0.7f, 15f);
-					PlayerController.Instance.SetPivotSideRotation(this._leftToeAxis - this._rightToeAxis);
+					PlayerController.Instance.SetPivotSideRotation(_leftToeAxis - _rightToeAxis);
 					return;
 				}
 				case SettingsManager.ControlType.Swap:
 				{
 					if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 					{
-						PlayerController.Instance.SetFrontPivotRotation(this._rightToeAxis);
-						PlayerController.Instance.SetBackPivotRotation(this._leftToeAxis);
-						PlayerController.Instance.SetPivotForwardRotation((this._leftForwardDir + this._rightForwardDir) * 0.7f, 15f);
-						PlayerController.Instance.SetPivotSideRotation(this._leftToeAxis - this._rightToeAxis);
+						PlayerController.Instance.SetFrontPivotRotation(_rightToeAxis);
+						PlayerController.Instance.SetBackPivotRotation(_leftToeAxis);
+						PlayerController.Instance.SetPivotForwardRotation((_leftForwardDir + _rightForwardDir) * 0.7f, 15f);
+						PlayerController.Instance.SetPivotSideRotation(_leftToeAxis - _rightToeAxis);
 						return;
 					}
-					PlayerController.Instance.SetFrontPivotRotation(this._leftToeAxis);
-					PlayerController.Instance.SetBackPivotRotation(this._rightToeAxis);
-					PlayerController.Instance.SetPivotForwardRotation((this._leftForwardDir + this._rightForwardDir) * 0.7f, 15f);
-					PlayerController.Instance.SetPivotSideRotation(this._leftToeAxis - this._rightToeAxis);
+					PlayerController.Instance.SetFrontPivotRotation(_leftToeAxis);
+					PlayerController.Instance.SetBackPivotRotation(_rightToeAxis);
+					PlayerController.Instance.SetPivotForwardRotation((_leftForwardDir + _rightForwardDir) * 0.7f, 15f);
+					PlayerController.Instance.SetPivotSideRotation(_leftToeAxis - _rightToeAxis);
 					return;
 				}
 				case SettingsManager.ControlType.Simple:
@@ -295,30 +295,30 @@ public class PlayerState_InAir : PlayerState_OnBoard
 					{
 						if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 						{
-							PlayerController.Instance.SetFrontPivotRotation(this._rightToeAxis);
-							PlayerController.Instance.SetBackPivotRotation(this._leftToeAxis);
-							PlayerController.Instance.SetPivotForwardRotation((this._leftForwardDir + this._rightForwardDir) * 0.7f, 15f);
-							PlayerController.Instance.SetPivotSideRotation(this._leftToeAxis - this._rightToeAxis);
+							PlayerController.Instance.SetFrontPivotRotation(_rightToeAxis);
+							PlayerController.Instance.SetBackPivotRotation(_leftToeAxis);
+							PlayerController.Instance.SetPivotForwardRotation((_leftForwardDir + _rightForwardDir) * 0.7f, 15f);
+							PlayerController.Instance.SetPivotSideRotation(_leftToeAxis - _rightToeAxis);
 							return;
 						}
-						PlayerController.Instance.SetFrontPivotRotation(this._rightToeAxis);
-						PlayerController.Instance.SetBackPivotRotation(this._leftToeAxis);
-						PlayerController.Instance.SetPivotForwardRotation((this._leftForwardDir + this._rightForwardDir) * 0.7f, 15f);
-						PlayerController.Instance.SetPivotSideRotation(this._leftToeAxis - this._rightToeAxis);
+						PlayerController.Instance.SetFrontPivotRotation(_rightToeAxis);
+						PlayerController.Instance.SetBackPivotRotation(_leftToeAxis);
+						PlayerController.Instance.SetPivotForwardRotation((_leftForwardDir + _rightForwardDir) * 0.7f, 15f);
+						PlayerController.Instance.SetPivotSideRotation(_leftToeAxis - _rightToeAxis);
 						return;
 					}
 					if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 					{
-						PlayerController.Instance.SetFrontPivotRotation(this._leftToeAxis);
-						PlayerController.Instance.SetBackPivotRotation(this._rightToeAxis);
-						PlayerController.Instance.SetPivotForwardRotation((this._leftForwardDir + this._rightForwardDir) * 0.7f, 15f);
-						PlayerController.Instance.SetPivotSideRotation(this._leftToeAxis - this._rightToeAxis);
+						PlayerController.Instance.SetFrontPivotRotation(_leftToeAxis);
+						PlayerController.Instance.SetBackPivotRotation(_rightToeAxis);
+						PlayerController.Instance.SetPivotForwardRotation((_leftForwardDir + _rightForwardDir) * 0.7f, 15f);
+						PlayerController.Instance.SetPivotSideRotation(_leftToeAxis - _rightToeAxis);
 						return;
 					}
-					PlayerController.Instance.SetFrontPivotRotation(this._leftToeAxis);
-					PlayerController.Instance.SetBackPivotRotation(this._rightToeAxis);
-					PlayerController.Instance.SetPivotForwardRotation((this._leftForwardDir + this._rightForwardDir) * 0.7f, 15f);
-					PlayerController.Instance.SetPivotSideRotation(this._leftToeAxis - this._rightToeAxis);
+					PlayerController.Instance.SetFrontPivotRotation(_leftToeAxis);
+					PlayerController.Instance.SetBackPivotRotation(_rightToeAxis);
+					PlayerController.Instance.SetPivotForwardRotation((_leftForwardDir + _rightForwardDir) * 0.7f, 15f);
+					PlayerController.Instance.SetPivotSideRotation(_leftToeAxis - _rightToeAxis);
 					return;
 				}
 				default:
@@ -412,44 +412,44 @@ public class PlayerState_InAir : PlayerState_OnBoard
 	{
 		if (!p_right)
 		{
-			if (this._caughtLeft && this._caughtBoth)
+			if (_caughtLeft && _caughtBoth)
 			{
 				PlayerController.Instance.SetLeftIKLerpTarget(1f, 1f);
 				PlayerController.Instance.SetLeftSteezeWeight(1f);
 				PlayerController.Instance.SetMaxSteezeLeft(1f);
-				this._caughtLeft = false;
-				this._caughtBoth = false;
+				_caughtLeft = false;
+				_caughtBoth = false;
 				return;
 			}
-			if (this._caughtRight && !this._caughtLeft)
+			if (_caughtRight && !_caughtLeft)
 			{
 				SoundManager.Instance.PlayCatchSound();
 				PlayerController.Instance.SetLeftIKLerpTarget(0f, 0f);
 				PlayerController.Instance.SetLeftSteezeWeight(0f);
 				PlayerController.Instance.SetMaxSteezeLeft(0f);
-				this._caughtLeft = true;
-				this._caughtBoth = true;
+				_caughtLeft = true;
+				_caughtBoth = true;
 			}
 		}
 		else
 		{
-			if (this._caughtRight && this._caughtBoth)
+			if (_caughtRight && _caughtBoth)
 			{
 				PlayerController.Instance.SetRightIKLerpTarget(1f, 1f);
 				PlayerController.Instance.SetRightSteezeWeight(1f);
 				PlayerController.Instance.SetMaxSteezeRight(1f);
-				this._caughtRight = false;
-				this._caughtBoth = false;
+				_caughtRight = false;
+				_caughtBoth = false;
 				return;
 			}
-			if (!this._caughtRight && this._caughtLeft)
+			if (!_caughtRight && _caughtLeft)
 			{
 				SoundManager.Instance.PlayCatchSound();
 				PlayerController.Instance.SetRightIKLerpTarget(0f, 0f);
 				PlayerController.Instance.SetRightSteezeWeight(0f);
 				PlayerController.Instance.SetMaxSteezeRight(0f);
-				this._caughtRight = true;
-				this._caughtBoth = true;
+				_caughtRight = true;
+				_caughtBoth = true;
 				return;
 			}
 		}
@@ -463,23 +463,23 @@ public class PlayerState_InAir : PlayerState_OnBoard
 
 	public override bool Popped()
 	{
-		return this._popped;
+		return _popped;
 	}
 
 	private void PredictedNextState()
 	{
-		this._predictedCollision = true;
-		this.CatchBoth();
-		if (this._manualling || this._noseManualling)
+		_predictedCollision = true;
+		CatchBoth();
+		if (_manualling || _noseManualling)
 		{
-			object[] objArray = new object[] { this._popStick, this._flipStick, !this._noseManualling };
-			base.DoTransition(typeof(PlayerState_Manualling), objArray);
+			object[] objArray = new object[] { _popStick, _flipStick, !_noseManualling };
+			DoTransition(typeof(PlayerState_Manualling), objArray);
 		}
 	}
 
 	public override bool RightFootOff()
 	{
-		return !this._caughtRight;
+		return !_caughtRight;
 	}
 
 	private void SwitchToBoardMaster()
@@ -490,40 +490,40 @@ public class PlayerState_InAir : PlayerState_OnBoard
 
 	private void TransitionToNextState()
 	{
-		if (this._manualling || this._noseManualling)
+		if (_manualling || _noseManualling)
 		{
-			object[] objArray = new object[] { this._popStick, this._flipStick, !this._noseManualling };
-			base.DoTransition(typeof(PlayerState_Manualling), objArray);
+			object[] objArray = new object[] { _popStick, _flipStick, !_noseManualling };
+			DoTransition(typeof(PlayerState_Manualling), objArray);
 			return;
 		}
-		this._manualling = false;
-		this._noseManualling = false;
+		_manualling = false;
+		_noseManualling = false;
 		PlayerController.Instance.AnimSetManual(false, PlayerController.Instance.AnimGetManualAxis());
 		PlayerController.Instance.AnimSetNoseManual(false, PlayerController.Instance.AnimGetManualAxis());
-		object[] objArray1 = new object[] { this._canGrind };
+		object[] objArray1 = new object[] { _canGrind };
 		PlayerController.Instance.Impact();
-		base.DoTransition(typeof(PlayerState_Impact), objArray1);
+		DoTransition(typeof(PlayerState_Impact), objArray1);
 	}
 
 	public override void Update()
 	{
 		base.Update();
-		if (this._wasGrinding)
+		if (_wasGrinding)
 		{
-			this._grindExitTimer += Time.deltaTime;
-			if (this._grindExitTimer > 0.2f)
+			_grindExitTimer += Time.deltaTime;
+			if (_grindExitTimer > 0.2f)
 			{
-				this._wasGrinding = false;
-				this._grindExitTimer = 0f;
+				_wasGrinding = false;
+				_grindExitTimer = 0f;
 			}
 		}
 		if (PlayerController.Instance.movementMaster == PlayerController.MovementMaster.Board)
 		{
 			PlayerController.Instance.SetTurningMode(InputController.TurningMode.Grounded);
-			this._boardCenteredTimer += Time.deltaTime;
-			if (this._boardCenteredTimer > 0.2f)
+			_boardCenteredTimer += Time.deltaTime;
+			if (_boardCenteredTimer > 0.2f)
 			{
-				this._boardCenteredTimer = 0f;
+				_boardCenteredTimer = 0f;
 				PlayerController.Instance.SetTurningMode(InputController.TurningMode.InAir);
 				PlayerController.Instance.SetSkaterToMaster();
 			}

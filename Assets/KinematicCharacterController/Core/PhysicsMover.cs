@@ -70,14 +70,8 @@ namespace KinematicCharacterController
         /// </summary>
         public Vector3 TransientPosition
         {
-            get
-            {
-                return _internalTransientPosition;
-            }
-            private set
-            {
-                _internalTransientPosition = value;
-            }
+            get => _internalTransientPosition;
+            private set => _internalTransientPosition = value;
         }
 
         private Quaternion _internalTransientRotation;
@@ -86,14 +80,8 @@ namespace KinematicCharacterController
         /// </summary>
         public Quaternion TransientRotation
         {
-            get
-            {
-                return _internalTransientRotation;
-            }
-            private set
-            {
-                _internalTransientRotation = value;
-            }
+            get => _internalTransientRotation;
+            private set => _internalTransientRotation = value;
         }
 
 
@@ -139,7 +127,7 @@ namespace KinematicCharacterController
 
         private void Awake()
         {
-            Transform = this.transform;
+            Transform = transform;
             ValidateData();
 
             TransientPosition = Rigidbody.position;

@@ -10,7 +10,7 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(VRIK))]
 	public class VRIKInspector : Editor {
 
-		private VRIK script { get { return target as VRIK; }}
+		private VRIK script => target as VRIK;
 		private MonoScript monoScript;
 
 		void OnEnable() {

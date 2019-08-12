@@ -24,7 +24,7 @@ namespace RootMotion.FinalIK {
 			Independent
 		}
 		
-		private RotationLimitSpline script { get { return target as RotationLimitSpline; }}
+		private RotationLimitSpline script => target as RotationLimitSpline;
 		private RotationLimitSpline clone;
 		private ScaleMode scaleMode;
 		private TangentMode tangentMode;

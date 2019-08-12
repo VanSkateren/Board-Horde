@@ -24,7 +24,7 @@ namespace Dreamteck.Splines
 
             public Vector2 vector
             {
-                get { return new Vector2(x, y); }
+                get => new Vector2(x, y);
                 set {
                     x = (int)value.x;
                     y = (int)value.y;
@@ -85,7 +85,7 @@ namespace Dreamteck.Splines
                 if (terrain == null)  terrain = Selection.gameObjects[i].GetComponent<Terrain>();
             }
 
-            Terrain[] terrains = GameObject.FindObjectsOfType<Terrain>();
+            Terrain[] terrains = Object.FindObjectsOfType<Terrain>();
             if(terrains.Length == 1)
             {
                 //if there is only one terrain in the scene, automatically select it

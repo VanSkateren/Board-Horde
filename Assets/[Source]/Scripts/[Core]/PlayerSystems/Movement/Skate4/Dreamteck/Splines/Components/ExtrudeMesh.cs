@@ -17,7 +17,7 @@ namespace Dreamteck.Splines
 
         public Axis axis
         {
-            get { return _axis; }
+            get => _axis;
             set
             {
                 if (value != _axis)
@@ -31,7 +31,7 @@ namespace Dreamteck.Splines
 
         public Iteration iteration
         {
-            get { return _iteration; }
+            get => _iteration;
             set
             {
                 if (value != _iteration)
@@ -45,7 +45,7 @@ namespace Dreamteck.Splines
 
         public int randomSeed
         {
-            get { return _randomSeed; }
+            get => _randomSeed;
             set
             {
                 if (value != _randomSeed)
@@ -62,7 +62,7 @@ namespace Dreamteck.Splines
 
         public int repeat
         {
-            get { return _repeat; }
+            get => _repeat;
             set
             {
                 if (value != _repeat)
@@ -77,7 +77,7 @@ namespace Dreamteck.Splines
 
         public bool dontStretchCaps
         {
-            get { return _dontStretchCaps; }
+            get => _dontStretchCaps;
             set
             {
                 if (value != _dontStretchCaps)
@@ -90,7 +90,7 @@ namespace Dreamteck.Splines
 
         public TileUVs tileUVs
         {
-            get { return _tileUVs; }
+            get => _tileUVs;
             set
             {
                 if (value != _tileUVs)
@@ -103,7 +103,7 @@ namespace Dreamteck.Splines
 
         public double spacing
         {
-            get { return _spacing; }
+            get => _spacing;
             set
             {
                 if (value != _spacing)
@@ -117,7 +117,7 @@ namespace Dreamteck.Splines
 
         public Vector2 scale
         {
-            get { return _scale; }
+            get => _scale;
             set
             {
                 if (value != _scale)
@@ -177,12 +177,9 @@ namespace Dreamteck.Splines
         private Matrix4x4 vertexMatrix = new Matrix4x4();
         private Matrix4x4 normalMatrix = new Matrix4x4();
 
-        public bool hasAnyMesh
-        {
-            get { return _hasAnyMesh; }
-        }
+        public bool hasAnyMesh => _hasAnyMesh;
 
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         public override void EditorAwake()
         {
             UpdateExtrudableMeshes();
@@ -654,7 +651,7 @@ namespace Dreamteck.Splines
 
             public MirrorMethod mirror
             {
-                get { return _mirror;  }
+                get => _mirror;
                 set
                 {
                     if(_mirror != value)

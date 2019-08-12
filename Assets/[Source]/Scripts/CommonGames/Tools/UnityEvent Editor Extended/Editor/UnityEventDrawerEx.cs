@@ -23,7 +23,9 @@ namespace Coffee.EditorExtensions
 		private static GUIStyle s_CachedStyleToggle;
 		private static GUIStyle s_CachedStyleBg;
 
-		private static bool s_FoldStatus { get { return UnityEventDrawerExSettings.instance.foldStatus; } set { UnityEventDrawerExSettings.instance.foldStatus = value; } }
+		private static bool s_FoldStatus { get => UnityEventDrawerExSettings.instance.foldStatus;
+			set => UnityEventDrawerExSettings.instance.foldStatus = value;
+		}
 
 
 		//################################

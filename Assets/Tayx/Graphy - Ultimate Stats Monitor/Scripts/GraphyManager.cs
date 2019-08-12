@@ -203,22 +203,22 @@ namespace Tayx.Graphy
         //TODO: Maybe sort these into Get and GetSet sections.
         #region Properties -> Public
 
-        public Mode GraphyMode                          { get { return m_graphyMode; }
-                                                          set { m_graphyMode = value; UpdateAllParameters(); } }
+        public Mode GraphyMode                          { get => m_graphyMode;
+            set { m_graphyMode = value; UpdateAllParameters(); } }
 
-        public bool EnableOnStartup                     { get { return m_enableOnStartup; } }
+        public bool EnableOnStartup => m_enableOnStartup;
 
-        public bool KeepAlive                           { get { return m_keepAlive; } }
+        public bool KeepAlive => m_keepAlive;
 
-        public bool Background                          { get { return m_background; } 
-                                                          set { m_background = value; UpdateAllParameters(); } }
+        public bool Background                          { get => m_background;
+            set { m_background = value; UpdateAllParameters(); } }
 
-        public Color BackgroundColor                    { get { return m_backgroundColor; } 
-                                                          set { m_backgroundColor = value; UpdateAllParameters(); } }
+        public Color BackgroundColor                    { get => m_backgroundColor;
+            set { m_backgroundColor = value; UpdateAllParameters(); } }
 
         public ModulePosition GraphModulePosition
         {
-            get { return m_graphModulePosition; }
+            get => m_graphModulePosition;
             set
             {
                 m_graphModulePosition = value;
@@ -232,115 +232,115 @@ namespace Tayx.Graphy
 
         // Setters & Getters
 
-        public ModuleState FpsModuleState               { get { return m_fpsModuleState; }             
-                                                          set { m_fpsModuleState = value; m_fpsManager.SetState(m_fpsModuleState); } }
+        public ModuleState FpsModuleState               { get => m_fpsModuleState;
+            set { m_fpsModuleState = value; m_fpsManager.SetState(m_fpsModuleState); } }
 
-        public int TimeToResetMinMaxFps                 { get { return m_timeToResetMinMaxFps; }       
-                                                          set { m_timeToResetMinMaxFps = value; m_fpsManager.UpdateParameters(); } }
+        public int TimeToResetMinMaxFps                 { get => m_timeToResetMinMaxFps;
+            set { m_timeToResetMinMaxFps = value; m_fpsManager.UpdateParameters(); } }
 
-        public Color GoodFPSColor                       { get { return m_goodFpsColor; } 
-                                                          set { m_goodFpsColor = value; m_fpsManager.UpdateParameters(); } }
-        public Color CautionFPSColor                    { get { return m_cautionFpsColor; } 
-                                                          set { m_cautionFpsColor = value; m_fpsManager.UpdateParameters(); } }
-        public Color CriticalFPSColor                   { get { return m_criticalFpsColor; } 
-                                                          set { m_criticalFpsColor = value; m_fpsManager.UpdateParameters(); } }
+        public Color GoodFPSColor                       { get => m_goodFpsColor;
+            set { m_goodFpsColor = value; m_fpsManager.UpdateParameters(); } }
+        public Color CautionFPSColor                    { get => m_cautionFpsColor;
+            set { m_cautionFpsColor = value; m_fpsManager.UpdateParameters(); } }
+        public Color CriticalFPSColor                   { get => m_criticalFpsColor;
+            set { m_criticalFpsColor = value; m_fpsManager.UpdateParameters(); } }
 
-        public int GoodFPSThreshold                     { get { return m_goodFpsThreshold; } 
-                                                          set { m_goodFpsThreshold = value; m_fpsManager.UpdateParameters(); } }
-        public int CautionFPSThreshold                  { get { return m_cautionFpsThreshold; } 
-                                                          set { m_cautionFpsThreshold = value; m_fpsManager.UpdateParameters(); } }
+        public int GoodFPSThreshold                     { get => m_goodFpsThreshold;
+            set { m_goodFpsThreshold = value; m_fpsManager.UpdateParameters(); } }
+        public int CautionFPSThreshold                  { get => m_cautionFpsThreshold;
+            set { m_cautionFpsThreshold = value; m_fpsManager.UpdateParameters(); } }
 
-        public int FpsGraphResolution                   { get { return m_fpsGraphResolution; } 
-                                                          set { m_fpsGraphResolution = value; m_fpsManager.UpdateParameters(); } }
+        public int FpsGraphResolution                   { get => m_fpsGraphResolution;
+            set { m_fpsGraphResolution = value; m_fpsManager.UpdateParameters(); } }
 
-        public int FpsTextUpdateRate                    { get { return m_fpsTextUpdateRate; } 
-                                                          set { m_fpsTextUpdateRate = value; m_fpsManager.UpdateParameters(); } }
+        public int FpsTextUpdateRate                    { get => m_fpsTextUpdateRate;
+            set { m_fpsTextUpdateRate = value; m_fpsManager.UpdateParameters(); } }
 
         // Getters
 
-        public float CurrentFPS                         { get { return m_fpsMonitor.CurrentFPS; } }
-        public float AverageFPS                         { get { return m_fpsMonitor.AverageFPS; } }
-        public float MinFPS                             { get { return m_fpsMonitor.MinFPS; } }
-        public float MaxFPS                             { get { return m_fpsMonitor.MaxFPS; } }
+        public float CurrentFPS => m_fpsMonitor.CurrentFPS;
+        public float AverageFPS => m_fpsMonitor.AverageFPS;
+        public float MinFPS => m_fpsMonitor.MinFPS;
+        public float MaxFPS => m_fpsMonitor.MaxFPS;
 
         // Ram ---------------------------------------------------------------------------
 
         // Setters & Getters
 
-        public ModuleState RamModuleState               { get { return m_ramModuleState; } 
-                                                          set { m_ramModuleState = value; m_ramManager.SetState(m_ramModuleState); } }
+        public ModuleState RamModuleState               { get => m_ramModuleState;
+            set { m_ramModuleState = value; m_ramManager.SetState(m_ramModuleState); } }
 
 
-        public Color AllocatedRamColor                  { get { return m_allocatedRamColor; } 
-                                                          set { m_allocatedRamColor = value; m_ramManager.UpdateParameters(); } }
-        public Color ReservedRamColor                   { get { return m_reservedRamColor; } 
-                                                          set { m_reservedRamColor = value; m_ramManager.UpdateParameters(); } }
-        public Color MonoRamColor                       { get { return m_monoRamColor; } 
-                                                          set { m_monoRamColor = value; m_ramManager.UpdateParameters(); } }
+        public Color AllocatedRamColor                  { get => m_allocatedRamColor;
+            set { m_allocatedRamColor = value; m_ramManager.UpdateParameters(); } }
+        public Color ReservedRamColor                   { get => m_reservedRamColor;
+            set { m_reservedRamColor = value; m_ramManager.UpdateParameters(); } }
+        public Color MonoRamColor                       { get => m_monoRamColor;
+            set { m_monoRamColor = value; m_ramManager.UpdateParameters(); } }
 
-        public int RamGraphResolution                   { get { return m_ramGraphResolution; } 
-                                                          set { m_ramGraphResolution = value; m_ramManager.UpdateParameters(); } }
+        public int RamGraphResolution                   { get => m_ramGraphResolution;
+            set { m_ramGraphResolution = value; m_ramManager.UpdateParameters(); } }
 
-        public int RamTextUpdateRate                    { get { return m_ramTextUpdateRate; } 
-                                                          set { m_ramTextUpdateRate = value; m_ramManager.UpdateParameters(); } }
+        public int RamTextUpdateRate                    { get => m_ramTextUpdateRate;
+            set { m_ramTextUpdateRate = value; m_ramManager.UpdateParameters(); } }
 
         // Getters
 
-        public float AllocatedRam                       { get { return m_ramMonitor.AllocatedRam; } }
-        public float ReservedRam                        { get { return m_ramMonitor.ReservedRam; } }
-        public float MonoRam                            { get { return m_ramMonitor.MonoRam; } }
+        public float AllocatedRam => m_ramMonitor.AllocatedRam;
+        public float ReservedRam => m_ramMonitor.ReservedRam;
+        public float MonoRam => m_ramMonitor.MonoRam;
 
         // Audio -------------------------------------------------------------------------
 
         // Setters & Getters
 
-        public ModuleState AudioModuleState             { get { return m_audioModuleState; } 
-                                                          set { m_audioModuleState = value; m_audioManager.SetState(m_audioModuleState); } }
+        public ModuleState AudioModuleState             { get => m_audioModuleState;
+            set { m_audioModuleState = value; m_audioManager.SetState(m_audioModuleState); } }
 
-        public AudioListener AudioListener              { get { return m_audioListener; } 
-                                                          set { m_audioListener = value; m_audioManager.UpdateParameters(); } }
+        public AudioListener AudioListener              { get => m_audioListener;
+            set { m_audioListener = value; m_audioManager.UpdateParameters(); } }
         
         public LookForAudioListener 
-                    FindAudioListenerInCameraIfNull     { get { return m_findAudioListenerInCameraIfNull; } 
-                                                          set { m_findAudioListenerInCameraIfNull = value; m_audioManager.UpdateParameters(); } }
+                    FindAudioListenerInCameraIfNull     { get => m_findAudioListenerInCameraIfNull;
+            set { m_findAudioListenerInCameraIfNull = value; m_audioManager.UpdateParameters(); } }
 
-        public Color AudioGraphColor                    { get { return m_audioGraphColor; } 
-                                                          set { m_audioGraphColor = value; m_audioManager.UpdateParameters(); } }
+        public Color AudioGraphColor                    { get => m_audioGraphColor;
+            set { m_audioGraphColor = value; m_audioManager.UpdateParameters(); } }
 
-        public int AudioGraphResolution                 { get { return m_audioGraphResolution; } 
-                                                          set { m_audioGraphResolution = value; m_audioManager.UpdateParameters(); } }
+        public int AudioGraphResolution                 { get => m_audioGraphResolution;
+            set { m_audioGraphResolution = value; m_audioManager.UpdateParameters(); } }
 
-        public int AudioTextUpdateRate                  { get { return m_audioTextUpdateRate; } 
-                                                          set { m_audioTextUpdateRate = value; m_audioManager.UpdateParameters(); } }
+        public int AudioTextUpdateRate                  { get => m_audioTextUpdateRate;
+            set { m_audioTextUpdateRate = value; m_audioManager.UpdateParameters(); } }
 
-        public FFTWindow FftWindow                      { get { return m_FFTWindow; } 
-                                                          set { m_FFTWindow = value; m_audioManager.UpdateParameters(); } }
+        public FFTWindow FftWindow                      { get => m_FFTWindow;
+            set { m_FFTWindow = value; m_audioManager.UpdateParameters(); } }
 
-        public int SpectrumSize                         { get { return m_spectrumSize; } 
-                                                          set { m_spectrumSize = value; m_audioManager.UpdateParameters(); } }
+        public int SpectrumSize                         { get => m_spectrumSize;
+            set { m_spectrumSize = value; m_audioManager.UpdateParameters(); } }
 
         // Getters
 
         /// <summary>
         /// Current audio spectrum from the specified AudioListener.
         /// </summary>
-        public float[] Spectrum                         { get { return m_audioMonitor.Spectrum; } }
+        public float[] Spectrum => m_audioMonitor.Spectrum;
 
         /// <summary>
         /// Maximum DB registered in the current spectrum.
         /// </summary>
-        public float MaxDB                              { get { return m_audioMonitor.MaxDB; } }
+        public float MaxDB => m_audioMonitor.MaxDB;
 
 
         // Advanced ---------------------------------------------------------------------
 
         // Setters & Getters
 
-        public ModuleState AdvancedModuleState          { get { return m_advancedModuleState; } 
-                                                          set { m_advancedModuleState = value; m_advancedData.SetState(m_advancedModuleState); } }
+        public ModuleState AdvancedModuleState          { get => m_advancedModuleState;
+            set { m_advancedModuleState = value; m_advancedData.SetState(m_advancedModuleState); } }
         
-        public ModulePosition AdvancedModulePosition    { get { return m_advancedModulePosition; } 
-                                                          set { m_advancedModulePosition = value; m_advancedData.SetPosition(m_advancedModulePosition); } }
+        public ModulePosition AdvancedModulePosition    { get => m_advancedModulePosition;
+            set { m_advancedModulePosition = value; m_advancedData.SetPosition(m_advancedModulePosition); } }
 
         #endregion
 

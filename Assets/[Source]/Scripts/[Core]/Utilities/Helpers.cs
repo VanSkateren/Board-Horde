@@ -17,14 +17,14 @@ namespace Core.Utilities
 		{
 			public BufferV2()
 			{
-				this.target = Vector2.zero;
-				this.buffer = Vector2.zero;
+				target = Vector2.zero;
+				buffer = Vector2.zero;
 			}
 
 			public BufferV2(Vector2 targetInit, Vector2 bufferInit)
 			{
-				this.target = targetInit;
-				this.buffer = bufferInit;
+				target = targetInit;
+				buffer = bufferInit;
 			}
 
 			/*private*/
@@ -37,14 +37,14 @@ namespace Core.Utilities
 			///<summary> Update Buffer, by supplying new target </summary>
 			public void UpdateByNewTarget(Vector2 newTarget, float dampLambda, float deltaTime)
 			{
-				this.target = newTarget;
+				target = newTarget;
 				Update(dampLambda, deltaTime);
 			}
 
 			///<summary> Update Buffer, by supplying the rawDelta to the last target </summary>
 			public void UpdateByDelta(Vector2 rawDelta, float dampLambda, float deltaTime)
 			{
-				this.target = (this.target + rawDelta); //update Target
+				target = (target + rawDelta); //update Target
 				Update(dampLambda, deltaTime);
 			}
 
@@ -53,13 +53,13 @@ namespace Core.Utilities
 			{
 				Vector2 lastBufferState = buffer;
 
-				this.buffer = byPass
+				buffer = byPass
 					? target
-					: DampToTargetLambda(buffer, this.target, dampLambda, deltaTime); //damp current to target
+					: DampToTargetLambda(buffer, target, dampLambda, deltaTime); //damp current to target
 
-				this.curDelta = buffer - lastBufferState;
+				curDelta = buffer - lastBufferState;
 
-				this.curAbs = buffer;
+				curAbs = buffer;
 			}
 
 			public static Vector2 DampToTargetLambda(Vector2 current, Vector2 target, float lambda, float dt)

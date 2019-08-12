@@ -61,7 +61,7 @@ namespace KinematicCharacterController.Examples
 
         private void Awake()
         {
-            Transform = this.transform;
+            Transform = transform;
 
             _currentDistance = DefaultDistance;
             TargetDistance = _currentDistance;

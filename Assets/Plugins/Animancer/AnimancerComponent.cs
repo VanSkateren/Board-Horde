@@ -64,8 +64,8 @@ namespace Animancer
 
 #if UNITY_EDITOR
         /// <summary>[Editor-Only] The name of the serialized backing field for the <see cref="Animator"/> property.</summary>
-        string IAnimancerComponent.AnimatorFieldName { get { return "_Animator"; } }
-#endif
+        string IAnimancerComponent.AnimatorFieldName => "_Animator";
+        #endif
 
         /************************************************************************************************************************/
 
@@ -85,7 +85,7 @@ namespace Animancer
         }
 
         /// <summary>Indicates whether the <see cref="Playable"/> has been initialised.</summary>
-        public bool IsPlayableInitialised { get { return _Playable != null && _Playable.IsValid; } }
+        public bool IsPlayableInitialised => _Playable != null && _Playable.IsValid;
 
         /************************************************************************************************************************/
 
@@ -103,8 +103,8 @@ namespace Animancer
         /// </summary>
         public bool StopOnDisable
         {
-            get { return !_Animator.keepAnimatorControllerStateOnDisable; }
-            set { _Animator.keepAnimatorControllerStateOnDisable = !value; }
+            get => !_Animator.keepAnimatorControllerStateOnDisable;
+            set => _Animator.keepAnimatorControllerStateOnDisable = !value;
         }
 #endif
 
@@ -642,7 +642,7 @@ namespace Animancer
                 else
                     return 1;
             }
-            set { Playable.LayerCount = value; }
+            set => Playable.LayerCount = value;
         }
 
         /************************************************************************************************************************/
@@ -1220,7 +1220,7 @@ namespace Animancer
         }
 
         /// <summary>Returns null.</summary>
-        object IEnumerator.Current { get { return null; } }
+        object IEnumerator.Current => null;
 
         /// <summary>Does nothing.</summary>
         void IEnumerator.Reset() { }

@@ -11,7 +11,7 @@ namespace RootMotion.Demos {
 		[Tooltip("Reference to the BehaviourPuppet component of the character you wish to respawn.")] public BehaviourPuppet puppet;
 		[Tooltip("The animation to play on respawn.")] public string idleAnimation;
 
-		private bool isPooled { get { return puppet.transform.root == pool; }}
+		private bool isPooled => puppet.transform.root == pool;
 		private Transform puppetRoot;
 
 		void Start() {

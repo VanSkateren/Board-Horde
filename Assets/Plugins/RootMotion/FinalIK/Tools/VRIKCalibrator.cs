@@ -241,7 +241,7 @@ namespace RootMotion.FinalIK
             }
             else
             {
-                if (rootController != null) GameObject.Destroy(rootController);
+                if (rootController != null) Object.Destroy(rootController);
             }
 
             // Additional solver settings
@@ -321,11 +321,11 @@ namespace RootMotion.FinalIK
 
                 public Target(Transform t)
                 {
-                    this.used = t != null;
-                    if (!this.used) return;
+                    used = t != null;
+                    if (!used) return;
 
-                    this.localPosition = t.localPosition;
-                    this.localRotation = t.localRotation;
+                    localPosition = t.localPosition;
+                    localRotation = t.localRotation;
                 }
 
                 public void SetTo(Transform t)
@@ -445,7 +445,7 @@ namespace RootMotion.FinalIK
             }
             else
             {
-                if (rootController != null) GameObject.Destroy(rootController);
+                if (rootController != null) Object.Destroy(rootController);
             }
 
             // Additional solver settings

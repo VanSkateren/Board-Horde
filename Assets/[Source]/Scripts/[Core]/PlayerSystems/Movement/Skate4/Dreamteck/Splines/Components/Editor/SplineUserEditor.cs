@@ -19,7 +19,7 @@ namespace Dreamteck.Splines
 
         public int editIndex
         {
-            get { return _editIndex; }
+            get => _editIndex;
             set
             {
                 if(value == 0)

@@ -10,12 +10,8 @@ namespace RootMotion {
 		
 		private static T sInstance = null;
 		
-		public static T instance {
-			get {
-				return sInstance;
-			}
-		}
-		
+		public static T instance => sInstance;
+
 		protected virtual void Awake() {
 			if (sInstance != null) Debug.LogError(name + "error: already initialized", this);
 			

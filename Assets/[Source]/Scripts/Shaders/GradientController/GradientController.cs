@@ -71,10 +71,7 @@ namespace Dynamic_Static
         /// <summary>
         /// Gets this GradientController's GradientHandle count.
         /// </summary>
-        public int Count
-        {
-            get { return 2; }
-        }
+        public int Count => 2;
 
         /// <summary>
         /// Gets the GradientHandle at the specified index.
@@ -94,27 +91,16 @@ namespace Dynamic_Static
             }
         }
 
-        private MeshRenderer MeshRenderer
-        {
-            get
-            {
-                return
-                    meshRenderer == null ?
-                    meshRenderer = GetComponent<MeshRenderer>() :
-                    meshRenderer;
-            }
-        }
+        private MeshRenderer MeshRenderer =>
+            meshRenderer == null ?
+                meshRenderer = GetComponent<MeshRenderer>() :
+                meshRenderer;
 
-        private MaterialPropertyBlock MaterialPropertyBlock
-        {
-            get
-            {
-                return
-                    materialPropertyBlock == null ?
-                    materialPropertyBlock = new MaterialPropertyBlock() :
-                    materialPropertyBlock;
-            }
-        }
+        private MaterialPropertyBlock MaterialPropertyBlock =>
+            materialPropertyBlock == null ?
+                materialPropertyBlock = new MaterialPropertyBlock() :
+                materialPropertyBlock;
+
         #endregion
 
         #region AWAKE

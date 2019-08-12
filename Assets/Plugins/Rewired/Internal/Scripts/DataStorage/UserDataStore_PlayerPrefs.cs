@@ -77,33 +77,45 @@ namespace Rewired.Data {
         /// <summary>
         /// Should this script be used? If disabled, nothing will be saved or loaded.
         /// </summary>
-        public bool IsEnabled { get { return isEnabled; } set { isEnabled = value; } }
+        public bool IsEnabled { get => isEnabled;
+            set => isEnabled = value;
+        }
         /// <summary>
         /// Should saved data be loaded on start?
         /// </summary>
-        public bool LoadDataOnStart { get { return loadDataOnStart; } set { loadDataOnStart = value; } }
+        public bool LoadDataOnStart { get => loadDataOnStart;
+            set => loadDataOnStart = value;
+        }
         /// <summary>
         /// Should Player Joystick assignments be saved and loaded? This is not totally reliable for all Joysticks on all platforms.
         /// Some platforms/input sources do not provide enough information to reliably save assignments from session to session
         /// and reboot to reboot.
         /// </summary>
-        public bool LoadJoystickAssignments { get { return loadJoystickAssignments; } set { loadJoystickAssignments = value; } }
+        public bool LoadJoystickAssignments { get => loadJoystickAssignments;
+            set => loadJoystickAssignments = value;
+        }
         /// <summary>
         /// Should Player Keyboard assignments be saved and loaded?
         /// </summary>
-        public bool LoadKeyboardAssignments { get { return loadKeyboardAssignments; } set { loadKeyboardAssignments = value; } }
+        public bool LoadKeyboardAssignments { get => loadKeyboardAssignments;
+            set => loadKeyboardAssignments = value;
+        }
         /// <summary>
         /// Should Player Mouse assignments be saved and loaded?
         /// </summary>
-        public bool LoadMouseAssignments { get { return loadMouseAssignments; } set { loadMouseAssignments = value; } }
+        public bool LoadMouseAssignments { get => loadMouseAssignments;
+            set => loadMouseAssignments = value;
+        }
         /// <summary>
         /// The PlayerPrefs key prefix. Change this to change how keys are stored in PlayerPrefs. Changing this will make saved data already stored with the old key no longer accessible.
         /// </summary>
-        public string PlayerPrefsKeyPrefix { get { return playerPrefsKeyPrefix; } set { playerPrefsKeyPrefix = value; } }
+        public string PlayerPrefsKeyPrefix { get => playerPrefsKeyPrefix;
+            set => playerPrefsKeyPrefix = value;
+        }
 
-        private string playerPrefsKey_controllerAssignments { get { return string.Format("{0}_{1}", playerPrefsKeyPrefix, playerPrefsKeySuffix_controllerAssignments); } }
+        private string playerPrefsKey_controllerAssignments => string.Format("{0}_{1}", playerPrefsKeyPrefix, playerPrefsKeySuffix_controllerAssignments);
 
-        private bool loadControllerAssignments { get { return loadKeyboardAssignments || loadMouseAssignments || loadJoystickAssignments; } }
+        private bool loadControllerAssignments => loadKeyboardAssignments || loadMouseAssignments || loadJoystickAssignments;
 
         private List<int> allActionIds {
             get {
@@ -360,7 +372,7 @@ namespace Rewired.Data {
                 // joystick connected, load the assignments for a better user experience on phones/tablets.
                 // No further joystick assignments will be made on connect.
                 if (loadDataOnStart && loadJoystickAssignments && !wasJoystickEverDetected) {
-                    this.StartCoroutine(LoadJoystickAssignmentsDeferred());
+                    StartCoroutine(LoadJoystickAssignmentsDeferred());
                 }
 
                 // Save controller assignments
@@ -1275,12 +1287,12 @@ namespace Rewired.Data {
 
             public PlayerInfo[] players;
 
-            public int playerCount { get { return players != null ? players.Length : 0; } }
+            public int playerCount => players != null ? players.Length : 0;
 
             public ControllerAssignmentSaveInfo() {
             }
             public ControllerAssignmentSaveInfo(int playerCount) {
-                this.players = new PlayerInfo[playerCount];
+                players = new PlayerInfo[playerCount];
                 for(int i = 0; i < playerCount; i++) {
                     players[i] = new PlayerInfo();
                 }
@@ -1305,7 +1317,7 @@ namespace Rewired.Data {
                 public bool hasMouse;
                 public JoystickInfo[] joysticks;
 
-                public int joystickCount { get { return joysticks != null ? joysticks.Length : 0; } }
+                public int joystickCount => joysticks != null ? joysticks.Length : 0;
 
                 public int IndexOfJoystick(int joystickId) {
                     for(int i = 0; i < joystickCount; i++) {

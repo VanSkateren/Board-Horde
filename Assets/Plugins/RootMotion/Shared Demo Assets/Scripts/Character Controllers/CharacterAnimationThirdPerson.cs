@@ -33,12 +33,8 @@ namespace RootMotion.Demos {
 		}
 		
 		// Is the Animator playing the grounded animations?
-		public override bool animationGrounded {
-			get {
-				return animator.GetCurrentAnimatorStateInfo(0).IsName(groundedDirectional) || animator.GetCurrentAnimatorStateInfo(0).IsName(groundedStrafe);
-			}
-		}
-		
+		public override bool animationGrounded => animator.GetCurrentAnimatorStateInfo(0).IsName(groundedDirectional) || animator.GetCurrentAnimatorStateInfo(0).IsName(groundedStrafe);
+
 		// Update the Animator with the current state of the character controller
 		protected virtual void Update() {
 			if (Time.deltaTime == 0f) return;

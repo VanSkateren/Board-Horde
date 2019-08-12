@@ -30,18 +30,18 @@ public class DistanceTool : MonoBehaviour
 
 	private void OnDrawGizmos()
 	{
-		Gizmos.color = this.lineColor;
-		Gizmos.DrawWireSphere(this.startPoint, this.gizmoRadius);
-		Gizmos.DrawWireSphere(this.endPoint, this.gizmoRadius);
-		Gizmos.DrawLine(this.startPoint, this.endPoint);
+		Gizmos.color = lineColor;
+		Gizmos.DrawWireSphere(startPoint, gizmoRadius);
+		Gizmos.DrawWireSphere(endPoint, gizmoRadius);
+		Gizmos.DrawLine(startPoint, endPoint);
 	}
 
 	private void OnDrawGizmosSelected()
 	{
-		Gizmos.color = this.lineColor;
-		Gizmos.DrawWireSphere(this.startPoint, this.gizmoRadius);
-		Gizmos.DrawWireSphere(this.endPoint, this.gizmoRadius);
-		Gizmos.DrawLine(this.startPoint, this.endPoint);
+		Gizmos.color = lineColor;
+		Gizmos.DrawWireSphere(startPoint, gizmoRadius);
+		Gizmos.DrawWireSphere(endPoint, gizmoRadius);
+		Gizmos.DrawLine(startPoint, endPoint);
 	}
 
 	private void OnEnable()

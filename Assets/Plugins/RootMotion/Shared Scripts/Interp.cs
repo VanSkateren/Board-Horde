@@ -60,85 +60,85 @@ namespace RootMotion {
 			
 			switch (mode) {
 			case InterpolationMode.None:
-				interpT = Interp.None(t, 0, 1);
+				interpT = None(t, 0, 1);
 				break;
 			case InterpolationMode.InOutCubic:
-				interpT = Interp.InOutCubic(t, 0, 1);
+				interpT = InOutCubic(t, 0, 1);
 				break;
 			case InterpolationMode.InOutQuintic:
-				interpT = Interp.InOutQuintic(t, 0, 1);
+				interpT = InOutQuintic(t, 0, 1);
 				break;
 			case InterpolationMode.InQuintic:
-				interpT = Interp.InQuintic(t, 0, 1);
+				interpT = InQuintic(t, 0, 1);
 				break;
 			case InterpolationMode.InQuartic:
-				interpT = Interp.InQuartic(t, 0, 1);
+				interpT = InQuartic(t, 0, 1);
 				break;
 			case InterpolationMode.InCubic:
-				interpT = Interp.InCubic(t, 0, 1);
+				interpT = InCubic(t, 0, 1);
 				break;
 			case InterpolationMode.InQuadratic:
-				interpT = Interp.InQuadratic(t, 0, 1);
+				interpT = InQuadratic(t, 0, 1);
 				break;
 			case InterpolationMode.OutQuintic:
-				interpT = Interp.OutQuintic(t, 0, 1);
+				interpT = OutQuintic(t, 0, 1);
 				break;
 			case InterpolationMode.OutQuartic:
-				interpT = Interp.OutQuartic(t, 0, 1);
+				interpT = OutQuartic(t, 0, 1);
 				break;
 			case InterpolationMode.OutCubic:
-				interpT = Interp.OutCubic(t, 0, 1);
+				interpT = OutCubic(t, 0, 1);
 				break;
 			case InterpolationMode.OutInCubic:
-				interpT = Interp.OutInCubic(t, 0, 1);
+				interpT = OutInCubic(t, 0, 1);
 				break;
 			case InterpolationMode.OutInQuartic:
-				interpT = Interp.OutInCubic(t, 0, 1);
+				interpT = OutInCubic(t, 0, 1);
 				break;
 			case InterpolationMode.BackInCubic:
-				interpT = Interp.BackInCubic(t, 0, 1);
+				interpT = BackInCubic(t, 0, 1);
 				break;
 			case InterpolationMode.BackInQuartic:
-				interpT = Interp.BackInQuartic(t, 0, 1);
+				interpT = BackInQuartic(t, 0, 1);
 				break;
 			case InterpolationMode.OutBackCubic:
-				interpT = Interp.OutBackCubic(t, 0, 1);
+				interpT = OutBackCubic(t, 0, 1);
 				break;
 			case InterpolationMode.OutBackQuartic:
-				interpT = Interp.OutBackQuartic(t, 0, 1);
+				interpT = OutBackQuartic(t, 0, 1);
 				break;
 			case InterpolationMode.OutElasticSmall:
-				interpT = Interp.OutElasticSmall(t, 0, 1);
+				interpT = OutElasticSmall(t, 0, 1);
 				break;
 			case InterpolationMode.OutElasticBig:
-				interpT = Interp.OutElasticBig(t, 0, 1);
+				interpT = OutElasticBig(t, 0, 1);
 				break;
 			case InterpolationMode.InElasticSmall:
-				interpT = Interp.InElasticSmall(t, 0, 1);
+				interpT = InElasticSmall(t, 0, 1);
 				break;
 			case InterpolationMode.InElasticBig:
-				interpT = Interp.InElasticBig(t, 0, 1);
+				interpT = InElasticBig(t, 0, 1);
 				break;
 			case InterpolationMode.InSine:
-				interpT = Interp.InSine(t, 0, 1);
+				interpT = InSine(t, 0, 1);
 				break;
 			case InterpolationMode.OutSine:
-				interpT = Interp.OutSine(t, 0, 1);
+				interpT = OutSine(t, 0, 1);
 				break;
 			case InterpolationMode.InOutSine:
-				interpT = Interp.InOutSine(t, 0, 1);
+				interpT = InOutSine(t, 0, 1);
 				break;
 			case InterpolationMode.InElastic:
-				interpT = Interp.OutElastic(t, 0, 1);
+				interpT = OutElastic(t, 0, 1);
 				break;
 			case InterpolationMode.OutElastic:
-				interpT = Interp.OutElastic(t, 0, 1);
+				interpT = OutElastic(t, 0, 1);
 				break;
 			case InterpolationMode.InBack:
-				interpT = Interp.InBack(t, 0, 1);
+				interpT = InBack(t, 0, 1);
 				break;
 			case InterpolationMode.OutBack:
-				interpT = Interp.OutBack(t, 0, 1);
+				interpT = OutBack(t, 0, 1);
 				break;
 			default: interpT = 0;
 				break;
@@ -151,7 +151,7 @@ namespace RootMotion {
 		/// Interpolate between two verctors by InterpolationMode mode
 		/// </summary>
 		public static Vector3 V3(Vector3 v1, Vector3 v2, float t, InterpolationMode mode) {
-			float interpT = Interp.Float(t, mode);
+			float interpT = Float(t, mode);
 			return ((1 - interpT) * v1) + (interpT * v2);
 		}
 		

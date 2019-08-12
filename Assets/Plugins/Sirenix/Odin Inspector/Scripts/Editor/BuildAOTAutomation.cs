@@ -26,7 +26,7 @@ namespace Sirenix.Serialization.Internal
     public class PreBuildAOTAutomation : IPreprocessBuild
 #endif
     {
-        public int callbackOrder { get { return -1000; } }
+        public int callbackOrder => -1000;
 
         public void OnPreprocessBuild(BuildTarget target, string path)
         {
@@ -41,7 +41,7 @@ namespace Sirenix.Serialization.Internal
 
         public void OnPreprocessBuild(BuildReport report)
         {
-            this.OnPreprocessBuild(report.summary.platform, report.summary.outputPath);
+            OnPreprocessBuild(report.summary.platform, report.summary.outputPath);
         }
 
 #endif
@@ -53,7 +53,7 @@ namespace Sirenix.Serialization.Internal
     public class PostBuildAOTAutomation : IPostprocessBuild
 #endif
     {
-        public int callbackOrder { get { return -1000; } }
+        public int callbackOrder => -1000;
 
         public void OnPostprocessBuild(BuildTarget target, string path)
         {
@@ -69,7 +69,7 @@ namespace Sirenix.Serialization.Internal
 
         public void OnPostprocessBuild(BuildReport report)
         {
-            this.OnPostprocessBuild(report.summary.platform, report.summary.outputPath);
+            OnPostprocessBuild(report.summary.platform, report.summary.outputPath);
         }
 
 #endif

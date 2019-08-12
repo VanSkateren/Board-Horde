@@ -14,7 +14,7 @@ namespace Dreamteck.Splines
 
         public Axis axis
         {
-            get { return _axis; }
+            get => _axis;
             set
             {
                 if (value != _axis)
@@ -27,7 +27,7 @@ namespace Dreamteck.Splines
 
         public bool symmetry
         {
-            get { return _symmetry; }
+            get => _symmetry;
             set
             {
                 if (value != _symmetry)
@@ -40,7 +40,7 @@ namespace Dreamteck.Splines
 
         public UVWrapMode uvWrapMode
         {
-            get { return _uvWrapMode; }
+            get => _uvWrapMode;
             set
             {
                 if (value != _uvWrapMode)
@@ -53,7 +53,7 @@ namespace Dreamteck.Splines
 
         public int slices
         {
-            get { return _slices; }
+            get => _slices;
             set
             {
                 if (value != _slices)

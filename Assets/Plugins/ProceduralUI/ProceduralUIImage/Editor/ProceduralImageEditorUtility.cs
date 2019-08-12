@@ -20,10 +20,10 @@ namespace UnityEditor.UI {
 				Selection.activeGameObject = o;
 			}
 			else {
-				if(GameObject.FindObjectOfType<Canvas>()==null)	{
+				if(Object.FindObjectOfType<Canvas>()==null)	{
 					EditorApplication.ExecuteMenuItem("GameObject/UI/Canvas");
 				}
-				Canvas c = GameObject.FindObjectOfType<Canvas>();
+				Canvas c = Object.FindObjectOfType<Canvas>();
 
                 //Set Texcoord shader channels for canvas
                 c.additionalShaderChannels |= AdditionalCanvasShaderChannels.TexCoord1 | AdditionalCanvasShaderChannels.TexCoord2 | AdditionalCanvasShaderChannels.TexCoord3;
@@ -39,7 +39,7 @@ namespace UnityEditor.UI {
 		public static void ReplaceWithProceduralImage(MenuCommand command){
 			Image image = (Image)command.context;
 			GameObject obj = image.gameObject;
-			GameObject.DestroyImmediate (image);
+			Object.DestroyImmediate (image);
 			obj.AddComponent<ProceduralImage> ();
 		}
 	}

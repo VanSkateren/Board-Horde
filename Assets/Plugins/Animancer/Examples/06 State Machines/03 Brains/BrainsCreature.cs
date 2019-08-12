@@ -23,21 +23,21 @@ namespace Animancer.Examples
 
         [SerializeField]
         private AnimancerComponent _Animancer;
-        public AnimancerComponent Animancer { get { return _Animancer; } }
+        public AnimancerComponent Animancer => _Animancer;
 
         [SerializeField]
         private BrainsCreatureState _Idle;
-        public BrainsCreatureState Idle { get { return _Idle; } }
+        public BrainsCreatureState Idle => _Idle;
 
         [SerializeField]
         private Rigidbody _Rigidbody;
-        public Rigidbody Rigidbody { get { return _Rigidbody; } }
+        public Rigidbody Rigidbody => _Rigidbody;
 
         [SerializeField]
         private BrainsCreatureBrain _Brain;
         public BrainsCreatureBrain Brain
         {
-            get { return _Brain; }
+            get => _Brain;
             set
             {
                 if (_Brain == value)
@@ -58,7 +58,7 @@ namespace Animancer.Examples
 
         [SerializeField]
         private BrainsCreatureStats _Stats;
-        public BrainsCreatureStats Stats { get { return _Stats; } }
+        public BrainsCreatureStats Stats => _Stats;
 
         // Ground Detector.
         // Health and Mana.

@@ -49,7 +49,7 @@ namespace RootMotion.FinalIK {
 				Handles.color = c;
 
 				Handles.DrawLine(solver.bone2.transform.position, solver.bendGoal.position);
-				Inspector.SphereCap(0, solver.bendGoal.position, Quaternion.identity, GetHandleSize(solver.bendGoal.position) * 0.5f);
+				SphereCap(0, solver.bendGoal.position, Quaternion.identity, GetHandleSize(solver.bendGoal.position) * 0.5f);
 
 				Handles.color = Color.white;
 			}

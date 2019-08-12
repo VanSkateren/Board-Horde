@@ -31,8 +31,8 @@ namespace SCPE
 
         public static Tab INSTALLATION_TAB
         {
-            get { return (Tab)SessionState.GetInt("INSTALLATION_PROGRESS", 0); }
-            set { SessionState.SetInt("INSTALLATION_PROGRESS", (int)value); }
+            get => (Tab)SessionState.GetInt("INSTALLATION_PROGRESS", 0);
+            set => SessionState.SetInt("INSTALLATION_PROGRESS", (int)value);
         }
 
 #if !SCPE || SCPE_DEV
@@ -81,11 +81,11 @@ namespace SCPE
 
             if (EditorApplication.isCompiling)
             {
-                this.ShowNotification(new GUIContent(" Compiling...", EditorGUIUtility.IconContent("cs Script Icon").image));
+                ShowNotification(new GUIContent(" Compiling...", EditorGUIUtility.IconContent("cs Script Icon").image));
             }
             else
             {
-                this.RemoveNotification();
+                RemoveNotification();
             }
 
             //Header
@@ -205,7 +205,7 @@ namespace SCPE
                             if (INSTALLATION_TAB == Tab.Finish)
                             {
                                 Installer.PostInstall();
-                                this.Close();
+                                Close();
                             }
 
                         }

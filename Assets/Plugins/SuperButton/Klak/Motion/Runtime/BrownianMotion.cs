@@ -51,53 +51,53 @@ namespace Klak.Motion
         #region Public Properties And Methods
 
         public bool enablePositionNoise {
-            get { return _enablePositionNoise; }
-            set { _enablePositionNoise = value; }
+            get => _enablePositionNoise;
+            set => _enablePositionNoise = value;
         }
 
         public bool enableRotationNoise {
-            get { return _enableRotationNoise; }
-            set { _enableRotationNoise = value; }
+            get => _enableRotationNoise;
+            set => _enableRotationNoise = value;
         }
 
         public float positionFrequency {
-            get { return _positionFrequency; }
-            set { _positionFrequency = value; }
+            get => _positionFrequency;
+            set => _positionFrequency = value;
         }
 
         public float rotationFrequency {
-            get { return _rotationFrequency; }
-            set { _rotationFrequency = value; }
+            get => _rotationFrequency;
+            set => _rotationFrequency = value;
         }
 
         public float positionAmplitude {
-            get { return _positionAmplitude; }
-            set { _positionAmplitude = value; }
+            get => _positionAmplitude;
+            set => _positionAmplitude = value;
         }
 
         public float rotationAmplitude {
-            get { return _rotationAmplitude; }
-            set { _rotationAmplitude = value; }
+            get => _rotationAmplitude;
+            set => _rotationAmplitude = value;
         }
 
         public Vector3 positionScale {
-            get { return _positionScale; }
-            set { _positionScale = value; }
+            get => _positionScale;
+            set => _positionScale = value;
         }
 
         public Vector3 rotationScale {
-            get { return _rotationScale; }
-            set { _rotationScale = value; }
+            get => _rotationScale;
+            set => _rotationScale = value;
         }
 
         public int positionFractalLevel {
-            get { return _positionFractalLevel; }
-            set { _positionFractalLevel = value; }
+            get => _positionFractalLevel;
+            set => _positionFractalLevel = value;
         }
 
         public int rotationFractalLevel {
-            get { return _rotationFractalLevel; }
-            set { _rotationFractalLevel = value; }
+            get => _rotationFractalLevel;
+            set => _rotationFractalLevel = value;
         }
 
         public void Rehash()

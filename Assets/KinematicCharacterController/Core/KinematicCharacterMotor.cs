@@ -309,82 +309,98 @@ namespace KinematicCharacterController
         /// <summary>
         /// The Transform of the character motor
         /// </summary>
-        public Transform Transform { get { return _transform; } }
+        public Transform Transform => _transform;
+
         private Transform _transform;
         /// <summary>
         /// The character's goal position in its movement calculations (always up-to-date during the character update phase)
         /// </summary>
-        public Vector3 TransientPosition { get { return _transientPosition; } }
+        public Vector3 TransientPosition => _transientPosition;
+
         private Vector3 _transientPosition;
         /// <summary>
         /// The character's up direction (always up-to-date during the character update phase)
         /// </summary>
-        public Vector3 CharacterUp { get { return _characterUp; } }
+        public Vector3 CharacterUp => _characterUp;
+
         private Vector3 _characterUp;
         /// <summary>
         /// The character's forward direction (always up-to-date during the character update phase)
         /// </summary>
-        public Vector3 CharacterForward { get { return _characterForward; } }
+        public Vector3 CharacterForward => _characterForward;
+
         private Vector3 _characterForward;
         /// <summary>
         /// The character's right direction (always up-to-date during the character update phase)
         /// </summary>
-        public Vector3 CharacterRight { get { return _characterRight; } }
+        public Vector3 CharacterRight => _characterRight;
+
         private Vector3 _characterRight;
         /// <summary>
         /// The character's position before the movement calculations began
         /// </summary>
-        public Vector3 InitialSimulationPosition { get { return _initialSimulationPosition; } }
+        public Vector3 InitialSimulationPosition => _initialSimulationPosition;
+
         private Vector3 _initialSimulationPosition;
         /// <summary>
         /// The character's rotation before the movement calculations began
         /// </summary>
-        public Quaternion InitialSimulationRotation { get { return _initialSimulationRotation; } }
+        public Quaternion InitialSimulationRotation => _initialSimulationRotation;
+
         private Quaternion _initialSimulationRotation;
         /// <summary>
         /// Represents the Rigidbody to stay attached to
         /// </summary>
-        public Rigidbody AttachedRigidbody { get { return _attachedRigidbody; } }
+        public Rigidbody AttachedRigidbody => _attachedRigidbody;
+
         private Rigidbody _attachedRigidbody;
         /// <summary>
         /// Vector3 from the character transform position to the capsule center
         /// </summary>
-        public Vector3 CharacterTransformToCapsuleCenter { get { return _characterTransformToCapsuleCenter; } }
+        public Vector3 CharacterTransformToCapsuleCenter => _characterTransformToCapsuleCenter;
+
         private Vector3 _characterTransformToCapsuleCenter;
         /// <summary>
         /// Vector3 from the character transform position to the capsule bottom
         /// </summary>
-        public Vector3 CharacterTransformToCapsuleBottom { get { return _characterTransformToCapsuleBottom; } }
+        public Vector3 CharacterTransformToCapsuleBottom => _characterTransformToCapsuleBottom;
+
         private Vector3 _characterTransformToCapsuleBottom;
         /// <summary>
         /// Vector3 from the character transform position to the capsule top
         /// </summary>
-        public Vector3 CharacterTransformToCapsuleTop { get { return _characterTransformToCapsuleTop; } }
+        public Vector3 CharacterTransformToCapsuleTop => _characterTransformToCapsuleTop;
+
         private Vector3 _characterTransformToCapsuleTop;
         /// <summary>
         /// Vector3 from the character transform position to the capsule bottom hemi center
         /// </summary>
-        public Vector3 CharacterTransformToCapsuleBottomHemi { get { return _characterTransformToCapsuleBottomHemi; } }
+        public Vector3 CharacterTransformToCapsuleBottomHemi => _characterTransformToCapsuleBottomHemi;
+
         private Vector3 _characterTransformToCapsuleBottomHemi;
         /// <summary>
         /// Vector3 from the character transform position to the capsule top hemi center
         /// </summary>
-        public Vector3 CharacterTransformToCapsuleTopHemi { get { return _characterTransformToCapsuleTopHemi; } }
+        public Vector3 CharacterTransformToCapsuleTopHemi => _characterTransformToCapsuleTopHemi;
+
         private Vector3 _characterTransformToCapsuleTopHemi;
         /// <summary>
         /// The character's velocity resulting from standing on rigidbodies or PhysicsMover
         /// </summary>
-        public Vector3 AttachedRigidbodyVelocity { get { return _attachedRigidbodyVelocity; } }
+        public Vector3 AttachedRigidbodyVelocity => _attachedRigidbodyVelocity;
+
         private Vector3 _attachedRigidbodyVelocity;
         /// <summary>
         /// The number of overlaps detected so far during character update (is reset at the beginning of the update)
         /// </summary>
-        public int OverlapsCount { get { return _overlapsCount; } }
+        public int OverlapsCount => _overlapsCount;
+
         private int _overlapsCount;
         /// <summary>
         /// The overlaps detected so far during character update
         /// </summary>
-        public OverlapResult[] Overlaps { get { return _overlaps; } }
+        public OverlapResult[] Overlaps => _overlaps;
+
         private OverlapResult[] _overlaps = new OverlapResult[MaxRigidbodyOverlapsCount];
 
         /// <summary>
@@ -455,10 +471,7 @@ namespace KinematicCharacterController
         /// </summary>
         public Quaternion TransientRotation
         {
-            get
-            {
-                return _transientRotation;
-            }
+            get => _transientRotation;
             private set
             {
                 _transientRotation = value;
@@ -471,13 +484,7 @@ namespace KinematicCharacterController
         /// <summary>
         /// The character's total velocity, including velocity from standing on rigidbodies or PhysicsMover
         /// </summary>
-        public Vector3 Velocity
-        {
-            get
-            {
-                return BaseVelocity + _attachedRigidbodyVelocity;
-            }
-        }
+        public Vector3 Velocity => BaseVelocity + _attachedRigidbodyVelocity;
 
         // Warning: Don't touch these constants unless you know exactly what you're doing!
         public const int MaxHitsBudget = 16;
@@ -559,7 +566,7 @@ namespace KinematicCharacterController
             Capsule.hideFlags = HideFlags.NotEditable;
             if (!Mathf.Approximately(transform.lossyScale.x, 1f) || !Mathf.Approximately(transform.lossyScale.y, 1f) || !Mathf.Approximately(transform.lossyScale.z, 1f))
             {
-                Debug.LogError("Character's lossy scale is not (1,1,1). This is not allowed. Make sure the character's transform and all of its parents have a (1,1,1) scale.", this.gameObject);
+                Debug.LogError("Character's lossy scale is not (1,1,1). This is not allowed. Make sure the character's transform and all of its parents have a (1,1,1) scale.", gameObject);
             }
 #endif
         }
@@ -715,7 +722,7 @@ namespace KinematicCharacterController
 
         private void Awake()
         {
-            _transform = this.transform;
+            _transform = transform;
             ValidateData();
 
             _transientPosition = _transform.position;
@@ -725,7 +732,7 @@ namespace KinematicCharacterController
             CollidableLayers = 0;
             for (int i = 0; i < 32; i++)
             {
-                if (!Physics.GetIgnoreLayerCollision(this.gameObject.layer, i))
+                if (!Physics.GetIgnoreLayerCollision(gameObject.layer, i))
                 {
                     CollidableLayers |= (1 << i);
                 }
@@ -758,7 +765,7 @@ namespace KinematicCharacterController
 #if UNITY_EDITOR
             if (!Mathf.Approximately(_transform.lossyScale.x, 1f) || !Mathf.Approximately(_transform.lossyScale.y, 1f) || !Mathf.Approximately(_transform.lossyScale.z, 1f))
             {
-                Debug.LogError("Character's lossy scale is not (1,1,1). This is not allowed. Make sure the character's transform and all of its parents have a (1,1,1) scale.", this.gameObject);
+                Debug.LogError("Character's lossy scale is not (1,1,1). This is not allowed. Make sure the character's transform and all of its parents have a (1,1,1) scale.", gameObject);
             }
 #endif
 
@@ -1799,7 +1806,7 @@ namespace KinematicCharacterController
             Vector3 atCharacterUp = atCharacterRotation * _cachedWorldUp;
             Vector3 innerHitDirection = Vector3.ProjectOnPlane(hitNormal, atCharacterUp).normalized;
 
-            stabilityReport.IsStable = this.IsStableOnNormal(hitNormal);
+            stabilityReport.IsStable = IsStableOnNormal(hitNormal);
             stabilityReport.InnerNormal = hitNormal;
             stabilityReport.OuterNormal = hitNormal;
             

@@ -27,7 +27,7 @@ namespace Dreamteck.Splines
         [MenuItem("Help/Dreamteck/About Dreamteck Splines")]
         public static void OpenWindow()
         {
-            WelcomeScreen window = EditorWindow.GetWindow<WelcomeScreen>(true);
+            WelcomeScreen window = GetWindow<WelcomeScreen>(true);
             window.Load();
         }
 

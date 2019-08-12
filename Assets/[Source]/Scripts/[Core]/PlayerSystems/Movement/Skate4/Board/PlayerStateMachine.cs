@@ -9,7 +9,7 @@ public class PlayerStateMachine : FSMStateMachine
 
 	public PlayerStateMachine(GameObject playerObj)
 	{
-		this.gameObject = playerObj;
+		gameObject = playerObj;
 	}
 
 	public override void SetupDefinition(ref FSMStateType stateType, ref List<Type> children)

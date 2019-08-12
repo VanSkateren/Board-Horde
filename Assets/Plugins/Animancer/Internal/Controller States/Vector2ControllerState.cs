@@ -21,7 +21,7 @@ namespace Animancer
         /// </summary>
         public string ParameterNameX
         {
-            get { return _ParameterX.Name; }
+            get => _ParameterX.Name;
             set
             {
                 _ParameterX.Name = value;
@@ -34,7 +34,7 @@ namespace Animancer
         /// </summary>
         public int ParameterHashX
         {
-            get { return _ParameterX.Hash; }
+            get => _ParameterX.Hash;
             set
             {
                 _ParameterX.Hash = value;
@@ -48,8 +48,8 @@ namespace Animancer
         /// </summary>
         public float ParameterX
         {
-            get { return Playable.GetFloat(_ParameterX); }
-            set { Playable.SetFloat(_ParameterX, value); }
+            get => Playable.GetFloat(_ParameterX);
+            set => Playable.SetFloat(_ParameterX, value);
         }
 
         /************************************************************************************************************************/
@@ -62,7 +62,7 @@ namespace Animancer
         /// </summary>
         public string ParameterNameY
         {
-            get { return _ParameterY.Name; }
+            get => _ParameterY.Name;
             set
             {
                 _ParameterY.Name = value;
@@ -75,7 +75,7 @@ namespace Animancer
         /// </summary>
         public int ParameterHashY
         {
-            get { return _ParameterY.Hash; }
+            get => _ParameterY.Hash;
             set
             {
                 _ParameterY.Hash = value;
@@ -89,8 +89,8 @@ namespace Animancer
         /// </summary>
         public float ParameterY
         {
-            get { return Playable.GetFloat(_ParameterY); }
-            set { Playable.SetFloat(_ParameterY, value); }
+            get => Playable.GetFloat(_ParameterY);
+            set => Playable.SetFloat(_ParameterY, value);
         }
 
         /************************************************************************************************************************/
@@ -100,10 +100,7 @@ namespace Animancer
         /// </summary>
         public new Vector2 Parameter
         {
-            get
-            {
-                return new Vector2(ParameterX, ParameterY);
-            }
+            get => new Vector2(ParameterX, ParameterY);
             set
             {
                 ParameterX = value.x;
@@ -155,7 +152,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of parameters being wrapped by this state.</summary>
-        public override int ParameterCount { get { return 2; } }
+        public override int ParameterCount => 2;
 
         /// <summary>Returns the hash of a parameter being wrapped by this state.</summary>
         public override int GetParameterHash(int index)
@@ -189,8 +186,8 @@ namespace Animancer
             /// </summary>
             public string ParameterNameX
             {
-                get { return _ParameterNameX; }
-                set { _ParameterNameX = value; }
+                get => _ParameterNameX;
+                set => _ParameterNameX = value;
             }
 
             /************************************************************************************************************************/
@@ -203,8 +200,8 @@ namespace Animancer
             /// </summary>
             public string ParameterNameY
             {
-                get { return _ParameterNameY; }
-                set { _ParameterNameY = value; }
+                get => _ParameterNameY;
+                set => _ParameterNameY = value;
             }
 
             /************************************************************************************************************************/

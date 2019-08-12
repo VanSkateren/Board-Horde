@@ -104,11 +104,11 @@ namespace RootMotion.FinalIK {
 			public Vector3 position { get; private set; }
 			public Quaternion rotation { get; private set; }
 			public bool hasToes { get; private set; }
-			public VirtualBone thigh { get { return bones[0]; }}
-			private VirtualBone calf { get { return bones[1]; }}
-			private VirtualBone foot { get { return bones[2]; }}
-			private VirtualBone toes { get { return bones[3]; }}
-			public VirtualBone lastBone { get { return bones[bones.Length - 1]; }}
+			public VirtualBone thigh => bones[0];
+			private VirtualBone calf => bones[1];
+			private VirtualBone foot => bones[2];
+			private VirtualBone toes => bones[3];
+			public VirtualBone lastBone => bones[bones.Length - 1];
 			public Vector3 thighRelativeToPelvis { get; private set; }
 
 			private Vector3 footPosition;

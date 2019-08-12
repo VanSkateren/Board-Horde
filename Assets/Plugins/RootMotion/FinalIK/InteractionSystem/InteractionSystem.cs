@@ -509,12 +509,8 @@ namespace RootMotion.FinalIK {
 		/// Gets the FullBodyBipedIK component.
 		/// </summary>
 		public FullBodyBipedIK ik {
-			get {
-				return fullBody;
-			}
-			set {
-				fullBody = value;
-			}
+			get => fullBody;
+			set => fullBody = value;
 		}
 
 		/// <summary>

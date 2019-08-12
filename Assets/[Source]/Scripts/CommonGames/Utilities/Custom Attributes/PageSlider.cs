@@ -33,87 +33,87 @@ public class PageSliderAttributeDrawer : OdinAttributeDrawer<PageSliderAttribute
 
     protected override void DrawPropertyLayout(GUIContent label)
     {
-        if (this.Property.ValueEntry.WeakSmartValue == null)
+        if (Property.ValueEntry.WeakSmartValue == null)
         {
-            this.CallNextDrawer(label);
+            CallNextDrawer(label);
             return;
         }
 
-        this.UpdateBreadcrumbLabel(label);
+        UpdateBreadcrumbLabel(label);
 
         if (currentSlider == null)
         {
-            this.DrawPageSlider(label);
+            DrawPageSlider(label);
         }
-        else if (currentDrawingPageProperty == this.Property)
+        else if (currentDrawingPageProperty == Property)
         {
-            this.CallNextDrawer(null);
+            CallNextDrawer(null);
         }
-        else if (GUILayout.Button(new GUIContent(this.GetLabelText(label)), titleStyle))
+        else if (GUILayout.Button(new GUIContent(GetLabelText(label)), titleStyle))
         {
-            currentSlider.PushPage(this.Property, Guid.NewGuid().ToString());
+            currentSlider.PushPage(Property, Guid.NewGuid().ToString());
             currentSlider.EnumeratePages.Last();
-            this.page = currentSlider.EnumeratePages.Last();
-            this.page.Name = this.GetLabelText(label);
-            this.pageLabel = label;
+            page = currentSlider.EnumeratePages.Last();
+            page.Name = GetLabelText(label);
+            pageLabel = label;
         }
     }
 
     private void UpdateBreadcrumbLabel(GUIContent label)
     {
         if (Event.current.type != EventType.Layout) return;
-        if (this.page == null) return;
-        if (this.pageLabel != null && this.pageLabel != this.Property.Label) return;
+        if (page == null) return;
+        if (pageLabel != null && pageLabel != Property.Label) return;
 
-        string newLabel = this.GetLabelText(label ?? this.pageLabel);
+        string newLabel = GetLabelText(label ?? pageLabel);
 
-        if (newLabel == this.page.Name) return;
-        this.page.Name = newLabel;
-        this.page.GetType().GetField("TitleWidth", Flags.AllMembers).SetValue(this.page, null);
+        if (newLabel == page.Name) return;
+        page.Name = newLabel;
+        page.GetType().GetField("TitleWidth", Flags.AllMembers).SetValue(page, null);
     }
 
     private void DrawPageSlider(GUIContent label)
     {
         try
         {
-            if (this.slider == null)
+            if (slider == null)
             {
-                this.slider = new SlidePageNavigationHelper<InspectorProperty>();
-                this.slider.PushPage(this.Property, Guid.NewGuid().ToString());
-                this.page = this.slider.EnumeratePages.Last();
-                this.page.Name = this.GetLabelText(label);
+                slider = new SlidePageNavigationHelper<InspectorProperty>();
+                slider.PushPage(Property, Guid.NewGuid().ToString());
+                page = slider.EnumeratePages.Last();
+                page.Name = GetLabelText(label);
             }
 
-            currentSlider = this.slider;
+            currentSlider = slider;
 
             SirenixEditorGUI.BeginBox();
             SirenixEditorGUI.BeginToolbarBoxHeader();
             {
                 Rect rect = GUILayoutUtility.GetRect(0, 20);
                 rect.x -= 5;
-                this.slider.DrawPageNavigation(rect);
+                slider.DrawPageNavigation(rect);
             }
             SirenixEditorGUI.EndToolbarBoxHeader();
             {
-                this.slider.BeginGroup();
-                foreach (SlidePageNavigationHelper<InspectorProperty>.Page p in this.slider.EnumeratePages)
+                slider.BeginGroup();
+                foreach (SlidePageNavigationHelper<InspectorProperty>.Page p in slider.EnumeratePages)
                 {
                     if (p.BeginPage())
                     {
-                        if (p.Value == this.Property)
+                        if (p.Value == Property)
                         {
-                            this.CallNextDrawer(null);
+                            CallNextDrawer(null);
                         }
                         else
                         {
                             currentDrawingPageProperty = p.Value;
-                            if (p.Value.Tree != this.Property.Tree)
+                            if (p.Value.Tree != Property.Tree)
                             {
                                 InspectorUtilities.BeginDrawPropertyTree(p.Value.Tree, true);
                             }
                             p.Value.Draw(null);
 
-                            if (p.Value.Tree != this.Property.Tree)
+                            if (p.Value.Tree != Property.Tree)
                             {
                                 InspectorUtilities.EndDrawPropertyTree(p.Value.Tree);
                             }
@@ -122,7 +122,7 @@ public class PageSliderAttributeDrawer : OdinAttributeDrawer<PageSliderAttribute
                     }
                     p.EndPage();
                 }
-                this.slider.EndGroup();
+                slider.EndGroup();
             }
             SirenixEditorGUI.EndBox();
 
@@ -140,7 +140,7 @@ public class PageSliderAttributeDrawer : OdinAttributeDrawer<PageSliderAttribute
             return label.text;
         }
 
-        object val = this.Property.ValueEntry.WeakSmartValue;
+        object val = Property.ValueEntry.WeakSmartValue;
         if (val == null)
         {
             return "Null";

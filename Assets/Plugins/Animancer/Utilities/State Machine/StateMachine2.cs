@@ -164,19 +164,21 @@ namespace Animancer.FSM
         /************************************************************************************************************************/
 
         /// <summary>Gets or sets a particular state in the <see cref="Dictionary"/>.</summary>
-        public TState this[TKey key] { get { return Dictionary[key]; } set { Dictionary[key] = value; } }
+        public TState this[TKey key] { get => Dictionary[key];
+            set => Dictionary[key] = value;
+        }
 
         /// <summary>Gets an <see cref="ICollection{T}"/> containing the keys of the <see cref="Dictionary"/>.</summary>
-        public ICollection<TKey> Keys { get { return Dictionary.Keys; } }
+        public ICollection<TKey> Keys => Dictionary.Keys;
 
         /// <summary>Gets an <see cref="ICollection{T}"/> containing the state of the <see cref="Dictionary"/>.</summary>
-        public ICollection<TState> Values { get { return Dictionary.Values; } }
+        public ICollection<TState> Values => Dictionary.Values;
 
         /// <summary>Gets the number of states contained in the <see cref="Dictionary"/>.</summary>
-        public int Count { get { return Dictionary.Count; } }
+        public int Count => Dictionary.Count;
 
         /// <summary>Indicates whether the <see cref="Dictionary"/> is read-only.</summary>
-        public bool IsReadOnly { get { return Dictionary.IsReadOnly; } }
+        public bool IsReadOnly => Dictionary.IsReadOnly;
 
         /// <summary>Adds a state to the <see cref="Dictionary"/>.</summary>
         public void Add(TKey key, TState state) { Dictionary.Add(key, state); }

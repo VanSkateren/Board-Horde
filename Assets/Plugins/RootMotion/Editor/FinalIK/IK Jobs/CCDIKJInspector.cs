@@ -8,7 +8,7 @@ namespace RootMotion.FinalIK
     [CustomEditor(typeof(CCDIKJ))]
     public class CCDIKJInspector : Editor
     {
-        private CCDIKJ script { get { return target as CCDIKJ; } }
+        private CCDIKJ script => target as CCDIKJ;
 
         void OnSceneGUI()
         {

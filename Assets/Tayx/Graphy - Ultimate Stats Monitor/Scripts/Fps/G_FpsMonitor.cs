@@ -52,12 +52,12 @@ namespace Tayx.Graphy.Fps
 
         #region Properties -> Public
 
-        public                      float           CurrentFPS  { get { return m_currentFps; } }
-        public                      float           AverageFPS  { get { return m_avgFps;} }
+        public                      float           CurrentFPS => m_currentFps;
+        public                      float           AverageFPS => m_avgFps;
 
-        public                      float           MinFPS      { get { return m_minFps;} }
-        public                      float           MaxFPS      { get { return m_maxFps;} }
-        
+        public                      float           MinFPS => m_minFps;
+        public                      float           MaxFPS => m_maxFps;
+
         #endregion
 
         #region Methods -> Unity Callbacks

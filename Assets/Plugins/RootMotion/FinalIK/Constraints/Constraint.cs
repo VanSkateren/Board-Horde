@@ -26,12 +26,8 @@ namespace RootMotion.FinalIK {
 		/// <value>
 		/// <c>true</c> if is valid; otherwise, <c>false</c>.
 		/// </value>
-		public bool isValid {
-			get {
-				return transform != null;
-			}
-		}
-		
+		public bool isValid => transform != null;
+
 		/// <summary>
 		/// Updates the constraint.
 		/// </summary>

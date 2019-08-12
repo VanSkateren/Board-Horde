@@ -13,7 +13,7 @@ public class PromptCatch : MonoBehaviour
 		if (InputController.Instance.controlsActive && PlayerController.Instance.inputController.player.GetButtonDown("Left Stick Button") || PlayerController.Instance.inputController.player.GetButtonDown("Right Stick Button"))
 		{
 			PromptController.Instance.DoUnPause();
-			base.gameObject.SetActive(false);
+			gameObject.SetActive(false);
 		}
 	}
 }

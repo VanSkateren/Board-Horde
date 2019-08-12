@@ -18,13 +18,13 @@ public class TutTrickTextRotator : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.C))
 		{
-			this.i++;
-			if (this.i == (int)this.labels.Length)
+			i++;
+			if (i == (int)labels.Length)
 			{
-				this.i = 0;
+				i = 0;
 				Debug.Log("reset");
 			}
-			this.label.text = this.labels[this.i];
+			label.text = labels[i];
 		}
 	}
 }

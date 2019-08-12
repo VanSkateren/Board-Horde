@@ -9,7 +9,7 @@ public class Mathd : MonoBehaviour
 
 	static Mathd()
 	{
-		Mathd.PowersOf2 = new int[] { 1, 2, 4, 8, 16, 32, 64, 128 };
+		PowersOf2 = new int[] { 1, 2, 4, 8, 16, 32, 64, 128 };
 	}
 
 	public Mathd()
@@ -18,7 +18,7 @@ public class Mathd : MonoBehaviour
 
 	private static float AbsAngleBetween(float fromAngle, float toAngle)
 	{
-		return Mathf.Abs(Mathd.AngleBetween(fromAngle, toAngle));
+		return Mathf.Abs(AngleBetween(fromAngle, toAngle));
 	}
 
 	public static float AngleBetween(float fromAngle, float toAngle)
@@ -30,8 +30,8 @@ public class Mathd : MonoBehaviour
 
 	public static float AngleBetweenInPlane(Vector3 fromAngle, Vector3 toAngle, Vector3 vector)
 	{
-		Mathd.ProjectVectorOnPlane(fromAngle, vector);
-		Mathd.ProjectVectorOnPlane(toAngle, vector);
+		ProjectVectorOnPlane(fromAngle, vector);
+		ProjectVectorOnPlane(toAngle, vector);
 		return Vector3.Angle(fromAngle, toAngle);
 	}
 
@@ -73,7 +73,7 @@ public class Mathd : MonoBehaviour
 		int item = angleList[0];
 		foreach (int num in angleList)
 		{
-			if (Mathd.AbsAngleBetween(angleIn, (float)num) >= Mathd.AbsAngleBetween(angleIn, (float)item))
+			if (AbsAngleBetween(angleIn, (float)num) >= AbsAngleBetween(angleIn, (float)item))
 			{
 				continue;
 			}
@@ -138,11 +138,11 @@ public class Mathd : MonoBehaviour
 		float single;
 		Quaternion quaternion = toRot * Quaternion.Inverse(fromRot);
 		quaternion.ToAngleAxis(out single, out vector3);
-		if (Mathd.IsInfinityOrNaN(vector3.x) || Mathd.IsInfinityOrNaN(vector3.y) || Mathd.IsInfinityOrNaN(vector3.z) || Mathd.IsInfinityOrNaN(single))
+		if (IsInfinityOrNaN(vector3.x) || IsInfinityOrNaN(vector3.y) || IsInfinityOrNaN(vector3.z) || IsInfinityOrNaN(single))
 		{
 			return;
 		}
-		single = Mathd.AngleBetween(0f, single);
+		single = AngleBetween(0f, single);
 		Vector3 vector31 = ((vector3 * single) * strength) / 120f;
 		Vector3 vector32 = (dampAmount * rigidbody.angularVelocity) / 120f;
 		rigidbody.AddTorque(vector31 - vector32);
@@ -154,11 +154,11 @@ public class Mathd : MonoBehaviour
 		float single;
 		Quaternion quaternion = toRot * Quaternion.Inverse(fromRot);
 		quaternion.ToAngleAxis(out single, out vector3);
-		if (Mathd.IsInfinityOrNaN(vector3.x) || Mathd.IsInfinityOrNaN(vector3.y) || Mathd.IsInfinityOrNaN(vector3.z) || Mathd.IsInfinityOrNaN(single))
+		if (IsInfinityOrNaN(vector3.x) || IsInfinityOrNaN(vector3.y) || IsInfinityOrNaN(vector3.z) || IsInfinityOrNaN(single))
 		{
 			return;
 		}
-		single = Mathd.AngleBetween(0f, single);
+		single = AngleBetween(0f, single);
 		Vector3 vector31 = rigidbody.transform.InverseTransformDirection(rigidbody.angularVelocity);
 		vector31.x = dampAmount * vector31.x;
 		Vector3 vector32 = ((vector3 * single) * Time.deltaTime) * strength;
@@ -344,7 +344,7 @@ public class Mathd : MonoBehaviour
 
 	public static float MoveTowardAngle(float fromAngle, float toAngle, float maxSpeed, float amountPerCycle)
 	{
-		float single = Mathf.Clamp(Mathd.AngleBetween(fromAngle, toAngle) * amountPerCycle, -maxSpeed * Time.deltaTime, maxSpeed * Time.deltaTime);
+		float single = Mathf.Clamp(AngleBetween(fromAngle, toAngle) * amountPerCycle, -maxSpeed * Time.deltaTime, maxSpeed * Time.deltaTime);
 		return fromAngle + single;
 	}
 
@@ -385,12 +385,12 @@ public class Mathd : MonoBehaviour
 
 	public static float SignedAngleBetweenInYPlane(Vector3 fromVect, Vector3 toVect)
 	{
-		Vector3 vector3 = Mathd.ProjectVectorOnPlane(fromVect, Vector3.up);
-		Vector3 vector31 = Mathd.ProjectVectorOnPlane(toVect, Vector3.up);
+		Vector3 vector3 = ProjectVectorOnPlane(fromVect, Vector3.up);
+		Vector3 vector31 = ProjectVectorOnPlane(toVect, Vector3.up);
 		Vector2 vector2 = new Vector2(vector3.x, vector3.z);
 		Vector2 vector21 = new Vector2(vector31.x, vector31.z);
 		float single = Mathf.Atan2(vector21.x, vector21.y) * 57.29578f;
-		return Mathd.AngleBetween(Mathf.Atan2(vector2.x, vector2.y) * 57.29578f, single);
+		return AngleBetween(Mathf.Atan2(vector2.x, vector2.y) * 57.29578f, single);
 	}
 
 	public static float SnapFloatToNearest(float input, float step)
@@ -400,11 +400,11 @@ public class Mathd : MonoBehaviour
 
 	public static bool Vector3IsInfinityOrNan(Vector3 vect)
 	{
-		if (Mathd.IsInfinityOrNaN(vect.x) || Mathd.IsInfinityOrNaN(vect.y))
+		if (IsInfinityOrNaN(vect.x) || IsInfinityOrNaN(vect.y))
 		{
 			return true;
 		}
-		return Mathd.IsInfinityOrNaN(vect.z);
+		return IsInfinityOrNaN(vect.z);
 	}
 
 	public static class Tuple
@@ -431,8 +431,8 @@ public class Mathd : MonoBehaviour
 
 		internal Tuple(T1 first, T2 second)
 		{
-			this.First = first;
-			this.Second = second;
+			First = first;
+			Second = second;
 		}
 	}
 
@@ -447,15 +447,12 @@ public class Mathd : MonoBehaviour
 
 		public Vector3 V3
 		{
-			get
-			{
-				return new Vector3(this.x, this.y, this.z);
-			}
+			get => new Vector3(x, y, z);
 			set
 			{
-				this.x = value.x;
-				this.y = value.y;
-				this.z = value.z;
+				x = value.x;
+				y = value.y;
+				z = value.z;
 			}
 		}
 	}
@@ -473,16 +470,13 @@ public class Mathd : MonoBehaviour
 
 		public Quaternion V4
 		{
-			get
-			{
-				return new Quaternion(this.x, this.y, this.z, this.w);
-			}
+			get => new Quaternion(x, y, z, w);
 			set
 			{
-				this.x = value.x;
-				this.y = value.y;
-				this.z = value.z;
-				this.w = value.w;
+				x = value.x;
+				y = value.y;
+				z = value.z;
+				w = value.w;
 			}
 		}
 	}

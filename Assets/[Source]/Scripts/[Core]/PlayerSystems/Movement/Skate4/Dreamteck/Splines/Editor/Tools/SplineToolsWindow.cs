@@ -16,7 +16,7 @@ namespace Dreamteck.Splines
         [MenuItem("Window/Dreamteck/Splines/Tools")]
         static void Init()
         {
-            SplineToolsWindow window = (SplineToolsWindow)EditorWindow.GetWindow(typeof(SplineToolsWindow));
+            SplineToolsWindow window = (SplineToolsWindow)GetWindow(typeof(SplineToolsWindow));
             window.Show();
         }
 

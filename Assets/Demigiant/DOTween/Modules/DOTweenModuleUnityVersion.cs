@@ -221,9 +221,7 @@ namespace DG.Tweening
     {
         public class WaitForCompletion : CustomYieldInstruction
         {
-            public override bool keepWaiting { get {
-                return t.active && !t.IsComplete();
-            }}
+            public override bool keepWaiting => t.active && !t.IsComplete();
 
             private readonly Tween t;
             public WaitForCompletion(Tween tween)
@@ -234,9 +232,7 @@ namespace DG.Tweening
 
         public class WaitForRewind : CustomYieldInstruction
         {
-            public override bool keepWaiting { get {
-                return t.active && (!t.playedOnce || t.position * (t.CompletedLoops() + 1) > 0);
-            }}
+            public override bool keepWaiting => t.active && (!t.playedOnce || t.position * (t.CompletedLoops() + 1) > 0);
 
             private readonly Tween t;
             public WaitForRewind(Tween tween)
@@ -247,9 +243,7 @@ namespace DG.Tweening
 
         public class WaitForKill : CustomYieldInstruction
         {
-            public override bool keepWaiting { get {
-                return t.active;
-            }}
+            public override bool keepWaiting => t.active;
 
             private readonly Tween t;
             public WaitForKill(Tween tween)
@@ -260,9 +254,7 @@ namespace DG.Tweening
 
         public class WaitForElapsedLoops : CustomYieldInstruction
         {
-            public override bool keepWaiting { get {
-                return t.active && t.CompletedLoops() < elapsedLoops;
-            }}
+            public override bool keepWaiting => t.active && t.CompletedLoops() < elapsedLoops;
 
             private readonly Tween t;
             private readonly int elapsedLoops;
@@ -275,9 +267,7 @@ namespace DG.Tweening
 
         public class WaitForPosition : CustomYieldInstruction
         {
-            public override bool keepWaiting { get {
-                return t.active && t.position * (t.CompletedLoops() + 1) < position;
-            }}
+            public override bool keepWaiting => t.active && t.position * (t.CompletedLoops() + 1) < position;
 
             private readonly Tween t;
             private readonly float position;
@@ -290,9 +280,7 @@ namespace DG.Tweening
 
         public class WaitForStart : CustomYieldInstruction
         {
-            public override bool keepWaiting { get {
-                return t.active && !t.playedOnce;
-            }}
+            public override bool keepWaiting => t.active && !t.playedOnce;
 
             private readonly Tween t;
             public WaitForStart(Tween tween)

@@ -130,8 +130,8 @@ namespace Dreamteck.Splines
         protected override void Cancel()
         {
             base.Cancel();
-            foreach (SplineComputer spline in imported) GameObject.DestroyImmediate(spline.gameObject);
-            GameObject.DestroyImmediate(importedParent);
+            foreach (SplineComputer spline in imported) Object.DestroyImmediate(spline.gameObject);
+            Object.DestroyImmediate(importedParent);
             imported.Clear();
             SceneView.RepaintAll();
             SceneView.onSceneGUIDelegate -= OnScene;

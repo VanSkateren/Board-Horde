@@ -12,7 +12,7 @@ namespace Dreamteck.Splines
     {
         public float size
         {
-            get { return _size; }
+            get => _size;
             set
             {
                 if (value != _size)
@@ -25,7 +25,7 @@ namespace Dreamteck.Splines
 
         public Color color
         {
-            get { return _color; }
+            get => _color;
             set
             {
                 if (value != _color)
@@ -38,7 +38,7 @@ namespace Dreamteck.Splines
 
         public Vector3 offset
         {
-            get { return _offset; }
+            get => _offset;
             set
             {
                 if (value != _offset)
@@ -51,7 +51,7 @@ namespace Dreamteck.Splines
 
         public int normalMethod
         {
-            get { return _normalMethod; }
+            get => _normalMethod;
             set
             {
                 if (value != _normalMethod)
@@ -64,7 +64,7 @@ namespace Dreamteck.Splines
 
         public bool calculateTangents
         {
-            get { return _tangents; }
+            get => _tangents;
             set
             {
                 if (value != _tangents)
@@ -77,7 +77,7 @@ namespace Dreamteck.Splines
 
         public float rotation
         {
-            get { return _rotation; }
+            get => _rotation;
             set
             {
                 if (value != _rotation)
@@ -90,7 +90,7 @@ namespace Dreamteck.Splines
 
         public bool flipFaces
         {
-            get { return _flipFaces; }
+            get => _flipFaces;
             set
             {
                 if (value != _flipFaces)
@@ -103,7 +103,7 @@ namespace Dreamteck.Splines
 
         public bool doubleSided
         {
-            get { return _doubleSided; }
+            get => _doubleSided;
             set
             {
                 if (value != _doubleSided)
@@ -116,7 +116,7 @@ namespace Dreamteck.Splines
 
         public UVMode uvMode
         {
-            get { return _uvMode; }
+            get => _uvMode;
             set
             {
                 if (value != _uvMode)
@@ -129,7 +129,7 @@ namespace Dreamteck.Splines
 
         public Vector2 uvScale
         {
-            get { return _uvScale; }
+            get => _uvScale;
             set
             {
                 if (value != _uvScale)
@@ -142,7 +142,7 @@ namespace Dreamteck.Splines
 
         public Vector2 uvOffset
         {
-            get { return _uvOffset; }
+            get => _uvOffset;
             set
             {
                 if (value != _uvOffset)
@@ -155,7 +155,7 @@ namespace Dreamteck.Splines
 
         public float uvRotation
         {
-            get { return _uvRotation; }
+            get => _uvRotation;
             set
             {
                 if (value != _uvRotation)
@@ -166,13 +166,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        public bool baked
-        {
-            get
-            {
-                return _baked;
-            }
-        }
+        public bool baked => _baked;
 
 
         public enum UVMode { Clip, UniformClip, Clamp, UniformClamp }
@@ -249,7 +243,7 @@ namespace Dreamteck.Splines
         public void Bake(bool makeStatic, bool lightmapUV)
         {
             if (mesh == null) return;
-            this.gameObject.isStatic = false;
+            gameObject.isStatic = false;
 #if UNITY_5_5_OR_NEWER
             UnityEditor.MeshUtility.Optimize(mesh);
 #else
@@ -261,13 +255,13 @@ namespace Dreamteck.Splines
             filter.hideFlags = meshRenderer.hideFlags = HideFlags.None;
             filter.sharedMesh = mesh;
             if (lightmapUV) Unwrapping.GenerateSecondaryUVSet(filter.sharedMesh);
-            if (makeStatic) this.gameObject.isStatic = true; 
+            if (makeStatic) gameObject.isStatic = true; 
             _baked = true;
         }
 
         public void Unbake()
         {
-            this.gameObject.isStatic = false; 
+            gameObject.isStatic = false; 
             _baked = false;
             computer.Subscribe(this);
             Rebuild(true);
@@ -349,7 +343,7 @@ namespace Dreamteck.Splines
         public void UpdateCollider()
         {
             meshCollider = GetComponent<MeshCollider>();
-            if (meshCollider == null) meshCollider = this.gameObject.AddComponent<MeshCollider>();
+            if (meshCollider == null) meshCollider = gameObject.AddComponent<MeshCollider>();
             meshCollider.sharedMesh = filter.sharedMesh;
         }
 
@@ -390,7 +384,7 @@ namespace Dreamteck.Splines
 
         protected virtual void WriteMesh() 
         {
-            MeshUtility.InverseTransformMesh(tsMesh, this.transform);
+            MeshUtility.InverseTransformMesh(tsMesh, transform);
             if (_doubleSided) MeshUtility.MakeDoublesidedHalf(tsMesh);
             else if(_flipFaces) MeshUtility.FlipFaces(tsMesh);
             if (_tangents) MeshUtility.CalculateTangents(tsMesh);

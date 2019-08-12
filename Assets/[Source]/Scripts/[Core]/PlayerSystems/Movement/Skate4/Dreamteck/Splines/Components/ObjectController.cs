@@ -12,13 +12,8 @@ namespace Dreamteck.Splines
         [System.Serializable]
         internal class ObjectControl
         {
-            public bool isNull
-            {
-                get
-                {
-                    return gameObject == null;
-                }
-            }
+            public bool isNull => gameObject == null;
+
             public Transform transform
             {
                 get {
@@ -43,13 +38,13 @@ namespace Dreamteck.Splines
             public void Destroy()
             {
                 if (gameObject == null) return;
-                GameObject.Destroy(gameObject);
+                Object.Destroy(gameObject);
             }
 
             public void DestroyImmediate()
             {
                 if (gameObject == null) return;
-                GameObject.DestroyImmediate(gameObject);
+                Object.DestroyImmediate(gameObject);
             }
 
             public void Apply()
@@ -73,7 +68,7 @@ namespace Dreamteck.Splines
 
         public ObjectMethod objectMethod
         {
-            get { return _objectMethod; }
+            get => _objectMethod;
             set
             {
                 if (value != _objectMethod)
@@ -90,7 +85,7 @@ namespace Dreamteck.Splines
 
         public int spawnCount
         {
-            get { return _spawnCount; }
+            get => _spawnCount;
             set
             {
                 if (value != _spawnCount)
@@ -116,7 +111,7 @@ namespace Dreamteck.Splines
 
         public Positioning objectPositioning
         {
-            get { return _objectPositioning; }
+            get => _objectPositioning;
             set
             {
                 if (value != _objectPositioning)
@@ -129,7 +124,7 @@ namespace Dreamteck.Splines
 
         public Iteration iteration
         {
-            get { return _iteration; }
+            get => _iteration;
             set
             {
                 if (value != _iteration)
@@ -142,7 +137,7 @@ namespace Dreamteck.Splines
 
         public int randomSeed
         {
-            get { return _randomSeed; }
+            get => _randomSeed;
             set
             {
                 if (value != _randomSeed)
@@ -155,7 +150,7 @@ namespace Dreamteck.Splines
 
         public Vector2 offset
         {
-            get { return _offset; }
+            get => _offset;
             set
             {
                 if (value != _offset)
@@ -168,7 +163,7 @@ namespace Dreamteck.Splines
 
         public Vector3 minRotationOffset
         {
-            get { return _minRotationOffset; }
+            get => _minRotationOffset;
             set
             {
                 if (value != _minRotationOffset)
@@ -181,7 +176,7 @@ namespace Dreamteck.Splines
 
         public Vector3 maxRotationOffset
         {
-            get { return _maxRotationOffset; }
+            get => _maxRotationOffset;
             set
             {
                 if (value != _maxRotationOffset)
@@ -194,7 +189,7 @@ namespace Dreamteck.Splines
 
         public Vector3 rotationOffset
         {
-            get { return (_maxRotationOffset+_minRotationOffset)/2f; }
+            get => (_maxRotationOffset+_minRotationOffset)/2f;
             set
             {
                 if (value != _minRotationOffset || value != _maxRotationOffset)
@@ -207,7 +202,7 @@ namespace Dreamteck.Splines
 
         public Vector3 minScaleMultiplier
         {
-            get { return _minScaleMultiplier; }
+            get => _minScaleMultiplier;
             set
             {
                 if (value != _minScaleMultiplier)
@@ -220,7 +215,7 @@ namespace Dreamteck.Splines
 
         public Vector3 maxScaleMultiplier
         {
-            get { return _maxScaleMultiplier; }
+            get => _maxScaleMultiplier;
             set
             {
                 if (value != _maxScaleMultiplier)
@@ -233,7 +228,7 @@ namespace Dreamteck.Splines
 
         public Vector3 scaleMultiplier
         {
-            get { return (_minScaleMultiplier + _maxScaleMultiplier) / 2f; }
+            get => (_minScaleMultiplier + _maxScaleMultiplier) / 2f;
             set
             {
                 if (value != _minScaleMultiplier || value != _maxScaleMultiplier)
@@ -246,7 +241,7 @@ namespace Dreamteck.Splines
 
         public bool randomizeOffset
         {
-            get { return _randomizeOffset; }
+            get => _randomizeOffset;
             set
             {
                 if (value != _randomizeOffset)
@@ -259,7 +254,7 @@ namespace Dreamteck.Splines
 
         public bool useRandomOffsetRotation
         {
-            get { return _useRandomOffsetRotation; }
+            get => _useRandomOffsetRotation;
             set
             {
                 if (value != _useRandomOffsetRotation)
@@ -272,7 +267,7 @@ namespace Dreamteck.Splines
 
         public bool shellOffset
         {
-            get { return _shellOffset; }
+            get => _shellOffset;
             set
             {
                 if (value != _shellOffset)
@@ -285,7 +280,7 @@ namespace Dreamteck.Splines
 
         public bool randomOffset
         {
-            get { return _randomOffset; }
+            get => _randomOffset;
             set
             {
                 if (value != _randomOffset)
@@ -298,7 +293,7 @@ namespace Dreamteck.Splines
 
         public bool applyRotation
         {
-            get { return _applyRotation; }
+            get => _applyRotation;
             set
             {
                 if (value != _applyRotation)
@@ -311,7 +306,7 @@ namespace Dreamteck.Splines
 
         public bool applyScale
         {
-            get { return _applyScale; }
+            get => _applyScale;
             set
             {
                 if (value != _applyScale)
@@ -324,7 +319,7 @@ namespace Dreamteck.Splines
 
         public Vector2 randomSize
         {
-            get { return _randomSize; }
+            get => _randomSize;
             set
             {
                 if (value != _randomSize)
@@ -337,7 +332,7 @@ namespace Dreamteck.Splines
 
         public float positionOffset
         {
-            get { return _positionOffset; }
+            get => _positionOffset;
             set
             {
                 if (value != _positionOffset)
@@ -441,7 +436,7 @@ namespace Dreamteck.Splines
         private void Remove()
         {
 #if UNITY_EDITOR
-            if (PrefabUtility.GetPrefabType(this.gameObject) == PrefabType.Prefab) return;
+            if (PrefabUtility.GetPrefabType(gameObject) == PrefabType.Prefab) return;
 #endif
             if (_spawnCount >= spawned.Length) return;
             for (int i = spawned.Length - 1; i >= _spawnCount; i--)
@@ -468,9 +463,9 @@ namespace Dreamteck.Splines
 
         public void GetAll()
         {
-            ObjectControl[] newSpawned = new ObjectControl[this.transform.childCount];
+            ObjectControl[] newSpawned = new ObjectControl[transform.childCount];
             int index = 0;
-            foreach (Transform child in this.transform)
+            foreach (Transform child in transform)
             {
                 if (newSpawned[index] == null)
                 {
@@ -495,7 +490,7 @@ namespace Dreamteck.Splines
         public void Spawn()
         {
 #if UNITY_EDITOR
-            if (PrefabUtility.GetPrefabType(this.gameObject) == PrefabType.Prefab) return;
+            if (PrefabUtility.GetPrefabType(gameObject) == PrefabType.Prefab) return;
 #endif
             if (_objectMethod == ObjectMethod.Instantiate)
             {
@@ -513,10 +508,10 @@ namespace Dreamteck.Splines
         protected override void LateRun()
         {
             base.LateRun();
-            if (_objectMethod == ObjectMethod.GetChildren && lastChildCount != this.transform.childCount)
+            if (_objectMethod == ObjectMethod.GetChildren && lastChildCount != transform.childCount)
             {
                 Spawn();
-                lastChildCount = this.transform.childCount;
+                lastChildCount = transform.childCount;
             }
         }
 
@@ -556,8 +551,8 @@ namespace Dreamteck.Splines
             ObjectControl[] newSpawned = new ObjectControl[spawned.Length + 1];
             spawned.CopyTo(newSpawned, 0);
 
-            newSpawned[newSpawned.Length - 1] = new ObjectControl((GameObject)Instantiate(objects[index], this.transform.position, this.transform.rotation));
-            newSpawned[newSpawned.Length - 1].transform.parent = this.transform;
+            newSpawned[newSpawned.Length - 1] = new ObjectControl((GameObject)Instantiate(objects[index], transform.position, transform.rotation));
+            newSpawned[newSpawned.Length - 1].transform.parent = transform;
             spawned = newSpawned;
         }
 

@@ -12,7 +12,7 @@ namespace RootMotion.Demos {
 
 		void Start() {
 			// Instantiate the character
-			GameObject instance = GameObject.Instantiate(prefab);
+			GameObject instance = Instantiate(prefab);
 
 			// Find bones (Humanoids)
 			BipedRagdollReferences r = BipedRagdollReferences.FromAvatar(instance.GetComponent<Animator>());

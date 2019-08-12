@@ -19,13 +19,7 @@ public class PromptController : MonoBehaviour
 
 	private static PromptController _instance;
 
-	public static PromptController Instance
-	{
-		get
-		{
-			return PromptController._instance;
-		}
-	}
+	public static PromptController Instance => _instance;
 
 	public PromptController()
 	{
@@ -33,24 +27,24 @@ public class PromptController : MonoBehaviour
 
 	public void ActionTakenCatch()
 	{
-		this.catchCount++;
+		catchCount++;
 	}
 
 	private void Awake()
 	{
-		if (!(PromptController._instance != null) || !(PromptController._instance != this))
+		if (!(_instance != null) || !(_instance != this))
 		{
-			PromptController._instance = this;
+			_instance = this;
 			return;
 		}
-		UnityEngine.Object.Destroy(base.gameObject);
+		Destroy(gameObject);
 	}
 
 	private void DoPopupDelayed()
 	{
-		this.catchPrompt.SetActive(true);
+		catchPrompt.SetActive(true);
 		Time.timeScale = 0f;
-		this.doPause = false;
+		doPause = false;
 		InputController.Instance.controlsActive = true;
 	}
 
@@ -58,15 +52,15 @@ public class PromptController : MonoBehaviour
 	{
 		if (Time.timeScale == 0f)
 		{
-			this.doPause = false;
-			this.doUnPause = true;
+			doPause = false;
+			doUnPause = true;
 			Time.timeScale = 0.05f;
 		}
 	}
 
 	public void FixedUpdate()
 	{
-		if (this.doPause)
+		if (doPause)
 		{
 			if (Time.timeScale > 0.1f)
 			{
@@ -78,16 +72,16 @@ public class PromptController : MonoBehaviour
 			}
 			else
 			{
-				base.Invoke("DoPopupDelayed", 0.005f);
+				Invoke("DoPopupDelayed", 0.005f);
 				Time.timeScale = 0.1f;
 			}
 		}
-		if (this.doUnPause)
+		if (doUnPause)
 		{
 			Time.timeScale = Time.timeScale + Time.deltaTime * 6f;
 			if (Time.timeScale >= 1f)
 			{
-				this.doUnPause = false;
+				doUnPause = false;
 				Time.timeScale = 1f;
 				//this.menuthing.enabled = true;
 			}
@@ -96,9 +90,9 @@ public class PromptController : MonoBehaviour
 
 	public void StateChangePopToRelease()
 	{
-		this.StateChangeReleaseToBailCount++;
-		int stateChangeReleaseToBailCount = this.StateChangeReleaseToBailCount;
-		int releaseToBailTriggerCount = this.ReleaseToBailTriggerCount;
+		StateChangeReleaseToBailCount++;
+		int stateChangeReleaseToBailCount = StateChangeReleaseToBailCount;
+		int releaseToBailTriggerCount = ReleaseToBailTriggerCount;
 	}
 
 	public void StateChangeReleaseToBail()

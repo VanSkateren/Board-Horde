@@ -25,15 +25,15 @@ namespace Sirenix.OdinValidator.Editor
         {
             string result = "Validated Object";
 
-            Object obj = this.selectedSourceTarget as UnityEngine.Object;
+            Object obj = selectedSourceTarget as UnityEngine.Object;
 
             if (obj != null)
             {
                 result += ": " + obj.name;
 
-                if (this.selectedSourceTarget is Component)
+                if (selectedSourceTarget is Component)
                 {
-                    Component com = this.selectedSourceTarget as Component;
+                    Component com = selectedSourceTarget as Component;
 
                     if (com.gameObject.scene.IsValid())
                     {
@@ -47,13 +47,13 @@ namespace Sirenix.OdinValidator.Editor
 
         public void SetTarget(object target)
         {
-            this.selectedSourceTarget = target;
-            this.targetTitle = this.GetTargetTitle();
+            selectedSourceTarget = target;
+            targetTitle = GetTargetTitle();
         }
 
         public ValidationProfileEditor(IValidationProfile profile)
         {
-            this.Profile = profile;
+            Profile = profile;
         }
 
     }

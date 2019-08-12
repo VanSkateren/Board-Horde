@@ -348,8 +348,8 @@ namespace RootMotion.FinalIK {
             }
 
 			for (int i = 0; i < rotations.Length; i++) {
-				this.solvedPositions[i] = positions[i];
-				this.solvedRotations[i] = rotations[i];
+				solvedPositions[i] = positions[i];
+				solvedRotations[i] = rotations[i];
 			}
 
 			if (!initiated) {

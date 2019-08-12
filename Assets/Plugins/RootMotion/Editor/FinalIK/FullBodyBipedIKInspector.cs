@@ -10,16 +10,12 @@ using System.Collections;
 	[CustomEditor(typeof(FullBodyBipedIK))]
 	public class FullBodyBipedIKInspector : IKInspector {
 
-		private FullBodyBipedIK script { get { return target as FullBodyBipedIK; }}
+		private FullBodyBipedIK script => target as FullBodyBipedIK;
 		private int selectedEffector;
 		private SerializedProperty references;
 		private bool autodetected;
 
-		private static Color color {
-			get {
-				return new Color(0f, 0.75f, 1f);
-			}
-		}
+		private static Color color => new Color(0f, 0.75f, 1f);
 
 		protected override MonoBehaviour GetMonoBehaviour(out int executionOrder) {
 			executionOrder = 9999;

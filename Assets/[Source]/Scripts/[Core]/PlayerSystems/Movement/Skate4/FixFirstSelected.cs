@@ -16,30 +16,30 @@ public class FixFirstSelected : MonoBehaviour
 
 	private void OnDisable()
 	{
-		if (this.es.currentSelectedGameObject != null)
+		if (es.currentSelectedGameObject != null)
 		{
-			this.selected = this.es.currentSelectedGameObject;
+			selected = es.currentSelectedGameObject;
 		}
 	}
 
 	private void OnEnable()
 	{
-		this.es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
-		this.es.SetSelectedGameObject(null);
-		if (this.selected == null)
+		es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+		es.SetSelectedGameObject(null);
+		if (selected == null)
 		{
-			this.selected = this.es.firstSelectedGameObject;
+			selected = es.firstSelectedGameObject;
 		}
-		this.doSet = true;
+		doSet = true;
 	}
 
 	private void Update()
 	{
-		if (this.doSet)
+		if (doSet)
 		{
-			this.es.SetSelectedGameObject(this.selected);
-			Debug.Log(this.selected.name);
+			es.SetSelectedGameObject(selected);
+			Debug.Log(selected.name);
 		}
-		this.doSet = false;
+		doSet = false;
 	}
 }

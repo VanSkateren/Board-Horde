@@ -5,13 +5,7 @@ public class PlayerPrefsManager : MonoBehaviour
 {
 	private static PlayerPrefsManager _instance;
 
-	public static PlayerPrefsManager Instance
-	{
-		get
-		{
-			return PlayerPrefsManager._instance;
-		}
-	}
+	public static PlayerPrefsManager Instance => _instance;
 
 	public PlayerPrefsManager()
 	{
@@ -19,15 +13,15 @@ public class PlayerPrefsManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if (!(PlayerPrefsManager._instance != null) || !(PlayerPrefsManager._instance != this))
+		if (!(_instance != null) || !(_instance != this))
 		{
-			PlayerPrefsManager._instance = this;
+			_instance = this;
 		}
 		else
 		{
-			UnityEngine.Object.Destroy(base.gameObject);
+			Destroy(gameObject);
 		}
-		this.IncrementPlaySessions();
+		IncrementPlaySessions();
 	}
 
 	private void IncrementPlaySessions()

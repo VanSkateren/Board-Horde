@@ -27,19 +27,19 @@ public class CoMDisplacement : MonoBehaviour
 
 	public float GetDisplacement(float p_timeStep)
 	{
-		this._lastValue = this._currentValue;
-		this._currentValue = this._displacementCurve.Evaluate(p_timeStep);
-		this.sum = this.sum + (this._currentValue - this._lastValue) * this._curveScalar;
-		return (this._currentValue - this._lastValue) * this._curveScalar;
+		_lastValue = _currentValue;
+		_currentValue = _displacementCurve.Evaluate(p_timeStep);
+		sum = sum + (_currentValue - _lastValue) * _curveScalar;
+		return (_currentValue - _lastValue) * _curveScalar;
 	}
 
 	public void ScaleDisplacementCurve(float p_skaterHeight)
 	{
-		p_skaterHeight = Mathf.Clamp(p_skaterHeight, this._lowestCoMHeight, this._targetCoMHeight);
-		this._curveScalar = 1f - (p_skaterHeight - this._lowestCoMHeight) / (this._targetCoMHeight - this._lowestCoMHeight);
-		this._lastValue = 0f;
-		this._currentValue = 0f;
-		this._curveScalar = Mathf.Clamp(this._curveScalar, 0f, 1f);
-		this.sum = 0f;
+		p_skaterHeight = Mathf.Clamp(p_skaterHeight, _lowestCoMHeight, _targetCoMHeight);
+		_curveScalar = 1f - (p_skaterHeight - _lowestCoMHeight) / (_targetCoMHeight - _lowestCoMHeight);
+		_lastValue = 0f;
+		_currentValue = 0f;
+		_curveScalar = Mathf.Clamp(_curveScalar, 0f, 1f);
+		sum = 0f;
 	}
 }

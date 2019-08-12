@@ -40,7 +40,7 @@ namespace RootMotion.FinalIK
         public void Setup(Animator animator, Transform[] bones, Transform target, Transform poleTarget, Transform aimTransform)
         {
             this.bones = new NativeArray<TransformStreamHandle>(bones.Length, Allocator.Persistent);
-            this.boneWeights = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
+            boneWeights = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
             
             for (int i = 0; i < this.bones.Length; i++)
             {
@@ -53,7 +53,7 @@ namespace RootMotion.FinalIK
                 var boneParams = bones[i].gameObject.GetComponent<IKJBoneParams>();
                 if (boneParams == null) boneParams = bones[i].gameObject.AddComponent<IKJBoneParams>();
 
-                this.boneWeights[i] = animator.BindSceneProperty(bones[i].transform, typeof(IKJBoneParams), "weight");
+                boneWeights[i] = animator.BindSceneProperty(bones[i].transform, typeof(IKJBoneParams), "weight");
             }
 
             // Rotation Limits
@@ -103,34 +103,34 @@ namespace RootMotion.FinalIK
         private void SetUpRotationLimits(Animator animator, Transform[] bones)
         {
             // All limits
-            this.limitDefaultLocalRotationArray = new NativeArray<Quaternion>(bones.Length, Allocator.Persistent);
-            this.limitAxisArray = new NativeArray<Vector3>(bones.Length, Allocator.Persistent);
+            limitDefaultLocalRotationArray = new NativeArray<Quaternion>(bones.Length, Allocator.Persistent);
+            limitAxisArray = new NativeArray<Vector3>(bones.Length, Allocator.Persistent);
 
             // Hinge
-            this.hingeFlags = new NativeArray<int>(bones.Length, Allocator.Persistent);
-            this.hingeMinArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
-            this.hingeMaxArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
-            this.hingeUseLimitsArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
-            this.hingeLastRotations = new NativeArray<Quaternion>(bones.Length, Allocator.Persistent);
-            this.hingeLastAngles = new NativeArray<float>(bones.Length, Allocator.Persistent);
+            hingeFlags = new NativeArray<int>(bones.Length, Allocator.Persistent);
+            hingeMinArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
+            hingeMaxArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
+            hingeUseLimitsArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
+            hingeLastRotations = new NativeArray<Quaternion>(bones.Length, Allocator.Persistent);
+            hingeLastAngles = new NativeArray<float>(bones.Length, Allocator.Persistent);
 
             // Angle
-            this.angleFlags = new NativeArray<int>(bones.Length, Allocator.Persistent);
-            this.angleSecondaryAxisArray = new NativeArray<Vector3>(bones.Length, Allocator.Persistent);
-            this.angleLimitArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
-            this.angleTwistLimitArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
+            angleFlags = new NativeArray<int>(bones.Length, Allocator.Persistent);
+            angleSecondaryAxisArray = new NativeArray<Vector3>(bones.Length, Allocator.Persistent);
+            angleLimitArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
+            angleTwistLimitArray = new NativeArray<PropertySceneHandle>(bones.Length, Allocator.Persistent);
 
             for (int i = 0; i < bones.Length - 1; i++)
             {
-                this.hingeFlags[i] = 0;
-                this.angleFlags[i] = 0;
+                hingeFlags[i] = 0;
+                angleFlags[i] = 0;
 
                 var limit = bones[i].GetComponent<RotationLimit>();
                 if (limit != null)
                 {
                     // All limits
-                    this.limitDefaultLocalRotationArray[i] = bones[i].localRotation;
-                    this.limitAxisArray[i] = limit.axis;
+                    limitDefaultLocalRotationArray[i] = bones[i].localRotation;
+                    limitAxisArray[i] = limit.axis;
 
                     limit.Disable();
 
@@ -139,12 +139,12 @@ namespace RootMotion.FinalIK
                     {
                         //var hinge = limit as RotationLimitHinge;
 
-                        this.hingeFlags[i] = 1;
-                        this.hingeMinArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitHinge), "min");
-                        this.hingeMaxArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitHinge), "max");
-                        this.hingeUseLimitsArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitHinge), "useLimits");
-                        this.hingeLastRotations[i] = bones[i].localRotation;
-                        this.hingeLastAngles[i] = 0f;
+                        hingeFlags[i] = 1;
+                        hingeMinArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitHinge), "min");
+                        hingeMaxArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitHinge), "max");
+                        hingeUseLimitsArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitHinge), "useLimits");
+                        hingeLastRotations[i] = bones[i].localRotation;
+                        hingeLastAngles[i] = 0f;
                     }
 
                     // Angle
@@ -152,10 +152,10 @@ namespace RootMotion.FinalIK
                     {
                         var angle = limit as RotationLimitAngle;
 
-                        this.angleFlags[i] = 1;
-                        this.angleSecondaryAxisArray[i] = angle.secondaryAxis;
-                        this.angleLimitArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitAngle), "limit");
-                        this.angleTwistLimitArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitAngle), "twistLimit");
+                        angleFlags[i] = 1;
+                        angleSecondaryAxisArray[i] = angle.secondaryAxis;
+                        angleLimitArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitAngle), "limit");
+                        angleTwistLimitArray[i] = animator.BindSceneProperty(bones[i].transform, typeof(RotationLimitAngle), "twistLimit");
 
                     }
                 }

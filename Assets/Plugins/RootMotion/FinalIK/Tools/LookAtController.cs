@@ -111,11 +111,7 @@ namespace RootMotion.FinalIK {
 		}
 
 		// Pivot of rotating the aiming direction.
-		private Vector3 pivot {
-			get {
-				return ik.transform.position + ik.transform.rotation * pivotOffsetFromRoot;
-			}
-		}
+		private Vector3 pivot => ik.transform.position + ik.transform.rotation * pivotOffsetFromRoot;
 
 		// Make sure aiming target is not too close (might make the solver instable when the target is closer to the first bone than the last bone is).
 		void ApplyMinDistance() {

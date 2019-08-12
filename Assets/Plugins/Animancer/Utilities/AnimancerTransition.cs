@@ -24,8 +24,8 @@ namespace Animancer
         /// <summary>The details of the state that this transition will create.</summary>
         public TSerializable Animation
         {
-            get { return _Animation; }
-            set { _Animation = value; }
+            get => _Animation;
+            set => _Animation = value;
         }
 
         /************************************************************************************************************************/
@@ -33,8 +33,8 @@ namespace Animancer
         /// <summary>The amount of time the transition should take (in seconds).</summary>
         public float FadeDuration
         {
-            get { return _Animation.FadeDuration; }
-            set { _Animation.FadeDuration = value; }
+            get => _Animation.FadeDuration;
+            set => _Animation.FadeDuration = value;
         }
 
         /************************************************************************************************************************/
@@ -42,13 +42,13 @@ namespace Animancer
         /// <summary>
         /// The <see cref="AnimancerState.Key"/> which the created state will be registered with.
         /// </summary>
-        public object Key { get { return _Animation.Key; } }
+        public object Key => _Animation.Key;
 
         /// <summary>
         /// When a serializable is passed into <see cref="AnimancerPlayable.Transition"/>, this property
         /// determines whether it needs to fade in from the start of the animation.
         /// </summary>
-        public bool CrossFadeFromStart { get { return _Animation.CrossFadeFromStart; } }
+        public bool CrossFadeFromStart => _Animation.CrossFadeFromStart;
 
         /// <summary>
         /// Creates and returns a new <typeparamref name="TState"/> connected to the 'layer'.
@@ -90,8 +90,8 @@ namespace Animancer
         /// <summary>The animation to play.</summary>
         public AnimationClip Clip
         {
-            get { return Animation.Clip; }
-            set { Animation.Clip = value; }
+            get => Animation.Clip;
+            set => Animation.Clip = value;
         }
 
         /************************************************************************************************************************/
@@ -99,8 +99,8 @@ namespace Animancer
         /// <summary>Determines how fast the animation plays (default = 1).</summary>
         public float Speed
         {
-            get { return Animation.Speed; }
-            set { Animation.Speed = value; }
+            get => Animation.Speed;
+            set => Animation.Speed = value;
         }
 
         /************************************************************************************************************************/

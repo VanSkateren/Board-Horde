@@ -24,7 +24,7 @@ namespace UltEvents
         /// </summary>
         public float Delay
         {
-            get { return _Delay; }
+            get => _Delay;
             set
             {
                 _Delay = value;

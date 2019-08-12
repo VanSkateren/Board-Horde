@@ -26,7 +26,7 @@ namespace Sirenix.OdinInspector.Editor
 #endif
     {
 
-        public int callbackOrder { get { return -1500; } }
+        public int callbackOrder => -1500;
 
         private static void ConfigureImportSettings()
         {

@@ -76,87 +76,87 @@ public class PlayerState_Pop : PlayerState_OnBoard
 
 	public PlayerState_Pop(StickInput p_popStick, StickInput p_flipStick, bool p_forwardLoad, float p_invertVel, PlayerController.SetupDir p_setupDir, float p_augmentedLeftAngle, float p_augmentedRightAngle, float p_kickAddSoFar)
 	{
-		this._popStick = p_popStick;
-		this._flipStick = p_flipStick;
-		this._forwardLoad = p_forwardLoad;
-		this._setupDir = p_setupDir;
-		this._augmentedLeftAngle = p_augmentedLeftAngle;
-		this._augmentedRightAngle = p_augmentedRightAngle;
-		this._kickAddSoFar = p_kickAddSoFar;
+		_popStick = p_popStick;
+		_flipStick = p_flipStick;
+		_forwardLoad = p_forwardLoad;
+		_setupDir = p_setupDir;
+		_augmentedLeftAngle = p_augmentedLeftAngle;
+		_augmentedRightAngle = p_augmentedRightAngle;
+		_kickAddSoFar = p_kickAddSoFar;
 	}
 
 	public PlayerState_Pop(StickInput p_popStick, StickInput p_flipStick, bool p_wasGrinding, bool p_forwardLoad, float p_invertVel, PlayerController.SetupDir p_setupDir, float p_augmentedLeftAngle, float p_augmentedRightAngle, float p_popVel, float p_toeAxis, float p_popDir, float p_kickAddSoFar)
 	{
-		this._popStick = p_popStick;
-		this._flipStick = p_flipStick;
-		this._wasGrinding = p_wasGrinding;
-		this._forwardLoad = p_forwardLoad;
-		this._invertVel = p_invertVel;
-		this._setupDir = p_setupDir;
-		this._augmentedLeftAngle = p_augmentedLeftAngle;
-		this._augmentedRightAngle = p_augmentedRightAngle;
-		this._popVel = p_popVel;
-		this._toeAxis = p_toeAxis;
-		this._popDir = p_popDir;
-		this._kickAddSoFar = p_kickAddSoFar;
+		_popStick = p_popStick;
+		_flipStick = p_flipStick;
+		_wasGrinding = p_wasGrinding;
+		_forwardLoad = p_forwardLoad;
+		_invertVel = p_invertVel;
+		_setupDir = p_setupDir;
+		_augmentedLeftAngle = p_augmentedLeftAngle;
+		_augmentedRightAngle = p_augmentedRightAngle;
+		_popVel = p_popVel;
+		_toeAxis = p_toeAxis;
+		_popDir = p_popDir;
+		_kickAddSoFar = p_kickAddSoFar;
 	}
 
 	public PlayerState_Pop(StickInput p_popStick, StickInput p_flipStick, Vector2 p_initialFlipDir, float p_flipVel, float p_popVel, float p_toeAxis, float p_popDir, bool p_flipDetected, float p_flip, bool p_forwardLoad, float p_invertVel, PlayerController.SetupDir p_setupDir, float p_augmentedLeftAngle, float p_augmentedRightAngle, float p_kickAddSoFar)
 	{
-		this._popStick = p_popStick;
-		this._flipStick = p_flipStick;
-		this._potentialFlip = false;
-		this._flipDetected = p_flipDetected;
-		this._initialFlipDir = p_initialFlipDir;
-		this._toeAxis = p_toeAxis;
-		this._popDir = p_popDir;
-		this._flipVel = p_flipVel;
-		this._popVel = p_popVel;
-		this._flip = p_flip;
-		this._forwardLoad = p_forwardLoad;
-		this._invertVel = p_invertVel;
-		this._setupDir = p_setupDir;
-		this._augmentedLeftAngle = p_augmentedLeftAngle;
-		this._augmentedRightAngle = p_augmentedRightAngle;
-		this._kickAddSoFar = p_kickAddSoFar;
+		_popStick = p_popStick;
+		_flipStick = p_flipStick;
+		_potentialFlip = false;
+		_flipDetected = p_flipDetected;
+		_initialFlipDir = p_initialFlipDir;
+		_toeAxis = p_toeAxis;
+		_popDir = p_popDir;
+		_flipVel = p_flipVel;
+		_popVel = p_popVel;
+		_flip = p_flip;
+		_forwardLoad = p_forwardLoad;
+		_invertVel = p_invertVel;
+		_setupDir = p_setupDir;
+		_augmentedLeftAngle = p_augmentedLeftAngle;
+		_augmentedRightAngle = p_augmentedRightAngle;
+		_kickAddSoFar = p_kickAddSoFar;
 	}
 
 	public PlayerState_Pop(StickInput p_popStick, StickInput p_flipStick, Vector2 p_initialFlipDir, float p_flipVel, float p_popVel, float p_toeAxis, float p_popDir, bool p_flipDetected, float p_flip, bool p_wasGrinding, bool p_forwardLoad, float p_invertVel, PlayerController.SetupDir p_setupDir, float p_augmentedLeftAngle, float p_augmentedRightAngle, float p_kickAddSoFar)
 	{
-		this._popStick = p_popStick;
-		this._flipStick = p_flipStick;
-		this._potentialFlip = false;
-		this._flipDetected = p_flipDetected;
-		this._initialFlipDir = p_initialFlipDir;
-		this._toeAxis = p_toeAxis;
-		this._popDir = p_popDir;
-		this._flipVel = p_flipVel;
-		this._popVel = p_popVel;
-		this._flip = p_flip;
-		this._wasGrinding = p_wasGrinding;
-		this._forwardLoad = p_forwardLoad;
-		this._invertVel = p_invertVel;
-		this._setupDir = p_setupDir;
-		this._augmentedLeftAngle = p_augmentedLeftAngle;
-		this._augmentedRightAngle = p_augmentedRightAngle;
-		this._kickAddSoFar = p_kickAddSoFar;
+		_popStick = p_popStick;
+		_flipStick = p_flipStick;
+		_potentialFlip = false;
+		_flipDetected = p_flipDetected;
+		_initialFlipDir = p_initialFlipDir;
+		_toeAxis = p_toeAxis;
+		_popDir = p_popDir;
+		_flipVel = p_flipVel;
+		_popVel = p_popVel;
+		_flip = p_flip;
+		_wasGrinding = p_wasGrinding;
+		_forwardLoad = p_forwardLoad;
+		_invertVel = p_invertVel;
+		_setupDir = p_setupDir;
+		_augmentedLeftAngle = p_augmentedLeftAngle;
+		_augmentedRightAngle = p_augmentedRightAngle;
+		_kickAddSoFar = p_kickAddSoFar;
 	}
 
 	private void AddForwardVel()
 	{
 		float single = 15f;
-		float single1 = Mathf.Clamp(Mathf.Abs(this._popVel) / single, -1f, 1f);
-		float single2 = (1f - single1) * this._invertVel;
+		float single1 = Mathf.Clamp(Mathf.Abs(_popVel) / single, -1f, 1f);
+		float single2 = (1f - single1) * _invertVel;
 		PlayerController.Instance.AddForwardSpeed(single2);
 	}
 
 	public override bool CanGrind()
 	{
-		if (!this._checkForCollisions)
+		if (!_checkForCollisions)
 		{
 			return false;
 		}
-		return !this._flipDetected;
+		return !_flipDetected;
 	}
 
 	public override void Enter()
@@ -180,27 +180,27 @@ public class PlayerState_Pop : PlayerState_OnBoard
 	{
 		PlayerController.Instance.comController.UpdateCOM();
 		base.FixedUpdate();
-		this._scoopFlipInputWindowTimer += Time.deltaTime;
-		this._popRotationRemovalTimer += Time.deltaTime;
-		if (!this._popRotationDone)
+		_scoopFlipInputWindowTimer += Time.deltaTime;
+		_popRotationRemovalTimer += Time.deltaTime;
+		if (!_popRotationDone)
 		{
-			this.KickAdd();
-			if (this._popRotationRemovalTimer >= 0.04f)
+			KickAdd();
+			if (_popRotationRemovalTimer >= 0.04f)
 			{
-				this.KillPopRotation();
+				KillPopRotation();
 			}
 		}
-		if (!this._scooppFlipInputWindowDone)
+		if (!_scooppFlipInputWindowDone)
 		{
-			if (this._scoopFlipInputWindowTimer >= PlayerController.Instance.scoopFlipWindowNoFlipDetected + (this._flipDetected ? 0.075f : 0f))
+			if (_scoopFlipInputWindowTimer >= PlayerController.Instance.scoopFlipWindowNoFlipDetected + (_flipDetected ? 0.075f : 0f))
 			{
-				this._scooppFlipInputWindowDone = true;
-				this.AddForwardVel();
-				if (this._flipDetected || PlayerController.Instance.animationController.skaterAnim.GetBool("Released"))
+				_scooppFlipInputWindowDone = true;
+				AddForwardVel();
+				if (_flipDetected || PlayerController.Instance.animationController.skaterAnim.GetBool("Released"))
 				{
-					if (!this._popRotationDone)
+					if (!_popRotationDone)
 					{
-						this.KillPopRotation();
+						KillPopRotation();
 					}
 					PlayerController.Instance.playerSM.OnNextStateSM();
 					PlayerController.Instance.SetLeftIKLerpTarget(1f);
@@ -208,18 +208,18 @@ public class PlayerState_Pop : PlayerState_OnBoard
 				}
 			}
 		}
-		if (!this._checkForCollisions)
+		if (!_checkForCollisions)
 		{
-			this._collisionTimer += Time.deltaTime;
-			if (this._collisionTimer > 0.2f)
+			_collisionTimer += Time.deltaTime;
+			if (_collisionTimer > 0.2f)
 			{
-				this._checkForCollisions = true;
+				_checkForCollisions = true;
 			}
 		}
-		this._timer += Time.deltaTime;
+		_timer += Time.deltaTime;
 		if (PlayerController.Instance.GetAnimReleased())
 		{
-			if (this._popRotationDone)
+			if (_popRotationDone)
 			{
 				PlayerController.Instance.FlipTrickRotation();
 			}
@@ -230,9 +230,9 @@ public class PlayerState_Pop : PlayerState_OnBoard
 		}
 		if (!PlayerController.Instance.GetAnimReleased())
 		{
-			if (!this._wasGrinding)
+			if (!_wasGrinding)
 			{
-				if (!this._popRotationDone)
+				if (!_popRotationDone)
 				{
 					PlayerController.Instance.boardController.Rotate(true, false);
 					return;
@@ -241,7 +241,7 @@ public class PlayerState_Pop : PlayerState_OnBoard
 				PlayerController.Instance.boardController.UpdateReferenceBoardTargetRotation();
 				return;
 			}
-			if (!this._popRotationDone)
+			if (!_popRotationDone)
 			{
 				PlayerController.Instance.boardController.Rotate(true, false);
 				return;
@@ -255,47 +255,47 @@ public class PlayerState_Pop : PlayerState_OnBoard
 	{
 		if (p_stick.IsRightStick)
 		{
-			return this._augmentedRightAngle;
+			return _augmentedRightAngle;
 		}
-		return this._augmentedLeftAngle;
+		return _augmentedLeftAngle;
 	}
 
 	public override StickInput GetPopStick()
 	{
-		return this._popStick;
+		return _popStick;
 	}
 
 	private void KickAdd()
 	{
 		float single = 15f;
-		float single1 = Mathf.Clamp(Mathf.Abs(this._popVel) / single, -0.7f, 0.7f);
+		float single1 = Mathf.Clamp(Mathf.Abs(_popVel) / single, -0.7f, 0.7f);
 		float single2 = 1.1f;
-		if (this._wasGrinding)
+		if (_wasGrinding)
 		{
 			single2 *= 0.5f;
 		}
-		float single3 = single2 - single2 * single1 - this._kickAddSoFar;
-		this._kickAddSoFar += single3;
-		PlayerController.Instance.DoKick(this._forwardLoad, single3);
+		float single3 = single2 - single2 * single1 - _kickAddSoFar;
+		_kickAddSoFar += single3;
+		PlayerController.Instance.DoKick(_forwardLoad, single3);
 	}
 
 	private void KillPopRotation()
 	{
 		float single = 15f;
-		float single1 = Mathf.Clamp(Mathf.Abs(Mathf.Abs(this._popVel)) / single, -1f, 1f);
+		float single1 = Mathf.Clamp(Mathf.Abs(Mathf.Abs(_popVel)) / single, -1f, 1f);
 		float single2 = 1.2f;
-		if (this._wasGrinding)
+		if (_wasGrinding)
 		{
 			single2 *= 0.5f;
 		}
 		float single3 = single2 - single2 * single1;
-		PlayerController.Instance.DoKick(!this._forwardLoad, single3);
-		this._popRotationDone = true;
+		PlayerController.Instance.DoKick(!_forwardLoad, single3);
+		_popRotationDone = true;
 	}
 
 	public override bool LeftFootOff()
 	{
-		return !this._leftOn;
+		return !_leftOn;
 	}
 
 	public override void OnAnimatorUpdate()
@@ -304,7 +304,7 @@ public class PlayerState_Pop : PlayerState_OnBoard
 
 	public override void OnCanManual()
 	{
-		this._canManual = true;
+		_canManual = true;
 	}
 
 	public override void OnCollisionStayEvent()
@@ -314,104 +314,104 @@ public class PlayerState_Pop : PlayerState_OnBoard
 	public override void OnFlipStickUpdate()
 	{
 		float single;
-		if (!this._scooppFlipInputWindowDone)
+		if (!_scooppFlipInputWindowDone)
 		{
 			float single1 = 0f;
 			PlayerController instance = PlayerController.Instance;
-			ref bool flagPointer = ref this._potentialFlip;
-			ref Vector2 vector2Pointer = ref this._initialFlipDir;
-			ref int numPointer = ref this._flipFrameCount;
-			ref int numPointer1 = ref this._flipFrameMax;
-			ref float singlePointer = ref this._toeAxis;
-			ref float singlePointer1 = ref this._flipVel;
-			ref float singlePointer2 = ref this._popVel;
-			ref float singlePointer3 = ref this._popDir;
-			ref float singlePointer4 = ref this._flip;
-			StickInput stickInput = this._flipStick;
-			ref float singlePointer5 = ref this._invertVel;
-			single = (this._popStick.IsRightStick ? this._augmentedLeftAngle : this._augmentedRightAngle);
-			instance.OnFlipStickUpdate(ref this._flipDetected, ref flagPointer, ref vector2Pointer, ref numPointer, ref numPointer1, ref singlePointer, ref singlePointer1, ref singlePointer2, ref singlePointer3, ref singlePointer4, stickInput, true, false, ref singlePointer5, single, this._scooppFlipInputWindowDone, this._forwardLoad, ref single1);
+			ref bool flagPointer = ref _potentialFlip;
+			ref Vector2 vector2Pointer = ref _initialFlipDir;
+			ref int numPointer = ref _flipFrameCount;
+			ref int numPointer1 = ref _flipFrameMax;
+			ref float singlePointer = ref _toeAxis;
+			ref float singlePointer1 = ref _flipVel;
+			ref float singlePointer2 = ref _popVel;
+			ref float singlePointer3 = ref _popDir;
+			ref float singlePointer4 = ref _flip;
+			StickInput stickInput = _flipStick;
+			ref float singlePointer5 = ref _invertVel;
+			single = (_popStick.IsRightStick ? _augmentedLeftAngle : _augmentedRightAngle);
+			instance.OnFlipStickUpdate(ref _flipDetected, ref flagPointer, ref vector2Pointer, ref numPointer, ref numPointer1, ref singlePointer, ref singlePointer1, ref singlePointer2, ref singlePointer3, ref singlePointer4, stickInput, true, false, ref singlePointer5, single, _scooppFlipInputWindowDone, _forwardLoad, ref single1);
 		}
 	}
 
 	public override void OnGrindDetected()
 	{
-		if (!this._wasGrinding && this._checkForCollisions && !this._flipDetected)
+		if (!_wasGrinding && _checkForCollisions && !_flipDetected)
 		{
-			base.DoTransition(typeof(PlayerState_Grinding), null);
+			DoTransition(typeof(PlayerState_Grinding), null);
 		}
 	}
 
 	public override void OnLeftStickCenteredUpdate()
 	{
-		if (this._scooppFlipInputWindowDone && !this._leftCaught)
+		if (_scooppFlipInputWindowDone && !_leftCaught)
 		{
-			this._leftCaught = true;
-			if (this._rightCaught)
+			_leftCaught = true;
+			if (_rightCaught)
 			{
-				this._rightCaughtFirst = true;
-				this._catchRegistered = true;
+				_rightCaughtFirst = true;
+				_catchRegistered = true;
 			}
 		}
 	}
 
 	public override void OnNextState()
 	{
-		if (!this._wasGrinding)
+		if (!_wasGrinding)
 		{
-			object[] objArray = new object[] { this._popStick, this._flipStick, this._initialFlipDir, this._flipVel, this._popVel, this._toeAxis, this._popDir, this._flipDetected, this._flip, this._forwardLoad, this._invertVel, this._setupDir, this._catchRegistered, this._leftCaughtFirst, this._rightCaughtFirst };
-			base.DoTransition(typeof(PlayerState_Released), objArray);
+			object[] objArray = new object[] { _popStick, _flipStick, _initialFlipDir, _flipVel, _popVel, _toeAxis, _popDir, _flipDetected, _flip, _forwardLoad, _invertVel, _setupDir, _catchRegistered, _leftCaughtFirst, _rightCaughtFirst };
+			DoTransition(typeof(PlayerState_Released), objArray);
 			return;
 		}
-		object[] objArray1 = new object[] { this._popStick, this._flipStick, this._initialFlipDir, this._flipVel, this._popVel, this._toeAxis, this._popDir, this._flipDetected, this._flip, this._forwardLoad, this._invertVel, this._setupDir, this._wasGrinding, this._catchRegistered, this._leftCaughtFirst, this._rightCaughtFirst };
-		base.DoTransition(typeof(PlayerState_Released), objArray1);
+		object[] objArray1 = new object[] { _popStick, _flipStick, _initialFlipDir, _flipVel, _popVel, _toeAxis, _popDir, _flipDetected, _flip, _forwardLoad, _invertVel, _setupDir, _wasGrinding, _catchRegistered, _leftCaughtFirst, _rightCaughtFirst };
+		DoTransition(typeof(PlayerState_Released), objArray1);
 	}
 
 	public override void OnPopStickUpdate()
 	{
 		float single;
-		if (!this._scooppFlipInputWindowDone)
+		if (!_scooppFlipInputWindowDone)
 		{
 			PlayerController instance = PlayerController.Instance;
 			bool flag = PlayerController.Instance.IsGrounded();
-			StickInput stickInput = this._popStick;
-			bool flag1 = this._forwardLoad;
-			ref PlayerController.SetupDir setupDirPointer = ref this._setupDir;
-			ref float singlePointer = ref this._invertVel;
-			single = (this._popStick.IsRightStick ? this._augmentedRightAngle : this._augmentedLeftAngle);
-			instance.OnPopStickUpdate(0.1f, flag, stickInput, ref this._popVel, 10f, flag1, ref setupDirPointer, ref singlePointer, single);
+			StickInput stickInput = _popStick;
+			bool flag1 = _forwardLoad;
+			ref PlayerController.SetupDir setupDirPointer = ref _setupDir;
+			ref float singlePointer = ref _invertVel;
+			single = (_popStick.IsRightStick ? _augmentedRightAngle : _augmentedLeftAngle);
+			instance.OnPopStickUpdate(0.1f, flag, stickInput, ref _popVel, 10f, flag1, ref setupDirPointer, ref singlePointer, single);
 		}
 	}
 
 	public override void OnPredictedCollisionEvent()
 	{
-		if (!this._flipDetected && this._checkForCollisions)
+		if (!_flipDetected && _checkForCollisions)
 		{
 			PlayerController.Instance.SetBoardToMaster();
 			PlayerController.Instance.SetTurningMode(InputController.TurningMode.Grounded);
 			PlayerController.Instance.AnimOllieTransition(false);
 			PlayerController.Instance.AnimSetupTransition(false);
-			base.DoTransition(typeof(PlayerState_Impact), null);
+			DoTransition(typeof(PlayerState_Impact), null);
 			PlayerController.Instance.skaterController.AddCollisionOffset();
 		}
 	}
 
 	public override void OnRightStickCenteredUpdate()
 	{
-		if (this._scooppFlipInputWindowDone && !this._rightCaught)
+		if (_scooppFlipInputWindowDone && !_rightCaught)
 		{
-			this._rightCaught = true;
-			if (this._leftCaught)
+			_rightCaught = true;
+			if (_leftCaught)
 			{
-				this._leftCaughtFirst = true;
-				this._catchRegistered = true;
+				_leftCaughtFirst = true;
+				_catchRegistered = true;
 			}
 		}
 	}
 
 	public override void OnStickFixedUpdate(StickInput p_leftStick, StickInput p_rightStick)
 	{
-		if (this._scooppFlipInputWindowDone)
+		if (_scooppFlipInputWindowDone)
 		{
 			switch (SettingsManager.Instance.controlType)
 			{
@@ -596,40 +596,40 @@ public class PlayerState_Pop : PlayerState_OnBoard
 		{
 			if (!p_right)
 			{
-				if (this._leftOn && this._rightOn)
+				if (_leftOn && _rightOn)
 				{
 					PlayerController.Instance.SetLeftIKLerpTarget(1f, 1f);
 					PlayerController.Instance.SetLeftSteezeWeight(1f);
 					PlayerController.Instance.SetMaxSteezeLeft(1f);
-					this._leftOn = false;
+					_leftOn = false;
 					return;
 				}
-				if (!this._leftOn && this._rightOn)
+				if (!_leftOn && _rightOn)
 				{
 					SoundManager.Instance.PlayCatchSound();
 					PlayerController.Instance.SetLeftIKLerpTarget(0f, 0f);
 					PlayerController.Instance.SetLeftSteezeWeight(0f);
 					PlayerController.Instance.SetMaxSteezeLeft(0f);
-					this._leftOn = true;
+					_leftOn = true;
 				}
 			}
 			else
 			{
-				if (this._rightOn && this._leftOn)
+				if (_rightOn && _leftOn)
 				{
 					PlayerController.Instance.SetRightIKLerpTarget(1f, 1f);
 					PlayerController.Instance.SetRightSteezeWeight(1f);
 					PlayerController.Instance.SetMaxSteezeRight(1f);
-					this._rightOn = false;
+					_rightOn = false;
 					return;
 				}
-				if (!this._rightOn && this._leftOn)
+				if (!_rightOn && _leftOn)
 				{
 					SoundManager.Instance.PlayCatchSound();
 					PlayerController.Instance.SetRightIKLerpTarget(0f, 0f);
 					PlayerController.Instance.SetRightSteezeWeight(0f);
 					PlayerController.Instance.SetMaxSteezeRight(0f);
-					this._rightOn = true;
+					_rightOn = true;
 					return;
 				}
 			}
@@ -649,7 +649,7 @@ public class PlayerState_Pop : PlayerState_OnBoard
 
 	public override bool RightFootOff()
 	{
-		return !this._rightOn;
+		return !_rightOn;
 	}
 
 	public override void SendEventEndFlipPeriod()
@@ -658,31 +658,31 @@ public class PlayerState_Pop : PlayerState_OnBoard
 
 	public override void SendEventExtend(float value)
 	{
-		if (!this._wasGrinding)
+		if (!_wasGrinding)
 		{
-			if (this._leftOn && this._rightOn)
+			if (_leftOn && _rightOn)
 			{
 				object[] objArray = new object[] { 1 };
-				base.DoTransition(typeof(PlayerState_InAir), objArray);
+				DoTransition(typeof(PlayerState_InAir), objArray);
 				return;
 			}
-			object[] objArray1 = new object[] { this._wasGrinding, this._leftOn, this._rightOn, true };
-			base.DoTransition(typeof(PlayerState_InAir), objArray1);
+			object[] objArray1 = new object[] { _wasGrinding, _leftOn, _rightOn, true };
+			DoTransition(typeof(PlayerState_InAir), objArray1);
 			return;
 		}
-		if (this._leftOn && this._rightOn)
+		if (_leftOn && _rightOn)
 		{
-			object[] objArray2 = new object[] { this._wasGrinding, 1 };
-			base.DoTransition(typeof(PlayerState_InAir), objArray2);
+			object[] objArray2 = new object[] { _wasGrinding, 1 };
+			DoTransition(typeof(PlayerState_InAir), objArray2);
 			return;
 		}
-		object[] objArray3 = new object[] { this._wasGrinding, this._leftOn, this._rightOn, true };
-		base.DoTransition(typeof(PlayerState_InAir), objArray3);
+		object[] objArray3 = new object[] { _wasGrinding, _leftOn, _rightOn, true };
+		DoTransition(typeof(PlayerState_InAir), objArray3);
 	}
 
 	private void SetPopSteezeWeight()
 	{
-		if (this._popStick.IsRightStick)
+		if (_popStick.IsRightStick)
 		{
 			PlayerController.Instance.SetMaxSteezeRight(1f);
 			return;
@@ -693,14 +693,14 @@ public class PlayerState_Pop : PlayerState_OnBoard
 	public override void Update()
 	{
 		base.Update();
-		if (this._popRotationDone)
+		if (_popRotationDone)
 		{
 			PlayerController.Instance.SetKneeBendWeight(Mathf.Lerp(PlayerController.Instance.GetKneeBendWeight(), 0f, Time.deltaTime * 10f));
 		}
-		this._steezeTimer += Time.deltaTime;
-		if (this._steezeTimer > 0.08f && PlayerController.Instance.GetAnimReleased())
+		_steezeTimer += Time.deltaTime;
+		if (_steezeTimer > 0.08f && PlayerController.Instance.GetAnimReleased())
 		{
-			this.SetPopSteezeWeight();
+			SetPopSteezeWeight();
 		}
 	}
 }

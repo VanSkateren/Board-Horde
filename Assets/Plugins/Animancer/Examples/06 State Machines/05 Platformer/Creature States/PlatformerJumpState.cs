@@ -30,10 +30,7 @@ namespace Animancer.Examples
 
         /************************************************************************************************************************/
 
-        public override float MovementSpeed
-        {
-            get { return Creature.Idle.MovementSpeed; }
-        }
+        public override float MovementSpeed => Creature.Idle.MovementSpeed;
 
         /************************************************************************************************************************/
 

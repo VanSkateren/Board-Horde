@@ -17,7 +17,7 @@ namespace RootMotion.Dynamics {
 			private int index;
 
 			public PuppetUpdateLimit() {
-				this.puppetsPerFrame = 100;
+				puppetsPerFrame = 100;
 			}
 
 			public void Step(int puppetCount) {
@@ -56,11 +56,7 @@ namespace RootMotion.Dynamics {
 		public int currentlyKinematicPuppets { get; private set; }
 		public int currentlyDisabledPuppets { get; private set; }
 
-		public List<PuppetMaster> puppets {
-			get {
-				return _puppets;
-			}
-		}
+		public List<PuppetMaster> puppets => _puppets;
 
 		public void Register(PuppetMaster puppetMaster) {
 			if (_puppets.Contains(puppetMaster)) return;

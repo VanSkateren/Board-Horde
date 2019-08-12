@@ -23,7 +23,7 @@ namespace Animancer.Examples
         private BrainsCreature _Creature;
         public BrainsCreature Creature
         {
-            get { return _Creature; }
+            get => _Creature;
             set
             {
                 if (_Creature == value)
@@ -42,7 +42,7 @@ namespace Animancer.Examples
             }
         }
 
-        public AnimancerComponent Animancer { get { return _Creature.Animancer; } }
+        public AnimancerComponent Animancer => _Creature.Animancer;
 
         /************************************************************************************************************************/
 

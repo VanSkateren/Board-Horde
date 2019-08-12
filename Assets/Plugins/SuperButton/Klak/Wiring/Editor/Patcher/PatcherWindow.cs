@@ -34,7 +34,7 @@ namespace Klak.Wiring.Patcher
         // Open the patcher window with a given patch.
         public static void OpenPatch(Wiring.Patch patch)
         {
-            var window = EditorWindow.GetWindow<PatcherWindow>("Patcher");
+            var window = GetWindow<PatcherWindow>("Patcher");
             window.Initialize(patch);
             window.Show();
         }

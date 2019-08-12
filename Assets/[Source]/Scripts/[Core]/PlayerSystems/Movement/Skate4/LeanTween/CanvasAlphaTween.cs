@@ -13,9 +13,9 @@ public class CanvasAlphaTween : MonoBehaviour
 
 	private void Start()
 	{
-		if (this.canv != null)
+		if (canv != null)
 		{
-			LeanTween.alphaCanvas(this.canv, 0.3f, this.tweenSpeed).setLoopPingPong();
+			LeanTween.alphaCanvas(canv, 0.3f, tweenSpeed).setLoopPingPong();
 		}
 	}
 

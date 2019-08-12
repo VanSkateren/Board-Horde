@@ -81,7 +81,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of states using this node as their <see cref="AnimancerState.Parent"/>.</summary>
-        public virtual int ChildCount { get { return 0; } }
+        public virtual int ChildCount => 0;
 
         /// <summary>
         /// Returns the state connected to the specified 'portIndex' as a child of this node.
@@ -170,7 +170,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>Indicates whether child playables should stay connected to this mixer at all times.</summary>
-        public virtual bool KeepChildrenConnected { get { return false; } }
+        public virtual bool KeepChildrenConnected => false;
 
         /// <summary>
         /// Ensures that all children of this node are connected to the <see cref="_Playable"/>.
@@ -230,7 +230,7 @@ namespace Animancer
         /// <summary>
         /// Indicates whether the <see cref="_Playable"/> is usable (properly initialised and not destroyed).
         /// </summary>
-        public bool IsValid { get { return _Playable.IsValid(); } }
+        public bool IsValid => _Playable.IsValid();
 
         /************************************************************************************************************************/
         // IEnumerable for 'foreach' statements.
@@ -260,7 +260,7 @@ namespace Animancer
         bool IEnumerator.MoveNext() { return IsPlayingAndNotEnding(); }
 
         /// <summary>Returns null.</summary>
-        object IEnumerator.Current { get { return null; } }
+        object IEnumerator.Current => null;
 
         /// <summary>Does nothing.</summary>
         void IEnumerator.Reset() { }
@@ -290,7 +290,7 @@ namespace Animancer
         /// </summary>
         public float Weight
         {
-            get { return _Weight; }
+            get => _Weight;
             set
             {
                 SetWeight(value);

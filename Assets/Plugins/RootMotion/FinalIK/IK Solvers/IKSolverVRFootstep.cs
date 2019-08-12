@@ -15,7 +15,7 @@ namespace RootMotion.FinalIK {
 			public Vector3 position;
 			public Quaternion rotation = Quaternion.identity;
 			public Quaternion stepToRootRot = Quaternion.identity;
-			public bool isStepping { get { return stepProgress < 1f; }}
+			public bool isStepping => stepProgress < 1f;
 			public bool isSupportLeg;
 
 			public float stepProgress { get; private set; }

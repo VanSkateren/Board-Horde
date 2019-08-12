@@ -15,13 +15,7 @@ public class Dbg : MonoBehaviour
 
 	private static Dbg Singleton;
 
-	public static Dbg Instance
-	{
-		get
-		{
-			return Dbg.Singleton;
-		}
-	}
+	public static Dbg Instance => Singleton;
 
 	static Dbg()
 	{
@@ -33,13 +27,13 @@ public class Dbg : MonoBehaviour
 
 	private void Awake()
 	{
-		if (Dbg.Singleton != null)
+		if (Singleton != null)
 		{
 			UnityEngine.Debug.LogError("Multiple Dbg Singletons exist!");
 			return;
 		}
-		Dbg.Singleton = this;
-		this.OutputStream = new StreamWriter(this.LogFile, true);
+		Singleton = this;
+		OutputStream = new StreamWriter(LogFile, true);
 	}
 
 	private void OnApplicationQuit()
@@ -48,10 +42,10 @@ public class Dbg : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		if (this.OutputStream != null)
+		if (OutputStream != null)
 		{
-			this.OutputStream.Close();
-			this.OutputStream = null;
+			OutputStream.Close();
+			OutputStream = null;
 		}
 		UnityEngine.Debug.Log("stopping");
 	}
@@ -60,22 +54,22 @@ public class Dbg : MonoBehaviour
 	[Conditional("PROFILE")]
 	public static void Trace(string Message)
 	{
-		if (Dbg.Instance == null)
+		if (Instance == null)
 		{
 			UnityEngine.Debug.Log(Message);
 			return;
 		}
-		Dbg.Instance.Write(Message);
+		Instance.Write(Message);
 	}
 
 	private void Write(string message)
 	{
-		if (this.OutputStream != null)
+		if (OutputStream != null)
 		{
-			this.OutputStream.WriteLine(message);
-			this.OutputStream.Flush();
+			OutputStream.WriteLine(message);
+			OutputStream.Flush();
 		}
-		if (this.EchoToConsole)
+		if (EchoToConsole)
 		{
 			UnityEngine.Debug.Log(message);
 		}

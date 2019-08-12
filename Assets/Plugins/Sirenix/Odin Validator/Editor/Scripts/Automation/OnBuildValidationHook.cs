@@ -24,7 +24,7 @@ namespace Sirenix.OdinValidator.Editor
     public class BuildEventHookTrigger : IPreprocessBuild
 #endif
     {
-        public int callbackOrder { get { return -2000; } }
+        public int callbackOrder => -2000;
 
         public void OnPreprocessBuild(BuildTarget target, string path)
         {
@@ -53,7 +53,7 @@ namespace Sirenix.OdinValidator.Editor
 
         private static List<Action> Hooks = new List<Action>();
 
-        public string Name { get { return "On Build"; } }
+        public string Name => "On Build";
 
         public void Hook(Action run)
         {

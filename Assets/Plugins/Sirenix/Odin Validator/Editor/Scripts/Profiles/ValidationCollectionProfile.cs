@@ -17,16 +17,16 @@ namespace Sirenix.OdinValidator.Editor
 
         public override IEnumerable<IValidationProfile> GetNestedValidationProfiles()
         {
-            return this.Profiles;
+            return Profiles;
         }
 
         public override IEnumerable<ValidationProfileResult> Validate(ValidationRunner runner)
         {
             float partialProgress = 0f;
-            float partialProgressStepSize = 1f / this.Profiles.Length;
-            for (int i = 0; i < this.Profiles.Length; i++)
+            float partialProgressStepSize = 1f / Profiles.Length;
+            for (int i = 0; i < Profiles.Length; i++)
             {
-                IValidationProfile profile = this.Profiles[i];
+                IValidationProfile profile = Profiles[i];
                 foreach (ValidationProfileResult result in profile.Validate(runner))
                 {
                     result.Progress = result.Progress * partialProgressStepSize + partialProgress;

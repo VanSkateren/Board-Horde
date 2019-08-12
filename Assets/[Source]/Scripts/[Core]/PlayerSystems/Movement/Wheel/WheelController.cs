@@ -1067,24 +1067,12 @@ namespace NWH.WheelController3D
             /// <summary>
             /// The point of contact between the wheel and the ground.
             /// </summary>
-            public Vector3 point
-            {
-                get
-                {
-                    return groundPoint;
-                }
-            }
+            public Vector3 point => groundPoint;
 
             /// <summary>
             /// The normal at the point of contact 
             /// </summary>
-            public Vector3 normal
-            {
-                get
-                {
-                    return raycastHit.normal;
-                }
-            }
+            public Vector3 normal => raycastHit.normal;
 
             /// <summary>
             /// The direction the wheel is pointing in.
@@ -1112,13 +1100,7 @@ namespace NWH.WheelController3D
             public float force;
 
             // WheelCollider compatibility variables
-            public Collider collider
-            {
-                get
-                {
-                    return raycastHit.collider;
-                }
-            }
+            public Collider collider => raycastHit.collider;
         }
         #endregion
 

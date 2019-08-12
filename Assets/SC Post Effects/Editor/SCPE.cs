@@ -42,13 +42,13 @@ namespace SCPE
 
         public static string PACKAGE_ROOT_FOLDER
         {
-            get { return SessionState.GetString(SCPE.ASSET_ABRV + "_BASE_FOLDER", string.Empty); }
-            set { SessionState.SetString(SCPE.ASSET_ABRV + "_BASE_FOLDER", value); }
+            get => SessionState.GetString(ASSET_ABRV + "_BASE_FOLDER", string.Empty);
+            set => SessionState.SetString(ASSET_ABRV + "_BASE_FOLDER", value);
         }
         public static string PACKAGE_PARENT_FOLDER
         {
-            get { return SessionState.GetString(SCPE.ASSET_ABRV + "_PARENT_FOLDER", string.Empty); }
-            set { SessionState.SetString(SCPE.ASSET_ABRV + "_PARENT_FOLDER", value); }
+            get => SessionState.GetString(ASSET_ABRV + "_PARENT_FOLDER", string.Empty);
+            set => SessionState.SetString(ASSET_ABRV + "_PARENT_FOLDER", value);
         }
 
         public enum RenderPipeline
@@ -168,7 +168,7 @@ namespace SCPE
                 if (EditorApplication.isPlaying) return;
 
 #if SCPE
-                SCPE.GetRenderPipeline();
+                GetRenderPipeline();
 #endif
             }
         }
@@ -181,15 +181,15 @@ namespace SCPE
 
             //Truncate to get relative path
             PACKAGE_ROOT_FOLDER = scriptFilePath.Replace("/Editor/SCPE.cs", string.Empty);
-            PACKAGE_PARENT_FOLDER = scriptFilePath.Replace(SCPE.ASSET_NAME + "/Editor/SCPE.cs", string.Empty);
+            PACKAGE_PARENT_FOLDER = scriptFilePath.Replace(ASSET_NAME + "/Editor/SCPE.cs", string.Empty);
 
 #if SCPE_DEV
             Debug.Log("<b>Package parent</b>: " + PACKAGE_PARENT_FOLDER);
 #endif
 
             //Compose images path
-            string headerImgPath = SCPE.PACKAGE_ROOT_FOLDER;
-            headerImgPath += "/Editor/Images/" + SCPE.ASSET_ABRV + "_Banner.png";
+            string headerImgPath = PACKAGE_ROOT_FOLDER;
+            headerImgPath += "/Editor/Images/" + ASSET_ABRV + "_Banner.png";
 
             //Save banner path
             SCPE_GUI.HEADER_IMG_PATH = headerImgPath;
@@ -218,7 +218,7 @@ namespace SCPE
         public static void SetupCamera()
         {
 #if SCPE //Avoid missing PostProcessing scripts
-            Camera cam = (Camera.main) ? Camera.main : GameObject.FindObjectOfType<Camera>();
+            Camera cam = (Camera.main) ? Camera.main : UnityEngine.Object.FindObjectOfType<Camera>();
             GameObject mainCamera = cam.gameObject;
 
             if (!mainCamera)

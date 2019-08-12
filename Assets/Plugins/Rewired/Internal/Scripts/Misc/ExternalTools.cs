@@ -105,17 +105,13 @@ namespace Rewired.Utils {
         }
 
         private bool _isEditorPaused;
-        public bool isEditorPaused {
-            get {
-                return _isEditorPaused;
-            }
-        }
+        public bool isEditorPaused => _isEditorPaused;
 
-        private System.Action<bool> _EditorPausedStateChangedEvent;
+		private System.Action<bool> _EditorPausedStateChangedEvent;
         public event System.Action<bool> EditorPausedStateChangedEvent {
-            add { _EditorPausedStateChangedEvent += value; }
-            remove { _EditorPausedStateChangedEvent -= value; }
-        }
+            add => _EditorPausedStateChangedEvent += value;
+			remove => _EditorPausedStateChangedEvent -= value;
+		}
 
 #if UNITY_EDITOR
 #if UNITY_2018_PLUS

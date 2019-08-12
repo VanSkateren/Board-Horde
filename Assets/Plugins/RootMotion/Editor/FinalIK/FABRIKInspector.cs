@@ -10,7 +10,7 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(FABRIK))]
 	public class FABRIKInspector : IKInspector {
 
-		private FABRIK script { get { return target as FABRIK; }}
+		private FABRIK script => target as FABRIK;
 
 		protected override MonoBehaviour GetMonoBehaviour(out int executionOrder) {
 			executionOrder = 9997;

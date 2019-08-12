@@ -47,136 +47,136 @@ public class AABBCheck : MonoBehaviour
 
 	private void NaNCheck()
 	{
-		if (!Mathd.Vector3IsInfinityOrNan(this._board.position))
+		if (!Mathd.Vector3IsInfinityOrNan(_board.position))
 		{
-			this._lastBoardPos = this._board.position;
+			_lastBoardPos = _board.position;
 		}
 		else
 		{
 			Debug.LogError("Board Position is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._board.transform.localPosition))
+		if (!Mathd.Vector3IsInfinityOrNan(_board.transform.localPosition))
 		{
-			this._lastBoardLocalPos = this._board.transform.localPosition;
+			_lastBoardLocalPos = _board.transform.localPosition;
 		}
 		else
 		{
 			Debug.LogError("Board Local Position is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._board.velocity))
+		if (!Mathd.Vector3IsInfinityOrNan(_board.velocity))
 		{
-			this._lastBoardVelocity = this._board.velocity;
+			_lastBoardVelocity = _board.velocity;
 		}
 		else
 		{
 			Debug.LogError("Board Velocity is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._board.angularVelocity))
+		if (!Mathd.Vector3IsInfinityOrNan(_board.angularVelocity))
 		{
-			this._lastBoardAngularVelocity = this._board.angularVelocity;
+			_lastBoardAngularVelocity = _board.angularVelocity;
 		}
 		else
 		{
 			Debug.LogError("Board Angular Velocity is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._backTruck.position))
+		if (!Mathd.Vector3IsInfinityOrNan(_backTruck.position))
 		{
-			this._lastBackTruckPos = this._backTruck.position;
+			_lastBackTruckPos = _backTruck.position;
 		}
 		else
 		{
 			Debug.LogError("Back Truck Position is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._backTruck.transform.localPosition))
+		if (!Mathd.Vector3IsInfinityOrNan(_backTruck.transform.localPosition))
 		{
-			this._lastBackTruckLocalPos = this._backTruck.transform.localPosition;
+			_lastBackTruckLocalPos = _backTruck.transform.localPosition;
 		}
 		else
 		{
 			Debug.LogError("Back Truck Local Position is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._backTruck.velocity))
+		if (!Mathd.Vector3IsInfinityOrNan(_backTruck.velocity))
 		{
-			this._lastBackTruckVelocity = this._backTruck.velocity;
+			_lastBackTruckVelocity = _backTruck.velocity;
 		}
 		else
 		{
 			Debug.LogError("Back Truck Velocity is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._backTruck.angularVelocity))
+		if (!Mathd.Vector3IsInfinityOrNan(_backTruck.angularVelocity))
 		{
-			this._lastBackTruckAngularVelocity = this._backTruck.angularVelocity;
+			_lastBackTruckAngularVelocity = _backTruck.angularVelocity;
 		}
 		else
 		{
 			Debug.LogError("Back Truck Angular Velocity is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._frontTruck.position))
+		if (!Mathd.Vector3IsInfinityOrNan(_frontTruck.position))
 		{
-			this._lastFrontTruckPos = this._frontTruck.position;
+			_lastFrontTruckPos = _frontTruck.position;
 		}
 		else
 		{
 			Debug.LogError("Front Truck Position is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._frontTruck.transform.localPosition))
+		if (!Mathd.Vector3IsInfinityOrNan(_frontTruck.transform.localPosition))
 		{
-			this._lastFrontTruckLocalPos = this._frontTruck.transform.localPosition;
+			_lastFrontTruckLocalPos = _frontTruck.transform.localPosition;
 		}
 		else
 		{
 			Debug.LogError("Front Truck Local Position is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (!Mathd.Vector3IsInfinityOrNan(this._frontTruck.velocity))
+		if (!Mathd.Vector3IsInfinityOrNan(_frontTruck.velocity))
 		{
-			this._lastFrontTruckVelocity = this._frontTruck.velocity;
+			_lastFrontTruckVelocity = _frontTruck.velocity;
 		}
 		else
 		{
 			Debug.LogError("Front Truck Velocity is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 		}
-		if (Mathd.Vector3IsInfinityOrNan(this._frontTruck.angularVelocity))
+		if (Mathd.Vector3IsInfinityOrNan(_frontTruck.angularVelocity))
 		{
 			Debug.LogError("Front Truck Angular Velocity is NaN");
-			this.RestorLastValues();
+			RestorLastValues();
 			return;
 		}
-		this._lastFrontTruckAngularVelocity = this._frontTruck.angularVelocity;
+		_lastFrontTruckAngularVelocity = _frontTruck.angularVelocity;
 	}
 
 	private void RestorLastValues()
 	{
 		Debug.LogError("Restored Values");
-		this._board.position = this._lastBoardPos;
-		this._board.transform.localPosition = this._lastBoardLocalPos;
-		this._board.velocity = this._lastBoardVelocity;
-		this._board.angularVelocity = this._lastBoardAngularVelocity;
-		this._backTruck.position = this._lastBackTruckPos;
-		this._backTruck.transform.localPosition = this._lastBackTruckLocalPos;
-		this._backTruck.velocity = this._lastBackTruckVelocity;
-		this._backTruck.angularVelocity = this._lastBackTruckAngularVelocity;
-		this._frontTruck.position = this._lastFrontTruckPos;
-		this._frontTruck.transform.localPosition = this._lastFrontTruckLocalPos;
-		this._frontTruck.velocity = this._lastFrontTruckVelocity;
-		this._frontTruck.angularVelocity = this._lastFrontTruckAngularVelocity;
+		_board.position = _lastBoardPos;
+		_board.transform.localPosition = _lastBoardLocalPos;
+		_board.velocity = _lastBoardVelocity;
+		_board.angularVelocity = _lastBoardAngularVelocity;
+		_backTruck.position = _lastBackTruckPos;
+		_backTruck.transform.localPosition = _lastBackTruckLocalPos;
+		_backTruck.velocity = _lastBackTruckVelocity;
+		_backTruck.angularVelocity = _lastBackTruckAngularVelocity;
+		_frontTruck.position = _lastFrontTruckPos;
+		_frontTruck.transform.localPosition = _lastFrontTruckLocalPos;
+		_frontTruck.velocity = _lastFrontTruckVelocity;
+		_frontTruck.angularVelocity = _lastFrontTruckAngularVelocity;
 	}
 
 	private void Start()
 	{
-		this._board = PlayerController.Instance.boardController.boardRigidbody;
-		this._backTruck = PlayerController.Instance.boardController.backTruckRigidbody;
-		this._frontTruck = PlayerController.Instance.boardController.frontTruckRigidbody;
+		_board = PlayerController.Instance.boardController.boardRigidbody;
+		_backTruck = PlayerController.Instance.boardController.backTruckRigidbody;
+		_frontTruck = PlayerController.Instance.boardController.frontTruckRigidbody;
 	}
 
 	private void Update()

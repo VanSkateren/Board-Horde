@@ -48,21 +48,13 @@ namespace RootMotion.Dynamics {
 				this.enableInternalCollisionsOnKill = enableInternalCollisionsOnKill;
 			}
 
-			public static StateSettings Default {
-				get {
-					return new StateSettings(1f, 0.01f, 2f, 0.02f, false, true, true);
-				}
-			}
+			public static StateSettings Default => new StateSettings(1f, 0.01f, 2f, 0.02f, false, true, true);
 		}
 
 		/// <summary>
 		/// Returns true if PuppetMaster is in the middle of switching states. Don't deactivate the PuppetMaster nor any of it's behaviours while it returns true.
 		/// </summary>
-		public bool isSwitchingState {
-			get {
-				return activeState != state;
-			}
-		}
+		public bool isSwitchingState => activeState != state;
 
 		/// <summary>
 		/// Is the puppet in the middle of a killing procedure (started by PuppetMaster.Kill())?
@@ -72,12 +64,12 @@ namespace RootMotion.Dynamics {
 		/// <summary>
 		/// Is the puppet alive or still dying?
 		/// </summary>
-		public bool isAlive { get { return activeState == State.Alive; }}
+		public bool isAlive => activeState == State.Alive;
 
 		/// <summary>
 		/// Is the puppet frozen?
 		/// </summary>
-		public bool isFrozen { get { return activeState == State.Frozen; }}
+		public bool isFrozen => activeState == State.Frozen;
 
 		/// <summary>
 		/// Kill the puppet with the specified StateSettings

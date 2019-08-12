@@ -21,7 +21,7 @@ namespace Animancer
         /// </summary>
         public string ParameterName
         {
-            get { return _Parameter.Name; }
+            get => _Parameter.Name;
             set
             {
                 _Parameter.Name = value;
@@ -34,7 +34,7 @@ namespace Animancer
         /// </summary>
         public int ParameterHash
         {
-            get { return _Parameter.Hash; }
+            get => _Parameter.Hash;
             set
             {
                 _Parameter.Hash = value;
@@ -48,8 +48,8 @@ namespace Animancer
         /// </summary>
         public new float Parameter
         {
-            get { return Playable.GetFloat(_Parameter); }
-            set { Playable.SetFloat(_Parameter, value); }
+            get => Playable.GetFloat(_Parameter);
+            set => Playable.SetFloat(_Parameter, value);
         }
 
         /************************************************************************************************************************/
@@ -90,7 +90,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of parameters being wrapped by this state.</summary>
-        public override int ParameterCount { get { return 1; } }
+        public override int ParameterCount => 1;
 
         /// <summary>Returns the hash of a parameter being wrapped by this state.</summary>
         public override int GetParameterHash(int index) { return ParameterHash; }
@@ -116,8 +116,8 @@ namespace Animancer
             /// </summary>
             public string ParameterName
             {
-                get { return _ParameterName; }
-                set { _ParameterName = value; }
+                get => _ParameterName;
+                set => _ParameterName = value;
             }
 
             /************************************************************************************************************************/

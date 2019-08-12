@@ -11,10 +11,7 @@ namespace Dreamteck.Splines
         [System.Obsolete("Deprecated in 1.0.8. Use targetObject instead")]
         public Transform applyTransform
         {
-            get
-            {
-                return targetObject.transform;
-            }
+            get => targetObject.transform;
 
             set
             {
@@ -53,10 +50,7 @@ namespace Dreamteck.Splines
 
         public double position
         {
-            get
-            {
-                return _position;
-            }
+            get => _position;
             set
             {
                 if (value != _position)
@@ -71,7 +65,7 @@ namespace Dreamteck.Splines
 
         public Mode mode
         {
-            get { return _mode;  }
+            get => _mode;
             set
             {
                 if (value != _mode)
@@ -86,22 +80,13 @@ namespace Dreamteck.Splines
         /// Returns the evaluation result at the current position
         /// </summary>
         [System.Obsolete("Deprecated in 1.0.8. Use result instead")]
-        public SplineResult positionResult
-        {
-            get { return _result; }
-        }
+        public SplineResult positionResult => _result;
 
         /// <summary>
         /// Returns the offsetted evaluation result at the current position. 
         /// </summary>
         [System.Obsolete("Deprecated in 1.0.8. Use offsettedResult instead")]
-        public SplineResult offsettedPositionResult
-        {
-            get
-            {
-                return offsettedResult;
-            }
-        }
+        public SplineResult offsettedPositionResult => offsettedResult;
 
         [SerializeField]
         [HideInInspector]

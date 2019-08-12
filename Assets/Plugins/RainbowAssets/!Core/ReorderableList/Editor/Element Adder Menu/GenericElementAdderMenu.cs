@@ -25,9 +25,7 @@ namespace Borodar.ReorderableList {
 			_innerMenu.AddSeparator(path);
 		}
 
-		public bool IsEmpty {
-			get { return _innerMenu.GetItemCount() == 0; }
-		}
+		public bool IsEmpty => _innerMenu.GetItemCount() == 0;
 
 		public void DropDown(Rect position) {
 			_innerMenu.DropDown(position);

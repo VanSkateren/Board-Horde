@@ -22,27 +22,21 @@ namespace UnityEngine.UI.ProceduralImage
 
         public float BorderWidth
         {
-            get
-            {
-                return borderWidth;
-            }
+            get => borderWidth;
             set
             {
                 borderWidth = value;
-                this.SetVerticesDirty();
+                SetVerticesDirty();
             }
         }
 
         public float FalloffDistance
         {
-            get
-            {
-                return falloffDistance;
-            }
+            get => falloffDistance;
             set
             {
                 falloffDistance = value;
-                this.SetVerticesDirty();
+                SetVerticesDirty();
             }
         }
 
@@ -53,7 +47,7 @@ namespace UnityEngine.UI.ProceduralImage
                 if (modifier == null)
                 {
                     //try to get the modifier on the object.
-                    modifier = this.GetComponent<ProceduralImageModifier>();
+                    modifier = GetComponent<ProceduralImageModifier>();
                     //if we did not find any modifier
                     if (modifier == null)
                     {
@@ -63,10 +57,7 @@ namespace UnityEngine.UI.ProceduralImage
                 }
                 return modifier;
             }
-            set
-            {
-                modifier = value;
-            }
+            set => modifier = value;
         }
 
         /// <summary>
@@ -75,26 +66,23 @@ namespace UnityEngine.UI.ProceduralImage
         /// <value>The type of the modifier.</value>
         public System.Type ModifierType
         {
-            get
-            {
-                return Modifier.GetType();
-            }
+            get => Modifier.GetType();
             set
             {
                 if (modifier != null && modifier.GetType() != value)
                 {
-                    if (this.GetComponent<ProceduralImageModifier>() != null)
+                    if (GetComponent<ProceduralImageModifier>() != null)
                     {
-                        DestroyImmediate(this.GetComponent<ProceduralImageModifier>());
+                        DestroyImmediate(GetComponent<ProceduralImageModifier>());
                     }
-                    this.gameObject.AddComponent(value);
-                    Modifier = this.GetComponent<ProceduralImageModifier>();
-                    this.SetAllDirty();
+                    gameObject.AddComponent(value);
+                    Modifier = GetComponent<ProceduralImageModifier>();
+                    SetAllDirty();
                 }
                 else if(modifier == null){
-                    this.gameObject.AddComponent(value);
-                    Modifier = this.GetComponent<ProceduralImageModifier>();
-                    this.SetAllDirty();
+                    gameObject.AddComponent(value);
+                    Modifier = GetComponent<ProceduralImageModifier>();
+                    SetAllDirty();
                 }
             }
         }
@@ -102,13 +90,13 @@ namespace UnityEngine.UI.ProceduralImage
         override protected void OnEnable()
         {
             base.OnEnable();
-            this.Init();
+            Init();
         }
 
         override protected void OnDisable()
         {
             base.OnDisable();
-            this.m_OnDirtyVertsCallback -= OnVerticesDirty;
+            m_OnDirtyVertsCallback -= OnVerticesDirty;
         }
 
         /// <summary>
@@ -116,24 +104,24 @@ namespace UnityEngine.UI.ProceduralImage
         /// </summary>
         void Init()
         {
-            this.m_OnDirtyVertsCallback += OnVerticesDirty;
-            this.preserveAspect = false;
-            if (this.sprite == null)
+            m_OnDirtyVertsCallback += OnVerticesDirty;
+            preserveAspect = false;
+            if (sprite == null)
             {
-                this.sprite = EmptySprite.Get();
+                sprite = EmptySprite.Get();
             }
             if (materialInstance == null)
             {
                 materialInstance = new Material(Shader.Find("UI/Procedural UI Image"));
             }
-            this.material = materialInstance;
+            material = materialInstance;
         }
 
         protected void OnVerticesDirty()
         {
-            if (this.sprite == null)
+            if (sprite == null)
             {
-                this.sprite = EmptySprite.Get();
+                sprite = EmptySprite.Get();
             }
         }
 
@@ -142,7 +130,7 @@ namespace UnityEngine.UI.ProceduralImage
         {
             if (!Application.isPlaying)
             {
-                this.UpdateGeometry();
+                UpdateGeometry();
             }
         }
 #endif
@@ -154,7 +142,7 @@ namespace UnityEngine.UI.ProceduralImage
         /// <param name="vec">border-radius as Vector4 (starting upper-left, clockwise)</param>
         private Vector4 FixRadius(Vector4 vec)
         {
-            Rect r = this.rectTransform.rect;
+            Rect r = rectTransform.rect;
             vec = new Vector4(Mathf.Max(vec.x, 0), Mathf.Max(vec.y, 0), Mathf.Max(vec.z, 0), Mathf.Max(vec.w, 0));
             float scaleFactor = Mathf.Min(r.width / (vec.x + vec.y), r.width / (vec.z + vec.w), r.height / (vec.x + vec.w), r.height / (vec.z + vec.y), 1);
             return vec * scaleFactor;

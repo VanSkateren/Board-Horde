@@ -70,24 +70,16 @@ namespace RootMotion.FinalIK {
 		/// Gets or sets the IK target position if target is not used.
 		/// </summary>
 		public Vector3 IKPosition { 
-			get {
-				return solver.IKPosition;
-			}
-			set {
-				solver.IKPosition = value;
-			}
+			get => solver.IKPosition;
+			set => solver.IKPosition = value;
 		}
 
 		/// <summary>
 		/// Gets or sets the IK target rotation if target is not used.
 		/// </summary>
 		public Quaternion IKRotation {
-			get {
-				return solver.IKRotation;
-			}
-			set {
-				solver.IKRotation = value;
-			}
+			get => solver.IKRotation;
+			set => solver.IKRotation = value;
 		}
 
 		/// <summary>

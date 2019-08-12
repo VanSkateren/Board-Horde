@@ -124,7 +124,7 @@ namespace KinematicCharacterController
         // This is to prevent duplicating the singleton gameobject on script recompiles
         private void OnDisable()
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         private void Awake()
