@@ -7,7 +7,6 @@ namespace Adrenak.Tork
 {
 	public class Aerodynamics : MonoBehaviour
 	{
-		[SerializeField] private new Rigidbody rigidbody;
 		[SerializeField] private Wheel[] wheels;
 
 		public float downForce = 1000;
@@ -19,6 +18,13 @@ namespace Adrenak.Tork
 		public bool stabilize;
 		public bool steerMidAir;
 
+		private Vehicle _skateboard = null;
+		
+		private void Start()
+		{
+			_skateboard = Vehicle.Instance;
+		}
+		
 		private void FixedUpdate()
 		{
 			if (applyDownForce)
@@ -41,7 +47,7 @@ namespace Adrenak.Tork
 		{
 			if (!downForce.Approximately(0))
 			{
-				rigidbody.AddForce(-Vector3.up * downForce);
+				GetComponent<Rigidbody>().AddForce(-Vector3.up * downForce);
 			}
 		}
 
@@ -58,14 +64,14 @@ namespace Adrenak.Tork
 			Vector3 __axis = Vector3.Cross(__locUp, __wsUp);
 			float __force = stabilizationTorque;
 
-			rigidbody.AddTorque(__axis * __force);
+			GetComponent<Rigidbody>().AddTorque(__axis * __force);
 		}
 
 		private void SteerMidAir()
 		{
 			if (midAirSteerInput.Approximately(0)) return;
 			
-			rigidbody.AddTorque(new Vector3(0, midAirSteerInput * midAirSteerTorque, 0));
+			GetComponent<Rigidbody>().AddTorque(new Vector3(0, midAirSteerInput * midAirSteerTorque, 0));
 		}
 	}
 }

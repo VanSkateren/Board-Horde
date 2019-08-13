@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 
-namespace Adrenak.Tork {
+namespace Adrenak.Tork
+{
 	[RequireComponent(typeof(Ackermann))]
-	public class Brakes : MonoBehaviour {
+	public class Brakes : MonoBehaviour
+	{
 		[Tooltip("The maximum braking torque that can be applied")]
 		[SerializeField]
 		private float maxTorque = 5000;
@@ -30,12 +32,12 @@ namespace Adrenak.Tork {
 			// If we have Ackerman steering, we apply torque based on the steering radius of each wheel
 			if (skateboard.Ackermann != null)
 			{
-				float[,] radii = Ackermann.GetRadii(skateboard.Ackermann.Angle, skateboard.Ackermann.AxleSeparation, skateboard.Ackermann.AxleWidth);
-				float total = radii[0, 0] + radii[1, 0] + radii[0, 1] + radii[1, 1];
-				fl = radii[0, 0] / total;
-				fr = radii[1, 0] / total;
-				rl = radii[0, 1] / total;
-				rr = radii[1, 1] / total;
+				float[,] __radii = Ackermann.GetRadii(skateboard.Ackermann.Angle, skateboard.Ackermann.AxleSeparation, skateboard.Ackermann.AxleWidth);
+				float __total = __radii[0, 0] + __radii[1, 0] + __radii[0, 1] + __radii[1, 1];
+				fl = __radii[0, 0] / __total;
+				fr = __radii[1, 0] / __total;
+				rl = __radii[0, 1] / __total;
+				rr = __radii[1, 1] / __total;
 			}
 			else
 				fr = fl = rr = rl = 1;

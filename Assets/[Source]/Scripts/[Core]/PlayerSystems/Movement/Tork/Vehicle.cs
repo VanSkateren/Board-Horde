@@ -13,6 +13,8 @@ namespace Adrenak.Tork
 	[RequireComponent(typeof(Brakes))]
 	public class Vehicle :  Singleton<Vehicle>
 	{
+		#region Variables
+		
 		public Vector3 Velocity => Rigidbody.velocity;
 
 		[Tooltip("The maximum motor torque available based on the speed (KM/H)")]
@@ -47,7 +49,11 @@ namespace Adrenak.Tork
 		public Brakes Brake { get; private set; }
 		[PublicAPI]
 		public Aerodynamics Aerodynamics { get; private set; }
+		
+		#endregion
 
+		#region Methods
+		
 		private void Start() 
 		{
 			Rigidbody = GetComponent<Rigidbody>();
@@ -92,5 +98,7 @@ namespace Adrenak.Tork
 		[PublicAPI]
 		public float GetDownForceAtSpeed(float speed) 
 			=> downForceForSpeed.Evaluate(speed);
+		
+		#endregion
 	}
 }

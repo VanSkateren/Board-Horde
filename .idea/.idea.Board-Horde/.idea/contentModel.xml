@@ -358,33 +358,19 @@
                   </e>
                   <e p="Skateboard.cs" t="Include" />
                   <e p="Tork" t="Include">
-                    <e p="Common" t="Include">
-                      <e p="Scripts" t="Include">
-                        <e p="Player.cs" t="Include" />
-                        <e p="SmoothFollow.cs" t="Include" />
-                      </e>
-                    </e>
-                    <e p="Physics" t="Include">
-                      <e p="Demo" t="Include">
-                        <e p="Scripts" t="Include">
-                          <e p="PhysicsDemo.cs" t="Include" />
-                        </e>
-                      </e>
-                      <e p="Scripts" t="Include">
-                        <e p="Ackermann.cs" t="Include" />
-                        <e p="Aerodynamics.cs" t="Include" />
-                        <e p="AntiRoll.cs" t="Include" />
-                        <e p="Brakes.cs" t="Include" />
-                        <e p="CenterOfMassAssigner.cs" t="Include" />
-                        <e p="KeyboardPlayer.cs" t="Include" />
-                        <e p="Motor.cs" t="Include" />
-                        <e p="Steering.cs" t="Include" />
-                        <e p="Vehicle.cs" t="Include" />
-                        <e p="VehicleInput.cs" t="Include" />
-                        <e p="Wheel.cs" t="Include" />
-                        <e p="WheelRenderer.cs" t="Include" />
-                      </e>
-                    </e>
+                    <e p="Ackermann.cs" t="Include" />
+                    <e p="Aerodynamics.cs" t="Include" />
+                    <e p="AntiRoll.cs" t="Include" />
+                    <e p="Brakes.cs" t="Include" />
+                    <e p="CenterOfMass.cs" t="Include" />
+                    <e p="KeyboardPlayer.cs" t="Include" />
+                    <e p="Motor.cs" t="Include" />
+                    <e p="Player.cs" t="Include" />
+                    <e p="Steering.cs" t="Include" />
+                    <e p="Vehicle.cs" t="Include" />
+                    <e p="VehicleInput.cs" t="Include" />
+                    <e p="Wheel.cs" t="Include" />
+                    <e p="WheelRenderer.cs" t="Include" />
                   </e>
                   <e p="Wheel" t="Include">
                     <e p="Editor" t="Include">

@@ -147,12 +147,13 @@ namespace Adrenak.Tork
             }
 
 			// ReSharper disable once InvertIf
-			if (frontRightWheel == null)
+			if (frontRightWheel != null)
 			{
 				__wheelTransform = frontRightWheel.transform;
             	
 				__angle = __wheelTransform.localEulerAngles.y;
 				__origin = __wheelTransform.position;
+				
 				DrawLine(__origin, __origin + Quaternion.AngleAxis(__angle, Vector3.up) * transform.forward);
 			}
 
