@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using JetBrains.Annotations;
+using CommonGames.Utilities;
+using CommonGames.Utilities.Extensions;
 
 using static UnityEditor.Handles;
 
@@ -8,30 +11,40 @@ namespace Adrenak.Tork
 	/// <summary>
 	/// An implementation of Ackermann steering mechanism
 	/// </summary>
-	public class Ackermann : MonoBehaviour
+	public class Ackermann : Singleton<Ackermann>
 	{
-		[SerializeField] private Wheel frontRightWheel;
-		[SerializeField] private Wheel frontLeftWheel;
-		[SerializeField] private Wheel rearRightWheel;
-		[SerializeField] private Wheel rearLeftWheel;
-		
+		private Wheel frontLeftWheel;
+		private Wheel frontRightWheel;
+		private Wheel rearLeftWheel;
+		private Wheel rearRightWheel;
+
 		[PublicAPI]
 		public float[,] Radii { get; private set; }
 
 		[PublicAPI]
 		public float Angle { get; private set; }
 
+		[PublicAPI]
 		public float AxleSeparation => (frontLeftWheel.transform.position - rearLeftWheel.transform.position).magnitude;
 
+		[PublicAPI]
 		public float AxleWidth => (frontLeftWheel.transform.position - frontRightWheel.transform.position).magnitude;
 
+		[PublicAPI]
 		public float FrontRightRadius => AxleSeparation / Mathf.Sin(Mathf.Abs(frontRightWheel.steerAngle));
 
+		[PublicAPI]
 		public float FrontLeftRadius => AxleSeparation / Mathf.Sin(Mathf.Abs(frontLeftWheel.steerAngle));
 
 		private void Start()
 		{
+			frontLeftWheel = Vehicle.Instance.frontLeftWheel;
+			frontRightWheel = Vehicle.Instance.frontRightWheel;
+			rearLeftWheel = Vehicle.Instance.rearLeftWheel;
+			rearRightWheel = Vehicle.Instance.rearRightWheel;
+			
 			Radii = new float[2, 2];
+			
 		}
 
 		private void Update()
@@ -133,6 +146,7 @@ namespace Adrenak.Tork
             	DrawLine(__origin, __origin + Quaternion.AngleAxis(__angle, Vector3.up) * transform.forward);
             }
 
+			// ReSharper disable once InvertIf
 			if (frontRightWheel == null)
 			{
 				__wheelTransform = frontRightWheel.transform;

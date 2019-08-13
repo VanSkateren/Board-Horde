@@ -1,49 +1,50 @@
 ﻿// TODO: Add support for All WD, Rear WD, Front WD. Right now it is only All WD
 using UnityEngine;
+using CommonGames.Utilities;
+using JetBrains.Annotations;
 
-namespace Adrenak.Tork {
+namespace Adrenak.Tork 
+{
 	[RequireComponent(typeof(Ackermann))]
-	public class Motor : MonoBehaviour {
+	public class Motor : Singleton<Motor>
+	{
 		[Tooltip("The maximum torque that the motor generates")]
 		public float maxTorque = 20000;
 
 		[Tooltip("Multiplier to the maxTorque")]
 		public float value;
 
-		public float m_MaxReverseInput = -.5f;
+		public float maxReverseInput = -.5f;
 
-		public Wheel m_FrontRight;
-		public Wheel m_FrontLeft;
-		public Wheel m_RearRight;
-		public Wheel m_RearLeft;
-
-		public Ackermann m_Ackermann { get; private set; }
-
-		private void Awake() {
-			m_Ackermann = GetComponent<Ackermann>();
+		private Vehicle skateboard = null;
+		
+		private void Start()
+		{
+			skateboard = Vehicle.Instance;
 		}
 
-		private void Update() {
+		private void Update()
+		{
 			ApplyMotorTorque();
 		}
 
-		private void ApplyMotorTorque() {
-			value = Mathf.Clamp(value, m_MaxReverseInput, 1);
-			float fr, fl, rr, rl;
+		private void ApplyMotorTorque() 
+		{
+			value = Mathf.Clamp(value, maxReverseInput, 1);
 
-			// If we have Ackerman steering, we apply torque based on the steering radius of each wheel
-			float[,] radii = Ackermann.GetRadii(m_Ackermann.Angle, m_Ackermann.AxleSeparation, m_Ackermann.AxleWidth);
-			float total = radii[0, 0] + radii[1, 0] + radii[0, 1] + radii[1, 1];
-			fl = radii[0, 0] / total;
-			fr = radii[1, 0] / total;
-			rl = radii[0, 1] / total;
-			rr = radii[1, 1] / total;
+			// If we have Ackermann steering, we apply torque based on the steering radius of each wheel
+			float[,] __radii = Ackermann.GetRadii(skateboard.Ackermann.Angle, skateboard.Ackermann.AxleSeparation, skateboard.Ackermann.AxleWidth);
+			float __total = __radii[0, 0] + __radii[1, 0] + __radii[0, 1] + __radii[1, 1];
+			float __fl = __radii[0, 0] / __total;
+			float __fr = __radii[1, 0] / __total;
+			float __rl = __radii[0, 1] / __total;
+			float __rr = __radii[1, 1] / __total;
 			
-			m_FrontLeft.motorTorque = value * maxTorque * fl;
-			m_FrontRight.motorTorque = value * maxTorque * fr;
+			Vehicle.Instance.frontLeftWheel.motorTorque = value * maxTorque * __fl;
+			Vehicle.Instance.frontRightWheel.motorTorque = value * maxTorque * __fr;
 
-			m_RearLeft.motorTorque = value * maxTorque * rl;
-			m_RearRight.motorTorque = value * maxTorque * rr;
+			Vehicle.Instance.rearLeftWheel.motorTorque = value * maxTorque * __rl;
+			Vehicle.Instance.rearRightWheel.motorTorque = value * maxTorque * __rr;
 		}
 	}
 }

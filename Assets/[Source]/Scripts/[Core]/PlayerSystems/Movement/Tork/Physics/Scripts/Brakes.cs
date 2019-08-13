@@ -10,23 +10,27 @@ namespace Adrenak.Tork {
 		[Tooltip("Multiplier to the maxTorque")]
 		public float value;
 
-		public Wheel m_FrontRight;
-		public Wheel m_FrontLeft;
-		public Wheel m_RearRight;
-		public Wheel m_RearLeft;
+		private Wheel 
+			frontLeft, 
+			frontRight, 
+			rearLeft, 
+			rearRight;
 
-		public Ackermann m_Ackermann { get; private set; }
-
-		private void Awake() {
-			m_Ackermann = GetComponent<Ackermann>();
+		private Vehicle skateboard = null;
+		
+		private void Start()
+		{
+			skateboard = Vehicle.Instance;
 		}
 
-		private void FixedUpdate() {
+		private void FixedUpdate()
+		{
 			float fr, fl, rr, rl;
 
 			// If we have Ackerman steering, we apply torque based on the steering radius of each wheel
-			if (m_Ackermann != null) {
-				float[,] radii = Ackermann.GetRadii(m_Ackermann.Angle, m_Ackermann.AxleSeparation, m_Ackermann.AxleWidth);
+			if (skateboard.Ackermann != null)
+			{
+				float[,] radii = Ackermann.GetRadii(skateboard.Ackermann.Angle, skateboard.Ackermann.AxleSeparation, skateboard.Ackermann.AxleWidth);
 				float total = radii[0, 0] + radii[1, 0] + radii[0, 1] + radii[1, 1];
 				fl = radii[0, 0] / total;
 				fr = radii[1, 0] / total;
@@ -36,11 +40,11 @@ namespace Adrenak.Tork {
 			else
 				fr = fl = rr = rl = 1;
 
-			m_FrontLeft.brakeTorque = value * maxTorque * fl;
-			m_FrontRight.brakeTorque = value * maxTorque * fr;
+			skateboard.frontLeftWheel.brakeTorque = value * maxTorque * fl;
+			skateboard.frontRightWheel.brakeTorque = value * maxTorque * fr;
 
-			m_RearLeft.brakeTorque = value * maxTorque * rl;
-			m_RearRight.brakeTorque = value * maxTorque * rr;
+			skateboard.rearLeftWheel.brakeTorque = value * maxTorque * rl;
+			skateboard.rearRightWheel.brakeTorque = value * maxTorque * rr;
 		}
 	}
 }
