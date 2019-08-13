@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using CommonGames.Utilities;
+using Sirenix.Serialization;
 
 namespace Adrenak.Tork
 {
 	public class CenterOfMass : Singleton<CenterOfMass>
 	{
-		public Transform Point { get; set; }
+		[OdinSerialize] public Transform Point { get; set; }
 
 		private Rigidbody _rigidbody;
 

@@ -432,7 +432,7 @@ namespace NWH.WheelController3D
         /// <summary>
         /// Returns velocity at the wheel's center position in [m/s].
         /// </summary>
-        public Vector3 pointVelocity => parentRigidbody.GetPointVelocity(wheel.worldPosition);
+        public Vector3 pointVelocity => _parentRigidbody.GetPointVelocity(wheel.worldPosition);
 
         /// <summary>
         /// Returns angular velocity of the wheel in radians. Multiply by wheel radius to get linear speed.

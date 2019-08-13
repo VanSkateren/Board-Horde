@@ -11,10 +11,28 @@ namespace Adrenak.Tork {
 			public Wheel left;
 			public Wheel right;
 			public float force = 36000f;
+
+			public Axle(Wheel left, Wheel right, float force = 36000f)
+			{
+				this.left = left;
+				this.right = right;
+				this.force = force;
+			}
 		}
 
 		public new Rigidbody rigidbody;
 		public List<Axle> axles;
+
+		private void Reset()
+		{
+			if(!Vehicle.InstanceExists) return;
+
+			axles = new List<Axle>()
+			{
+				new Axle(left: Vehicle.Instance.frontLeftWheel, right: Vehicle.Instance.frontRightWheel),
+				new Axle(left: Vehicle.Instance.rearLeftWheel, right: Vehicle.Instance.rearRightWheel)
+			};
+		}
 
 		private void FixedUpdate()
 		{

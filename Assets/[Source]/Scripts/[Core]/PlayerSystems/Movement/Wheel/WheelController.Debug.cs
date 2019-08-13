@@ -11,15 +11,15 @@ namespace NWH.WheelController3D
         /// </summary>
         private void OnDrawGizmos()
         {
-            if(!Application.isPlaying) transformPosition = transform.position;
+            if(!Application.isPlaying) _transformPosition = transform.position;
 
             // Draw spring travel
             Gizmos.color = Color.green;
             var forwardOffset = transform.forward * 0.07f;
             var springOffset = transform.up * spring.maxLength;
-            Gizmos.DrawLine(transformPosition - forwardOffset, transformPosition + forwardOffset);
-            Gizmos.DrawLine(transformPosition - springOffset - forwardOffset, transformPosition - springOffset + forwardOffset);
-            Gizmos.DrawLine(transformPosition, transformPosition - springOffset);
+            Gizmos.DrawLine(_transformPosition - forwardOffset, _transformPosition + forwardOffset);
+            Gizmos.DrawLine(_transformPosition - springOffset - forwardOffset, _transformPosition - springOffset + forwardOffset);
+            Gizmos.DrawLine(_transformPosition, _transformPosition - springOffset);
 
             Vector3 interpolatedPos = Vector3.zero;
 
@@ -76,28 +76,28 @@ namespace NWH.WheelController3D
                         {
                             float t = (hit.weight - minWeight) / (maxWeight - minWeight);
                             Gizmos.color = Color.Lerp(Color.black, Color.white, t);
-                            Gizmos.DrawSphere(hit.point, 0.04f);
+                            Gizmos.DrawSphere(hit.Point, 0.04f);
                             Gizmos.color = new Color(1f, 1f, 1f, 0.5f);
-                            Gizmos.DrawLine(hit.point, hit.point + wheel.up * hit.distanceFromTire);
+                            Gizmos.DrawLine(hit.Point, hit.Point + wheel.up * hit.distanceFromTire);
                         }
 
                     //Draw hit forward and right
                     Gizmos.color = Color.cyan;
-                    Gizmos.DrawRay(new Ray(wheelHit.point, wheelHit.forwardDir));
+                    Gizmos.DrawRay(new Ray(wheelHit.Point, wheelHit.forwardDir));
                     Gizmos.color = Color.magenta;
-                    Gizmos.DrawRay(new Ray(wheelHit.point, wheelHit.sidewaysDir));
+                    Gizmos.DrawRay(new Ray(wheelHit.Point, wheelHit.sidewaysDir));
 
                     // Draw ground point
                     Gizmos.color = Color.red;
-                    Gizmos.DrawWireSphere(wheelHit.point, 0.04f);
-                    Gizmos.DrawLine(wheelHit.point, wheelHit.point + wheelHit.normal * 1f);
+                    Gizmos.DrawWireSphere(wheelHit.Point, 0.04f);
+                    Gizmos.DrawLine(wheelHit.Point, wheelHit.Point + wheelHit.Normal * 1f);
 
                     // Force point
-                    Gizmos.DrawSphere(forcePoint, 0.06f);
+                    Gizmos.DrawSphere(_forcePoint, 0.06f);
 
                     Gizmos.color = Color.yellow;
-                    Vector3 alternateNormal = (wheel.worldPosition - wheelHit.point).normalized;
-                    Gizmos.DrawLine(wheelHit.point, wheelHit.point + alternateNormal * 1f);
+                    Vector3 alternateNormal = (wheel.worldPosition - wheelHit.Point).normalized;
+                    Gizmos.DrawLine(wheelHit.Point, wheelHit.Point + alternateNormal * 1f);
 
                     // Spring travel point
                     Gizmos.color = Color.magenta;

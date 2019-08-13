@@ -2,43 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="198e5302-eabe-4f29-a307-3bb7cdbfaf60" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Common.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Common/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Common/Scripts/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Common/Scripts/Player.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Common/Scripts/SmoothFollow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Common/Scripts/SmoothFollow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Demo.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Demo/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Demo/Scripts/PhysicsDemo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Demo/Scripts/PhysicsDemo.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Ackermann.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Ackermann.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Aerodynamics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Aerodynamics.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/AntiRoll.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/AntiRoll.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Brakes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Brakes.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/CenterOfMassAssigner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/CenterOfMassAssigner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/KeyboardPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/KeyboardPlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Motor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Motor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Steering.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Steering.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Vehicle.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Vehicle.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/VehicleInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/VehicleInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Wheel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Wheel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/WheelRenderer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/WheelRenderer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.API.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.API.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Aerodynamics.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -65,6 +35,187 @@
                 <marker date="1565710964828" expanded="true" signature="837:912" ph="{...}" />
                 <marker date="1565710964828" expanded="true" signature="944:1384" ph="{...}" />
                 <marker date="1565710964828" expanded="true" signature="1414:1573" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="850" column="33" lean-forward="true" selection-start-line="850" selection-start-column="33" selection-end-line="850" selection-end-column="33" />
+              <folding>
+                <marker date="1565720589837" expanded="false" signature="6:128" ph="..." />
+                <marker date="1565720589837" expanded="true" signature="161:50279" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="239:50277" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="454:540" ph="/// Forward (longitudinal) friction info. ... " />
+                <marker date="1565720589837" expanded="true" signature="627:705" ph="/// Side (lateral) friction info. ... " />
+                <marker date="1565720589837" expanded="true" signature="792:995" ph="/// Array of rays and related data that are shot each frame to detect surface features. ... " />
+                <marker date="1565720589837" expanded="true" signature="1167:1275" ph="/// Number of raycasts in the forward / longitudinal direction. ... " />
+                <marker date="1565720589837" expanded="true" signature="1394:1494" ph="/// Number of raycasts in the side / lateral direction. ... " />
+                <marker date="1565720589837" expanded="true" signature="1619:1698" ph="/// True if wheel touching ground. ... " />
+                <marker date="1565720589837" expanded="true" signature="1923:1999" ph="/// Root object of the vehicle. ... " />
+                <marker date="1565720589837" expanded="true" signature="2112:2337" ph="/// If enabled mesh collider mimicking the shape of rim and wheel will be positioned so that wheel can not pass t ... " />
+                <marker date="1565720589837" expanded="true" signature="2390:2459" ph="/// Side of the vehicle. ... " />
+                <marker date="1565720589837" expanded="true" signature="2484:2595" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="2605:2675" ph="/// Side the wheel is on. ... " />
+                <marker date="1565720589837" expanded="true" signature="2756:2838" ph="/// Current active preset enum value. ... " />
+                <marker date="1565720589837" expanded="true" signature="2923:3003" ph="/// Current active friction preset. ... " />
+                <marker date="1565720589837" expanded="true" signature="3065:3185" ph="/// Contains point in which wheel touches ground. Not valid if !isGrounded. ... " />
+                <marker date="1565720589837" expanded="true" signature="3343:3501" ph="/// Enables some wheel behaviors specific to tracked vehicles, specifically the fact that there is no wheel spin. ... " />
+                <marker date="1565720589837" expanded="true" signature="3581:3757" ph="/// Only for tracked vehicles that use NVP wheel enlargement. ... " />
+                <marker date="1565720589837" expanded="true" signature="6142:7470" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="6628:6920" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="6964:7137" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="7515:9338" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="8268:9015" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="8386:8978" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="9374:10003" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="9697:9993" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="10038:10190" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="10252:10775" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="10786:10926" ph="/// Searches for wheel hit point by iterating WheelScan() function to the requested scan depth. ... " />
+                <marker date="1565720589837" expanded="true" signature="10959:15289" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="11504:12799" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="11757:12785" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="12816:14977" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="12926:13763" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="13965:14904" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="14171:14843" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="14653:14821" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="15043:15279" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="15339:17944" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="15837:17121" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="15932:17107" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="17180:17264" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="17986:21361" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="18169:19710" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="18392:18547" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="18568:18928" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="19032:19246" ph="/* If the spring is overcompressed remember the value for later force calculation and set spring to 0. ... */" />
+                <marker date="1565720589837" expanded="true" signature="19286:19463" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="19522:19696" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="19727:19935" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="20412:20827" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="20844:21303" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="21398:24132" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="22736:23117" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="22848:22980" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="23001:23102" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="23245:23840" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="23388:23612" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="23633:23826" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="23920:24122" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="24143:24250" ph="/// Does lateral and longitudinal slip and force calculations. ... " />
+                <marker date="1565720589837" expanded="true" signature="24288:31743" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="24474:24677" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="24694:24777" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="25084:25164" ph="/* Side slip ... */" />
+                <marker date="1565720589837" expanded="true" signature="25257:25714" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="25728:25811" ph="/* Forward slip ... */" />
+                <marker date="1565720589837" expanded="true" signature="26221:26546" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="26766:26933" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="26950:27064" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="28429:28538" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="29297:29559" ph="/* Limit how much residual velocity a wheel can have. Too much will cause wheel to spin for long time after motor ... */" />
+                <marker date="1565720589837" expanded="true" signature="30262:30783" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="30385:30537" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="30800:30866" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="31107:31240" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="31280:31413" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="31513:31652" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="31754:31881" ph="/// Updates force values, calculates force vector and applies it to the rigidbody. ... " />
+                <marker date="1565720589837" expanded="true" signature="31917:36621" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="31951:36611" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="31982:32442" ph="/* Use alternate normal when encountering obstracles that have sharp edges in which case raycastHit.normal will a ... */" />
+                <marker date="1565720589837" expanded="true" signature="33254:36597" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="33723:35076" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="36434:36579" ph="{...}" />
+                <marker date="1565720589837" expanded="false" signature="36632:43546" ph="Classes" />
+                <marker date="1565720589837" expanded="true" signature="36777:36877" ph="/// All info related to longitudinal force calculation. ... " />
+                <marker date="1565720589837" expanded="true" signature="36937:37183" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="37194:37259" ph="/// Suspension part. ... " />
+                <marker date="1565720589837" expanded="true" signature="37317:37561" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="37572:37637" ph="/// Suspension part. ... " />
+                <marker date="1565720589837" expanded="true" signature="37695:38315" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="38326:38433" ph="/// Contains everything wheel related, including rim and tire. ... " />
+                <marker date="1565720589837" expanded="true" signature="38490:41737" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="39819:39938" ph="/// Calculation of static parameters and creation of rim collider. ... " />
+                <marker date="1565720589837" expanded="true" signature="39993:41418" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="40620:41404" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="41504:41727" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="41748:41839" ph="/// Contains RaycastHit and extended hit data. ... " />
+                <marker date="1565720589837" expanded="true" signature="41899:43527" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="42331:42442" ph="/// The point of contact between the wheel and the ground. ... " />
+                <marker date="1565720589837" expanded="true" signature="42505:42597" ph="/// The normal at the point of contact  ... " />
+                <marker date="1565720589837" expanded="true" signature="42667:42763" ph="/// The direction the wheel is pointing in. ... " />
+                <marker date="1565720589837" expanded="true" signature="42816:42908" ph="/// Tire slip in the rolling direction. ... " />
+                <marker date="1565720589837" expanded="true" signature="42960:43053" ph="/// The sideways direction of the wheel. ... " />
+                <marker date="1565720589837" expanded="true" signature="43107:43199" ph="/// The slip in the sideways direction. ... " />
+                <marker date="1565720589837" expanded="true" signature="43252:43370" ph="/// The magnitude of the force being applied for the contact. [N] ... " />
+                <marker date="1565720589837" expanded="false" signature="43557:50270" ph="Functions" />
+                <marker date="1565720589837" expanded="true" signature="43728:44720" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="44762:45131" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="44843:45096" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="44908:44987" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="45008:45082" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="45192:45367" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="45429:45600" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="45660:48310" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="46401:48043" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="46477:46647" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="46668:46836" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="47572:47622" ph="/* Triangles (double sided) ... */" />
+                <marker date="1565720589837" expanded="true" signature="48321:48399" ph="/// Average of multiple Vector3's ... " />
+                <marker date="1565720589837" expanded="true" signature="48461:48668" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="48558:48616" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="48679:49003" ph="/// Calculates an angle between two vectors in relation a normal. ... " />
+                <marker date="1565720589837" expanded="true" signature="49072:49233" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="49243:49582" ph="/// Determines on what side of the vehicle a point is.  ... " />
+                <marker date="1565720589837" expanded="true" signature="49669:50001" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="49817:49895" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="49912:49991" ph="{...}" />
+                <marker date="1565720589837" expanded="true" signature="50011:50096" ph="/// Determines if layer is in layermask. ... " />
+                <marker date="1565720589837" expanded="true" signature="50169:50249" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <marker date="1565721044859" expanded="false" signature="6:66" ph="..." />
+                <marker date="1565721044859" expanded="true" signature="91:1405" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="131:1403" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="171:399" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="315:395" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="485:757" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="561:752" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="787:1400" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="824:1396" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="1159:1258" ph="{...}" />
+                <marker date="1565721044859" expanded="true" signature="1292:1391" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+              <folding>
+                <marker date="1565722631711" expanded="true" signature="6:76" ph="..." />
+                <marker date="1565722631711" expanded="true" signature="100:581" ph="{...}" />
+                <marker date="1565722631711" expanded="true" signature="155:579" ph="{...}" />
+                <marker date="1565722631711" expanded="true" signature="271:415" ph="{...}" />
+                <marker date="1565722631711" expanded="true" signature="465:568" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -92,10 +243,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Aerodynamics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.EncodedAudio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -119,6 +272,9 @@
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Vehicle.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Ackermann.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Physics/Scripts/Aerodynamics.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs" />
       </list>
     </option>
   </component>
@@ -130,8 +286,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1194" />
-    <option name="y" value="198" />
+    <option name="x" value="-114" />
+    <option name="y" value="214" />
     <option name="width" value="1936" />
     <option name="height" value="961" />
   </component>
@@ -191,12 +347,12 @@
       <workItem from="1565169216130" duration="12956000" />
       <workItem from="1565566447725" duration="964000" />
       <workItem from="1565613435057" duration="6217000" />
-      <workItem from="1565704242436" duration="7094000" />
+      <workItem from="1565704242436" duration="9138000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27231000" />
+    <option name="totallyTimeSpent" value="29275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -208,7 +364,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24986681" />
@@ -308,174 +464,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" column="95" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
-          <folding>
-            <marker date="1565621931704" expanded="false" signature="6:128" ph="..." />
-            <marker date="1565621931704" expanded="true" signature="161:49420" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="239:49418" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="454:540" ph="/// Forward (longitudinal) friction info. ... " />
-            <marker date="1565621931704" expanded="true" signature="627:705" ph="/// Side (lateral) friction info. ... " />
-            <marker date="1565621931704" expanded="true" signature="792:995" ph="/// Array of rays and related data that are shot each frame to detect surface features. ... " />
-            <marker date="1565621931704" expanded="true" signature="1167:1275" ph="/// Number of raycasts in the forward / longitudinal direction. ... " />
-            <marker date="1565621931704" expanded="true" signature="1394:1494" ph="/// Number of raycasts in the side / lateral direction. ... " />
-            <marker date="1565621931704" expanded="true" signature="1619:1698" ph="/// True if wheel touching ground. ... " />
-            <marker date="1565621931704" expanded="true" signature="1923:1999" ph="/// Root object of the vehicle. ... " />
-            <marker date="1565621931704" expanded="true" signature="2111:2336" ph="/// If enabled mesh collider mimicking the shape of rim and wheel will be positioned so that wheel can not pass t ... " />
-            <marker date="1565621931704" expanded="true" signature="2389:2458" ph="/// Side of the vehicle. ... " />
-            <marker date="1565621931704" expanded="true" signature="2483:2594" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="2604:2674" ph="/// Side the wheel is on. ... " />
-            <marker date="1565621931704" expanded="true" signature="2755:2837" ph="/// Current active preset enum value. ... " />
-            <marker date="1565621931704" expanded="true" signature="2922:3002" ph="/// Current active friction preset. ... " />
-            <marker date="1565621931704" expanded="true" signature="3064:3184" ph="/// Contains point in which wheel touches ground. Not valid if !isGrounded. ... " />
-            <marker date="1565621931704" expanded="true" signature="3342:3500" ph="/// Enables some wheel behaviors specific to tracked vehicles, specifically the fact that there is no wheel spin. ... " />
-            <marker date="1565621931704" expanded="true" signature="3580:3756" ph="/// Only for tracked vehicles that use NVP wheel enlargement. ... " />
-            <marker date="1565621931704" expanded="true" signature="6090:7409" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="6575:6862" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="6906:7077" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="7454:9199" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="8186:8886" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="8293:8851" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="9235:9853" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="9547:9843" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="9888:10036" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="10098:10608" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="10619:10759" ph="/// Searches for wheel hit point by iterating WheelScan() function to the requested scan depth. ... " />
-            <marker date="1565621931704" expanded="true" signature="10792:15001" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="11323:12603" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="11569:12589" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="12620:14689" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="12720:13528" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="13718:14616" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="13913:14558" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="14375:14536" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="14755:14991" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="15051:17560" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="15527:16752" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="15618:16738" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="16809:16893" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="17602:20971" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="17784:19324" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="18007:18162" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="18183:18543" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="18646:18860" ph="/* If the spring is overcompressed remember the value for later force calculation and set spring to 0. ... */" />
-            <marker date="1565621931704" expanded="true" signature="18900:19077" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="19136:19310" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="19341:19549" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="20026:20437" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="20454:20913" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="21008:23718" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="22336:22713" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="22447:22577" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="22598:22698" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="22841:23429" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="22982:23203" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="23224:23415" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="23509:23708" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="23729:23836" ph="/// Does lateral and longitudinal slip and force calculations. ... " />
-            <marker date="1565621931704" expanded="true" signature="23874:31222" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="24056:24255" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="24272:24355" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="24650:24730" ph="/* Side slip ... */" />
-            <marker date="1565621931704" expanded="true" signature="24823:25278" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="25292:25375" ph="/* Forward slip ... */" />
-            <marker date="1565621931704" expanded="true" signature="25779:26098" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="26316:26481" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="26498:26612" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="27943:28051" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="28798:29060" ph="/* Limit how much residual velocity a wheel can have. Too much will cause wheel to spin for long time after motor ... */" />
-            <marker date="1565621931704" expanded="true" signature="29755:30263" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="29874:30023" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="30280:30346" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="30587:30720" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="30760:30893" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="30993:31132" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="31233:31360" ph="/// Updates force values, calculates force vector and applies it to the rigidbody. ... " />
-            <marker date="1565621931704" expanded="true" signature="31396:35992" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="31430:35982" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="31461:31921" ph="/* Use alternate normal when encountering obstracles that have sharp edges in which case raycastHit.normal will a ... */" />
-            <marker date="1565621931704" expanded="true" signature="32697:35968" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="33152:34452" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="35692:35950" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="35773:35928" ph="{...}" />
-            <marker date="1565621931704" expanded="false" signature="36003:42883" ph="Classes" />
-            <marker date="1565621931704" expanded="true" signature="36148:36248" ph="/// All info related to longitudinal force calculation. ... " />
-            <marker date="1565621931704" expanded="true" signature="36308:36554" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="36565:36630" ph="/// Suspension part. ... " />
-            <marker date="1565621931704" expanded="true" signature="36688:36932" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="36943:37008" ph="/// Suspension part. ... " />
-            <marker date="1565621931704" expanded="true" signature="37066:37686" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="37697:37804" ph="/// Contains everything wheel related, including rim and tire. ... " />
-            <marker date="1565621931704" expanded="true" signature="37861:41074" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="39190:39309" ph="/// Calculation of static parameters and creation of rim collider. ... " />
-            <marker date="1565621931704" expanded="true" signature="39364:40763" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="39991:40749" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="40849:41064" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="41085:41176" ph="/// Contains RaycastHit and extended hit data. ... " />
-            <marker date="1565621931704" expanded="true" signature="41236:42864" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="41668:41779" ph="/// The point of contact between the wheel and the ground. ... " />
-            <marker date="1565621931704" expanded="true" signature="41812:41828" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="41817:41828" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="41842:41934" ph="/// The normal at the point of contact  ... " />
-            <marker date="1565621931704" expanded="true" signature="41968:41990" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="41972:41990" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="42004:42100" ph="/// The direction the wheel is pointing in. ... " />
-            <marker date="1565621931704" expanded="true" signature="42153:42245" ph="/// Tire slip in the rolling direction. ... " />
-            <marker date="1565621931704" expanded="true" signature="42297:42390" ph="/// The sideways direction of the wheel. ... " />
-            <marker date="1565621931704" expanded="true" signature="42444:42536" ph="/// The slip in the sideways direction. ... " />
-            <marker date="1565621931704" expanded="true" signature="42589:42707" ph="/// The magnitude of the force being applied for the contact. [N] ... " />
-            <marker date="1565621931704" expanded="true" signature="42830:42854" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="42834:42854" ph="{...}" />
-            <marker date="1565621931704" expanded="false" signature="42894:49411" ph="Functions" />
-            <marker date="1565621931704" expanded="true" signature="43065:44057" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="44099:44456" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="44176:44421" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="44239:44316" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="44337:44407" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="44517:44684" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="44746:44909" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="44969:47465" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="45668:47214" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="45740:45902" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="45923:46083" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="46773:46823" ph="/* Triangles (double sided) ... */" />
-            <marker date="1565621931704" expanded="true" signature="47476:47554" ph="/// Average of multiple Vector3's ... " />
-            <marker date="1565621931704" expanded="true" signature="47616:47813" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="47709:47763" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="47824:48148" ph="/// Calculates an angle between two vectors in relation a normal. ... " />
-            <marker date="1565621931704" expanded="true" signature="48217:48378" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="48388:48727" ph="/// Determines on what side of the vehicle a point is.  ... " />
-            <marker date="1565621931704" expanded="true" signature="48814:49142" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="48958:49036" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="49053:49132" ph="{...}" />
-            <marker date="1565621931704" expanded="true" signature="49152:49237" ph="/// Determines if layer is in layermask. ... " />
-            <marker date="1565621931704" expanded="true" signature="49310:49390" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.Debug.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <marker date="1565215568099" expanded="false" signature="6:66" ph="..." />
-            <marker date="1565215568099" expanded="true" signature="99:6037" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="158:6035" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="173:289" ph="/// Visual representation of the wheel and it's more important Vectors. ... " />
-            <marker date="1565215568099" expanded="true" signature="325:4704" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="1070:1441" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="1126:1427" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="1735:4694" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="2550:4680" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="2802:3067" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="3124:3588" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="4714:4863" ph="/// Draw a wheel radius on both side of the wheel, interconected with lines perpendicular to wheel axle. ... " />
-            <marker date="1565215568099" expanded="true" signature="4988:6029" ph="{...}" />
-            <marker date="1565215568099" expanded="true" signature="5345:6019" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -778,6 +770,181 @@
             <marker date="1565710964828" expanded="true" signature="837:912" ph="{...}" />
             <marker date="1565710964828" expanded="true" signature="944:1384" ph="{...}" />
             <marker date="1565710964828" expanded="true" signature="1414:1573" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Wheel/WheelController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="850" column="33" lean-forward="true" selection-start-line="850" selection-start-column="33" selection-end-line="850" selection-end-column="33" />
+          <folding>
+            <marker date="1565720589837" expanded="false" signature="6:128" ph="..." />
+            <marker date="1565720589837" expanded="true" signature="161:50279" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="239:50277" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="454:540" ph="/// Forward (longitudinal) friction info. ... " />
+            <marker date="1565720589837" expanded="true" signature="627:705" ph="/// Side (lateral) friction info. ... " />
+            <marker date="1565720589837" expanded="true" signature="792:995" ph="/// Array of rays and related data that are shot each frame to detect surface features. ... " />
+            <marker date="1565720589837" expanded="true" signature="1167:1275" ph="/// Number of raycasts in the forward / longitudinal direction. ... " />
+            <marker date="1565720589837" expanded="true" signature="1394:1494" ph="/// Number of raycasts in the side / lateral direction. ... " />
+            <marker date="1565720589837" expanded="true" signature="1619:1698" ph="/// True if wheel touching ground. ... " />
+            <marker date="1565720589837" expanded="true" signature="1923:1999" ph="/// Root object of the vehicle. ... " />
+            <marker date="1565720589837" expanded="true" signature="2112:2337" ph="/// If enabled mesh collider mimicking the shape of rim and wheel will be positioned so that wheel can not pass t ... " />
+            <marker date="1565720589837" expanded="true" signature="2390:2459" ph="/// Side of the vehicle. ... " />
+            <marker date="1565720589837" expanded="true" signature="2484:2595" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="2605:2675" ph="/// Side the wheel is on. ... " />
+            <marker date="1565720589837" expanded="true" signature="2756:2838" ph="/// Current active preset enum value. ... " />
+            <marker date="1565720589837" expanded="true" signature="2923:3003" ph="/// Current active friction preset. ... " />
+            <marker date="1565720589837" expanded="true" signature="3065:3185" ph="/// Contains point in which wheel touches ground. Not valid if !isGrounded. ... " />
+            <marker date="1565720589837" expanded="true" signature="3343:3501" ph="/// Enables some wheel behaviors specific to tracked vehicles, specifically the fact that there is no wheel spin. ... " />
+            <marker date="1565720589837" expanded="true" signature="3581:3757" ph="/// Only for tracked vehicles that use NVP wheel enlargement. ... " />
+            <marker date="1565720589837" expanded="true" signature="6142:7470" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="6628:6920" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="6964:7137" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="7515:9338" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="8268:9015" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="8386:8978" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="9374:10003" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="9697:9993" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="10038:10190" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="10252:10775" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="10786:10926" ph="/// Searches for wheel hit point by iterating WheelScan() function to the requested scan depth. ... " />
+            <marker date="1565720589837" expanded="true" signature="10959:15289" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="11504:12799" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="11757:12785" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="12816:14977" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="12926:13763" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="13965:14904" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="14171:14843" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="14653:14821" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="15043:15279" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="15339:17944" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="15837:17121" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="15932:17107" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="17180:17264" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="17986:21361" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="18169:19710" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="18392:18547" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="18568:18928" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="19032:19246" ph="/* If the spring is overcompressed remember the value for later force calculation and set spring to 0. ... */" />
+            <marker date="1565720589837" expanded="true" signature="19286:19463" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="19522:19696" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="19727:19935" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="20412:20827" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="20844:21303" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="21398:24132" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="22736:23117" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="22848:22980" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="23001:23102" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="23245:23840" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="23388:23612" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="23633:23826" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="23920:24122" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="24143:24250" ph="/// Does lateral and longitudinal slip and force calculations. ... " />
+            <marker date="1565720589837" expanded="true" signature="24288:31743" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="24474:24677" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="24694:24777" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="25084:25164" ph="/* Side slip ... */" />
+            <marker date="1565720589837" expanded="true" signature="25257:25714" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="25728:25811" ph="/* Forward slip ... */" />
+            <marker date="1565720589837" expanded="true" signature="26221:26546" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="26766:26933" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="26950:27064" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="28429:28538" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="29297:29559" ph="/* Limit how much residual velocity a wheel can have. Too much will cause wheel to spin for long time after motor ... */" />
+            <marker date="1565720589837" expanded="true" signature="30262:30783" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="30385:30537" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="30800:30866" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="31107:31240" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="31280:31413" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="31513:31652" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="31754:31881" ph="/// Updates force values, calculates force vector and applies it to the rigidbody. ... " />
+            <marker date="1565720589837" expanded="true" signature="31917:36621" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="31951:36611" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="31982:32442" ph="/* Use alternate normal when encountering obstracles that have sharp edges in which case raycastHit.normal will a ... */" />
+            <marker date="1565720589837" expanded="true" signature="33254:36597" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="33723:35076" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="36434:36579" ph="{...}" />
+            <marker date="1565720589837" expanded="false" signature="36632:43546" ph="Classes" />
+            <marker date="1565720589837" expanded="true" signature="36777:36877" ph="/// All info related to longitudinal force calculation. ... " />
+            <marker date="1565720589837" expanded="true" signature="36937:37183" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="37194:37259" ph="/// Suspension part. ... " />
+            <marker date="1565720589837" expanded="true" signature="37317:37561" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="37572:37637" ph="/// Suspension part. ... " />
+            <marker date="1565720589837" expanded="true" signature="37695:38315" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="38326:38433" ph="/// Contains everything wheel related, including rim and tire. ... " />
+            <marker date="1565720589837" expanded="true" signature="38490:41737" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="39819:39938" ph="/// Calculation of static parameters and creation of rim collider. ... " />
+            <marker date="1565720589837" expanded="true" signature="39993:41418" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="40620:41404" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="41504:41727" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="41748:41839" ph="/// Contains RaycastHit and extended hit data. ... " />
+            <marker date="1565720589837" expanded="true" signature="41899:43527" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="42331:42442" ph="/// The point of contact between the wheel and the ground. ... " />
+            <marker date="1565720589837" expanded="true" signature="42505:42597" ph="/// The normal at the point of contact  ... " />
+            <marker date="1565720589837" expanded="true" signature="42667:42763" ph="/// The direction the wheel is pointing in. ... " />
+            <marker date="1565720589837" expanded="true" signature="42816:42908" ph="/// Tire slip in the rolling direction. ... " />
+            <marker date="1565720589837" expanded="true" signature="42960:43053" ph="/// The sideways direction of the wheel. ... " />
+            <marker date="1565720589837" expanded="true" signature="43107:43199" ph="/// The slip in the sideways direction. ... " />
+            <marker date="1565720589837" expanded="true" signature="43252:43370" ph="/// The magnitude of the force being applied for the contact. [N] ... " />
+            <marker date="1565720589837" expanded="false" signature="43557:50270" ph="Functions" />
+            <marker date="1565720589837" expanded="true" signature="43728:44720" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="44762:45131" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="44843:45096" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="44908:44987" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="45008:45082" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="45192:45367" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="45429:45600" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="45660:48310" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="46401:48043" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="46477:46647" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="46668:46836" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="47572:47622" ph="/* Triangles (double sided) ... */" />
+            <marker date="1565720589837" expanded="true" signature="48321:48399" ph="/// Average of multiple Vector3's ... " />
+            <marker date="1565720589837" expanded="true" signature="48461:48668" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="48558:48616" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="48679:49003" ph="/// Calculates an angle between two vectors in relation a normal. ... " />
+            <marker date="1565720589837" expanded="true" signature="49072:49233" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="49243:49582" ph="/// Determines on what side of the vehicle a point is.  ... " />
+            <marker date="1565720589837" expanded="true" signature="49669:50001" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="49817:49895" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="49912:49991" ph="{...}" />
+            <marker date="1565720589837" expanded="true" signature="50011:50096" ph="/// Determines if layer is in layermask. ... " />
+            <marker date="1565720589837" expanded="true" signature="50169:50249" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <marker date="1565721044859" expanded="false" signature="6:66" ph="..." />
+            <marker date="1565721044859" expanded="true" signature="91:1405" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="131:1403" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="171:399" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="315:395" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="485:757" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="561:752" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="787:1400" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="824:1396" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="1159:1258" ph="{...}" />
+            <marker date="1565721044859" expanded="true" signature="1292:1391" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="60" lean-forward="true" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+          <folding>
+            <marker date="1565722631711" expanded="true" signature="6:76" ph="..." />
+            <marker date="1565722631711" expanded="true" signature="100:581" ph="{...}" />
+            <marker date="1565722631711" expanded="true" signature="155:579" ph="{...}" />
+            <marker date="1565722631711" expanded="true" signature="271:415" ph="{...}" />
+            <marker date="1565722631711" expanded="true" signature="465:568" ph="{...}" />
           </folding>
         </state>
       </provider>
