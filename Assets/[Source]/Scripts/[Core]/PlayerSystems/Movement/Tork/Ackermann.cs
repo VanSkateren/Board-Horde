@@ -13,10 +13,11 @@ namespace Adrenak.Tork
 	/// </summary>
 	public class Ackermann : Singleton<Ackermann>
 	{
-		private Wheel frontLeftWheel;
-		private Wheel frontRightWheel;
-		private Wheel rearLeftWheel;
-		private Wheel rearRightWheel;
+		private Wheel 
+			_frontLeftWheel, 
+			_frontRightWheel, 
+			_rearLeftWheel, 
+			_rearRightWheel;
 
 		[PublicAPI]
 		public float[,] Radii { get; private set; }
@@ -25,23 +26,23 @@ namespace Adrenak.Tork
 		public float Angle { get; private set; }
 
 		[PublicAPI]
-		public float AxleSeparation => (frontLeftWheel.transform.position - rearLeftWheel.transform.position).magnitude;
+		public float AxleSeparation => (_frontLeftWheel.transform.position - _rearLeftWheel.transform.position).magnitude;
 
 		[PublicAPI]
-		public float AxleWidth => (frontLeftWheel.transform.position - frontRightWheel.transform.position).magnitude;
+		public float AxleWidth => (_frontLeftWheel.transform.position - _frontRightWheel.transform.position).magnitude;
 
 		[PublicAPI]
-		public float FrontRightRadius => AxleSeparation / Mathf.Sin(Mathf.Abs(frontRightWheel.steerAngle));
+		public float FrontRightRadius => AxleSeparation / Mathf.Sin(Mathf.Abs(_frontRightWheel.steerAngle));
 
 		[PublicAPI]
-		public float FrontLeftRadius => AxleSeparation / Mathf.Sin(Mathf.Abs(frontLeftWheel.steerAngle));
+		public float FrontLeftRadius => AxleSeparation / Mathf.Sin(Mathf.Abs(_frontLeftWheel.steerAngle));
 
 		private void Start()
 		{
-			frontLeftWheel = Vehicle.Instance.frontLeftWheel;
-			frontRightWheel = Vehicle.Instance.frontRightWheel;
-			rearLeftWheel = Vehicle.Instance.rearLeftWheel;
-			rearRightWheel = Vehicle.Instance.rearRightWheel;
+			_frontLeftWheel = Vehicle.Instance.frontLeftWheel;
+			_frontRightWheel = Vehicle.Instance.frontRightWheel;
+			_rearLeftWheel = Vehicle.Instance.rearLeftWheel;
+			_rearRightWheel = Vehicle.Instance.rearRightWheel;
 			
 			Radii = new float[2, 2];
 			
@@ -59,19 +60,19 @@ namespace Adrenak.Tork
 			float __farAngle = GetSecondaryAngle(angle, AxleWidth, AxleSeparation);
 
 			// The rear wheels are always at 0 steer in Ackermann
-			rearLeftWheel.steerAngle = rearRightWheel.steerAngle = 0;
+			_rearLeftWheel.steerAngle = _rearRightWheel.steerAngle = 0;
 
 			if (Mathf.Approximately(Angle, 0)) 
-				frontRightWheel.steerAngle = frontLeftWheel.steerAngle = 0;
+				_frontRightWheel.steerAngle = _frontLeftWheel.steerAngle = 0;
 			else if (Angle > 0)
 			{
-				frontRightWheel.steerAngle = Angle;
-				frontLeftWheel.steerAngle = __farAngle;
+				_frontRightWheel.steerAngle = Angle;
+				_frontLeftWheel.steerAngle = __farAngle;
 			}
 			else if (Angle < 0)
 			{
-				frontLeftWheel.steerAngle = Angle;
-				frontRightWheel.steerAngle = -__farAngle;
+				_frontLeftWheel.steerAngle = Angle;
+				_frontRightWheel.steerAngle = -__farAngle;
 			}
 		}
 
@@ -80,12 +81,12 @@ namespace Adrenak.Tork
 		{
 			if (Angle > 0)
 			{
-				Transform __frontRight = frontRightWheel.transform;
+				Transform __frontRight = _frontRightWheel.transform;
 				return __frontRight.position + Radii[0, 1] * __frontRight.right;
 			}
 			else
 			{
-				Transform __frontLeft = frontLeftWheel.transform;
+				Transform __frontLeft = _frontLeftWheel.transform;
 				return __frontLeft.position - Radii[0, 0] * __frontLeft.right;	
 			}
 		}
@@ -137,9 +138,9 @@ namespace Adrenak.Tork
 			float __angle = default;
 			Vector3 __origin = default;
 
-            if(frontLeftWheel != null)
+            if(_frontLeftWheel != null)
             {
-				__wheelTransform = frontLeftWheel.transform;
+				__wheelTransform = _frontLeftWheel.transform;
             	
             	__angle = __wheelTransform.localEulerAngles.y;
 				__origin = __wheelTransform.position;
@@ -147,9 +148,9 @@ namespace Adrenak.Tork
             }
 
 			// ReSharper disable once InvertIf
-			if (frontRightWheel != null)
+			if (_frontRightWheel != null)
 			{
-				__wheelTransform = frontRightWheel.transform;
+				__wheelTransform = _frontRightWheel.transform;
             	
 				__angle = __wheelTransform.localEulerAngles.y;
 				__origin = __wheelTransform.position;

@@ -29,7 +29,7 @@ namespace Adrenak.Tork
 		[SerializeField]
 		private AnimationCurve downForceForSpeed = AnimationCurve.Linear(0, 0, 250, 2500);
 
-		public Player Player { get; private set; }
+		public Player Player;
 		
 		public Wheel 
 			frontLeftWheel,

@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using CommonGames.Utilities;
+using CommonGames.Utilities.Extensions;
+using CommonGames.Utilities.CGTK;
 
-namespace Adrenak.Tork {
+namespace Adrenak.Tork
+{
 	public class AntiRoll : MonoBehaviour
 	{
 		[Serializable]
@@ -20,12 +24,20 @@ namespace Adrenak.Tork {
 			}
 		}
 
-		public new Rigidbody rigidbody;
-		public List<Axle> axles;
+		private new Rigidbody _rigidbody;
+		
+		[HideInInspector] public List<Axle> axles;
 
-		private void Reset()
+		private void Start()
 		{
-			if(!Vehicle.InstanceExists) return;
+			if(!Vehicle.InstanceExists)
+			{
+				CGDebug.Log("Vehicle doesn't exist");
+
+				return;
+			}
+
+			_rigidbody = Vehicle.Instance.Rigidbody;
 
 			axles = new List<Axle>()
 			{
@@ -47,12 +59,12 @@ namespace Adrenak.Tork {
 
 				if (__axle.left.isGrounded)
 				{
-					rigidbody.AddForceAtPosition(__wsDown * -__antiRollForce, __axle.left.Hit.point);
+					_rigidbody.AddForceAtPosition(__wsDown * -__antiRollForce, __axle.left.Hit.point);
 				}
 
 				if (__axle.right.isGrounded)
 				{
-					rigidbody.AddForceAtPosition(__wsDown * __antiRollForce, __axle.right.Hit.point);
+					_rigidbody.AddForceAtPosition(__wsDown * __antiRollForce, __axle.right.Hit.point);
 				}
 			}
 		}
