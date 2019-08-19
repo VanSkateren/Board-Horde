@@ -100,6 +100,7 @@ namespace Adrenak.Tork
 			return Mathf.Atan(separation / __far) * Mathf.Rad2Deg;
 		}
 
+		[PublicAPI]
 		public static float[,] GetRadii(float angle, float separation, float width)
 		{
 			float __secAngle = GetSecondaryAngle(angle, width, separation);

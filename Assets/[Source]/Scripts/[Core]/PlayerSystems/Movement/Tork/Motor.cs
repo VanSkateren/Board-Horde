@@ -33,7 +33,12 @@ namespace Adrenak.Tork
 			value = Mathf.Clamp(value, maxReverseInput, 1);
 
 			// If we have Ackermann steering, we apply torque based on the steering radius of each wheel
-			float[,] __radii = Ackermann.GetRadii(skateboard.Ackermann.Angle, skateboard.Ackermann.AxleSeparation, skateboard.Ackermann.AxleWidth);
+			float[,] __radii = Ackermann.GetRadii(Ackermann.Instance.Angle, Ackermann.Instance.AxleSeparation, Ackermann.Instance.AxleWidth);
+			
+			//Debug.Log($"Ackermann Angle:{Ackermann.Instance.Angle}");
+			//Debug.Log($"Ackermann AxleSeparation:{Ackermann.Instance.AxleSeparation}");
+			//Debug.Log($"Ackermann AxleWidth:{Ackermann.Instance.AxleWidth}");
+
 			float __total = __radii[0, 0] + __radii[1, 0] + __radii[0, 1] + __radii[1, 1];
 			float __fl = __radii[0, 0] / __total;
 			float __fr = __radii[1, 0] / __total;
