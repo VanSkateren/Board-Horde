@@ -45,7 +45,6 @@ namespace Adrenak.Tork
 			_rearRightWheel = Vehicle.Instance.rearRightWheel;
 			
 			Radii = new float[2, 2];
-			
 		}
 
 		private void Update()

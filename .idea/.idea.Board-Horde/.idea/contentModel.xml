@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Gebruiker\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Gebruiker\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Board-Horde.-1779314816.00" t="ExcludeRecursive" />
-    <e p="E:\[Projects]\[Group Projects]\Board-Horde" t="IncludeRecursive">
+    <e p="C:\[Projects]\[Group]\Board-Horde" t="IncludeRecursive">
       <e p="Animancer.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
@@ -2543,5 +2541,7 @@
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="UltEvents.csproj" t="IncludeRecursive" />
     </e>
+    <e p="C:\Users\bloem\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\bloem\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Board-Horde.-1324467952.00" t="ExcludeRecursive" />
   </component>
 </project>
