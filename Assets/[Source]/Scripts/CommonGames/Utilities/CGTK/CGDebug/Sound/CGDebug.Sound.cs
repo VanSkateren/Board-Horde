@@ -9,25 +9,31 @@
     
     public static partial class CGDebug
     {
+        #if UNITY_EDITOR
         private static readonly AudioSource Previewer = 
             UnityEditor.EditorUtility.CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(AudioSource)).GetComponent<AudioSource>();
-        
+        #endif
+
         public static void PlaySound(AudioEvent audioEvent, AudioSource audioSource = null)
         {
+            #if UNITY_EDITOR
             if (audioSource == null)
             {
                 audioSource = Previewer;
             }
+            #endif
             
             audioEvent.Play(audioSource);
         }
         
         public static void PlaySound(AudioClip audioClip, AudioSource audioSource = null)
         {
+            #if UNITY_EDITOR
             if (audioSource == null)
             {
                 audioSource = Previewer;
             }
+            #endif
             
             audioSource.clip = DingAudioClip;
             audioSource.volume = Range(Volume.minValue, Volume.maxValue);
@@ -37,10 +43,12 @@
         
         public static void PlayDing(AudioSource audioSource = null)
         {
+            #if UNITY_EDITOR
             if (audioSource == null)
             {
                 audioSource = Previewer;
             }
+            #endif
             
             audioSource.clip = DingAudioClip;
             audioSource.volume = Range(Volume.minValue, Volume.maxValue);
@@ -94,7 +102,7 @@
 
             return floatArr;
         }
-        
+
         #endregion
     }
 }

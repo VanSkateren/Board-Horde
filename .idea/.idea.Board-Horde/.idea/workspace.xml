@@ -5,117 +5,174 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Rewired/Extras.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/IK Jobs (Unity 2018.2.4f1).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/Oculus.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/Playmaker.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/Steam VR.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/FinalIK/_Integration/VRIK LeapMotion (Unity 5.6.1).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_Integration/Final-IK.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_Integration/Goblin Archer (2,5D Puppets).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_Integration/Invector's Third Person Controller - Basic Locomotion FREE (v 1.0c).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_Integration/Ootii's Motion Controller v2.73 (Unity 5.5.0).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_Integration/Opsive's Third Person Controller v1.3.10.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_Integration/UMA 2.6.2 (Unity 5.6.1.f1).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_Integration/UNet.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/PuppetMaster/_Integration/VR Boxing (Oculus, Unity 5.6.5).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/EmissiveLightHigh.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/EmissiveLightHigh.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/EmissiveLightLow.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/EmissiveLightLow.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/PPS_Logo.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/PPS_Logo.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Dog.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Dog.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Flower.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Flower.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Gaussian.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Gaussian.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Horses.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Horses.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Light.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Light.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Lighthouse.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Lighthouse.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Mountains.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Mountains.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Pencils.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Pencils.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Swan.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Swan.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Vegetables.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/Pictures/SCPE_Demo_Vegetables.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/SCPE_Decal.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/SCPE_Decal.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/SCPE_Floor.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/SCPE_Floor.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/SCPE_Text.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/SCPE_Text.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/SCPE_Wall.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Materials/SCPE_Wall.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Blending.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Blending.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Blending/Demo_BlendingVol1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Blending/Demo_BlendingVol1.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Blending/Demo_BlendingVol2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Blending/Demo_BlendingVol2.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_AO2D.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_AO2D.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_BlackBars.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_BlackBars.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Blur.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Blur.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_ColorGradingLUT.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_ColorGradingLUT.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_ColorSplit.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_ColorSplit.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Colorize.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Colorize.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Danger.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Danger.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Dithering.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Dithering.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_DoubleVision.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_DoubleVision.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_EdgeDetect.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_EdgeDetect.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Fog.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Fog.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Global.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Global.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Gradient.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Gradient.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_HueShift3D.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_HueShift3D.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Kuwuhara.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Kuwuhara.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_LensFlares.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_LensFlares.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Lightstreaks.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Lightstreaks.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Mosaic.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Mosaic.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Overlay.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Overlay.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Pixelize.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Pixelize.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Posterize.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Posterize.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_RadialBlur.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_RadialBlur.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Refraction.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Refraction.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Ripples.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Ripples.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Scanlines.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Scanlines.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Sharpen.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Sharpen.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Sketch.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Sketch.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_SpeedLines.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_SpeedLines.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Sunshafts.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_Sunshafts.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_TiltShift.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_TiltShift.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_TubeDistortion.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Demo_TubeDistortion.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Trigger.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Trigger.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Trigger/Demo_Trigger.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Profiles/Trigger/Demo_Trigger.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/SCPE_BlendingExample.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/SCPE_BlendingExample.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/SCPE_DemoRooms.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/SCPE_DemoRooms.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/SCPE_TriggerExample.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/SCPE_TriggerExample.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts/CharacterMovement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts/CharacterMovement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts/FirstPersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts/FirstPersonController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts/FirstPersonController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts/FirstPersonController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts/MouseLook.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Scripts/MouseLook.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Decal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Decal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Dog.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Dog.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Flower.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Flower.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Horses.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Horses.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Light.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Light.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Lighthouse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Lighthouse.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Mountains.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Mountains.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Pencils.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Pencils.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Swan.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Swan.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Vegetables.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/SCPE_Demo_Vegetables.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/license.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/license.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/license.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SC Post Effects/_Demo/Textures/license.txt.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SC Post Effects/_DemoContent.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Art/Sprites/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Prefabs/[ScriptableObjects].meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Scripts/DrawLevel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Scripts/DrawLevel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Scripts/SmoothFollow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Scripts/SmoothFollow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Textures/grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Textures/grid.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Chrome.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Chrome.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Exhaust_Pipe.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Exhaust_Pipe.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Grid.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Grid.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Plastics.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Plastics.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Salon.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Salon.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Seat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Seat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Spring.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Spring.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Steering_wheel.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Steering_wheel.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Wheel.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_Wheel.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_inside.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_inside.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_ligth.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Focus_ligth.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Subaru_Dno.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Subaru_Dno.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Bottom.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Bottom.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Chrome.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Chrome.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Exhaust_Pipe.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Exhaust_Pipe.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Grid.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Grid.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Plastics.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Plastics.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Salon.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Salon.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Seat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Seat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Spring.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Spring.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Steering_wheel.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Steering_wheel.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Wheel.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Wheel.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Windows.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_Windows.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_inside.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_inside.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_ligth.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Materials/Tocus_ligth.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Body.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Body.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Bottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Bottom.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Exhaust_Pipe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Exhaust_Pipe.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Grid.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Grid.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Salon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Salon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Seat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Seat.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Spring.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Spring.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Steering_wheel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Steering_wheel.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Wheel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Wheel.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Wheel_b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_Wheel_b.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_inside.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_inside.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_ligth.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Textures/Tocus_ligth.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Tocus.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Common/Tocus/Tocus.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Physics.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Demo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Demo/Scripts/PhysicsDemo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Physics/Demo/Scripts/PhysicsDemo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Tocus.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Adrenak/Tork/Tocus.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Serialization.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Serialization.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor/Sirenix.Utilities.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Art/Materials/Defaults/checker.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Art/Materials/Defaults/checker.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Environment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Environment.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Lighting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Lighting.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Managers.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Managers.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/Examples.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skate4/Dreamteck/Splines/PlaymakerActions.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Ackermann.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Ackermann.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.polybrush/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.polybrush/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Ackermann.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Ackermann.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Aerodynamics.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Aerodynamics.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Brakes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Brakes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/KeyboardPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/KeyboardPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Motor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Motor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Player.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Steering.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Steering.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Vehicle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Vehicle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/VehicleInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/VehicleInput.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/Editor/WheelControllerInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/Editor/WheelControllerInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/Editor/WheelControllerScriptIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/Editor/WheelControllerScriptIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/Wheel Controller Manual.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/Wheel Controller Manual.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/WheelController.API.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/WheelController.API.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/WheelController.Debug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/WheelController.Debug.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/WheelController.FrictionPreset.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/WheelController.FrictionPreset.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/WheelController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Wheel/WheelController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/WheelRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/WheelRenderer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,43 +180,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>__Move</find>
-      <find>_grounded</find>
-      <find>transform</find>
-      <find>Grounded</find>
-      <find>motorTorqueForSpeed</find>
-      <find>Const</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>axle</replace>
-      <replace>IsGrounded</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Vehicle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Ackermann.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Camera/CameraSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/BoostAbility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/AirControlAbility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.EncodedAudio.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Motor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/CenterOfMass.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Aerodynamics.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/KeyboardPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvBoostTrails.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Physics/CpAcceleration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Temporary/SceneLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvBoostPostProcessingEffect.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/RaycastWheel.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Skateboard.cs" />
@@ -181,6 +220,18 @@
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/AntiRoll.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Motor.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Tork/Ackermann.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Abilities/BaseAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Abilities/CaBoost.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Abilities/CaAirControl.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Abilities/JumpAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Abilities/DriftAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Effects/CvBoostPostProcessingEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Effects/CvBoostTrails.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/AirControlAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/BoostAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvBoostPostProcessingEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Physics/CpAcceleration.cs" />
       </list>
     </option>
   </component>
@@ -253,6 +304,9 @@
       <workItem from="1565898457135" duration="3109000" />
       <workItem from="1566228764532" duration="1524000" />
       <workItem from="1566230903700" duration="3928000" />
+      <workItem from="1567545741501" duration="737000" />
+      <workItem from="1567677850101" duration="4193000" />
+      <workItem from="1567683575555" duration="667000" />
     </task>
     <servers />
   </component>
