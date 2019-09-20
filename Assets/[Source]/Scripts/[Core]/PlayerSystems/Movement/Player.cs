@@ -26,17 +26,18 @@ namespace Core.PlayerSystems.Movement
 		
 		[BoxGroup("References", showLabel: false)]
 		
+		//[BoxGroup("References/SceneReferences", showLabel: false)]
+		//[Required]
+		//public Transform playerCamera;
+
+		//[BoxGroup("References/SceneReferences")]
 		[BoxGroup("References/SceneReferences", showLabel: false)]
-		[Required]
-		public Transform playerCamera;
+        [Required]
+        public Transform playerCamera, meshRoot, cameraFollowPoint;
 		
 		[BoxGroup("References/SceneReferences")]
-		[Required]
+		[Required] [InlineEditor]
 		[SerializeField] public Skateboard skateboard;
-
-		[BoxGroup("References/SceneReferences")]
-        [Required]
-        public Transform meshRoot, cameraFollowPoint;
 		
 		[BoxGroup("References")]
 		[Required] [InlineEditor]

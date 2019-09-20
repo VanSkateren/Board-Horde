@@ -22,38 +22,48 @@ namespace Core.PlayerSystems.Movement
 	public class Skateboard : Singleton<Skateboard>
 	{
 	    #region Variables
-	    
+
+		[BoxGroup("Wheels")]
+		
+		[SerializeField] private Transform[] wheelPositions;
+		
 	    public Player Player { get; set; }
 		
 		/// <summary>
+		/// The Transform of the skateboard
+		/// </summary>
+		[PublicAPI]
+		public Transform Transform { get; }
+
+		/// <summary>
 		/// The Transform of the character motor
 		/// </summary>
-		public Transform Transform => _transform;
-		private Transform _transform;
-		
+		[PublicAPI]
+		public Rigidbody Rigidbody { get; }
+
 		/// <summary>
 		/// The character's goal position in its movement calculations (always up-to-date during the character update phase)
 		/// </summary>
-		public Vector3 TransientPosition => _transientPosition;
-		private Vector3 _transientPosition;
-		
+		[PublicAPI]
+		public Vector3 TransientPosition { get; private set; }
+
 		/// <summary>
 		/// The character's up direction (always up-to-date during the character update phase)
 		/// </summary>
-		public Vector3 CharacterUp => _characterUp;
-		private Vector3 _characterUp;
-		
+		[PublicAPI]
+		public Vector3 CharacterUp { get; }
+
 		/// <summary>
 		/// The character's forward direction (always up-to-date during the character update phase)
 		/// </summary>
-		public Vector3 CharacterForward => _characterForward;
-		private Vector3 _characterForward;
-		
+		[PublicAPI]
+		public Vector3 CharacterForward { get; }
+
 		/// <summary>
 		/// The character's right direction (always up-to-date during the character update phase)
 		/// </summary>
-		public Vector3 CharacterRight => _characterRight;
-		private Vector3 _characterRight;
+		[PublicAPI]
+		public Vector3 CharacterRight { get; }
 
 		#region State Info
 		
@@ -495,9 +505,9 @@ namespace Core.PlayerSystems.Movement
 		/// </summary>
 		public void SetPosition(Vector3 position, bool bypassInterpolation = true)
 		{
-			_transform.position = position;
+			Transform.position = position;
 			//_initialSimulationPosition = position;
-			_transientPosition = position;
+			TransientPosition = position;
 
 			if (bypassInterpolation)
 			{
@@ -509,7 +519,7 @@ namespace Core.PlayerSystems.Movement
 		/// </summary>
 		public void SetRotation(Quaternion rotation, bool bypassInterpolation = true)
 		{
-			_transform.rotation = rotation;
+			Transform.rotation = rotation;
 			//_initialSimulationRotation = rotation;
 			//TransientRotation = rotation;
 
@@ -523,10 +533,10 @@ namespace Core.PlayerSystems.Movement
 		/// </summary>
 		public void SetPositionAndRotation(Vector3 position, Quaternion rotation, bool bypassInterpolation = true)
 		{
-			_transform.SetPositionAndRotation(position, rotation);
+			Transform.SetPositionAndRotation(position, rotation);
 			//_initialSimulationPosition = position;
 			//_initialSimulationRotation = rotation;
-			_transientPosition = position;
+			TransientPosition = position;
 			//TransientRotation = rotation;
 
 			if (bypassInterpolation)
