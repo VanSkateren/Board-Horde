@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class CameraSystem : MonoBehaviour
 {
+    
     [Header("Camera")]
     public CinemachineVirtualCamera carCamGround;
     private CinemachineTransposer _carCamTransposerGround;
@@ -33,7 +34,7 @@ public class CameraSystem : MonoBehaviour
     }
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _carCamTransposerGround = carCamGround.GetCinemachineComponent<CinemachineTransposer>();
         _carCamTransposerAir = carCamAir.GetCinemachineComponent<CinemachineTransposer>();
