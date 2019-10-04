@@ -251,6 +251,8 @@ uniform float NGSS_NOISE_TO_DITHERING_SCALE_DIR = 1;
 uniform float NGSS_FILTER_SAMPLERS_DIR = 32;
 uniform float NGSS_TEST_SAMPLERS_DIR = 16;
 
+//uniform float NGSS_DOT_ANGLE = 1.0;
+
 //INLINE SAMPLING
 #if (SHADER_TARGET < 30  || UNITY_VERSION <= 570 || defined(SHADER_API_D3D9) || defined(SHADER_API_GLES) || defined(SHADER_API_PSP2) || defined(SHADER_API_N3DS))
 	//#define NO_INLINE_SAMPLERS_SUPPORT
@@ -266,6 +268,9 @@ uniform float NGSS_GLOBAL_SOFTNESS = 0.01;
 uniform float NGSS_PCSS_FILTER_DIR_MIN = 0.05;
 uniform float NGSS_PCSS_FILTER_DIR_MAX = 0.25;
 uniform float NGSS_BIAS_FADE_DIR = 0.001;
+
+uniform sampler2D _BlueNoiseTextureDir;
+uniform float4 _BlueNoiseTextureDir_TexelSize;
 
 #define ditherPatternDir float4x4(0.0,0.5,0.125,0.625, 0.75,0.22,0.875,0.375, 0.1875,0.6875,0.0625,0.5625, 0.9375,0.4375,0.8125,0.3125)
 
@@ -306,9 +311,6 @@ float OrderedDitheringDir(float x, float y, float c0)
 
     return lerp(limit*c0, 1.0, c0);
 }*/
-
-uniform sampler2D _BlueNoiseTextureDir;
-uniform float4 _BlueNoiseTextureDir_TexelSize;
 
 float InterleavedGradientNoiseDir(float2 position_screen)
 {
@@ -368,6 +370,7 @@ float2 BlockerSearch(float2 uv, float receiver, float searchUV, float3 receiverP
 	float avgBlockerDepth = 0.0;
 	float numBlockers = 0.0;
 	float blockerSum = 0.0;
+	float depth = _ShadowMapTexture.SampleLevel(my_linear_clamp_smp2, uv.xy, 0.0);
 
 	int samplers = Sampler_Number;// / (cascadeIndex / 2);
 	for (int i = 0; i < samplers; i++)
@@ -410,7 +413,13 @@ float2 BlockerSearch(float2 uv, float receiver, float searchUV, float3 receiverP
 	}
 
 	avgBlockerDepth = blockerSum / numBlockers;
-
+	/*
+	#if defined(UNITY_REVERSED_Z)
+	avgBlockerDepth = max(depth, blockerSum / numBlockers);
+	#else
+	avgBlockerDepth = min(depth, blockerSum / numBlockers);
+	#endif
+	*/
 #if defined(UNITY_REVERSED_Z)
 	avgBlockerDepth = 1.0 - avgBlockerDepth;
 #endif
@@ -450,7 +459,13 @@ float PCF_FilterDir(float2 uv, float receiver, float diskRadius, float3 receiver
 float NGSS_Main(float4 coord, float3 receiverPlaneDepthBias, float2 screenpos, uint cascadeIndex)
 {
 	float randPied = InterleavedGradientNoiseDir(screenpos);
-	float shadowSoftness = clamp(NGSS_GLOBAL_SOFTNESS, 0.001, 0.25);//NGSS_GLOBAL_SOFTNESS default value 100
+	#if defined(SHADOWS_SPLIT_SPHERES)
+	float shadowSoftness = clamp(NGSS_GLOBAL_SOFTNESS, 0.001, 0.25);
+	#else
+	float3 viewDir = mul((float3x3)unity_CameraToWorld, float3(0,0,1));
+	float DOT_ANGLE = 1 - abs(dot(viewDir, float3(0.0, 1.0, 0.0)));
+	float shadowSoftness = NGSS_GLOBAL_SOFTNESS * 0.005 / clamp(DOT_ANGLE, 0.1, 1.0);
+	#endif
 	
 	float2 uv = coord.xy;
 	float receiver = coord.z;// - ditherValue;

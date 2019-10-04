@@ -51,7 +51,7 @@ uniform float NGSS_BANDING_TO_NOISE_RATIO = 1.0;
 
 uniform float NGSS_PCSS_FILTER_LOCAL_MIN = 0.0125; 					//Close to blocker (If 0.0 == Hard Shadows). This value cannot be higher than NGSS_PCSS_FILTER_LOCAL_MAX
 uniform float NGSS_PCSS_FILTER_LOCAL_MAX = 1.0; 					//Far from blocker (If 1.0 == Soft Shadows). This value cannot be smaller than NGSS_PCSS_FILTER_LOCAL_MIN
-uniform float NGSS_PCSS_LOCAL_BLOCKER_BIAS = 0.0;					//Allows to define an extra bias only on the blocker search algorithm
+//uniform float NGSS_PCSS_LOCAL_BLOCKER_BIAS = 0.0;					//Allows to define an extra bias only on the blocker search algorithm
 
 uniform sampler2D unity_RandomRotation16;
 #define NGSS_PCSS_RANDOM_ROTATED_TEXTURE_DEFINED
@@ -225,7 +225,7 @@ float SlopeBasedBiasCombine(float z0, float2 dz_duv, float2 offset)
 		//BLOCKER SEARCH	
 		float blockerCount = 0;
 		float avgBlockerDistance = 0.0;		
-		float sampleDepth = coord.z - NGSS_PCSS_LOCAL_BLOCKER_BIAS * 0.05;
+		float sampleDepth = coord.z;
 		
 		for (int i = 0; i < samplers; ++i)
 		{
@@ -295,9 +295,9 @@ float SlopeBasedBiasCombine(float z0, float2 dz_duv, float2 offset)
 			// Fallback to 1-tap shadows
 			#if defined (SHADOWS_NATIVE)
 				half shadowFallback = UNITY_SAMPLE_SHADOW_PROJ(_ShadowMapTexture, shadowCoord);
-				shadowFallback = lerp(NGSS_GLOBAL_OPACITY, 1.0f, shadowFallback);//NGSS_GLOBAL_OPACITY == _LightShadowData.r
+				shadowFallback = lerp(_LightShadowData.r, 1.0f, shadowFallback);//NGSS_GLOBAL_OPACITY == _LightShadowData.r
 			#else
-				half shadowFallback = SAMPLE_DEPTH_TEXTURE_PROJ(_ShadowMapTexture, UNITY_PROJ_COORD(shadowCoord)) < (shadowCoord.z / shadowCoord.w) ? NGSS_GLOBAL_OPACITY : 1.0;//NGSS_GLOBAL_OPACITY == _LightShadowData.r
+				half shadowFallback = SAMPLE_DEPTH_TEXTURE_PROJ(_ShadowMapTexture, UNITY_PROJ_COORD(shadowCoord)) < (shadowCoord.z / shadowCoord.w) ? _LightShadowData.r : 1.0;//NGSS_GLOBAL_OPACITY == _LightShadowData.r
 			#endif
 			return shadowFallback;
 		#endif
@@ -392,16 +392,19 @@ float SlopeBasedBiasCombine(float z0, float2 dz_duv, float2 offset)
 		
         float3 absVec = abs(vec);
 		
+		//float2 dz_duv = SlopeBasedBias(coord.xyz);//AMD
+		//float coordz = SlopeBasedBiasCombine(coord.z, dz_duv, (0).xx);
+		
 		//modd
-        float3 biasVec = normalize(absVec);
-        absVec -= biasVec * _LightProjectionParams.z;
+        //float3 biasVec = normalize(absVec);
+        //absVec -= biasVec * _LightProjectionParams.z;//bias
         absVec = max(float3(0.0, 0.0, 0.0), absVec);
 
         float dominantAxis = max(max(absVec.x, absVec.y), absVec.z); // TODO use max3() instead
-        dominantAxis = max(0.0, dominantAxis - max(0.001, _LightProjectionParams.z));// shadow bias from point light is apllied here. 
+        dominantAxis = max(0.0, dominantAxis - _LightProjectionParams.z * 0.5);// shadow bias from point light is apllied here. 
         //dominantAxis *= _LightProjectionParams.w; // extra bias no needed now
         float mydist = -_LightProjectionParams.x + _LightProjectionParams.y / dominantAxis; // project to shadow map clip space [0; 1]
-
+		
         #if defined(UNITY_REVERSED_Z)
         mydist = 1.0 - mydist; // depth buffers are reversed! Additionally we can move this to CPP code!
         #endif
@@ -439,10 +442,10 @@ float SlopeBasedBiasCombine(float z0, float2 dz_duv, float2 offset)
 			// Fallback to 1-tap shadows
 			#if defined (SHADOWS_CUBE_IN_DEPTH_TEX)
 				half shadowFallback = UNITY_SAMPLE_TEXCUBE_SHADOW(_ShadowMapTexture, float4(vec, mydist));
-				return lerp(NGSS_GLOBAL_OPACITY, 1.0, shadowFallback);//NGSS_GLOBAL_OPACITY == _LightShadowData.r
+				return lerp(_LightShadowData.r, 1.0, shadowFallback);//NGSS_GLOBAL_OPACITY == _LightShadowData.r
 			#else
 				half shadowVal = UnityDecodeCubeShadowDepth(UNITY_SAMPLE_TEXCUBE(_ShadowMapTexture, vec));
-				half shadowFallback = shadowVal < mydist ? NGSS_GLOBAL_OPACITY : 1.0;//NGSS_GLOBAL_OPACITY == _LightShadowData.r
+				half shadowFallback = shadowVal < mydist ? _LightShadowData.r : 1.0;//NGSS_GLOBAL_OPACITY == _LightShadowData.r
 				return shadowFallback;
 			#endif
 		#endif

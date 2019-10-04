@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: 1f2fd5304dc973d41bb9b36cdd21d6d1
-timeCreated: 1560561408
-licenseType: Store
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - NGSS_NOISE_TEXTURE: {fileID: 2800000, guid: 7dcc3b82e99bf8542b8348c6fcd86cd1,

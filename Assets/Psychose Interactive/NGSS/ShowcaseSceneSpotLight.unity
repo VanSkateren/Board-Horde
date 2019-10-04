@@ -770,13 +770,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NGSS_DISABLE_ON_PLAY: 0
+  NGSS_NO_UPDATE_ON_PLAY: 0
   NGSS_MANAGE_GLOBAL_SETTINGS: 1
   NGSS_SAMPLING_TEST: 16
   NGSS_SAMPLING_FILTER: 32
-  NGSS_NOISE_SCALE: 1
+  NGSS_NOISE_TO_DITHERING_SCALE: 0
+  NGSS_NOISE_TEXTURE: {fileID: 2800000, guid: 7dcc3b82e99bf8542b8348c6fcd86cd1, type: 3}
   NGSS_SHADOWS_OPACITY: 1
   NGSS_SHADOWS_SOFTNESS: 1
-  NGSS_SHADOWS_DITHERING: 1
   NGSS_SHADOWS_RESOLUTION: 256
 --- !u!1 &1621570627
 GameObject:
@@ -1083,7 +1084,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3

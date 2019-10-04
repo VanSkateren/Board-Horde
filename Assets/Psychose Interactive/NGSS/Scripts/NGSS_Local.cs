@@ -140,7 +140,7 @@ public class NGSS_Local : MonoBehaviour
 
     void Update()
     {
-        if (LocalLight.shadows == LightShadows.None) { return; }
+        if (LocalLight.shadows == LightShadows.None || LocalLight.type == LightType.Directional) { return; }
 
         if (Application.isPlaying) { if (NGSS_DISABLE_ON_PLAY) { enabled = false; return; } if (NGSS_NO_UPDATE_ON_PLAY) { return; } }
 
@@ -151,6 +151,7 @@ public class NGSS_Local : MonoBehaviour
     {
         //Local
         LocalLight.shadowStrength = NGSS_SHADOWS_SOFTNESS;
+
         if (NGSS_SHADOWS_RESOLUTION == ShadowMapResolution.UseQualitySettings)
             LocalLight.shadowResolution = LightShadowResolution.FromQualitySettings;
         else
@@ -166,7 +167,7 @@ public class NGSS_Local : MonoBehaviour
         LocalLight.shadows = NGSS_PCSS_ENABLED ? LightShadows.Soft : LightShadows.Hard;
         Shader.SetGlobalFloat("NGSS_PCSS_FILTER_LOCAL_MIN", NGSS_PCSS_SOFTNESS_NEAR);
         Shader.SetGlobalFloat("NGSS_PCSS_FILTER_LOCAL_MAX", NGSS_PCSS_SOFTNESS_FAR);
-        Shader.SetGlobalFloat("NGSS_PCSS_LOCAL_BLOCKER_BIAS", NGSS_PCSS_BLOCKER_BIAS * 0.01f);
+        //Shader.SetGlobalFloat("NGSS_PCSS_LOCAL_BLOCKER_BIAS", NGSS_PCSS_BLOCKER_BIAS * 0.0005f);
 #endif
         Shader.SetGlobalFloat("NGSS_NOISE_TO_DITHERING_SCALE", NGSS_NOISE_TO_DITHERING_SCALE);
         Shader.SetGlobalFloat("NGSS_FILTER_SAMPLERS", NGSS_SAMPLING_FILTER);

@@ -87,11 +87,11 @@ half UnityDeferredSampleShadowMask(float2 uv)
 
     return shadowMaskAttenuation;
 }
-/////////////////////////////////NGSS CONTACT SHADOWS//////////////////////////
+/////////////////////////////////NGSS FRUSTUM SHADOWS//////////////////////////
 
-sampler2D NGSS_ContactShadowsTexture;
-half4 NGSS_ContactShadowsTexture_ST;
-float ShadowsOpacity;
+uniform float NGSS_FRUSTUM_SHADOWS_ENABLED = 0;
+uniform float NGSS_FRUSTUM_SHADOWS_OPACITY = 0;
+sampler2D NGSS_FrustumShadowsTexture;
 
 /////////////////////////////////NGSS DENOISER/////////////////////////////////
 
@@ -165,9 +165,6 @@ half UnityDeferredSampleRealtimeShadow(half fade, float3 vec, float2 uv)
     #if defined(UNITY_FAST_COHERENT_DYNAMIC_BRANCHING) && defined(SHADOWS_SOFT) && !defined(LIGHTMAP_SHADOW_MIXING)
     }
     #endif
-	
-	//shadowAttenuation *= saturate(tex2D(NGSS_ContactShadowsTexture, UnityStereoScreenSpaceUVAdjust(uv, NGSS_ContactShadowsTexture_ST)) + ShadowsOpacity);
-	//shadowAttenuation *= saturate(tex2D(NGSS_ContactShadowsTexture, uv) + ShadowsOpacity);
 
     return shadowAttenuation;
 }
@@ -246,7 +243,10 @@ void UnityDeferredCalculateLightParams (
         half3 lightDir = 0;
         float atten = 0;
     #endif
-
+	
+	//next version will require one RT for local and one RT for directional
+	atten = NGSS_FRUSTUM_SHADOWS_ENABLED > 0.0 ? min(atten, saturate(tex2D(NGSS_FrustumShadowsTexture, uv).r + NGSS_FRUSTUM_SHADOWS_OPACITY)) : atten;
+		
     outWorldPos = wpos;
     outUV = uv;
     outLightDir = lightDir;

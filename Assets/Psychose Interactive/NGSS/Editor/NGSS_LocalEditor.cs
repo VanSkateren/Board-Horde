@@ -11,7 +11,7 @@ public class NGSS_LocalEditor : Editor
     SerializedProperty NGSS_PCSS_ENABLED;
     SerializedProperty NGSS_PCSS_SOFTNESS_NEAR;
     SerializedProperty NGSS_PCSS_SOFTNESS_FAR;
-    SerializedProperty NGSS_PCSS_BLOCKER_BIAS;
+    //SerializedProperty NGSS_PCSS_BLOCKER_BIAS;
 #endif
     SerializedProperty NGSS_SAMPLING_TEST;
     SerializedProperty NGSS_SAMPLING_FILTER;
@@ -42,7 +42,7 @@ public class NGSS_LocalEditor : Editor
         NGSS_PCSS_ENABLED = serializedObject.FindProperty("NGSS_PCSS_ENABLED");
         NGSS_PCSS_SOFTNESS_NEAR = serializedObject.FindProperty("NGSS_PCSS_SOFTNESS_NEAR");
         NGSS_PCSS_SOFTNESS_FAR = serializedObject.FindProperty("NGSS_PCSS_SOFTNESS_FAR");
-        NGSS_PCSS_BLOCKER_BIAS = serializedObject.FindProperty("NGSS_PCSS_BLOCKER_BIAS");
+        //NGSS_PCSS_BLOCKER_BIAS = serializedObject.FindProperty("NGSS_PCSS_BLOCKER_BIAS");
 #endif
         NGSS_SAMPLING_TEST = serializedObject.FindProperty("NGSS_SAMPLING_TEST");
         NGSS_SAMPLING_FILTER = serializedObject.FindProperty("NGSS_SAMPLING_FILTER");
@@ -81,7 +81,7 @@ public class NGSS_LocalEditor : Editor
         {
             EditorGUILayout.PropertyField(NGSS_PCSS_SOFTNESS_NEAR);
             EditorGUILayout.PropertyField(NGSS_PCSS_SOFTNESS_FAR);
-            EditorGUILayout.PropertyField(NGSS_PCSS_BLOCKER_BIAS);
+            //EditorGUILayout.PropertyField(NGSS_PCSS_BLOCKER_BIAS);
         }
 #endif
         EditorGUILayout.PropertyField(NGSS_SHADOWS_SOFTNESS);        
