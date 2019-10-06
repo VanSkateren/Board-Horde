@@ -39,52 +39,52 @@ namespace Sirenix.OdinInspector.Editor.Drawers
             MemberInfo member;
 
             // Min member reference.
-            if (Attribute.MinMember != null)
+            if (this.Attribute.MinMember != null)
             {
-                if (MemberFinder.Start(Property.ParentType)
-                    .IsNamed(Attribute.MinMember)
+                if (MemberFinder.Start(this.Property.ParentType)
+                    .IsNamed(this.Attribute.MinMember)
                     .HasNoParameters()
-                    .TryGetMember(out member, out errorMessage))
+                    .TryGetMember(out member, out this.errorMessage))
                 {
                     var type = member.GetReturnType();
                     if (type == typeof(int))
                     {
-                        intMinGetter = new InspectorPropertyValueGetter<int>(Property, Attribute.MinMember);
+                        this.intMinGetter = new InspectorPropertyValueGetter<int>(this.Property, this.Attribute.MinMember);
                     }
                     else if (type == typeof(float))
                     {
-                        floatMinGetter = new InspectorPropertyValueGetter<float>(Property, Attribute.MinMember);
+                        this.floatMinGetter = new InspectorPropertyValueGetter<float>(this.Property, this.Attribute.MinMember);
                     }
                 }
             }
 
             // Max member reference.
-            if (Attribute.MaxMember != null)
+            if (this.Attribute.MaxMember != null)
             {
-                if (MemberFinder.Start(Property.ParentType)
-                    .IsNamed(Attribute.MaxMember)
+                if (MemberFinder.Start(this.Property.ParentType)
+                    .IsNamed(this.Attribute.MaxMember)
                     .HasNoParameters()
-                    .TryGetMember(out member, out errorMessage))
+                    .TryGetMember(out member, out this.errorMessage))
                 {
                     var type = member.GetReturnType();
                     if (type == typeof(int))
                     {
-                        intMaxGetter = new InspectorPropertyValueGetter<int>(Property, Attribute.MaxMember);
+                        this.intMaxGetter = new InspectorPropertyValueGetter<int>(this.Property, this.Attribute.MaxMember);
                     }
                     else if (type == typeof(float))
                     {
-                        floatMaxGetter = new InspectorPropertyValueGetter<float>(Property, Attribute.MaxMember);
+                        this.floatMaxGetter = new InspectorPropertyValueGetter<float>(this.Property, this.Attribute.MaxMember);
                     }
                 }
             }
 
             // Min max member reference.
-            if (Attribute.MinMaxMember != null)
+            if (this.Attribute.MinMaxMember != null)
             {
-                vector2IntMinMaxGetter = new InspectorPropertyValueGetter<Vector2Int>(Property, Attribute.MinMaxMember);
-                if (errorMessage != null)
+                this.vector2IntMinMaxGetter = new InspectorPropertyValueGetter<Vector2Int>(this.Property, this.Attribute.MinMaxMember);
+                if (this.errorMessage != null)
                 {
-                    errorMessage = vector2IntMinMaxGetter.ErrorMessage;
+                    this.errorMessage = this.vector2IntMinMaxGetter.ErrorMessage;
                 }
             }
         }
@@ -96,50 +96,50 @@ namespace Sirenix.OdinInspector.Editor.Drawers
         {
             // Get the range of the slider from the attribute or from member references.
             Vector2 range;
-            if (vector2IntMinMaxGetter != null && errorMessage == null)
+            if (this.vector2IntMinMaxGetter != null && this.errorMessage == null)
             {
-                range = (Vector2)vector2IntMinMaxGetter.GetValue();
+                range = (Vector2)this.vector2IntMinMaxGetter.GetValue();
             }
             else
             {
-                if (intMinGetter != null)
+                if (this.intMinGetter != null)
                 {
-                    range.x = intMinGetter.GetValue();
+                    range.x = this.intMinGetter.GetValue();
                 }
-                else if (floatMinGetter != null)
+                else if (this.floatMinGetter != null)
                 {
-                    range.x = floatMinGetter.GetValue();
+                    range.x = this.floatMinGetter.GetValue();
                 }
                 else
                 {
-                    range.x = Attribute.MinValue;
+                    range.x = this.Attribute.MinValue;
                 }
 
-                if (intMaxGetter != null)
+                if (this.intMaxGetter != null)
                 {
-                    range.y = intMaxGetter.GetValue();
+                    range.y = this.intMaxGetter.GetValue();
                 }
-                else if (floatMaxGetter != null)
+                else if (this.floatMaxGetter != null)
                 {
-                    range.y = floatMaxGetter.GetValue();
+                    range.y = this.floatMaxGetter.GetValue();
                 }
                 else
                 {
-                    range.y = Attribute.MaxValue;
+                    range.y = this.Attribute.MaxValue;
                 }
             }
 
             // Display evt. error message.
-            if (errorMessage != null)
+            if (this.errorMessage != null)
             {
-                SirenixEditorGUI.ErrorMessageBox(errorMessage);
+                SirenixEditorGUI.ErrorMessageBox(this.errorMessage);
             }
 
             EditorGUI.BeginChangeCheck();
-            Vector2 value = SirenixEditorFields.MinMaxSlider(label, (Vector2)ValueEntry.SmartValue, range, Attribute.ShowFields);
+            Vector2 value = SirenixEditorFields.MinMaxSlider(label, (Vector2)this.ValueEntry.SmartValue, range, this.Attribute.ShowFields);
             if (EditorGUI.EndChangeCheck())
             {
-                ValueEntry.SmartValue = new Vector2Int((int)value.x, (int)value.y);
+                this.ValueEntry.SmartValue = new Vector2Int((int)value.x, (int)value.y);
             }
         }
     }

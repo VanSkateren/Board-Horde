@@ -30,53 +30,53 @@ namespace Sirenix.OdinInspector.Editor.Drawers
 
         protected override void Initialize()
         {
-            allowSceneViewObjects = ValueEntry.Property.GetAttribute<AssetsOnlyAttribute>() == null;
+            this.allowSceneViewObjects = this.ValueEntry.Property.GetAttribute<AssetsOnlyAttribute>() == null;
             autoFix = EditorPrefs.HasKey(AUTO_FIX_PREFS_KEY);
         }
 
         protected override void DrawPropertyLayout(GUIContent label)
         {
-            if (!(ValueEntry.ValueState == PropertyValueState.NullReference || ValueEntry.ValueState == PropertyValueState.ReferenceValueConflict))
+            if (!(this.ValueEntry.ValueState == PropertyValueState.NullReference || this.ValueEntry.ValueState == PropertyValueState.ReferenceValueConflict))
             {
-                CallNextDrawer(label);
+                this.CallNextDrawer(label);
                 return;
             }
 
             if (Event.current.type == EventType.Layout)
             {
-                isBroken = false;
-                var count = ValueEntry.ValueCount;
+                this.isBroken = false;
+                var count = this.ValueEntry.ValueCount;
                 for (int i = 0; i < count; i++)
                 {
-                    var component = ValueEntry.Values[i];
+                    var component = this.ValueEntry.Values[i];
 
-                    if (ComponentIsBroken(component, ref realWrapperInstance))
+                    if (ComponentIsBroken(component, ref this.realWrapperInstance))
                     {
-                        isBroken = true;
+                        this.isBroken = true;
                         break;
                     }
                 }
 
-                if (isBroken && autoFix)
+                if (this.isBroken && autoFix)
                 {
-                    isBroken = false;
+                    this.isBroken = false;
 
-                    for (int i = 0; i < ValueEntry.ValueCount; i++)
+                    for (int i = 0; i < this.ValueEntry.ValueCount; i++)
                     {
                         T fixedComponent = null;
-                        if (ComponentIsBroken(ValueEntry.Values[i], ref fixedComponent) && fixedComponent)
+                        if (ComponentIsBroken(this.ValueEntry.Values[i], ref fixedComponent) && fixedComponent)
                         {
-                            (ValueEntry as IValueEntryActualValueSetter<T>).SetActualValue(i, fixedComponent);
+                            (this.ValueEntry as IValueEntryActualValueSetter<T>).SetActualValue(i, fixedComponent);
                         }
                     }
 
-                    ValueEntry.Update();
+                    this.ValueEntry.Update();
                 }
             }
 
-            if (!isBroken)
+            if (!this.isBroken)
             {
-                CallNextDrawer(label);
+                this.CallNextDrawer(label);
                 return;
             }
 
@@ -88,32 +88,32 @@ namespace Sirenix.OdinInspector.Editor.Drawers
 
             EditorGUI.BeginChangeCheck();
             {
-                if (ValueEntry.BaseValueType.IsInterface)
+                if (this.ValueEntry.BaseValueType.IsInterface)
                 {
                     newInstance = SirenixEditorFields.PolymorphicObjectField(controlRect,
                         label,
-                        realWrapperInstance,
-                        ValueEntry.BaseValueType,
-                        allowSceneViewObjects);
+                        this.realWrapperInstance,
+                        this.ValueEntry.BaseValueType,
+                        this.allowSceneViewObjects);
                 }
                 else
                 {
                     newInstance = SirenixEditorFields.UnityObjectField(
                         controlRect,
                         label,
-                        realWrapperInstance,
-                        ValueEntry.BaseValueType,
-                        allowSceneViewObjects) as Component;
+                        this.realWrapperInstance,
+                        this.ValueEntry.BaseValueType,
+                        this.allowSceneViewObjects) as Component;
                 }
             }
             if (EditorGUI.EndChangeCheck())
             {
-                ValueEntry.WeakSmartValue = newInstance;
+                this.ValueEntry.WeakSmartValue = newInstance;
             }
 
             if (GUI.Button(btnRect, " ", EditorStyles.miniButton))
             {
-                var popup = new FixBrokenUnityObjectWrapperPopup(ValueEntry);
+                var popup = new FixBrokenUnityObjectWrapperPopup(this.ValueEntry);
                 OdinEditorWindow.InspectObjectInDropDown(popup, 300);
             }
 
@@ -171,20 +171,23 @@ namespace Sirenix.OdinInspector.Editor.Drawers
             [HorizontalGroup, Button(ButtonSizes.Large)]
             public void FixItThisTime()
             {
-                for (int i = 0; i < valueEntry.ValueCount; i++)
+                for (int i = 0; i < this.valueEntry.ValueCount; i++)
                 {
                     var localI = i;
                     T fixedComponent = null;
-                    if (ComponentIsBroken(valueEntry.Values[i], ref fixedComponent) && fixedComponent)
+                    if (ComponentIsBroken(this.valueEntry.Values[i], ref fixedComponent) && fixedComponent)
                     {
-                        valueEntry.Property.Tree.DelayActionUntilRepaint(() =>
+                        this.valueEntry.Property.Tree.DelayActionUntilRepaint(() =>
                         {
-                            (valueEntry as IValueEntryActualValueSetter<T>).SetActualValue(localI, fixedComponent);
+                            (this.valueEntry as IValueEntryActualValueSetter<T>).SetActualValue(localI, fixedComponent);
                         });
                     }
                 }
 
-                EditorApplication.delayCall += GUIHelper.CurrentWindow.Close;
+                if (GUIHelper.CurrentWindow) 
+                {
+                    EditorApplication.delayCall += GUIHelper.CurrentWindow.Close;
+                }
             }
 
             [HorizontalGroup, Button(ButtonSizes.Large)]
@@ -192,7 +195,11 @@ namespace Sirenix.OdinInspector.Editor.Drawers
             {
                 EditorPrefs.SetBool(AUTO_FIX_PREFS_KEY, true);
                 autoFix = true;
-                EditorApplication.delayCall += GUIHelper.CurrentWindow.Close;
+
+                if (GUIHelper.CurrentWindow) 
+                {
+                    EditorApplication.delayCall += GUIHelper.CurrentWindow.Close;
+                }
             }
         }
     }

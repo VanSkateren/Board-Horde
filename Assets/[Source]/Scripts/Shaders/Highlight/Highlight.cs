@@ -14,7 +14,7 @@ namespace Facepunch
         // We want to draw before all post processing, because we want it to 
         // get antialiased and for bloom to be applied if the HDR level is high
         //
-        private const CameraEvent CameraEventTarget = CameraEvent.AfterForwardAlpha;
+        const CameraEvent CameraEventTarget = CameraEvent.AfterForwardAlpha;
 
         public static Highlight Instance;
 
@@ -24,7 +24,7 @@ namespace Facepunch
         public Material ImageEffectMaterial;
         public Material MeshRenderMaterial;
 
-        private CommandBuffer commandBuffer;
+        CommandBuffer commandBuffer;
 
         private bool isDirty;
         private int _HighlightTextureId;
@@ -98,7 +98,7 @@ namespace Facepunch
         /// <summary>
         /// Install the command buffer on enable
         /// </summary>
-        private void OnEnable()
+        void OnEnable()
         {
             Instance = this;
             RebuildCommandBuffer();
@@ -114,7 +114,7 @@ namespace Facepunch
             ReleaseAll();
         }
 
-        private void RebuildCommandBuffer()
+        void RebuildCommandBuffer()
         {
             if ( TargetCamera == null )
                 return;
@@ -146,7 +146,7 @@ namespace Facepunch
             commandBuffer.GetTemporaryRT( _HighlightTextureId, TargetCamera.pixelWidth, TargetCamera.pixelHeight, 24, FilterMode.Point, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Default, 1 );
             commandBuffer.SetRenderTarget( _HighlightTextureId );
             commandBuffer.ClearRenderTarget( true, true, Color.black );
-            foreach ( Renderer r in Highlighted )
+            foreach ( var r in Highlighted )
             {
                 if ( !r ) continue;
 

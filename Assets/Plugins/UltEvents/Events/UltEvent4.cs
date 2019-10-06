@@ -42,8 +42,14 @@ namespace UltEvents
         /// </summary>
         public event Action<T0, T1, T2, T3> PersistentCalls
         {
-            add => AddPersistentCall(value);
-            remove => RemovePersistentCall(value);
+            add
+            {
+                AddPersistentCall(value);
+            }
+            remove
+            {
+                RemovePersistentCall(value);
+            }
         }
 
         /************************************************************************************************************************/
@@ -73,8 +79,8 @@ namespace UltEvents
         /// </summary>
         protected override Delegate DynamicCallsBase
         {
-            get => _DynamicCalls;
-            set => _DynamicCalls = value as Action<T0, T1, T2, T3>;
+            get { return _DynamicCalls; }
+            set { _DynamicCalls = value as Action<T0, T1, T2, T3>; }
         }
 
         /************************************************************************************************************************/
@@ -168,8 +174,7 @@ namespace UltEvents
 
 #if UNITY_EDITOR
         /// <summary>[Editor-Only] The types of each of this event's parameters.</summary>
-        public override Type[] ParameterTypes => _ParameterTypes;
-
+        public override Type[] ParameterTypes { get { return _ParameterTypes; } }
         private static Type[] _ParameterTypes = new Type[] { typeof(T0), typeof(T1), typeof(T2), typeof(T3) };
 #endif
 

@@ -27,7 +27,7 @@ namespace UltEvents
                     _UpdateEvent = new UltEvent();
                 return _UpdateEvent;
             }
-            set => _UpdateEvent = value;
+            set { _UpdateEvent = value; }
         }
 
         /// <summary>Invokes <see cref="UpdateEvent"/>.</summary>
@@ -51,7 +51,7 @@ namespace UltEvents
                     _LateUpdateEvent = new UltEvent();
                 return _LateUpdateEvent;
             }
-            set => _LateUpdateEvent = value;
+            set { _LateUpdateEvent = value; }
         }
 
         /// <summary>Invokes <see cref="LateUpdateEvent"/>.</summary>
@@ -75,7 +75,7 @@ namespace UltEvents
                     _FixedUpdateEvent = new UltEvent();
                 return _FixedUpdateEvent;
             }
-            set => _FixedUpdateEvent = value;
+            set { _FixedUpdateEvent = value; }
         }
 
         /// <summary>Invokes <see cref="FixedUpdateEvent"/>.</summary>

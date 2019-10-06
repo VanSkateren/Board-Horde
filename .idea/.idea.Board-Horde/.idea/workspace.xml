@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="198e5302-eabe-4f29-a307-3bb7cdbfaf60" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Board-Horde/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Managers.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Walter/Managers.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Camera/CameraSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Camera/CameraSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvSpeedCameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvSpeedCameraShake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Tests/BOXES.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Tests/BOXES.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/PlayerSystems/Movement/Abilities/AirControlAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/PlayerSystems/Movement/Abilities/AirControlAbility.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,22 +15,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Camera/CameraSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Camera/SwitchToLoopCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Character/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/CommonGames/Utilities/CGTK/CGDebug/Sound/CGDebug.Sound.EncodedAudio.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvBoostTrails.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvBoostPostProcessingEffect.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../[Gasworx]/tailor-o-tron/Assets/OpenPose/Examples/Scripts/OpenPoseUserScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../[Gasworx]/Tailor-O-Matic_Unchained/Assets/OpenPose/Examples/Scripts/OpenPoseUserScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/BoostAbility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/AirControlAbility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvSpeedCameraShake.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../[Gasworx]/OpenPose/Assets/OpenPose/Examples/Scripts/OpenPoseUserScript.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../[Gasworx]/OpenPosePlugin_BUILD-READY/Assets/OpenPose/Examples/Scripts/OpenPoseUserScript.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Physics/CpAcceleration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Temporary/SceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/PlayerSystems/Movement/Abilities/AirControlAbility.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -72,13 +55,14 @@
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Abilities/DriftAbility.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Effects/CvBoostPostProcessingEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Vehicle/Scripts/Effects/CvBoostTrails.cs" />
-        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/AirControlAbility.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/BoostAbility.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvBoostPostProcessingEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Physics/CpAcceleration.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/Temporary/SceneLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Effects/CvSpeedCameraShake.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Camera/CameraSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/[Core]/PlayerSystems/Movement/Board/Scripts/Abilities/AirControlAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/PlayerSystems/Movement/Abilities/AirControlAbility.cs" />
       </list>
     </option>
   </component>
@@ -154,6 +138,8 @@
       <workItem from="1567545741501" duration="737000" />
       <workItem from="1567677850101" duration="4193000" />
       <workItem from="1567683575555" duration="3670000" />
+      <workItem from="1570402954111" duration="627000" />
+      <workItem from="1570404286804" duration="12000" />
     </task>
     <servers />
   </component>

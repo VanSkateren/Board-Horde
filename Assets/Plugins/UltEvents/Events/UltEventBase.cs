@@ -44,7 +44,10 @@ namespace UltEvents
         /// <summary>
         /// The serialized method and parameter details of this event.
         /// </summary>
-        public List<PersistentCall> PersistentCallsList => _PersistentCalls;
+        public List<PersistentCall> PersistentCallsList
+        {
+            get { return _PersistentCalls; }
+        }
 
         /************************************************************************************************************************/
 
@@ -226,7 +229,10 @@ namespace UltEvents
 
         /************************************************************************************************************************/
 
-        internal static int ReturnedValueCount => LinkedValueCache.Count - _ReturnValueOffset;
+        internal static int ReturnedValueCount
+        {
+            get { return LinkedValueCache.Count - _ReturnValueOffset; }
+        }
 
         /************************************************************************************************************************/
 
@@ -353,7 +359,13 @@ namespace UltEvents
         /// <summary>
         /// Returns true if this event has any <see cref="PersistentCallsList"/> or <see cref="DynamicCallsBase"/> registered.
         /// </summary>
-        public bool HasCalls => (_PersistentCalls != null && _PersistentCalls.Count > 0) || DynamicCallsBase != null;
+        public bool HasCalls
+        {
+            get
+            {
+                return (_PersistentCalls != null && _PersistentCalls.Count > 0) || DynamicCallsBase != null;
+            }
+        }
 
         /************************************************************************************************************************/
 

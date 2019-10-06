@@ -69,7 +69,10 @@ namespace UltEvents.Editor
         /************************************************************************************************************************/
 
         /// <summary>The parameter currently being drawn.</summary>
-        public ParameterInfo CurrentParameter => callParameters[parameterIndex];
+        public ParameterInfo CurrentParameter
+        {
+            get { return callParameters[parameterIndex]; }
+        }
 
         /************************************************************************************************************************/
 
@@ -302,7 +305,10 @@ namespace UltEvents.Editor
         /************************************************************************************************************************/
 
         /// <summary>The number of persistent calls that came earlier in the current event.</summary>
-        public int PreviousCallCount => PreviousCalls.Count;
+        public int PreviousCallCount
+        {
+            get { return PreviousCalls.Count; }
+        }
 
         /************************************************************************************************************************/
 

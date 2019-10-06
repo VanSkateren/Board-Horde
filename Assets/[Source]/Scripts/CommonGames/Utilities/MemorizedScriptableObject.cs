@@ -12,7 +12,7 @@ public abstract class MemorizedScriptableObject<T> : ScriptableObject where T : 
 {
     private const string RESOURCES_FOLDER_NAME = "MemorizedScriptableObjects";
 
-    [SerializeField] private string name; 
+    [SerializeField] private new string name; 
     
     private T _CachedObject;
     public T Load
