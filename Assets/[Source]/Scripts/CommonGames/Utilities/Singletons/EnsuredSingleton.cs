@@ -24,8 +24,12 @@
                 {
                     if (_instance != null) { return _instance; }
                     
+                    #if UNITY_EDITOR
+                    _instance = UnityEditor.EditorUtility.CreateGameObjectWithHideFlags($"{typeof(T)} singleton", HideFlags.HideAndDontSave, typeof(T)).GetComponent<T>();
+                    #else
                     GameObject singletonGameObject = new GameObject {name = $"{typeof(T)} singleton"};
                     _instance = singletonGameObject.AddComponent<T>();
+                    #endif
                     
                     return _instance;
                 }

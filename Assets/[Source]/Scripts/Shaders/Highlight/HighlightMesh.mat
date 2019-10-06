@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HighlightMesh
-  m_Shader: {fileID: 4800000, guid: 78ca3c056765cdc418bb1301bef7c64c, type: 3}
+  m_Shader: {fileID: 4800000, guid: cba7aa9dcc40b7b4aa97c651eac59058, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -58,7 +58,7 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _DepthBias: 0.002
+    - _DepthBias: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1

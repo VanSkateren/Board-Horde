@@ -36,7 +36,7 @@ namespace UltEvents
                     _TriggerEnterEvent = new TriggerEvent2D();
                 return _TriggerEnterEvent;
             }
-            set => _TriggerEnterEvent = value;
+            set { _TriggerEnterEvent = value; }
         }
 
         /// <summary>Invokes <see cref="TriggerEnterEvent"/>.</summary>
@@ -60,7 +60,7 @@ namespace UltEvents
                     _TriggerStayEvent = new TriggerEvent2D();
                 return _TriggerStayEvent;
             }
-            set => _TriggerStayEvent = value;
+            set { _TriggerStayEvent = value; }
         }
 
         /// <summary>Invokes <see cref="TriggerStayEvent"/>.</summary>
@@ -84,7 +84,7 @@ namespace UltEvents
                     _TriggerExitEvent = new TriggerEvent2D();
                 return _TriggerExitEvent;
             }
-            set => _TriggerExitEvent = value;
+            set { _TriggerExitEvent = value; }
         }
 
         /// <summary>Invokes <see cref="TriggerExitEvent"/>.</summary>

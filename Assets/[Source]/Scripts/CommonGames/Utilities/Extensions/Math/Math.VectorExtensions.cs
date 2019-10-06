@@ -15,24 +15,45 @@ namespace CommonGames.Utilities.Extensions
 		
 		public static Vector3 Closest(this IEnumerable<Vector3> vectors, Vector3 comparer)
 		{
-			Vector3 closestVector = Vector3.positiveInfinity;
-			float closestDistance = float.MaxValue;
+			Vector3 __closestVector = Vector3.positiveInfinity;
+			float __closestDistance = float.MaxValue;
 
-			foreach (Vector3 vector in vectors)
+			foreach (Vector3 __vector in vectors)
 			{
-				float distance = vector.DistanceTo(comparer);
+				float __distance = __vector.DistanceTo(comparer);
 
-				if (!(distance <= closestDistance)) continue;
+				if (!(__distance <= __closestDistance)) continue;
 				
-				closestDistance = distance;
-				closestVector = vector;
+				__closestDistance = __distance;
+				__closestVector = __vector;
 			}
 			
-			return closestVector;
+			return __closestVector;
+		}
+		
+		public static float CombinedDistanceInOrder(this IEnumerable<Vector3> vectors)
+		{
+			float __combinedDistance = 0f;
+
+			Vector3? __lastVector = null;
+			foreach(Vector3 __vector in vectors) //Normal for loop wasn't possible because we use an IEnumerable instead of an array or list.
+			{
+				if(__lastVector == null)
+				{
+					__lastVector = __vector;
+					continue;
+				}
+
+				__combinedDistance += __vector.DistanceTo((Vector3)__lastVector);
+
+				__lastVector = __vector;
+			}
+			
+			return __combinedDistance;
 		}
 		
 		//public static Vector3 GetClosest(this List<Vector3> vectors, Vector3 comparer) => vectors.OrderBy(vector => Math.Abs(vector - comparer)).First();
-
+		
 		public static float DistanceTo(this Vector3 from, Vector3 to)
 			=> Vector3.Distance(from, to);
 		

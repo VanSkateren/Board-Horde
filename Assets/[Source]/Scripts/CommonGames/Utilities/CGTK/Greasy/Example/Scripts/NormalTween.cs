@@ -6,21 +6,21 @@ using CommonGames.Utilities.CGTK.Greasy;
 public class NormalTween : MonoBehaviour
 {
     //[SerializeField]
-    private Camera camera = null;
+    private Camera _camera = null;
     [SerializeField] private float tweenDuration = 1f;
 
     [SerializeField] private AnimationCurve positionCurve = new AnimationCurve();
     
     private void Awake()
     {
-        if (camera == null)
+        if (_camera == null)
         {
-            camera = Camera.main;
+            _camera = Camera.main;
         }
 
-        if (camera == null)
+        if (_camera == null)
         {
-            camera = FindObjectOfType<Camera>();
+            _camera = FindObjectOfType<Camera>();
         }
     }
     

@@ -6,7 +6,6 @@ using ScriptableObject = Sirenix.OdinInspector.SerializedScriptableObject;
 
 #if UNITY_EDITOR
 
-using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
@@ -33,13 +32,17 @@ public class AudioEventEditor : Editor
 
 	[SerializeField] private AudioSource _previewer;
 
-	public void OnEnable()
+	protected override void OnEnable()
 	{
+		base.OnEnable();
+		
 		_previewer = EditorUtility.CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(AudioSource)).GetComponent<AudioSource>();
 	}
 
-	public void OnDisable()
+	protected override void OnDisable()
 	{
+		base.OnDisable();
+		
 		DestroyImmediate(_previewer.gameObject);
 	}
 
