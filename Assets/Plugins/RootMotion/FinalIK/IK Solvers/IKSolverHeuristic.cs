@@ -130,9 +130,9 @@ namespace RootMotion.FinalIK {
 		
 		#endregion Main Interface
 		
-		protected virtual int minBones { get { return 2; }}
-		protected virtual bool boneLengthCanBeZero { get { return true; }}
-		protected virtual bool allowCommonParent { get { return false; }}
+		protected virtual int minBones => 2;
+		protected virtual bool boneLengthCanBeZero => true;
+		protected virtual bool allowCommonParent => false;
 		protected override void OnInitiate() {}
 		protected override void OnUpdate() {}
 		protected Vector3 lastLocalDirection;
@@ -172,21 +172,13 @@ namespace RootMotion.FinalIK {
 		/*
 		 * Gets the direction from last bone to first bone in first bone's local space.
 		 * */
-		protected virtual Vector3 localDirection {
-			get {
-				return bones[0].transform.InverseTransformDirection(bones[bones.Length - 1].transform.position - bones[0].transform.position);
-			}
-		}
-		
+		protected virtual Vector3 localDirection => bones[0].transform.InverseTransformDirection(bones[bones.Length - 1].transform.position - bones[0].transform.position);
+
 		/*
 		 * Gets the offset from last position of the last bone to its current position.
 		 * */
-		protected float positionOffset {
-			get {
-				return Vector3.SqrMagnitude(localDirection - lastLocalDirection);
-			}
-		}
-		
+		protected float positionOffset => Vector3.SqrMagnitude(localDirection - lastLocalDirection);
+
 		#endregion Optimizations
 		
 		/*

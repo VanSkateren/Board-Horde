@@ -57,9 +57,9 @@ namespace Dreamteck.Splines {
         static void HerarchyWindowChanged()
         {
 #if UNITY_5_3 || UNITY_5_4_OR_NEWER
-        if (currentScene != EditorSceneManager.GetActiveScene())
+        if (currentScene != UnityEngine.SceneManagement.SceneManager.GetActiveScene())
             {
-                currentScene = EditorSceneManager.GetActiveScene();
+                currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
                 FindComputers();
             }
 #else
@@ -75,7 +75,7 @@ namespace Dreamteck.Splines {
         static void FindComputers()
         {
             drawComputers.Clear();
-            SplineComputer[] computers = GameObject.FindObjectsOfType<SplineComputer>();
+            SplineComputer[] computers = Object.FindObjectsOfType<SplineComputer>();
             drawComputers.AddRange(computers);
         }
 

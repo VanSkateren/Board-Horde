@@ -63,42 +63,42 @@ public class GrindDetection : MonoBehaviour
 					{
 						if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 						{
-							if (this.grindSide != GrindDetection.GrindSide.Frontside)
+							if (grindSide != GrindDetection.GrindSide.Frontside)
 							{
-								this.grindType = GrindDetection.GrindType.BsBluntSlide;
+								grindType = GrindDetection.GrindType.BsBluntSlide;
 							}
 							else
 							{
-								this.grindType = GrindDetection.GrindType.FsTailSlide;
+								grindType = GrindDetection.GrindType.FsTailSlide;
 							}
 						}
-						else if (this.grindSide != GrindDetection.GrindSide.Backside)
+						else if (grindSide != GrindDetection.GrindSide.Backside)
 						{
-							this.grindType = GrindDetection.GrindType.FsBluntSlide;
+							grindType = GrindDetection.GrindType.FsBluntSlide;
 						}
 						else
 						{
-							this.grindType = GrindDetection.GrindType.BsTailSlide;
+							grindType = GrindDetection.GrindType.BsTailSlide;
 						}
 					}
 					else if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 					{
-						if (this.grindSide != GrindDetection.GrindSide.Backside)
+						if (grindSide != GrindDetection.GrindSide.Backside)
 						{
-							this.grindType = GrindDetection.GrindType.FsBluntSlide;
+							grindType = GrindDetection.GrindType.FsBluntSlide;
 						}
 						else
 						{
-							this.grindType = GrindDetection.GrindType.BsTailSlide;
+							grindType = GrindDetection.GrindType.BsTailSlide;
 						}
 					}
-					else if (this.grindSide != GrindDetection.GrindSide.Frontside)
+					else if (grindSide != GrindDetection.GrindSide.Frontside)
 					{
-						this.grindType = GrindDetection.GrindType.BsBluntSlide;
+						grindType = GrindDetection.GrindType.BsBluntSlide;
 					}
 					else
 					{
-						this.grindType = GrindDetection.GrindType.FsTailSlide;
+						grindType = GrindDetection.GrindType.FsTailSlide;
 					}
 				}
 				if (p_canNollie)
@@ -107,85 +107,85 @@ public class GrindDetection : MonoBehaviour
 					{
 						if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 						{
-							if (this.grindSide != GrindDetection.GrindSide.Backside)
+							if (grindSide != GrindDetection.GrindSide.Backside)
 							{
-								this.grindType = GrindDetection.GrindType.FsNoseBluntSlide;
+								grindType = GrindDetection.GrindType.FsNoseBluntSlide;
 							}
 							else
 							{
-								this.grindType = GrindDetection.GrindType.BsNoseSlide;
+								grindType = GrindDetection.GrindType.BsNoseSlide;
 							}
 						}
-						else if (this.grindSide != GrindDetection.GrindSide.Frontside)
+						else if (grindSide != GrindDetection.GrindSide.Frontside)
 						{
-							this.grindType = GrindDetection.GrindType.BsNoseBluntSlide;
+							grindType = GrindDetection.GrindType.BsNoseBluntSlide;
 						}
 						else
 						{
-							this.grindType = GrindDetection.GrindType.FsNoseSlide;
+							grindType = GrindDetection.GrindType.FsNoseSlide;
 						}
 					}
 					else if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 					{
-						if (this.grindSide != GrindDetection.GrindSide.Frontside)
+						if (grindSide != GrindDetection.GrindSide.Frontside)
 						{
-							this.grindType = GrindDetection.GrindType.BsNoseBluntSlide;
+							grindType = GrindDetection.GrindType.BsNoseBluntSlide;
 						}
 						else
 						{
-							this.grindType = GrindDetection.GrindType.FsNoseSlide;
+							grindType = GrindDetection.GrindType.FsNoseSlide;
 						}
 					}
-					else if (this.grindSide != GrindDetection.GrindSide.Backside)
+					else if (grindSide != GrindDetection.GrindSide.Backside)
 					{
-						this.grindType = GrindDetection.GrindType.FsNoseBluntSlide;
+						grindType = GrindDetection.GrindType.FsNoseBluntSlide;
 					}
 					else
 					{
-						this.grindType = GrindDetection.GrindType.BsNoseSlide;
+						grindType = GrindDetection.GrindType.BsNoseSlide;
 					}
 				}
 			}
 			else if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 			{
-				if (this.grindSide == GrindDetection.GrindSide.Frontside)
+				if (grindSide == GrindDetection.GrindSide.Frontside)
 				{
 					if (single <= 0f)
 					{
-						this.grindType = GrindDetection.GrindType.FsBoardSlide;
+						grindType = GrindDetection.GrindType.FsBoardSlide;
 					}
 					else
 					{
-						this.grindType = GrindDetection.GrindType.FsLipSlide;
+						grindType = GrindDetection.GrindType.FsLipSlide;
 					}
 				}
 				else if (single <= 0f)
 				{
-					this.grindType = GrindDetection.GrindType.BsLipSlide;
+					grindType = GrindDetection.GrindType.BsLipSlide;
 				}
 				else
 				{
-					this.grindType = GrindDetection.GrindType.BsBoardSlide;
+					grindType = GrindDetection.GrindType.BsBoardSlide;
 				}
 			}
-			else if (this.grindSide == GrindDetection.GrindSide.Frontside)
+			else if (grindSide == GrindDetection.GrindSide.Frontside)
 			{
 				if (single <= 0f)
 				{
-					this.grindType = GrindDetection.GrindType.FsLipSlide;
+					grindType = GrindDetection.GrindType.FsLipSlide;
 				}
 				else
 				{
-					this.grindType = GrindDetection.GrindType.FsBoardSlide;
+					grindType = GrindDetection.GrindType.FsBoardSlide;
 				}
 			}
 			else if (single <= 0f)
 			{
-				this.grindType = GrindDetection.GrindType.BsBoardSlide;
+				grindType = GrindDetection.GrindType.BsBoardSlide;
 			}
 			else
 			{
-				this.grindType = GrindDetection.GrindType.BsLipSlide;
+				grindType = GrindDetection.GrindType.BsLipSlide;
 			}
 		}
 		else if (!p_canOllie)
@@ -194,48 +194,48 @@ public class GrindDetection : MonoBehaviour
 			{
 				if (single1 <= 25f || single1 >= 75f)
 				{
-					this.grindType = GrindDetection.GrindType.NoseGrind;
+					grindType = GrindDetection.GrindType.NoseGrind;
 				}
 				else if (single > 0f)
 				{
 					if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 					{
-						if (this.grindSide != GrindDetection.GrindSide.Backside)
+						if (grindSide != GrindDetection.GrindSide.Backside)
 						{
-							this.grindType = GrindDetection.GrindType.FsOverCrook;
+							grindType = GrindDetection.GrindType.FsOverCrook;
 						}
 						else
 						{
-							this.grindType = GrindDetection.GrindType.BsCrook;
+							grindType = GrindDetection.GrindType.BsCrook;
 						}
 					}
-					else if (this.grindSide != GrindDetection.GrindSide.Backside)
+					else if (grindSide != GrindDetection.GrindSide.Backside)
 					{
-						this.grindType = GrindDetection.GrindType.FsCrook;
+						grindType = GrindDetection.GrindType.FsCrook;
 					}
 					else
 					{
-						this.grindType = GrindDetection.GrindType.BsOverCrook;
+						grindType = GrindDetection.GrindType.BsOverCrook;
 					}
 				}
 				else if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 				{
-					if (this.grindSide != GrindDetection.GrindSide.Backside)
+					if (grindSide != GrindDetection.GrindSide.Backside)
 					{
-						this.grindType = GrindDetection.GrindType.FsCrook;
+						grindType = GrindDetection.GrindType.FsCrook;
 					}
 					else
 					{
-						this.grindType = GrindDetection.GrindType.BsOverCrook;
+						grindType = GrindDetection.GrindType.BsOverCrook;
 					}
 				}
-				else if (this.grindSide != GrindDetection.GrindSide.Backside)
+				else if (grindSide != GrindDetection.GrindSide.Backside)
 				{
-					this.grindType = GrindDetection.GrindType.FsOverCrook;
+					grindType = GrindDetection.GrindType.FsOverCrook;
 				}
 				else
 				{
-					this.grindType = GrindDetection.GrindType.BsCrook;
+					grindType = GrindDetection.GrindType.BsCrook;
 				}
 			}
 		}
@@ -243,11 +243,11 @@ public class GrindDetection : MonoBehaviour
 		{
 			if (!(p_backTruckCollision & p_frontTruckCollision))
 			{
-				this.grindType = GrindDetection.GrindType.FiveO;
+				grindType = GrindDetection.GrindType.FiveO;
 			}
 			else
 			{
-				this.grindType = GrindDetection.GrindType.FiftyFifty;
+				grindType = GrindDetection.GrindType.FiftyFifty;
 			}
 		}
 		else if (single2 >= 5f)
@@ -256,76 +256,76 @@ public class GrindDetection : MonoBehaviour
 			{
 				if (SettingsManager.Instance.stance != SettingsManager.Stance.Regular)
 				{
-					this.grindType = GrindDetection.GrindType.FiveO;
+					grindType = GrindDetection.GrindType.FiveO;
 				}
 				else
 				{
-					this.grindType = GrindDetection.GrindType.FiveO;
+					grindType = GrindDetection.GrindType.FiveO;
 				}
 			}
 			else if (SettingsManager.Instance.stance != SettingsManager.Stance.Regular)
 			{
-				this.grindType = GrindDetection.GrindType.FiveO;
+				grindType = GrindDetection.GrindType.FiveO;
 			}
 			else
 			{
-				this.grindType = GrindDetection.GrindType.FiveO;
+				grindType = GrindDetection.GrindType.FiveO;
 			}
 		}
 		else if (single > 0f)
 		{
 			if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 			{
-				if (this.grindSide != GrindDetection.GrindSide.Backside)
+				if (grindSide != GrindDetection.GrindSide.Backside)
 				{
-					this.grindType = GrindDetection.GrindType.FsSmith;
+					grindType = GrindDetection.GrindType.FsSmith;
 				}
 				else
 				{
-					this.grindType = GrindDetection.GrindType.BsFeeble;
+					grindType = GrindDetection.GrindType.BsFeeble;
 				}
 			}
-			else if (this.grindSide != GrindDetection.GrindSide.Backside)
+			else if (grindSide != GrindDetection.GrindSide.Backside)
 			{
-				this.grindType = GrindDetection.GrindType.FsFeeble;
+				grindType = GrindDetection.GrindType.FsFeeble;
 			}
 			else
 			{
-				this.grindType = GrindDetection.GrindType.BsSmith;
+				grindType = GrindDetection.GrindType.BsSmith;
 			}
 		}
 		else if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 		{
-			if (this.grindSide != GrindDetection.GrindSide.Backside)
+			if (grindSide != GrindDetection.GrindSide.Backside)
 			{
-				this.grindType = GrindDetection.GrindType.FsFeeble;
+				grindType = GrindDetection.GrindType.FsFeeble;
 			}
 			else
 			{
-				this.grindType = GrindDetection.GrindType.BsSmith;
+				grindType = GrindDetection.GrindType.BsSmith;
 			}
 		}
-		else if (this.grindSide != GrindDetection.GrindSide.Backside)
+		else if (grindSide != GrindDetection.GrindSide.Backside)
 		{
-			this.grindType = GrindDetection.GrindType.FsSmith;
+			grindType = GrindDetection.GrindType.FsSmith;
 		}
 		else
 		{
-			this.grindType = GrindDetection.GrindType.BsFeeble;
+			grindType = GrindDetection.GrindType.BsFeeble;
 		}
-		this._grindAnim = this.GrindAnimation();
-		PlayerController.Instance.AnimSetGrindBlend(this._grindAnim.x, this._grindAnim.y);
+		_grindAnim = GrindAnimation();
+		PlayerController.Instance.AnimSetGrindBlend(_grindAnim.x, _grindAnim.y);
 	}
 
 	private Vector2 GrindAnimation()
 	{
-		return Vector2.Lerp(this._grindAnim, this.GrindBlendValues(), Time.deltaTime * 10f);
+		return Vector2.Lerp(_grindAnim, GrindBlendValues(), Time.deltaTime * 10f);
 	}
 
 	private Vector2 GrindBlendValues()
 	{
 		Vector3 vector2 = Vector2.zero;
-		switch (this.grindType)
+		switch (grindType)
 		{
 			case GrindDetection.GrindType.FiftyFifty:
 			{

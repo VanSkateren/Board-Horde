@@ -46,10 +46,13 @@ namespace SCPE
         }
 
         [Serializable]
+
         public sealed class FogColorSourceParameter : ParameterOverride<FogColorSource> { }
         [Space]
+
         [Tooltip("Color: use a uniform color for the fog\n\nGradient: sample a gradient texture to control the fog color over distance, the alpha channel controls the density\n\nSkybox: Sample the skybox's color for the fog, only works well with low detail skies")]
         public FogColorSourceParameter colorSource = new FogColorSourceParameter { value = FogColorSource.UniformColor };
+
         [DisplayName("Mipmap"), Tooltip("Set the mipmap level for the skybox texture"), Range(0f, 8f)]
         public FloatParameter skyboxMipLevel = new FloatParameter { value = 0f };
 
@@ -59,12 +62,12 @@ namespace SCPE
         [DisplayName("Color"), ColorUsage(true, true, 1f, 10f, 0.125f, 3f)]
 #endif
         public ColorParameter fogColor = new ColorParameter { value = new Color(0.76f, 0.94f, 1f, 1f) };
+
         [DisplayName("Texture")]
         public TextureParameter fogColorGradient = new TextureParameter { value = null };
         [Tooltip("Automatic mode uses the current camera's far clipping plane to set the max distance\n\nOtherwise, a fixed value may be used instead")]
         public FloatParameter gradientDistance = new FloatParameter { value = 1000f };
         public BoolParameter gradientUseFarClipPlane = new BoolParameter { value = true };
-
 
         [Header("Distance")]
         [DisplayName("Enable")]
@@ -132,19 +135,18 @@ namespace SCPE
 
     internal sealed class FogRenderer : PostProcessEffectRenderer<Fog>
     {
+        private Shader shader;
 
-        Shader shader;
-
-        struct MipLevel
+        private struct MipLevel
         {
             internal int down;
             internal int up;
         }
 
-        MipLevel[] m_Pyramid;
-        const int k_MaxPyramidSize = 16;
+        private MipLevel[] m_Pyramid;
+        private const int k_MaxPyramidSize = 16;
 
-        enum Pass
+        private enum Pass
         {
             Prefilter,
             Downsample,
@@ -336,8 +338,6 @@ namespace SCPE
         {
             return DepthTextureMode.Depth;
         }
-
-
     }
 }
 #endif

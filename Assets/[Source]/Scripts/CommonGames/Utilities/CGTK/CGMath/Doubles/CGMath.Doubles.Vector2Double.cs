@@ -24,9 +24,9 @@
                     switch (index)
                     {
                         case 0:
-                            return this.x;
+                            return x;
                         case 1:
-                            return this.y;
+                            return y;
                         default:
                             throw new IndexOutOfRangeException("Invalid Vector2d index!");
                     }
@@ -36,10 +36,10 @@
                     switch (index)
                     {
                         case 0:
-                            this.x = value;
+                            x = value;
                             break;
                         case 1:
-                            this.y = value;
+                            y = value;
                             break;
                         default:
                             throw new IndexOutOfRangeException("Invalid Vector2d index!");
@@ -51,15 +51,15 @@
             {
                 get
                 {
-                    Vector2Double vector2d = new Vector2Double(this.x, this.y);
+                    Vector2Double vector2d = new Vector2Double(x, y);
                     vector2d.Normalize();
                     return vector2d;
                 }
             }
 
-        public double magnitude => CGMath.Sqrt(this.x * this.x + this.y * this.y);
+        public double magnitude => Sqrt(x * x + y * y);
 
-        public double sqrMagnitude => this.x * this.x + this.y * this.y;
+        public double sqrMagnitude => x * x + y * y;
 
         public static Vector2Double zero => new Vector2Double(0.0d, 0.0d);
 
@@ -111,23 +111,23 @@
 
         public static bool operator ==(Vector2Double lhs, Vector2Double rhs)
         {
-            return Vector2Double.SqrMagnitude(lhs - rhs) < 0.0 / 1.0;
+            return SqrMagnitude(lhs - rhs) < 0.0 / 1.0;
         }
 
         public static bool operator !=(Vector2Double lhs, Vector2Double rhs)
         {
-            return (double)Vector2Double.SqrMagnitude(lhs - rhs) >= 0.0 / 1.0;
+            return (double)SqrMagnitude(lhs - rhs) >= 0.0 / 1.0;
         }
 
         public void Set(double new_x, double new_y)
         {
-            this.x = new_x;
-            this.y = new_y;
+            x = new_x;
+            y = new_y;
         }
 
         public static Vector2Double Lerp(Vector2Double from, Vector2Double to, double t)
         {
-            t = CGMath.Clamp01(t);
+            t = Clamp01(t);
             return new Vector2Double(from.x + (to.x - from.x) * t, from.y + (to.y - from.y) * t);
         }
 
@@ -148,8 +148,8 @@
 
         public void Scale(Vector2Double scale)
         {
-            this.x *= scale.x;
-            this.y *= scale.y;
+            x *= scale.x;
+            y *= scale.y;
         }
 
         public void Normalize()
@@ -158,12 +158,12 @@
             if (magnitude > 9.99999974737875E-06)
                 this = this / magnitude;
             else
-                this = Vector2Double.zero;
+                this = zero;
         }
 
         public override int GetHashCode()
         {
-            return this.x.GetHashCode() ^ this.y.GetHashCode() << 2;
+            return x.GetHashCode() ^ y.GetHashCode() << 2;
         }
 
         public override bool Equals(object other)
@@ -172,7 +172,7 @@
                 return false;
             Vector2Double vector2D = (Vector2Double)other;
             
-            return this.x.Equals(vector2D.x) && this.y.Equals(vector2D.y);
+            return x.Equals(vector2D.x) && y.Equals(vector2D.y);
         }
 
         public static double Dot(Vector2Double lhs, Vector2Double rhs)
@@ -182,7 +182,7 @@
 
         public static double Angle(Vector2Double from, Vector2Double to)
         {
-            return CGMath.Acos(CGMath.Clamp(Vector2Double.Dot(from.normalized, to.normalized), -1d, 1d)) * 57.29578d;
+            return Acos(Clamp(Dot(from.normalized, to.normalized), -1d, 1d)) * 57.29578d;
         }
 
         public static double Distance(Vector2Double a, Vector2Double b)
@@ -205,7 +205,7 @@
 
         public double SqrMagnitude()
         {
-            return (this.x * this.x + this.y * this.y);
+            return (x * x + y * y);
         }
 
         public static Vector2Double Min(Vector2Double lhs, Vector2Double rhs)

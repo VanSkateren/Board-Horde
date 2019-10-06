@@ -9,58 +9,49 @@ namespace VacuumBreather
 
 		public float Kd
 		{
-			get
-			{
-				return this._internalController[0].Kd;
-			}
+			get => _internalController[0].Kd;
 			set
 			{
 				if (value < 0f)
 				{
 					throw new ArgumentOutOfRangeException("value", "Kd must be a non-negative number.");
 				}
-				this._internalController[0].Kd = value;
-				this._internalController[1].Kd = value;
-				this._internalController[2].Kd = value;
-				this._internalController[3].Kd = value;
+				_internalController[0].Kd = value;
+				_internalController[1].Kd = value;
+				_internalController[2].Kd = value;
+				_internalController[3].Kd = value;
 			}
 		}
 
 		public float Ki
 		{
-			get
-			{
-				return this._internalController[0].Ki;
-			}
+			get => _internalController[0].Ki;
 			set
 			{
 				if (value < 0f)
 				{
 					throw new ArgumentOutOfRangeException("value", "Ki must be a non-negative number.");
 				}
-				this._internalController[0].Ki = value;
-				this._internalController[1].Ki = value;
-				this._internalController[2].Ki = value;
-				this._internalController[3].Ki = value;
+				_internalController[0].Ki = value;
+				_internalController[1].Ki = value;
+				_internalController[2].Ki = value;
+				_internalController[3].Ki = value;
 			}
 		}
 
 		public float Kp
 		{
-			get
-			{
-				return this._internalController[0].Kp;
-			}
+			get => _internalController[0].Kp;
 			set
 			{
 				if (value < 0f)
 				{
 					throw new ArgumentOutOfRangeException("value", "Kp must be a non-negative number.");
 				}
-				this._internalController[0].Kp = value;
-				this._internalController[1].Kp = value;
-				this._internalController[2].Kp = value;
-				this._internalController[3].Kp = value;
+				_internalController[0].Kp = value;
+				_internalController[1].Kp = value;
+				_internalController[2].Kp = value;
+				_internalController[3].Kp = value;
 			}
 		}
 
@@ -78,17 +69,17 @@ namespace VacuumBreather
 			{
 				throw new ArgumentOutOfRangeException("kd", "kd must be a non-negative number.");
 			}
-			this._internalController = new PidController[] { new PidController(kp, ki, kd), new PidController(kp, ki, kd), new PidController(kp, ki, kd), new PidController(kp, ki, kd) };
+			_internalController = new PidController[] { new PidController(kp, ki, kd), new PidController(kp, ki, kd), new PidController(kp, ki, kd), new PidController(kp, ki, kd) };
 		}
 
 		private Quaternion ComputeOutput(Quaternion error, Quaternion delta, float deltaTime)
 		{
 			Quaternion quaternion = new Quaternion()
 			{
-				x = this._internalController[0].ComputeOutput(error.x, delta.x, deltaTime),
-				y = this._internalController[1].ComputeOutput(error.y, delta.y, deltaTime),
-				z = this._internalController[2].ComputeOutput(error.z, delta.z, deltaTime),
-				w = this._internalController[3].ComputeOutput(error.w, delta.w, deltaTime)
+				x = _internalController[0].ComputeOutput(error.x, delta.x, deltaTime),
+				y = _internalController[1].ComputeOutput(error.y, delta.y, deltaTime),
+				z = _internalController[2].ComputeOutput(error.z, delta.z, deltaTime),
+				w = _internalController[3].ComputeOutput(error.w, delta.w, deltaTime)
 			};
 			return quaternion;
 		}
@@ -97,7 +88,7 @@ namespace VacuumBreather
 		{
 			Quaternion quaternion = QuaternionExtensions.RequiredRotation(currentOrientation, desiredOrientation);
 			Quaternion quaternion1 = Quaternion.identity.Subtract(quaternion);
-			Quaternion eulerAngleQuaternion = PidQuaternionController.ToEulerAngleQuaternion(currentAngularVelocity) * quaternion;
+			Quaternion eulerAngleQuaternion = ToEulerAngleQuaternion(currentAngularVelocity) * quaternion;
 			Matrix4x4 matrix4x4 = new Matrix4x4()
 			{
 				m00 = -quaternion.x * -quaternion.x + -quaternion.y * -quaternion.y + -quaternion.z * -quaternion.z,
@@ -117,8 +108,8 @@ namespace VacuumBreather
 				m32 = -quaternion.y * quaternion.z + quaternion.x * quaternion.w + quaternion.w * -quaternion.x,
 				m33 = -quaternion.y * -quaternion.y + quaternion.x * quaternion.x + quaternion.w * quaternion.w
 			};
-			Quaternion quaternion2 = this.ComputeOutput(quaternion1, eulerAngleQuaternion, deltaTime);
-			quaternion2 = PidQuaternionController.MultiplyAsVector(matrix4x4, quaternion2);
+			Quaternion quaternion2 = ComputeOutput(quaternion1, eulerAngleQuaternion, deltaTime);
+			quaternion2 = MultiplyAsVector(matrix4x4, quaternion2);
 			Quaternion quaternion3 = quaternion2.Multiply(-2f) * Quaternion.Inverse(quaternion);
 			return new Vector3(quaternion3.x, quaternion3.y, quaternion3.z);
 		}

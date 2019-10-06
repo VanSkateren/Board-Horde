@@ -45,7 +45,7 @@ namespace Sirenix.OdinValidator.Editor
             {
                 this.onScriptableObjectCreated = onScriptableObjectCreated;
                 this.defaultDestinationPath = defaultDestinationPath;
-                this.SelectionConfirmed += this.ShowSaveFileDialog;
+                SelectionConfirmed += ShowSaveFileDialog;
             }
 
             protected override void BuildSelectionTree(OdinMenuTree tree)
@@ -63,7 +63,7 @@ namespace Sirenix.OdinValidator.Editor
             {
                 T obj = ScriptableObject.CreateInstance(selection.FirstOrDefault()) as T;
 
-                string dest = this.defaultDestinationPath.TrimEnd('/');
+                string dest = defaultDestinationPath.TrimEnd('/');
 
                 if (!Directory.Exists(dest))
                 {
@@ -78,9 +78,9 @@ namespace Sirenix.OdinValidator.Editor
                     AssetDatabase.CreateAsset(obj, dest);
                     AssetDatabase.Refresh();
 
-                    if (this.onScriptableObjectCreated != null)
+                    if (onScriptableObjectCreated != null)
                     {
-                        this.onScriptableObjectCreated(obj);
+                        onScriptableObjectCreated(obj);
                         EditorGUIUtility.PingObject(obj);
                     }
                 }

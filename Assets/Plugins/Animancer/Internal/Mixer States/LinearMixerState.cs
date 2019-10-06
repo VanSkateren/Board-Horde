@@ -220,7 +220,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of parameters being managed by this state.</summary>
-        protected override int ParameterCount { get { return 1; } }
+        protected override int ParameterCount => 1;
 
         /// <summary>Returns the name of a parameter being managed by this state.</summary>
         /// <exception cref="NotSupportedException">Thrown if this state doesn't manage any parameters.</exception>

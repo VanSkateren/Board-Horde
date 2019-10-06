@@ -41,9 +41,9 @@ public class PlayerState_OnBoard : BaseFSMState
 	{
 		if (p_stick.IsRightStick)
 		{
-			return this._augmentedRightAngle;
+			return _augmentedRightAngle;
 		}
-		return this._augmentedLeftAngle;
+		return _augmentedLeftAngle;
 	}
 
 	public override bool IsCurrentSpline(SplineComputer p_spline)
@@ -67,7 +67,7 @@ public class PlayerState_OnBoard : BaseFSMState
 		PlayerController.Instance.AnimGrindTransition(false);
 		PlayerController.Instance.AnimOllieTransition(false);
 		PlayerController.Instance.AnimSetupTransition(false);
-		base.DoTransition(typeof(PlayerState_Bailed), null);
+		DoTransition(typeof(PlayerState_Bailed), null);
 	}
 
 	public override void OnRespawn()
@@ -76,7 +76,7 @@ public class PlayerState_OnBoard : BaseFSMState
 		PlayerController.Instance.AnimGrindTransition(false);
 		PlayerController.Instance.AnimOllieTransition(false);
 		PlayerController.Instance.AnimSetupTransition(false);
-		base.DoTransition(typeof(PlayerState_Riding), null);
+		DoTransition(typeof(PlayerState_Riding), null);
 	}
 
 	public override void RightTriggerHeld(float value, InputController.TurningMode turningMode)

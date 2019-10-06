@@ -28,7 +28,7 @@ namespace UltEvents
                     _AwakeEvent = new UltEvent();
                 return _AwakeEvent;
             }
-            set { _AwakeEvent = value; }
+            set => _AwakeEvent = value;
         }
 
         /// <summary>Invokes <see cref="AwakeEvent"/>.</summary>
@@ -52,7 +52,7 @@ namespace UltEvents
                     _StartEvent = new UltEvent();
                 return _StartEvent;
             }
-            set { _StartEvent = value; }
+            set => _StartEvent = value;
         }
 
         /// <summary>Invokes <see cref="StartEvent"/>.</summary>
@@ -76,7 +76,7 @@ namespace UltEvents
                     _EnableEvent = new UltEvent();
                 return _EnableEvent;
             }
-            set { _EnableEvent = value; }
+            set => _EnableEvent = value;
         }
 
         /// <summary>Invokes <see cref="EnableEvent"/>.</summary>
@@ -100,7 +100,7 @@ namespace UltEvents
                     _DisableEvent = new UltEvent();
                 return _DisableEvent;
             }
-            set { _DisableEvent = value; }
+            set => _DisableEvent = value;
         }
 
         /// <summary>Invokes <see cref="DisableEvent"/>.</summary>
@@ -124,7 +124,7 @@ namespace UltEvents
                     _DestroyEvent = new UltEvent();
                 return _DestroyEvent;
             }
-            set { _DestroyEvent = value; }
+            set => _DestroyEvent = value;
         }
 
         /// <summary>Invokes <see cref="DestroyEvent"/>.</summary>

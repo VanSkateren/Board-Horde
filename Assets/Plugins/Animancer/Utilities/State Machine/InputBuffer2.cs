@@ -18,7 +18,7 @@ namespace Animancer.FSM
             /// <summary>The <see cref="StateMachine{TKey, TState}"/> this buffer is feeding input to.</summary>
             public new StateMachine<TKey, TState> StateMachine
             {
-                get { return _StateMachine; }
+                get => _StateMachine;
                 set
                 {
                     _StateMachine = value;

@@ -33,9 +33,13 @@ namespace Sirenix.OdinValidator.Editor
         [SerializeField, TextArea(1, 5)]
         private string description;
 
-        public string Name { get { return this.name; } set { this.name = value; } }
+        public string Name { get => name;
+            set => name = value;
+        }
 
-        public string Description { get { return this.description; } set { this.description = value; } }
+        public string Description { get => description;
+            set => description = value;
+        }
 
         public virtual object GetSource(ValidationProfileResult entry)
         {
@@ -66,9 +70,9 @@ namespace Sirenix.OdinValidator.Editor
 
         public object GetSource()
         {
-            if (this.Profile == null) return null;
-            if (this.Results == null) return null;
-            return this.Profile.GetSource(this);
+            if (Profile == null) return null;
+            if (Results == null) return null;
+            return Profile.GetSource(this);
         }
     }
 

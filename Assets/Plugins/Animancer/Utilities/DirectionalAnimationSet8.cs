@@ -18,7 +18,7 @@ namespace Animancer
         private AnimationClip _UpRight;
 
         /// <summary>The animation facing diagonally up-right.</summary>
-        public AnimationClip UpRight { get { return _UpRight; } }
+        public AnimationClip UpRight => _UpRight;
 
         /// <summary>Sets the <see cref="UpRight"/> animation.</summary>
         /// <remarks>This is not simply a property setter because the animations will usually not need to be changed by scripts.</remarks>
@@ -34,7 +34,7 @@ namespace Animancer
         private AnimationClip _DownRight;
 
         /// <summary>The animation facing diagonally down-right.</summary>
-        public AnimationClip DownRight { get { return _DownRight; } }
+        public AnimationClip DownRight => _DownRight;
 
         /// <summary>Sets the <see cref="DownRight"/> animation.</summary>
         /// <remarks>This is not simply a property setter because the animations will usually not need to be changed by scripts.</remarks>
@@ -50,7 +50,7 @@ namespace Animancer
         private AnimationClip _DownLeft;
 
         /// <summary>The animation facing diagonally down-left.</summary>
-        public AnimationClip DownLeft { get { return _DownLeft; } }
+        public AnimationClip DownLeft => _DownLeft;
 
         /// <summary>Sets the <see cref="DownLeft"/> animation.</summary>
         /// <remarks>This is not simply a property setter because the animations will usually not need to be changed by scripts.</remarks>
@@ -66,7 +66,7 @@ namespace Animancer
         private AnimationClip _UpLeft;
 
         /// <summary>The animation facing diagonally up-left.</summary>
-        public AnimationClip UpLeft { get { return _UpLeft; } }
+        public AnimationClip UpLeft => _UpLeft;
 
         /// <summary>Sets the <see cref="UpLeft"/> animation.</summary>
         /// <remarks>This is not simply a property setter because the animations will usually not need to be changed by scripts.</remarks>
@@ -102,7 +102,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of animations in this set.</summary>
-        public override int ClipCount { get { return 8; } }
+        public override int ClipCount => 8;
 
         /************************************************************************************************************************/
 
@@ -291,28 +291,28 @@ namespace Animancer
         /// <para></para>
         /// The value is approximately (0.707, 0.707).
         /// </summary>
-        public static Vector2 UpRight { get { return new Vector2(OneOverSqrt2, OneOverSqrt2); } }
+        public static Vector2 UpRight => new Vector2(OneOverSqrt2, OneOverSqrt2);
 
         /// <summary>
         /// A vector with a magnitude of 1 pointing down to the right.
         /// <para></para>
         /// The value is approximately (0.707, -0.707).
         /// </summary>
-        public static Vector2 DownRight { get { return new Vector2(OneOverSqrt2, -OneOverSqrt2); } }
+        public static Vector2 DownRight => new Vector2(OneOverSqrt2, -OneOverSqrt2);
 
         /// <summary>
         /// A vector with a magnitude of 1 pointing down to the left.
         /// <para></para>
         /// The value is approximately (-0.707, -0.707).
         /// </summary>
-        public static Vector2 DownLeft { get { return new Vector2(-OneOverSqrt2, -OneOverSqrt2); } }
+        public static Vector2 DownLeft => new Vector2(-OneOverSqrt2, -OneOverSqrt2);
 
         /// <summary>
         /// A vector with a magnitude of 1 pointing up to the left.
         /// <para></para>
         /// The value is approximately (-0.707, 0.707).
         /// </summary>
-        public static Vector2 UpLeft { get { return new Vector2(-OneOverSqrt2, OneOverSqrt2); } }
+        public static Vector2 UpLeft => new Vector2(-OneOverSqrt2, OneOverSqrt2);
 
         /************************************************************************************************************************/
     }

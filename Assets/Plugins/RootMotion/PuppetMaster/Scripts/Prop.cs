@@ -60,7 +60,7 @@ namespace RootMotion.Dynamics {
 		/// <summary>
 		/// Is this prop picked up and connected to a PropRoot?
 		/// </summary>
-		public bool isPickedUp { get { return propRoot != null; }}
+		public bool isPickedUp => propRoot != null;
 
 		/// <summary>
 		/// Returns the PropRoot that this prop is connected to if it is picked up. If this returns null, the prop is not picked up.
@@ -90,7 +90,7 @@ namespace RootMotion.Dynamics {
 
 		// Picking up/dropping props is done by simply changing PropRoot.currentProp
 		public void Drop() {
-			this.propRoot = null;
+			propRoot = null;
 
 			OnDrop();
 		}

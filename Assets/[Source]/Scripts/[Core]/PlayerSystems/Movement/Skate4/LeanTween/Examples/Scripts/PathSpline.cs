@@ -6,11 +6,11 @@ public class ExampleSpline : MonoBehaviour {
 
 	public Transform[] trans;
 
-	LTSpline spline;
+	private LTSpline spline;
 	private GameObject ltLogo;
 	private GameObject ltLogo2;
 
-	void Start () {
+	private void Start () {
 		spline = new LTSpline( new Vector3[] {trans[0].position, trans[1].position, trans[2].position, trans[3].position, trans[4].position} );
 		ltLogo = GameObject.Find("LeanTweenLogo1");
 		ltLogo2 = GameObject.Find("LeanTweenLogo2");
@@ -22,7 +22,8 @@ public class ExampleSpline : MonoBehaviour {
 	}
 	
 	private float iter;
-	void Update () {
+
+	private void Update () {
 		// Iterating over path
 		ltLogo.transform.position = spline.point( iter /*(Time.time*1000)%1000 * 1.0 / 1000.0 */);
 
@@ -31,7 +32,7 @@ public class ExampleSpline : MonoBehaviour {
 			iter = 0.0f;
 	}
 
-	void OnDrawGizmos(){
+	private void OnDrawGizmos(){
 		if(spline!=null) 
 			spline.gizmoDraw(); // debug aid to be able to see the path in the scene inspector
 	}

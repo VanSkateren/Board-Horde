@@ -37,8 +37,8 @@ namespace Animancer.Examples
         /// </summary>
         public float Speed
         {
-            get { return _Controller.State.Parameter; }
-            set { _Controller.State.Parameter = value; }
+            get => _Controller.State.Parameter;
+            set => _Controller.State.Parameter = value;
         }
 
         /************************************************************************************************************************/

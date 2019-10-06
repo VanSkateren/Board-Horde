@@ -76,23 +76,14 @@ namespace Popcron
 
                 return _camera;
             }
-            set
-            {
-                _camera = value;
-            }
+            set => _camera = value;
         }
 
         [Obsolete("This property is obsolete. Use FrustumCulling instead.", false)]
         public static bool Cull
         {
-            get
-            {
-                return FrustumCulling;
-            }
-            set
-            {
-                FrustumCulling = value;
-            }
+            get => FrustumCulling;
+            set => FrustumCulling = value;
         }
 
         /// <summary>
@@ -124,14 +115,8 @@ namespace Popcron
         /// </summary>
         public static Material Material
         {
-            get
-            {
-                return GizmosInstance.Material;
-            }
-            set
-            {
-                GizmosInstance.Material = value;
-            }
+            get => GizmosInstance.Material;
+            set => GizmosInstance.Material = value;
         }
 
         /// <summary>

@@ -18,11 +18,11 @@ public class CameraAnimationController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			Debug.LogError("Spacebar Pressed");
-			if (this.index < (int)this.clips.Length)
+			if (index < (int)clips.Length)
 			{
 				Debug.LogError("Play");
-				this.cameraAnimator.Play(this.clips[this.index].name);
-				this.index++;
+				cameraAnimator.Play(clips[index].name);
+				index++;
 			}
 		}
 	}

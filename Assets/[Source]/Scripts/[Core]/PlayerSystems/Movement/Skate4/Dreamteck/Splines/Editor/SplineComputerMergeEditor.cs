@@ -26,7 +26,7 @@ namespace Dreamteck.Splines
 
         public void Init()
         {
-            SplineComputer[] found = GameObject.FindObjectsOfType<SplineComputer>();
+            SplineComputer[] found = Object.FindObjectsOfType<SplineComputer>();
             List<SplineComputer> available = new List<SplineComputer>();
             for (int i = 0; i < found.Length; i++)
             {
@@ -126,8 +126,8 @@ namespace Dreamteck.Splines
             }
             if(EditorUtility.DisplayDialog("Keep merged computer's GameObject?", "Do you want to keep the merged computer's game object? This will transfer all subscribed users to the current computer.", "Yes", "No"))
             {
-                GameObject.DestroyImmediate(from);
-            } else GameObject.DestroyImmediate(from.gameObject); 
+                Object.DestroyImmediate(from);
+            } else Object.DestroyImmediate(from.gameObject); 
         }
     }
 }

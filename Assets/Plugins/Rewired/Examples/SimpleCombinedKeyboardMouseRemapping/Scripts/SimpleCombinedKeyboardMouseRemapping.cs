@@ -43,7 +43,7 @@ namespace Rewired.Demos {
         private List<Row> rows = new List<Row>();
         private TargetMapping _replaceTargetMapping;
 
-        private Player player { get { return ReInput.players.GetPlayer(0); } }
+        private Player player => ReInput.players.GetPlayer(0);
 
         private void OnEnable() {
             if(!ReInput.isReady) return; // don't run if Rewired hasn't been initialized
@@ -134,10 +134,10 @@ namespace Rewired.Demos {
 
             // Delete placeholders
             foreach(Transform t in actionGroupTransform) {
-                Object.Destroy(t.gameObject);
+                Destroy(t.gameObject);
             }
             foreach(Transform t in fieldGroupTransform) {
-                Object.Destroy(t.gameObject);
+                Destroy(t.gameObject);
             }
 
             // Create Action fields and input field buttons
@@ -158,13 +158,13 @@ namespace Rewired.Demos {
 
         private void CreateUIRow(InputAction action, AxisRange actionRange, string label) {
             // Create the Action label
-            GameObject labelGo = Object.Instantiate<GameObject>(textPrefab);
+            GameObject labelGo = Instantiate<GameObject>(textPrefab);
             labelGo.transform.SetParent(actionGroupTransform);
             labelGo.transform.SetAsLastSibling();
             labelGo.GetComponent<Text>().text = label;
 
             // Create the input field button
-            GameObject buttonGo = Object.Instantiate<GameObject>(buttonPrefab);
+            GameObject buttonGo = Instantiate<GameObject>(buttonPrefab);
             buttonGo.transform.SetParent(fieldGroupTransform);
             buttonGo.transform.SetAsLastSibling();
 

@@ -25,13 +25,7 @@ namespace Dreamteck.Splines
 
         private List<int> selectedPoints = new List<int>();
 
-        public int[] pointSelection
-        {
-            get
-            {
-                return selectedPoints.ToArray();
-            }
-        }
+        public int[] pointSelection => selectedPoints.ToArray();
         public bool mouseLeft = false;
         public bool mouseRight = false;
         public bool mouseLeftDown = false;
@@ -90,14 +84,14 @@ namespace Dreamteck.Splines
 
         public int selectedPointsCount
         {
-            get { return selectedPoints.Count; }
+            get => selectedPoints.Count;
             set { }
         }
 
         [MenuItem("GameObject/Dreamteck/Spline/Computer")]
         private static void NewEmptySpline()
         {
-            int count = GameObject.FindObjectsOfType<SplineComputer>().Length;
+            int count = FindObjectsOfType<SplineComputer>().Length;
             string objName = "Spline";
             if (count > 0) objName += " " + count;
             GameObject obj = new GameObject(objName);
@@ -117,7 +111,7 @@ namespace Dreamteck.Splines
         [MenuItem("GameObject/Dreamteck/Spline/Node")]
         private static void NewSplineNode()
         {
-            int count = GameObject.FindObjectsOfType<Node>().Length;
+            int count = FindObjectsOfType<Node>().Length;
             string objName = "Node";
             if (count > 0) objName += " " + count;
             GameObject obj = new GameObject(objName);

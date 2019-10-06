@@ -8,7 +8,7 @@ namespace RootMotion.Dynamics {
 	[CustomEditor(typeof(RagdollEditor))]
 	public class RagdollEditorInspector : Editor {
 		
-		public RagdollEditor script { get { return target as RagdollEditor; }}
+		public RagdollEditor script => target as RagdollEditor;
 
 		private float massMlp = 1f;
 		private Transform t;

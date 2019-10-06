@@ -108,11 +108,7 @@ namespace RootMotion.Demos {
 		}
 		
 		// Are we currently holding the object?
-		private bool holding {
-			get {
-				return interactionSystem.IsPaused(FullBodyBipedEffector.LeftHand);
-			}
-		}
+		private bool holding => interactionSystem.IsPaused(FullBodyBipedEffector.LeftHand);
 
 		// Clean up delegates
 		void OnDestroy() {

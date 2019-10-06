@@ -11,7 +11,7 @@ namespace RootMotion.FinalIK {
 	[CanEditMultipleObjects]
 	public class RotationLimitHingeInspector : RotationLimitInspector {
 		
-		private RotationLimitHinge script { get { return target as RotationLimitHinge; }}
+		private RotationLimitHinge script => target as RotationLimitHinge;
 
 		#region Inspector
 		

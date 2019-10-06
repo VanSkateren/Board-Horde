@@ -20,11 +20,11 @@ namespace RootMotion.FinalIK {
 			public ColorDirection(Vector3 direction, Vector3 color) {
 				this.direction = direction.normalized;
 				this.color = color;
-				this.dot = 0;
+				dot = 0;
 			}
 		}
 
-		private AimPoser script { get { return target as AimPoser; }}
+		private AimPoser script => target as AimPoser;
 		private ColorDirection[] colorDirections;
 		private static Vector3[] poly = new Vector3[36];
 

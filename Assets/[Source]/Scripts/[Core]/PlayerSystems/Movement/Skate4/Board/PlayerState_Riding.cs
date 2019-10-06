@@ -63,13 +63,13 @@ public class PlayerState_Riding : PlayerState_OnBoard
 	public override void OnBrakeHeld()
 	{
 		PlayerController.Instance.AnimSetBraking(true);
-		base.DoTransition(typeof(PlayerState_Braking), null);
+		DoTransition(typeof(PlayerState_Braking), null);
 	}
 
 	public override void OnBrakePressed()
 	{
 		PlayerController.Instance.AnimSetBraking(true);
-		base.DoTransition(typeof(PlayerState_Braking), null);
+		DoTransition(typeof(PlayerState_Braking), null);
 	}
 
 	public override void OnGrindDetected()
@@ -81,14 +81,14 @@ public class PlayerState_Riding : PlayerState_OnBoard
 		PlayerController.Instance.SetManualStrength(1f);
 		PlayerController.Instance.AnimSetManual(true, Mathf.Lerp(PlayerController.Instance.AnimGetManualAxis(), p_popStick.ForwardDir, Time.deltaTime * 10f));
 		object[] pPopStick = new object[] { p_popStick, p_flipStick, true };
-		base.DoTransition(typeof(PlayerState_Manualling), pPopStick);
+		DoTransition(typeof(PlayerState_Manualling), pPopStick);
 	}
 
 	public override void OnNoseManualEnter(StickInput p_popStick, StickInput p_flipStick)
 	{
 		PlayerController.Instance.AnimSetNoseManual(true, Mathf.Lerp(PlayerController.Instance.AnimGetManualAxis(), p_popStick.ForwardDir, Time.deltaTime * 10f));
 		object[] pPopStick = new object[] { p_popStick, p_flipStick, false };
-		base.DoTransition(typeof(PlayerState_Manualling), pPopStick);
+		DoTransition(typeof(PlayerState_Manualling), pPopStick);
 	}
 
 	public override void OnPushButtonHeld(bool p_mongo)
@@ -97,7 +97,7 @@ public class PlayerState_Riding : PlayerState_OnBoard
 		{
 			PlayerController.Instance.CacheRidingTransforms();
 			object[] pMongo = new object[] { p_mongo };
-			base.DoTransition(typeof(PlayerState_Pushing), pMongo);
+			DoTransition(typeof(PlayerState_Pushing), pMongo);
 		}
 	}
 
@@ -108,13 +108,13 @@ public class PlayerState_Riding : PlayerState_OnBoard
 		{
 			PlayerController.Instance.CacheRidingTransforms();
 			object[] pMongo = new object[] { p_mongo };
-			base.DoTransition(typeof(PlayerState_Pushing), pMongo);
+			DoTransition(typeof(PlayerState_Pushing), pMongo);
 		}
 	}
 
 	public override void OnStickUpdate(StickInput p_leftStick, StickInput p_rightStick)
 	{
-		this.SetupCheck(p_leftStick, p_rightStick);
+		SetupCheck(p_leftStick, p_rightStick);
 		PlayerController.Instance.SetLeftIKOffset(p_leftStick.ToeAxis, p_leftStick.ForwardDir, p_leftStick.PopDir, p_leftStick.IsPopStick, false, false);
 		PlayerController.Instance.SetRightIKOffset(p_rightStick.ToeAxis, p_rightStick.ForwardDir, p_rightStick.PopDir, p_rightStick.IsPopStick, false, false);
 		PlayerController.Instance.SetBoardTargetPosition(0f);
@@ -133,9 +133,9 @@ public class PlayerState_Riding : PlayerState_OnBoard
 		if (p_leftStick.SetupDir > 0.8f || (new Vector2(p_leftStick.ToeAxis, p_leftStick.SetupDir)).magnitude > 0.8f && p_leftStick.SetupDir > 0.325f)
 		{
 			PlayerController.Instance.AnimSetNollie(PlayerController.Instance.GetNollie(false));
-			PlayerController.Instance.SetupDirection(p_leftStick, ref this._setupDir);
-			object[] pLeftStick = new object[] { p_leftStick, p_rightStick, p_leftStick.ForwardDir > 0.2f, this._setupDir };
-			base.DoTransition(typeof(PlayerState_Setup), pLeftStick);
+			PlayerController.Instance.SetupDirection(p_leftStick, ref _setupDir);
+			object[] pLeftStick = new object[] { p_leftStick, p_rightStick, p_leftStick.ForwardDir > 0.2f, _setupDir };
+			DoTransition(typeof(PlayerState_Setup), pLeftStick);
 			return;
 		}
 		if (p_rightStick.AugmentedSetupDir <= 0.8f && ((new Vector2(p_rightStick.ToeAxis, p_rightStick.SetupDir)).magnitude <= 0.8f || p_rightStick.SetupDir <= 0.325f))
@@ -144,9 +144,9 @@ public class PlayerState_Riding : PlayerState_OnBoard
 			return;
 		}
 		PlayerController.Instance.AnimSetNollie(PlayerController.Instance.GetNollie(true));
-		PlayerController.Instance.SetupDirection(p_rightStick, ref this._setupDir);
-		object[] pRightStick = new object[] { p_rightStick, p_leftStick, p_rightStick.ForwardDir > 0.2f, this._setupDir };
-		base.DoTransition(typeof(PlayerState_Setup), pRightStick);
+		PlayerController.Instance.SetupDirection(p_rightStick, ref _setupDir);
+		object[] pRightStick = new object[] { p_rightStick, p_leftStick, p_rightStick.ForwardDir > 0.2f, _setupDir };
+		DoTransition(typeof(PlayerState_Setup), pRightStick);
 	}
 
 	public override void SetupDefinition(ref FSMStateType stateType, ref List<Type> children)
@@ -164,10 +164,10 @@ public class PlayerState_Riding : PlayerState_OnBoard
 			{
 				PlayerController.Instance.animationController.ForceAnimation("Riding");
 			}
-			this._inAirTimer = 0f;
+			_inAirTimer = 0f;
 			return;
 		}
-		this._inAirTimer += Time.deltaTime;
+		_inAirTimer += Time.deltaTime;
 		PlayerController.Instance.SetTurningMode(InputController.TurningMode.InAir);
 		PlayerController.Instance.SetSkaterToMaster();
 		PlayerController.Instance.AnimSetRollOff(true);
@@ -176,6 +176,6 @@ public class PlayerState_Riding : PlayerState_OnBoard
 		Vector3 vector3 = PlayerController.Instance.skaterController.PredictLanding(PlayerController.Instance.skaterController.skaterRigidbody.velocity);
 		PlayerController.Instance.skaterController.skaterRigidbody.AddForce(vector3, ForceMode.Impulse);
 		object[] objArray = new object[] { false, false };
-		base.DoTransition(typeof(PlayerState_InAir), objArray);
+		DoTransition(typeof(PlayerState_InAir), objArray);
 	}
 }

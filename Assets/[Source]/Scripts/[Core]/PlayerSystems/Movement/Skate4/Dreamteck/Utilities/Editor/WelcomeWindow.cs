@@ -94,13 +94,7 @@ namespace Dreamteck
                 back = backPanel;
             }
 
-            public bool isActive
-            {
-                get
-                {
-                    return open || Time.realtimeSinceStartup - slideStart <= slideDuration;
-                }
-            }
+            public bool isActive => open || Time.realtimeSinceStartup - slideStart <= slideDuration;
 
             public void Back()
             {

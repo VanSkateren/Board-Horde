@@ -14,11 +14,11 @@ public class DHTools : MonoBehaviour
 	{
 		get
 		{
-			if (DHTools._instance == null)
+			if (_instance == null)
 			{
-				DHTools._instance = (new GameObject("_DHToolsGameObject")).AddComponent<DHTools>();
+				_instance = (new GameObject("_DHToolsGameObject")).AddComponent<DHTools>();
 			}
-			return DHTools._instance;
+			return _instance;
 		}
 	}
 
@@ -38,7 +38,7 @@ public class DHTools : MonoBehaviour
 
 	private void Awake()
 	{
-		UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
+		DontDestroyOnLoad(gameObject);
 	}
 
 	private static string BytesToMB(float num)
@@ -54,9 +54,9 @@ public class DHTools : MonoBehaviour
 			MeshFilter[] componentsInChildren = theObject.gameObject.GetComponentsInChildren<MeshFilter>(true);
 			for (int i = 0; i < (int)componentsInChildren.Length; i++)
 			{
-				UnityEngine.Object.Destroy(componentsInChildren[i].mesh);
+				Destroy(componentsInChildren[i].mesh);
 			}
-			UnityEngine.Object.Destroy(theObject);
+			Destroy(theObject);
 		}
 	}
 
@@ -83,7 +83,7 @@ public class DHTools : MonoBehaviour
 	{
 		try
 		{
-			base.StartCoroutine(this._InvokeNextFrame(function));
+			StartCoroutine(_InvokeNextFrame(function));
 		}
 		catch
 		{
@@ -119,16 +119,16 @@ public class DHTools : MonoBehaviour
 			{
 				UnityEngine.Debug.Log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Logging drives");
 				UnityEngine.Debug.Log(string.Concat("name:", driveInfo.Name));
-				UnityEngine.Debug.Log(string.Concat(new object[] { "avail free:", DHTools.BytesToMB((float)driveInfo.AvailableFreeSpace), " ", driveInfo.AvailableFreeSpace }));
-				UnityEngine.Debug.Log(string.Concat(new object[] { "tot free:", DHTools.BytesToMB((float)driveInfo.TotalFreeSpace), " ", driveInfo.TotalFreeSpace }));
-				UnityEngine.Debug.Log(string.Concat(new object[] { "tot size:", DHTools.BytesToMB((float)driveInfo.TotalSize), " ", driveInfo.TotalSize }));
+				UnityEngine.Debug.Log(string.Concat(new object[] { "avail free:", BytesToMB((float)driveInfo.AvailableFreeSpace), " ", driveInfo.AvailableFreeSpace }));
+				UnityEngine.Debug.Log(string.Concat(new object[] { "tot free:", BytesToMB((float)driveInfo.TotalFreeSpace), " ", driveInfo.TotalFreeSpace }));
+				UnityEngine.Debug.Log(string.Concat(new object[] { "tot size:", BytesToMB((float)driveInfo.TotalSize), " ", driveInfo.TotalSize }));
 			}
 		}
 	}
 
 	public static void LogError(string message)
 	{
-		DHTools.Log(message);
+		Log(message);
 	}
 
 	public static Vector3 ToGroundVec(Vector3 vecIn)

@@ -161,11 +161,7 @@ namespace RootMotion.FinalIK {
 			}
 
 			// Gets the height from ground clamped between min and max step height
-			public float stepHeightFromGround {
-				get {
-					return Mathf.Clamp(heightFromGround, -grounding.maxStep, grounding.maxStep);
-				}
-			}
+			public float stepHeightFromGround => Mathf.Clamp(heightFromGround, -grounding.maxStep, grounding.maxStep);
 
 			// Get predicted Capsule hit from the middle of the foot
 			private RaycastHit GetCapsuleHit(Vector3 offsetFromHeel) {
@@ -271,11 +267,7 @@ namespace RootMotion.FinalIK {
 			}
 			
 			// The foot's height from ground in the animation
-			private float rootYOffset {
-				get {
-					return grounding.GetVerticalOffset(transform.position, grounding.root.position - up * grounding.heightOffset);
-				}
-			}		
+			private float rootYOffset => grounding.GetVerticalOffset(transform.position, grounding.root.position - up * grounding.heightOffset);
 		}
 	}
 }

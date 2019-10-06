@@ -14,7 +14,7 @@ namespace Dreamteck.Splines
         public Iteration iteration = Iteration.Ordered;
         public int randomSeed
         {
-            get { return _randomSeed; }
+            get => _randomSeed;
             set
             {
                 if (value != _randomSeed)
@@ -32,7 +32,7 @@ namespace Dreamteck.Splines
         private int index = 0;
         [SerializeField]
         [HideInInspector]
-        System.Random randomizer;
+        private System.Random randomizer;
         
         public ObjectSequence(){
             randomizer = new System.Random(_randomSeed);

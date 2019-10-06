@@ -19,7 +19,7 @@ namespace RootMotion.FinalIK {
 		// The current InteractionObject (null if there is no interaction going on)
 		public InteractionObject interactionObject { get; private set; }
 		// Is this InteractionEffector currently in the middle of an interaction?
-		public bool inInteraction { get { return interactionObject != null; }}
+		public bool inInteraction => interactionObject != null;
 
 		// Internal values
 		private Poser poser;

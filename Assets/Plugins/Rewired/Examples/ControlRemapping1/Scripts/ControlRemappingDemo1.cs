@@ -1338,11 +1338,11 @@ namespace Rewired.Demos {
         #region Mapping Listener Event Handlers
 
         private void OnConflictFound(InputMapper.ConflictFoundEventData data) {
-            this.conflictFoundEventData = data;
+            conflictFoundEventData = data;
         }
 
         private void OnStopped(InputMapper.StoppedEventData data) {
-            this.conflictFoundEventData = null;
+            conflictFoundEventData = null;
         }
 
         #endregion
@@ -1412,9 +1412,7 @@ namespace Rewired.Demos {
             }
 
             public int id {
-                get {
-                    return _id;
-                }
+                get => _id;
                 set {
                     _idPrev = _id;
                     _id = value;
@@ -1422,18 +1420,16 @@ namespace Rewired.Demos {
             }
 
             public ControllerType type {
-                get {
-                    return _type;
-                }
+                get => _type;
                 set {
                     _typePrev = _type;
                     _type = value;
                 }
             }
 
-            public int idPrev { get { return _idPrev; } }
-            public ControllerType typePrev { get { return _typePrev; } }
-            public bool hasSelection { get { return _id >= 0; } }
+            public int idPrev => _idPrev;
+            public ControllerType typePrev => _typePrev;
+            public bool hasSelection => _id >= 0;
 
             public void Set(int id, ControllerType type) {
                 this.id = id;
@@ -1459,9 +1455,7 @@ namespace Rewired.Demos {
             private float busyTimer { get { if(!_busyTimerRunning) return 0.0f; return _busyTime - Time.realtimeSinceStartup; } }
 
             public bool enabled {
-                get {
-                    return _enabled;
-                }
+                get => _enabled;
                 set {
                     if(value) {
                         if(_type == DialogType.None) return; // cannot enable, no type set
@@ -1490,7 +1484,7 @@ namespace Rewired.Demos {
                     _type = value;
                 }
             }
-            public bool busy { get { return _busyTimerRunning; } }
+            public bool busy => _busyTimerRunning;
 
             private Action<int> drawWindowDelegate;
             private GUI.WindowFunction drawWindowFunction;
@@ -1677,7 +1671,7 @@ namespace Rewired.Demos {
                 bool assign
             )
                 : base(QueueActionType.JoystickAssignment) {
-                this.playerId = newPlayerId;
+                playerId = newPlayerId;
                 this.joystickId = joystickId;
                 this.assign = assign;
             }

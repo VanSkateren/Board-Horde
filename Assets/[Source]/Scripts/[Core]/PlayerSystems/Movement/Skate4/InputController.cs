@@ -47,40 +47,16 @@ public class InputController : MonoBehaviour
 
 	private float _turn;
 
-	public static InputController Instance
-	{
-		get
-		{
-			return InputController._instance;
-		}
-	}
+	public static InputController Instance => _instance;
 
-	public StickInput LeftStick
-	{
-		get
-		{
-			return this._leftStick;
-		}
-	}
+	public StickInput LeftStick => _leftStick;
 
-	public StickInput RightStick
-	{
-		get
-		{
-			return this._rightStick;
-		}
-	}
+	public StickInput RightStick => _rightStick;
 
 	public float TriggerMultiplier
 	{
-		get
-		{
-			return this._triggerMultiplier;
-		}
-		set
-		{
-			this._triggerMultiplier = value;
-		}
+		get => _triggerMultiplier;
+		set => _triggerMultiplier = value;
 	}
 
 	public InputController()
@@ -89,78 +65,78 @@ public class InputController : MonoBehaviour
 
 	private void Awake()
 	{
-		this.player = ReInput.players.GetPlayer(0);
-		this._leftStick = base.gameObject.AddComponent<StickInput>();
-		this._rightStick = base.gameObject.AddComponent<StickInput>();
-		if (!(InputController._instance != null) || !(InputController._instance != this))
+		player = ReInput.players.GetPlayer(0);
+		_leftStick = gameObject.AddComponent<StickInput>();
+		_rightStick = gameObject.AddComponent<StickInput>();
+		if (!(_instance != null) || !(_instance != this))
 		{
-			InputController._instance = this;
+			_instance = this;
 			return;
 		}
-		UnityEngine.Object.Destroy(base.gameObject);
+		Destroy(gameObject);
 	}
 
 	private void BothTriggersReleased()
 	{
-		PlayerController.Instance.playerSM.BothTriggersReleasedSM(this.turningMode);
+		PlayerController.Instance.playerSM.BothTriggersReleasedSM(turningMode);
 	}
 
 	private void CheckForInactivity()
 	{
-		if (this.player.GetAnyButtonUp() || this.JoystickActive())
+		if (player.GetAnyButtonUp() || JoystickActive())
 		{
-			this._timeSinceActivity = 0f;
+			_timeSinceActivity = 0f;
 		}
 		else
 		{
-			this._timeSinceActivity += Time.deltaTime;
+			_timeSinceActivity += Time.deltaTime;
 		}
-		if (this._timeSinceActivity > 300f)
+		if (_timeSinceActivity > 300f)
 		{
-			this.inactiveTime += Time.deltaTime;
+			inactiveTime += Time.deltaTime;
 		}
 	}
 
 	private void FixedUpdate()
 	{
-		this.FixedUpdateTriggers();
-		PlayerController.Instance.playerSM.OnStickFixedUpdateSM(this._leftStick, this._rightStick);
+		FixedUpdateTriggers();
+		PlayerController.Instance.playerSM.OnStickFixedUpdateSM(_leftStick, _rightStick);
 	}
 
 	private void FixedUpdateTriggers()
 	{
 		if (PlayerController.Instance.playerSM.IsOnGroundStateSM())
 		{
-			if (!this._leftStick.IsPopStick)
+			if (!_leftStick.IsPopStick)
 			{
-				if (this._leftStick.rawInput.pos.x < -0.3f)
+				if (_leftStick.rawInput.pos.x < -0.3f)
 				{
-					this.LeftTriggerHeld(Mathf.Abs(this._leftStick.rawInput.pos.x) * this.TriggerMultiplier);
+					LeftTriggerHeld(Mathf.Abs(_leftStick.rawInput.pos.x) * TriggerMultiplier);
 				}
-				else if (this._leftStick.rawInput.pos.x > 0.3f)
+				else if (_leftStick.rawInput.pos.x > 0.3f)
 				{
-					this.RightTriggerHeld(Mathf.Abs(this._leftStick.rawInput.pos.x) * this.TriggerMultiplier);
+					RightTriggerHeld(Mathf.Abs(_leftStick.rawInput.pos.x) * TriggerMultiplier);
 				}
 			}
-			if (!this._rightStick.IsPopStick)
+			if (!_rightStick.IsPopStick)
 			{
-				if (this._rightStick.rawInput.pos.x < -0.3f)
+				if (_rightStick.rawInput.pos.x < -0.3f)
 				{
-					this.LeftTriggerHeld(Mathf.Abs(this._rightStick.rawInput.pos.x) * this.TriggerMultiplier);
+					LeftTriggerHeld(Mathf.Abs(_rightStick.rawInput.pos.x) * TriggerMultiplier);
 				}
-				else if (this._rightStick.rawInput.pos.x > 0.3f)
+				else if (_rightStick.rawInput.pos.x > 0.3f)
 				{
-					this.RightTriggerHeld(Mathf.Abs(this._rightStick.rawInput.pos.x) * this.TriggerMultiplier);
+					RightTriggerHeld(Mathf.Abs(_rightStick.rawInput.pos.x) * TriggerMultiplier);
 				}
 			}
 		}
-		if (this._leftHeld)
+		if (_leftHeld)
 		{
-			this.LeftTriggerHeld(this._leftTrigger * this.TriggerMultiplier);
+			LeftTriggerHeld(_leftTrigger * TriggerMultiplier);
 		}
-		if (this._rightHeld)
+		if (_rightHeld)
 		{
-			this.RightTriggerHeld(this._rightTrigger * this.TriggerMultiplier);
+			RightTriggerHeld(_rightTrigger * TriggerMultiplier);
 		}
 	}
 
@@ -168,9 +144,9 @@ public class InputController : MonoBehaviour
 	{
 		if (SettingsManager.Instance.stance != SettingsManager.Stance.Regular)
 		{
-			return this._leftTrigger - this._rightTrigger;
+			return _leftTrigger - _rightTrigger;
 		}
-		return -this._leftTrigger + this._rightTrigger;
+		return -_leftTrigger + _rightTrigger;
 	}
 
 	private bool IsTurningWithSticks()
@@ -179,20 +155,20 @@ public class InputController : MonoBehaviour
 		{
 			return false;
 		}
-		if (Mathf.Abs(this._leftStick.rawInput.pos.x) > 0.3f && Mathf.Abs(this._leftStick.rawInput.pos.y) < 0.5f)
+		if (Mathf.Abs(_leftStick.rawInput.pos.x) > 0.3f && Mathf.Abs(_leftStick.rawInput.pos.y) < 0.5f)
 		{
 			return true;
 		}
-		if (Mathf.Abs(this._rightStick.rawInput.pos.x) <= 0.3f)
+		if (Mathf.Abs(_rightStick.rawInput.pos.x) <= 0.3f)
 		{
 			return false;
 		}
-		return Mathf.Abs(this._rightStick.rawInput.pos.y) < 0.5f;
+		return Mathf.Abs(_rightStick.rawInput.pos.y) < 0.5f;
 	}
 
 	private bool JoystickActive()
 	{
-		if (Mathf.Abs(this.player.GetAxis("LeftStickX")) <= 0.1f && Mathf.Abs(this.player.GetAxis("RightStickX")) <= 0.1f && Mathf.Abs(this.player.GetAxis("LeftStickY")) <= 0.1f && Mathf.Abs(this.player.GetAxis("RightStickY")) <= 0.1f)
+		if (Mathf.Abs(player.GetAxis("LeftStickX")) <= 0.1f && Mathf.Abs(player.GetAxis("RightStickX")) <= 0.1f && Mathf.Abs(player.GetAxis("LeftStickY")) <= 0.1f && Mathf.Abs(player.GetAxis("RightStickY")) <= 0.1f)
 		{
 			return false;
 		}
@@ -201,12 +177,12 @@ public class InputController : MonoBehaviour
 
 	private void LeftTriggerHeld(float p_value)
 	{
-		PlayerController.Instance.playerSM.LeftTriggerHeldSM(p_value, this.turningMode);
+		PlayerController.Instance.playerSM.LeftTriggerHeldSM(p_value, turningMode);
 	}
 
 	private void LeftTriggerHeld(float p_value, bool p_skateControls)
 	{
-		PlayerController.Instance.playerSM.LeftTriggerHeldSM(p_value, this.turningMode);
+		PlayerController.Instance.playerSM.LeftTriggerHeldSM(p_value, turningMode);
 	}
 
 	private void LeftTriggerPressed()
@@ -221,7 +197,7 @@ public class InputController : MonoBehaviour
 
 	private void RightTriggerHeld(float p_value)
 	{
-		PlayerController.Instance.playerSM.RightTriggerHeldSM(p_value, this.turningMode);
+		PlayerController.Instance.playerSM.RightTriggerHeldSM(p_value, turningMode);
 	}
 
 	private void RightTriggerPressed()
@@ -236,67 +212,67 @@ public class InputController : MonoBehaviour
 
 	private void Update()
 	{
-		this.CheckForInactivity();
-		if (this.controlsActive)
+		CheckForInactivity();
+		if (controlsActive)
 		{
-			this.UpdateTriggers();
-			this.UpdateSticks();
+			UpdateTriggers();
+			UpdateSticks();
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
 				Application.Quit();
 			}
-			if (this.player.GetButtonDown("Start"))
+			if (player.GetButtonDown("Start"))
 			{
-				this.debugUI.SetColor(DebugUI.Buttons.Start);
+				debugUI.SetColor(DebugUI.Buttons.Start);
 			}
-			if (this.player.GetButtonUp("Start"))
+			if (player.GetButtonUp("Start"))
 			{
-				this.debugUI.ResetColor(DebugUI.Buttons.Start);
+				debugUI.ResetColor(DebugUI.Buttons.Start);
 			}
-			if (this.player.GetButtonDown("Select"))
+			if (player.GetButtonDown("Select"))
 			{
 				if (PlayerController.Instance.playerSM.IsOnGroundStateSM())
 				{
 					SettingsManager.Instance.SetStance((SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? SettingsManager.Stance.Goofy : SettingsManager.Stance.Regular));
 					PlayerController.Instance.respawn.DoRespawn();
 				}
-				this.debugUI.SetColor(DebugUI.Buttons.Select);
+				debugUI.SetColor(DebugUI.Buttons.Select);
 			}
-			if (this.player.GetButtonUp("Select"))
+			if (player.GetButtonUp("Select"))
 			{
-				this.debugUI.ResetColor(DebugUI.Buttons.Select);
+				debugUI.ResetColor(DebugUI.Buttons.Select);
 			}
-			if (this.player.GetButtonDown("Y"))
+			if (player.GetButtonDown("Y"))
 			{
-				this.debugUI.SetColor(DebugUI.Buttons.Y);
-				this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.Y);
+				debugUI.SetColor(DebugUI.Buttons.Y);
+				tutControllerUI.SetColor(TutorialControllerUI.Buttons.Y);
 				if (Application.isEditor)
 				{
 					Time.timeScale = 0.05f;
 				}
 			}
-			if (this.player.GetButtonUp("Y"))
+			if (player.GetButtonUp("Y"))
 			{
-				this.debugUI.ResetColor(DebugUI.Buttons.Y);
-				this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.Y);
+				debugUI.ResetColor(DebugUI.Buttons.Y);
+				tutControllerUI.ResetColor(TutorialControllerUI.Buttons.Y);
 			}
-			if (this.player.GetButtonDown("B"))
+			if (player.GetButtonDown("B"))
 			{
 				PlayerController.Instance.playerSM.OnBrakePressedSM();
 			}
-			if (this.player.GetButton("B"))
+			if (player.GetButton("B"))
 			{
-				this.debugUI.SetColor(DebugUI.Buttons.B);
-				this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.B);
+				debugUI.SetColor(DebugUI.Buttons.B);
+				tutControllerUI.SetColor(TutorialControllerUI.Buttons.B);
 				PlayerController.Instance.playerSM.OnBrakeHeldSM();
 			}
-			if (this.player.GetButtonUp("B"))
+			if (player.GetButtonUp("B"))
 			{
-				this.debugUI.ResetColor(DebugUI.Buttons.B);
-				this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.B);
+				debugUI.ResetColor(DebugUI.Buttons.B);
+				tutControllerUI.ResetColor(TutorialControllerUI.Buttons.B);
 				PlayerController.Instance.playerSM.OnBrakeReleasedSM();
 			}
-			if (this.player.GetButtonDown("A"))
+			if (player.GetButtonDown("A"))
 			{
 				if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 				{
@@ -318,14 +294,14 @@ public class InputController : MonoBehaviour
 					PlayerController.Instance.playerSM.OnPushButtonPressedSM(true);
 				}
 			}
-			if (!this.player.GetButton("A"))
+			if (!player.GetButton("A"))
 			{
 				PlayerController.Instance.skaterController.pushBrakeForce = Vector3.zero;
 			}
 			else
 			{
-				this.debugUI.SetColor(DebugUI.Buttons.A);
-				this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.A);
+				debugUI.SetColor(DebugUI.Buttons.A);
+				tutControllerUI.SetColor(TutorialControllerUI.Buttons.A);
 				if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 				{
 					if (PlayerController.Instance.IsSwitch)
@@ -346,20 +322,20 @@ public class InputController : MonoBehaviour
 					PlayerController.Instance.playerSM.OnPushButtonHeldSM(true);
 				}
 			}
-			if (this.player.GetButtonUp("A"))
+			if (player.GetButtonUp("A"))
 			{
-				this.debugUI.ResetColor(DebugUI.Buttons.A);
-				this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.A);
+				debugUI.ResetColor(DebugUI.Buttons.A);
+				tutControllerUI.ResetColor(TutorialControllerUI.Buttons.A);
 				PlayerController.Instance.playerSM.OnPushButtonReleasedSM();
 			}
-			if (this.player.GetButtonDown("X"))
+			if (player.GetButtonDown("X"))
 			{
 				if (Application.isEditor)
 				{
 					Time.timeScale = 1f;
 				}
-				this.debugUI.SetColor(DebugUI.Buttons.X);
-				this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.X);
+				debugUI.SetColor(DebugUI.Buttons.X);
+				tutControllerUI.SetColor(TutorialControllerUI.Buttons.X);
 				if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 				{
 					if (PlayerController.Instance.IsSwitch)
@@ -380,14 +356,14 @@ public class InputController : MonoBehaviour
 					PlayerController.Instance.playerSM.OnPushButtonPressedSM(false);
 				}
 			}
-			if (!this.player.GetButton("X"))
+			if (!player.GetButton("X"))
 			{
 				PlayerController.Instance.skaterController.pushBrakeForce = Vector3.zero;
 			}
 			else
 			{
-				this.debugUI.SetColor(DebugUI.Buttons.X);
-				this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.X);
+				debugUI.SetColor(DebugUI.Buttons.X);
+				tutControllerUI.SetColor(TutorialControllerUI.Buttons.X);
 				if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 				{
 					if (PlayerController.Instance.IsSwitch)
@@ -408,146 +384,146 @@ public class InputController : MonoBehaviour
 					PlayerController.Instance.playerSM.OnPushButtonHeldSM(false);
 				}
 			}
-			if (this.player.GetButtonUp("X"))
+			if (player.GetButtonUp("X"))
 			{
-				this.debugUI.ResetColor(DebugUI.Buttons.X);
-				this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.X);
+				debugUI.ResetColor(DebugUI.Buttons.X);
+				tutControllerUI.ResetColor(TutorialControllerUI.Buttons.X);
 				PlayerController.Instance.playerSM.OnPushButtonReleasedSM();
 			}
 		}
-		if (this.player.GetAxis("DPadX") > 0f)
+		if (player.GetAxis("DPadX") > 0f)
 		{
-			this.debugUI.SetColor(DebugUI.Buttons.DPadRight);
-			this.debugUI.ResetColor(DebugUI.Buttons.DPadLeft, 0.2f);
-			this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.DPadRight);
-			this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadLeft, 0.2f);
+			debugUI.SetColor(DebugUI.Buttons.DPadRight);
+			debugUI.ResetColor(DebugUI.Buttons.DPadLeft, 0.2f);
+			tutControllerUI.SetColor(TutorialControllerUI.Buttons.DPadRight);
+			tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadLeft, 0.2f);
 		}
-		else if (this.player.GetAxis("DPadX") >= 0f)
+		else if (player.GetAxis("DPadX") >= 0f)
 		{
-			this.debugUI.ResetColor(DebugUI.Buttons.DPadLeft, 0.2f);
-			this.debugUI.ResetColor(DebugUI.Buttons.DPadRight, 0.2f);
-			this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadLeft, 0.2f);
-			this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadRight, 0.2f);
-		}
-		else
-		{
-			this.debugUI.SetColor(DebugUI.Buttons.DPadLeft);
-			this.debugUI.ResetColor(DebugUI.Buttons.DPadRight, 0.2f);
-			this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.DPadLeft);
-			this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadRight, 0.2f);
-		}
-		if (this.player.GetAxis("DPadY") > 0f)
-		{
-			this.debugUI.SetColor(DebugUI.Buttons.DPadUp);
-			this.debugUI.ResetColor(DebugUI.Buttons.DPadDown, 0.2f);
-			this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.DPadUp);
-			this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadDown, 0.2f);
-		}
-		else if (this.player.GetAxis("DPadY") >= 0f)
-		{
-			this.debugUI.ResetColor(DebugUI.Buttons.DPadDown, 0.2f);
-			this.debugUI.ResetColor(DebugUI.Buttons.DPadUp, 0.2f);
-			this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadDown, 0.2f);
-			this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadUp, 0.2f);
+			debugUI.ResetColor(DebugUI.Buttons.DPadLeft, 0.2f);
+			debugUI.ResetColor(DebugUI.Buttons.DPadRight, 0.2f);
+			tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadLeft, 0.2f);
+			tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadRight, 0.2f);
 		}
 		else
 		{
-			this.debugUI.SetColor(DebugUI.Buttons.DPadDown);
-			this.debugUI.ResetColor(DebugUI.Buttons.DPadUp, 0.2f);
-			this.tutControllerUI.SetColor(TutorialControllerUI.Buttons.DPadDown);
-			this.tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadUp, 0.2f);
+			debugUI.SetColor(DebugUI.Buttons.DPadLeft);
+			debugUI.ResetColor(DebugUI.Buttons.DPadRight, 0.2f);
+			tutControllerUI.SetColor(TutorialControllerUI.Buttons.DPadLeft);
+			tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadRight, 0.2f);
 		}
-		PlayerController.Instance.DebugRawAngles(this._leftStick.rawInput.pos, false);
-		PlayerController.Instance.DebugRawAngles(this._rightStick.rawInput.pos, true);
+		if (player.GetAxis("DPadY") > 0f)
+		{
+			debugUI.SetColor(DebugUI.Buttons.DPadUp);
+			debugUI.ResetColor(DebugUI.Buttons.DPadDown, 0.2f);
+			tutControllerUI.SetColor(TutorialControllerUI.Buttons.DPadUp);
+			tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadDown, 0.2f);
+		}
+		else if (player.GetAxis("DPadY") >= 0f)
+		{
+			debugUI.ResetColor(DebugUI.Buttons.DPadDown, 0.2f);
+			debugUI.ResetColor(DebugUI.Buttons.DPadUp, 0.2f);
+			tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadDown, 0.2f);
+			tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadUp, 0.2f);
+		}
+		else
+		{
+			debugUI.SetColor(DebugUI.Buttons.DPadDown);
+			debugUI.ResetColor(DebugUI.Buttons.DPadUp, 0.2f);
+			tutControllerUI.SetColor(TutorialControllerUI.Buttons.DPadDown);
+			tutControllerUI.ResetColor(TutorialControllerUI.Buttons.DPadUp, 0.2f);
+		}
+		PlayerController.Instance.DebugRawAngles(_leftStick.rawInput.pos, false);
+		PlayerController.Instance.DebugRawAngles(_rightStick.rawInput.pos, true);
 	}
 
 	private void UpdateSticks()
 	{
-		this._leftStick.StickUpdate(false, this.inputThread);
-		this._rightStick.StickUpdate(true, this.inputThread);
-		PlayerController.Instance.playerSM.OnStickUpdateSM(this._leftStick, this._rightStick);
-		this.debugUI.UpdateLeftStickInput(this._leftStick.rawInput.pos);
-		this.debugUI.UpdateRightStickInput(this._rightStick.rawInput.pos);
-		this.tutControllerUI.UpdateLeftStickInput(this._leftStick.rawInput.pos);
-		this.tutControllerUI.UpdateRightStickInput(this._rightStick.rawInput.pos);
-		this.debugUI.UpdateLeftAugmentedStickInput(this._leftStick.augmentedInput.pos);
-		this.debugUI.UpdateRightAugmentedStickInput(this._rightStick.augmentedInput.pos);
-		if (this.player.GetButtonDown("Left Stick Button"))
+		_leftStick.StickUpdate(false, inputThread);
+		_rightStick.StickUpdate(true, inputThread);
+		PlayerController.Instance.playerSM.OnStickUpdateSM(_leftStick, _rightStick);
+		debugUI.UpdateLeftStickInput(_leftStick.rawInput.pos);
+		debugUI.UpdateRightStickInput(_rightStick.rawInput.pos);
+		tutControllerUI.UpdateLeftStickInput(_leftStick.rawInput.pos);
+		tutControllerUI.UpdateRightStickInput(_rightStick.rawInput.pos);
+		debugUI.UpdateLeftAugmentedStickInput(_leftStick.augmentedInput.pos);
+		debugUI.UpdateRightAugmentedStickInput(_rightStick.augmentedInput.pos);
+		if (player.GetButtonDown("Left Stick Button"))
 		{
-			this._leftStick.OnStickPressed(false);
+			_leftStick.OnStickPressed(false);
 		}
-		if (this.player.GetButtonDown("Right Stick Button"))
+		if (player.GetButtonDown("Right Stick Button"))
 		{
-			this._rightStick.OnStickPressed(true);
+			_rightStick.OnStickPressed(true);
 		}
-		if (this.player.GetButton("Left Stick Button"))
+		if (player.GetButton("Left Stick Button"))
 		{
-			this.debugUI.SetColor(DebugUI.Buttons.LS);
-			this.tutControllerUI.ShowClickLeft(true);
+			debugUI.SetColor(DebugUI.Buttons.LS);
+			tutControllerUI.ShowClickLeft(true);
 		}
-		if (this.player.GetButtonUp("Left Stick Button"))
+		if (player.GetButtonUp("Left Stick Button"))
 		{
-			this.debugUI.ResetColor(DebugUI.Buttons.LS);
-			this.tutControllerUI.ShowClickLeft(false);
+			debugUI.ResetColor(DebugUI.Buttons.LS);
+			tutControllerUI.ShowClickLeft(false);
 		}
-		if (this.player.GetButton("Right Stick Button"))
+		if (player.GetButton("Right Stick Button"))
 		{
-			this.debugUI.SetColor(DebugUI.Buttons.RS);
-			this.tutControllerUI.ShowClickRight(true);
+			debugUI.SetColor(DebugUI.Buttons.RS);
+			tutControllerUI.ShowClickRight(true);
 		}
-		if (this.player.GetButtonUp("Right Stick Button"))
+		if (player.GetButtonUp("Right Stick Button"))
 		{
-			this.debugUI.ResetColor(DebugUI.Buttons.RS);
-			this.tutControllerUI.ShowClickRight(false);
+			debugUI.ResetColor(DebugUI.Buttons.RS);
+			tutControllerUI.ShowClickRight(false);
 		}
 	}
 
 	private void UpdateTriggers()
 	{
-		this._leftTrigger = this.player.GetAxis("LT");
-		this._rightTrigger = this.player.GetAxis("RT");
-		this.debugUI.LerpLeftTrigger(this._leftTrigger);
-		this.debugUI.LerpRightTrigger(this._rightTrigger);
-		this.tutControllerUI.LerpLeftTrigger(this._leftTrigger);
-		this.tutControllerUI.LerpRightTrigger(this._rightTrigger);
-		if (this._lastLeftTrigger < this._triggerDeadZone && this._leftTrigger > this._triggerDeadZone)
+		_leftTrigger = player.GetAxis("LT");
+		_rightTrigger = player.GetAxis("RT");
+		debugUI.LerpLeftTrigger(_leftTrigger);
+		debugUI.LerpRightTrigger(_rightTrigger);
+		tutControllerUI.LerpLeftTrigger(_leftTrigger);
+		tutControllerUI.LerpRightTrigger(_rightTrigger);
+		if (_lastLeftTrigger < _triggerDeadZone && _leftTrigger > _triggerDeadZone)
 		{
-			this.LeftTriggerPressed();
+			LeftTriggerPressed();
 		}
-		this._leftHeld = (this._leftTrigger > this._triggerDeadZone ? true : false);
-		if (this._lastLeftTrigger > this._triggerDeadZone && this._leftTrigger < this._triggerDeadZone && !this.IsTurningWithSticks())
+		_leftHeld = (_leftTrigger > _triggerDeadZone ? true : false);
+		if (_lastLeftTrigger > _triggerDeadZone && _leftTrigger < _triggerDeadZone && !IsTurningWithSticks())
 		{
-			this.LeftTriggerReleased();
+			LeftTriggerReleased();
 		}
-		if (this._lastRightTrigger < this._triggerDeadZone && this._rightTrigger > this._triggerDeadZone)
+		if (_lastRightTrigger < _triggerDeadZone && _rightTrigger > _triggerDeadZone)
 		{
-			this.RightTriggerPressed();
+			RightTriggerPressed();
 		}
-		this._rightHeld = (this._rightTrigger > this._triggerDeadZone ? true : false);
-		if (this._lastRightTrigger > this._triggerDeadZone && this._rightTrigger < this._triggerDeadZone && !this.IsTurningWithSticks())
+		_rightHeld = (_rightTrigger > _triggerDeadZone ? true : false);
+		if (_lastRightTrigger > _triggerDeadZone && _rightTrigger < _triggerDeadZone && !IsTurningWithSticks())
 		{
-			this.RightTriggerReleased();
+			RightTriggerReleased();
 		}
-		if (this._leftTrigger < this._triggerDeadZone && this._rightTrigger < this._triggerDeadZone && !this.IsTurningWithSticks())
+		if (_leftTrigger < _triggerDeadZone && _rightTrigger < _triggerDeadZone && !IsTurningWithSticks())
 		{
-			this.BothTriggersReleased();
+			BothTriggersReleased();
 		}
 		if (SettingsManager.Instance.stance != SettingsManager.Stance.Regular)
 		{
-			float single = this._leftTrigger - this._rightTrigger;
+			float single = _leftTrigger - _rightTrigger;
 			PlayerController.Instance.AnimSetTurn(single);
-			this._turn = Mathf.MoveTowards(this._turn, single, Time.deltaTime * 1.5f);
-			PlayerController.Instance.AnimSetInAirTurn(this._turn);
+			_turn = Mathf.MoveTowards(_turn, single, Time.deltaTime * 1.5f);
+			PlayerController.Instance.AnimSetInAirTurn(_turn);
 		}
 		else
 		{
-			float single1 = -this._leftTrigger + this._rightTrigger;
+			float single1 = -_leftTrigger + _rightTrigger;
 			PlayerController.Instance.AnimSetTurn(single1);
-			this._turn = Mathf.MoveTowards(this._turn, single1, Time.deltaTime * 1.5f);
-			PlayerController.Instance.AnimSetInAirTurn(this._turn);
+			_turn = Mathf.MoveTowards(_turn, single1, Time.deltaTime * 1.5f);
+			PlayerController.Instance.AnimSetInAirTurn(_turn);
 		}
-		this._lastLeftTrigger = this._leftTrigger;
-		this._lastRightTrigger = this._rightTrigger;
+		_lastLeftTrigger = _leftTrigger;
+		_lastRightTrigger = _rightTrigger;
 	}
 
 	public enum TurningMode

@@ -15,13 +15,13 @@ namespace SCPE
         private Vector3 moveDirection = Vector3.zero;
         private Rigidbody rbody;
 
-        void Awake()
+        private void Awake()
         {
             rbody = GetComponent<Rigidbody>();
             rbody.freezeRotation = true;
         }
 
-        void Update()
+        private void Update()
         {
 
             //vector3 Input horizontal are the buttons A and D and vertical is W and S

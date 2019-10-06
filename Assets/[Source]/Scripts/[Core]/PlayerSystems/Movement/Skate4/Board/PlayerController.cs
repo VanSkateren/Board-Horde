@@ -168,17 +168,17 @@ public class PlayerController : MonoBehaviour
 
 	public Quaternion BoardGrindRotation
 	{
-		get => this._boardGrindRotation;
-		set => this._boardGrindRotation = value;
+		get => _boardGrindRotation;
+		set => _boardGrindRotation = value;
 	}
 
-	public static PlayerController Instance => PlayerController._instance;
+	public static PlayerController Instance => _instance;
 
 	public bool IsAnimSwitch
 	{
 		get
 		{
-			if (Vector3.Angle(this.cameraController._actualCam.forward, this.skaterController.skaterTransform.forward) > 90f)
+			if (Vector3.Angle(cameraController._actualCam.forward, skaterController.skaterTransform.forward) > 90f)
 			{
 				return true;
 			}
@@ -186,19 +186,19 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	public bool IsInSetupState => this._isInSetupState;
+	public bool IsInSetupState => _isInSetupState;
 
 	public bool IsRespawning
 	{
-		get => this._isRespawning;
-		set => this._isRespawning = value;
+		get => _isRespawning;
+		set => _isRespawning = value;
 	}
 
 	public bool IsSwitch
 	{
 		get
 		{
-			if (Vector3.Angle(this._ridingCameraForward, this._ridingPlayerForward) > 90f)
+			if (Vector3.Angle(_ridingCameraForward, _ridingPlayerForward) > 90f)
 			{
 				return true;
 			}
@@ -208,20 +208,20 @@ public class PlayerController : MonoBehaviour
 
 	public bool Manualling
 	{
-		get => this._manualling;
-		set => this._manualling = value;
+		get => _manualling;
+		set => _manualling = value;
 	}
 
 	public Quaternion PlayerGrindRotation
 	{
-		get => this._playerGrindRotation;
-		set => this._playerGrindRotation = value;
+		get => _playerGrindRotation;
+		set => _playerGrindRotation = value;
 	}
 
 	public Vector3 VelocityOnPop
 	{
-		get => this._velocityOnPop;
-		set => this._velocityOnPop = value;
+		get => _velocityOnPop;
+		set => _velocityOnPop = value;
 	}
 
 	public PlayerController()
@@ -242,7 +242,7 @@ public class PlayerController : MonoBehaviour
 
 	public void AddPushForce(float p_value)
 	{
-		this.boardController.AddPushForce(p_value);
+		boardController.AddPushForce(p_value);
 	}
 
 	public void AddSidwaysGrindVelocity(Rigidbody p_rb, Vector3 p_up, Vector3 p_direction, float p_force)
@@ -257,17 +257,17 @@ public class PlayerController : MonoBehaviour
 	public void AddToScoopSpeed(float p_value)
 	{
 		Debug.LogError(string.Concat("add tp ", p_value));
-		this.boardController.secondVel += p_value;
+		boardController.secondVel += p_value;
 	}
 
 	public void AddUpwardDisplacement(float p_timeStep)
 	{
-		this.skaterController.AddUpwardDisplacement(p_timeStep);
+		skaterController.AddUpwardDisplacement(p_timeStep);
 	}
 
 	public bool AngleMagnitudeGrindCheck(Vector3 p_velocity, SplineResult p_splineResult)
 	{
-		float single = Vector3.Angle(Vector3.ProjectOnPlane(PlayerController.Instance.boardController.boardRigidbody.velocity, p_splineResult.normal), p_splineResult.direction);
+		float single = Vector3.Angle(Vector3.ProjectOnPlane(Instance.boardController.boardRigidbody.velocity, p_splineResult.normal), p_splineResult.direction);
 		if (single < 60f)
 		{
 			return true;
@@ -281,95 +281,95 @@ public class PlayerController : MonoBehaviour
 
 	public float AngleToBoardTargetRotation()
 	{
-		return Quaternion.Angle(this.boardController.boardRigidbody.rotation, this.boardController.currentRotationTarget);
+		return Quaternion.Angle(boardController.boardRigidbody.rotation, boardController.currentRotationTarget);
 	}
 
 	public void AnimCaught(bool p_value)
 	{
-		this.animationController.SetValue("Caught", p_value);
+		animationController.SetValue("Caught", p_value);
 	}
 
 	public void AnimEndImpactEarly(bool p_value)
 	{
-		this.animationController.SetValue("EndImpact", p_value);
+		animationController.SetValue("EndImpact", p_value);
 	}
 
 	public void AnimForceFlipValue(float p_value)
 	{
-		this._flipAxisTarget = p_value;
-		this._flipAxis = p_value;
-		this.animationController.SetValue("FlipAxis", p_value);
+		_flipAxisTarget = p_value;
+		_flipAxis = p_value;
+		animationController.SetValue("FlipAxis", p_value);
 	}
 
 	public void AnimForceScoopValue(float p_value)
 	{
-		this.animationController.SetValue("ScoopAxis", p_value);
+		animationController.SetValue("ScoopAxis", p_value);
 	}
 
 	public float AnimGetManualAxis()
 	{
-		return this.animationController.skaterAnim.GetFloat("ManualAxis");
+		return animationController.skaterAnim.GetFloat("ManualAxis");
 	}
 
 	public void AnimGrindTransition(bool p_value)
 	{
-		this.animationController.SetValue("Grind", p_value);
+		animationController.SetValue("Grind", p_value);
 	}
 
 	public void AnimLandedEarly(bool p_value)
 	{
-		this.animationController.SetValue("LandedEarly", p_value);
+		animationController.SetValue("LandedEarly", p_value);
 	}
 
 	public void AnimOllieTransition(bool p_value)
 	{
-		this.animationController.SetValue("Ollie", p_value);
+		animationController.SetValue("Ollie", p_value);
 	}
 
 	public void AnimPopInterruptedTransitions(bool p_value)
 	{
-		this.animationController.SetValue("PopInterrupted", p_value);
+		animationController.SetValue("PopInterrupted", p_value);
 	}
 
 	public void AnimRelease(bool p_value)
 	{
-		this.animationController.SetValue("Released", p_value);
+		animationController.SetValue("Released", p_value);
 	}
 
 	public void AnimSetAllDown(bool p_value)
 	{
-		this.animationController.SetValue("AllDown", p_value);
+		animationController.SetValue("AllDown", p_value);
 	}
 
 	public void AnimSetBraking(bool p_value)
 	{
-		this.animationController.SetValue("Braking", p_value);
+		animationController.SetValue("Braking", p_value);
 	}
 
 	public void AnimSetCatchAngle(float p_value)
 	{
-		this.animationController.SetValue("CatchAngle", p_value);
+		animationController.SetValue("CatchAngle", p_value);
 	}
 
 	public void AnimSetFlip(float p_value)
 	{
-		this._flipAxisTarget = p_value;
+		_flipAxisTarget = p_value;
 	}
 
 	public void AnimSetGrindBlend(float p_x, float p_y)
 	{
-		this.animationController.SetValue("GrindX", p_x);
-		this.animationController.SetValue("GrindY", p_y);
+		animationController.SetValue("GrindX", p_x);
+		animationController.SetValue("GrindY", p_y);
 	}
 
 	public void AnimSetGrinding(bool p_value)
 	{
-		this.animationController.SetValue("Grinding", p_value);
+		animationController.SetValue("Grinding", p_value);
 	}
 
 	public void AnimSetInAirTurn(float p_value)
 	{
-		this.animationController.SetValue("InAirTurn", p_value);
+		animationController.SetValue("InAirTurn", p_value);
 	}
 
 	public void AnimSetManual(bool p_value, float p_manualAxis)
@@ -377,49 +377,49 @@ public class PlayerController : MonoBehaviour
 		float single;
 		if (!p_value)
 		{
-			this.AnimSetManualAxis(p_manualAxis);
-			this.animationController.SetValue("Manual", p_value);
-			this.animationController.SetValue("NoseManual", p_value);
+			AnimSetManualAxis(p_manualAxis);
+			animationController.SetValue("Manual", p_value);
+			animationController.SetValue("NoseManual", p_value);
 		}
 		else
 		{
-			this._boardAngleToGround = Vector3.Angle(PlayerController.Instance.boardController.boardTransform.up, PlayerController.Instance.GetGroundNormal());
+			_boardAngleToGround = Vector3.Angle(Instance.boardController.boardTransform.up, Instance.GetGroundNormal());
 			if (p_manualAxis > 0.1f)
 			{
-				single = this._boardAngleToGround;
+				single = _boardAngleToGround;
 			}
 			else
 			{
-				single = (p_manualAxis < -0.1f ? -this._boardAngleToGround : this._boardAngleToGround);
+				single = (p_manualAxis < -0.1f ? -_boardAngleToGround : _boardAngleToGround);
 			}
-			this._boardAngleToGround = single;
-			this._boardAngleToGround = Mathf.Clamp(this._boardAngleToGround, -30f, 30f);
-			this._boardAngleToGround /= 30f;
-			this.AnimSetManualAxis(this._boardAngleToGround);
-			this.animationController.SetValue("Manual", p_value);
+			_boardAngleToGround = single;
+			_boardAngleToGround = Mathf.Clamp(_boardAngleToGround, -30f, 30f);
+			_boardAngleToGround /= 30f;
+			AnimSetManualAxis(_boardAngleToGround);
+			animationController.SetValue("Manual", p_value);
 		}
-		this.Manualling = p_value;
+		Manualling = p_value;
 	}
 
 	public void AnimSetManualAxis(float p_value)
 	{
-		this.animationController.SetValue("ManualAxis", p_value);
+		animationController.SetValue("ManualAxis", p_value);
 	}
 
 	public void AnimSetMongo(bool p_value)
 	{
-		this.animationController.SetValue("PushMongo", p_value);
+		animationController.SetValue("PushMongo", p_value);
 	}
 
 	public void AnimSetNoComply(bool p_value)
 	{
-		this.animationController.SetValue("NoComply", p_value);
+		animationController.SetValue("NoComply", p_value);
 	}
 
 	public void AnimSetNollie(float p_value)
 	{
-		this.animationController.SetValue("Nollie", p_value);
-		this.animationController.SetNollieSteezeIK(p_value);
+		animationController.SetValue("Nollie", p_value);
+		animationController.SetNollieSteezeIK(p_value);
 	}
 
 	public void AnimSetNoseManual(bool p_value, float p_manualAxis)
@@ -427,88 +427,88 @@ public class PlayerController : MonoBehaviour
 		float single;
 		if (!p_value)
 		{
-			this.AnimSetManualAxis(p_manualAxis);
-			this.animationController.SetValue("Manual", p_value);
-			this.animationController.SetValue("NoseManual", p_value);
+			AnimSetManualAxis(p_manualAxis);
+			animationController.SetValue("Manual", p_value);
+			animationController.SetValue("NoseManual", p_value);
 		}
 		else
 		{
-			this._boardAngleToGround = Vector3.Angle(PlayerController.Instance.boardController.boardTransform.up, PlayerController.Instance.GetGroundNormal());
+			_boardAngleToGround = Vector3.Angle(Instance.boardController.boardTransform.up, Instance.GetGroundNormal());
 			if (p_manualAxis > 0.1f)
 			{
-				single = this._boardAngleToGround;
+				single = _boardAngleToGround;
 			}
 			else
 			{
-				single = (p_manualAxis < -0.1f ? -this._boardAngleToGround : this._boardAngleToGround);
+				single = (p_manualAxis < -0.1f ? -_boardAngleToGround : _boardAngleToGround);
 			}
-			this._boardAngleToGround = single;
-			this._boardAngleToGround = Mathf.Clamp(this._boardAngleToGround, -30f, 30f);
-			this._boardAngleToGround /= 30f;
-			this.AnimSetManualAxis(this._boardAngleToGround);
-			this.animationController.SetValue("Manual", p_value);
+			_boardAngleToGround = single;
+			_boardAngleToGround = Mathf.Clamp(_boardAngleToGround, -30f, 30f);
+			_boardAngleToGround /= 30f;
+			AnimSetManualAxis(_boardAngleToGround);
+			animationController.SetValue("Manual", p_value);
 		}
-		this.Manualling = p_value;
+		Manualling = p_value;
 	}
 
 	public void AnimSetPopStrength(float p_value)
 	{
-		this.animationController.SetValue("PopStrength", p_value);
+		animationController.SetValue("PopStrength", p_value);
 	}
 
 	public void AnimSetPush(bool p_value)
 	{
-		this.animationController.SetValue("Push", p_value);
+		animationController.SetValue("Push", p_value);
 	}
 
 	public void AnimSetRollOff(bool p_value)
 	{
-		this.animationController.SetValue("RollOff", p_value);
+		animationController.SetValue("RollOff", p_value);
 	}
 
 	public void AnimSetScoop(float p_value)
 	{
-		this.animationController.SetValue("ScoopAxis", p_value);
+		animationController.SetValue("ScoopAxis", p_value);
 	}
 
 	public void AnimSetSetupBlend(float p_value)
 	{
-		this.animationController.SetValue("SetupBlend", p_value);
+		animationController.SetValue("SetupBlend", p_value);
 	}
 
 	public void AnimSetSwitch(float p_animSwitch)
 	{
-		this.animationController.SetValue("Switch", p_animSwitch);
+		animationController.SetValue("Switch", p_animSwitch);
 	}
 
 	public void AnimSetTurn(float p_value)
 	{
-		float single = Mathd.DampSpring((float)((this.GetBoardBackwards() ? 1 : -1)) * PlayerController.Instance.boardController.localXAccel / 5.5f - this._turnAnimAmount, this._turnVel, this.turnAnimSpring, this.turnAnimDamp);
-		this._turnVel += single;
-		this._turnAnimAmount += this._turnVel;
-		this.animationController.SetValue("Turn", (this.IsAnimSwitch ? -this._turnAnimAmount : this._turnAnimAmount));
+		float single = Mathd.DampSpring((float)((GetBoardBackwards() ? 1 : -1)) * Instance.boardController.localXAccel / 5.5f - _turnAnimAmount, _turnVel, turnAnimSpring, turnAnimDamp);
+		_turnVel += single;
+		_turnAnimAmount += _turnVel;
+		animationController.SetValue("Turn", (IsAnimSwitch ? -_turnAnimAmount : _turnAnimAmount));
 	}
 
 	public void AnimSetupTransition(bool p_value)
 	{
-		this.animationController.SetValue("Setup", p_value);
+		animationController.SetValue("Setup", p_value);
 	}
 
 	public void AnimSetWindUp(float p_value)
 	{
-		this.animationController.SetValue("WindUp", p_value);
+		animationController.SetValue("WindUp", p_value);
 	}
 
 	public void ApplyWeightOnBoard()
 	{
-		if (this.boardController.TurnTarget == 0f)
+		if (boardController.TurnTarget == 0f)
 		{
-			Vector3 vector3 = this.boardController.boardRigidbody.velocity;
-			this.boardController.boardRigidbody.AddForce((-this.skaterController.skaterTransform.up * 80f) * this.impactBoardDownForce, ForceMode.Force);
-			if (this.boardController.boardRigidbody.velocity.magnitude < vector3.magnitude)
+			Vector3 vector3 = boardController.boardRigidbody.velocity;
+			boardController.boardRigidbody.AddForce((-skaterController.skaterTransform.up * 80f) * impactBoardDownForce, ForceMode.Force);
+			if (boardController.boardRigidbody.velocity.magnitude < vector3.magnitude)
 			{
-				Rigidbody rigidbody = this.boardController.boardRigidbody;
-				Vector3 vector31 = this.boardController.boardRigidbody.velocity;
+				Rigidbody rigidbody = boardController.boardRigidbody;
+				Vector3 vector31 = boardController.boardRigidbody.velocity;
 				rigidbody.velocity = vector31.normalized * vector3.magnitude;
 			}
 		}
@@ -518,65 +518,65 @@ public class PlayerController : MonoBehaviour
 	{
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
-		if (!(PlayerController._instance != null) || !(PlayerController._instance != this))
+		if (!(_instance != null) || !(_instance != this))
 		{
-			PlayerController._instance = this;
+			_instance = this;
 			return;
 		}
-		UnityEngine.Object.Destroy(base.gameObject);
+		Destroy(gameObject);
 	}
 
 	public Vector3 BoardToTargetVector()
 	{
-		return this.boardController.boardTransform.position - this.boardController.boardTargetPosition.position;
+		return boardController.boardTransform.position - boardController.boardTargetPosition.position;
 	}
 
 	public void Brake(float p_force)
 	{
-		Vector3 vector3 = this.boardController.boardRigidbody.velocity;
-		this.boardController.boardRigidbody.velocity = vector3.normalized * (vector3.magnitude - p_force * Time.deltaTime);
+		Vector3 vector3 = boardController.boardRigidbody.velocity;
+		boardController.boardRigidbody.velocity = vector3.normalized * (vector3.magnitude - p_force * Time.deltaTime);
 	}
 
 	public void CacheRidingTransforms()
 	{
-		this._lastRidingPosition = this.skaterController.skaterTransform.position;
-		this._ridingCameraForward = this.cameraController._actualCam.forward;
-		this._ridingPlayerForward = this.skaterController.skaterTransform.forward;
+		_lastRidingPosition = skaterController.skaterTransform.position;
+		_ridingCameraForward = cameraController._actualCam.forward;
+		_ridingPlayerForward = skaterController.skaterTransform.forward;
 	}
 
 	public void CameraLookAtPlayer()
 	{
-		this.cameraController.LookAtPlayer();
+		cameraController.LookAtPlayer();
 	}
 
 	public void CancelRespawnInvoke()
 	{
-		base.CancelInvoke("DoBail");
+		CancelInvoke("DoBail");
 	}
 
 	private void CanManual()
 	{
-		this.playerSM.OnCanManualSM();
+		playerSM.OnCanManualSM();
 	}
 
 	public bool CanNollieOutOfGrind()
 	{
-		return this.boardController.triggerManager.canNollie;
+		return boardController.triggerManager.canNollie;
 	}
 
 	public bool CanOllieOutOfGrind()
 	{
-		return this.boardController.triggerManager.canOllie;
+		return boardController.triggerManager.canOllie;
 	}
 
 	public void CorrectVelocity()
 	{
-		this.skaterController.CorrectVelocity();
+		skaterController.CorrectVelocity();
 	}
 
 	public void CrossFadeAnimation(string p_animName, float p_transitionDuration)
 	{
-		this.animationController.CrossFadeAnimation(p_animName, p_transitionDuration);
+		animationController.CrossFadeAnimation(p_animName, p_transitionDuration);
 	}
 
 	public void DebugAugmentedAngles(Vector2 p_pos, bool p_isRight)
@@ -584,32 +584,32 @@ public class PlayerController : MonoBehaviour
 		Quaternion quaternion;
 		if (p_isRight)
 		{
-			this._rightAugScale = this.rightAugmentedVector.rectTransform.localScale;
-			this._rightAugScale.y = Mathf.Clamp(p_pos.magnitude, 0f, 1f);
-			this.rightAugmentedVector.rectTransform.localScale = this._rightAugScale;
-			quaternion = this.rightAugmentedVector.rectTransform.rotation;
-			this._rightAugRot = quaternion.eulerAngles;
-			this._rightAugRot.z = Vector2.SignedAngle(-Vector2.up, p_pos);
-			this.rightAugmentedVector.rectTransform.rotation = Quaternion.Euler(this._rightAugRot);
+			_rightAugScale = rightAugmentedVector.rectTransform.localScale;
+			_rightAugScale.y = Mathf.Clamp(p_pos.magnitude, 0f, 1f);
+			rightAugmentedVector.rectTransform.localScale = _rightAugScale;
+			quaternion = rightAugmentedVector.rectTransform.rotation;
+			_rightAugRot = quaternion.eulerAngles;
+			_rightAugRot.z = Vector2.SignedAngle(-Vector2.up, p_pos);
+			rightAugmentedVector.rectTransform.rotation = Quaternion.Euler(_rightAugRot);
 			return;
 		}
-		this._leftAugScale = this.leftAugmentedVector.rectTransform.localScale;
-		this._leftAugScale.y = Mathf.Clamp(p_pos.magnitude, 0f, 1f);
-		this.leftAugmentedVector.rectTransform.localScale = this._leftAugScale;
-		quaternion = this.leftAugmentedVector.rectTransform.rotation;
-		this._leftAugRot = quaternion.eulerAngles;
-		this._leftAugRot.z = Vector2.SignedAngle(-Vector2.up, p_pos);
-		this.leftAugmentedVector.rectTransform.rotation = Quaternion.Euler(this._leftAugRot);
+		_leftAugScale = leftAugmentedVector.rectTransform.localScale;
+		_leftAugScale.y = Mathf.Clamp(p_pos.magnitude, 0f, 1f);
+		leftAugmentedVector.rectTransform.localScale = _leftAugScale;
+		quaternion = leftAugmentedVector.rectTransform.rotation;
+		_leftAugRot = quaternion.eulerAngles;
+		_leftAugRot.z = Vector2.SignedAngle(-Vector2.up, p_pos);
+		leftAugmentedVector.rectTransform.rotation = Quaternion.Euler(_leftAugRot);
 	}
 
 	public void DebugPopStick(bool p_canPop, bool p_isRight)
 	{
 		if (p_isRight)
 		{
-			this.rightRawVector.color = (p_canPop ? Color.red : Color.green);
+			rightRawVector.color = (p_canPop ? Color.red : Color.green);
 			return;
 		}
-		this.leftRawVector.color = (p_canPop ? Color.red : Color.green);
+		leftRawVector.color = (p_canPop ? Color.red : Color.green);
 	}
 
 	public void DebugRawAngles(Vector2 p_pos, bool p_isRight)
@@ -617,81 +617,81 @@ public class PlayerController : MonoBehaviour
 		Quaternion quaternion;
 		if (p_isRight)
 		{
-			this._rightRawScale = this.rightRawVector.rectTransform.localScale;
-			this._rightRawScale.y = Mathf.Clamp(p_pos.magnitude, 0f, 1f);
-			this.rightRawVector.rectTransform.localScale = this._rightRawScale;
-			quaternion = this.rightRawVector.rectTransform.rotation;
-			this._rightRawRot = quaternion.eulerAngles;
-			this._rightRawRot.z = Vector2.SignedAngle(-Vector2.up, p_pos);
-			this.rightRawVector.rectTransform.rotation = Quaternion.Euler(this._rightRawRot);
+			_rightRawScale = rightRawVector.rectTransform.localScale;
+			_rightRawScale.y = Mathf.Clamp(p_pos.magnitude, 0f, 1f);
+			rightRawVector.rectTransform.localScale = _rightRawScale;
+			quaternion = rightRawVector.rectTransform.rotation;
+			_rightRawRot = quaternion.eulerAngles;
+			_rightRawRot.z = Vector2.SignedAngle(-Vector2.up, p_pos);
+			rightRawVector.rectTransform.rotation = Quaternion.Euler(_rightRawRot);
 			return;
 		}
-		this._leftRawScale = this.leftRawVector.rectTransform.localScale;
-		this._leftRawScale.y = Mathf.Clamp(p_pos.magnitude, 0f, 1f);
-		this.leftRawVector.rectTransform.localScale = this._leftRawScale;
-		quaternion = this.leftRawVector.rectTransform.rotation;
-		this._leftRawRot = quaternion.eulerAngles;
-		this._leftRawRot.z = Vector2.SignedAngle(-Vector2.up, p_pos);
-		this.leftRawVector.rectTransform.rotation = Quaternion.Euler(this._leftRawRot);
+		_leftRawScale = leftRawVector.rectTransform.localScale;
+		_leftRawScale.y = Mathf.Clamp(p_pos.magnitude, 0f, 1f);
+		leftRawVector.rectTransform.localScale = _leftRawScale;
+		quaternion = leftRawVector.rectTransform.rotation;
+		_leftRawRot = quaternion.eulerAngles;
+		_leftRawRot.z = Vector2.SignedAngle(-Vector2.up, p_pos);
+		leftRawVector.rectTransform.rotation = Quaternion.Euler(_leftRawRot);
 	}
 
 	public float DistanceToBoardTarget()
 	{
-		return Vector3.Distance(this.boardController.boardTransform.position, this.boardController.boardTargetPosition.position);
+		return Vector3.Distance(boardController.boardTransform.position, boardController.boardTargetPosition.position);
 	}
 
 	public void DoBail()
 	{
-		this.respawn.DoRespawn();
+		respawn.DoRespawn();
 	}
 
 	public void DoBailDelay()
 	{
-		base.Invoke("DoBail", 2.5f);
+		Invoke("DoBail", 2.5f);
 	}
 
 	private void DoInvert(StickInput p_popStick, ref float r_invertVel, bool p_forwardLoad)
 	{
-		float pPopStick = this.invertMult * p_popStick.rawInput.radialVel;
+		float pPopStick = invertMult * p_popStick.rawInput.radialVel;
 		if (pPopStick > r_invertVel && pPopStick > 0.1f)
 		{
-			this.GetBoardBackwards();
+			GetBoardBackwards();
 			Debug.LogWarning("changed");
-			Debug.Log(string.Concat(new object[] { "newraw:", p_popStick.rawInput.radialVel, " new?:", pPopStick, "   firstvel:", this.boardController.firstVel }));
+			Debug.Log(string.Concat(new object[] { "newraw:", p_popStick.rawInput.radialVel, " new?:", pPopStick, "   firstvel:", boardController.firstVel }));
 		}
 	}
 
 	public void DoKick(bool p_forwardLoad, float strength)
 	{
-		float single = (float)((this.GetBoardBackwards() ? 1 : -1));
+		float single = (float)((GetBoardBackwards() ? 1 : -1));
 		float single1 = (float)((p_forwardLoad ? -1 : 1));
-		this.boardController.RotateWithPop(single * single1 * strength, false);
+		boardController.RotateWithPop(single * single1 * strength, false);
 	}
 
 	private void FixedUpdate()
 	{
-		this.playerSM.FixedUpdateSM();
+		playerSM.FixedUpdateSM();
 	}
 
 	public void FixTargetNormal()
 	{
-		this.boardController.trajectory.PredictedGroundNormal = Vector3.up;
+		boardController.trajectory.PredictedGroundNormal = Vector3.up;
 	}
 
 	public void FlipTrickRotation()
 	{
-		this.boardController.Rotate(false, true);
+		boardController.Rotate(false, true);
 	}
 
 	public void ForceBail()
 	{
-		this.skaterController.respawn.bail.OnBailed();
-		this.playerSM.OnBailedSM();
+		skaterController.respawn.bail.OnBailed();
+		playerSM.OnBailedSM();
 	}
 
 	public void ForcePivotForwardRotation(float p_value)
 	{
-		this.boardController.ForcePivotForwardRotation(p_value);
+		boardController.ForcePivotForwardRotation(p_value);
 	}
 
 	public float GetAngleToAugment(Vector2 p_pos, bool p_isRight)
@@ -700,82 +700,82 @@ public class PlayerController : MonoBehaviour
 		{
 			return 0f;
 		}
-		return -Vector2.SignedAngle(this.GetUpVectorToAugment(p_isRight), p_pos);
+		return -Vector2.SignedAngle(GetUpVectorToAugment(p_isRight), p_pos);
 	}
 
 	public bool GetAnimReleased()
 	{
-		return this.animationController.skaterAnim.GetBool("Released");
+		return animationController.skaterAnim.GetBool("Released");
 	}
 
 	public bool GetBoardBackwards()
 	{
-		return this.boardController.IsBoardBackwards;
+		return boardController.IsBoardBackwards;
 	}
 
 	public float GetBrakeForce()
 	{
-		return this.skaterController.breakForce;
+		return skaterController.breakForce;
 	}
 
 	public float GetCoMDisplacement(float p_timeStep)
 	{
-		return this._comDisplacement.GetDisplacement(p_timeStep);
+		return _comDisplacement.GetDisplacement(p_timeStep);
 	}
 
 	public float GetDisplacementSum()
 	{
-		return this._comDisplacement.sum;
+		return _comDisplacement.sum;
 	}
 
 	public float GetFlipSpeed()
 	{
-		return this.boardController.thirdVel;
+		return boardController.thirdVel;
 	}
 
 	public float GetForwardSpeed()
 	{
-		return this.boardController.firstVel;
+		return boardController.firstVel;
 	}
 
 	public Vector3 GetGrindContactPosition()
 	{
-		return this.boardController.triggerManager.grindContactSplinePosition.position;
+		return boardController.triggerManager.grindContactSplinePosition.position;
 	}
 
 	public Vector3 GetGrindDirection()
 	{
-		return this.boardController.triggerManager.grindDirection;
+		return boardController.triggerManager.grindDirection;
 	}
 
 	public Vector3 GetGrindRight()
 	{
-		return this.boardController.triggerManager.grindRight;
+		return boardController.triggerManager.grindRight;
 	}
 
 	public Vector3 GetGrindUp()
 	{
-		return this.boardController.triggerManager.grindUp;
+		return boardController.triggerManager.grindUp;
 	}
 
 	public Vector3 GetGroundNormal()
 	{
-		return this.boardController.GroundNormal;
+		return boardController.GroundNormal;
 	}
 
 	public float GetKneeBendWeight()
 	{
-		return this.ikController.GetKneeBendWeight();
+		return ikController.GetKneeBendWeight();
 	}
 
 	public float GetLastTweakAxis()
 	{
-		return this._toeTweakAxis / 2f;
+		return _toeTweakAxis / 2f;
 	}
 
 	public Vector3 GetLerpedGroundNormal()
 	{
-		return this.boardController.LerpedGroundNormal;
+		return boardController.LerpedGroundNormal;
 	}
 
 	public float GetNollie(bool p_isRight)
@@ -802,7 +802,7 @@ public class PlayerController : MonoBehaviour
 			{
 				if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 				{
-					if (!PlayerController.Instance.IsSwitch)
+					if (!Instance.IsSwitch)
 					{
 						if (p_isRight)
 						{
@@ -816,7 +816,7 @@ public class PlayerController : MonoBehaviour
 					}
 					return 1f;
 				}
-				if (!PlayerController.Instance.IsSwitch)
+				if (!Instance.IsSwitch)
 				{
 					if (p_isRight)
 					{
@@ -832,7 +832,7 @@ public class PlayerController : MonoBehaviour
 			}
 			case SettingsManager.ControlType.Simple:
 			{
-				if (!PlayerController.Instance.IsSwitch)
+				if (!Instance.IsSwitch)
 				{
 					if (p_isRight)
 					{
@@ -852,22 +852,22 @@ public class PlayerController : MonoBehaviour
 
 	public bool GetPopped()
 	{
-		return this.playerSM.PoppedSM();
+		return playerSM.PoppedSM();
 	}
 
 	public float GetPopStrength()
 	{
-		return this.animationController.skaterAnim.GetFloat("PopStrength");
+		return animationController.skaterAnim.GetFloat("PopStrength");
 	}
 
 	public float GetPushForce()
 	{
-		return this.skaterController.pushForce;
+		return skaterController.pushForce;
 	}
 
 	public float GetScoopSpeed()
 	{
-		return this.boardController.secondVel;
+		return boardController.secondVel;
 	}
 
 	public Vector2 GetUpVectorToAugment(bool p_isRight)
@@ -878,127 +878,127 @@ public class PlayerController : MonoBehaviour
 			{
 				if (!p_isRight)
 				{
-					this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : -Vector2.up);
+					_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : -Vector2.up);
 					break;
 				}
 				else
 				{
-					this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : Vector2.up);
+					_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : Vector2.up);
 					break;
 				}
 			}
 			case SettingsManager.ControlType.Swap:
 			{
-				if (PlayerController.Instance.IsSwitch)
+				if (Instance.IsSwitch)
 				{
 					if (!p_isRight)
 					{
-						this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : -Vector2.up);
+						_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : -Vector2.up);
 						break;
 					}
 					else
 					{
-						this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : Vector2.up);
+						_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : Vector2.up);
 						break;
 					}
 				}
 				else if (!p_isRight)
 				{
-					this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : Vector2.up);
+					_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : Vector2.up);
 					break;
 				}
 				else
 				{
-					this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : -Vector2.up);
+					_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : -Vector2.up);
 					break;
 				}
 			}
 			case SettingsManager.ControlType.Simple:
 			{
-				if (PlayerController.Instance.IsSwitch)
+				if (Instance.IsSwitch)
 				{
 					if (!p_isRight)
 					{
-						this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : Vector2.up);
+						_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : Vector2.up);
 						break;
 					}
 					else
 					{
-						this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : -Vector2.up);
+						_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : -Vector2.up);
 						break;
 					}
 				}
 				else if (!p_isRight)
 				{
-					this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : Vector2.up);
+					_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? Vector2.up : Vector2.up);
 					break;
 				}
 				else
 				{
-					this._tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : -Vector2.up);
+					_tempAugmentedUp = (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? -Vector2.up : -Vector2.up);
 					break;
 				}
 			}
 		}
-		return this._tempAugmentedUp;
+		return _tempAugmentedUp;
 	}
 
 	public float GetWindUp()
 	{
-		return this.inputController.GetWindUp();
+		return inputController.GetWindUp();
 	}
 
 	public void GrindRotateBoard(float p_horizontal, float p_vertical)
 	{
-		this.newRot = (Quaternion.AngleAxis(p_vertical, (!this.GetBoardBackwards() ? this.boardController.boardTransform.right : -this.boardController.boardTransform.right)) * Quaternion.AngleAxis(p_horizontal, this.skaterController.skaterTransform.up)) * this.skaterController.skaterTransform.rotation;
-		this.boardOffsetRoot.rotation = this.newRot;
+		newRot = (Quaternion.AngleAxis(p_vertical, (!GetBoardBackwards() ? boardController.boardTransform.right : -boardController.boardTransform.right)) * Quaternion.AngleAxis(p_horizontal, skaterController.skaterTransform.up)) * skaterController.skaterTransform.rotation;
+		boardOffsetRoot.rotation = newRot;
 	}
 
 	public void GrindRotatePlayerHorizontal(float p_value)
 	{
-		if (!Mathd.Vector3IsInfinityOrNan(this.GetGrindContactPosition()))
+		if (!Mathd.Vector3IsInfinityOrNan(GetGrindContactPosition()))
 		{
-			this.playerRotationReference.RotateAround(this.GetGrindContactPosition(), this.boardController.triggerManager.playerOffset.up, p_value);
+			playerRotationReference.RotateAround(GetGrindContactPosition(), boardController.triggerManager.playerOffset.up, p_value);
 		}
 	}
 
 	public void Impact()
 	{
-		this.SetBoardToMaster();
-		PlayerController.Instance.SetTurningMode(InputController.TurningMode.Grounded);
-		this.AnimOllieTransition(false);
-		this.AnimSetupTransition(false);
+		SetBoardToMaster();
+		Instance.SetTurningMode(InputController.TurningMode.Grounded);
+		AnimOllieTransition(false);
+		AnimSetupTransition(false);
 	}
 
 	public bool IsBacksideGrind()
 	{
 		bool flag = false;
-		float single = Vector3.SignedAngle(Vector3.ProjectOnPlane(this.skaterController.skaterTransform.position - this._lastRidingPosition, this.GetGrindUp()), this.GetGrindDirection(), this.GetGrindUp());
+		float single = Vector3.SignedAngle(Vector3.ProjectOnPlane(skaterController.skaterTransform.position - _lastRidingPosition, GetGrindUp()), GetGrindDirection(), GetGrindUp());
 		if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 		{
 			if (single >= 0f)
 			{
-				flag = (this.IsSwitch ? false : true);
+				flag = (IsSwitch ? false : true);
 			}
 			else
 			{
-				flag = (!this.IsSwitch ? false : true);
+				flag = (!IsSwitch ? false : true);
 			}
 		}
 		else if (single >= 0f)
 		{
-			flag = (!this.IsSwitch ? false : true);
+			flag = (!IsSwitch ? false : true);
 		}
 		else
 		{
-			flag = (this.IsSwitch ? false : true);
+			flag = (IsSwitch ? false : true);
 		}
 		return flag;
 	}
 
 	public bool IsCurrentAnimationPlaying(string p_name)
 	{
-		AnimatorStateInfo currentAnimatorStateInfo = this.animationController.skaterAnim.GetCurrentAnimatorStateInfo(0);
+		AnimatorStateInfo currentAnimatorStateInfo = animationController.skaterAnim.GetCurrentAnimatorStateInfo(0);
 		return currentAnimatorStateInfo.IsName(p_name);
 	}
 
@@ -1013,12 +1013,12 @@ public class PlayerController : MonoBehaviour
 
 	public bool IsGrounded()
 	{
-		return this.boardController.Grounded;
+		return boardController.Grounded;
 	}
 
 	public bool IsRightSideOfGrind()
 	{
-		if (Vector3.SignedAngle(Vector3.ProjectOnPlane(this.skaterController.skaterTransform.position - this._lastRidingPosition, this.GetGrindUp()), this.GetGrindDirection(), this.GetGrindUp()) > 0f)
+		if (Vector3.SignedAngle(Vector3.ProjectOnPlane(skaterController.skaterTransform.position - _lastRidingPosition, GetGrindUp()), GetGrindDirection(), GetGrindUp()) > 0f)
 		{
 			return true;
 		}
@@ -1027,57 +1027,57 @@ public class PlayerController : MonoBehaviour
 
 	private void LerpFlipAxis()
 	{
-		this._flipAxis = Mathf.Lerp(this._flipAxis, this._flipAxisTarget, Time.deltaTime * 15f);
-		this.animationController.SetValue("FlipAxis", this._flipAxis);
+		_flipAxis = Mathf.Lerp(_flipAxis, _flipAxisTarget, Time.deltaTime * 15f);
+		animationController.SetValue("FlipAxis", _flipAxis);
 	}
 
 	public void LimitAngularVelocity(float _maxY)
 	{
-		this.boardController.LimitAngularVelocity(_maxY);
+		boardController.LimitAngularVelocity(_maxY);
 	}
 
 	public void LockAngularVelocity(Quaternion p_rot)
 	{
-		this.boardController.LockAngularVelocity(p_rot);
+		boardController.LockAngularVelocity(p_rot);
 	}
 
 	public void LogVelY()
 	{
-		Debug.LogError(string.Concat("xxxxxxxxxx p_pop aft1: ", this.skaterController.skaterRigidbody.velocity.y));
+		Debug.LogError(string.Concat("xxxxxxxxxx p_pop aft1: ", skaterController.skaterRigidbody.velocity.y));
 	}
 
 	public void ManualRotation(bool p_manual, float p_manualAxis, float p_secondaryAxis, float p_swivel)
 	{
-		this.boardController.SetManualAngularVelocity(p_manual, p_manualAxis, p_secondaryAxis, p_swivel);
+		boardController.SetManualAngularVelocity(p_manual, p_manualAxis, p_secondaryAxis, p_swivel);
 	}
 
 	public void MoveCameraToPlayer()
 	{
-		this.cameraController.MoveCameraToPlayer();
+		cameraController.MoveCameraToPlayer();
 	}
 
 	private void OnDestroy()
 	{
-		if (this.playerSM != null)
+		if (playerSM != null)
 		{
-			this.playerSM.StopSM();
-			this.playerSM = null;
+			playerSM.StopSM();
+			playerSM = null;
 		}
 	}
 
 	public void OnEndImpact()
 	{
-		this.playerSM.OnEndImpactSM();
+		playerSM.OnEndImpactSM();
 	}
 
 	public void OnEnterSetupState()
 	{
-		this._isInSetupState = true;
+		_isInSetupState = true;
 	}
 
 	public void OnExitSetupState()
 	{
-		this._isInSetupState = false;
+		_isInSetupState = false;
 	}
 
 	private void OnFlipStickReset()
@@ -1098,12 +1098,12 @@ public class PlayerController : MonoBehaviour
 			{
 				single = (p_flip > 0f ? 1f : -1f);
 			}
-			this.AnimSetFlip(single);
-			this.AnimRelease(true);
-			if (this.playerSM.PoppedSM())
+			AnimSetFlip(single);
+			AnimRelease(true);
+			if (playerSM.PoppedSM())
 			{
-				this.SetLeftIKLerpTarget(1f);
-				this.SetRightIKLerpTarget(1f);
+				SetLeftIKLerpTarget(1f);
+				SetRightIKLerpTarget(1f);
 			}
 			if (p_toeAxis == 0f)
 			{
@@ -1114,10 +1114,10 @@ public class PlayerController : MonoBehaviour
 				single1 = (p_toeAxis > 0f ? 1f : -1f);
 			}
 			float single2 = single1;
-			float popToeVel = this.boneMult * p_flipStick.PopToeVel.y;
+			float popToeVel = boneMult * p_flipStick.PopToeVel.y;
 			float single3 = (float)((p_forwardLoad ? -1 : 1));
-			float popToeSpeed = this.flipMult * p_flipStick.PopToeSpeed;
-			if ((Mathf.Sign(p_flipStick.ToeAxisVel) == Mathf.Sign(p_flip) || !this.playerSM.PoppedSM()) && Mathf.Abs(popToeSpeed) > Mathf.Abs(p_p_flipVel))
+			float popToeSpeed = flipMult * p_flipStick.PopToeSpeed;
+			if ((Mathf.Sign(p_flipStick.ToeAxisVel) == Mathf.Sign(p_flip) || !playerSM.PoppedSM()) && Mathf.Abs(popToeSpeed) > Mathf.Abs(p_p_flipVel))
 			{
 				p_p_flipVel = popToeSpeed;
 				p_flipWindowTimer = 0f;
@@ -1126,7 +1126,7 @@ public class PlayerController : MonoBehaviour
 			{
 				p_invertVel = single3 * popToeVel;
 			}
-			if (0 == 0 && !this.playerSM.PoppedSM())
+			if (0 == 0 && !playerSM.PoppedSM())
 			{
 				p_flipWindowTimer += Time.deltaTime;
 				if (p_flipWindowTimer >= 0.3f)
@@ -1134,21 +1134,21 @@ public class PlayerController : MonoBehaviour
 					p_p_flipVel = 0f;
 					p_invertVel = 0f;
 					p_p_flipDetected = false;
-					this.AnimRelease(false);
-					this.AnimSetFlip(0f);
-					this.AnimForceFlipValue(0f);
+					AnimRelease(false);
+					AnimSetFlip(0f);
+					AnimForceFlipValue(0f);
 					p_flipWindowTimer = 0f;
 				}
 			}
-			this.SetFlipSpeed(Mathf.Clamp(p_p_flipVel, -4000f, 4000f) * single2);
+			SetFlipSpeed(Mathf.Clamp(p_p_flipVel, -4000f, 4000f) * single2);
 		}
 		else
 		{
-			float popToeSpeed1 = this.flipMult * p_flipStick.PopToeSpeed;
-			if (popToeSpeed1 > this.flipThreshold)
+			float popToeSpeed1 = flipMult * p_flipStick.PopToeSpeed;
+			if (popToeSpeed1 > flipThreshold)
 			{
 				float single4 = Vector3.Angle(p_flipStick.PopToeVector, Vector2.up);
-				if (single4 < 150f && single4 > 15f && p_flipStick.PopToeVector.magnitude > this.flipStickDeadZone && Vector2.Angle(p_flipStick.PopToeVel, p_flipStick.PopToeVector - Vector2.zero) < 90f)
+				if (single4 < 150f && single4 > 15f && p_flipStick.PopToeVector.magnitude > flipStickDeadZone && Vector2.Angle(p_flipStick.PopToeVel, p_flipStick.PopToeVector - Vector2.zero) < 90f)
 				{
 					p_initialFlipDir = p_flipStick.PopToeVector;
 					p_toeAxis = p_flipStick.FlipDir;
@@ -1162,7 +1162,7 @@ public class PlayerController : MonoBehaviour
 					p_p_flipVel = popToeSpeed1;
 					p_flipWindowTimer = 0f;
 					p_p_flipDetected = true;
-					this.playerSM.PoppedSM();
+					playerSM.PoppedSM();
 					return;
 				}
 			}
@@ -1171,27 +1171,27 @@ public class PlayerController : MonoBehaviour
 
 	public void OnImpact()
 	{
-		this.boardController.boardRigidbody.angularVelocity = Vector3.zero;
-		this.boardController.backTruckRigidbody.angularVelocity = Vector3.zero;
-		this.boardController.frontTruckRigidbody.angularVelocity = Vector3.zero;
+		boardController.boardRigidbody.angularVelocity = Vector3.zero;
+		boardController.backTruckRigidbody.angularVelocity = Vector3.zero;
+		boardController.frontTruckRigidbody.angularVelocity = Vector3.zero;
 	}
 
 	public void OnInAir(float p_animTimeToImpact)
 	{
 		Vector3 vector3 = Vector3.zero;
-		float single = this.boardController.trajectory.CalculateTrajectory(this.skaterController.skaterTransform.position - (Vector3.up * 0.9765f), this.skaterController.skaterRigidbody.velocity, 50f, out vector3);
+		float single = boardController.trajectory.CalculateTrajectory(skaterController.skaterTransform.position - (Vector3.up * 0.9765f), skaterController.skaterRigidbody.velocity, 50f, out vector3);
 		float single1 = Mathf.Clamp(p_animTimeToImpact / single, 0.01f, 1f);
-		this.animationController.ScaleAnimSpeed(single1);
+		animationController.ScaleAnimSpeed(single1);
 	}
 
 	public void OnManualEnter(bool rightFirst)
 	{
 		if (rightFirst)
 		{
-			this.playerSM.OnManualEnterSM(this.inputController.RightStick, this.inputController.LeftStick);
+			playerSM.OnManualEnterSM(inputController.RightStick, inputController.LeftStick);
 			return;
 		}
-		this.playerSM.OnManualEnterSM(this.inputController.LeftStick, this.inputController.RightStick);
+		playerSM.OnManualEnterSM(inputController.LeftStick, inputController.RightStick);
 	}
 
 	public void OnManualUpdate(StickInput stick)
@@ -1199,7 +1199,7 @@ public class PlayerController : MonoBehaviour
 		bool flag;
 		if (stick.HoldingManual)
 		{
-			this.UpdateManual(stick.IsRightStick);
+			UpdateManual(stick.IsRightStick);
 			if ((stick.rawInput.pos.magnitude <= 0.9f || stick.rawInput.avgSpeedLastUpdate >= 2f) && (stick.ManualAxis >= 0.1f && stick.ManualAxis <= 0.95f || stick.rawInput.avgSpeedLastUpdate >= 10f))
 			{
 				stick.ManualFrameCount = 0;
@@ -1210,8 +1210,8 @@ public class PlayerController : MonoBehaviour
 				manualFrameCount.ManualFrameCount = manualFrameCount.ManualFrameCount + 1;
 				if (stick.ManualFrameCount >= 7)
 				{
-					this.playerSM.OnManualExitSM();
-					this.AnimSetManual(false, Mathf.Lerp(this.AnimGetManualAxis(), 0f, Time.deltaTime * 10f));
+					playerSM.OnManualExitSM();
+					AnimSetManual(false, Mathf.Lerp(AnimGetManualAxis(), 0f, Time.deltaTime * 10f));
 					stick.HoldingManual = false;
 					stick.ManualFrameCount = 0;
 					return;
@@ -1220,7 +1220,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			if (this.boardController.Grounded)
+			if (boardController.Grounded)
 			{
 				flag = (Mathf.Abs(stick.rawInput.pos.x) >= 0.6f || stick.ManualAxis <= 0.2f || stick.ManualAxis >= 0.85f ? false : stick.rawInput.avgSpeedLastUpdate < 7f);
 			}
@@ -1235,9 +1235,9 @@ public class PlayerController : MonoBehaviour
 			}
 			StickInput stickInput = stick;
 			stickInput.ManualFrameCount = stickInput.ManualFrameCount + 1;
-			if (stick.ManualFrameCount >= (this.boardController.Grounded ? 16 : 2))
+			if (stick.ManualFrameCount >= (boardController.Grounded ? 16 : 2))
 			{
-				this.OnManualEnter(stick.IsRightStick);
+				OnManualEnter(stick.IsRightStick);
 				stick.HoldingManual = true;
 				stick.ManualFrameCount = 0;
 				return;
@@ -1247,17 +1247,17 @@ public class PlayerController : MonoBehaviour
 
 	public void OnNextState()
 	{
-		this.playerSM.OnNextStateSM();
+		playerSM.OnNextStateSM();
 	}
 
 	public void OnNoseManualEnter(bool rightFirst)
 	{
 		if (rightFirst)
 		{
-			this.playerSM.OnNoseManualEnterSM(this.inputController.RightStick, this.inputController.LeftStick);
+			playerSM.OnNoseManualEnterSM(inputController.RightStick, inputController.LeftStick);
 			return;
 		}
-		this.playerSM.OnNoseManualEnterSM(this.inputController.LeftStick, this.inputController.RightStick);
+		playerSM.OnNoseManualEnterSM(inputController.LeftStick, inputController.RightStick);
 	}
 
 	public void OnNoseManualUpdate(StickInput stick)
@@ -1265,7 +1265,7 @@ public class PlayerController : MonoBehaviour
 		bool flag;
 		if (stick.HoldingNoseManual)
 		{
-			this.UpdateNoseManual(stick.IsRightStick);
+			UpdateNoseManual(stick.IsRightStick);
 			if ((stick.rawInput.pos.magnitude <= 0.9f || stick.rawInput.avgSpeedLastUpdate >= 2f) && (stick.NoseManualAxis >= 0.1f && stick.NoseManualAxis <= 0.95f || stick.rawInput.avgSpeedLastUpdate >= 10f))
 			{
 				stick.NoseManualFrameCount = 0;
@@ -1276,8 +1276,8 @@ public class PlayerController : MonoBehaviour
 				noseManualFrameCount.NoseManualFrameCount = noseManualFrameCount.NoseManualFrameCount + 1;
 				if (stick.NoseManualFrameCount >= 7)
 				{
-					this.AnimSetNoseManual(false, PlayerController.Instance.AnimGetManualAxis());
-					this.playerSM.OnNoseManualExitSM();
+					AnimSetNoseManual(false, Instance.AnimGetManualAxis());
+					playerSM.OnNoseManualExitSM();
 					stick.HoldingNoseManual = false;
 					stick.NoseManualFrameCount = 0;
 					return;
@@ -1286,7 +1286,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			if (this.boardController.Grounded)
+			if (boardController.Grounded)
 			{
 				flag = (Mathf.Abs(stick.rawInput.pos.x) >= 0.6f || stick.NoseManualAxis <= 0.2f || stick.NoseManualAxis >= 0.85f ? false : stick.rawInput.avgSpeedLastUpdate < 7f);
 			}
@@ -1301,9 +1301,9 @@ public class PlayerController : MonoBehaviour
 			}
 			StickInput stickInput = stick;
 			stickInput.NoseManualFrameCount = stickInput.NoseManualFrameCount + 1;
-			if (stick.NoseManualFrameCount >= (this.boardController.Grounded ? 16 : 2))
+			if (stick.NoseManualFrameCount >= (boardController.Grounded ? 16 : 2))
 			{
-				this.OnNoseManualEnter(stick.IsRightStick);
+				OnNoseManualEnter(stick.IsRightStick);
 				stick.HoldingNoseManual = true;
 				stick.NoseManualFrameCount = 0;
 				return;
@@ -1313,29 +1313,29 @@ public class PlayerController : MonoBehaviour
 
 	public void OnPop(float p_pop, float p_scoop)
 	{
-		this.VelocityOnPop = this.boardController.boardRigidbody.velocity;
-		PlayerController.Instance.SetTurningMode(InputController.TurningMode.InAir);
-		this.SetSkaterToMaster();
-		Vector3 pPop = this.skaterController.skaterTransform.up * p_pop;
-		Vector3 vector3 = this.skaterController.skaterRigidbody.velocity + pPop;
-		Vector3.Angle(this.cameraController._actualCam.forward, vector3);
-		Vector3 vector31 = this.skaterController.PredictLanding(pPop);
-		this.skaterController.skaterRigidbody.AddForce(pPop, ForceMode.Impulse);
-		this.skaterController.skaterRigidbody.AddForce(vector31, ForceMode.VelocityChange);
+		VelocityOnPop = boardController.boardRigidbody.velocity;
+		Instance.SetTurningMode(InputController.TurningMode.InAir);
+		SetSkaterToMaster();
+		Vector3 pPop = skaterController.skaterTransform.up * p_pop;
+		Vector3 vector3 = skaterController.skaterRigidbody.velocity + pPop;
+		Vector3.Angle(cameraController._actualCam.forward, vector3);
+		Vector3 vector31 = skaterController.PredictLanding(pPop);
+		skaterController.skaterRigidbody.AddForce(pPop, ForceMode.Impulse);
+		skaterController.skaterRigidbody.AddForce(vector31, ForceMode.VelocityChange);
 		SoundManager.Instance.PlayPopSound(p_scoop);
-		this.comController.popForce = pPop;
+		comController.popForce = pPop;
 	}
 
 	public void OnPop(float p_pop, float p_scoop, Vector3 p_popOutDir)
 	{
-		this.VelocityOnPop = this.boardController.boardRigidbody.velocity;
-		PlayerController.Instance.SetTurningMode(InputController.TurningMode.InAir);
-		this.SetSkaterToMaster();
-		Vector3 pPopOutDir = (this.skaterController.skaterTransform.up + p_popOutDir) * p_pop;
-		this.skaterController.PredictLanding(pPopOutDir);
-		this.skaterController.skaterRigidbody.AddForce(pPopOutDir, ForceMode.Impulse);
+		VelocityOnPop = boardController.boardRigidbody.velocity;
+		Instance.SetTurningMode(InputController.TurningMode.InAir);
+		SetSkaterToMaster();
+		Vector3 pPopOutDir = (skaterController.skaterTransform.up + p_popOutDir) * p_pop;
+		skaterController.PredictLanding(pPopOutDir);
+		skaterController.skaterRigidbody.AddForce(pPopOutDir, ForceMode.Impulse);
 		SoundManager.Instance.PlayPopSound(p_scoop);
-		this.comController.popForce = pPopOutDir;
+		comController.popForce = pPopOutDir;
 	}
 
 	public void OnPopStartCheck(bool p_canPop, StickInput p_popStick, ref PlayerController.SetupDir _setupDir, bool p_forwardLoad, float p_popThreshold, ref float r_invertVel, float p_augmentedAngle, ref float r_popVel)
@@ -1344,37 +1344,37 @@ public class PlayerController : MonoBehaviour
 		{
 			if (p_popStick.AugmentedPopToeSpeed <= p_popThreshold || p_popStick.AugmentedPopToeVel.y >= 0f)
 			{
-				this.SetupDirection(p_popStick, ref _setupDir, p_augmentedAngle);
+				SetupDirection(p_popStick, ref _setupDir, p_augmentedAngle);
 			}
 			else
 			{
-				this.SetupDirection(p_popStick, ref _setupDir, p_augmentedAngle);
+				SetupDirection(p_popStick, ref _setupDir, p_augmentedAngle);
 				float single = (float)((p_forwardLoad ? -1 : 1));
-				if (Mathf.Abs(p_popStick.AugmentedToeAxisVel) < this.olliexVelThreshold && p_popStick.AugmentedPopToeVel.y < -5f)
+				if (Mathf.Abs(p_popStick.AugmentedToeAxisVel) < olliexVelThreshold && p_popStick.AugmentedPopToeVel.y < -5f)
 				{
-					this.SetPopValues(false, 0f, 0f, 0f, ref r_popVel);
+					SetPopValues(false, 0f, 0f, 0f, ref r_popVel);
 				}
 				if (p_popStick.AugmentedToeAxisVel >= p_popThreshold)
 				{
 					if ((int)_setupDir != 1)
 					{
-						Mathf.Clamp(single * this.shuvMult * p_popStick.AugmentedToeAxisVel, -this.shuvMax, this.shuvMax);
-						this.SetPopValues(true, single * 1f, single * this.shuvMult * p_popStick.AugmentedToeAxisVel, 1f, ref r_popVel);
+						Mathf.Clamp(single * shuvMult * p_popStick.AugmentedToeAxisVel, -shuvMax, shuvMax);
+						SetPopValues(true, single * 1f, single * shuvMult * p_popStick.AugmentedToeAxisVel, 1f, ref r_popVel);
 					}
 					else
 					{
-						this.SetPopValues(true, this.doubleShuvMult, single * this.doubleShuvMult * p_popStick.AugmentedToeAxisVel, 1f, ref r_popVel);
+						SetPopValues(true, doubleShuvMult, single * doubleShuvMult * p_popStick.AugmentedToeAxisVel, 1f, ref r_popVel);
 					}
 				}
 				if (p_popStick.AugmentedToeAxisVel <= -p_popThreshold)
 				{
 					if ((int)_setupDir == 2)
 					{
-						this.SetPopValues(true, -this.doubleShuvMult, single * this.doubleShuvMult * p_popStick.AugmentedToeAxisVel, 1f, ref r_popVel);
+						SetPopValues(true, -doubleShuvMult, single * doubleShuvMult * p_popStick.AugmentedToeAxisVel, 1f, ref r_popVel);
 						return;
 					}
-					Mathf.Clamp(single * this.shuvMult * p_popStick.AugmentedToeAxisVel, -this.shuvMax, this.shuvMax);
-					this.SetPopValues(true, single * -1f, single * this.shuvMult * p_popStick.AugmentedToeAxisVel, 1f, ref r_popVel);
+					Mathf.Clamp(single * shuvMult * p_popStick.AugmentedToeAxisVel, -shuvMax, shuvMax);
+					SetPopValues(true, single * -1f, single * shuvMult * p_popStick.AugmentedToeAxisVel, 1f, ref r_popVel);
 					return;
 				}
 			}
@@ -1386,12 +1386,12 @@ public class PlayerController : MonoBehaviour
 		if (p_popStick.AugmentedPopToeSpeed > p_popThreshold && p_popStick.AugmentedPopToeVel.y < 0f)
 		{
 			float single = (float)((p_forwardLoad ? -1 : 1));
-			float pPopStick = this.invertMult * p_popStick.rawInput.radialVel;
+			float pPopStick = invertMult * p_popStick.rawInput.radialVel;
 			if (pPopStick > r_invertVel && pPopStick > 0.1f)
 			{
-				this.GetBoardBackwards();
+				GetBoardBackwards();
 			}
-			float augmentedToeAxisVel = single * this.shuvMult * p_popStick.AugmentedToeAxisVel;
+			float augmentedToeAxisVel = single * shuvMult * p_popStick.AugmentedToeAxisVel;
 			if (Mathf.Abs(r_popVel) < 0.1f || Mathf.Sign(augmentedToeAxisVel) == Mathf.Sign(r_popVel) && Mathf.Abs(augmentedToeAxisVel) > Mathf.Abs(r_popVel))
 			{
 				if (p_popStick.AugmentedToeAxisVel > 0f)
@@ -1402,8 +1402,8 @@ public class PlayerController : MonoBehaviour
 				{
 					int num1 = (int)_setupDir;
 				}
-				augmentedToeAxisVel = Mathf.Clamp(augmentedToeAxisVel, -this.shuvMax, this.shuvMax);
-				this.SetScoopSpeed(augmentedToeAxisVel);
+				augmentedToeAxisVel = Mathf.Clamp(augmentedToeAxisVel, -shuvMax, shuvMax);
+				SetScoopSpeed(augmentedToeAxisVel);
 				r_popVel = augmentedToeAxisVel;
 			}
 		}
@@ -1411,22 +1411,22 @@ public class PlayerController : MonoBehaviour
 
 	public void PhysicsRotation(float p_force, float p_damper)
 	{
-		this.boardController.PhysicsRotation(p_force, p_damper);
+		boardController.PhysicsRotation(p_force, p_damper);
 	}
 
 	public Vector3 PlayerForward()
 	{
-		return this.skaterController.skaterTransform.forward;
+		return skaterController.skaterTransform.forward;
 	}
 
 	public void ReduceImpactBounce()
 	{
-		this.boardController.ReduceImpactBounce();
+		boardController.ReduceImpactBounce();
 	}
 
 	public void RemoveBoardAngularVelocity()
 	{
-		this.boardController.boardRigidbody.angularVelocity = Vector3.zero;
+		boardController.boardRigidbody.angularVelocity = Vector3.zero;
 	}
 
 	public void RemoveTurnTorque(float p_value, InputController.TurningMode p_turningMode)
@@ -1435,32 +1435,32 @@ public class PlayerController : MonoBehaviour
 		{
 			case InputController.TurningMode.Grounded:
 			{
-				this.boardController.RemoveTurnTorqueLinear();
+				boardController.RemoveTurnTorqueLinear();
 				return;
 			}
 			case InputController.TurningMode.PreWind:
 			{
-				this.boardController.RemoveTurnTorque(0.5f);
+				boardController.RemoveTurnTorque(0.5f);
 				return;
 			}
 			case InputController.TurningMode.InAir:
 			{
-				this.skaterController.RemoveTurnTorque(p_value);
+				skaterController.RemoveTurnTorque(p_value);
 				return;
 			}
 			case InputController.TurningMode.FastLeft:
 			{
-				this.skaterController.RemoveTurnTorque(0.95f);
+				skaterController.RemoveTurnTorque(0.95f);
 				return;
 			}
 			case InputController.TurningMode.FastRight:
 			{
-				this.skaterController.RemoveTurnTorque(0.95f);
+				skaterController.RemoveTurnTorque(0.95f);
 				return;
 			}
 			case InputController.TurningMode.Manual:
 			{
-				this.boardController.RemoveTurnTorqueLinear();
+				boardController.RemoveTurnTorqueLinear();
 				return;
 			}
 			default:
@@ -1472,282 +1472,282 @@ public class PlayerController : MonoBehaviour
 
 	public void ResetAfterGrinds()
 	{
-		this.AnimForceFlipValue(0f);
-		this.AnimForceScoopValue(0f);
-		this.AnimSetFlip(0f);
-		this.AnimSetScoop(0f);
-		this.AnimCaught(false);
+		AnimForceFlipValue(0f);
+		AnimForceScoopValue(0f);
+		AnimSetFlip(0f);
+		AnimSetScoop(0f);
+		AnimCaught(false);
 	}
 
 	public void ResetAllAnimations()
 	{
-		this.animationController.ScaleAnimSpeed(1f);
-		this.AnimCaught(false);
-		this.AnimForceFlipValue(0f);
-		this.AnimForceScoopValue(0f);
-		this.AnimSetFlip(0f);
-		this.AnimSetScoop(0f);
-		this.AnimRelease(false);
+		animationController.ScaleAnimSpeed(1f);
+		AnimCaught(false);
+		AnimForceFlipValue(0f);
+		AnimForceScoopValue(0f);
+		AnimSetFlip(0f);
+		AnimSetScoop(0f);
+		AnimRelease(false);
 	}
 
 	public void ResetAllAnimationsExceptSpeed()
 	{
-		this.AnimCaught(false);
-		this.AnimForceFlipValue(0f);
-		this.AnimForceScoopValue(0f);
-		this.AnimSetFlip(0f);
-		this.AnimSetScoop(0f);
-		this.AnimRelease(false);
-		this.AnimSetupTransition(false);
-		this.AnimOllieTransition(false);
+		AnimCaught(false);
+		AnimForceFlipValue(0f);
+		AnimForceScoopValue(0f);
+		AnimSetFlip(0f);
+		AnimSetScoop(0f);
+		AnimRelease(false);
+		AnimSetupTransition(false);
+		AnimOllieTransition(false);
 	}
 
 	public void ResetAllExceptSetup()
 	{
-		this.animationController.ScaleAnimSpeed(1f);
-		this.AnimCaught(false);
-		this.AnimForceFlipValue(0f);
-		this.AnimForceScoopValue(0f);
-		this.AnimSetFlip(0f);
-		this.AnimSetScoop(0f);
-		this.AnimRelease(false);
-		this.AnimOllieTransition(false);
+		animationController.ScaleAnimSpeed(1f);
+		AnimCaught(false);
+		AnimForceFlipValue(0f);
+		AnimForceScoopValue(0f);
+		AnimSetFlip(0f);
+		AnimSetScoop(0f);
+		AnimRelease(false);
+		AnimOllieTransition(false);
 	}
 
 	public void ResetAnimationsAfterImpact()
 	{
-		this.animationController.ScaleAnimSpeed(1f);
-		this.AnimCaught(false);
-		this.AnimRelease(false);
-		this.AnimSetupTransition(false);
-		this.AnimOllieTransition(false);
+		animationController.ScaleAnimSpeed(1f);
+		AnimCaught(false);
+		AnimRelease(false);
+		AnimSetupTransition(false);
+		AnimOllieTransition(false);
 	}
 
 	public void ResetBackTruckCenterOfMass()
 	{
-		this.boardController.backTruckRigidbody.ResetCenterOfMass();
+		boardController.backTruckRigidbody.ResetCenterOfMass();
 	}
 
 	public void ResetBoardCenterOfMass()
 	{
-		this.boardController.boardRigidbody.ResetCenterOfMass();
+		boardController.boardRigidbody.ResetCenterOfMass();
 	}
 
 	public void ResetFrontTruckCenterOfMass()
 	{
-		this.boardController.frontTruckRigidbody.ResetCenterOfMass();
+		boardController.frontTruckRigidbody.ResetCenterOfMass();
 	}
 
 	public void ResetIKOffsets()
 	{
-		this.ikController.ResetIKOffsets();
+		ikController.ResetIKOffsets();
 	}
 
 	public void ResetPIDRotationValues()
 	{
-		this.boardController.ResetPIDRotationValues();
+		boardController.ResetPIDRotationValues();
 	}
 
 	public void RotateToCatchRotation()
 	{
-		this.boardController.CatchRotation();
+		boardController.CatchRotation();
 	}
 
 	public void ScaleDisplacementCurve(float p_skaterHeight)
 	{
-		this._comDisplacement.ScaleDisplacementCurve(p_skaterHeight);
+		_comDisplacement.ScaleDisplacementCurve(p_skaterHeight);
 	}
 
 	private void SetBackFootAxis(float p_backForwardAxis, float p_backToeAxis)
 	{
-		this._backFootForwardAxis = p_backForwardAxis;
-		this._backFootToeAxis = p_backToeAxis;
+		_backFootForwardAxis = p_backForwardAxis;
+		_backFootToeAxis = p_backToeAxis;
 	}
 
 	public void SetBackPivotRotation(float p_frontToeAxis)
 	{
-		this.boardController.SetBackPivotRotation(p_frontToeAxis);
+		boardController.SetBackPivotRotation(p_frontToeAxis);
 	}
 
 	public void SetBackTruckCenterOfMass(Vector3 p_position)
 	{
-		this.boardController.backTruckRigidbody.centerOfMass = p_position;
+		boardController.backTruckRigidbody.centerOfMass = p_position;
 	}
 
 	public void SetBoardBackwards()
 	{
-		this.boardController.SetBoardBackwards();
+		boardController.SetBoardBackwards();
 	}
 
 	public void SetBoardCenterOfMass(Vector3 p_position)
 	{
-		this.boardController.boardRigidbody.centerOfMass = p_position;
-		this.CenterOfMass.position = this.boardController.boardTransform.TransformPoint(this.boardController.boardRigidbody.centerOfMass);
+		boardController.boardRigidbody.centerOfMass = p_position;
+		CenterOfMass.position = boardController.boardTransform.TransformPoint(boardController.boardRigidbody.centerOfMass);
 	}
 
 	public void SetBoardTargetPosition(float p_frontMagnitudeMinusBackMagnitude)
 	{
-		this.boardController.SetBoardTargetPosition(p_frontMagnitudeMinusBackMagnitude);
+		boardController.SetBoardTargetPosition(p_frontMagnitudeMinusBackMagnitude);
 	}
 
 	public void SetBoardToMaster()
 	{
-		this.movementMaster = PlayerController.MovementMaster.Board;
-		this.skaterController.skaterRigidbody.useGravity = false;
-		this.skaterController.skaterRigidbody.velocity = Vector3.zero;
+		movementMaster = PlayerController.MovementMaster.Board;
+		skaterController.skaterRigidbody.useGravity = false;
+		skaterController.skaterRigidbody.velocity = Vector3.zero;
 	}
 
 	public void SetCatchForwardRotation()
 	{
-		this.boardController.SetCatchForwardRotation();
+		boardController.SetCatchForwardRotation();
 	}
 
 	public void SetFlipSpeed(float p_value)
 	{
-		this.boardController.thirdVel = (this.boardController.IsBoardBackwards ? -p_value : p_value) * 1.2f;
+		boardController.thirdVel = (boardController.IsBoardBackwards ? -p_value : p_value) * 1.2f;
 	}
 
 	public void SetForwardSpeed(float p_value)
 	{
-		this.boardController.firstVel = (this.boardController.IsBoardBackwards ? -p_value : p_value);
+		boardController.firstVel = (boardController.IsBoardBackwards ? -p_value : p_value);
 	}
 
 	private void SetFrontFootAxis(float p_frontForwardAxis, float p_frontToeAxis)
 	{
-		this._frontFootForwardAxis = p_frontForwardAxis;
-		this._frontFootToeAxis = p_frontToeAxis;
+		_frontFootForwardAxis = p_frontForwardAxis;
+		_frontFootToeAxis = p_frontToeAxis;
 	}
 
 	public void SetFrontPivotRotation(float p_backToeAxis)
 	{
-		this.boardController.SetFrontPivotRotation(p_backToeAxis);
+		boardController.SetFrontPivotRotation(p_backToeAxis);
 	}
 
 	public void SetFrontTruckCenterOfMass(Vector3 p_position)
 	{
-		this.boardController.frontTruckRigidbody.centerOfMass = p_position;
+		boardController.frontTruckRigidbody.centerOfMass = p_position;
 	}
 
 	public void SetGrindPIDRotationValues()
 	{
-		this.boardController.SetGrindPIDRotationValues();
+		boardController.SetGrindPIDRotationValues();
 	}
 
 	public void SetGrindTweakAxis(float p_value)
 	{
-		this.animationController.SetGrindTweakValue(p_value);
+		animationController.SetGrindTweakValue(p_value);
 	}
 
 	public void SetIKOnOff(float p_value)
 	{
-		this.ikController.OnOffIK(p_value);
+		ikController.OnOffIK(p_value);
 	}
 
 	public void SetIKRigidboardKinematicFalse()
 	{
-		this.ikController.SetIKRigidbodyKinematic(false);
+		ikController.SetIKRigidbodyKinematic(false);
 	}
 
 	public void SetIKRigidbodyKinematic(bool p_value)
 	{
-		this.ikController.SetIKRigidbodyKinematic(p_value);
+		ikController.SetIKRigidbodyKinematic(p_value);
 	}
 
 	public void SetIKRigidbodyKinematicNextFrame()
 	{
-		DHTools.Instance.InvokeNextFrame(new DHTools.Function(this.SetIKRigidboardKinematicFalse));
+		DHTools.Instance.InvokeNextFrame(new DHTools.Function(SetIKRigidboardKinematicFalse));
 	}
 
 	public void SetInAirFootPlacement(float p_toeAxis, float p_forwardAxis, bool p_front)
 	{
 		if (p_front)
 		{
-			this._frontMagnitude.x = p_toeAxis;
-			this._frontMagnitude.y = p_forwardAxis;
-			this.animationController.SetValue("FrontToeAxis", p_toeAxis);
-			this.animationController.SetValue("FrontForwardAxis", p_forwardAxis);
-			this.animationController.SetSteezeValue("FrontToeAxis", p_toeAxis);
-			this.animationController.SetSteezeValue("FrontForwardAxis", p_forwardAxis);
-			this.SetFrontFootAxis(p_forwardAxis, p_toeAxis);
+			_frontMagnitude.x = p_toeAxis;
+			_frontMagnitude.y = p_forwardAxis;
+			animationController.SetValue("FrontToeAxis", p_toeAxis);
+			animationController.SetValue("FrontForwardAxis", p_forwardAxis);
+			animationController.SetSteezeValue("FrontToeAxis", p_toeAxis);
+			animationController.SetSteezeValue("FrontForwardAxis", p_forwardAxis);
+			SetFrontFootAxis(p_forwardAxis, p_toeAxis);
 			return;
 		}
-		this._backMagnitude.x = p_toeAxis;
-		this._backMagnitude.y = p_forwardAxis;
-		this.animationController.SetValue("BackToeAxis", p_toeAxis);
-		this.animationController.SetValue("BackForwardAxis", p_forwardAxis);
-		this.animationController.SetSteezeValue("BackToeAxis", p_toeAxis);
-		this.animationController.SetSteezeValue("BackForwardAxis", p_forwardAxis);
-		this.SetBackFootAxis(p_forwardAxis, p_toeAxis);
+		_backMagnitude.x = p_toeAxis;
+		_backMagnitude.y = p_forwardAxis;
+		animationController.SetValue("BackToeAxis", p_toeAxis);
+		animationController.SetValue("BackForwardAxis", p_forwardAxis);
+		animationController.SetSteezeValue("BackToeAxis", p_toeAxis);
+		animationController.SetSteezeValue("BackForwardAxis", p_forwardAxis);
+		SetBackFootAxis(p_forwardAxis, p_toeAxis);
 	}
 
 	public void SetKneeBendWeight(float p_value)
 	{
-		this.ikController.SetKneeBendWeight(p_value);
+		ikController.SetKneeBendWeight(p_value);
 	}
 
 	public void SetLeftIKLerpTarget(float p_value)
 	{
-		this.ikController.SetLeftLerpTarget(p_value, p_value);
+		ikController.SetLeftLerpTarget(p_value, p_value);
 	}
 
 	public void SetLeftIKLerpTarget(float p_pos, float p_rot)
 	{
-		this.ikController.SetLeftLerpTarget(p_pos, p_rot);
+		ikController.SetLeftLerpTarget(p_pos, p_rot);
 	}
 
 	public void SetLeftIKOffset(float p_toeAxis, float p_forwardDir, float p_popDir, bool p_isPopStick, bool p_lockHorizontal, bool p_popping)
 	{
-		this.ikController.SetLeftIKOffset(p_toeAxis, p_forwardDir, p_popDir, p_isPopStick, p_lockHorizontal, p_popping);
+		ikController.SetLeftIKOffset(p_toeAxis, p_forwardDir, p_popDir, p_isPopStick, p_lockHorizontal, p_popping);
 	}
 
 	public void SetLeftIKRotationWeight(float p_value)
 	{
-		this.ikController.SetLeftIKRotationWeight(p_value);
+		ikController.SetLeftIKRotationWeight(p_value);
 	}
 
 	public void SetLeftIKWeight(float p_value)
 	{
-		this.ikController.LeftIKWeight(p_value);
+		ikController.LeftIKWeight(p_value);
 	}
 
 	public void SetLeftSteezeWeight(float p_value)
 	{
-		this.ikController.SetLeftSteezeWeight(p_value);
+		ikController.SetLeftSteezeWeight(p_value);
 	}
 
 	public void SetManual(bool p_value)
 	{
-		this.Manualling = p_value;
+		Manualling = p_value;
 	}
 
 	public void SetManualStrength(float p_value)
 	{
-		this.animationController.SetValue("ManualStrength", p_value);
+		animationController.SetValue("ManualStrength", p_value);
 	}
 
 	public void SetMaxSteeze(float p_value)
 	{
-		this.ikController.SetMaxSteeze(p_value);
+		ikController.SetMaxSteeze(p_value);
 	}
 
 	public void SetMaxSteezeLeft(float p_value)
 	{
-		this.ikController.SetMaxSteezeLeft(p_value);
+		ikController.SetMaxSteezeLeft(p_value);
 	}
 
 	public void SetMaxSteezeRight(float p_value)
 	{
-		this.ikController.SetMaxSteezeRight(p_value);
+		ikController.SetMaxSteezeRight(p_value);
 	}
 
 	public void SetPivotForwardRotation(float p_leftForwardAxisPlusRightForwardAxis, float p_speed)
 	{
-		this.boardController.SetPivotForwardRotation(p_leftForwardAxisPlusRightForwardAxis, p_speed);
+		boardController.SetPivotForwardRotation(p_leftForwardAxisPlusRightForwardAxis, p_speed);
 	}
 
 	public void SetPivotSideRotation(float p_leftToeAxisMinusRightToeAxis)
 	{
-		this.boardController.SetPivotSideRotation(p_leftToeAxisMinusRightToeAxis);
+		boardController.SetPivotSideRotation(p_leftToeAxisMinusRightToeAxis);
 	}
 
 	public void SetPopValues(bool p_animReleased, float p_animScoopSpeed, float p_scoopSpeed, float p_popValue, ref float r_popVel)
@@ -1757,105 +1757,105 @@ public class PlayerController : MonoBehaviour
 			p_animScoopSpeed *= -1f;
 		}
 		r_popVel = p_scoopSpeed;
-		this.ResetAfterGrinds();
-		this.AnimRelease(p_animReleased);
-		this.AnimSetScoop(p_animScoopSpeed);
-		this.SetTargetToMaster();
-		this.SetScoopSpeed(p_scoopSpeed);
-		this.SetLeftIKLerpTarget(p_popValue);
-		this.SetRightIKLerpTarget(p_popValue);
-		this.playerSM.OnNextStateSM();
+		ResetAfterGrinds();
+		AnimRelease(p_animReleased);
+		AnimSetScoop(p_animScoopSpeed);
+		SetTargetToMaster();
+		SetScoopSpeed(p_scoopSpeed);
+		SetLeftIKLerpTarget(p_popValue);
+		SetRightIKLerpTarget(p_popValue);
+		playerSM.OnNextStateSM();
 	}
 
 	public void SetPuppetMasterMode(BehaviourPuppet.NormalMode p_mode)
 	{
-		this.skaterController.SetPuppetMode(p_mode);
+		skaterController.SetPuppetMode(p_mode);
 	}
 
 	public void SetPushForce(float p_value)
 	{
-		this.skaterController.pushForce = p_value;
+		skaterController.pushForce = p_value;
 	}
 
 	public void SetRightIKLerpTarget(float p_value)
 	{
-		this.ikController.SetRightLerpTarget(p_value, p_value);
+		ikController.SetRightLerpTarget(p_value, p_value);
 	}
 
 	public void SetRightIKLerpTarget(float p_pos, float p_rot)
 	{
-		this.ikController.SetRightLerpTarget(p_pos, p_rot);
+		ikController.SetRightLerpTarget(p_pos, p_rot);
 	}
 
 	public void SetRightIKOffset(float p_toeAxis, float p_forwardDir, float p_popDir, bool p_isPopStick, bool p_lockHorizontal, bool p_popping)
 	{
-		this.ikController.SetRightIKOffset(p_toeAxis, p_forwardDir, p_popDir, p_isPopStick, p_lockHorizontal, p_popping);
+		ikController.SetRightIKOffset(p_toeAxis, p_forwardDir, p_popDir, p_isPopStick, p_lockHorizontal, p_popping);
 	}
 
 	public void SetRightIKRotationWeight(float p_value)
 	{
-		this.ikController.SetRightIKRotationWeight(p_value);
+		ikController.SetRightIKRotationWeight(p_value);
 	}
 
 	public void SetRightIKWeight(float p_value)
 	{
-		this.ikController.RightIKWeight(p_value);
+		ikController.RightIKWeight(p_value);
 	}
 
 	public void SetRightSteezeWeight(float p_value)
 	{
-		this.ikController.SetRightSteezeWeight(p_value);
+		ikController.SetRightSteezeWeight(p_value);
 	}
 
 	public void SetScoopSpeed(float p_value)
 	{
-		this.boardController.secondVel = -p_value;
+		boardController.secondVel = -p_value;
 	}
 
 	public void SetSkaterToMaster()
 	{
-		this.movementMaster = PlayerController.MovementMaster.Skater;
-		this.skaterController.skaterRigidbody.useGravity = true;
+		movementMaster = PlayerController.MovementMaster.Skater;
+		skaterController.skaterRigidbody.useGravity = true;
 	}
 
 	public void SetTargetToMaster()
 	{
-		this.skaterController.skaterRigidbody.angularVelocity = this.boardController.boardRigidbody.angularVelocity;
-		this.skaterController.skaterRigidbody.velocity = this.boardController.boardRigidbody.velocity;
-		this.boardController.boardRigidbody.angularVelocity = Vector3.zero;
-		this.movementMaster = PlayerController.MovementMaster.Target;
+		skaterController.skaterRigidbody.angularVelocity = boardController.boardRigidbody.angularVelocity;
+		skaterController.skaterRigidbody.velocity = boardController.boardRigidbody.velocity;
+		boardController.boardRigidbody.angularVelocity = Vector3.zero;
+		movementMaster = PlayerController.MovementMaster.Target;
 	}
 
 	public void SetTurningMode(InputController.TurningMode p_turningMode)
 	{
-		this.inputController.turningMode = p_turningMode;
+		inputController.turningMode = p_turningMode;
 	}
 
 	public void SetTurnMultiplier(float p_value)
 	{
-		this.inputController.TriggerMultiplier = p_value;
+		inputController.TriggerMultiplier = p_value;
 	}
 
 	private void SetTweakAxis()
 	{
-		float animatorSpeed = 1f / this.animationController.GetAnimatorSpeed();
-		this._forwardTweakAxis = Mathf.MoveTowards(this._forwardTweakAxis, this._frontFootForwardAxis + this._backFootForwardAxis, Time.deltaTime * animatorSpeed * 10f);
-		this._toeTweakAxis = Mathf.MoveTowards(this._toeTweakAxis, this._frontFootToeAxis + -this._backFootToeAxis, Time.deltaTime * animatorSpeed * 10f);
-		this.animationController.SetTweakValues(Mathf.Clamp(this._forwardTweakAxis / 2f, -1f, 1f), this._toeTweakAxis / 2f);
-		this.animationController.SetTweakMagnitude(this._frontMagnitude.magnitude, this._backMagnitude.magnitude);
+		float animatorSpeed = 1f / animationController.GetAnimatorSpeed();
+		_forwardTweakAxis = Mathf.MoveTowards(_forwardTweakAxis, _frontFootForwardAxis + _backFootForwardAxis, Time.deltaTime * animatorSpeed * 10f);
+		_toeTweakAxis = Mathf.MoveTowards(_toeTweakAxis, _frontFootToeAxis + -_backFootToeAxis, Time.deltaTime * animatorSpeed * 10f);
+		animationController.SetTweakValues(Mathf.Clamp(_forwardTweakAxis / 2f, -1f, 1f), _toeTweakAxis / 2f);
+		animationController.SetTweakMagnitude(_frontMagnitude.magnitude, _backMagnitude.magnitude);
 	}
 
 	public void SetupDirection(StickInput p_popStick, ref PlayerController.SetupDir _setupDir)
 	{
-		this._stickAngle = Vector2.SignedAngle(p_popStick.AugmentedPopToeVector, Vector2.up);
+		_stickAngle = Vector2.SignedAngle(p_popStick.AugmentedPopToeVector, Vector2.up);
 		if ((int)_setupDir == 0)
 		{
-			if (this._stickAngle < -4f)
+			if (_stickAngle < -4f)
 			{
 				_setupDir = PlayerController.SetupDir.Left;
 				return;
 			}
-			if (this._stickAngle > 4f)
+			if (_stickAngle > 4f)
 			{
 				_setupDir = PlayerController.SetupDir.Right;
 			}
@@ -1866,15 +1866,15 @@ public class PlayerController : MonoBehaviour
 	{
 		if (p_augmentedAngle == 0f)
 		{
-			this._stickAngle = Vector2.SignedAngle(p_popStick.AugmentedPopToeVector, Vector2.up);
+			_stickAngle = Vector2.SignedAngle(p_popStick.AugmentedPopToeVector, Vector2.up);
 			if ((int)_setupDir == 0)
 			{
-				if (this._stickAngle < -4f)
+				if (_stickAngle < -4f)
 				{
 					_setupDir = PlayerController.SetupDir.Left;
 					return;
 				}
-				if (this._stickAngle > 4f)
+				if (_stickAngle > 4f)
 				{
 					_setupDir = PlayerController.SetupDir.Right;
 				}
@@ -1884,34 +1884,34 @@ public class PlayerController : MonoBehaviour
 
 	public void SkaterRotation(bool p_canRotate, bool p_manualling)
 	{
-		this.skaterController.UpdateSkaterRotation(p_canRotate, p_manualling);
+		skaterController.UpdateSkaterRotation(p_canRotate, p_manualling);
 	}
 
 	public void SkaterRotation(Quaternion p_rot)
 	{
-		this.skaterController.UpdateSkaterRotation(true, p_rot);
-		this.skaterController.skaterRigidbody.angularVelocity = Vector3.zero;
+		skaterController.UpdateSkaterRotation(true, p_rot);
+		skaterController.skaterRigidbody.angularVelocity = Vector3.zero;
 	}
 
 	public void SnapRotation()
 	{
-		this.boardController.SnapRotation();
+		boardController.SnapRotation();
 	}
 
 	public void SnapRotation(bool p_value)
 	{
-		this.boardController.SnapRotation(p_value);
+		boardController.SnapRotation(p_value);
 	}
 
 	public void SnapRotation(float p_value)
 	{
-		this.boardController.SnapRotation(p_value);
+		boardController.SnapRotation(p_value);
 	}
 
 	private void Start()
 	{
-		this.playerSM = new PlayerStateMachine(base.gameObject);
-		this.playerSM.StartSM();
+		playerSM = new PlayerStateMachine(gameObject);
+		playerSM.StartSM();
 	}
 
 	public void TurnLeft(float p_value, InputController.TurningMode p_turningMode)
@@ -1920,43 +1920,43 @@ public class PlayerController : MonoBehaviour
 		{
 			case InputController.TurningMode.Grounded:
 			{
-				this.boardController.AddTurnTorque(-p_value);
-				this.skaterController.AddTurnTorque(-p_value * this.torsoTorqueMult);
+				boardController.AddTurnTorque(-p_value);
+				skaterController.AddTurnTorque(-p_value * torsoTorqueMult);
 				return;
 			}
 			case InputController.TurningMode.PreWind:
 			{
-				this.boardController.AddTurnTorque(-(p_value / 5f));
+				boardController.AddTurnTorque(-(p_value / 5f));
 				return;
 			}
 			case InputController.TurningMode.InAir:
 			{
-				this.skaterController.AddTurnTorque(-p_value);
+				skaterController.AddTurnTorque(-p_value);
 				return;
 			}
 			case InputController.TurningMode.FastLeft:
 			{
 				if (SettingsManager.Instance.stance != SettingsManager.Stance.Regular)
 				{
-					this.skaterController.AddTurnTorque(-p_value);
+					skaterController.AddTurnTorque(-p_value);
 					return;
 				}
-				this.skaterController.AddTurnTorque(-p_value, true);
+				skaterController.AddTurnTorque(-p_value, true);
 				return;
 			}
 			case InputController.TurningMode.FastRight:
 			{
 				if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 				{
-					this.skaterController.AddTurnTorque(-p_value);
+					skaterController.AddTurnTorque(-p_value);
 					return;
 				}
-				this.skaterController.AddTurnTorque(-p_value, true);
+				skaterController.AddTurnTorque(-p_value, true);
 				return;
 			}
 			case InputController.TurningMode.Manual:
 			{
-				this.boardController.AddTurnTorqueManuals(-p_value);
+				boardController.AddTurnTorqueManuals(-p_value);
 				return;
 			}
 			default:
@@ -1972,43 +1972,43 @@ public class PlayerController : MonoBehaviour
 		{
 			case InputController.TurningMode.Grounded:
 			{
-				this.boardController.AddTurnTorque(p_value);
-				this.skaterController.AddTurnTorque(p_value * this.torsoTorqueMult);
+				boardController.AddTurnTorque(p_value);
+				skaterController.AddTurnTorque(p_value * torsoTorqueMult);
 				return;
 			}
 			case InputController.TurningMode.PreWind:
 			{
-				this.boardController.AddTurnTorque(p_value / 5f);
+				boardController.AddTurnTorque(p_value / 5f);
 				return;
 			}
 			case InputController.TurningMode.InAir:
 			{
-				this.skaterController.AddTurnTorque(p_value);
+				skaterController.AddTurnTorque(p_value);
 				return;
 			}
 			case InputController.TurningMode.FastLeft:
 			{
 				if (SettingsManager.Instance.stance == SettingsManager.Stance.Regular)
 				{
-					this.skaterController.AddTurnTorque(p_value);
+					skaterController.AddTurnTorque(p_value);
 					return;
 				}
-				this.skaterController.AddTurnTorque(p_value, true);
+				skaterController.AddTurnTorque(p_value, true);
 				return;
 			}
 			case InputController.TurningMode.FastRight:
 			{
 				if (SettingsManager.Instance.stance != SettingsManager.Stance.Regular)
 				{
-					this.skaterController.AddTurnTorque(p_value);
+					skaterController.AddTurnTorque(p_value);
 					return;
 				}
-				this.skaterController.AddTurnTorque(p_value, true);
+				skaterController.AddTurnTorque(p_value, true);
 				return;
 			}
 			case InputController.TurningMode.Manual:
 			{
-				this.boardController.AddTurnTorqueManuals(p_value);
+				boardController.AddTurnTorqueManuals(p_value);
 				return;
 			}
 			default:
@@ -2020,52 +2020,52 @@ public class PlayerController : MonoBehaviour
 
 	public bool TwoWheelsDown()
 	{
-		return this.boardController.TwoDown;
+		return boardController.TwoDown;
 	}
 
 	private void Update()
 	{
-		this.playerSM.UpdateSM();
-		if (this._flipAxisTarget != 0f)
+		playerSM.UpdateSM();
+		if (_flipAxisTarget != 0f)
 		{
-			this.LerpFlipAxis();
+			LerpFlipAxis();
 		}
-		this.SetTweakAxis();
+		SetTweakAxis();
 	}
 
 	public void UpdateBoardPosition()
 	{
-		this.boardController.UpdateBoardPosition();
+		boardController.UpdateBoardPosition();
 	}
 
 	public void UpdateManual(bool rightFirst)
 	{
 		if (rightFirst)
 		{
-			this.playerSM.OnManualUpdateSM(this.inputController.RightStick, this.inputController.LeftStick);
+			playerSM.OnManualUpdateSM(inputController.RightStick, inputController.LeftStick);
 			return;
 		}
-		this.playerSM.OnManualUpdateSM(this.inputController.LeftStick, this.inputController.RightStick);
+		playerSM.OnManualUpdateSM(inputController.LeftStick, inputController.RightStick);
 	}
 
 	public void UpdateNoseManual(bool rightFirst)
 	{
 		if (rightFirst)
 		{
-			this.playerSM.OnNoseManualUpdateSM(this.inputController.RightStick, this.inputController.LeftStick);
+			playerSM.OnNoseManualUpdateSM(inputController.RightStick, inputController.LeftStick);
 			return;
 		}
-		this.playerSM.OnNoseManualUpdateSM(this.inputController.LeftStick, this.inputController.RightStick);
+		playerSM.OnNoseManualUpdateSM(inputController.LeftStick, inputController.RightStick);
 	}
 
 	public void UpdateSkaterDuringPop()
 	{
-		this.skaterController.UpdatePositionDuringPop();
+		skaterController.UpdatePositionDuringPop();
 	}
 
 	public void UpdateSkaterPosition()
 	{
-		this.skaterController.UpdatePositions();
+		skaterController.UpdatePositions();
 	}
 
 	public enum MovementMaster

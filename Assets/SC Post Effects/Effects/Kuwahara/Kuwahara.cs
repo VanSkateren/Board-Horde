@@ -54,7 +54,7 @@ namespace SCPE
 
     internal sealed class KuwaharaRenderer : PostProcessEffectRenderer<Kuwahara>
     {
-        Shader KuwaharaShader;
+        private Shader KuwaharaShader;
 
         public override void Init()
         {

@@ -159,20 +159,20 @@ namespace SCPE
 
         public static bool CURRENTLY_INSTALLING
         {
-            get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_IS_INSTALLING", false); }
-            set { SessionState.SetBool(SCPE.ASSET_ABRV + "_IS_INSTALLING", value); }
+            get => SessionState.GetBool(SCPE.ASSET_ABRV + "_IS_INSTALLING", false);
+            set => SessionState.SetBool(SCPE.ASSET_ABRV + "_IS_INSTALLING", value);
         }
 
         public static bool IS_INSTALLED
         {
-            get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_IS_INSTALLED", false); }
-            set { SessionState.SetBool(SCPE.ASSET_ABRV + "_IS_INSTALLED", value); }
+            get => SessionState.GetBool(SCPE.ASSET_ABRV + "_IS_INSTALLED", false);
+            set => SessionState.SetBool(SCPE.ASSET_ABRV + "_IS_INSTALLED", value);
         }
 
         public static bool IS_CORRECT_BASE_FOLDER
         {
-            get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_CORRECT_BASE_FOLDER", false); }
-            set { SessionState.SetBool(SCPE.ASSET_ABRV + "_CORRECT_BASE_FOLDER", value); }
+            get => SessionState.GetBool(SCPE.ASSET_ABRV + "_CORRECT_BASE_FOLDER", false);
+            set => SessionState.SetBool(SCPE.ASSET_ABRV + "_CORRECT_BASE_FOLDER", value);
         }
 
         /* No longer required, since the referenced shader libraries are included
@@ -270,35 +270,35 @@ namespace SCPE
         {
             public static string SCENES_PACKAGE_PATH
             {
-                get { return SessionState.GetString(SCPE.ASSET_ABRV + "_DEMO_PACKAGE_PATH", string.Empty); }
-                set { SessionState.SetString(SCPE.ASSET_ABRV + "_DEMO_PACKAGE_PATH", value); }
+                get => SessionState.GetString(SCPE.ASSET_ABRV + "_DEMO_PACKAGE_PATH", string.Empty);
+                set => SessionState.SetString(SCPE.ASSET_ABRV + "_DEMO_PACKAGE_PATH", value);
             }
             public static string SAMPLES_PACKAGE_PATH
             {
-                get { return SessionState.GetString(SCPE.ASSET_ABRV + "_SAMPLES_PACKAGE_PATH", string.Empty); }
-                set { SessionState.SetString(SCPE.ASSET_ABRV + "_SAMPLES_PACKAGE_PATH", value); }
+                get => SessionState.GetString(SCPE.ASSET_ABRV + "_SAMPLES_PACKAGE_PATH", string.Empty);
+                set => SessionState.SetString(SCPE.ASSET_ABRV + "_SAMPLES_PACKAGE_PATH", value);
             }
 
             public static bool HAS_SCENE_PACKAGE
             {
-                get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_HAS_DEMO_PACKAGE", false); }
-                set { SessionState.SetBool(SCPE.ASSET_ABRV + "_HAS_DEMO_PACKAGE", value); }
+                get => SessionState.GetBool(SCPE.ASSET_ABRV + "_HAS_DEMO_PACKAGE", false);
+                set => SessionState.SetBool(SCPE.ASSET_ABRV + "_HAS_DEMO_PACKAGE", value);
             }
             public static bool HAS_SAMPLES_PACKAGE
             {
-                get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_HAS_SAMPLES_PACKAGE", false); }
-                set { SessionState.SetBool(SCPE.ASSET_ABRV + "_HAS_SAMPLES_PACKAGE", value); }
+                get => SessionState.GetBool(SCPE.ASSET_ABRV + "_HAS_SAMPLES_PACKAGE", false);
+                set => SessionState.SetBool(SCPE.ASSET_ABRV + "_HAS_SAMPLES_PACKAGE", value);
             }
 
             public static bool SCENES_INSTALLED
             {
-                get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_DEMO_INSTALLED", false); }
-                set { SessionState.SetBool(SCPE.ASSET_ABRV + "_DEMO_INSTALLED", value); }
+                get => SessionState.GetBool(SCPE.ASSET_ABRV + "_DEMO_INSTALLED", false);
+                set => SessionState.SetBool(SCPE.ASSET_ABRV + "_DEMO_INSTALLED", value);
             }
             public static bool SAMPLES_INSTALLED
             {
-                get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_SAMPLES_INSTALLED", false); }
-                set { SessionState.SetBool(SCPE.ASSET_ABRV + "_SAMPLES_INSTALLED", value); }
+                get => SessionState.GetBool(SCPE.ASSET_ABRV + "_SAMPLES_INSTALLED", false);
+                set => SessionState.SetBool(SCPE.ASSET_ABRV + "_SAMPLES_INSTALLED", value);
             }
 
             public static void FindPackages()
@@ -499,13 +499,13 @@ namespace SCPE
             public static bool upgradeShaders = true;
             public static bool installDemoContent
             {
-                get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_INSTALL_DEMO", false); }
-                set { SessionState.SetBool(SCPE.ASSET_ABRV + "_INSTALL_DEMO", value); }
+                get => SessionState.GetBool(SCPE.ASSET_ABRV + "_INSTALL_DEMO", false);
+                set => SessionState.SetBool(SCPE.ASSET_ABRV + "_INSTALL_DEMO", value);
             }
             public static bool installSampleContent
             {
-                get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_INSTALL_SAMPLES", false); }
-                set { SessionState.SetBool(SCPE.ASSET_ABRV + "_INSTALL_SAMPLES", value); }
+                get => SessionState.GetBool(SCPE.ASSET_ABRV + "_INSTALL_SAMPLES", false);
+                set => SessionState.SetBool(SCPE.ASSET_ABRV + "_INSTALL_SAMPLES", value);
             }
             public static bool deleteDemoContent = false;
             public static bool deleteSampleContent = false;
@@ -526,8 +526,8 @@ namespace SCPE
 
             public static int NumItems
             {
-                get { return SessionState.GetInt(SCPE.ASSET_ABRV + "_LOG_INDEX", 0); }
-                set { SessionState.SetInt(SCPE.ASSET_ABRV + "_LOG_INDEX", value); }
+                get => SessionState.GetInt(SCPE.ASSET_ABRV + "_LOG_INDEX", 0);
+                set => SessionState.SetInt(SCPE.ASSET_ABRV + "_LOG_INDEX", value);
             }
 
             public static void Write(string text)
@@ -610,28 +610,28 @@ namespace SCPE
 
         public static bool IS_INSTALLED
         {
-            get { return SessionState.GetBool("PPS_INSTALLED", false); }
-            set { SessionState.SetBool("PPS_INSTALLED", value); }
+            get => SessionState.GetBool("PPS_INSTALLED", false);
+            set => SessionState.SetBool("PPS_INSTALLED", value);
         }
 
         public static string PPS_INSTALLATION_DIR
         {
-            get { return SessionState.GetString("PPS_INSTALLATION_DIR", string.Empty); }
-            set { SessionState.SetString("PPS_INSTALLATION_DIR", value); }
+            get => SessionState.GetString("PPS_INSTALLATION_DIR", string.Empty);
+            set => SessionState.SetString("PPS_INSTALLATION_DIR", value);
         }
 
         public static string PACKAGE_PATH
         {
-            get { return SessionState.GetString("PPS_PACKAGE_PATH", string.Empty); }
-            set { SessionState.SetString("PPS_PACKAGE_PATH", value); }
+            get => SessionState.GetString("PPS_PACKAGE_PATH", string.Empty);
+            set => SessionState.SetString("PPS_PACKAGE_PATH", value);
         }
 
         public static string MIN_PPS_VERSION = "2.0.17";
         public static string MAX_PPS_VERSION = "9.9.9.9";
         public static string LATEST_COMPATIBLE_VERSION
         {
-            get { return SessionState.GetString("LATEST_PPS_VERSION", string.Empty); }
-            set { SessionState.SetString("LATEST_PPS_VERSION", value); }
+            get => SessionState.GetString("LATEST_PPS_VERSION", string.Empty);
+            set => SessionState.SetString("LATEST_PPS_VERSION", value);
         }
 
         public enum Version
@@ -642,13 +642,13 @@ namespace SCPE
         }
         public static Version PPSVersionStatus
         {
-            get { return (Version)SessionState.GetInt("PPS_VERSION_STATUS", 2); }
-            set { SessionState.SetInt("PPS_VERSION_STATUS", (int)value); }
+            get => (Version)SessionState.GetInt("PPS_VERSION_STATUS", 2);
+            set => SessionState.SetInt("PPS_VERSION_STATUS", (int)value);
         }
         public static string PPS_VERSION
         {
-            get { return SessionState.GetString("PPS_VERSION", string.Empty); }
-            set { SessionState.SetString("PPS_VERSION", value); }
+            get => SessionState.GetString("PPS_VERSION", string.Empty);
+            set => SessionState.SetString("PPS_VERSION", value);
         }
 
         //Find PostProcessResources asset to validate installation
@@ -816,8 +816,8 @@ namespace SCPE
         }
         public static Pipeline CurrentPipeline
         {
-            get { return (Pipeline)SessionState.GetInt("SCPE_PIPELINE", 0); }
-            set { SessionState.SetInt("SCPE_PIPELINE", (int)value); }
+            get => (Pipeline)SessionState.GetInt("SCPE_PIPELINE", 0);
+            set => SessionState.SetInt("SCPE_PIPELINE", (int)value);
         }
 
         public enum Version
@@ -828,24 +828,24 @@ namespace SCPE
         }
         public static Version VersionStatus
         {
-            get { return (Version)SessionState.GetInt("SRP_VERSION_STATUS", 0); }
-            set { SessionState.SetInt("SRP_VERSION_STATUS", (int)value); }
+            get => (Version)SessionState.GetInt("SRP_VERSION_STATUS", 0);
+            set => SessionState.SetInt("SRP_VERSION_STATUS", (int)value);
         }
 
         //Applies to current SRP
         public static string SRP_VERSION
         {
-            get { return SessionState.GetString("SRP_VERSION", string.Empty); }
-            set { SessionState.SetString("SRP_VERSION", value); }
+            get => SessionState.GetString("SRP_VERSION", string.Empty);
+            set => SessionState.SetString("SRP_VERSION", value);
         }
         public static string MIN_SRP_VERSION;
-        public static string SRP_DEFINE_SYMBOL { get { return ComposeDefineSymbol(); } }
+        public static string SRP_DEFINE_SYMBOL => ComposeDefineSymbol();
 
         //Represents the define symbol version to be added
         public static string SRP_NEAREST_DEFINE_VERSION
         {
-            get { return SessionState.GetString("SRP_NEAREST_DEFINE_VERSION", string.Empty); }
-            set { SessionState.SetString("SRP_NEAREST_DEFINE_VERSION", value); }
+            get => SessionState.GetString("SRP_NEAREST_DEFINE_VERSION", string.Empty);
+            set => SessionState.SetString("SRP_NEAREST_DEFINE_VERSION", value);
         }
 
 #if SCPE_DEV
@@ -968,20 +968,17 @@ namespace SCPE
 
     public class UnityVersionCheck
     {
-        public static string UnityVersion
-        {
-            get { return Application.unityVersion; }
-        }
+        public static string UnityVersion => Application.unityVersion;
 
         public static bool COMPATIBLE
         {
-            get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_COMPATIBLE_VERSION", true); }
-            set { SessionState.SetBool(SCPE.ASSET_ABRV + "_COMPATIBLE_VERSION", value); }
+            get => SessionState.GetBool(SCPE.ASSET_ABRV + "_COMPATIBLE_VERSION", true);
+            set => SessionState.SetBool(SCPE.ASSET_ABRV + "_COMPATIBLE_VERSION", value);
         }
         public static bool UNTESTED
         {
-            get { return SessionState.GetBool(SCPE.ASSET_ABRV + "_UNTESTED_VERSION", false); }
-            set { SessionState.SetBool(SCPE.ASSET_ABRV + "_UNTESTED_VERSION", value); }
+            get => SessionState.GetBool(SCPE.ASSET_ABRV + "_UNTESTED_VERSION", false);
+            set => SessionState.SetBool(SCPE.ASSET_ABRV + "_UNTESTED_VERSION", value);
         }
 
         public static void CheckCompatibility()
@@ -1000,7 +997,7 @@ namespace SCPE
             COMPATIBLE = false;
             UNTESTED = false;
 #endif
-#if UNITY_2019_2_OR_NEWER // >= 2019.2
+#if UNITY_2019_3_OR_NEWER // >= 2019.2
             UNTESTED = true;
             COMPATIBLE = false;
 #endif

@@ -22,8 +22,8 @@ namespace Michsky.UI.ModernUIPack
 
         void Start()
         {
-            mainSlider = this.GetComponent<Slider>();
-            sliderAnimator = this.GetComponent<Animator>();
+            mainSlider = GetComponent<Slider>();
+            sliderAnimator = GetComponent<Animator>();
 
             if (showValue == false)
             {

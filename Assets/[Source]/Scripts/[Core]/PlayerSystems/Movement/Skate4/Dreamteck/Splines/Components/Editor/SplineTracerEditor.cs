@@ -59,15 +59,15 @@ namespace Dreamteck.Splines
             EditorGUILayout.LabelField("Tracer", EditorStyles.boldLabel);
             SplineTracer tracer = (SplineTracer)target;
             tracer.direction = (Spline.Direction)EditorGUILayout.EnumPopup("Direction", tracer.direction);
-            tracer.physicsMode = (SplineFollower.PhysicsMode)EditorGUILayout.EnumPopup("Physics mode", tracer.physicsMode);
-            if (tracer.physicsMode == SplineFollower.PhysicsMode.Rigidbody)
+            tracer.physicsMode = (SplineTracer.PhysicsMode)EditorGUILayout.EnumPopup("Physics mode", tracer.physicsMode);
+            if (tracer.physicsMode == SplineTracer.PhysicsMode.Rigidbody)
             {
                 Rigidbody rb = tracer.GetComponent<Rigidbody>();
                 if (rb == null) EditorGUILayout.HelpBox("Assign a Rigidbody component.", MessageType.Error);
                 else if (rb.interpolation == RigidbodyInterpolation.None && tracer.updateMethod != SplineUser.UpdateMethod.FixedUpdate) EditorGUILayout.HelpBox("Switch to FixedUpdate mode to ensure smooth update for non-interpolated rigidbodies", MessageType.Warning);
 
             }
-            else if (tracer.physicsMode == SplineFollower.PhysicsMode.Rigidbody2D)
+            else if (tracer.physicsMode == SplineTracer.PhysicsMode.Rigidbody2D)
             {
                 Rigidbody2D rb = tracer.GetComponent<Rigidbody2D>();
                 if (rb == null) EditorGUILayout.HelpBox("Assign a Rigidbody2D component.", MessageType.Error);

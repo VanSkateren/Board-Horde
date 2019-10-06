@@ -25,14 +25,8 @@ public class Trajectory : MonoBehaviour
 
 	public Vector3 PredictedGroundNormal
 	{
-		get
-		{
-			return this._predictedGroundNormal;
-		}
-		set
-		{
-			this._predictedGroundNormal = value;
-		}
+		get => _predictedGroundNormal;
+		set => _predictedGroundNormal = value;
 	}
 
 	public Trajectory()
@@ -44,36 +38,36 @@ public class Trajectory : MonoBehaviour
 		float single = -0.5f;
 		float single1 = -0.5f;
 		int num = 0;
-		for (int i = 0; i < (int)this._offsets.Length; i++)
+		for (int i = 0; i < (int)_offsets.Length; i++)
 		{
-			this._offsets[i].x = single;
-			single += this.increment;
-			this._offsets[i].y = single1;
+			_offsets[i].x = single;
+			single += increment;
+			_offsets[i].y = single1;
 			num++;
 			if (num == 7)
 			{
-				single1 += this.increment;
+				single1 += increment;
 				single = -0.5f;
 				num = 0;
 			}
-			Vector2 vector2 = new Vector2(this._offsets[i].x, this._offsets[i].y);
+			Vector2 vector2 = new Vector2(_offsets[i].x, _offsets[i].y);
 			vector2 = Vector2.ClampMagnitude(vector2, 0.5f);
-			this._offsets[i].x = vector2.x;
-			this._offsets[i].y = vector2.y;
+			_offsets[i].x = vector2.x;
+			_offsets[i].y = vector2.y;
 		}
 	}
 
 	public float CalculateTrajectory(Vector3 p_pos, Vector3 p_vel, float p_maxTime, out Vector3 p_correctiveForce)
 	{
 		Vector3 vector3 = Vector3.zero;
-		this.CalculateTrajectorySpread(p_pos, p_vel, p_maxTime, out vector3);
+		CalculateTrajectorySpread(p_pos, p_vel, p_maxTime, out vector3);
 		p_correctiveForce = vector3;
-		return this.PlotTrajectory(p_pos, p_vel, Time.deltaTime, p_maxTime);
+		return PlotTrajectory(p_pos, p_vel, Time.deltaTime, p_maxTime);
 	}
 
 	public float CalculateTrajectory(Vector3 p_pos, Rigidbody p_rb, float p_maxTime, out RaycastHit p_hit)
 	{
-		return this.PlotTrajectory(p_pos, p_rb.velocity, Time.deltaTime, p_maxTime, out p_hit);
+		return PlotTrajectory(p_pos, p_rb.velocity, Time.deltaTime, p_maxTime, out p_hit);
 	}
 
 	public float CalculateTrajectorySpread(Vector3 p_pos, Vector3 p_vel, float p_maxTime, out Vector3 p_correctiveForce)
@@ -81,32 +75,32 @@ public class Trajectory : MonoBehaviour
 		Vector3 vector3 = Vector3.ProjectOnPlane(PlayerController.Instance.skaterController.skaterTransform.forward, Vector3.up);
 		Vector3 vector31 = vector3.normalized;
 		Vector3 vector32 = Vector3.Cross(vector31, -Vector3.up);
-		for (int i = 0; i < (int)this._hitNormals.Length; i++)
+		for (int i = 0; i < (int)_hitNormals.Length; i++)
 		{
-			this._hitNormals[i] = this.PlotSingleTrajectory((p_pos + (vector32 * this._offsets[i].x)) + (vector31 * this._offsets[i].y), p_vel, Time.deltaTime * 10f, p_maxTime, out this._tempTimes[i], out this._hitPoints[i]);
+			_hitNormals[i] = PlotSingleTrajectory((p_pos + (vector32 * _offsets[i].x)) + (vector31 * _offsets[i].y), p_vel, Time.deltaTime * 10f, p_maxTime, out _tempTimes[i], out _hitPoints[i]);
 		}
 		Vector3 vector33 = Vector3.up;
-		for (int j = 0; j < (int)this._hitNormals.Length; j++)
+		for (int j = 0; j < (int)_hitNormals.Length; j++)
 		{
-			if (Vector3.Angle(PlayerController.Instance.boardController.LastGroundNormal, this._hitNormals[j]) < 60f || Vector3.Angle(Vector3.up, this._hitNormals[j]) < 45f)
+			if (Vector3.Angle(PlayerController.Instance.boardController.LastGroundNormal, _hitNormals[j]) < 60f || Vector3.Angle(Vector3.up, _hitNormals[j]) < 45f)
 			{
-				vector33 += this._hitNormals[j];
+				vector33 += _hitNormals[j];
 			}
 		}
-		Vector3 length = this._hitPoints[0];
-		for (int k = 1; k < (int)this._hitPoints.Length; k++)
+		Vector3 length = _hitPoints[0];
+		for (int k = 1; k < (int)_hitPoints.Length; k++)
 		{
-			length += this._hitPoints[k];
+			length += _hitPoints[k];
 		}
 		float single = 0f;
-		for (int l = 0; l < (int)this._tempTimes.Length; l++)
+		for (int l = 0; l < (int)_tempTimes.Length; l++)
 		{
-			single += this._tempTimes[l];
+			single += _tempTimes[l];
 		}
-		single /= (float)((int)this._tempTimes.Length);
-		length /= (float)((int)this._hitPoints.Length);
+		single /= (float)((int)_tempTimes.Length);
+		length /= (float)((int)_hitPoints.Length);
 		vector33 = vector33.normalized;
-		this.PredictedGroundNormal = vector33;
+		PredictedGroundNormal = vector33;
 		PlayerController.Instance.boardController.GroundNormal = vector33;
 		vector3 = Vector3.ProjectOnPlane(p_vel, Vector3.up);
 		Vector3 vector34 = Vector3.ProjectOnPlane(vector33, vector3.normalized);
@@ -137,9 +131,9 @@ public class Trajectory : MonoBehaviour
 				p_totalTime = p_maxTime;
 				return Vector3.up;
 			}
-			Vector3 vector3 = this.PlotTrajectoryAtTime(p_start, p_startVelocity, pTimestep);
+			Vector3 vector3 = PlotTrajectoryAtTime(p_start, p_startVelocity, pTimestep);
 			p_totalTime = single;
-			if (Physics.Raycast(pStart, vector3 - pStart, out this._hit, Vector3.Magnitude(vector3 - pStart), this.layers) && this._hit.collider.gameObject.layer == LayerMask.NameToLayer("Default"))
+			if (Physics.Raycast(pStart, vector3 - pStart, out _hit, Vector3.Magnitude(vector3 - pStart), layers) && _hit.collider.gameObject.layer == LayerMask.NameToLayer("Default"))
 			{
 				break;
 			}
@@ -147,9 +141,9 @@ public class Trajectory : MonoBehaviour
 			single = pTimestep;
 			num++;
 		}
-		this._lastHitPoint = this._hit.point;
-		p_hitPoint = this._hit.point;
-		return this._hit.normal;
+		_lastHitPoint = _hit.point;
+		p_hitPoint = _hit.point;
+		return _hit.normal;
 	}
 
 	public float PlotTrajectory(Vector3 p_start, Vector3 p_startVelocity, float p_timestep, float p_maxTime)
@@ -164,8 +158,8 @@ public class Trajectory : MonoBehaviour
 			{
 				return p_maxTime;
 			}
-			Vector3 vector3 = this.PlotTrajectoryAtTime(p_start, p_startVelocity, pTimestep);
-			if (Physics.Raycast(pStart, vector3 - pStart, out this._hit, Vector3.Magnitude(vector3 - pStart), this.layers) && this._hit.collider.gameObject.layer == LayerMask.NameToLayer("Default"))
+			Vector3 vector3 = PlotTrajectoryAtTime(p_start, p_startVelocity, pTimestep);
+			if (Physics.Raycast(pStart, vector3 - pStart, out _hit, Vector3.Magnitude(vector3 - pStart), layers) && _hit.collider.gameObject.layer == LayerMask.NameToLayer("Default"))
 			{
 				break;
 			}
@@ -173,9 +167,9 @@ public class Trajectory : MonoBehaviour
 			single = pTimestep;
 			num++;
 		}
-		if (this._hit.point.y >= PlayerController.Instance.boardController.GroundY)
+		if (_hit.point.y >= PlayerController.Instance.boardController.GroundY)
 		{
-			PlayerController.Instance.boardController.GroundY = this._hit.point.y;
+			PlayerController.Instance.boardController.GroundY = _hit.point.y;
 		}
 		return single;
 	}
@@ -188,14 +182,14 @@ public class Trajectory : MonoBehaviour
 		while (true)
 		{
 			float pTimestep = p_timestep * (float)num;
-			Vector3 vector3 = this.PlotTrajectoryAtTime(p_start, p_startVelocity, pTimestep);
+			Vector3 vector3 = PlotTrajectoryAtTime(p_start, p_startVelocity, pTimestep);
 			if (pTimestep > p_maxTime)
 			{
-				this.PredictedGroundNormal = Vector3.up;
-				p_hit = this._hit;
+				PredictedGroundNormal = Vector3.up;
+				p_hit = _hit;
 				return p_maxTime;
 			}
-			if (Physics.Raycast(pStart, vector3 - pStart, out this._hit, Vector3.Magnitude(vector3 - pStart), this.layers) && this._hit.collider.gameObject.layer == LayerMask.NameToLayer("Default"))
+			if (Physics.Raycast(pStart, vector3 - pStart, out _hit, Vector3.Magnitude(vector3 - pStart), layers) && _hit.collider.gameObject.layer == LayerMask.NameToLayer("Default"))
 			{
 				break;
 			}
@@ -203,11 +197,11 @@ public class Trajectory : MonoBehaviour
 			single = pTimestep;
 			num++;
 		}
-		if (this._hit.point.y >= PlayerController.Instance.boardController.GroundY)
+		if (_hit.point.y >= PlayerController.Instance.boardController.GroundY)
 		{
-			PlayerController.Instance.boardController.GroundY = this._hit.point.y;
+			PlayerController.Instance.boardController.GroundY = _hit.point.y;
 		}
-		p_hit = this._hit;
+		p_hit = _hit;
 		return single;
 	}
 

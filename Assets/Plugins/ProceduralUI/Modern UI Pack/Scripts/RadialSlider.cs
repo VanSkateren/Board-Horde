@@ -48,8 +48,8 @@ namespace Michsky.UI.ModernUIPack
         /// </summary>
         public float SliderAngle
         {
-            get { return currentAngle; }
-            set { currentAngle = Mathf.Clamp(value, 0.0f, 360.0f); }
+            get => currentAngle;
+            set => currentAngle = Mathf.Clamp(value, 0.0f, 360.0f);
         }
 
         /// <summary>
@@ -57,8 +57,8 @@ namespace Michsky.UI.ModernUIPack
         /// </summary>
         public float SliderValue
         {
-            get { return (long)(SliderValueRaw * valueDisplayPrecision) / valueDisplayPrecision; }
-            set { SliderValueRaw = value; }
+            get => (long)(SliderValueRaw * valueDisplayPrecision) / valueDisplayPrecision;
+            set => SliderValueRaw = value;
         }
 
         /// <summary>
@@ -66,8 +66,8 @@ namespace Michsky.UI.ModernUIPack
         /// </summary>
         public float SliderValueRaw
         {
-            get { return SliderAngle / 360.0f * maxValue; }
-            set { SliderAngle = value * 360.0f / maxValue; }
+            get => SliderAngle / 360.0f * maxValue;
+            set => SliderAngle = value * 360.0f / maxValue;
         }
 
         private void Awake()

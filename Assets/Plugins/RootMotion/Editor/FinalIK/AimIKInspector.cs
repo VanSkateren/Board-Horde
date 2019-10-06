@@ -10,7 +10,7 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(AimIK))]
 	public class AimIKInspector : IKInspector {
 		
-		private AimIK script { get { return target as AimIK; }}
+		private AimIK script => target as AimIK;
 
 		protected override MonoBehaviour GetMonoBehaviour(out int executionOrder) {
 			executionOrder = 9997;

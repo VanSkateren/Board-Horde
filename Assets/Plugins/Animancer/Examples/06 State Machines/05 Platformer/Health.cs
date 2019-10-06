@@ -21,7 +21,7 @@ namespace Animancer.Examples
         private int _MaxHealth;
         public int MaxHealth
         {
-            get { return _MaxHealth; }
+            get => _MaxHealth;
             set
             {
                 _CurrentHealth = value;
@@ -35,7 +35,7 @@ namespace Animancer.Examples
         private int _CurrentHealth;
         public int CurrentHealth
         {
-            get { return _CurrentHealth; }
+            get => _CurrentHealth;
             set
             {
                 _CurrentHealth = Mathf.Clamp(value, 0, _MaxHealth);

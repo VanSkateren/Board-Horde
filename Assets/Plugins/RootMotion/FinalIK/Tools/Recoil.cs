@@ -98,11 +98,7 @@ namespace RootMotion.FinalIK {
 		/// <summary>
 		/// Returns true if recoil has finished or has not been called at all.
 		/// </summary>
-		public bool isFinished {
-			get {
-				return Time.time > endTime;
-			}
-		}
+		public bool isFinished => Time.time > endTime;
 
 		/// <summary>
 		/// Sets the starting rotations for the hands for 1 frame. Use this if the final rotation of the hands will not be the same as before FBBIK solves.
@@ -222,17 +218,9 @@ namespace RootMotion.FinalIK {
 			}
 		}
 		
-		private Transform primaryHand {
-			get {
-				return primaryHandEffector.bone;
-			}
-		}
-		
-		private Transform secondaryHand {
-			get {
-				return secondaryHandEffector.bone;
-			}
-		}
+		private Transform primaryHand => primaryHandEffector.bone;
+
+		private Transform secondaryHand => secondaryHandEffector.bone;
 
 		protected override void OnDestroy() {
 			base.OnDestroy();

@@ -48,47 +48,47 @@ public class Respawn : MonoBehaviour
 
 	private void DelayPress()
 	{
-		this._canPress = true;
+		_canPress = true;
 	}
 
 	public void DoRespawn()
 	{
-		if (this._canPress && !this.respawning)
+		if (_canPress && !respawning)
 		{
 			PlayerController.Instance.IsRespawning = true;
-			this.respawning = true;
-			this._canPress = false;
-			this.GetSpawnPos();
+			respawning = true;
+			_canPress = false;
+			GetSpawnPos();
 			PlayerController.Instance.CancelInvoke("DoBail");
-			base.CancelInvoke("DelayPress");
-			base.CancelInvoke("EndRespawning");
-			base.Invoke("DelayPress", 0.4f);
-			base.Invoke("EndRespawning", 0.25f);
+			CancelInvoke("DelayPress");
+			CancelInvoke("EndRespawning");
+			Invoke("DelayPress", 0.4f);
+			Invoke("EndRespawning", 0.25f);
 		}
 	}
 
 	private void EndRespawning()
 	{
-		this.respawning = false;
+		respawning = false;
 		PlayerController.Instance.IsRespawning = false;
-		this._retryRespawn = false;
+		_retryRespawn = false;
 	}
 
 	private void GetSpawnPos()
 	{
 		PlayerController.Instance.respawn.behaviourPuppet.BoostImmunity(1000f);
-		base.CancelInvoke("DoRespawn");
+		CancelInvoke("DoRespawn");
 		PlayerController.Instance.CancelRespawnInvoke();
-		this.puppetMaster.FixTargetToSampledState(1f);
-		this.puppetMaster.FixMusclePositions();
-		this.behaviourPuppet.StopAllCoroutines();
-		this._finalIk.enabled = false;
-		for (int i = 0; i < (int)this.getSpawn.Length; i++)
+		puppetMaster.FixTargetToSampledState(1f);
+		puppetMaster.FixMusclePositions();
+		behaviourPuppet.StopAllCoroutines();
+		_finalIk.enabled = false;
+		for (int i = 0; i < (int)getSpawn.Length; i++)
 		{
-			this.getSpawn[i].position = this._setPos[i];
-			this.getSpawn[i].rotation = this._setRot[i];
+			getSpawn[i].position = _setPos[i];
+			getSpawn[i].rotation = _setRot[i];
 		}
-		this.bail.bailed = false;
+		bail.bailed = false;
 		PlayerController.Instance.playerSM.OnRespawnSM();
 		PlayerController.Instance.ResetIKOffsets();
 		PlayerController.Instance.cameraController._leanForward = false;
@@ -103,7 +103,7 @@ public class Respawn : MonoBehaviour
 		PlayerController.Instance.skaterController.skaterRigidbody.velocity = Vector3.zero;
 		PlayerController.Instance.skaterController.skaterRigidbody.angularVelocity = Vector3.zero;
 		PlayerController.Instance.skaterController.skaterRigidbody.useGravity = false;
-		PlayerController.Instance.boardController.IsBoardBackwards = this._backwards;
+		PlayerController.Instance.boardController.IsBoardBackwards = _backwards;
 		PlayerController.Instance.SetBoardToMaster();
 		PlayerController.Instance.SetTurningMode(InputController.TurningMode.Grounded);
 		PlayerController.Instance.ResetAllAnimations();
@@ -119,101 +119,101 @@ public class Respawn : MonoBehaviour
 		PlayerController.Instance.AnimSetMongo(false);
 		PlayerController.Instance.CrossFadeAnimation("Riding", 0.05f);
 		PlayerController.Instance.cameraController.ResetAllCamera();
-		this.puppetMaster.targetRoot.position = this._setPos[1] + this._playerOffset;
-		this.puppetMaster.targetRoot.rotation = this._setRot[0];
-		this.puppetMaster.angularLimits = false;
-		this.puppetMaster.Resurrect();
-		this.puppetMaster.state = PuppetMaster.State.Alive;
-		this.puppetMaster.targetAnimator.Play(this._idleAnimation, 0, 0f);
-		this.behaviourPuppet.SetState(BehaviourPuppet.State.Puppet);
-		this.puppetMaster.Teleport(this._setPos[1] + this._playerOffset, this._setRot[0], true);
+		puppetMaster.targetRoot.position = _setPos[1] + _playerOffset;
+		puppetMaster.targetRoot.rotation = _setRot[0];
+		puppetMaster.angularLimits = false;
+		puppetMaster.Resurrect();
+		puppetMaster.state = PuppetMaster.State.Alive;
+		puppetMaster.targetAnimator.Play(_idleAnimation, 0, 0f);
+		behaviourPuppet.SetState(BehaviourPuppet.State.Puppet);
+		puppetMaster.Teleport(_setPos[1] + _playerOffset, _setRot[0], true);
 		PlayerController.Instance.SetIKOnOff(1f);
 		PlayerController.Instance.skaterController.skaterRigidbody.useGravity = false;
 		PlayerController.Instance.skaterController.skaterRigidbody.constraints = RigidbodyConstraints.None;
-		this._finalIk.enabled = true;
-		this._retryRespawn = false;
-		this.puppetMaster.FixMusclePositions();
+		_finalIk.enabled = true;
+		_retryRespawn = false;
+		puppetMaster.FixMusclePositions();
 		PlayerController.Instance.respawn.behaviourPuppet.BoostImmunity(1000f);
 	}
 
 	private void SetSpawnPos()
 	{
-		this.pin.position = this.getSpawn[1].position + this._playerOffset;
-		Quaternion quaternion = Quaternion.LookRotation(this.getSpawn[0].rotation * Vector3.forward, Vector3.up);
-		this._backwards = PlayerController.Instance.GetBoardBackwards();
-		for (int i = 0; i < (int)this._setPos.Length; i++)
+		pin.position = getSpawn[1].position + _playerOffset;
+		Quaternion quaternion = Quaternion.LookRotation(getSpawn[0].rotation * Vector3.forward, Vector3.up);
+		_backwards = PlayerController.Instance.GetBoardBackwards();
+		for (int i = 0; i < (int)_setPos.Length; i++)
 		{
 			if ((float)i == 0f)
 			{
-				this._setPos[i] = this.getSpawn[1].position + this._playerOffset;
-				this._setRot[i] = quaternion;
+				_setPos[i] = getSpawn[1].position + _playerOffset;
+				_setRot[i] = quaternion;
 			}
 			else if (i == 5)
 			{
-				this._setPos[i] = this.getSpawn[i].position;
-				this._setRot[i] = quaternion;
+				_setPos[i] = getSpawn[i].position;
+				_setRot[i] = quaternion;
 			}
 			else if (i != 7)
 			{
-				this._setPos[i] = this.getSpawn[i].position;
-				this._setRot[i] = this.getSpawn[i].rotation;
+				_setPos[i] = getSpawn[i].position;
+				_setRot[i] = getSpawn[i].rotation;
 			}
 			else
 			{
-				this._setPos[i] = this.getSpawn[1].position + this._playerOffset;
-				this._setRot[i] = quaternion;
+				_setPos[i] = getSpawn[1].position + _playerOffset;
+				_setRot[i] = quaternion;
 			}
 		}
 	}
 
 	private void Start()
 	{
-		this._canPress = true;
-		this._playerOffset = this.getSpawn[0].position - this.getSpawn[1].position;
+		_canPress = true;
+		_playerOffset = getSpawn[0].position - getSpawn[1].position;
 	}
 
 	public void Update()
 	{
-		if (!this._init && PlayerController.Instance.boardController.AllDown)
+		if (!_init && PlayerController.Instance.boardController.AllDown)
 		{
-			this.SetSpawnPos();
-			this._init = true;
+			SetSpawnPos();
+			_init = true;
 		}
-		if (this._init && !this._dPadYCentered && this._canPress && !this.respawning && !this.puppetMaster.isBlending)
+		if (_init && !_dPadYCentered && _canPress && !respawning && !puppetMaster.isBlending)
 		{
-			if (PlayerController.Instance.inputController.player.GetAxis("DPadY") < 0f && PlayerController.Instance.IsGrounded() && !this.bail.bailed && Time.timeScale != 0f)
+			if (PlayerController.Instance.inputController.player.GetAxis("DPadY") < 0f && PlayerController.Instance.IsGrounded() && !bail.bailed && Time.timeScale != 0f)
 			{
-				this._dPadYCentered = true;
-				this.SetSpawnPos();
-				this._canPress = false;
-				base.CancelInvoke("DelayPress");
-				base.Invoke("DelayPress", 0.4f);
-				this.pin.gameObject.SetActive(true);
+				_dPadYCentered = true;
+				SetSpawnPos();
+				_canPress = false;
+				CancelInvoke("DelayPress");
+				Invoke("DelayPress", 0.4f);
+				pin.gameObject.SetActive(true);
 			}
 			if (PlayerController.Instance.inputController.player.GetAxis("DPadY") > 0f && Time.timeScale != 0f)
 			{
-				this._dPadYCentered = true;
-				this.DoRespawn();
+				_dPadYCentered = true;
+				DoRespawn();
 			}
 		}
-		if (PlayerController.Instance.inputController.player.GetAxis("DPadY") == 0f && this._dPadYCentered)
+		if (PlayerController.Instance.inputController.player.GetAxis("DPadY") == 0f && _dPadYCentered)
 		{
-			if (this._dPadResetTimer >= 0.2f)
+			if (_dPadResetTimer >= 0.2f)
 			{
-				this._dPadResetTimer = 0f;
-				this._dPadYCentered = false;
+				_dPadResetTimer = 0f;
+				_dPadYCentered = false;
 			}
 			else
 			{
-				this._dPadResetTimer += Time.deltaTime;
+				_dPadResetTimer += Time.deltaTime;
 			}
 		}
-		if (this.respawning && !this._retryRespawn && this.behaviourPuppet.state == BehaviourPuppet.State.Unpinned)
+		if (respawning && !_retryRespawn && behaviourPuppet.state == BehaviourPuppet.State.Unpinned)
 		{
-			this._canPress = true;
-			this.respawning = false;
-			this._retryRespawn = true;
-			this.DoRespawn();
+			_canPress = true;
+			respawning = false;
+			_retryRespawn = true;
+			DoRespawn();
 		}
 	}
 }

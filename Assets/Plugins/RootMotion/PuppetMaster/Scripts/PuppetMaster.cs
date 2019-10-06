@@ -256,10 +256,7 @@ namespace RootMotion.Dynamics
                 if (_targetAnimator == null && targetRoot.parent != null) _targetAnimator = targetRoot.parent.GetComponentInChildren<Animator>();
                 return _targetAnimator;
             }
-            set
-            {
-                _targetAnimator = value;
-            }
+            set => _targetAnimator = value;
         }
         private Animator _targetAnimator;
 
@@ -277,7 +274,7 @@ namespace RootMotion.Dynamics
         /// <summary>
         /// Returns true if the PuppetMaster is in active mode or blending in/out of it.
         /// </summary>
-        public bool isActive { get { return gameObject.activeInHierarchy && initiated && (activeMode == Mode.Active || isBlending); } }
+        public bool isActive => gameObject.activeInHierarchy && initiated && (activeMode == Mode.Active || isBlending);
 
         /// <summary>
         /// Has this PuppetMaster successfully initiated?
@@ -306,35 +303,17 @@ namespace RootMotion.Dynamics
         /// Gets the current update mode.
         /// </summary>
         /// <value>The update mode.</value>
-        public UpdateMode updateMode
-        {
-            get
-            {
-                return targetUpdateMode == AnimatorUpdateMode.AnimatePhysics ? (isLegacy ? UpdateMode.AnimatePhysics : UpdateMode.FixedUpdate) : UpdateMode.Normal;
-            }
-        }
+        public UpdateMode updateMode => targetUpdateMode == AnimatorUpdateMode.AnimatePhysics ? (isLegacy ? UpdateMode.AnimatePhysics : UpdateMode.FixedUpdate) : UpdateMode.Normal;
 
         /// <summary>
         /// If the Animator's update mode is "Animate Phyics", PuppetMaster will take control of updating the Animator (in FixedUpdate). This does not happen with Legacy.
         /// </summary>
-        public bool controlsAnimator
-        {
-            get
-            {
-                return isActiveAndEnabled && isActive && initiated && updateMode == UpdateMode.FixedUpdate;
-            }
-        }
+        public bool controlsAnimator => isActiveAndEnabled && isActive && initiated && updateMode == UpdateMode.FixedUpdate;
 
         /// <summary>
         /// Is the PuppetMaster currently switching state or mode?
         /// </summary>
-        public bool isBlending
-        {
-            get
-            {
-                return isSwitchingMode || isSwitchingState;
-            }
-        }
+        public bool isBlending => isSwitchingMode || isSwitchingState;
 
         /// <summary>
         /// Teleports the puppet to the specified position and rotation. The operation will not be processed immediatelly, but the next time PuppetMaster reads.

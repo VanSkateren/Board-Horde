@@ -42,8 +42,8 @@ namespace Animancer.Examples
         /// <summary>Public property for a UI Toggle to enable or disable the IK.</summary>
         public bool ApplyAnimatorIK
         {
-            get { return _Animancer.GetLayer(0).ApplyAnimatorIK; }
-            set { _Animancer.GetLayer(0).ApplyAnimatorIK = value; }
+            get => _Animancer.GetLayer(0).ApplyAnimatorIK;
+            set => _Animancer.GetLayer(0).ApplyAnimatorIK = value;
         }
 
         /************************************************************************************************************************/

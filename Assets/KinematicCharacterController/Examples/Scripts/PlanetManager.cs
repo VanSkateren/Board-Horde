@@ -50,13 +50,13 @@ namespace KinematicCharacterController.Examples
             }
         }
 
-        void ControlGravity(ExampleCharacterController cc)
+        private void ControlGravity(ExampleCharacterController cc)
         {
             _savedGravity = cc.Gravity;
             _characterControllersOnPlanet.Add(cc);
         }
 
-        void UnControlGravity(ExampleCharacterController cc)
+        private void UnControlGravity(ExampleCharacterController cc)
         {
             cc.Gravity = _savedGravity;
             _characterControllersOnPlanet.Remove(cc);

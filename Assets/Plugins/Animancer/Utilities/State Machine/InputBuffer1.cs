@@ -32,10 +32,7 @@ namespace Animancer.FSM
             /************************************************************************************************************************/
 
             /// <summary>Indicates whether there is currently a <see cref="BufferedState"/>.</summary>
-            public bool IsBufferActive
-            {
-                get { return BufferedState != null; }
-            }
+            public bool IsBufferActive => BufferedState != null;
 
             /************************************************************************************************************************/
 

@@ -69,13 +69,13 @@ namespace Klak.Math
         #region Public Properties And Methods
 
         public int FractalLevel {
-            get { return _fractal; }
-            set { _fractal = value; }
+            get => _fractal;
+            set => _fractal = value;
         }
 
         public float Frequency {
-            get { return _frequency; }
-            set { _frequency = value; }
+            get => _frequency;
+            set => _frequency = value;
         }
 
         public void Step()

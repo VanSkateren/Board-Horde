@@ -8,8 +8,8 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(InteractionTrigger))]
 	public class InteractionTriggerInspector : Editor {
 
-		private InteractionTrigger script { get { return target as InteractionTrigger; }}
-		
+		private InteractionTrigger script => target as InteractionTrigger;
+
 		void OnSceneGUI() {
 			if (!script.enabled) return;
 

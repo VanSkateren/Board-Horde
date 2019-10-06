@@ -74,7 +74,7 @@ namespace SCPE
 
     internal sealed class SketchRenderer : PostProcessEffectRenderer<Sketch>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

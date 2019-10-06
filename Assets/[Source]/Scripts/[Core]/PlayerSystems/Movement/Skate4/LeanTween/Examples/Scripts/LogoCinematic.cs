@@ -9,12 +9,12 @@ public class LogoCinematic : MonoBehaviour {
 
 	public GameObject tween;
 
-	void Awake(){
+	private void Awake(){
 		
 	}
 
-	
-	void Start () {
+
+	private void Start () {
 		//Time.timeScale = 0.2f;
 		
 		// Slide in
@@ -30,7 +30,7 @@ public class LogoCinematic : MonoBehaviour {
 		LeanTween.moveY(lean, lean.transform.position.y-5.1f, 0.6f).setEase(LeanTweenType.easeInQuad).setDelay(0.6f).setOnComplete( playBoom );
 	}
 
-	void playBoom(){
+	private void playBoom(){
 		// Make your own Dynamic Audio at http://leanaudioplay.dentedpixel.com
 		
 		AnimationCurve volumeCurve = new AnimationCurve( new Keyframe(0f, 1.163155f, 0f, -1f), new Keyframe(0.3098361f, 0f, 0f, 0f), new Keyframe(0.5f, 0.003524712f, 0f, 0f));

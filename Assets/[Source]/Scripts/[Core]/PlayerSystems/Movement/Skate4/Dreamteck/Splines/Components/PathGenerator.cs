@@ -12,7 +12,7 @@ namespace Dreamteck.Splines
     {
         public int slices
         {
-            get { return _slices; }
+            get => _slices;
             set
             {
                 if (value != _slices)
@@ -26,7 +26,7 @@ namespace Dreamteck.Splines
 
         public bool useShapeCurve
         {
-            get { return _useShapeCurve; }
+            get => _useShapeCurve;
             set
             {
                 if (value != _useShapeCurve)
@@ -45,7 +45,7 @@ namespace Dreamteck.Splines
 
         public float shapeExposure
         {
-            get { return _shapeExposure; }
+            get => _shapeExposure;
             set
             {
                 if (computer != null && value != _shapeExposure)
@@ -60,7 +60,7 @@ namespace Dreamteck.Splines
 
         public AnimationCurve shape
         {
-            get { return _shape; }
+            get => _shape;
             set
             {
                 if(_lastShape == null) _lastShape = new AnimationCurve();
@@ -126,7 +126,7 @@ namespace Dreamteck.Splines
         }
 
 
-        void GenerateVertices()
+        private void GenerateVertices()
         {
             int vertexCount = (_slices + 1) * clippedSamples.Length;
             AllocateMesh(vertexCount, _slices * (clippedSamples.Length-1) * 6);

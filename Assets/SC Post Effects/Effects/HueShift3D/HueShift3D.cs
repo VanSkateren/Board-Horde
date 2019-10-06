@@ -47,7 +47,7 @@ namespace SCPE
 
     internal sealed class HueShift3DRenderer : PostProcessEffectRenderer<HueShift3D>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

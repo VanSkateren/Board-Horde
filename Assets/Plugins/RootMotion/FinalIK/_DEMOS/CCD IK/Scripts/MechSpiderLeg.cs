@@ -23,20 +23,12 @@ namespace RootMotion.Demos {
 		private RaycastHit hit = new RaycastHit();
 
 		// Is the leg stepping?
-		public bool isStepping {
-			get {
-				return stepProgress < 1f;
-			}
-		}
+		public bool isStepping => stepProgress < 1f;
 
 		// Gets and sets the IK position for this leg
 		public Vector3 position {
-			get {
-				return ik.GetIKSolver().GetIKPosition();
-			}
-			set {
-				ik.GetIKSolver().SetIKPosition(value);
-			}
+			get => ik.GetIKSolver().GetIKPosition();
+			set => ik.GetIKSolver().SetIKPosition(value);
 		}
 		
         void Awake()

@@ -67,7 +67,7 @@ namespace RootMotion.FinalIK {
 		public FullBodyBipedIK ik;
 
 		// not using Time.deltaTime or Time.fixedDeltaTime here, because we don't know if animatePhysics is true or not on the character, so we have to keep track of time ourselves.
-		protected float deltaTime { get { return Time.time - lastTime; }}
+		protected float deltaTime => Time.time - lastTime;
 		protected abstract void OnModifyOffset();
 
 		protected float lastTime;

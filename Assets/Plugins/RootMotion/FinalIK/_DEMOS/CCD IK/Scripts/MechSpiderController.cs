@@ -13,11 +13,7 @@ namespace RootMotion.Demos {
 		public float speed = 6f; // Horizontal speed of the spider
 		public float turnSpeed = 30f; // The speed of turning the spider to align with the camera
 
-		public Vector3 inputVector {
-			get {
-				return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-			}
-		}
+		public Vector3 inputVector => new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
 		void Update() {
 			// Read the input

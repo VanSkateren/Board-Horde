@@ -32,13 +32,7 @@ namespace Dreamteck.Splines
                 _elements[0].endPoint = -1;
             }
         }
-        public Element[] elements
-        {
-            get
-            {
-                return _elements;
-            }
-        }
+        public Element[] elements => _elements;
         public Element[] _elements = new Element[0];
 
         public double moveStep
@@ -59,10 +53,7 @@ namespace Dreamteck.Splines
             public SplineComputer computer;
             public int startPoint
             {
-                get
-                {
-                    return _startPoint;
-                }
+                get => _startPoint;
                 set
                 {
                     if (value < 0) value = 0;
@@ -102,21 +93,9 @@ namespace Dreamteck.Splines
             [SerializeField]
             private int _endPoint = -1;
 
-            public double startPercent
-            {
-                get
-                {
-                    return (double)startPoint / (computer.pointCount - 1);
-                }
-            }
+            public double startPercent => (double)startPoint / (computer.pointCount - 1);
 
-            public double endPercent
-            {
-                get
-                {
-                    return (double)endPoint / (computer.pointCount - 1);
-                }
-            }
+            public double endPercent => (double)endPoint / (computer.pointCount - 1);
 
             public int span
             {

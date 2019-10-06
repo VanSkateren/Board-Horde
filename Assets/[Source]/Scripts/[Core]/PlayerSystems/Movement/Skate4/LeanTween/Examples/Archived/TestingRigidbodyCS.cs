@@ -6,7 +6,7 @@ public class TestingRigidbodyCS : MonoBehaviour {
 
 	private GameObject ball1;
 	// Use this for initialization
-	void Start () {
+	private void Start () {
 		ball1 = GameObject.Find("Sphere1");
 
 		LeanTween.rotateAround( ball1, Vector3.forward, -90f, 1.0f);
@@ -15,7 +15,7 @@ public class TestingRigidbodyCS : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	private void Update () {
 	
 	}
 }

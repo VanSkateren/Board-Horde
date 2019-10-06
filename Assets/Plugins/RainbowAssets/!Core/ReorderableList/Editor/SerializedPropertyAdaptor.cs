@@ -39,16 +39,12 @@ namespace Borodar.ReorderableList {
 		/// <returns>
 		/// Serialized property wrapper for array element.
 		/// </returns>
-		public SerializedProperty this[int index] {
-			get { return _arrayProperty.GetArrayElementAtIndex(index); }
-		}
+		public SerializedProperty this[int index] => _arrayProperty.GetArrayElementAtIndex(index);
 
 		/// <summary>
 		/// Gets the underlying serialized array property.
 		/// </summary>
-		public SerializedProperty arrayProperty {
-			get { return _arrayProperty; }
-		}
+		public SerializedProperty arrayProperty => _arrayProperty;
 
 		#region Construction
 
@@ -63,8 +59,8 @@ namespace Borodar.ReorderableList {
 			if (!arrayProperty.isArray)
 				throw new InvalidOperationException("Specified serialized propery is not an array.");
 
-			this._arrayProperty = arrayProperty;
-			this.FixedItemHeight = fixedItemHeight;
+			_arrayProperty = arrayProperty;
+			FixedItemHeight = fixedItemHeight;
 		}
 
 		/// <summary>
@@ -79,9 +75,7 @@ namespace Borodar.ReorderableList {
 		#region IReorderableListAdaptor - Implementation
 
 		/// <inheritdoc/>
-		public int Count {
-			get { return _arrayProperty.arraySize; }
-		}
+		public int Count => _arrayProperty.arraySize;
 
 		/// <inheritdoc/>
 		public virtual bool CanDrag(int index) {

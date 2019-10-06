@@ -39,7 +39,7 @@ namespace SCPE
 
     internal sealed class DangerRenderer : PostProcessEffectRenderer<Danger>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {
@@ -58,7 +58,8 @@ namespace SCPE
 
             sheet.properties.SetVector("_Params", new Vector4(settings.intensity, settings.size, 0, 0));
             sheet.properties.SetColor("_Color", settings.color);
-            if (settings.overlayTex.value) sheet.properties.SetTexture("_Overlay", settings.overlayTex);
+            var overlayTexture = settings.overlayTex.value == null ? RuntimeUtilities.blackTexture : settings.overlayTex.value;
+            sheet.properties.SetTexture("_Overlay", overlayTexture);
 
             context.command.BlitFullscreenTriangle(context.source, context.destination, sheet, 0);
         }

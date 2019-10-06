@@ -19,7 +19,7 @@ namespace UltEvents.Editor
         private static UltEventBase _Event;
 
         /// <summary>Indicates whether an event has been copied.</summary>
-        public static bool HasEvent { get { return _Event != null; } }
+        public static bool HasEvent => _Event != null;
 
         /************************************************************************************************************************/
 
@@ -64,7 +64,7 @@ namespace UltEvents.Editor
         private static PersistentCall _Call;
 
         /// <summary>Indicates whether a persistent call has been copied.</summary>
-        public static bool HasCall { get { return _Call != null; } }
+        public static bool HasCall => _Call != null;
 
         /************************************************************************************************************************/
 

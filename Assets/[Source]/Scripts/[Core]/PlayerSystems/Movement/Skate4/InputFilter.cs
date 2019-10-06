@@ -35,32 +35,32 @@ public class InputFilter
 
 	public InputFilter()
 	{
-		this.InitFilter();
+		InitFilter();
 	}
 
 	public float Filter(double val)
 	{
-		Array.Copy(this.filtered, 1, this.filtered, 2, 1);
-		Array.Copy(this.filtered, 0, this.filtered, 1, 1);
-		Array.Copy(this.raw, 1, this.raw, 2, 1);
-		Array.Copy(this.raw, 0, this.raw, 1, 1);
-		this.raw[0] = val;
-		this.filtered[0] = this.a0 * this.raw[0] + this.a1 * this.raw[1] + this.a2 * this.raw[2] + this.b1 * this.filtered[1] + this.b2 * this.filtered[2];
-		return (float)this.filtered[0];
+		Array.Copy(filtered, 1, filtered, 2, 1);
+		Array.Copy(filtered, 0, filtered, 1, 1);
+		Array.Copy(raw, 1, raw, 2, 1);
+		Array.Copy(raw, 0, raw, 1, 1);
+		raw[0] = val;
+		filtered[0] = a0 * raw[0] + a1 * raw[1] + a2 * raw[2] + b1 * filtered[1] + b2 * filtered[2];
+		return (float)filtered[0];
 	}
 
 	private void InitFilter()
 	{
-		this.omega = (double)Mathf.Tan((float)(3.14159274101257 * (this.cutoff / this.dataCollection))) / 0.802;
-		this.k1 = (double)Mathf.Sqrt(2f) * this.omega;
-		this.k2 = this.omega * this.omega;
-		this.a0 = this.k2 / (1 + this.k1 + this.k2);
-		this.a1 = 2 * this.a0;
-		this.a2 = this.a0;
-		this.k3 = this.a1 / this.k2;
-		this.b1 = -2 * this.a0 + this.k3;
-		this.b2 = 1 - 2 * this.a0 - this.k3;
-		this.raw = new double[3];
-		this.filtered = new double[3];
+		omega = (double)Mathf.Tan((float)(3.14159274101257 * (cutoff / dataCollection))) / 0.802;
+		k1 = (double)Mathf.Sqrt(2f) * omega;
+		k2 = omega * omega;
+		a0 = k2 / (1 + k1 + k2);
+		a1 = 2 * a0;
+		a2 = a0;
+		k3 = a1 / k2;
+		b1 = -2 * a0 + k3;
+		b2 = 1 - 2 * a0 - k3;
+		raw = new double[3];
+		filtered = new double[3];
 	}
 }

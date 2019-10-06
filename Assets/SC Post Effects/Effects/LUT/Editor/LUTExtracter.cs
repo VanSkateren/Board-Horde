@@ -14,25 +14,25 @@ namespace SCPE
         //Cached in- and outputs
         public static string InputPath
         {
-            get { return EditorPrefs.GetString("LUT_INPUT_PATH", ""); }
-            set { EditorPrefs.SetString("LUT_INPUT_PATH", value); }
+            get => EditorPrefs.GetString("LUT_INPUT_PATH", "");
+            set => EditorPrefs.SetString("LUT_INPUT_PATH", value);
         }
 
         public static string OutputPath
         {
-            get { return EditorPrefs.GetString("LUT_OUTPUT_PATH", ""); }
-            set { EditorPrefs.SetString("LUT_OUTPUT_PATH", value); }
+            get => EditorPrefs.GetString("LUT_OUTPUT_PATH", "");
+            set => EditorPrefs.SetString("LUT_OUTPUT_PATH", value);
         }
 
         public static bool AutoExtract
         {
-            get { return SessionState.GetBool("LUT_AUTO_EXTRACT", false); }
-            set { SessionState.SetBool("LUT_AUTO_EXTRACT", value); }
+            get => SessionState.GetBool("LUT_AUTO_EXTRACT", false);
+            set => SessionState.SetBool("LUT_AUTO_EXTRACT", value);
         }
         public static string InputName //Use to check if a file by this name has been changed
         {
-            get { return SessionState.GetString("LUT_INPUT_NAME", string.Empty); }
-            set { SessionState.SetString("LUT_INPUT_NAME", value); }
+            get => SessionState.GetString("LUT_INPUT_NAME", string.Empty);
+            set => SessionState.SetString("LUT_INPUT_NAME", value);
         }
 
         private static void ExecuteAutoExtract()

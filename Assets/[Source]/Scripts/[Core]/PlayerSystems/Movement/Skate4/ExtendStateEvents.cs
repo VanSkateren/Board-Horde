@@ -19,7 +19,7 @@ public class ExtendStateEvents : StateMachineBehaviour
 			PlayerController.Instance.SetLeftIKLerpTarget(0f);
 			PlayerController.Instance.SetRightIKLerpTarget(0f);
 			PlayerController.Instance.AnimSetGrinding(false);
-			float single = Mathf.Lerp(this._midTime, this._highTime, PlayerController.Instance.GetPopStrength());
+			float single = Mathf.Lerp(_midTime, _highTime, PlayerController.Instance.GetPopStrength());
 			PlayerController.Instance.OnInAir(single);
 			PlayerController.Instance.playerSM.SendEventExtendSM(0.3f);
 		}

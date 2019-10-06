@@ -92,7 +92,7 @@ public class NGSS_ContactShadows : MonoBehaviour
         }
     }
 
-    void AddCommandBuffers()
+    private void AddCommandBuffers()
     {
         computeShadowsCB = new CommandBuffer { name = "NGSS ContactShadows: Compute" };
         blendShadowsCB = new CommandBuffer { name = "NGSS ContactShadows: Mix" };
@@ -113,7 +113,7 @@ public class NGSS_ContactShadows : MonoBehaviour
         }
     }
 
-    void RemoveCommandBuffers()
+    private void RemoveCommandBuffers()
 	{
         _mMaterial = null;
         if (mCamera) { mCamera.RemoveCommandBuffer(mCamera.actualRenderingPath == RenderingPath.Forward ? CameraEvent.AfterDepthTexture : CameraEvent.BeforeLighting, computeShadowsCB); }
@@ -122,7 +122,7 @@ public class NGSS_ContactShadows : MonoBehaviour
         isInitialized = false;
     }
 
-	void Init()
+    private void Init()
 	{
         if (isInitialized || contactShadowsLight == null) { return; }
 
@@ -171,7 +171,7 @@ public class NGSS_ContactShadows : MonoBehaviour
         isInitialized = true;
 	}
 
-    bool IsNotSupported()
+    private bool IsNotSupported()
     {
 #if UNITY_2018_1_OR_NEWER
         return (SystemInfo.graphicsDeviceType == GraphicsDeviceType.OpenGLES2);
@@ -182,29 +182,29 @@ public class NGSS_ContactShadows : MonoBehaviour
 #endif
     }
 
-    void OnEnable()
+    private void OnEnable()
 	{
         if (IsNotSupported())
         {
             Debug.LogWarning("Unsupported graphics API, NGSS requires at least SM3.0 or higher and DX9 is not supported.", this);
-            this.enabled = false;
+            enabled = false;
             return;
         }
 
         Init();
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         if (isInitialized) { RemoveCommandBuffers(); }
     }
 
-    void OnApplicationQuit()
+    private void OnApplicationQuit()
 	{
         if (isInitialized) { RemoveCommandBuffers(); }
 	}
 
-    void OnPreRender()
+    private void OnPreRender()
 	{
         Init();
         if (isInitialized == false || contactShadowsLight == null) { return; }
@@ -230,7 +230,7 @@ public class NGSS_ContactShadows : MonoBehaviour
         if (contactShadowsLight.type != LightType.Directional) { mMaterial.EnableKeyword("NGSS_USE_LOCAL_CONTACT_SHADOWS"); } else { mMaterial.DisableKeyword("NGSS_USE_LOCAL_CONTACT_SHADOWS"); }
     }
     //uncomment me if using the screen space blit | comment me if sampling directly from internal NGSS libraries
-    void OnPostRender()
+    private void OnPostRender()
     {
         Shader.SetGlobalTexture("NGSS_ContactShadowsTexture", noMixTexture);
     }

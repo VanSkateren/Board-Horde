@@ -84,11 +84,7 @@ namespace RootMotion {
 			if (!isAnimated && t.parent != null) FindAnimatorRecursive(t.parent, false);
 		}
 
-		private bool isAnimated {
-			get {
-				return animator != null || legacy != null;
-			}
-		}
+		private bool isAnimated => animator != null || legacy != null;
 
 		// Workaround hack for the solver to work with animatePhysics
 		void FixedUpdate() {

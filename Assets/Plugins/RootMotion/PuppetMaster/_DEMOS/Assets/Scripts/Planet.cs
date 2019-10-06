@@ -13,7 +13,7 @@ namespace RootMotion.Demos {
 		private const float G = 6.672e-11f;
 
 		void Start() {
-			rigidbodies = (Rigidbody[])GameObject.FindObjectsOfType<Rigidbody>();
+			rigidbodies = (Rigidbody[])FindObjectsOfType<Rigidbody>();
 
 			foreach (Rigidbody r in rigidbodies) {
 				r.useGravity = false;

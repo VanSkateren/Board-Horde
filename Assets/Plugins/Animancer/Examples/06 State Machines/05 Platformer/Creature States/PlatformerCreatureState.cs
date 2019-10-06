@@ -23,7 +23,7 @@ namespace Animancer.Examples
         private PlatformerCreature _Creature;
 
         /// <summary>The <see cref="Examples.PlatformerCreature"/> that owns this state.</summary>
-        public PlatformerCreature Creature { get { return _Creature; } }
+        public PlatformerCreature Creature => _Creature;
 
         /// <summary>
         /// Sets the <see cref="Creature"/>.
@@ -45,18 +45,18 @@ namespace Animancer.Examples
         /// <remarks>
         /// This value is always 0 unless overridden by a child class.
         /// </remarks>
-        public virtual float MovementSpeed { get { return 0; } }
+        public virtual float MovementSpeed => 0;
 
         /************************************************************************************************************************/
 
         /// <summary>
         /// The <see cref="AnimancerComponent"/> of the <see cref="Creature"/>.
         /// </summary>
-        public AnimancerComponent Animancer { get { return _Creature.Animancer; } }
+        public AnimancerComponent Animancer => _Creature.Animancer;
 
         /************************************************************************************************************************/
 
-        public FSM.StateMachine<PlatformerCreatureState> OwnerStateMachine { get { return _Creature.StateMachine; } }
+        public FSM.StateMachine<PlatformerCreatureState> OwnerStateMachine => _Creature.StateMachine;
 
         /************************************************************************************************************************/
     }

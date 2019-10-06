@@ -9,7 +9,7 @@ namespace Dreamteck.Splines
     {
         public float offset
         {
-            get { return _offset; }
+            get => _offset;
             set
             {
                 if (value != _offset)

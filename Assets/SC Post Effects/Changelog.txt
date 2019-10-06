@@ -1,3 +1,12 @@
+1.0.1
+2019.2 compatibility verified. Note that 2019.1+ requires the LWRP/HDRP for VR compatibility.
+
+Fixed:
+- LUT
+	* Compiler error when building for OpenGLES platforms (mobile platforms remain unsupported, but this at least resolves the error)
+- Fog
+	* Radial toggle not taking effect when the gradient texture color mode is used
+
 1.0.0
 Initial version, read the full details here: http://staggart.xyz/sc-post-effects-leaves-beta
 

@@ -57,19 +57,20 @@ namespace Animancer
         /// <see cref="AnimancerLayer"/> Play or CrossFade methods on that layer. States controlled individually via
         /// methods in the <see cref="AnimancerState"/> itself will not register in this property.
         /// </summary>
-        public AnimancerState CurrentState { get { return _Layers[0].CurrentState; } }
+        public AnimancerState CurrentState => _Layers[0].CurrentState;
 
         /// <summary>
         /// The number of times the <see cref="CurrentState"/> has changed. By storing this value and later comparing
         /// the stored value to the current value, you can determine whether the state has been changed since then,
         /// even if the actual state is the same.
         /// </summary>
-        public int CurrentStateID { get { return _Layers[0].CurrentStateID; } }
+        public int CurrentStateID => _Layers[0].CurrentStateID;
 
         /************************************************************************************************************************/
 
         /// <summary>Indicates whether the <see cref="Graph"/> is currently playing.</summary>
-        public bool IsGraphPlaying { get { return _IsGraphPlaying; } }
+        public bool IsGraphPlaying => _IsGraphPlaying;
+
         private bool _IsGraphPlaying = true;
 
         /// <summary>The layers which each manage their own set of animations.</summary>
@@ -89,8 +90,8 @@ namespace Animancer
         /// <summary>Determines what time source is used to update the <see cref="Graph"/>.</summary>
         public DirectorUpdateMode UpdateMode
         {
-            get { return _Graph.GetTimeUpdateMode(); }
-            set { _Graph.SetTimeUpdateMode(value); }
+            get => _Graph.GetTimeUpdateMode();
+            set => _Graph.SetTimeUpdateMode(value);
         }
 
         /************************************************************************************************************************/
@@ -107,7 +108,7 @@ namespace Animancer
         /// </summary>
         public bool KeepPlayablesConnected
         {
-            get { return _KeepPlayablesConnected; }
+            get => _KeepPlayablesConnected;
             set
             {
                 _KeepPlayablesConnected = value;
@@ -230,7 +231,7 @@ namespace Animancer
         /// <summary>
         /// Returns true as long as the <see cref="Graph"/> hasn't been destroyed (such as by <see cref="Dispose"/>).
         /// </summary>
-        public bool IsValid { get { return _Graph.IsValid(); } }
+        public bool IsValid => _Graph.IsValid();
 
         /// <summary>
         /// Destroys the <see cref="Graph"/> and all its layers and states. This operation cannot be undone.
@@ -540,7 +541,7 @@ namespace Animancer
         }
 
         /// <summary>Returns null.</summary>
-        object IEnumerator.Current { get { return null; } }
+        object IEnumerator.Current => null;
 
         /// <summary>Does nothing.</summary>
         void IEnumerator.Reset() { }
@@ -1383,7 +1384,7 @@ namespace Animancer
         /// </summary>
         [Obsolete("Transitions should be started using Transition so they can choose between" +
             " Play, CrossFade, and CrossFadeFromStart on their own.", true)]
-        public AnimancerState CrossFade(IAnimancerTransition transition, float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
+        public AnimancerState CrossFade(IAnimancerTransition transition, float fadeDuration = DefaultFadeDuration)
         {
             return Transition(transition);
         }
@@ -1401,7 +1402,7 @@ namespace Animancer
         /// </summary>
         [Obsolete("Transitions should be started using Transition so they can choose between" +
             " Play, CrossFade, and CrossFadeFromStart on their own.", true)]
-        public AnimancerState CrossFadeFromStart(IAnimancerTransition transition, float fadeDuration = AnimancerPlayable.DefaultFadeDuration)
+        public AnimancerState CrossFadeFromStart(IAnimancerTransition transition, float fadeDuration = DefaultFadeDuration)
         {
             return Transition(transition);
         }

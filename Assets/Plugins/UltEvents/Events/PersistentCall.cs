@@ -25,10 +25,7 @@ namespace UltEvents
         private Object _Target;
 
         /// <summary>The object on which the persistent method is called.</summary>
-        public Object Target
-        {
-            get { return _Target; }
-        }
+        public Object Target => _Target;
 
         /************************************************************************************************************************/
 
@@ -36,10 +33,7 @@ namespace UltEvents
         private string _MethodName;
 
         /// <summary>The name of the persistent method.</summary>
-        public string MethodName
-        {
-            get { return _MethodName; }
-        }
+        public string MethodName => _MethodName;
 
         /************************************************************************************************************************/
 
@@ -47,10 +41,7 @@ namespace UltEvents
         internal PersistentArgument[] _PersistentArguments = NoArguments;
 
         /// <summary>The arguments which are passed to the method when it is invoked.</summary>
-        public PersistentArgument[] PersistentArguments
-        {
-            get { return _PersistentArguments; }
-        }
+        public PersistentArgument[] PersistentArguments => _PersistentArguments;
 
         /************************************************************************************************************************/
 

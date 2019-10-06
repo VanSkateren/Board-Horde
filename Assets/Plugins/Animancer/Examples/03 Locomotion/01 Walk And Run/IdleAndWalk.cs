@@ -17,15 +17,15 @@ namespace Animancer.Examples
 
         [SerializeField]
         private AnimancerComponent _Animancer;
-        public AnimancerComponent Animancer { get { return _Animancer; } }
+        public AnimancerComponent Animancer => _Animancer;
 
         [SerializeField]
         private AnimationClip _Idle;
-        public AnimationClip Idle { get { return _Idle; } }
+        public AnimationClip Idle => _Idle;
 
         [SerializeField]
         private AnimationClip _Walk;
-        public AnimationClip Walk { get { return _Walk; } }
+        public AnimationClip Walk => _Walk;
 
         /************************************************************************************************************************/
 

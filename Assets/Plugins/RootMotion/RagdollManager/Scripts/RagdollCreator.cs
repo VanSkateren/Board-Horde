@@ -89,14 +89,14 @@ namespace RootMotion.Dynamics {
 
 			Collider[] colliders = transform.GetComponents<Collider>();
 			foreach (Collider collider in colliders) {
-				if (collider != null && !collider.isTrigger) GameObject.DestroyImmediate(collider);
+				if (collider != null && !collider.isTrigger) DestroyImmediate(collider);
 			}
 
 			var joint = transform.GetComponent<Joint>();
-			if (joint != null) GameObject.DestroyImmediate(joint);
+			if (joint != null) DestroyImmediate(joint);
 
 			var rigidbody = transform.GetComponent<Rigidbody>();
-			if (rigidbody != null) GameObject.DestroyImmediate(rigidbody);
+			if (rigidbody != null) DestroyImmediate(rigidbody);
 		}
 
 		protected static void CreateCollider(Transform t, Vector3 startPoint, Vector3 endPoint, ColliderType colliderType, float lengthOverlap, float width) {

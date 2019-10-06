@@ -60,7 +60,7 @@ namespace SCPE
 
     internal sealed class RipplesRenderer : PostProcessEffectRenderer<Ripples>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

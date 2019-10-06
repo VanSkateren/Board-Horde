@@ -18,7 +18,7 @@ namespace KinematicCharacterController.Examples
 
         private void Start()
         {
-            _transform = this.transform;
+            _transform = transform;
             Director.timeUpdateMode = DirectorUpdateMode.Manual;
 
             Mover.MoverController = this;

@@ -71,13 +71,13 @@ namespace RootMotion.FinalIK {
 		/*
 		 * An arbitrary secondary axis that we get by simply switching the axes
 		 * */
-		public Vector3 secondaryAxis { get { return new Vector3(axis.y, axis.z ,axis.x); }}
+		public Vector3 secondaryAxis => new Vector3(axis.y, axis.z ,axis.x);
 
 		/*
 		 * Cross product of axis and secondaryAxis
 		 * */
-		public Vector3 crossAxis { get { return Vector3.Cross(axis, secondaryAxis); }}
-		
+		public Vector3 crossAxis => Vector3.Cross(axis, secondaryAxis);
+
 		/*
 		 * The default local rotation of the gameobject. By default stored in Awake.
 		 * */

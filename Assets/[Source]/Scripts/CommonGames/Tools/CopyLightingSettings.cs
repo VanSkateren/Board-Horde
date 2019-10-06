@@ -4,7 +4,7 @@ using UnityEditor;
 using System.Reflection;
 
 // Latest version at https://bitbucket.org/snippets/pschraut/LeykeL
-static class CopyLightingSettings
+internal static class CopyLightingSettings
 {
     //
     // Written by Peter Schraut
@@ -20,19 +20,19 @@ static class CopyLightingSettings
     //     https://bitbucket.org/snippets/pschraut/LeykeL
     //	
 
-    static SerializedObject s_SourceLightmapSettings;
-    static SerializedObject s_SourceRenderSettings;
+    private static SerializedObject s_SourceLightmapSettings;
+    private static SerializedObject s_SourceRenderSettings;
 
 #if UNITY_2018_2_OR_NEWER
-    const string k_CopySettingsMenuPath = "Window/Rendering/Copy Lighting Settings";
-    const string k_PasteSettingsMenuPath = "Window/Rendering/Paste Lighting Settings";
+private const string k_CopySettingsMenuPath = "Window/Rendering/Copy Lighting Settings";
+private const string k_PasteSettingsMenuPath = "Window/Rendering/Paste Lighting Settings";
 #else
     const string k_CopySettingsMenuPath = "Window/Lighting/Copy Settings";
     const string k_PasteSettingsMenuPath = "Window/Lighting/Paste Settings";
 #endif
 
     [MenuItem(k_CopySettingsMenuPath, priority = 200)]
-    static void CopySettings()
+    private static void CopySettings()
     {
         UnityEngine.Object lightmapSettings;
         if (!TryGetSettings(typeof(LightmapEditorSettings), "GetLightmapSettings", out lightmapSettings))
@@ -47,7 +47,7 @@ static class CopyLightingSettings
     }
 
     [MenuItem(k_PasteSettingsMenuPath, priority = 201)]
-    static void PasteSettings()
+    private static void PasteSettings()
     {
         UnityEngine.Object lightmapSettings;
         if (!TryGetSettings(typeof(LightmapEditorSettings), "GetLightmapSettings", out lightmapSettings))
@@ -64,12 +64,12 @@ static class CopyLightingSettings
     }
 
     [MenuItem(k_PasteSettingsMenuPath, validate = true)]
-    static bool PasteValidate()
+    private static bool PasteValidate()
     {
         return s_SourceLightmapSettings != null && s_SourceRenderSettings != null;
     }
 
-    static void CopyInternal(SerializedObject source, SerializedObject dest)
+    private static void CopyInternal(SerializedObject source, SerializedObject dest)
     {
         SerializedProperty prop = source.GetIterator();
         while (prop.Next(true))
@@ -91,7 +91,7 @@ static class CopyLightingSettings
         dest.ApplyModifiedProperties();
     }
 
-    static bool TryGetSettings(System.Type type, string methodName, out UnityEngine.Object settings)
+    private static bool TryGetSettings(System.Type type, string methodName, out UnityEngine.Object settings)
     {
         settings = null;
 

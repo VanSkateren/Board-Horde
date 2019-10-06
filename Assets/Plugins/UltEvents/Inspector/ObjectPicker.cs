@@ -254,10 +254,7 @@ namespace UltEvents.Editor
 
         /************************************************************************************************************************/
 
-        private bool HasSearchText
-        {
-            get { return !string.IsNullOrEmpty(_SearchText); }
-        }
+        private bool HasSearchText => !string.IsNullOrEmpty(_SearchText);
 
         /************************************************************************************************************************/
 
@@ -679,15 +676,9 @@ namespace UltEvents.Editor
                 ButtonStyle,
                 SelectedButtonStyle;
 
-            public static float SearchBarHeight
-            {
-                get { return EditorStyles.toolbar.fixedHeight; }
-            }
+            public static float SearchBarHeight => EditorStyles.toolbar.fixedHeight;
 
-            public static float LabelHeight
-            {
-                get { return ButtonStyle.fixedHeight; }
-            }
+            public static float LabelHeight => ButtonStyle.fixedHeight;
 
             static InternalGUI()
             {

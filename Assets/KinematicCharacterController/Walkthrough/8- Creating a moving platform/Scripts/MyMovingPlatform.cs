@@ -23,7 +23,7 @@ namespace KinematicCharacterController.Walkthrough.MovingPlatform
 
         private void Start()
         {
-            _transform = this.transform;
+            _transform = transform;
 
             Mover.MoverController = this;
         }

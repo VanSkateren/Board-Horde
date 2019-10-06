@@ -8,7 +8,7 @@ namespace RootMotion.Dynamics {
 	[CustomEditor(typeof(BipedRagdollCreator))]
 	public class BipedRagdollCreatorInspector : Editor {
 
-		public BipedRagdollCreator script { get { return target as BipedRagdollCreator; }}
+		public BipedRagdollCreator script => target as BipedRagdollCreator;
 
 		private GUIStyle miniLabelStyle = new GUIStyle();
 

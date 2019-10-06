@@ -11,6 +11,6 @@ public class FaceCamera : MonoBehaviour
 
 	private void Update()
 	{
-		base.transform.rotation = Quaternion.LookRotation(-this.camera.forward);
+		transform.rotation = Quaternion.LookRotation(-camera.forward);
 	}
 }

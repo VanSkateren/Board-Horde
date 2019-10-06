@@ -21,17 +21,17 @@ public class TurnOffTimer : MonoBehaviour
 
 	public void StartTimer()
 	{
-		this.startTimer = true;
-		this.startTime = Time.time;
+		startTimer = true;
+		startTime = Time.time;
 	}
 
 	private void Update()
 	{
-		this.timer += Time.deltaTime;
-		if (this.startTimer && !this.didSet && this.timer - this.startTime > this.duration && PlayerPrefs.GetInt("PlaySessions") < 2)
+		timer += Time.deltaTime;
+		if (startTimer && !didSet && timer - startTime > duration && PlayerPrefs.GetInt("PlaySessions") < 2)
 		{
-			this.target.SetActive(true);
-			this.didSet = true;
+			target.SetActive(true);
+			didSet = true;
 		}
 	}
 }

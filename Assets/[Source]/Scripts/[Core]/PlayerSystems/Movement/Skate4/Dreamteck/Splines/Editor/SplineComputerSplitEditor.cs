@@ -151,7 +151,7 @@ namespace Dreamteck.Splines
 
         SplineComputer CreateNewSpline()
         {
-            GameObject go = GameObject.Instantiate(computer.gameObject);
+            GameObject go = Object.Instantiate(computer.gameObject);
             go.name = computer.name + "_split";
             SplineUser[] users = go.GetComponents<SplineUser>();
             SplineComputer spline = go.GetComponent<SplineComputer>();
@@ -163,7 +163,7 @@ namespace Dreamteck.Splines
             }
             for(int i = go.transform.childCount-1; i>=0; i--)
             {
-                GameObject.DestroyImmediate(go.transform.GetChild(i).gameObject);
+                Object.DestroyImmediate(go.transform.GetChild(i).gameObject);
             }
             return spline;
         }

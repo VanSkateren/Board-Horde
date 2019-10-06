@@ -64,33 +64,33 @@ namespace Klak.Motion
         #region Public Properties And Methods
 
         public Interpolator interpolationType {
-            get { return _interpolator; }
-            set { _interpolator = value; }
+            get => _interpolator;
+            set => _interpolator = value;
         }
 
         public Transform target {
-            get { return _target; }
-            set { _target = value; }
+            get => _target;
+            set => _target = value;
         }
 
         public float positionSpeed {
-            get { return _positionSpeed; }
-            set { _positionSpeed = value; }
+            get => _positionSpeed;
+            set => _positionSpeed = value;
         }
 
         public float rotationSpeed {
-            get { return _rotationSpeed; }
-            set { _rotationSpeed = value; }
+            get => _rotationSpeed;
+            set => _rotationSpeed = value;
         }
 
         public float jumpDistance {
-            get { return _jumpDistance; }
-            set { _jumpDistance = value; }
+            get => _jumpDistance;
+            set => _jumpDistance = value;
         }
 
         public float jumpAngle {
-            get { return _jumpAngle; }
-            set { _jumpAngle = value; }
+            get => _jumpAngle;
+            set => _jumpAngle = value;
         }
 
         public void Snap()

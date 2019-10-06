@@ -32,12 +32,12 @@ public class TestingZLegacyExt : MonoBehaviour {
         Length
     }
 
-    void Awake()
+    private void Awake()
     {
         // LeanTween.init(3200); // This line is optional. Here you can specify the maximum number of tweens you will use (the default is 400).  This must be called before any use of LeanTween is made for it to be effective.
     }
 
-    void Start()
+    private void Start()
     {
         ltLogo = GameObject.Find("LeanTweenLogo").transform;
         LeanTween.delayedCall(1f, cycleThroughExamples);
@@ -46,24 +46,24 @@ public class TestingZLegacyExt : MonoBehaviour {
         //      alphaExample();
     }
 
-    void pauseNow()
+    private void pauseNow()
     {
         Time.timeScale = 0f;
         Debug.Log("pausing");
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         string label = useEstimatedTime ? "useEstimatedTime" : "timeScale:" + Time.timeScale;
         GUI.Label(new Rect(0.03f * Screen.width, 0.03f * Screen.height, 0.5f * Screen.width, 0.3f * Screen.height), label);
     }
 
-    void endlessCallback()
+    private void endlessCallback()
     {
         Debug.Log("endless");
     }
 
-    void cycleThroughExamples()
+    private void cycleThroughExamples()
     {
         if (exampleIter == 0)
         {

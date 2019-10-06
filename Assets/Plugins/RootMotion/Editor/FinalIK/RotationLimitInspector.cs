@@ -12,8 +12,8 @@ namespace RootMotion.FinalIK {
 		#region Public methods
 		
 		// Universal color pallettes
-		public static Color colorDefault { get { return new Color(0.0f, 1.0f, 1.0f, 1.0f); }}
-		
+		public static Color colorDefault => new Color(0.0f, 1.0f, 1.0f, 1.0f);
+
 		public static Color colorDefaultTransparent { 
 			get {
 				Color d = colorDefault;
@@ -21,11 +21,11 @@ namespace RootMotion.FinalIK {
 			}
 		}
 		
-		public static Color colorHandles { get { return new Color(1.0f, 0.5f, 0.25f, 1.0f); }}
-		public static Color colorRotationSphere { get { return new Color(1.0f, 1.0f, 1.0f, 0.1f); }}
-		public static Color colorInvalid { get { return new Color(1.0f, 0.3f, 0.3f, 1.0f); }}
-		public static Color colorValid { get { return new Color(0.2f, 1.0f, 0.2f, 1.0f); }}
-		
+		public static Color colorHandles => new Color(1.0f, 0.5f, 0.25f, 1.0f);
+		public static Color colorRotationSphere => new Color(1.0f, 1.0f, 1.0f, 0.1f);
+		public static Color colorInvalid => new Color(1.0f, 0.3f, 0.3f, 1.0f);
+		public static Color colorValid => new Color(0.2f, 1.0f, 0.2f, 1.0f);
+
 		/*
 		 * Draws the default rotation limit sphere to the scene
 		 * */

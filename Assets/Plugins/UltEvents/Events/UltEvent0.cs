@@ -42,14 +42,8 @@ namespace UltEvents
         /// </summary>
         public event Action PersistentCalls
         {
-            add
-            {
-                AddPersistentCall(value);
-            }
-            remove
-            {
-                RemovePersistentCall(value);
-            }
+            add => AddPersistentCall(value);
+            remove => RemovePersistentCall(value);
         }
 
         /************************************************************************************************************************/
@@ -79,8 +73,8 @@ namespace UltEvents
         /// </summary>
         protected override Delegate DynamicCallsBase
         {
-            get { return _DynamicCalls; }
-            set { _DynamicCalls = value as Action; }
+            get => _DynamicCalls;
+            set => _DynamicCalls = value as Action;
         }
 
         /************************************************************************************************************************/
@@ -174,8 +168,8 @@ namespace UltEvents
 
 #if UNITY_EDITOR
         /// <summary>[Editor-Only] The types of each of this event's parameters.</summary>
-        public override Type[] ParameterTypes { get { return Type.EmptyTypes; } }
-#endif
+        public override Type[] ParameterTypes => Type.EmptyTypes;
+        #endif
 
         /************************************************************************************************************************/
 

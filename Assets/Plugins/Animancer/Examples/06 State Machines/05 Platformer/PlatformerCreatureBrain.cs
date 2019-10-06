@@ -20,9 +20,9 @@ namespace Animancer.Examples
 
         [SerializeField]
         private PlatformerCreature _Creature;
-        public PlatformerCreature Creature { get { return _Creature; } }
+        public PlatformerCreature Creature => _Creature;
 
-        public AnimancerComponent Animancer { get { return _Creature.Animancer; } }
+        public AnimancerComponent Animancer => _Creature.Animancer;
 
         /************************************************************************************************************************/
 

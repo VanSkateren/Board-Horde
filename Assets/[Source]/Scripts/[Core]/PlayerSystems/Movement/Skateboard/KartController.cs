@@ -17,13 +17,13 @@ public class KartController : MonoBehaviour
     public List<ParticleSystem> primaryParticles = new List<ParticleSystem>();
     public List<ParticleSystem> secondaryParticles = new List<ParticleSystem>();
 
-    float speed, currentSpeed;
-    float rotate, currentRotate;
-    int driftDirection;
-    float driftPower;
-    int driftMode = 0;
-    bool first, second, third;
-    Color c;
+    private float speed, currentSpeed;
+    private float rotate, currentRotate;
+    private int driftDirection;
+    private float driftPower;
+    private int driftMode = 0;
+    private bool first, second, third;
+    private Color c;
 
     [Header("Bools")]
     public bool drifting;
@@ -46,7 +46,7 @@ public class KartController : MonoBehaviour
     public Transform flashParticles;
     public Color[] turboColors;
 
-    void Start()
+    private void Start()
     {
         postVolume = Camera.main.GetComponent<PostProcessVolume>();
         postProfile = postVolume.profile;
@@ -67,7 +67,7 @@ public class KartController : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -249,7 +249,7 @@ public class KartController : MonoBehaviour
         }
     }
 
-    void PlayFlashParticle(Color c)
+    private void PlayFlashParticle(Color c)
     {
         GameObject.Find("CM vcam1").GetComponent<CinemachineImpulseSource>().GenerateImpulse();
 
@@ -266,7 +266,7 @@ public class KartController : MonoBehaviour
         currentSpeed = x;
     }
 
-    void ChromaticAmount(float x)
+    private void ChromaticAmount(float x)
     {
         postProfile.GetSetting<ChromaticAberration>().intensity.value = x;
     }

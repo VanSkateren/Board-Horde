@@ -8,7 +8,7 @@ namespace Dreamteck
     {
         public Vector3 position
         {
-            get { return new Vector3(posX, posY, posZ); }
+            get => new Vector3(posX, posY, posZ);
             set
             {
                 setPosition = true;
@@ -20,7 +20,7 @@ namespace Dreamteck
         }
         public Quaternion rotation
         {
-            get { return new Quaternion(rotX, rotY, rotZ, rotW); }
+            get => new Quaternion(rotX, rotY, rotZ, rotW);
             set
             {
                 setRotation = true;
@@ -33,7 +33,7 @@ namespace Dreamteck
         }
         public Vector3 scale
         {
-            get { return new Vector3(scaleX, scaleY, scaleZ); }
+            get => new Vector3(scaleX, scaleY, scaleZ);
             set
             {
                 setScale = true;
@@ -45,7 +45,7 @@ namespace Dreamteck
 
         public Vector3 lossyScale
         {
-            get { return new Vector3(lossyScaleX, lossyScaleY, lossyScaleZ); }
+            get => new Vector3(lossyScaleX, lossyScaleY, lossyScaleZ);
             set
             {
                 setScale = true;
@@ -57,7 +57,7 @@ namespace Dreamteck
 
         public Vector3 localPosition
         {
-            get { return new Vector3(lposX, lposY, lposZ); }
+            get => new Vector3(lposX, lposY, lposZ);
             set
             {
                 setLocalPosition = true;
@@ -69,7 +69,7 @@ namespace Dreamteck
         }
         public Quaternion localRotation
         {
-            get { return new Quaternion(lrotX, lrotY, lrotZ, lrotW); }
+            get => new Quaternion(lrotX, lrotY, lrotZ, lrotW);
             set
             {
                 setLocalRotation = true;
@@ -87,13 +87,7 @@ namespace Dreamteck
         private bool setLocalPosition = false;
         private bool setLocalRotation = false;
 
-        public Transform transform
-        {
-            get
-            {
-                return _transform;
-            }
-        }
+        public Transform transform => _transform;
 
         [SerializeField]
         [HideInInspector]

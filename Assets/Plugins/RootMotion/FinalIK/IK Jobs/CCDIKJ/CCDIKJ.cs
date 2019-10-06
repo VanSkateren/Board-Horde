@@ -113,7 +113,7 @@ namespace RootMotion.FinalIK
 
             job.Dispose();
             graph.Destroy();
-            Object.Destroy(target);
+            Destroy(target);
         }
     }
 }

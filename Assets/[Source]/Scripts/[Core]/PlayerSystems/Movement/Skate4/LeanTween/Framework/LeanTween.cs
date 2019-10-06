@@ -275,17 +275,9 @@ public class LeanTween : MonoBehaviour {
         init(maxTweens);
     }
 
-    public static int maxSearch{
-        get{ 
-            return tweenMaxSearch;
-        }
-    }
+    public static int maxSearch => tweenMaxSearch;
 
-    public static int maxSimulataneousTweens{
-        get {
-            return maxTweens;
-        }
-    }
+    public static int maxSimulataneousTweens => maxTweens;
 
     /**
     * <summary>Find out how many tweens you have animating at a given time</summary>
@@ -365,7 +357,7 @@ public class LeanTween : MonoBehaviour {
     }
 
     public void Update(){
-        LeanTween.update();
+        update();
     }
 
     #if UNITY_5_4_OR_NEWER
@@ -2895,41 +2887,41 @@ public class LTBezier {
         bb = 3*(a+c) - 6*b;
         cc = 3*(b-a);
 
-        this.len = 1.0f / precision;
-        arcLengths = new float[(int)this.len + (int)1];
+        len = 1.0f / precision;
+        arcLengths = new float[(int)len + (int)1];
         arcLengths[0] = 0;
 
         Vector3 ov = a;
         Vector3 v;
         float clen = 0.0f;
-        for(int i = 1; i <= this.len; i++) {
+        for(int i = 1; i <= len; i++) {
             v = bezierPoint(i * precision);
             clen += (ov - v).magnitude;
-            this.arcLengths[i] = clen;
+            arcLengths[i] = clen;
             ov = v;
         }
-        this.length = clen;
+        length = clen;
     }
 
     private float map(float u) {
-        float targetLength = u * this.arcLengths[(int)this.len];
+        float targetLength = u * arcLengths[(int)len];
         int low = 0;
-        int high = (int)this.len;
+        int high = (int)len;
         int index = 0;
         while (low < high) {
             index = low + ((int)((high - low) / 2.0f) | 0);
-            if (this.arcLengths[index] < targetLength) {
+            if (arcLengths[index] < targetLength) {
                 low = index + 1;
             } else {
                 high = index;
             }
         }
-        if(this.arcLengths[index] > targetLength)
+        if(arcLengths[index] > targetLength)
             index--;
         if(index<0)
             index = 0;
 
-        return (index + (targetLength - arcLengths[index]) / (arcLengths[index + 1] - arcLengths[index])) / this.len;
+        return (index + (targetLength - arcLengths[index]) / (arcLengths[index + 1] - arcLengths[index])) / len;
     }
 
     private Vector3 bezierPoint(float t){
@@ -2995,11 +2987,7 @@ public class LTBezierPath {
     /**
     * @property {float} distance distance of the path (in unity units)
     */
-    public float distance{
-        get{
-            return length;
-        }
-    }
+    public float distance => length;
 
     /**
     * <summary>Retrieve a point along a path</summary>
@@ -3448,14 +3436,14 @@ public class LTSpline {
     }
 
     public void drawGizmo( Color color ) {
-        if( this.ptsAdjLength>=4){
+        if( ptsAdjLength>=4){
 
-            Vector3 prevPt = this.ptsAdj[0];
+            Vector3 prevPt = ptsAdj[0];
 
             Color colorBefore = Gizmos.color;
             Gizmos.color = color;
-            for (int i = 0; i < this.ptsAdjLength; i++) {
-                Vector3 currPt2 = this.ptsAdj[i];
+            for (int i = 0; i < ptsAdjLength; i++) {
+                Vector3 currPt2 = ptsAdj[i];
                 // Debug.Log("currPt2:"+currPt2);
 
                 Gizmos.DrawLine(prevPt, currPt2);
@@ -3519,12 +3507,12 @@ public class LTSpline {
         GL.Color(color);
 
         if (constantSpeed) {
-            if (this.ptsAdjLength >= 4) {
+            if (ptsAdjLength >= 4) {
 
-                Vector3 prevPt = this.ptsAdj[0];
+                Vector3 prevPt = ptsAdj[0];
 
-                for (int i = 0; i < this.ptsAdjLength; i++) {
-                    Vector3 currPt2 = this.ptsAdj[i];
+                for (int i = 0; i < ptsAdjLength; i++) {
+                    Vector3 currPt2 = ptsAdj[i];
                     GL.Vertex(prevPt);
                     GL.Vertex(currPt2);
 
@@ -3533,11 +3521,11 @@ public class LTSpline {
             }
 
         } else {
-            if (this.pts.Length >= 4) {
+            if (pts.Length >= 4) {
 
-                Vector3 prevPt = this.pts[0];
+                Vector3 prevPt = pts[0];
 
-                float split = 1f / ((float)this.pts.Length * 10f);
+                float split = 1f / ((float)pts.Length * 10f);
 
                 float iter = 0f;
                 while (iter < 1f) {
@@ -3562,12 +3550,12 @@ public class LTSpline {
     }
 
     public Vector3[] generateVectors(){
-        if (this.pts.Length >= 4) {
+        if (pts.Length >= 4) {
             List<Vector3> meshPoints = new List<Vector3>();
-            Vector3 prevPt = this.pts[0];
+            Vector3 prevPt = pts[0];
             meshPoints.Add(prevPt);
 
-            float split = 1f / ((float)this.pts.Length * 10f);
+            float split = 1f / ((float)pts.Length * 10f);
 
             float iter = 0f;
             while (iter < 1f) {
@@ -3653,7 +3641,7 @@ public class LTRect : System.Object{
 
     public LTRect(){
         reset();
-        this.rotateEnabled = this.alphaEnabled = true;
+        rotateEnabled = alphaEnabled = true;
         _rect = new Rect(0f,0f,1f,1f);
     }
 
@@ -3664,34 +3652,30 @@ public class LTRect : System.Object{
 
     public LTRect(float x, float y, float width, float height){
         _rect = new Rect(x,y,width,height);
-        this.alpha = 1.0f;
-        this.rotation = 0.0f;
-        this.rotateEnabled = this.alphaEnabled = false;
+        alpha = 1.0f;
+        rotation = 0.0f;
+        rotateEnabled = alphaEnabled = false;
     }
 
     public LTRect(float x, float y, float width, float height, float alpha){
         _rect = new Rect(x,y,width,height);
         this.alpha = alpha;
-        this.rotation = 0.0f;
-        this.rotateEnabled = this.alphaEnabled = false;
+        rotation = 0.0f;
+        rotateEnabled = alphaEnabled = false;
     }
 
     public LTRect(float x, float y, float width, float height, float alpha, float rotation){
         _rect = new Rect(x,y,width,height);
         this.alpha = alpha;
         this.rotation = rotation;
-        this.rotateEnabled = this.alphaEnabled = false;
+        rotateEnabled = alphaEnabled = false;
         if(rotation!=0.0f){
-            this.rotateEnabled = true;
+            rotateEnabled = true;
             resetForRotation();
         }
     }
 
-    public bool hasInitiliazed{
-        get{ 
-            return _id!=-1;
-        }
-    }
+    public bool hasInitiliazed => _id!=-1;
 
     public int id{
         get{ 
@@ -3708,17 +3692,17 @@ public class LTRect : System.Object{
     } 
 
     public void setId( int id, int counter){
-        this._id = id;
+        _id = id;
         this.counter = counter;
     }
 
     public void reset(){
-        this.alpha = 1.0f;
-        this.rotation = 0.0f;
-        this.rotateEnabled = this.alphaEnabled = false;
-        this.margin = Vector2.zero;
-        this.sizeByHeight = false;
-        this.useColor = false;
+        alpha = 1.0f;
+        rotation = 0.0f;
+        rotateEnabled = alphaEnabled = false;
+        margin = Vector2.zero;
+        sizeByHeight = false;
+        useColor = false;
     }
 
     public void resetForRotation(){
@@ -3729,23 +3713,23 @@ public class LTRect : System.Object{
     }
 
     public float x{
-        get{ return _rect.x; }
-        set{ _rect.x = value; }
+        get => _rect.x;
+        set => _rect.x = value;
     }
 
     public float y{
-        get{ return _rect.y; }
-        set{ _rect.y = value; }
+        get => _rect.y;
+        set => _rect.y = value;
     }
 
     public float width{
-        get{ return _rect.width; }
-        set{ _rect.width = value; }
+        get => _rect.width;
+        set => _rect.width = value;
     }
 
     public float height{
-        get{ return _rect.height; }
-        set{ _rect.height = value; }
+        get => _rect.height;
+        set => _rect.height = value;
     }
 
     public Rect rect{
@@ -3770,8 +3754,8 @@ public class LTRect : System.Object{
                 colorTouched = true;
             }
             if(fontScaleToFit){
-                if(this.useSimpleScale){
-                    style.fontSize = (int)(_rect.height*this.relativeRect.height);
+                if(useSimpleScale){
+                    style.fontSize = (int)(_rect.height*relativeRect.height);
                 }else{
                     style.fontSize = (int)_rect.height;
                 }
@@ -3779,9 +3763,7 @@ public class LTRect : System.Object{
             return _rect;
         }
 
-        set{
-            _rect = value;
-        }   
+        set => _rect = value;
     }
 
     public LTRect setStyle( GUIStyle style ){
@@ -3796,7 +3778,7 @@ public class LTRect : System.Object{
 
     public LTRect setColor( Color color ){
         this.color = color;
-        this.useColor = true;
+        useColor = true;
         return this;
     }
 
@@ -3806,7 +3788,7 @@ public class LTRect : System.Object{
     }
 
     public LTRect setLabel( String str ){
-        this.labelStr = str;
+        labelStr = str;
         return this;
     }
 
@@ -3818,7 +3800,7 @@ public class LTRect : System.Object{
 
     public LTRect setUseSimpleScale( bool useSimpleScale){
         this.useSimpleScale = useSimpleScale;
-        this.relativeRect = new Rect(0f,0f,Screen.width,Screen.height);
+        relativeRect = new Rect(0f,0f,Screen.width,Screen.height);
         return this;
     }
 

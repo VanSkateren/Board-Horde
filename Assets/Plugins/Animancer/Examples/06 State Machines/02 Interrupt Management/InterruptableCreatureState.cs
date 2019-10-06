@@ -42,7 +42,7 @@ namespace Animancer.Examples
 
         /************************************************************************************************************************/
 
-        public AnimancerComponent Animancer { get { return _Creature.Animancer; } }
+        public AnimancerComponent Animancer => _Creature.Animancer;
 
         /************************************************************************************************************************/
 

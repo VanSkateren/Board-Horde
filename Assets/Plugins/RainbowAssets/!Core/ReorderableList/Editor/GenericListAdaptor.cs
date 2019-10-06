@@ -33,9 +33,7 @@ namespace Borodar.ReorderableList {
 		/// <summary>
 		/// Gets the underlying list data structure.
 		/// </summary>
-		public IList<T> List {
-			get { return _list; }
-		}
+		public IList<T> List => _list;
 
 		/// <summary>
 		/// Gets element from list.
@@ -44,9 +42,7 @@ namespace Borodar.ReorderableList {
 		/// <returns>
 		/// The element.
 		/// </returns>
-		public T this[int index] {
-			get { return _list[index]; }
-		}
+		public T this[int index] => _list[index];
 
 		#region Construction
 
@@ -57,9 +53,9 @@ namespace Borodar.ReorderableList {
 		/// <param name="itemDrawer">Callback to draw list item.</param>
 		/// <param name="itemHeight">Height of list item in pixels.</param>
 		public GenericListAdaptor(IList<T> list, ReorderableListControl.ItemDrawer<T> itemDrawer, float itemHeight) {
-			this._list = list;
-			this._itemDrawer = itemDrawer ?? ReorderableListGUI.DefaultItemDrawer;
-			this.FixedItemHeight = itemHeight;
+			_list = list;
+			_itemDrawer = itemDrawer ?? ReorderableListGUI.DefaultItemDrawer;
+			FixedItemHeight = itemHeight;
 		}
 
 		#endregion
@@ -67,9 +63,7 @@ namespace Borodar.ReorderableList {
 		#region IReorderableListAdaptor - Implementation
 
 		/// <inheritdoc/>
-		public int Count {
-			get { return _list.Count; }
-		}
+		public int Count => _list.Count;
 
 		/// <inheritdoc/>
 		public virtual bool CanDrag(int index) {

@@ -25,10 +25,10 @@ namespace Sirenix.OdinValidator.Editor
     {
         protected override void DrawPropertyLayout(GUIContent label)
         {
-            for (int i = 0; i < this.Property.Children.Count; i++)
+            for (int i = 0; i < Property.Children.Count; i++)
             {
-                AutomatedValidationHook val = this.Property.Children[i].ValueEntry.WeakSmartValue as AutomatedValidationHook;
-                this.Property.Children[i].Draw(new GUIContent(val.Name));
+                AutomatedValidationHook val = Property.Children[i].ValueEntry.WeakSmartValue as AutomatedValidationHook;
+                Property.Children[i].Draw(new GUIContent(val.Name));
             }
         }
     }
@@ -42,7 +42,7 @@ namespace Sirenix.OdinValidator.Editor
         [OnValueChanged("SetDirty", includeChildren: true)]
         public List<AutomatedValidationHook> Hooks
         {
-            get { return OdinValidationConfig.Instance.Hooks; }
+            get => OdinValidationConfig.Instance.Hooks;
             set { }
         }
 
@@ -54,7 +54,7 @@ namespace Sirenix.OdinValidator.Editor
         [OnInspectorGUI, PropertyOrder(-200)]
         private void OnBeginGUI()
         {
-            this.scrollPos = GUILayout.BeginScrollView(this.scrollPos, GUIStyle.none);
+            scrollPos = GUILayout.BeginScrollView(scrollPos, GUIStyle.none);
             GUILayout.BeginVertical(new GUIStyle() { padding = new RectOffset(20, 20, 10, 10) });
             GUILayout.Label("Automate Validation", SirenixGUIStyles.SectionHeader);
             Rect rect = GUILayoutUtility.GetLastRect().AlignCenterY(20).AlignRight(120);
@@ -88,7 +88,7 @@ namespace Sirenix.OdinValidator.Editor
         [OnInspectorGUI]
         public void Draw()
         {
-            this.scrollPos = GUILayout.BeginScrollView(this.scrollPos, GUIStyle.none);
+            scrollPos = GUILayout.BeginScrollView(scrollPos, GUIStyle.none);
             GUILayout.BeginVertical(new GUIStyle() { padding = new RectOffset(20, 20, 10, 10) });
             GUILayout.Label("Validation Profiles", SirenixGUIStyles.SectionHeader);
             Rect rect = GUILayoutUtility.GetLastRect().AlignCenterY(20).AlignRight(120);
@@ -107,7 +107,7 @@ namespace Sirenix.OdinValidator.Editor
             rect.x -= rect.width + 5;
             if (GUI.Button(rect, new GUIContent("Automate Validation"), SirenixGUIStyles.MiniButton))
             {
-                this.pager.PushPage(new AutomateValidationEditor(), "Automate Validation");
+                pager.PushPage(new AutomateValidationEditor(), "Automate Validation");
             }
 
             SirenixEditorGUI.DrawThickHorizontalSeparator(4, 10);
@@ -118,7 +118,7 @@ namespace Sirenix.OdinValidator.Editor
                 {
                     if (item == null) continue;
 
-                    this.DrawCard(item);
+                    DrawCard(item);
                     GUILayout.Space(20);
                 }
             }
@@ -163,7 +163,7 @@ namespace Sirenix.OdinValidator.Editor
 
                 if (GUI.Button(rect, GUIContent.none, GUIStyle.none))
                 {
-                    this.pager.PushPage(new ValidationProfileManagerWindow.ValidationProfileEditorWrapper(new ValidationProfileEditor(profile)), profile.Name);
+                    pager.PushPage(new ValidationProfileManagerWindow.ValidationProfileEditorWrapper(new ValidationProfileEditor(profile)), profile.Name);
                 }
             }
             GUILayout.EndHorizontal();

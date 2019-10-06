@@ -40,107 +40,107 @@ public class CameraMovementController : MonoBehaviour
 
 	private void ActivateCameraMode()
 	{
-		if (PlayerController.Instance.inputController.player.GetButtonDown("Y") && !this._cameraMode)
+		if (PlayerController.Instance.inputController.player.GetButtonDown("Y") && !_cameraMode)
 		{
-			if (this.slowmo)
+			if (slowmo)
 			{
 				Time.timeScale = 1f;
-				this.slowmo = false;
+				slowmo = false;
 			}
 			else
 			{
 				Time.timeScale = 0.05f;
-				this.slowmo = true;
+				slowmo = true;
 			}
 		}
 		if (PlayerController.Instance.inputController.player.GetButtonDown("X"))
 		{
-			if (this._cameraMode)
+			if (_cameraMode)
 			{
-				this.freezeCamera = false;
-				this.photoCam.enabled = false;
-				this._cameraMode = false;
-				this.slowmo = false;
+				freezeCamera = false;
+				photoCam.enabled = false;
+				_cameraMode = false;
+				slowmo = false;
 				Time.timeScale = 1f;
 			}
 			else
 			{
-				this.movementDelay = true;
-				this.photoCam.transform.position = this.inGameCam.transform.position;
-				this.photoCam.transform.rotation = this.inGameCam.transform.rotation;
-				this.photoCam.enabled = true;
-				this._cameraMode = true;
-				this.slowmo = false;
+				movementDelay = true;
+				photoCam.transform.position = inGameCam.transform.position;
+				photoCam.transform.rotation = inGameCam.transform.rotation;
+				photoCam.enabled = true;
+				_cameraMode = true;
+				slowmo = false;
 				Time.timeScale = 1E-06f;
 			}
 		}
-		if (this._cameraMode && PlayerController.Instance.inputController.player.GetButtonDown("RB"))
+		if (_cameraMode && PlayerController.Instance.inputController.player.GetButtonDown("RB"))
 		{
-			if (!this.freezeCamera)
+			if (!freezeCamera)
 			{
-				this.slowmo = false;
+				slowmo = false;
 				Time.timeScale = 1f;
-				this.freezeCamera = true;
+				freezeCamera = true;
 				return;
 			}
-			this.movementDelay = true;
-			this._cameraMode = true;
-			this.slowmo = false;
-			this.freezeCamera = false;
+			movementDelay = true;
+			_cameraMode = true;
+			slowmo = false;
+			freezeCamera = false;
 			Time.timeScale = 1E-06f;
 		}
 	}
 
 	private void EndMovementDelay()
 	{
-		this.movementDelay = false;
-		this.delayTimer = 0f;
+		movementDelay = false;
+		delayTimer = 0f;
 	}
 
 	private void MoveCamera()
 	{
-		this.drop = PlayerController.Instance.inputController.player.GetAxis("LT") * Time.deltaTime * (1f / Time.timeScale);
-		this.lift = PlayerController.Instance.inputController.player.GetAxis("RT") * Time.deltaTime * (1f / Time.timeScale);
-		this.horizontal = PlayerController.Instance.inputController.player.GetAxis("LeftStickX") * Time.deltaTime * (1f / Time.timeScale);
-		this.vertical = PlayerController.Instance.inputController.player.GetAxis("LeftStickY") * Time.deltaTime * (1f / Time.timeScale);
-		this.drop *= this.movementSpeed;
-		this.lift *= this.movementSpeed;
-		this.horizontal *= this.movementSpeed;
-		this.vertical *= this.movementSpeed;
-		Vector3 vector3 = ((this.photoCam.transform.right * this.horizontal) + (this.photoCam.transform.forward * this.vertical)) + (Vector3.up * (this.lift - this.drop));
-		Transform transforms = this.photoCam.transform;
+		drop = PlayerController.Instance.inputController.player.GetAxis("LT") * Time.deltaTime * (1f / Time.timeScale);
+		lift = PlayerController.Instance.inputController.player.GetAxis("RT") * Time.deltaTime * (1f / Time.timeScale);
+		horizontal = PlayerController.Instance.inputController.player.GetAxis("LeftStickX") * Time.deltaTime * (1f / Time.timeScale);
+		vertical = PlayerController.Instance.inputController.player.GetAxis("LeftStickY") * Time.deltaTime * (1f / Time.timeScale);
+		drop *= movementSpeed;
+		lift *= movementSpeed;
+		horizontal *= movementSpeed;
+		vertical *= movementSpeed;
+		Vector3 vector3 = ((photoCam.transform.right * horizontal) + (photoCam.transform.forward * vertical)) + (Vector3.up * (lift - drop));
+		Transform transforms = photoCam.transform;
 		transforms.position = transforms.position + vector3;
-		this.stickX = PlayerController.Instance.inputController.player.GetAxis("RightStickX") * Time.deltaTime * (1f / Time.timeScale);
-		this.stickY = PlayerController.Instance.inputController.player.GetAxis("RightStickY") * Time.deltaTime * (1f / Time.timeScale);
-		this.photoCam.transform.rotation = Quaternion.AngleAxis(this.stickY * this.rotateSpeed, Vector3.ProjectOnPlane(-this.photoCam.transform.right, Vector3.up)) * this.photoCam.transform.rotation;
-		this.photoCam.transform.rotation = Quaternion.AngleAxis(this.stickX * this.rotateSpeed, Vector3.up) * this.photoCam.transform.rotation;
+		stickX = PlayerController.Instance.inputController.player.GetAxis("RightStickX") * Time.deltaTime * (1f / Time.timeScale);
+		stickY = PlayerController.Instance.inputController.player.GetAxis("RightStickY") * Time.deltaTime * (1f / Time.timeScale);
+		photoCam.transform.rotation = Quaternion.AngleAxis(stickY * rotateSpeed, Vector3.ProjectOnPlane(-photoCam.transform.right, Vector3.up)) * photoCam.transform.rotation;
+		photoCam.transform.rotation = Quaternion.AngleAxis(stickX * rotateSpeed, Vector3.up) * photoCam.transform.rotation;
 	}
 
 	private void MovePhotoCamToInGameCam()
 	{
-		this.photoCam.transform.position = this.inGameCam.transform.position;
-		this.photoCam.transform.rotation = this.inGameCam.transform.rotation;
+		photoCam.transform.position = inGameCam.transform.position;
+		photoCam.transform.rotation = inGameCam.transform.rotation;
 	}
 
 	private void Update()
 	{
-		this.ActivateCameraMode();
-		if (!this._cameraMode)
+		ActivateCameraMode();
+		if (!_cameraMode)
 		{
-			this.MovePhotoCamToInGameCam();
+			MovePhotoCamToInGameCam();
 			return;
 		}
-		if (this.movementDelay)
+		if (movementDelay)
 		{
-			this.delayTimer = this.delayTimer + Time.deltaTime * (1f / Time.timeScale);
-			if (this.delayTimer > 0.3f)
+			delayTimer = delayTimer + Time.deltaTime * (1f / Time.timeScale);
+			if (delayTimer > 0.3f)
 			{
-				this.EndMovementDelay();
+				EndMovementDelay();
 			}
 		}
-		else if (!this.freezeCamera)
+		else if (!freezeCamera)
 		{
-			this.MoveCamera();
+			MoveCamera();
 			return;
 		}
 	}

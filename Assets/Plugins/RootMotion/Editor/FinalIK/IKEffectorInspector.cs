@@ -35,7 +35,7 @@ namespace RootMotion.FinalIK {
 		}
 		
 		public static void DrawArrayElementLabelEffector(SerializedProperty effector, bool editHierarchy) {
-			GUILayout.Space(Inspector.indent);
+			GUILayout.Space(indent);
 			if (editHierarchy) {
 				EditorGUILayout.PropertyField(effector, new GUIContent(GetArrayName(effector.FindPropertyRelative("bones"), "Effector"), string.Empty), false, GUILayout.Width(100));
 			} else {
@@ -73,7 +73,7 @@ namespace RootMotion.FinalIK {
 					Handles.color = new Color(color.r, color.g, color.b, weight);
 
 					Handles.DrawLine(e.position, e.bone.position);
-					Inspector.SphereCap(0, e.bone.position, Quaternion.identity, size * 0.5f);
+					SphereCap(0, e.bone.position, Quaternion.identity, size * 0.5f);
 
 					// Manipulating position and rotation
 					if (e.target == null) {
@@ -87,8 +87,8 @@ namespace RootMotion.FinalIK {
 						}
 					}
 					
-					if (rotate) Inspector.CubeCap(0, e.position, e.rotation, size);
-					else Inspector.SphereCap(0, e.position, Quaternion.identity, size);
+					if (rotate) CubeCap(0, e.position, e.rotation, size);
+					else SphereCap(0, e.position, Quaternion.identity, size);
 				//}
 			}
 		}

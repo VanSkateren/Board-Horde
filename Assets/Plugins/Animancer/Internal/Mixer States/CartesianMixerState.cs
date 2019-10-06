@@ -49,15 +49,15 @@ namespace Animancer
         /// <summary>Gets or sets Parameter.x.</summary>
         public float ParameterX
         {
-            get { return Parameter.x; }
-            set { Parameter = new Vector2(value, Parameter.y); }
+            get => Parameter.x;
+            set => Parameter = new Vector2(value, Parameter.y);
         }
 
         /// <summary>Gets or sets Parameter.y.</summary>
         public float ParameterY
         {
-            get { return Parameter.y; }
-            set { Parameter = new Vector2(Parameter.x, value); }
+            get => Parameter.y;
+            set => Parameter = new Vector2(Parameter.x, value);
         }
 
         /************************************************************************************************************************/
@@ -179,7 +179,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of parameters being managed by this state.</summary>
-        protected override int ParameterCount { get { return 2; } }
+        protected override int ParameterCount => 2;
 
         /// <summary>Returns the name of a parameter being managed by this state.</summary>
         /// <exception cref="NotSupportedException">Thrown if this state doesn't manage any parameters.</exception>

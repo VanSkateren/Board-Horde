@@ -12,10 +12,7 @@ namespace GitHub.Unity
 
         public bool Initialized
         {
-            get
-            {
-                return initialized;
-            }
+            get => initialized;
             set
             {
                 initialized = value;
@@ -31,7 +28,7 @@ namespace GitHub.Unity
         private static string[] assemblies45 = { "GitHub.Api.45.dll", "GitHub.Unity.45.dll" };
 
         private const string GITHUB_UNITY_DISABLE = "GITHUB_UNITY_DISABLE";
-        private static bool IsDisabled { get { return Environment.GetEnvironmentVariable(GITHUB_UNITY_DISABLE) == "1"; } }
+        private static bool IsDisabled => Environment.GetEnvironmentVariable(GITHUB_UNITY_DISABLE) == "1";
 
         static ExtensionLoader()
         {

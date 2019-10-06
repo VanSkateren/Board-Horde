@@ -54,10 +54,7 @@ namespace Borodar.RainbowFolders.Editor
         // Properties
         //---------------------------------------------------------------------
 
-        public static GUIStyle ItemBgStyle
-        {
-            get { return _itemBgStyle ?? (_itemBgStyle = new GUIStyle("ProjectBrowserIconAreaBg")); }
-        }
+        public static GUIStyle ItemBgStyle => _itemBgStyle ?? (_itemBgStyle = new GUIStyle("ProjectBrowserIconAreaBg"));
 
         //---------------------------------------------------------------------
         // Delegates

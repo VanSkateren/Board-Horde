@@ -37,12 +37,12 @@ namespace RootMotion.FinalIK {
 					Handles.color = color;
 
 					if (rotate) {
-						if (Inspector.DotButton(solver.effectors[i].position, solver.effectors[i].rotation, size * 0.5f, size * 0.5f)) {
+						if (DotButton(solver.effectors[i].position, solver.effectors[i].rotation, size * 0.5f, size * 0.5f)) {
 							selectedEffector = i;
 							return;
 						}
 					} else {
-						if (Inspector.SphereButton(solver.effectors[i].position, solver.effectors[i].rotation, size, size)) {
+						if (SphereButton(solver.effectors[i].position, solver.effectors[i].rotation, size, size)) {
 							selectedEffector = i;
 							return;
 						}
@@ -62,10 +62,10 @@ namespace RootMotion.FinalIK {
 			
 			for (int i = 0; i < chain[index].nodes.Length - 1; i++) {
 				Handles.DrawLine(GetNodePosition(chain[index].nodes[i]), GetNodePosition(chain[index].nodes[i + 1]));
-				Inspector.SphereCap(0, GetNodePosition(chain[index].nodes[i]), Quaternion.identity, size);
+				SphereCap(0, GetNodePosition(chain[index].nodes[i]), Quaternion.identity, size);
 			}
 			
-			Inspector.SphereCap(0, GetNodePosition(chain[index].nodes[chain[index].nodes.Length - 1]), Quaternion.identity, size);
+			SphereCap(0, GetNodePosition(chain[index].nodes[chain[index].nodes.Length - 1]), Quaternion.identity, size);
 
 			for (int i = 0; i < chain[index].children.Length; i++) {
 				Handles.DrawLine(GetNodePosition(chain[index].nodes[chain[index].nodes.Length - 1]), GetNodePosition(chain[chain[index].children[i]].nodes[0]));

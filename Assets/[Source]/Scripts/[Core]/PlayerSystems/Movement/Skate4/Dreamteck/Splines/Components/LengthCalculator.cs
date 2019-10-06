@@ -52,12 +52,7 @@ namespace Dreamteck.Splines
         public float idealLength = 1f;
         private float _length = 0f;
         private float lastLength = 0f;
-        public float length
-        {
-            get {
-                return _length;
-            }
-        }
+        public float length => _length;
 
         protected override void Awake()
         {

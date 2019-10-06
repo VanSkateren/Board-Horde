@@ -64,7 +64,8 @@ namespace Animancer
         /// <summary>
         /// The node which receives the output of this node.
         /// </summary>
-        public override AnimancerNode Parent { get { return _Parent; } }
+        public override AnimancerNode Parent => _Parent;
+
         private AnimancerNode _Parent;
 
         /// <summary>
@@ -89,10 +90,10 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The parent's <see cref="Playable"/>.</summary>
-        protected override Playable ParentPlayable { get { return _Parent._Playable; } }
+        protected override Playable ParentPlayable => _Parent._Playable;
 
         /// <summary>The <see cref="Parent"/>'s <see cref="AnimancerNode.KeepChildrenConnected"/>.</summary>
-        public override bool StayConnectedWhenWeightless { get { return _Parent.KeepChildrenConnected; } }
+        public override bool StayConnectedWhenWeightless => _Parent.KeepChildrenConnected;
 
         /************************************************************************************************************************/
 
@@ -122,7 +123,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The root <see cref="AnimancerLayer"/> which this state is connected to.</summary>
-        public override AnimancerLayer Layer { get { return _Parent.Layer; } }
+        public override AnimancerLayer Layer => _Parent.Layer;
 
         /// <summary>
         /// The index of the <see cref="AnimancerLayer"/> this state is connected to (determined by the
@@ -130,7 +131,7 @@ namespace Animancer
         /// </summary>
         public int LayerIndex
         {
-            get { return _Parent.Layer.PortIndex; }
+            get => _Parent.Layer.PortIndex;
             set
             {
                 if (_Parent.Layer.PortIndex == value)
@@ -152,8 +153,8 @@ namespace Animancer
         /// </exception>
         public virtual AnimationClip Clip
         {
-            get { return null; }
-            set { throw new NotSupportedException(GetType() + " does not support setting the Clip."); }
+            get => null;
+            set => throw new NotSupportedException(GetType() + " does not support setting the Clip.");
         }
 
         /// <summary>The main object to show in the Inspector for this state (if any).</summary>
@@ -165,8 +166,8 @@ namespace Animancer
         /// </exception>
         public virtual Object MainObject
         {
-            get { return null; }
-            set { throw new NotSupportedException(GetType() + " does not support setting the MainObject."); }
+            get => null;
+            set => throw new NotSupportedException(GetType() + " does not support setting the MainObject.");
         }
 
         /************************************************************************************************************************/
@@ -185,7 +186,7 @@ namespace Animancer
         /// </summary>
         public object Key
         {
-            get { return _Key; }
+            get => _Key;
             set
             {
                 Root.UnregisterState(this);
@@ -232,7 +233,7 @@ namespace Animancer
         /// </example>
         public virtual bool IsPlaying
         {
-            get { return _IsPlaying; }
+            get => _IsPlaying;
             set
             {
                 if (_IsPlaying == value)
@@ -257,28 +258,16 @@ namespace Animancer
         /// Returns true if this state is playing and is at or fading towards a non-zero
         /// <see cref="AnimancerNode.Weight"/>.
         /// </summary>
-        public bool IsActive
-        {
-            get
-            {
-                return
-                    _IsPlaying &&
-                    TargetWeight > 0;
-            }
-        }
+        public bool IsActive =>
+            _IsPlaying &&
+            TargetWeight > 0;
 
         /// <summary>
         /// Returns true if this state is not playing and is at 0 <see cref="AnimancerNode.Weight"/>.
         /// </summary>
-        public bool IsStopped
-        {
-            get
-            {
-                return
-                    !_IsPlaying &&
-                    Weight == 0;
-            }
-        }
+        public bool IsStopped =>
+            !_IsPlaying &&
+            Weight == 0;
 
         /************************************************************************************************************************/
         #endregion
@@ -320,7 +309,7 @@ namespace Animancer
         /// </example>
         public virtual float Time
         {
-            get { return (float)_Playable.GetTime(); }
+            get => (float)_Playable.GetTime();
             set
             {
 
@@ -361,8 +350,8 @@ namespace Animancer
         /// </example>
         public float NormalizedTime
         {
-            get { return Time / Length; }
-            set { Time = value * Length; }
+            get => Time / Length;
+            set => Time = value * Length;
         }
 
         /************************************************************************************************************************/
@@ -394,8 +383,8 @@ namespace Animancer
         /// </example>
         public float Speed
         {
-            get { return (float)_Playable.GetSpeed(); }
-            set { _Playable.SetSpeed(value); }
+            get => (float)_Playable.GetSpeed();
+            set => _Playable.SetSpeed(value);
         }
 
         /// <summary>
@@ -423,8 +412,8 @@ namespace Animancer
         /// </example>
         public float NormalizedSpeed
         {
-            get { return Speed / Length; }
-            set { Speed = value * Length; }
+            get => Speed / Length;
+            set => Speed = value * Length;
         }
 
         /************************************************************************************************************************/
@@ -457,8 +446,8 @@ namespace Animancer
         /// </example>
         public float Duration
         {
-            get { return Length / Mathf.Abs(Speed); }
-            set { Speed = Length / value; }
+            get => Length / Mathf.Abs(Speed);
+            set => Speed = Length / value;
         }
 
         /// <summary>
@@ -508,10 +497,7 @@ namespace Animancer
         /// </summary>
         /// <exception cref="NotSupportedException">Thrown if this state doesn't have a length, as indicated by
         /// <see cref="HasLength"/>.</exception>
-        public virtual float Length
-        {
-            get { throw new NotSupportedException("Tried to access the Length of a state that doesn't have one: " + this); }
-        }
+        public virtual float Length => throw new NotSupportedException("Tried to access the Length of a state that doesn't have one: " + this);
 
         /// <summary>
         /// Does this state have a valid <see cref="Length"/> value?
@@ -520,12 +506,12 @@ namespace Animancer
         /// <see cref="AnimationClip.length"/>, however a state that mixes several other states will not have a length
         /// of its own.
         /// </summary>
-        public virtual bool HasLength { get { return false; } }
+        public virtual bool HasLength => false;
 
         /// <summary>
         /// Indicates whether this state will loop back to the start when it reaches the end.
         /// </summary>
-        public virtual bool IsLooping { get { return false; } }
+        public virtual bool IsLooping => false;
 
         /// <summary>
         /// A callback which is triggered when the animation reaches its end (not when the state is exited for
@@ -981,7 +967,7 @@ namespace Animancer
             /// <exception cref="ArgumentOutOfRangeException">Thrown when setting the value to a negative number.</exception>
             public float FadeDuration
             {
-                get { return _FadeDuration; }
+                get => _FadeDuration;
                 set
                 {
                     if (value < 0)
@@ -1011,13 +997,13 @@ namespace Animancer
             /// <para></para>
             /// By default, a serializable is used as its own <see cref="Key"/>, but this property can be overridden.
             /// </summary>
-            public virtual object Key { get { return this; } }
+            public virtual object Key => this;
 
             /// <summary>
             /// When a serializable is passed into <see cref="AnimancerPlayable.Transition"/>, this property
             /// determines whether it needs to fade in from the start of the animation.
             /// </summary>
-            public virtual bool CrossFadeFromStart { get { return false; } }
+            public virtual bool CrossFadeFromStart => false;
 
             /// <summary>
             /// Creates and returns a new <typeparamref name="TState"/> connected to the 'layer'.

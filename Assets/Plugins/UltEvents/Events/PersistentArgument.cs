@@ -135,7 +135,7 @@ namespace UltEvents
         /// <summary>The type identifier of this argument.</summary>
         public PersistentArgumentType Type
         {
-            get { return _Type; }
+            get => _Type;
             internal set
             {
                 _Int = 0;

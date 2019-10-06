@@ -55,10 +55,6 @@ namespace RootMotion.FinalIK {
 		 * Check if position has been changed by animation or any other external script. 
 		 * If not, consider the object to be static and offset only from the default rotation.
 		 * */
-		private bool positionChanged {
-			get {
-				return transform.localPosition != lastLocalPosition;
-			}
-		}
+		private bool positionChanged => transform.localPosition != lastLocalPosition;
 	}
 }

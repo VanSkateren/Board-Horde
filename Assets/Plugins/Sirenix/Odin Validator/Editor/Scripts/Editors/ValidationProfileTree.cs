@@ -25,20 +25,20 @@ namespace Sirenix.OdinValidator.Editor
         public OdinMenuItem GetMenuItemForObject(object obj)
         {
             OdinMenuItem result;
-            this.childMenuItemLookup.TryGetValue(obj, out result);
+            childMenuItemLookup.TryGetValue(obj, out result);
             return result;
         }
 
         public ValidationProfileTree()
         {
-            this.Config.DrawSearchToolbar = true;
-            this.Config.AutoHandleKeyboardNavigation = true;
-            this.Config.UseCachedExpandedStates = false;
+            Config.DrawSearchToolbar = true;
+            Config.AutoHandleKeyboardNavigation = true;
+            Config.UseCachedExpandedStates = false;
 
-            this.DefaultMenuStyle = OdinMenuStyle.TreeViewStyle;
-            this.childMenuItemLookup = new Dictionary<object, OdinMenuItem>();
+            DefaultMenuStyle = OdinMenuStyle.TreeViewStyle;
+            childMenuItemLookup = new Dictionary<object, OdinMenuItem>();
 
-            this.Selection.SelectionConfirmed += (x) =>
+            Selection.SelectionConfirmed += (x) =>
             {
                 OdinMenuItem sel = x.FirstOrDefault();
                 if (sel != null && sel.Value is ValidationProfileResult)
@@ -55,41 +55,41 @@ namespace Sirenix.OdinValidator.Editor
 
         public void AddProfileRecursive(IValidationProfile profile, OdinMenuItem menuItem = null)
         {
-            menuItem = menuItem ?? this.RootMenuItem;
+            menuItem = menuItem ?? RootMenuItem;
 
             OdinMenuItem newMenuItem = new OdinMenuItem(this, profile.Name, profile)
             {
                 Icon = profile.GetProfileIcon()
             };
 
-            this.childMenuItemLookup[profile] = newMenuItem;
+            childMenuItemLookup[profile] = newMenuItem;
 
             if (profile is ValidationProfileAsset)
             {
                 IValidationProfile wrappedProfile = (profile as ValidationProfileAsset).GetWrappedProfile();
-                this.childMenuItemLookup[wrappedProfile] = newMenuItem;
+                childMenuItemLookup[wrappedProfile] = newMenuItem;
             }
 
             menuItem.ChildMenuItems.Add(newMenuItem);
 
             foreach (IValidationProfile childProfile in profile.GetNestedValidationProfiles())
             {
-                this.AddProfileRecursive(childProfile, newMenuItem);
+                AddProfileRecursive(childProfile, newMenuItem);
             }
 
-            if (menuItem == this.RootMenuItem)
+            if (menuItem == RootMenuItem)
             {
-                this.EnumerateTree().ForEach(x => x.Toggled = true);
-                this.UpdateMenuTree();
+                EnumerateTree().ForEach(x => x.Toggled = true);
+                UpdateMenuTree();
             }
         }
 
         public void BuildTree(object obj)
         {
-            OdinMenuItem selected = this.Selection.FirstOrDefault();
+            OdinMenuItem selected = Selection.FirstOrDefault();
             if (selected != null && selected.Value != obj)
             {
-                OdinMenuItem menuItem = this.EnumerateTree().FirstOrDefault(n => n.Value == obj);
+                OdinMenuItem menuItem = EnumerateTree().FirstOrDefault(n => n.Value == obj);
                 if (menuItem != null)
                 {
                     menuItem.Select();
@@ -99,7 +99,7 @@ namespace Sirenix.OdinValidator.Editor
 
         public void Draw()
         {
-            this.DrawMenuTree();
+            DrawMenuTree();
         }
 
         public void AddResultToTree(ValidationProfileResult result)
@@ -129,28 +129,28 @@ namespace Sirenix.OdinValidator.Editor
                     }
                 }
 
-                this.childMenuItemLookup[result] = menuItem;
+                childMenuItemLookup[result] = menuItem;
 
-                if (result.Profile != null && scene.IsValid() && !this.childMenuItemLookup.ContainsKey(scene.path) && this.childMenuItemLookup.ContainsKey(result.Profile))
+                if (result.Profile != null && scene.IsValid() && !childMenuItemLookup.ContainsKey(scene.path) && childMenuItemLookup.ContainsKey(result.Profile))
                 {
                     OdinMenuItem sceneItem = new OdinMenuItem(this, scene.name, scene.path);
                     sceneItem.IconGetter = () => EditorIcons.UnityLogo;
                     sceneItem.Toggled = true;
-                    this.childMenuItemLookup.Add(scene.path, sceneItem);
-                    this.childMenuItemLookup[result.Profile].ChildMenuItems.Add(sceneItem);
+                    childMenuItemLookup.Add(scene.path, sceneItem);
+                    childMenuItemLookup[result.Profile].ChildMenuItems.Add(sceneItem);
                 }
 
-                if (scene.IsValid() && this.childMenuItemLookup.ContainsKey(scene.path))
+                if (scene.IsValid() && childMenuItemLookup.ContainsKey(scene.path))
                 {
-                    this.childMenuItemLookup[scene.path].ChildMenuItems.Add(menuItem);
+                    childMenuItemLookup[scene.path].ChildMenuItems.Add(menuItem);
                 }
-                else if (result.Profile == null || !this.childMenuItemLookup.ContainsKey(result.Profile))
+                else if (result.Profile == null || !childMenuItemLookup.ContainsKey(result.Profile))
                 {
-                    this.MenuItems.Add(menuItem);
+                    MenuItems.Add(menuItem);
                 }
                 else
                 {
-                    this.childMenuItemLookup[result.Profile].ChildMenuItems.Add(menuItem);
+                    childMenuItemLookup[result.Profile].ChildMenuItems.Add(menuItem);
                 }
 
                 if (result.Source != null)
@@ -175,7 +175,7 @@ namespace Sirenix.OdinValidator.Editor
         public void CleanProfile(IValidationProfile profile)
         {
             OdinMenuItem menuItem;
-            if (this.childMenuItemLookup.TryGetValue(profile, out menuItem))
+            if (childMenuItemLookup.TryGetValue(profile, out menuItem))
             {
                 List<OdinMenuItem> allProfileMenuItems = menuItem.GetChildMenuItemsRecursive(true).Where(x => x.Value is IValidationProfile).ToList();
 
@@ -185,22 +185,22 @@ namespace Sirenix.OdinValidator.Editor
                 }
             }
 
-            this.MarkDirty();
-            this.RebuildChildMenuItemLookup();
+            MarkDirty();
+            RebuildChildMenuItemLookup();
         }
 
         private void RebuildChildMenuItemLookup()
         {
-            this.childMenuItemLookup.Clear();
+            childMenuItemLookup.Clear();
 
-            foreach (OdinMenuItem item in this.EnumerateTree())
+            foreach (OdinMenuItem item in EnumerateTree())
             {
-                this.childMenuItemLookup[item.Value] = item;
+                childMenuItemLookup[item.Value] = item;
 
                 if (item.Value is ValidationProfileAsset)
                 {
                     IValidationProfile wrappedProfile = (item.Value as ValidationProfileAsset).GetWrappedProfile();
-                    this.childMenuItemLookup[wrappedProfile] = item;
+                    childMenuItemLookup[wrappedProfile] = item;
                 }
             }
         }
@@ -212,7 +212,7 @@ namespace Sirenix.OdinValidator.Editor
             int maxECount = 0;
             int maxWCount = 0;
 
-            foreach (OdinMenuItem mi in this.EnumerateTree())
+            foreach (OdinMenuItem mi in EnumerateTree())
             {
                 ValidationProfileResult result = mi.Value as ValidationProfileResult;
                 if (result == null || result.Results == null || result.Results.Count == 0) continue;
@@ -239,7 +239,7 @@ namespace Sirenix.OdinValidator.Editor
 
             wCountWidth = eCountWidth = Mathf.Max(eCountWidth, wCountWidth);
 
-            foreach (OdinMenuItem mi in this.EnumerateTree())
+            foreach (OdinMenuItem mi in EnumerateTree())
             {
                 if (!errorCount.ContainsKey(mi)) errorCount[mi] = 0;
                 if (!warningCount.ContainsKey(mi)) warningCount[mi] = 0;

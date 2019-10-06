@@ -39,7 +39,7 @@ public class PlayerState_Braking : PlayerState_OnBoard
 
 	public override void OnBrakeReleased()
 	{
-		base.DoTransition(typeof(PlayerState_Riding), null);
+		DoTransition(typeof(PlayerState_Riding), null);
 	}
 
 	public override void SetupDefinition(ref FSMStateType stateType, ref List<Type> children)

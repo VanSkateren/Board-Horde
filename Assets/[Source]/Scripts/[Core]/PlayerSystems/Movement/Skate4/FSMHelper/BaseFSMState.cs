@@ -14,7 +14,7 @@ namespace FSMHelper
 
 		public void _InternalSetOwnerLogic(FSMStateMachineLogic ownerLogic)
 		{
-			this.m_OwnerLogic = ownerLogic;
+			m_OwnerLogic = ownerLogic;
 		}
 
 		public virtual void BothTriggersReleased(InputController.TurningMode turningMode)
@@ -23,7 +23,7 @@ namespace FSMHelper
 
 		protected void BroadcastMessage(object[] args)
 		{
-			this.m_OwnerLogic.BroadcastMessage(args);
+			m_OwnerLogic.BroadcastMessage(args);
 		}
 
 		public virtual bool CanGrind()
@@ -38,7 +38,7 @@ namespace FSMHelper
 
 		public bool DoTransition(Type nextState, object[] args = null)
 		{
-			return this.m_OwnerLogic.DoTransition(nextState, args);
+			return m_OwnerLogic.DoTransition(nextState, args);
 		}
 
 		public virtual void Enter()
@@ -60,7 +60,7 @@ namespace FSMHelper
 
 		public BaseFSMState GetParentState()
 		{
-			return this.m_OwnerLogic.GetParentState();
+			return m_OwnerLogic.GetParentState();
 		}
 
 		public virtual StickInput GetPopStick()
@@ -70,7 +70,7 @@ namespace FSMHelper
 
 		public FSMStateMachine GetStateMachine()
 		{
-			return this.m_OwnerLogic.GetStateMachine();
+			return m_OwnerLogic.GetStateMachine();
 		}
 
 		public virtual bool IsCurrentSpline(SplineComputer p_spline)

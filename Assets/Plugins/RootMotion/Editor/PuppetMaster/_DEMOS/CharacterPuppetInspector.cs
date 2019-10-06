@@ -8,7 +8,7 @@ namespace RootMotion.Demos {
 	[CustomEditor(typeof(CharacterPuppet))]
 	public class CharacterPuppetInspector : Editor {
 
-		private CharacterPuppet script { get { return target as CharacterPuppet; }}
+		private CharacterPuppet script => target as CharacterPuppet;
 
 		private GameObject replace;
 
@@ -43,7 +43,7 @@ namespace RootMotion.Demos {
 			GameObject find = GameObject.Find(replace.name);
 			bool isSceneObject = find != null && find == replace;
 
-			GameObject instance = isSceneObject? replace: (GameObject)GameObject.Instantiate(replace, script.transform.position, script.transform.rotation);
+			GameObject instance = isSceneObject? replace: (GameObject)Instantiate(replace, script.transform.position, script.transform.rotation);
 			instance.transform.parent = script.characterAnimation.transform;
 			instance.name = replace.name;
 			instance.transform.position = script.transform.position;

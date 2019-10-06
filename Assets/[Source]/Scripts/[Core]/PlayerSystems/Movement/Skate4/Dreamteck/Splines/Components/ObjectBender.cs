@@ -14,7 +14,7 @@ namespace Dreamteck.Splines
         public enum Axis { X, Y, Z }
         public bool bend
         {
-            get { return _bend; }
+            get => _bend;
             set
             {
                if(_bend != value)
@@ -34,7 +34,7 @@ namespace Dreamteck.Splines
         private bool _bend = false;
         public Axis axis
         {
-            get { return _axis; }
+            get => _axis;
             set
             {
                 if (computer != null && value != _axis)
@@ -48,7 +48,7 @@ namespace Dreamteck.Splines
         }
         public bool autoNormals
         {
-            get { return _autoNormals; }
+            get => _autoNormals;
             set
             {
                 if (computer != null && value != _autoNormals)
@@ -61,7 +61,7 @@ namespace Dreamteck.Splines
 
         public Vector3 upVector
         {
-            get { return _upVector; }
+            get => _upVector;
             set
             {
                 if (computer != null && value != _upVector)
@@ -101,7 +101,7 @@ namespace Dreamteck.Splines
         private void GetObjects()
         {
             List<Transform> found = new List<Transform>();
-            GetTransformsRecursively(this.transform, ref found);
+            GetTransformsRecursively(transform, ref found);
             BendProperty[] newProperties = new BendProperty[found.Count];
             for (int i = 0; i < found.Count; i++)
             {
@@ -134,7 +134,7 @@ namespace Dreamteck.Splines
 
         private void CreateProperty(ref BendProperty property, Transform t)
         {
-            property = new BendProperty(t, t == this.transform); //Create a new bend property for each child
+            property = new BendProperty(t, t == transform); //Create a new bend property for each child
             for (int i = 0; i < bendProperties.Length; i++)
             {
                 //Search for properties that have the same trasform and copy their settings
@@ -149,10 +149,10 @@ namespace Dreamteck.Splines
                     break;
                 }
             }
-            if (t != this.transform)
+            if (t != transform)
             {
-                property.originalPosition = this.transform.InverseTransformPoint(t.position);
-                property.originalRotation = Quaternion.Inverse(this.transform.rotation) * t.rotation;
+                property.originalPosition = transform.InverseTransformPoint(t.position);
+                property.originalRotation = Quaternion.Inverse(transform.rotation) * t.rotation;
             }
         }
 
@@ -172,7 +172,7 @@ namespace Dreamteck.Splines
 
         private void CalculatePropertyBounds(ref BendProperty property)
         {
-            if (property.transform.transform == this.transform)
+            if (property.transform.transform == transform)
             {
                 if (0f < bounds.min.x) bounds.min.x = 0f;
                 if (0f < bounds.min.y) bounds.min.y = 0f;
@@ -195,7 +195,7 @@ namespace Dreamteck.Splines
                 for (int n = 0; n < property.editMesh.vertices.Length; n++)
                 {
                     Vector3 localPos = property.transform.TransformPoint(property.editMesh.vertices[n]);
-                    localPos = this.transform.InverseTransformPoint(localPos);
+                    localPos = transform.InverseTransformPoint(localPos);
                     if (localPos.x < bounds.min.x) bounds.min.x = localPos.x;
                     if (localPos.y < bounds.min.y) bounds.min.y = localPos.y;
                     if (localPos.z < bounds.min.z) bounds.min.z = localPos.z;
@@ -210,7 +210,7 @@ namespace Dreamteck.Splines
                 for (int n = 0; n < property.editColliderMesh.vertices.Length; n++)
                 {
                     Vector3 localPos = property.transform.TransformPoint(property.editColliderMesh.vertices[n]);
-                    localPos = this.transform.InverseTransformPoint(localPos);
+                    localPos = transform.InverseTransformPoint(localPos);
                     if (localPos.x < bounds.min.x) bounds.min.x = localPos.x;
                     if (localPos.y < bounds.min.y) bounds.min.y = localPos.y;
                     if (localPos.z < bounds.min.z) bounds.min.z = localPos.z;
@@ -224,7 +224,7 @@ namespace Dreamteck.Splines
             {
                 for (int n = 0; n < property.originalSpline.points.Length; n++)
                 {
-                    Vector3 localPos = this.transform.InverseTransformPoint(property.originalSpline.points[n].position);
+                    Vector3 localPos = transform.InverseTransformPoint(property.originalSpline.points[n].position);
                     if (localPos.x < bounds.min.x) bounds.min.x = localPos.x;
                     if (localPos.y < bounds.min.y) bounds.min.y = localPos.y;
                     if (localPos.z < bounds.min.z) bounds.min.z = localPos.z;
@@ -238,7 +238,7 @@ namespace Dreamteck.Splines
 
         public void GetPercent(BendProperty property)
         {
-            if (property.transform.transform != this.transform) property.positionPercent = GetPercentage(this.transform.InverseTransformPoint(property.transform.position));
+            if (property.transform.transform != transform) property.positionPercent = GetPercentage(transform.InverseTransformPoint(property.transform.position));
             else property.positionPercent = GetPercentage(Vector3.zero);
             if (property.editMesh != null)
             {
@@ -250,7 +250,7 @@ namespace Dreamteck.Splines
                 for (int i = 0; i < property.editMesh.vertexCount; i++)
                 {
                     Vector3 localVertex = property.transform.TransformPoint(property.editMesh.vertices[i]);
-                    localVertex = this.transform.InverseTransformPoint(localVertex);
+                    localVertex = transform.InverseTransformPoint(localVertex);
                     property.vertexPercents[i] = GetPercentage(localVertex);
                     
                 }
@@ -259,7 +259,7 @@ namespace Dreamteck.Splines
                     for (int i = 0; i < property.editColliderMesh.vertexCount; i++)
                     {
                         Vector3 localVertex = property.transform.TransformPoint(property.editColliderMesh.vertices[i]);
-                        localVertex = this.transform.InverseTransformPoint(localVertex);
+                        localVertex = transform.InverseTransformPoint(localVertex);
                         property.colliderVertexPercents[i] = GetPercentage(localVertex);
                     }
                 }
@@ -272,9 +272,9 @@ namespace Dreamteck.Splines
                 property.secondaryTangentPercents = new Vector3[points.Length];
                 for (int i = 0; i < points.Length; i++)
                 {
-                    property.splinePointPercents[i] = GetPercentage(this.transform.InverseTransformPoint(points[i].position));
-                    property.primaryTangentPercents[i] = GetPercentage(this.transform.InverseTransformPoint(points[i].tangent));
-                    property.secondaryTangentPercents[i] = GetPercentage(this.transform.InverseTransformPoint(points[i].tangent2));
+                    property.splinePointPercents[i] = GetPercentage(transform.InverseTransformPoint(points[i].position));
+                    property.primaryTangentPercents[i] = GetPercentage(transform.InverseTransformPoint(points[i].tangent));
+                    property.secondaryTangentPercents[i] = GetPercentage(transform.InverseTransformPoint(points[i].tangent2));
                 }
             }
         }
@@ -291,7 +291,7 @@ namespace Dreamteck.Splines
         public void UpdateReferences()
         {
 #if UNITY_EDITOR
-            if (PrefabUtility.GetPrefabType(this.gameObject) == PrefabType.Prefab) return;
+            if (PrefabUtility.GetPrefabType(gameObject) == PrefabType.Prefab) return;
 #endif
             if (_bend)
             {
@@ -304,7 +304,7 @@ namespace Dreamteck.Splines
                 Bend();
                 for (int i = 0; i < bendProperties.Length; i++)
                 {
-                    bendProperties[i].Apply(i > 0 || this.transform != rootUser.computer.transform);
+                    bendProperties[i].Apply(i > 0 || transform != rootUser.computer.transform);
                     bendProperties[i].Update();
                 }
             }
@@ -443,7 +443,7 @@ namespace Dreamteck.Splines
             if (!_bend) return;
             for (int i = 0; i < bendProperties.Length; i++)
             {
-                bendProperties[i].Apply(i > 0 || this.transform != rootUser.computer.transform);
+                bendProperties[i].Apply(i > 0 || transform != rootUser.computer.transform);
                 bendProperties[i].Update();
             }
         }
@@ -462,19 +462,13 @@ namespace Dreamteck.Splines
         public class BendProperty
         {
             public bool enabled = true;
-            public bool isValid
-            {
-                get
-                {
-                    return transform != null && transform.transform != null;
-                }
-            }
+            public bool isValid => transform != null && transform.transform != null;
             public TS_Transform transform;
             public bool applyRotation = true;
             public bool applyScale = true;
             public bool bendMesh
             {
-                get { return _bendMesh; }
+                get => _bendMesh;
                 set
                 {
                     if (value != _bendMesh)
@@ -494,7 +488,7 @@ namespace Dreamteck.Splines
             public bool generateLightmapUVs = false;
             public bool bendCollider
             {
-                get { return _bendCollider; }
+                get => _bendCollider;
                 set
                 {
                     if (value != _bendCollider)
@@ -510,7 +504,7 @@ namespace Dreamteck.Splines
             }
             public bool bendSpline
             {
-                get { return _bendSpline; }
+                get => _bendSpline;
                 set
                 {
                     _bendSpline = value;

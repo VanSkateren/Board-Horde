@@ -12,33 +12,32 @@ namespace Dreamteck.Splines
         {
             public Vector3 rotation
             {
-                get { return _rotation; }
-                set { _rotation = value;  }
+                get => _rotation;
+                set => _rotation = value;
             }
 
             public double center
             {
-                get { return _center; }
-                set { _center = DMath.Clamp01(value); }
+                get => _center;
+                set => _center = DMath.Clamp01(value);
             }
 
             public double from
             {
-                get { return _from; }
-                set { _from = DMath.Clamp01(value); }
+                get => _from;
+                set => _from = DMath.Clamp01(value);
             }
 
             public double to
             {
-                get { return _to; }
-                set { _to = DMath.Clamp01(value); }
-                
+                get => _to;
+                set => _to = DMath.Clamp01(value);
             }
 
             public bool loop
             {
-                get { return _loop; }
-                set { _loop = value; }
+                get => _loop;
+                set => _loop = value;
             }
 
             public double position
@@ -93,8 +92,8 @@ namespace Dreamteck.Splines
         public List<Key> keys = new List<Key>();
         public float blend
         {
-            get { return _blend; }
-            set { _blend = Mathf.Clamp01(value); }
+            get => _blend;
+            set => _blend = Mathf.Clamp01(value);
         }
         [SerializeField]
         private float _blend = 1f;

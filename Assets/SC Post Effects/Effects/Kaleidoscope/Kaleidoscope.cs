@@ -30,7 +30,7 @@ namespace SCPE
 
     internal sealed class KaleidoscopeRenderer : PostProcessEffectRenderer<Kaleidoscope>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

@@ -11,7 +11,7 @@ namespace RootMotion.Demos {
 	[CustomEditor(typeof(InteractionTarget))]
 	public class InteractionTargetInspector : Editor {
 
-		private InteractionTarget script { get { return target as InteractionTarget; }}
+		private InteractionTarget script => target as InteractionTarget;
 
 		private const string twistAxisLabel = " Twist Axis";
 		private const float size = 0.005f;

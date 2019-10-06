@@ -8,7 +8,7 @@ namespace RootMotion.Demos {
 	/// </summary>
 	public class CharacterAnimationMeleeDemo: CharacterAnimationThirdPerson {
 
-		CharacterMeleeDemo melee { get { return characterController as CharacterMeleeDemo; }}
+		CharacterMeleeDemo melee => characterController as CharacterMeleeDemo;
 
 		// Update the Animator with the current state of the character controller
 		protected override void Update() {

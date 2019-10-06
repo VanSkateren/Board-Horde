@@ -10,7 +10,7 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(TrigonometricIK))]
 	public class TrigonometricIKInspector : IKInspector {
 		
-		private TrigonometricIK script { get { return target as TrigonometricIK; }}
+		private TrigonometricIK script => target as TrigonometricIK;
 
 		protected override MonoBehaviour GetMonoBehaviour(out int executionOrder) {
 			executionOrder = 9997;

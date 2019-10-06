@@ -13,10 +13,7 @@ namespace Dreamteck.Splines
         private int selected = -1;
         private bool editOffset = false;
         Matrix4x4 matrix = new Matrix4x4();
-        public CustomOffsetModule.Key selectedKey
-        {
-            get { return group.keys[selected]; }
-        }
+        public CustomOffsetModule.Key selectedKey => group.keys[selected];
 
         public CustomOffsetModuleEditor(SplineUserEditor parent, CustomOffsetModule input) : base(parent)
         {

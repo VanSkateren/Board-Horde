@@ -102,12 +102,8 @@ namespace RootMotion {
 		/// <summary>
 		/// Gets a value indicating whether this <see cref="BipedReferences"/> is empty.
 		/// </summary>
-		public bool isEmpty {
-			get {
-				return IsEmpty(true);
-			}
-		}	
-		
+		public bool isEmpty => IsEmpty(true);
+
 		/// <summary>
 		/// Gets a value indicating whether this <see cref="BipedReferences"/> is empty. If includeRoot is false, returns true(is empty) even if root Transform has been assigned.
 		/// </summary>
@@ -166,11 +162,7 @@ namespace RootMotion {
 				this.includeEyes = includeEyes;
 			}
 			
-			public static AutoDetectParams Default {
-				get {
-					return new AutoDetectParams(true, true);
-				}
-			}
+			public static AutoDetectParams Default => new AutoDetectParams(true, true);
 		}
 		
 		/// <summary>

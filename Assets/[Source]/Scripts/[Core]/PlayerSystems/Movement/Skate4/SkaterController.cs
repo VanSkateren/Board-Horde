@@ -106,31 +106,19 @@ public class SkaterController : MonoBehaviour
 
 	public float maxComboAccelLerp;
 
-	public Vector3 BoardTargetVel
-	{
-		get
-		{
-			return this._boardTargetVel;
-		}
-	}
+	public Vector3 BoardTargetVel => _boardTargetVel;
 
-	public float crouchAmount
-	{
-		get
-		{
-			return this._crouchAmount;
-		}
-	}
+	public float crouchAmount => _crouchAmount;
 
 	public Transform LowestWheelTransform
 	{
 		get
 		{
-			if ((this.skaterRigidbody.position - this.animBoardFrontWheelTransform.position).magnitude > (this.skaterRigidbody.position - this.animBoardBackWheelTransform.position).magnitude)
+			if ((skaterRigidbody.position - animBoardFrontWheelTransform.position).magnitude > (skaterRigidbody.position - animBoardBackWheelTransform.position).magnitude)
 			{
-				return this.animBoardFrontWheelTransform;
+				return animBoardFrontWheelTransform;
 			}
-			return this.animBoardBackWheelTransform;
+			return animBoardBackWheelTransform;
 		}
 	}
 
@@ -142,7 +130,7 @@ public class SkaterController : MonoBehaviour
 	{
 		if (!Mathd.Vector3IsInfinityOrNan(PlayerController.Instance.BoardToTargetVector()))
 		{
-			Transform targetVector = this.skaterTransform;
+			Transform targetVector = skaterTransform;
 			targetVector.position = targetVector.position + PlayerController.Instance.BoardToTargetVector();
 		}
 	}
@@ -150,22 +138,22 @@ public class SkaterController : MonoBehaviour
 	public void AddTurnTorque(float p_value)
 	{
 		p_value /= 10f;
-		this.skaterRigidbody.AddTorque(this.skaterTransform.up * p_value, ForceMode.VelocityChange);
-		this.leanProxy.AddTorque(this.skaterTransform.up * p_value, ForceMode.VelocityChange);
+		skaterRigidbody.AddTorque(skaterTransform.up * p_value, ForceMode.VelocityChange);
+		leanProxy.AddTorque(skaterTransform.up * p_value, ForceMode.VelocityChange);
 	}
 
 	public void AddTurnTorque(float p_value, bool p_fast)
 	{
 		p_value = Mathf.Lerp(p_value / 10f, p_value, Mathf.Abs(p_value));
-		this.skaterRigidbody.AddTorque(this.skaterTransform.up * p_value, ForceMode.VelocityChange);
+		skaterRigidbody.AddTorque(skaterTransform.up * p_value, ForceMode.VelocityChange);
 	}
 
 	public void AddUpwardDisplacement(float p_timeStep)
 	{
-		if (!Mathd.Vector3IsInfinityOrNan(this.GetBoardDisplacement()))
+		if (!Mathd.Vector3IsInfinityOrNan(GetBoardDisplacement()))
 		{
-			Vector3 coMDisplacement = this.skaterTransform.up * PlayerController.Instance.GetCoMDisplacement(p_timeStep);
-			Transform transforms = this.skaterTransform;
+			Vector3 coMDisplacement = skaterTransform.up * PlayerController.Instance.GetCoMDisplacement(p_timeStep);
+			Transform transforms = skaterTransform;
 			transforms.position = transforms.position + coMDisplacement;
 		}
 	}
@@ -178,24 +166,24 @@ public class SkaterController : MonoBehaviour
 		{
 			single += componentsInChildren[i].mass;
 		}
-		this.totalSystemMass = single;
+		totalSystemMass = single;
 	}
 
 	public void CorrectVelocity()
 	{
-		float single = Vector3.Angle(Vector3.ProjectOnPlane(this.skaterRigidbody.velocity, PlayerController.Instance.GetGroundNormal()), Vector3.up);
+		float single = Vector3.Angle(Vector3.ProjectOnPlane(skaterRigidbody.velocity, PlayerController.Instance.GetGroundNormal()), Vector3.up);
 		float single1 = Vector3.Angle(PlayerController.Instance.GetGroundNormal(), Vector3.up);
 		if (PlayerController.Instance.IsGrounded() && single > 45f && single < 80f && single1 > 10f && single1 < 85f)
 		{
-			this.skaterRigidbody.velocity = Vector3.ProjectOnPlane(this.skaterRigidbody.velocity, PlayerController.Instance.GetGroundNormal());
+			skaterRigidbody.velocity = Vector3.ProjectOnPlane(skaterRigidbody.velocity, PlayerController.Instance.GetGroundNormal());
 		}
 	}
 
 	private void FixedUpdate()
 	{
-		this._currentRotationTarget = this.UpdateTargetRotation();
-		this._currentForwardTarget = this.UpdateTargetForward();
-		this.UpdateBoardTargetVel();
+		_currentRotationTarget = UpdateTargetRotation();
+		_currentForwardTarget = UpdateTargetForward();
+		UpdateBoardTargetVel();
 	}
 
 	public Vector3 GetBoardDisplacement()
@@ -205,18 +193,18 @@ public class SkaterController : MonoBehaviour
 
 	private void InAirRotation(float p_slerp)
 	{
-		Quaternion quaternion = Quaternion.Slerp(this._startRotation, this._newUp, p_slerp);
-		this.upVectorTransform.rotation = quaternion;
-		Quaternion rotation = Quaternion.FromToRotation(this.skaterTransform.up, this.upVectorTransform.up);
-		rotation *= this.skaterRigidbody.rotation;
-		this.skaterRigidbody.rotation = rotation;
-		this.leanProxy.rotation = rotation;
-		this.comboAccelLerp = this.skaterTransform.up;
+		Quaternion quaternion = Quaternion.Slerp(_startRotation, _newUp, p_slerp);
+		upVectorTransform.rotation = quaternion;
+		Quaternion rotation = Quaternion.FromToRotation(skaterTransform.up, upVectorTransform.up);
+		rotation *= skaterRigidbody.rotation;
+		skaterRigidbody.rotation = rotation;
+		leanProxy.rotation = rotation;
+		comboAccelLerp = skaterTransform.up;
 	}
 
 	private void InAirRotationLogic()
 	{
-		this.InAirRotation(Mathf.Clamp((Time.time - this._startTime) / this._duration, 0f, 1f));
+		InAirRotation(Mathf.Clamp((Time.time - _startTime) / _duration, 0f, 1f));
 	}
 
 	private void OnAnimatorIK(int p_layerIndex)
@@ -226,17 +214,17 @@ public class SkaterController : MonoBehaviour
 
 	public Vector3 PredictLanding(Vector3 p_popForce)
 	{
-		p_popForce = this.skaterRigidbody.velocity + p_popForce;
-		this._startTime = Time.time;
+		p_popForce = skaterRigidbody.velocity + p_popForce;
+		_startTime = Time.time;
 		Vector3 vector3 = Vector3.zero;
-		this._duration = PlayerController.Instance.boardController.trajectory.CalculateTrajectory(this.skaterTransform.position - (Vector3.up * 0.9765f), p_popForce, 50f, out vector3);
-		this._startRotation = this.skaterRigidbody.rotation;
-		this._startUpVector = this.skaterTransform.up;
-		this._landingPrediction = true;
-		this._newUp = Quaternion.FromToRotation(this._startUpVector, PlayerController.Instance.boardController.trajectory.PredictedGroundNormal);
-		this._newUp *= this.skaterRigidbody.rotation;
-		base.CancelInvoke("PreLandingEvent");
-		base.Invoke("PreLandingEvent", this._duration - 0.3f);
+		_duration = PlayerController.Instance.boardController.trajectory.CalculateTrajectory(skaterTransform.position - (Vector3.up * 0.9765f), p_popForce, 50f, out vector3);
+		_startRotation = skaterRigidbody.rotation;
+		_startUpVector = skaterTransform.up;
+		_landingPrediction = true;
+		_newUp = Quaternion.FromToRotation(_startUpVector, PlayerController.Instance.boardController.trajectory.PredictedGroundNormal);
+		_newUp *= skaterRigidbody.rotation;
+		CancelInvoke("PreLandingEvent");
+		Invoke("PreLandingEvent", _duration - 0.3f);
 		return vector3;
 	}
 
@@ -247,65 +235,65 @@ public class SkaterController : MonoBehaviour
 
 	public void RemoveTurnTorque(float p_value)
 	{
-		Vector3 pValue = this.skaterTransform.InverseTransformDirection(this.skaterRigidbody.angularVelocity);
+		Vector3 pValue = skaterTransform.InverseTransformDirection(skaterRigidbody.angularVelocity);
 		pValue.y *= p_value;
-		this.skaterRigidbody.angularVelocity = this.skaterTransform.TransformDirection(pValue);
+		skaterRigidbody.angularVelocity = skaterTransform.TransformDirection(pValue);
 	}
 
 	public void ResetRotationLerps()
 	{
-		this.leanProxy.rotation = this.skaterTransform.rotation;
-		this.comboAccelLerp = this.skaterTransform.up;
+		leanProxy.rotation = skaterTransform.rotation;
+		comboAccelLerp = skaterTransform.up;
 	}
 
 	public void SetPuppetMode(BehaviourPuppet.NormalMode p_mode)
 	{
-		this.behaviourPuppet.masterProps.normalMode = p_mode;
+		behaviourPuppet.masterProps.normalMode = p_mode;
 	}
 
 	private void UdpateSkater()
 	{
-		if (!Mathd.Vector3IsInfinityOrNan(this.GetBoardDisplacement()))
+		if (!Mathd.Vector3IsInfinityOrNan(GetBoardDisplacement()))
 		{
-			Transform boardDisplacement = this.skaterTransform;
-			boardDisplacement.position = boardDisplacement.position + this.GetBoardDisplacement();
-			this.skaterRigidbody.velocity = PlayerController.Instance.boardController.boardRigidbody.velocity;
+			Transform boardDisplacement = skaterTransform;
+			boardDisplacement.position = boardDisplacement.position + GetBoardDisplacement();
+			skaterRigidbody.velocity = PlayerController.Instance.boardController.boardRigidbody.velocity;
 		}
 	}
 
 	private void Update()
 	{
-		this._animSwitch = Mathf.Lerp(this._animSwitch, (PlayerController.Instance.IsSwitch ? 1f : 0f), Time.deltaTime * 10f);
-		PlayerController.Instance.AnimSetSwitch(this._animSwitch);
+		_animSwitch = Mathf.Lerp(_animSwitch, (PlayerController.Instance.IsSwitch ? 1f : 0f), Time.deltaTime * 10f);
+		PlayerController.Instance.AnimSetSwitch(_animSwitch);
 	}
 
 	private void UpdateBoardTargetVel()
 	{
-		this._boardTargetVel = (this.animBoardTargetTransform.position - this._boardTargetLastPos) / Time.deltaTime;
-		this._boardTargetLastPos = this.animBoardTargetTransform.position;
+		_boardTargetVel = (animBoardTargetTransform.position - _boardTargetLastPos) / Time.deltaTime;
+		_boardTargetLastPos = animBoardTargetTransform.position;
 	}
 
 	public void UpdatePositionDuringPop()
 	{
-		this._landingPrediction = false;
-		this._duration = 0f;
-		this._startTime = 0f;
+		_landingPrediction = false;
+		_duration = 0f;
+		_startTime = 0f;
 	}
 
 	public void UpdatePositions()
 	{
 		if (PlayerController.Instance.movementMaster == PlayerController.MovementMaster.Skater)
 		{
-			this.InAirRotationLogic();
+			InAirRotationLogic();
 			return;
 		}
 		if (PlayerController.Instance.movementMaster != PlayerController.MovementMaster.Target)
 		{
-			this.UdpateSkater();
+			UdpateSkater();
 		}
-		this._landingPrediction = false;
-		this._duration = 0f;
-		this._startTime = 0f;
+		_landingPrediction = false;
+		_duration = 0f;
+		_startTime = 0f;
 	}
 
 	public void UpdateRidingPositionsCOMTempWallie()
@@ -315,42 +303,42 @@ public class SkaterController : MonoBehaviour
 	public void UpdateSkaterPosFromComPos()
 	{
 		Vector3 vector3 = PlayerController.Instance.skaterController.skaterTransform.InverseTransformPoint(PlayerController.Instance.boardController.boardTransform.position);
-		Vector3 vector31 = this.skaterTransform.InverseTransformPoint(PlayerController.Instance.comController.transform.position);
+		Vector3 vector31 = skaterTransform.InverseTransformPoint(PlayerController.Instance.comController.transform.position);
 		if (vector31.y - vector3.y < 0.4f)
 		{
 			vector31 = new Vector3(vector31.x, vector3.y + 0.4f, vector31.z);
 		}
 		Vector3 vector32 = new Vector3(0f, vector31.y, 0f);
-		this.skaterTransform.position = this.skaterTransform.TransformPoint(vector32);
-		this.skaterRigidbody.velocity = PlayerController.Instance.comController.COMRigidbody.velocity;
+		skaterTransform.position = skaterTransform.TransformPoint(vector32);
+		skaterRigidbody.velocity = PlayerController.Instance.comController.COMRigidbody.velocity;
 	}
 
 	public void UpdateSkaterRotation(bool canRotate, bool manualling)
 	{
 		if (canRotate && PlayerController.Instance.IsGrounded())
 		{
-			Vector3 vector3 = this.pushBrakeForce / this.totalSystemMass;
-			float instance = 1f - PlayerController.Instance.boardController.xzRot / this.maxCrouchAtAngle;
-			this._crouchAmount = Mathf.SmoothStep(this._crouchAmount, instance, Time.fixedDeltaTime * this.crouchSmooth);
+			Vector3 vector3 = pushBrakeForce / totalSystemMass;
+			float instance = 1f - PlayerController.Instance.boardController.xzRot / maxCrouchAtAngle;
+			_crouchAmount = Mathf.SmoothStep(_crouchAmount, instance, Time.fixedDeltaTime * crouchSmooth);
 			Vector3 vector31 = -Physics.gravity;
 			Vector3 instance1 = PlayerController.Instance.boardController.acceleration - vector3;
 			Vector3 vector32 = vector31 + instance1;
-			this.comboAccelLerp = Vector3.RotateTowards(this.comboAccelLerp, vector32, 0.0174532924f * this.maxComboAccelLerp * Time.deltaTime, 5f * Time.deltaTime);
-			Debug.DrawRay(this.skaterTransform.position, vector32 * 0.1f, Color.red);
-			Debug.DrawRay(this.skaterTransform.position, this.skaterTransform.up, Color.green);
-			Debug.DrawRay(this.skaterTransform.position, this.comboAccelLerp * 0.1f, Color.blue);
-			this._pidController.Kp = this.Kp;
-			this._pidController.Ki = this.Ki;
-			this._pidController.Kd = this.Kd;
-			Vector3 vector33 = (!PlayerController.Instance.GetBoardBackwards() ? this.physicsBoardTransform.forward : -this.physicsBoardTransform.forward);
+			comboAccelLerp = Vector3.RotateTowards(comboAccelLerp, vector32, 0.0174532924f * maxComboAccelLerp * Time.deltaTime, 5f * Time.deltaTime);
+			Debug.DrawRay(skaterTransform.position, vector32 * 0.1f, Color.red);
+			Debug.DrawRay(skaterTransform.position, skaterTransform.up, Color.green);
+			Debug.DrawRay(skaterTransform.position, comboAccelLerp * 0.1f, Color.blue);
+			_pidController.Kp = Kp;
+			_pidController.Ki = Ki;
+			_pidController.Kd = Kd;
+			Vector3 vector33 = (!PlayerController.Instance.GetBoardBackwards() ? physicsBoardTransform.forward : -physicsBoardTransform.forward);
 			if (manualling)
 			{
 				vector33 = Vector3.ProjectOnPlane(vector33, PlayerController.Instance.GetGroundNormal());
 			}
-			Quaternion quaternion = Quaternion.LookRotation(vector33, this.comboAccelLerp);
-			Vector3 vector34 = this._pidController.ComputeRequiredAngularAcceleration(this.skaterRigidbody.rotation, quaternion, this.leanProxy.angularVelocity, Time.fixedDeltaTime);
-			this.leanProxy.AddTorque(vector34, ForceMode.Acceleration);
-			this.skaterRigidbody.rotation = this.leanProxy.rotation;
+			Quaternion quaternion = Quaternion.LookRotation(vector33, comboAccelLerp);
+			Vector3 vector34 = _pidController.ComputeRequiredAngularAcceleration(skaterRigidbody.rotation, quaternion, leanProxy.angularVelocity, Time.fixedDeltaTime);
+			leanProxy.AddTorque(vector34, ForceMode.Acceleration);
+			skaterRigidbody.rotation = leanProxy.rotation;
 		}
 	}
 
@@ -358,7 +346,7 @@ public class SkaterController : MonoBehaviour
 	{
 		if (p_canRotate)
 		{
-			this.skaterTransform.rotation = Quaternion.Slerp(this.skaterTransform.rotation, p_rot, Time.fixedDeltaTime * 50f);
+			skaterTransform.rotation = Quaternion.Slerp(skaterTransform.rotation, p_rot, Time.fixedDeltaTime * 50f);
 		}
 	}
 
@@ -366,9 +354,9 @@ public class SkaterController : MonoBehaviour
 	{
 		if (canRotate)
 		{
-			this.skaterTransform.rotation = Quaternion.Slerp(this.skaterTransform.rotation, this._currentRotationTarget, Time.fixedDeltaTime * 10f);
-			Quaternion rotation = Quaternion.FromToRotation(this.skaterTransform.forward, Vector3.ProjectOnPlane(this._currentForwardTarget, this.skaterTransform.up)) * this.skaterTransform.rotation;
-			this.skaterTransform.rotation = rotation;
+			skaterTransform.rotation = Quaternion.Slerp(skaterTransform.rotation, _currentRotationTarget, Time.fixedDeltaTime * 10f);
+			Quaternion rotation = Quaternion.FromToRotation(skaterTransform.forward, Vector3.ProjectOnPlane(_currentForwardTarget, skaterTransform.up)) * skaterTransform.rotation;
+			skaterTransform.rotation = rotation;
 		}
 	}
 
@@ -376,17 +364,17 @@ public class SkaterController : MonoBehaviour
 	{
 		if (!PlayerController.Instance.boardController.IsBoardBackwards)
 		{
-			return this.physicsBoardTransform.forward;
+			return physicsBoardTransform.forward;
 		}
-		return this.physicsBoardBackwardsTransform.forward;
+		return physicsBoardBackwardsTransform.forward;
 	}
 
 	private Quaternion UpdateTargetRotation()
 	{
 		if (!PlayerController.Instance.boardController.IsBoardBackwards)
 		{
-			return this.physicsBoardTransform.rotation;
+			return physicsBoardTransform.rotation;
 		}
-		return this.physicsBoardBackwardsTransform.rotation;
+		return physicsBoardBackwardsTransform.rotation;
 	}
 }

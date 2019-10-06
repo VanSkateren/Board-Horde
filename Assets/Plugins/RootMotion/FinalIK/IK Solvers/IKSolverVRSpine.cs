@@ -181,16 +181,17 @@ namespace RootMotion.FinalIK {
 			/// </summary>
 			[NonSerialized][HideInInspector] public Quaternion headRotationOffset = Quaternion.identity;
 
-			public VirtualBone pelvis { get { return bones[pelvisIndex]; }}
-			public VirtualBone firstSpineBone { get { return bones[spineIndex]; }}
+			public VirtualBone pelvis => bones[pelvisIndex];
+			public VirtualBone firstSpineBone => bones[spineIndex];
+
 			public VirtualBone chest { 
 				get { 
 					if (hasChest) return bones[chestIndex];
 					return bones[spineIndex];
 				}
 			}
-			private VirtualBone neck { get { return bones[neckIndex]; }}
-			public VirtualBone head { get { return bones[headIndex]; }}
+			private VirtualBone neck => bones[neckIndex];
+			public VirtualBone head => bones[headIndex];
 
 			[NonSerialized][HideInInspector] public Vector3 faceDirection;
 			[NonSerialized][HideInInspector] public Vector3 locomotionHeadPositionOffset;

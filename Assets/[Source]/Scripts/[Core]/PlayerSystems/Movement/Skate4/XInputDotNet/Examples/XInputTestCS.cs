@@ -3,18 +3,18 @@ using XInputDotNetPure; // Required in C#
 
 public class XInputTestCS : MonoBehaviour
 {
-    bool playerIndexSet = false;
-    PlayerIndex playerIndex;
-    GamePadState state;
-    GamePadState prevState;
+    private bool playerIndexSet = false;
+    private PlayerIndex playerIndex;
+    private GamePadState state;
+    private GamePadState prevState;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         // No need to initialize anything for the plugin
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         // SetVibration should be sent in a slower rate.
         // Set vibration according to triggers
@@ -22,7 +22,7 @@ public class XInputTestCS : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // Find a PlayerIndex, for a single player game
         // Will find the first controller that is connected ans use it
@@ -59,7 +59,7 @@ public class XInputTestCS : MonoBehaviour
         transform.localRotation *= Quaternion.Euler(0.0f, state.ThumbSticks.Left.X * 25.0f * Time.deltaTime, 0.0f);
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         string text = "Use left stick to turn the cube, hold A to change color\n";
         text += string.Format("IsConnected {0} Packet #{1}\n", state.IsConnected, state.PacketNumber);

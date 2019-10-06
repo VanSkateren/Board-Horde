@@ -143,7 +143,7 @@ namespace RootMotion.FinalIK {
 			public AxisDirection(Vector3 direction, Vector3 axis) {
 				this.direction = direction.normalized;
 				this.axis = axis.normalized;
-				this.dot = 0;
+				dot = 0;
 			}
 		}
 		

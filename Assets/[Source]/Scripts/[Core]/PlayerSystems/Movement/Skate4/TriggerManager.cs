@@ -94,14 +94,8 @@ public class TriggerManager : MonoBehaviour
 
 	public bool IsColliding
 	{
-		get
-		{
-			return this._isColliding;
-		}
-		set
-		{
-			this._isColliding = value;
-		}
+		get => _isColliding;
+		set => _isColliding = value;
 	}
 
 	public TriggerManager()
@@ -110,145 +104,145 @@ public class TriggerManager : MonoBehaviour
 
 	private void DetectCollisionPoint()
 	{
-		if (this.boardCollision.isColliding || this.backTruckCollision.isColliding || this.frontTruckCollision.isColliding)
+		if (boardCollision.isColliding || backTruckCollision.isColliding || frontTruckCollision.isColliding)
 		{
-			this._grindAngle = Vector3.Angle(Vector3.ProjectOnPlane(PlayerController.Instance.boardController.boardTransform.forward, this.grindUp), this.grindDirection);
-			if (this._grindAngle > 70f && this._grindAngle < 110f)
+			_grindAngle = Vector3.Angle(Vector3.ProjectOnPlane(PlayerController.Instance.boardController.boardTransform.forward, grindUp), grindDirection);
+			if (_grindAngle > 70f && _grindAngle < 110f)
 			{
-				if (this.boardCollision.isColliding)
+				if (boardCollision.isColliding)
 				{
-					this.grindContactPoint = this.boardCollision.lastCollision;
-					this.grindContact = true;
+					grindContactPoint = boardCollision.lastCollision;
+					grindContact = true;
 				}
-				else if (this.frontTruckCollision.isColliding)
+				else if (frontTruckCollision.isColliding)
 				{
-					this.grindContactPoint = this.frontTruckCollision.lastCollision;
-					this.grindContact = true;
+					grindContactPoint = frontTruckCollision.lastCollision;
+					grindContact = true;
 				}
-				else if (this.backTruckCollision.isColliding)
+				else if (backTruckCollision.isColliding)
 				{
-					this.grindContactPoint = this.backTruckCollision.lastCollision;
-					this.grindContact = true;
+					grindContactPoint = backTruckCollision.lastCollision;
+					grindContact = true;
 				}
 			}
-			else if (!this.backTruckCollision.isColliding && !this.frontTruckCollision.isColliding)
+			else if (!backTruckCollision.isColliding && !frontTruckCollision.isColliding)
 			{
-				this.grindContactPoint = this.boardCollision.lastCollision;
-				this.grindContact = true;
+				grindContactPoint = boardCollision.lastCollision;
+				grindContact = true;
 			}
-			else if (this.backTruckCollision.isColliding && this.frontTruckCollision.isColliding)
+			else if (backTruckCollision.isColliding && frontTruckCollision.isColliding)
 			{
-				this.grindContactPoint = (this.backTruckCollision.lastCollision + this.frontTruckCollision.lastCollision) / 2f;
-				this.grindContact = true;
+				grindContactPoint = (backTruckCollision.lastCollision + frontTruckCollision.lastCollision) / 2f;
+				grindContact = true;
 			}
-			else if (this.frontTruckCollision.isColliding)
+			else if (frontTruckCollision.isColliding)
 			{
-				this.grindContactPoint = this.frontTruckCollision.lastCollision;
-				this.grindContact = true;
+				grindContactPoint = frontTruckCollision.lastCollision;
+				grindContact = true;
 			}
-			else if (this.backTruckCollision.isColliding)
+			else if (backTruckCollision.isColliding)
 			{
-				this.grindContactPoint = this.backTruckCollision.lastCollision;
-				this.grindContact = true;
+				grindContactPoint = backTruckCollision.lastCollision;
+				grindContact = true;
 			}
 		}
 		else
 		{
-			this.grindContact = false;
+			grindContact = false;
 		}
-		if (!this.boardCollision.isColliding)
+		if (!boardCollision.isColliding)
 		{
-			this._boardCollision = false;
-		}
-		else
-		{
-			this._boardCollision = true;
-		}
-		if (!this.frontTruckCollision.isColliding)
-		{
-			this._frontTruckCollision = false;
+			_boardCollision = false;
 		}
 		else
 		{
-			this._frontTruckCollision = true;
+			_boardCollision = true;
 		}
-		if (this.backTruckCollision.isColliding)
+		if (!frontTruckCollision.isColliding)
 		{
-			this._backTruckCollision = true;
+			_frontTruckCollision = false;
+		}
+		else
+		{
+			_frontTruckCollision = true;
+		}
+		if (backTruckCollision.isColliding)
+		{
+			_backTruckCollision = true;
 			return;
 		}
-		this._backTruckCollision = false;
+		_backTruckCollision = false;
 	}
 
 	public void GrindTriggerCheck()
 	{
-		this._collidingThisFrame = false;
+		_collidingThisFrame = false;
 		for (int i = 0; i < 5; i++)
 		{
-			if (this._grindTriggers[i].Colliding)
+			if (_grindTriggers[i].Colliding)
 			{
-				this.grindDirection = this._grindTriggers[i].GrindDirection;
-				this.grindUp = this._grindTriggers[i].GrindUp;
-				this.grindRight = this._grindTriggers[i].GrindRight;
-				this.wasColliding = false;
-				this._collidingThisFrame = true;
-				this.activeGrinds[i] = true;
+				grindDirection = _grindTriggers[i].GrindDirection;
+				grindUp = _grindTriggers[i].GrindUp;
+				grindRight = _grindTriggers[i].GrindRight;
+				wasColliding = false;
+				_collidingThisFrame = true;
+				activeGrinds[i] = true;
 			}
 		}
-		if (!this._collidingThisFrame)
+		if (!_collidingThisFrame)
 		{
 			for (int j = 0; j < 5; j++)
 			{
-				if (this._grindTriggers[j].WasColliding)
+				if (_grindTriggers[j].WasColliding)
 				{
-					this.wasColliding = false;
-					this._collidingThisFrame = true;
+					wasColliding = false;
+					_collidingThisFrame = true;
 				}
 			}
 		}
-		if (this.wasColliding && !this.IsColliding && !this._collidingThisFrame)
+		if (wasColliding && !IsColliding && !_collidingThisFrame)
 		{
-			for (int k = 0; k < (int)this.activeGrinds.Length; k++)
+			for (int k = 0; k < (int)activeGrinds.Length; k++)
 			{
-				this.activeGrinds[k] = false;
+				activeGrinds[k] = false;
 			}
-			this.canOllie = false;
-			this.canNollie = false;
+			canOllie = false;
+			canNollie = false;
 			PlayerController.Instance.playerSM.OnGrindEndedSM();
-			this.swapped = false;
-			this.wasColliding = false;
+			swapped = false;
+			wasColliding = false;
 		}
-		if (!this.IsColliding && this._collidingThisFrame)
+		if (!IsColliding && _collidingThisFrame)
 		{
 			PlayerController.Instance.playerSM.OnGrindDetectedSM();
 			PlayerController.Instance.playerSM.OnGrindStaySM();
-			PlayerController.Instance.playerSM.SetSplineSM(this.spline);
+			PlayerController.Instance.playerSM.SetSplineSM(spline);
 		}
-		if (this.IsColliding && this._collidingThisFrame)
+		if (IsColliding && _collidingThisFrame)
 		{
 			PlayerController.Instance.playerSM.OnGrindStaySM();
 			if (PlayerController.Instance.boardController.boardRigidbody.velocity.magnitude >= 0.2f)
 			{
-				this._stallTimer = 0f;
+				_stallTimer = 0f;
 			}
 			else
 			{
-				this._stallTimer += Time.deltaTime;
-				if (this._stallTimer > this._maxStallTime)
+				_stallTimer += Time.deltaTime;
+				if (_stallTimer > _maxStallTime)
 				{
 					PlayerController.Instance.ForceBail();
 				}
 			}
 		}
-		if (this.IsColliding && !this._collidingThisFrame)
+		if (IsColliding && !_collidingThisFrame)
 		{
-			this.wasColliding = true;
+			wasColliding = true;
 		}
-		this.IsColliding = this._collidingThisFrame;
-		this.DetectCollisionPoint();
-		if (this.IsColliding)
+		IsColliding = _collidingThisFrame;
+		DetectCollisionPoint();
+		if (IsColliding)
 		{
-			this.grindDetection.DetectGrind(this.activeGrinds[0], this.activeGrinds[1], this.activeGrinds[2], this.activeGrinds[3], this.activeGrinds[4], this.grindUp, this.grindDirection, this.grindRight, ref this.canOllie, ref this.canNollie, this._backTruckCollision, this._frontTruckCollision, this._boardCollision);
+			grindDetection.DetectGrind(activeGrinds[0], activeGrinds[1], activeGrinds[2], activeGrinds[3], activeGrinds[4], grindUp, grindDirection, grindRight, ref canOllie, ref canNollie, _backTruckCollision, _frontTruckCollision, _boardCollision);
 		}
 	}
 

@@ -24,10 +24,7 @@ namespace Dreamteck.Splines {
         private SplineUser _user = null;
         public SplineUser user
         {
-            get
-            {
-                return _user;
-            }
+            get => _user;
             set
             {
                 if (Application.isPlaying && value != null && value.rootUser == this) return;
@@ -72,9 +69,7 @@ namespace Dreamteck.Splines {
 
         public SplineComputer computer
         {
-            get {
-                return address.root;
-            }
+            get => address.root;
             set
             {
                 if (_address == null)
@@ -105,10 +100,7 @@ namespace Dreamteck.Splines {
 
         public double resolution
         {
-            get
-            {
-                return _resolution;
-            }
+            get => _resolution;
             set
             {
                 if (value != _resolution)
@@ -123,10 +115,7 @@ namespace Dreamteck.Splines {
 
         public double clipFrom
         {
-            get
-            {
-                return _clipFrom;
-            }
+            get => _clipFrom;
             set
             {
                 if (value != _clipFrom)
@@ -145,10 +134,7 @@ namespace Dreamteck.Splines {
 
         public double clipTo
         {
-            get
-            {
-                return _clipTo;
-            }
+            get => _clipTo;
             set
             {
 
@@ -169,10 +155,7 @@ namespace Dreamteck.Splines {
 
         public bool averageResultVectors
         {
-            get
-            {
-                return _averageResultVectors;
-            }
+            get => _averageResultVectors;
             set
             {
                 if (value != _averageResultVectors)
@@ -186,10 +169,7 @@ namespace Dreamteck.Splines {
 
         public bool autoUpdate
         {
-            get
-            {
-                return _autoUpdate;
-            }
+            get => _autoUpdate;
             set
             {
                 if (value != _autoUpdate)
@@ -202,10 +182,7 @@ namespace Dreamteck.Splines {
 
         public bool loopSamples
         {
-            get
-            {
-                return _loopSamples;
-            }
+            get => _loopSamples;
             set
             {
                 if (value != _loopSamples)
@@ -218,10 +195,7 @@ namespace Dreamteck.Splines {
 
         public bool uniformSample
         {
-            get
-            {
-                return _uniformSample;
-            }
+            get => _uniformSample;
             set
             {
                 if (value != _uniformSample)
@@ -234,10 +208,7 @@ namespace Dreamteck.Splines {
 
         public bool uniformPreserveClipRange
         {
-            get
-            {
-                return _uniformPreserveClipRange;
-            }
+            get => _uniformPreserveClipRange;
             set
             {
                 if (value != _uniformPreserveClipRange)
@@ -342,13 +313,7 @@ namespace Dreamteck.Splines {
         private bool sample = false;
         private volatile bool getClippedSamples = false;
 
-        protected bool willRebuild
-        {
-            get
-            {
-                return rebuild;
-            }
-        }
+        protected bool willRebuild => rebuild;
 
         //Threading values
         [HideInInspector]
@@ -362,10 +327,7 @@ namespace Dreamteck.Splines {
         private volatile bool threadSample = false;
         private volatile bool threadWork = false;
         private bool _threadWorking = false;
-        public bool threadWorking
-        {
-            get { return _threadWorking; }
-        }
+        public bool threadWorking => _threadWorking;
         private object locker = new object();
 
 #if UNITY_EDITOR
@@ -508,7 +470,7 @@ namespace Dreamteck.Splines {
 #endif
         }
 
-        IEnumerator UpdateSubscribersRoutine()
+        private IEnumerator UpdateSubscribersRoutine()
         {
             while (rebuild) yield return null;
             UpdateSubscribers();
@@ -526,7 +488,7 @@ namespace Dreamteck.Splines {
                 GetClippedSamples();
             }
 #if UNITY_EDITOR
-            if (PrefabUtility.GetPrefabType(this.gameObject) == PrefabType.Prefab) return;
+            if (PrefabUtility.GetPrefabType(gameObject) == PrefabType.Prefab) return;
 #endif
             if (threadWork) {
 #if !UNITY_WSA
@@ -625,7 +587,7 @@ namespace Dreamteck.Splines {
             if (updateMethod == UpdateMethod.FixedUpdate) RunMain();
         }
 
-        void UpdateSubscribers()
+        private void UpdateSubscribers()
         {
             for (int i = subscribers.Length - 1; i >= 0; i--)
             {
@@ -679,7 +641,7 @@ namespace Dreamteck.Splines {
             }
 
             //Handle rebuilding
-            if (rebuild && this.enabled)
+            if (rebuild && enabled)
             {
                 if (_threadWorking)
                 {

@@ -57,17 +57,11 @@ namespace Sirenix.OdinValidator.Editor
         
         public static bool HookHasExecuted
         {
-            get
-            {
-                return SessionState.GetBool("OdinValidator_ProjectStartHookHasExecuted", false);
-            }
-            set
-            {
-                SessionState.SetBool("OdinValidator_ProjectStartHookHasExecuted", value);
-            }
+            get => SessionState.GetBool("OdinValidator_ProjectStartHookHasExecuted", false);
+            set => SessionState.SetBool("OdinValidator_ProjectStartHookHasExecuted", value);
         }
 
-        public string Name { get { return "On Project Startup"; } }
+        public string Name => "On Project Startup";
 
         public void Hook(Action run)
         {

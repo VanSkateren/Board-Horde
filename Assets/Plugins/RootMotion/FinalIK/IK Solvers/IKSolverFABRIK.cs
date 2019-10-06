@@ -103,7 +103,9 @@ using System;
 		/*
 		 * If true, the solver will work with 0 length bones
 		 * */
-		protected override bool boneLengthCanBeZero { get { return false; }} // Returning false here also ensures that the bone lengths will be calculated
+		protected override bool boneLengthCanBeZero // Returning false here also ensures that the bone lengths will be calculated
+			=>
+				false;
 
 		/*
 		 * Interpolates the joint position to match the bone's length

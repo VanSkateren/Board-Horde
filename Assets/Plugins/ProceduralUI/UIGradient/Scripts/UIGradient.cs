@@ -53,10 +53,7 @@ namespace JoshH.UI
 
         public UIGradientBlendMode BlendMode
         {
-            get
-            {
-                return blendMode;
-            }
+            get => blendMode;
 
             set
             {
@@ -67,10 +64,7 @@ namespace JoshH.UI
 
         public float Intensity
         {
-            get
-            {
-                return intensity;
-            }
+            get => intensity;
 
             set
             {
@@ -81,10 +75,7 @@ namespace JoshH.UI
 
         public UIGradientType GradientType
         {
-            get
-            {
-                return gradientType;
-            }
+            get => gradientType;
 
             set
             {
@@ -95,10 +86,7 @@ namespace JoshH.UI
 
         public Color LinearColor1
         {
-            get
-            {
-                return linearColor1;
-            }
+            get => linearColor1;
 
             set
             {
@@ -109,10 +97,7 @@ namespace JoshH.UI
 
         public Color LinearColor2
         {
-            get
-            {
-                return linearColor2;
-            }
+            get => linearColor2;
 
             set
             {
@@ -123,10 +108,7 @@ namespace JoshH.UI
 
         public Color CornerColorUpperLeft
         {
-            get
-            {
-                return cornerColorUpperLeft;
-            }
+            get => cornerColorUpperLeft;
 
             set
             {
@@ -137,10 +119,7 @@ namespace JoshH.UI
 
         public Color CornerColorUpperRight
         {
-            get
-            {
-                return cornerColorUpperRight;
-            }
+            get => cornerColorUpperRight;
 
             set
             {
@@ -151,10 +130,7 @@ namespace JoshH.UI
 
         public Color CornerColorLowerRight
         {
-            get
-            {
-                return cornerColorLowerRight;
-            }
+            get => cornerColorLowerRight;
 
             set
             {
@@ -165,10 +141,7 @@ namespace JoshH.UI
 
         public Color CornerColorLowerLeft
         {
-            get
-            {
-                return cornerColorLowerLeft;
-            }
+            get => cornerColorLowerLeft;
 
             set
             {
@@ -179,10 +152,7 @@ namespace JoshH.UI
 
         public float Angle
         {
-            get
-            {
-                return angle;
-            }
+            get => angle;
 
             set
             {
@@ -200,10 +170,7 @@ namespace JoshH.UI
 
         public Gradient LinearGradient
         {
-            get
-            {
-                return linearGradient;
-            }
+            get => linearGradient;
 
             set
             {
@@ -214,7 +181,7 @@ namespace JoshH.UI
 
         public override void ModifyMesh(VertexHelper vh)
         {
-            if (this.enabled)
+            if (enabled)
             {
                 UIVertex vert = new UIVertex();
                 if (gradientType == UIGradientType.ComplexLinear)
@@ -233,7 +200,7 @@ namespace JoshH.UI
                     Vector2 normalizedPosition = Vector2.Scale((Vector2)vert.position - rectTransform.rect.min, new Vector2(1f / size.x, 1f / size.y));
 #endif
 
-                    normalizedPosition = RotateNormalizedPosition(normalizedPosition, this.angle);
+                    normalizedPosition = RotateNormalizedPosition(normalizedPosition, angle);
 
                     //get color with selected gradient type
                     Color gradientColor = Color.black;
@@ -308,7 +275,7 @@ namespace JoshH.UI
         Vector2 GetCutDirection()
         {
             var v = Vector2.up.Rotate(-angle);
-            v = new Vector2(v.x / this.rectTransform.rect.size.x,v.y / this.rectTransform.rect.size.y);
+            v = new Vector2(v.x / rectTransform.rect.size.x,v.y / rectTransform.rect.size.y);
             return v.Rotate(90);
         }
 
@@ -382,7 +349,7 @@ namespace JoshH.UI
         {
             var v = Vector2.up.Rotate(-angle);
 
-            v = new Vector2(v.x / this.rectTransform.rect.size.x,v.y / this.rectTransform.rect.size.y);
+            v = new Vector2(v.x / rectTransform.rect.size.x,v.y / rectTransform.rect.size.y);
 
             Vector3 p1, p2;
 
@@ -442,9 +409,9 @@ namespace JoshH.UI
         /// </summary>
         public void ForceUpdateGraphic()
         {
-            if (this.graphic != null)
+            if (graphic != null)
             {
-                this.graphic.SetVerticesDirty();
+                graphic.SetVerticesDirty();
             }
         }
 
@@ -484,7 +451,7 @@ namespace JoshH.UI
         {
             base.Reset();
 
-            this.linearGradient = new Gradient();
+            linearGradient = new Gradient();
 
             // Populate the color keys
             var colorKey = new GradientColorKey[3];
@@ -502,7 +469,7 @@ namespace JoshH.UI
             alphaKey[1].alpha = 1.0f;
             alphaKey[1].time = 1.0f;
 
-            this.linearGradient.SetKeys(colorKey, alphaKey);
+            linearGradient.SetKeys(colorKey, alphaKey);
 
             ForceUpdateGraphic();
         }

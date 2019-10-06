@@ -112,7 +112,7 @@ namespace SCPE
 
     internal sealed class GradientRenderer : PostProcessEffectRenderer<Gradient>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

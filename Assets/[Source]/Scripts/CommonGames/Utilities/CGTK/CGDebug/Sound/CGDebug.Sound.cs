@@ -5,45 +5,54 @@
     using UnityEngine;
     
     using Object = UnityEngine.Object;
+    using static UnityEngine.Random;
     
     public static partial class CGDebug
     {
+        #if UNITY_EDITOR
         private static readonly AudioSource Previewer = 
             UnityEditor.EditorUtility.CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(AudioSource)).GetComponent<AudioSource>();
-        
+        #endif
+
         public static void PlaySound(AudioEvent audioEvent, AudioSource audioSource = null)
         {
+            #if UNITY_EDITOR
             if (audioSource == null)
             {
                 audioSource = Previewer;
             }
+            #endif
             
             audioEvent.Play(audioSource);
         }
         
         public static void PlaySound(AudioClip audioClip, AudioSource audioSource = null)
         {
+            #if UNITY_EDITOR
             if (audioSource == null)
             {
                 audioSource = Previewer;
             }
+            #endif
             
             audioSource.clip = DingAudioClip;
-            audioSource.volume = UnityEngine.Random.Range(Volume.minValue, Volume.maxValue);
-            audioSource.pitch = UnityEngine.Random.Range(Pitch.minValue, Pitch.maxValue);
+            audioSource.volume = Range(Volume.minValue, Volume.maxValue);
+            audioSource.pitch = Range(Pitch.minValue, Pitch.maxValue);
             audioSource.Play();
         }
         
         public static void PlayDing(AudioSource audioSource = null)
         {
+            #if UNITY_EDITOR
             if (audioSource == null)
             {
                 audioSource = Previewer;
             }
+            #endif
             
             audioSource.clip = DingAudioClip;
-            audioSource.volume = UnityEngine.Random.Range(Volume.minValue, Volume.maxValue);
-            audioSource.pitch = UnityEngine.Random.Range(Pitch.minValue, Pitch.maxValue);
+            audioSource.volume = Range(Volume.minValue, Volume.maxValue);
+            audioSource.pitch = Range(Pitch.minValue, Pitch.maxValue);
             audioSource.Play();
         }
         
@@ -61,9 +70,9 @@
                 this.maxValue = maxValue;
             }
         }
-    
-        private static AudioClip _dingAudioClip;
+        
         private static AudioClip DingAudioClip => _dingAudioClip ?? CreateAudioClip();
+        private static AudioClip _dingAudioClip;
     
         private static readonly RangedFloat Volume = new RangedFloat(0.9f, 1f);
 
@@ -93,7 +102,7 @@
 
             return floatArr;
         }
-        
+
         #endregion
     }
 }

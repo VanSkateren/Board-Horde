@@ -257,9 +257,7 @@ namespace Borodar.ReorderableList {
 		/// <summary>
 		/// Gets the control ID of the list that is currently being drawn.
 		/// </summary>
-		public static int CurrentListControlID {
-			get { return s_CurrentListStack.Peek().ControlID; }
-		}
+		public static int CurrentListControlID => s_CurrentListStack.Peek().ControlID;
 
 		/// <summary>
 		/// Gets the position of the list control that is currently being drawn.
@@ -269,9 +267,7 @@ namespace Borodar.ReorderableList {
 		/// type events when using reorderable list controls with automatic layout.</para>
 		/// </remarks>
 		/// <see cref="CurrentItemTotalPosition"/>
-		public static Rect CurrentListPosition {
-			get { return s_CurrentListStack.Peek().Position; }
-		}
+		public static Rect CurrentListPosition => s_CurrentListStack.Peek().Position;
 
 		/// <summary>
 		/// Gets the zero-based index of the list item that is currently being drawn;
@@ -280,9 +276,7 @@ namespace Borodar.ReorderableList {
 		/// <remarks>
 		/// <para>Use <see cref="ReorderableListGUI.CurrentItemIndex"/> instead.</para>
 		/// </remarks>
-		internal static int CurrentItemIndex {
-			get { return s_CurrentItemStack.Peek().ItemIndex; }
-		}
+		internal static int CurrentItemIndex => s_CurrentItemStack.Peek().ItemIndex;
 
 		/// <summary>
 		/// Gets the total position of the list item that is currently being drawn.
@@ -293,9 +287,7 @@ namespace Borodar.ReorderableList {
 		/// </remarks>
 		/// <see cref="CurrentItemIndex"/>
 		/// <see cref="CurrentListPosition"/>
-		public static Rect CurrentItemTotalPosition {
-			get { return s_CurrentItemStack.Peek().ItemPosition; }
-		}
+		public static Rect CurrentItemTotalPosition => s_CurrentItemStack.Peek().ItemPosition;
 
 		#region Properties
 
@@ -305,22 +297,20 @@ namespace Borodar.ReorderableList {
 		/// Gets or sets flags which affect behavior of control.
 		/// </summary>
 		public ReorderableListFlags Flags {
-			get { return _flags; }
-			set { _flags = value; }
+			get => _flags;
+			set => _flags = value;
 		}
 
 		/// <summary>
 		/// Gets a value indicating whether one or more footer buttons are shown.
 		/// </summary>
-		private bool HasFooterButtons {
-			get { return HasAddButton || HasAddMenuButton; }
-		}
+		private bool HasFooterButtons => HasAddButton || HasAddMenuButton;
+
 		/// <summary>
 		/// Gets a value indicating whether add button is shown.
 		/// </summary>
-		private bool HasAddButton {
-			get { return (_flags & ReorderableListFlags.HideAddButton) == 0; }
-		}
+		private bool HasAddButton => (_flags & ReorderableListFlags.HideAddButton) == 0;
+
 		/// <summary>
 		/// Gets a value indicating whether add menu button is shown.
 		/// </summary>
@@ -329,9 +319,7 @@ namespace Borodar.ReorderableList {
 		/// <summary>
 		/// Gets a value indicating whether remove buttons are shown.
 		/// </summary>
-		private bool HasRemoveButtons {
-			get { return (_flags & ReorderableListFlags.HideRemoveButtons) == 0; }
-		}
+		private bool HasRemoveButtons => (_flags & ReorderableListFlags.HideRemoveButtons) == 0;
 
 		private GUIStyle _containerStyle;
 		private GUIStyle _footerButtonStyle;
@@ -342,24 +330,24 @@ namespace Borodar.ReorderableList {
 		/// </summary>
 		/// <seealso cref="ReorderableListStyles.Container"/>
 		public GUIStyle ContainerStyle {
-			get { return _containerStyle; }
-			set { _containerStyle = value; }
+			get => _containerStyle;
+			set => _containerStyle = value;
 		}
 		/// <summary>
 		/// Gets or sets style used to draw footer buttons.
 		/// </summary>
 		/// <seealso cref="ReorderableListStyles.FooterButton"/>
 		public GUIStyle FooterButtonStyle {
-			get { return _footerButtonStyle; }
-			set { _footerButtonStyle = value; }
+			get => _footerButtonStyle;
+			set => _footerButtonStyle = value;
 		}
 		/// <summary>
 		/// Gets or sets style used to draw list item buttons (like the remove button).
 		/// </summary>
 		/// <seealso cref="ReorderableListStyles.ItemButton"/>
 		public GUIStyle ItemButtonStyle {
-			get { return _itemButtonStyle; }
-			set { _itemButtonStyle = value; }
+			get => _itemButtonStyle;
+			set => _itemButtonStyle = value;
 		}
 
 		private Color _horizontalLineColor;
@@ -370,8 +358,8 @@ namespace Borodar.ReorderableList {
 		/// Gets or sets the color of the horizontal lines that appear between list items.
 		/// </summary>
 		public Color HorizontalLineColor {
-			get { return _horizontalLineColor; }
-			set { _horizontalLineColor = value; }
+			get => _horizontalLineColor;
+			set => _horizontalLineColor = value;
 		}
 
 		/// <summary>
@@ -383,8 +371,8 @@ namespace Borodar.ReorderableList {
 		/// of this property.</para>
 		/// </remarks>
 		public bool HorizontalLineAtStart {
-			get { return _horizontalLineAtStart; }
-			set { _horizontalLineAtStart = value; }
+			get => _horizontalLineAtStart;
+			set => _horizontalLineAtStart = value;
 		}
 
 		/// <summary>
@@ -396,8 +384,8 @@ namespace Borodar.ReorderableList {
 		/// of this property.</para>
 		/// </remarks>
 		public bool HorizontalLineAtEnd {
-			get { return _horizontalLineAtEnd; }
-			set { _horizontalLineAtEnd = value; }
+			get => _horizontalLineAtEnd;
+			set => _horizontalLineAtEnd = value;
 		}
 
 		#endregion
@@ -516,7 +504,7 @@ namespace Borodar.ReorderableList {
 		/// <param name="flags">Optional flags which affect behavior of control.</param>
 		public ReorderableListControl(ReorderableListFlags flags)
 			: this() {
-			this.Flags = flags;
+			Flags = flags;
 		}
 
 		#endregion

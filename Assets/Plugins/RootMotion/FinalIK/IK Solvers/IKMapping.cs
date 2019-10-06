@@ -57,11 +57,7 @@ namespace RootMotion.FinalIK {
 			/// <summary>
 			/// Gets the current swing direction of the bone in world space.
 			/// </summary>
-			public Vector3 swingDirection {
-				get {
-					return transform.rotation * localSwingAxis;
-				}
-			}
+			public Vector3 swingDirection => transform.rotation * localSwingAxis;
 
 			public void StoreDefaultLocalState() {
 				defaultLocalPosition = transform.localPosition;
@@ -78,13 +74,8 @@ namespace RootMotion.FinalIK {
 			/*
 			 * Does this bone have a node in the IK Solver?
 			 * */
-			public bool isNodeBone {
-				get {
-					return nodeIndex != -1;
-					//return node != null;
-				}
-			}
-			
+			public bool isNodeBone => nodeIndex != -1;
+
 			/*
 			 * Calculate length of the bone
 			 * */

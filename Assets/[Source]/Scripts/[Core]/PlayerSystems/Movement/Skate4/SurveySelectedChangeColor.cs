@@ -21,15 +21,15 @@ public class SurveySelectedChangeColor : MonoBehaviour, ISelectHandler, IEventSy
 
 	public void OnDeselect(BaseEventData eventData)
 	{
-		this.text.color = this.startColor;
-		eventData.selectedObject.GetComponent<RawImage>().texture = this.startTexture;
+		text.color = startColor;
+		eventData.selectedObject.GetComponent<RawImage>().texture = startTexture;
 	}
 
 	void UnityEngine.EventSystems.ISelectHandler.OnSelect(BaseEventData eventData)
 	{
-		this.startTexture = eventData.selectedObject.GetComponent<RawImage>().texture;
-		eventData.selectedObject.GetComponent<RawImage>().texture = this.selectedArrow;
-		this.startColor = this.text.color;
-		this.text.color = this.newColor;
+		startTexture = eventData.selectedObject.GetComponent<RawImage>().texture;
+		eventData.selectedObject.GetComponent<RawImage>().texture = selectedArrow;
+		startColor = text.color;
+		text.color = newColor;
 	}
 }

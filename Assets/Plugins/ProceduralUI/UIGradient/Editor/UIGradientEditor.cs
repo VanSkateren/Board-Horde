@@ -160,7 +160,7 @@ namespace JoshH.UI
             }
             else
             {
-                foreach (UIGradient item in this.targets)
+                foreach (UIGradient item in targets)
                 {
                     Color c = item.LinearColor1;
                     item.LinearColor1 = item.LinearColor2;

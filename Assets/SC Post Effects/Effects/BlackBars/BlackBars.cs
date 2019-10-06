@@ -52,7 +52,7 @@ namespace SCPE
 
     internal sealed class BlackBarsRenderer : PostProcessEffectRenderer<BlackBars>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

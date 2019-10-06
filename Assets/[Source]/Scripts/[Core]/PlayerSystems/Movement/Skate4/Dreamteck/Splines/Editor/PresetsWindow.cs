@@ -157,7 +157,7 @@ namespace Dreamteck.Splines {
                     Undo.RecordObject(this, "PresetsWindow state");
                     Undo.RecordObject(splineEditor.computer, "Spline state");
                     primitiveIndex = -1;
-                    this.Close();
+                    Close();
                 }
                 
                 if (GUILayout.Button("Cancel"))
@@ -242,7 +242,7 @@ namespace Dreamteck.Splines {
                     splineEditor.Refresh();
                     SceneView.RepaintAll();
                     presetIndex = -1;
-                    this.Close();
+                    Close();
                 }
                 if (GUILayout.Button("Cancel"))
                 {

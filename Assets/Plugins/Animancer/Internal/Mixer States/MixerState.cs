@@ -31,10 +31,10 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>Mixers should keep child playables connected to the graph at all times.</summary>
-        public override bool KeepChildrenConnected { get { return true; } }
+        public override bool KeepChildrenConnected => true;
 
         /// <summary>An <see cref="MixerState"/> has no <see cref="AnimationClip"/>.</summary>
-        public override AnimationClip Clip { get { return null; } }
+        public override AnimationClip Clip => null;
 
         /************************************************************************************************************************/
 
@@ -74,7 +74,7 @@ namespace Animancer
         /// </summary>
         public override bool IsPlaying
         {
-            get { return base.IsPlaying; }
+            get => base.IsPlaying;
             set
             {
                 base.IsPlaying = value;
@@ -131,7 +131,8 @@ namespace Animancer
         /// used and will be ignored.
         /// </summary>
         [Obsolete("MixerState don't track the progress of a single animation so this event isn't used and will be ignored.")]
-        public override Action OnEnd { get { return null; } set { } }
+        public override Action OnEnd { get => null;
+            set { } }
 #pragma warning restore CS0809 // Obsolete member overrides non-obsolete member.
 
         /************************************************************************************************************************/
@@ -236,7 +237,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of states using this mixer as their <see cref="AnimancerState.Parent"/>.</summary>
-        public override int ChildCount { get { return ChildStates.Count; } }
+        public override int ChildCount => ChildStates.Count;
 
         /// <summary>
         /// Returns the state connected to the specified 'portIndex' as a child of this mixer.
@@ -565,7 +566,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of parameters being managed by this state.</summary>
-        protected virtual int ParameterCount { get { return 0; } }
+        protected virtual int ParameterCount => 0;
 
         /// <summary>Returns the name of a parameter being managed by this state.</summary>
         /// <exception cref="NotSupportedException">Thrown if this state doesn't manage any parameters.</exception>
@@ -608,7 +609,7 @@ namespace Animancer
             /************************************************************************************************************************/
 
             /// <summary>The number of parameters being managed by the target state.</summary>
-            public override int ParameterCount { get { return State.ParameterCount; } }
+            public override int ParameterCount => State.ParameterCount;
 
             /// <summary>Returns the name of a parameter being managed by the target state.</summary>
             /// <exception cref="NotSupportedException">Thrown if the target state doesn't manage any parameters.</exception>
@@ -657,8 +658,8 @@ namespace Animancer
             /// <summary>The parameter values at which each of the states are used and blended.</summary>
             public TParameter[] Thresholds
             {
-                get { return _Thresholds; }
-                set { _Thresholds = value; }
+                get => _Thresholds;
+                set => _Thresholds = value;
             }
 
             /************************************************************************************************************************/
@@ -669,8 +670,8 @@ namespace Animancer
             /// <summary>The initial parameter value to give the mixer when it is first created.</summary>
             public TParameter DefaultParameter
             {
-                get { return _DefaultParameter; }
-                set { _DefaultParameter = value; }
+                get => _DefaultParameter;
+                set => _DefaultParameter = value;
             }
 
             /************************************************************************************************************************/
@@ -892,8 +893,8 @@ namespace Animancer
             /// </summary>
             public MixerType Type
             {
-                get { return _Type; }
-                set { _Type = value; }
+                get => _Type;
+                set => _Type = value;
             }
 
             /************************************************************************************************************************/

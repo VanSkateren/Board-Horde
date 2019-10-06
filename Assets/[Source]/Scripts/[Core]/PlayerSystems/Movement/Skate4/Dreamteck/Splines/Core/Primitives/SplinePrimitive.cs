@@ -63,7 +63,7 @@ namespace Dreamteck.Splines.Primitives {
             else if (comp.isClosed) comp.Break();
         }
 
-        void ApplyOffset()
+        private void ApplyOffset()
         {
             Quaternion lookRot = Quaternion.LookRotation(GetNormal());
             Quaternion freeRot = Quaternion.Euler(rotation);

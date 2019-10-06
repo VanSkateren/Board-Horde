@@ -12,7 +12,7 @@ namespace RootMotion
         public static Texture2D lineTex = null;
         private GUIStyle style;
 
-        InspectorComment comment { get { return ((InspectorComment)attribute); } }
+        InspectorComment comment => ((InspectorComment)attribute);
 
         // Get the height of the element
         public override float GetHeight()

@@ -8,7 +8,7 @@ namespace RootMotion.FinalIK
     [CustomEditor(typeof(AimIKJ))]
     public class AimIKJInspector : Editor
     {
-        private AimIKJ script { get { return target as AimIKJ; } }
+        private AimIKJ script => target as AimIKJ;
 
         void OnSceneGUI()
         {

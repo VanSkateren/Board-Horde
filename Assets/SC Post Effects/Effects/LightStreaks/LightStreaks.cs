@@ -69,9 +69,9 @@ namespace SCPE
 
     public sealed class LightStreaksRenderer : PostProcessEffectRenderer<LightStreaks>
     {
-        Shader shader;
+        private Shader shader;
         private int emissionTex;
-        RenderTexture aoRT;
+        private RenderTexture aoRT;
 
         public override void Init()
         {
@@ -84,7 +84,7 @@ namespace SCPE
             base.Release();
         }
 
-        enum Pass
+        private enum Pass
         {
             LuminanceDiff,
             BlurFast,

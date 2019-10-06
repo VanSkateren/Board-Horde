@@ -76,14 +76,14 @@ namespace RootMotion.FinalIK {
 		/// Sets the look at weight. NOTE: You are welcome edit the weights directly, this method is here only to match the Unity's built in %IK API.
 		/// </summary>
 		public void SetLookAtWeight(float weight) {
-			this.IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
+			IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
 		}
 		
 		/// <summary>
 		/// Sets the look at weight. NOTE: You are welcome to edit the weights directly, this method is here only to match the Unity's built in %IK API.
 		/// </summary>
 		public void SetLookAtWeight(float weight, float bodyWeight) {
-			this.IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
+			IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
 			this.bodyWeight = Mathf.Clamp(bodyWeight, 0f, 1f);
 		}
 		
@@ -91,7 +91,7 @@ namespace RootMotion.FinalIK {
 		/// Sets the look at weight. NOTE: You are welcome to edit the weights directly, this method is here only to match the Unity's built in %IK API.
 		/// </summary>
 		public void SetLookAtWeight(float weight, float bodyWeight, float headWeight) {
-			this.IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
+			IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
 			this.bodyWeight = Mathf.Clamp(bodyWeight, 0f, 1f);
 			this.headWeight = Mathf.Clamp(headWeight, 0f, 1f);
 		}
@@ -100,7 +100,7 @@ namespace RootMotion.FinalIK {
 		/// Sets the look at weight. NOTE: You are welcome to edit the weights directly, this method is here only to match the Unity's built in %IK API.
 		/// </summary>
 		public void SetLookAtWeight(float weight, float bodyWeight, float headWeight, float eyesWeight) {
-			this.IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
+			IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
 			this.bodyWeight = Mathf.Clamp(bodyWeight, 0f, 1f);
 			this.headWeight = Mathf.Clamp(headWeight, 0f, 1f);
 			this.eyesWeight = Mathf.Clamp(eyesWeight, 0f, 1f);
@@ -110,20 +110,20 @@ namespace RootMotion.FinalIK {
 		/// Sets the look at weight. NOTE: You are welcome to edit the weights directly, this method is here only to match the Unity's built in %IK API. 
 		/// </summary>
 		public void SetLookAtWeight(float weight, float bodyWeight, float headWeight, float eyesWeight, float clampWeight) {
-			this.IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
+			IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
 			this.bodyWeight = Mathf.Clamp(bodyWeight, 0f, 1f);
 			this.headWeight = Mathf.Clamp(headWeight, 0f, 1f);
 			this.eyesWeight = Mathf.Clamp(eyesWeight, 0f, 1f);
 			this.clampWeight = Mathf.Clamp(clampWeight, 0f, 1f);
-			this.clampWeightHead = this.clampWeight;
-			this.clampWeightEyes = this.clampWeight;
+			clampWeightHead = this.clampWeight;
+			clampWeightEyes = this.clampWeight;
 		}
 		
 		/// <summary>
 		/// Sets the look at weight. NOTE: You are welcome to edit the weights directly, this method is here only to match the Unity's built in %IK API.
 		/// </summary>
 		public void SetLookAtWeight(float weight, float bodyWeight = 0f, float headWeight = 1f, float eyesWeight = 0.5f, float clampWeight = 0.5f, float clampWeightHead = 0.5f, float clampWeightEyes = 0.3f) {
-			this.IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
+			IKPositionWeight = Mathf.Clamp(weight, 0f, 1f);
 			this.bodyWeight = Mathf.Clamp(bodyWeight, 0f, 1f);
 			this.headWeight = Mathf.Clamp(headWeight, 0f, 1f);
 			this.eyesWeight = Mathf.Clamp(eyesWeight, 0f, 1f);
@@ -238,11 +238,7 @@ namespace RootMotion.FinalIK {
 			/*
 			 * Gets the local axis to goal in world space.
 			 * */
-			public Vector3 forward {
-				get {
-					return transform.rotation * axis;
-				}
-			}
+			public Vector3 forward => transform.rotation * axis;
 
 			#endregion Public methods
 		}
@@ -313,7 +309,7 @@ namespace RootMotion.FinalIK {
 			}
 		}
 
-		private bool spineIsEmpty { get { return spine.Length == 0; }}
+		private bool spineIsEmpty => spine.Length == 0;
 
 		// Solving the spine hierarchy
 		private void SolveSpine() {
@@ -339,8 +335,8 @@ namespace RootMotion.FinalIK {
 			}
 		}
 
-		private bool headIsEmpty { get { return head.transform == null; }}
-		
+		private bool headIsEmpty => head.transform == null;
+
 		// Solving the head rotation
 		private void SolveHead() {
 			if (headWeight <= 0) return;
@@ -366,8 +362,8 @@ namespace RootMotion.FinalIK {
 			}
 		}
 
-		private bool eyesIsEmpty { get { return eyes.Length == 0; }}
-		
+		private bool eyesIsEmpty => eyes.Length == 0;
+
 		// Solving the eye rotations
 		private void SolveEyes() {
 			if (eyesWeight <= 0) return;

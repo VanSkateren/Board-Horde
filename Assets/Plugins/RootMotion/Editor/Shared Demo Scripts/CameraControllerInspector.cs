@@ -8,7 +8,7 @@ namespace RootMotion {
 	[CustomEditor(typeof(CameraController))]
 	public class CameraControllerInspector : Editor {
 
-		private CameraController script { get { return target as CameraController; }}
+		private CameraController script => target as CameraController;
 		private MonoScript monoScript;
 
 		void OnEnable() {

@@ -11,7 +11,7 @@ public class GreaseCamTest : MonoBehaviour
     //public Transform enemy;
 
     //[InfoBox("Material ought to be assigned In-Editor.", InfoMessageType.Warning)]
-    [SerializeField] Material material;
+    [SerializeField] private Material material;
     
     private void Update()
     {

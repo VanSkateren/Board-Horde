@@ -10,8 +10,8 @@ namespace RootMotion.Demos {
 	[CustomEditor(typeof(BendGoal))]
 	public class BendGoalInspector : Editor {
 		
-		private BendGoal script { get { return target as BendGoal; }}
-		
+		private BendGoal script => target as BendGoal;
+
 		public override void OnInspectorGUI() {
 			DrawDefaultInspector();
 		}

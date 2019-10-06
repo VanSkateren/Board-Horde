@@ -27,7 +27,7 @@ namespace Animancer
         /// <summary>The <see cref="AnimationClip"/> which this state plays.</summary>
         public override AnimationClip Clip
         {
-            get { return _Clip; }
+            get => _Clip;
             set
             {
                 if (ReferenceEquals(_Clip, value))
@@ -46,17 +46,14 @@ namespace Animancer
         /// <summary>The <see cref="AnimationClip"/> which this state plays.</summary>
         public override Object MainObject
         {
-            get { return _Clip; }
-            set { Clip = (AnimationClip)value; }
+            get => _Clip;
+            set => Clip = (AnimationClip)value;
         }
 
         /************************************************************************************************************************/
 
         /// <summary>The average velocity of the root motion caused by this state.</summary>
-        public override Vector3 AverageVelocity
-        {
-            get { return _Clip.averageSpeed; }
-        }
+        public override Vector3 AverageVelocity => _Clip.averageSpeed;
 
         /************************************************************************************************************************/
         #endregion
@@ -131,17 +128,17 @@ namespace Animancer
         /// <summary>
         /// The <see cref="AnimationClip.length"/>.
         /// </summary>
-        public override float Length { get { return _Clip.length; } }
+        public override float Length => _Clip.length;
 
         /// <summary>
         /// Indicates whether this state will return a valid <see cref="Length"/> value.
         /// </summary>
-        public override bool HasLength { get { return _Clip != null; } }
+        public override bool HasLength => _Clip != null;
 
         /// <summary>
         /// Indicates whether this state will loop back to the start when it reaches the end.
         /// </summary>
-        public override bool IsLooping { get { return _Clip.isLooping; } }
+        public override bool IsLooping => _Clip.isLooping;
 
         /************************************************************************************************************************/
 
@@ -164,7 +161,7 @@ namespace Animancer
         /// </remarks>
         public override Action OnEnd
         {
-            get { return _OnEnd; }
+            get => _OnEnd;
             set
             {
                 if (_OnEnd == null)
@@ -222,8 +219,8 @@ namespace Animancer
         /// </summary>
         public override bool ApplyFootIK
         {
-            get { return ((AnimationClipPlayable)_Playable).GetApplyFootIK(); }
-            set { ((AnimationClipPlayable)_Playable).SetApplyFootIK(value); }
+            get => ((AnimationClipPlayable)_Playable).GetApplyFootIK();
+            set => ((AnimationClipPlayable)_Playable).SetApplyFootIK(value);
         }
 
         /************************************************************************************************************************/
@@ -616,7 +613,7 @@ namespace Animancer
             /// <summary>The animation to play.</summary>
             public AnimationClip Clip
             {
-                get { return _Clip; }
+                get => _Clip;
                 set
                 {
                     if (value != null)
@@ -630,7 +627,7 @@ namespace Animancer
             /// The <see cref="Clip"/> will be used as the <see cref="AnimancerState.Key"/> for the created state to be
             /// registered with.
             /// </summary>
-            public override object Key { get { return _Clip; } }
+            public override object Key => _Clip;
 
             /************************************************************************************************************************/
 
@@ -641,8 +638,8 @@ namespace Animancer
             /// <summary>Determines how fast the animation plays (default = 1).</summary>
             public float Speed
             {
-                get { return _Speed; }
-                set { _Speed = value; }
+                get => _Speed;
+                set => _Speed = value;
             }
 
             /************************************************************************************************************************/
@@ -660,15 +657,15 @@ namespace Animancer
             /// </summary>
             public float StartTime
             {
-                get { return _StartTime; }
-                set { _StartTime = value; }
+                get => _StartTime;
+                set => _StartTime = value;
             }
 
             /// <summary>
             /// If this transition will set the <see cref="StartTime"/>, then it needs to use
             /// <see cref="AnimancerPlayable.CrossFadeFromStart"/>.
             /// </summary>
-            public override bool CrossFadeFromStart { get { return !float.IsNaN(_StartTime); } }
+            public override bool CrossFadeFromStart => !float.IsNaN(_StartTime);
 
             /************************************************************************************************************************/
 
@@ -682,8 +679,8 @@ namespace Animancer
             /// </summary>
             public bool StartTimeIsNormalized
             {
-                get { return _StartTimeIsNormalized; }
-                set { _StartTimeIsNormalized = value; }
+                get => _StartTimeIsNormalized;
+                set => _StartTimeIsNormalized = value;
             }
 
             /************************************************************************************************************************/
@@ -885,7 +882,7 @@ namespace Animancer
             /// </summary>
             public new UnityEvent OnEnd
             {
-                get { return _OnEnd; }
+                get => _OnEnd;
                 set
                 {
                     _OnEnd = value;

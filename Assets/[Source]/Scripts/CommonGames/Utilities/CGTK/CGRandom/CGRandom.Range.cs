@@ -37,7 +37,7 @@
 			 minRange = -minRange.Abs();
 			 minRange = maxRange.Abs();
 			
-			 return new Vector3(RandomRange(minRange.x, maxRange.x), CGRandom.RandomRange(minRange.y, maxRange.y),CGRandom.RandomRange(minRange.z, maxRange.z));
+			 return new Vector3(RandomRange(minRange.x, maxRange.x), RandomRange(minRange.y, maxRange.y),RandomRange(minRange.z, maxRange.z));
 		 }
 	 
 		 public static Vector3Int RandomVector3Int(float min, float max, Random random = null)

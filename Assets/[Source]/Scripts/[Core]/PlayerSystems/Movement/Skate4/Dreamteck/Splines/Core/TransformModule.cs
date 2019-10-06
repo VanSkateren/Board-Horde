@@ -11,7 +11,7 @@ namespace Dreamteck.Splines
     {
         public Vector2 offset
         {
-            get { return _offset; }
+            get => _offset;
             set
             {
                 if (value != _offset)
@@ -23,7 +23,7 @@ namespace Dreamteck.Splines
         }
         public Vector3 rotationOffset
         {
-            get { return _rotationOffset; }
+            get => _rotationOffset;
             set
             {
                 if (value != _rotationOffset)
@@ -35,7 +35,7 @@ namespace Dreamteck.Splines
         }
         public Vector3 baseScale
         {
-            get { return _baseScale; }
+            get => _baseScale;
             set
             {
                 if (value != _baseScale)
@@ -82,14 +82,8 @@ namespace Dreamteck.Splines
         public Spline.Direction direction = Spline.Direction.Forward;
         public bool applyPosition
         {
-            get
-            {
-                return applyPositionX || applyPositionY || applyPositionZ;
-            }
-            set
-            {
-                applyPositionX = applyPositionY = applyPositionZ = value;
-            }
+            get => applyPositionX || applyPositionY || applyPositionZ;
+            set => applyPositionX = applyPositionY = applyPositionZ = value;
         }
 
         public bool applyRotationX = true;
@@ -97,14 +91,8 @@ namespace Dreamteck.Splines
         public bool applyRotationZ = true;
         public bool applyRotation
         {
-            get
-            {
-                return applyRotationX || applyRotationY || applyRotationZ;
-            }
-            set
-            {
-                applyRotationX = applyRotationY = applyRotationZ = value;
-            }
+            get => applyRotationX || applyRotationY || applyRotationZ;
+            set => applyRotationX = applyRotationY = applyRotationZ = value;
         }
 
         public bool applyScaleX = false;
@@ -112,14 +100,8 @@ namespace Dreamteck.Splines
         public bool applyScaleZ = false;
         public bool applyScale
         {
-            get
-            {
-                return applyScaleX || applyScaleY || applyScaleZ;
-            }
-            set
-            {
-                applyScaleX = applyScaleY = applyScaleZ = value;
-            }
+            get => applyScaleX || applyScaleY || applyScaleZ;
+            set => applyScaleX = applyScaleY = applyScaleZ = value;
         }
         [HideInInspector]
         public SplineUser targetUser = null;

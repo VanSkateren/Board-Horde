@@ -36,7 +36,7 @@ namespace UltEvents
                     _CollisionEnterEvent = new CollisionEvent3D();
                 return _CollisionEnterEvent;
             }
-            set { _CollisionEnterEvent = value; }
+            set => _CollisionEnterEvent = value;
         }
 
         /// <summary>Invokes <see cref="CollisionEnterEvent"/>.</summary>
@@ -60,7 +60,7 @@ namespace UltEvents
                     _CollisionStayEvent = new CollisionEvent3D();
                 return _CollisionStayEvent;
             }
-            set { _CollisionStayEvent = value; }
+            set => _CollisionStayEvent = value;
         }
 
         /// <summary>Invokes <see cref="CollisionStayEvent"/>.</summary>
@@ -84,7 +84,7 @@ namespace UltEvents
                     _CollisionExitEvent = new CollisionEvent3D();
                 return _CollisionExitEvent;
             }
-            set { _CollisionExitEvent = value; }
+            set => _CollisionExitEvent = value;
         }
 
         /// <summary>Invokes <see cref="CollisionExitEvent"/>.</summary>

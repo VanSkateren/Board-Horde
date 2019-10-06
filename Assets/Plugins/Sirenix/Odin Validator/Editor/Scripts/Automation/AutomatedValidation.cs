@@ -21,7 +21,7 @@ namespace Sirenix.OdinValidator.Editor
 
         public bool HasActionFlag(Action flag)
         {
-            return (this.Actions & flag) == flag;
+            return (Actions & flag) == flag;
         }
 
         [Flags]

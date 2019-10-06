@@ -19,22 +19,22 @@ public class ButtonHighlighter : MonoBehaviour
 
 	private void HighlightButton(Button butt)
 	{
-		butt.transform.localScale = new Vector3(this.scaleAmount, this.scaleAmount, this.scaleAmount);
+		butt.transform.localScale = new Vector3(scaleAmount, scaleAmount, scaleAmount);
 	}
 
 	private void OnDisable()
 	{
-		if (this.previousButton != null)
+		if (previousButton != null)
 		{
-			this.UnHighlightButton(this.previousButton);
+			UnHighlightButton(previousButton);
 		}
 	}
 
 	private void Start()
 	{
-		if (this.defaultButton != null)
+		if (defaultButton != null)
 		{
-			EventSystem.current.SetSelectedGameObject(this.defaultButton);
+			EventSystem.current.SetSelectedGameObject(defaultButton);
 		}
 	}
 
@@ -51,14 +51,14 @@ public class ButtonHighlighter : MonoBehaviour
 			return;
 		}
 		Button component = gameObject.GetComponent<Button>();
-		if (component != null && component != this.previousButton && component.transform.name != "PauseButton")
+		if (component != null && component != previousButton && component.transform.name != "PauseButton")
 		{
-			this.HighlightButton(component);
+			HighlightButton(component);
 		}
-		if (this.previousButton != null && this.previousButton != component)
+		if (previousButton != null && previousButton != component)
 		{
-			this.UnHighlightButton(this.previousButton);
+			UnHighlightButton(previousButton);
 		}
-		this.previousButton = component;
+		previousButton = component;
 	}
 }

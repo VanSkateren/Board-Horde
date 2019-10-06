@@ -42,7 +42,7 @@ namespace SCPE
 
     internal sealed class RefractionRenderer : PostProcessEffectRenderer<Refraction>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

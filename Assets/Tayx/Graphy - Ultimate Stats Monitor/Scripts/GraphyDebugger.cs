@@ -127,7 +127,7 @@ namespace Tayx.Graphy
 
             private float timePassed = 0;
             
-            public bool Check { get { return canBeChecked; } }
+            public bool Check => canBeChecked;
 
             public void Update()
             {

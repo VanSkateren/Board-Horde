@@ -27,7 +27,7 @@ public class PlayerState_OffBoard : BaseFSMState
 		PlayerController.Instance.AnimGrindTransition(false);
 		PlayerController.Instance.AnimOllieTransition(false);
 		PlayerController.Instance.AnimSetupTransition(false);
-		base.DoTransition(typeof(PlayerState_Riding), null);
+		DoTransition(typeof(PlayerState_Riding), null);
 	}
 
 	public override void SetupDefinition(ref FSMStateType stateType, ref List<Type> children)

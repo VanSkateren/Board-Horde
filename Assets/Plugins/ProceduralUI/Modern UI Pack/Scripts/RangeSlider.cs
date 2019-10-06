@@ -23,14 +23,9 @@ namespace Michsky.UI.ModernUIPack
         public TextMeshProUGUI maxSliderLabel;
 
         // Properties
-        public float CurrentLowerValue
-        {
-            get { return minSlider.value; }
-        }
-        public float CurrentUpperValue
-        {
-            get { return maxSlider.realValue; }
-        }
+        public float CurrentLowerValue => minSlider.value;
+
+        public float CurrentUpperValue => maxSlider.realValue;
 
         void Awake()
         {

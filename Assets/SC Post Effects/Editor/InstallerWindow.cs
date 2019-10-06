@@ -31,8 +31,8 @@ namespace SCPE
 
         public static Tab INSTALLATION_TAB
         {
-            get { return (Tab)SessionState.GetInt("INSTALLATION_PROGRESS", 0); }
-            set { SessionState.SetInt("INSTALLATION_PROGRESS", (int)value); }
+            get => (Tab)SessionState.GetInt("INSTALLATION_PROGRESS", 0);
+            set => SessionState.SetInt("INSTALLATION_PROGRESS", (int)value);
         }
 
 #if !SCPE || SCPE_DEV
@@ -81,11 +81,11 @@ namespace SCPE
 
             if (EditorApplication.isCompiling)
             {
-                this.ShowNotification(new GUIContent(" Compiling...", EditorGUIUtility.IconContent("cs Script Icon").image));
+                ShowNotification(new GUIContent(" Compiling...", EditorGUIUtility.IconContent("cs Script Icon").image));
             }
             else
             {
-                this.RemoveNotification();
+                RemoveNotification();
             }
 
             //Header
@@ -205,7 +205,7 @@ namespace SCPE
                             if (INSTALLATION_TAB == Tab.Finish)
                             {
                                 Installer.PostInstall();
-                                this.Close();
+                                Close();
                             }
 
                         }
@@ -431,7 +431,7 @@ namespace SCPE
             {
                 //Support box
 
-                EditorGUILayout.HelpBox("\nThe help window can be accessed through Window->SC Post Effects\n\nYou can use this to quickly add post processing to a scene, and to switch the Post Processing installation type (GitHub or Package Manager)\n", MessageType.Info);
+                EditorGUILayout.HelpBox("\nThe help window can be accessed through Help -> SC Post Effects\n\nYou can use this to quickly add post processing to a scene\n", MessageType.Info);
                 EditorGUILayout.HelpBox("\nThe \"ProjectSettings.asset\" file has been modified, be sure to commit this to source control for other team members\n", MessageType.Info);
             }
 

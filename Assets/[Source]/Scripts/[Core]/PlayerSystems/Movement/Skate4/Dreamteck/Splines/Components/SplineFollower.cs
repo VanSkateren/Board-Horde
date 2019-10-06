@@ -28,7 +28,7 @@ namespace Dreamteck.Splines
         /// </summary>
         public float followSpeed
         {
-            get { return _followSpeed; }
+            get => _followSpeed;
             set
             {
                 if (_followSpeed != value)
@@ -44,7 +44,7 @@ namespace Dreamteck.Splines
         /// </summary>
         public float followDuration
         {
-            get { return _followDuration; }
+            get => _followDuration;
             set
             {
                 if (_followDuration != value)
@@ -56,16 +56,10 @@ namespace Dreamteck.Splines
         }
 
         [System.Obsolete("Deprecated in 1.0.8. Use result instead")]
-        public SplineResult followResult
-        {
-            get { return _result; }
-        }
+        public SplineResult followResult => _result;
 
         [System.Obsolete("Deprecated in 1.0.8. Use offsettedResult instead")]
-        public SplineResult offsettedFollowResult
-        {
-            get { return offsettedResult;  }
-        }
+        public SplineResult offsettedFollowResult => offsettedResult;
 
         public event SplineReachHandler onEndReached;
         public event SplineReachHandler onBeginningReached;
@@ -99,7 +93,7 @@ namespace Dreamteck.Splines
             if (autoFollow && !autoStartPosition) ApplyMotion();
         }
 
-        void AutoFollow()
+        private void AutoFollow()
         {
             switch (followMode)
             {

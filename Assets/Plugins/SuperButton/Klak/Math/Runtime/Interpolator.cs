@@ -42,20 +42,18 @@ namespace Klak.Math
                 = InterpolationType.DampedSpring;
 
             public InterpolationType interpolationType {
-                get { return _interpolationType; }
-                set { _interpolationType = value; }
+                get => _interpolationType;
+                set => _interpolationType = value;
             }
 
-            public bool enabled {
-                get { return interpolationType != InterpolationType.Direct; }
-            }
+            public bool enabled => interpolationType != InterpolationType.Direct;
 
             [SerializeField, Range(0.1f, 100)]
             float _interpolationSpeed = 10;
 
             public float interpolationSpeed {
-                get { return _interpolationSpeed; }
-                set { _interpolationSpeed = value; }
+                get => _interpolationSpeed;
+                set => _interpolationSpeed = value;
             }
 
             public Config() {}
@@ -66,13 +64,9 @@ namespace Klak.Math
                 _interpolationSpeed = speed;
             }
 
-            public static Config Direct {
-                get { return new Config(InterpolationType.Direct, 10); }
-            }
+            public static Config Direct => new Config(InterpolationType.Direct, 10);
 
-            public static Config Quick {
-                get { return new Config(InterpolationType.DampedSpring, 50); }
-            }
+            public static Config Quick => new Config(InterpolationType.DampedSpring, 50);
         }
 
         #endregion

@@ -27,8 +27,8 @@ namespace Borodar.ReorderableList {
 		/// <param name="adaptor">Reorderable list adaptor.</param>
 		/// <param name="buttonPosition">Position of the add menu button.</param>
 		public AddMenuClickedEventArgs(IReorderableListAdaptor adaptor, Rect buttonPosition) {
-			this.Adaptor = adaptor;
-			this.ButtonPosition = buttonPosition;
+			Adaptor = adaptor;
+			ButtonPosition = buttonPosition;
 		}
 
 	}
@@ -66,9 +66,9 @@ namespace Borodar.ReorderableList {
 		/// <param name="itemIndex">Zero-based index of item.</param>
 		/// <param name="wasDuplicated">Indicates if inserted item was duplicated from another item.</param>
 		public ItemInsertedEventArgs(IReorderableListAdaptor adaptor, int itemIndex, bool wasDuplicated) {
-			this.Adaptor = adaptor;
-			this.ItemIndex = itemIndex;
-			this.WasDuplicated = wasDuplicated;
+			Adaptor = adaptor;
+			ItemIndex = itemIndex;
+			WasDuplicated = wasDuplicated;
 		}
 
 	}
@@ -100,8 +100,8 @@ namespace Borodar.ReorderableList {
 		/// <param name="adaptor">Reorderable list adaptor.</param>
 		/// <param name="itemIndex">Zero-based index of item.</param>
 		public ItemRemovingEventArgs(IReorderableListAdaptor adaptor, int itemIndex) {
-			this.Adaptor = adaptor;
-			this.ItemIndex = itemIndex;
+			Adaptor = adaptor;
+			ItemIndex = itemIndex;
 		}
 
 	}
@@ -156,9 +156,9 @@ namespace Borodar.ReorderableList {
 		/// <param name="itemIndex">Zero-based index of item.</param>
 		/// <param name="destinationItemIndex">Xero-based index of item destination.</param>
 		public ItemMovingEventArgs(IReorderableListAdaptor adaptor, int itemIndex, int destinationItemIndex) {
-			this.Adaptor = adaptor;
-			this.ItemIndex = itemIndex;
-			this.DestinationItemIndex = destinationItemIndex;
+			Adaptor = adaptor;
+			ItemIndex = itemIndex;
+			DestinationItemIndex = destinationItemIndex;
 		}
 
 	}
@@ -199,9 +199,9 @@ namespace Borodar.ReorderableList {
 		/// <param name="oldItemIndex">Old zero-based index of item.</param>
 		/// <param name="newItemIndex">New zero-based index of item.</param>
 		public ItemMovedEventArgs(IReorderableListAdaptor adaptor, int oldItemIndex, int newItemIndex) {
-			this.Adaptor = adaptor;
-			this.OldItemIndex = oldItemIndex;
-			this.NewItemIndex = newItemIndex;
+			Adaptor = adaptor;
+			OldItemIndex = oldItemIndex;
+			NewItemIndex = newItemIndex;
 		}
 
 	}

@@ -59,20 +59,12 @@ namespace RootMotion.FinalIK {
 		/// <summary>
 		/// Gets the Axis of the AimTransform is world space.
 		/// </summary>
-		public Vector3 transformAxis {
-			get {
-				return transform.rotation * axis;
-			}
-		}
+		public Vector3 transformAxis => transform.rotation * axis;
 
 		/// <summary>
 		/// Gets the Pole Axis of the AimTransform is world space.
 		/// </summary>
-		public Vector3 transformPoleAxis {
-			get {
-				return transform.rotation * poleAxis;
-			}
-		}
+		public Vector3 transformPoleAxis => transform.rotation * poleAxis;
 
 		/// <summary>
 		/// Called before each iteration of the solver.
@@ -153,8 +145,8 @@ namespace RootMotion.FinalIK {
 			lastLocalDirection = localDirection;
 		}
 		
-		protected override int minBones { get { return 1; }}
-		
+		protected override int minBones => 1;
+
 		private float step;
 		private Vector3 clampedIKPosition;
 		private RotationLimit transformLimit;
@@ -254,10 +246,6 @@ namespace RootMotion.FinalIK {
 		/*
 		 * Gets the direction from last bone's forward in first bone's local space.
 		 * */
-		protected override Vector3 localDirection {
-			get {
-				return bones[0].transform.InverseTransformDirection(bones[bones.Length - 1].transform.forward);
-			}
-		}
+		protected override Vector3 localDirection => bones[0].transform.InverseTransformDirection(bones[bones.Length - 1].transform.forward);
 	}
 }

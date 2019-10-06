@@ -67,19 +67,19 @@ public class PlayerState_Setup : PlayerState_OnBoard
 
 	public PlayerState_Setup(StickInput p_popStick, StickInput p_flipStick, bool p_forwardLoad, PlayerController.SetupDir p_setupDir)
 	{
-		this._popStick = p_popStick;
-		this._flipStick = p_flipStick;
-		this._forwardLoad = p_forwardLoad;
-		this._setupDir = p_setupDir;
+		_popStick = p_popStick;
+		_flipStick = p_flipStick;
+		_forwardLoad = p_forwardLoad;
+		_setupDir = p_setupDir;
 	}
 
 	public PlayerState_Setup(StickInput p_popStick, StickInput p_flipStick, bool p_forwardLoad, PlayerController.SetupDir p_setupDir, bool p_mongo)
 	{
-		this._popStick = p_popStick;
-		this._flipStick = p_flipStick;
-		this._forwardLoad = p_forwardLoad;
-		this._setupDir = p_setupDir;
-		this._mongo = p_mongo;
+		_popStick = p_popStick;
+		_flipStick = p_flipStick;
+		_forwardLoad = p_forwardLoad;
+		_setupDir = p_setupDir;
+		_mongo = p_mongo;
 	}
 
 	public override void Enter()
@@ -106,7 +106,7 @@ public class PlayerState_Setup : PlayerState_OnBoard
 		PlayerController.Instance.LimitAngularVelocity(5f);
 		PlayerController.Instance.SkaterRotation(true, false);
 		PlayerController.Instance.boardController.DoBoardLean();
-		PlayerController.Instance.comController.UpdateCOM(this.setupHeight, 2);
+		PlayerController.Instance.comController.UpdateCOM(setupHeight, 2);
 		PlayerController.Instance.boardController.ApplyOnBoardMaxRoll();
 	}
 
@@ -114,14 +114,14 @@ public class PlayerState_Setup : PlayerState_OnBoard
 	{
 		if (p_stick.IsRightStick)
 		{
-			return this._augmentedRightAngle;
+			return _augmentedRightAngle;
 		}
-		return this._augmentedLeftAngle;
+		return _augmentedLeftAngle;
 	}
 
 	public override StickInput GetPopStick()
 	{
-		return this._popStick;
+		return _popStick;
 	}
 
 	public override bool IsOnGroundState()
@@ -132,14 +132,14 @@ public class PlayerState_Setup : PlayerState_OnBoard
 	public override void OnFlipStickUpdate()
 	{
 		float single;
-		if (this._flipStick.SetupDir >= -0.1f)
+		if (_flipStick.SetupDir >= -0.1f)
 		{
 			if (PlayerController.Instance.inputController.turningMode == InputController.TurningMode.PreWind)
 			{
 				PlayerController.Instance.SetTurningMode(InputController.TurningMode.Grounded);
 			}
-			this._popStrengthTarget = 0f;
-			this._doubleSetupTimer = 0f;
+			_popStrengthTarget = 0f;
+			_doubleSetupTimer = 0f;
 		}
 		else
 		{
@@ -147,53 +147,53 @@ public class PlayerState_Setup : PlayerState_OnBoard
 			{
 				PlayerController.Instance.SetTurningMode(InputController.TurningMode.PreWind);
 			}
-			this._popStrengthTarget = Mathf.Clamp(1.1f * Mathf.Abs(this._flipStick.SetupDir), -1f, 1f);
+			_popStrengthTarget = Mathf.Clamp(1.1f * Mathf.Abs(_flipStick.SetupDir), -1f, 1f);
 			if (Mathf.Abs(PlayerController.Instance.GetWindUp()) > 0.2f)
 			{
-				this._doubleSetupTimer += Time.deltaTime;
+				_doubleSetupTimer += Time.deltaTime;
 			}
 		}
-		if (this._popStrength >= this._popStrengthTarget)
+		if (_popStrength >= _popStrengthTarget)
 		{
-			this._popStrength = Mathf.Lerp(this._popStrength, this._popStrengthTarget, Time.deltaTime * 5f);
+			_popStrength = Mathf.Lerp(_popStrength, _popStrengthTarget, Time.deltaTime * 5f);
 		}
 		else
 		{
-			this._popStrength = this._popStrengthTarget;
+			_popStrength = _popStrengthTarget;
 		}
-		this._setupBlend = Mathf.Lerp(this._setupBlend, this._popStrength, Time.deltaTime * 10f);
-		float single1 = this.setupHeightHigh - this.setupHeightLow;
-		this.setupHeight = this.setupHeightHigh - this._setupBlend * single1;
-		if (this._doubleSetupTimer > 0.2f)
+		_setupBlend = Mathf.Lerp(_setupBlend, _popStrength, Time.deltaTime * 10f);
+		float single1 = setupHeightHigh - setupHeightLow;
+		setupHeight = setupHeightHigh - _setupBlend * single1;
+		if (_doubleSetupTimer > 0.2f)
 		{
 			float windUp = PlayerController.Instance.GetWindUp();
-			windUp = Mathf.Clamp(windUp, -this._setupBlend, this._setupBlend);
-			if (Mathf.Abs(this._windUpLerp) >= Mathf.Abs(windUp))
+			windUp = Mathf.Clamp(windUp, -_setupBlend, _setupBlend);
+			if (Mathf.Abs(_windUpLerp) >= Mathf.Abs(windUp))
 			{
-				this._windUpLerp = Mathf.Lerp(this._windUpLerp, windUp, Time.deltaTime * 2f);
+				_windUpLerp = Mathf.Lerp(_windUpLerp, windUp, Time.deltaTime * 2f);
 			}
 			else
 			{
-				this._windUpLerp = Mathf.Lerp(this._windUpLerp, windUp, Time.deltaTime * 10f);
+				_windUpLerp = Mathf.Lerp(_windUpLerp, windUp, Time.deltaTime * 10f);
 			}
 		}
-		PlayerController.Instance.AnimSetWindUp(this._windUpLerp);
-		PlayerController.Instance.AnimSetPopStrength(this._popStrength);
-		PlayerController.Instance.AnimSetSetupBlend(this._setupBlend);
+		PlayerController.Instance.AnimSetWindUp(_windUpLerp);
+		PlayerController.Instance.AnimSetPopStrength(_popStrength);
+		PlayerController.Instance.AnimSetSetupBlend(_setupBlend);
 		PlayerController instance = PlayerController.Instance;
-		ref bool flagPointer = ref this._potentialFlip;
-		ref Vector2 vector2Pointer = ref this._initialFlipDir;
-		ref int numPointer = ref this._flipFrameCount;
-		ref int numPointer1 = ref this._flipFrameMax;
-		ref float singlePointer = ref this._toeAxis;
-		ref float singlePointer1 = ref this._flipVel;
-		ref float singlePointer2 = ref this._popVel;
-		ref float singlePointer3 = ref this._popDir;
-		ref float singlePointer4 = ref this._flip;
-		StickInput stickInput = this._flipStick;
-		ref float singlePointer5 = ref this._invertVel;
-		single = (this._popStick.IsRightStick ? this._augmentedLeftAngle : this._augmentedRightAngle);
-		instance.OnFlipStickUpdate(ref this._flipDetected, ref flagPointer, ref vector2Pointer, ref numPointer, ref numPointer1, ref singlePointer, ref singlePointer1, ref singlePointer2, ref singlePointer3, ref singlePointer4, stickInput, false, true, ref singlePointer5, single, false, this._forwardLoad, ref this._flipWindowTimer);
+		ref bool flagPointer = ref _potentialFlip;
+		ref Vector2 vector2Pointer = ref _initialFlipDir;
+		ref int numPointer = ref _flipFrameCount;
+		ref int numPointer1 = ref _flipFrameMax;
+		ref float singlePointer = ref _toeAxis;
+		ref float singlePointer1 = ref _flipVel;
+		ref float singlePointer2 = ref _popVel;
+		ref float singlePointer3 = ref _popDir;
+		ref float singlePointer4 = ref _flip;
+		StickInput stickInput = _flipStick;
+		ref float singlePointer5 = ref _invertVel;
+		single = (_popStick.IsRightStick ? _augmentedLeftAngle : _augmentedRightAngle);
+		instance.OnFlipStickUpdate(ref _flipDetected, ref flagPointer, ref vector2Pointer, ref numPointer, ref numPointer1, ref singlePointer, ref singlePointer1, ref singlePointer2, ref singlePointer3, ref singlePointer4, stickInput, false, true, ref singlePointer5, single, false, _forwardLoad, ref _flipWindowTimer);
 	}
 
 	public override void OnNextState()
@@ -202,35 +202,35 @@ public class PlayerState_Setup : PlayerState_OnBoard
 		PlayerController.Instance.FixTargetNormal();
 		PlayerController.Instance.SetTargetToMaster();
 		PlayerController.Instance.AnimOllieTransition(true);
-		if (this._windUpLerp > 0.1f && this._popStrength > 0.1f)
+		if (_windUpLerp > 0.1f && _popStrength > 0.1f)
 		{
-			PlayerController.Instance.SetTurnMultiplier(this._windUpLerp);
+			PlayerController.Instance.SetTurnMultiplier(_windUpLerp);
 			PlayerController.Instance.SetTurningMode(InputController.TurningMode.FastRight);
 		}
-		else if (this._windUpLerp >= -0.1f || this._popStrength <= 0.1f)
+		else if (_windUpLerp >= -0.1f || _popStrength <= 0.1f)
 		{
 			PlayerController.Instance.SetTurnMultiplier(1f);
 			PlayerController.Instance.SetTurningMode(InputController.TurningMode.InAir);
 		}
 		else
 		{
-			PlayerController.Instance.SetTurnMultiplier(Mathf.Abs(this._windUpLerp));
+			PlayerController.Instance.SetTurnMultiplier(Mathf.Abs(_windUpLerp));
 			PlayerController.Instance.SetTurningMode(InputController.TurningMode.FastLeft);
 		}
-		if (!this._flipDetected)
+		if (!_flipDetected)
 		{
-			object[] instance = new object[] { this._popStick, this._flipStick, PlayerController.Instance.popForce + this._popStrength * 0.75f, this._forwardLoad, this._invertVel, this._setupDir, this._augmentedLeftAngle, this._augmentedRightAngle, this._popVel, this._toeAxis, this._popDir };
-			base.DoTransition(typeof(PlayerState_BeginPop), instance);
+			object[] instance = new object[] { _popStick, _flipStick, PlayerController.Instance.popForce + _popStrength * 0.75f, _forwardLoad, _invertVel, _setupDir, _augmentedLeftAngle, _augmentedRightAngle, _popVel, _toeAxis, _popDir };
+			DoTransition(typeof(PlayerState_BeginPop), instance);
 			return;
 		}
-		object[] objArray = new object[] { this._popStick, this._flipStick, this._initialFlipDir, this._flipVel, this._popVel, this._toeAxis, this._popDir, this._flipDetected, this._flip, PlayerController.Instance.popForce + this._popStrength * 0.75f, this._forwardLoad, this._invertVel, this._setupDir, this._augmentedLeftAngle, this._augmentedRightAngle };
-		base.DoTransition(typeof(PlayerState_BeginPop), objArray);
+		object[] objArray = new object[] { _popStick, _flipStick, _initialFlipDir, _flipVel, _popVel, _toeAxis, _popDir, _flipDetected, _flip, PlayerController.Instance.popForce + _popStrength * 0.75f, _forwardLoad, _invertVel, _setupDir, _augmentedLeftAngle, _augmentedRightAngle };
+		DoTransition(typeof(PlayerState_BeginPop), objArray);
 	}
 
 	public override void OnPopStickCentered()
 	{
 		PlayerController.Instance.AnimSetupTransition(false);
-		base.DoTransition(typeof(PlayerState_Riding), null);
+		DoTransition(typeof(PlayerState_Riding), null);
 	}
 
 	public override void OnPopStickUpdate()
@@ -238,12 +238,12 @@ public class PlayerState_Setup : PlayerState_OnBoard
 		float single;
 		PlayerController instance = PlayerController.Instance;
 		bool flag = PlayerController.Instance.IsGrounded();
-		StickInput stickInput = this._popStick;
-		bool flag1 = this._forwardLoad;
+		StickInput stickInput = _popStick;
+		bool flag1 = _forwardLoad;
 		float instance1 = PlayerController.Instance.popThreshold;
-		ref float singlePointer = ref this._invertVel;
-		single = (this._popStick.IsRightStick ? this._augmentedRightAngle : this._augmentedLeftAngle);
-		instance.OnPopStartCheck(flag, stickInput, ref this._setupDir, flag1, instance1, ref singlePointer, single, ref this._popVel);
+		ref float singlePointer = ref _invertVel;
+		single = (_popStick.IsRightStick ? _augmentedRightAngle : _augmentedLeftAngle);
+		instance.OnPopStartCheck(flag, stickInput, ref _setupDir, flag1, instance1, ref singlePointer, single, ref _popVel);
 	}
 
 	public override void OnStickUpdate(StickInput p_leftStick, StickInput p_rightStick)
@@ -270,7 +270,7 @@ public class PlayerState_Setup : PlayerState_OnBoard
 			Vector3 vector3 = PlayerController.Instance.skaterController.PredictLanding(PlayerController.Instance.skaterController.skaterRigidbody.velocity);
 			PlayerController.Instance.skaterController.skaterRigidbody.AddForce(vector3, ForceMode.Impulse);
 			object[] objArray = new object[] { false, false };
-			base.DoTransition(typeof(PlayerState_InAir), objArray);
+			DoTransition(typeof(PlayerState_InAir), objArray);
 		}
 		PlayerController.Instance.CacheRidingTransforms();
 	}

@@ -54,11 +54,7 @@ namespace RootMotion.FinalIK {
 		 * Check if rotation has been changed by animation or any other external script. 
 		 * If not, consider the object to be static and offset only from the default rotation.
 		 * */
-		private bool rotationChanged {
-			get {
-				return transform.localRotation != lastLocalRotation;
-			}
-		}
+		private bool rotationChanged => transform.localRotation != lastLocalRotation;
 	}
 }
 

@@ -75,10 +75,10 @@ namespace RootMotion.Dynamics {
 			/// Initializes a new instance of the <see cref="RootMotion.Dynamics.Muscle+Props"/> class.
 			/// </summary>
 			public Props() {
-				this.mappingWeight = 1f;
-				this.pinWeight = 1f;
-				this.muscleWeight = 1f;
-				this.muscleDamper = 1f;
+				mappingWeight = 1f;
+				pinWeight = 1f;
+				muscleWeight = 1f;
+				muscleDamper = 1f;
 			}
 
 			/// <summary>
@@ -268,7 +268,7 @@ namespace RootMotion.Dynamics {
 		/// <summary>
 		/// All the colliders of this muscle (including possible compound colliders).
 		/// </summary>
-		public Collider[] colliders { get { return _colliders; }}
+		public Collider[] colliders => _colliders;
 
 		/// <summary>
 		/// Gets the velocity of the target Transform.
@@ -754,12 +754,8 @@ namespace RootMotion.Dynamics {
 			joint.slerpDrive = slerpDrive;
 		}
 
-		private Quaternion localRotation {
-			get {
-				return Quaternion.Inverse(parentRotation) * transform.rotation;
-			}
-		}
-		
+		private Quaternion localRotation => Quaternion.Inverse(parentRotation) * transform.rotation;
+
 		private Quaternion parentRotation {
 			get {
 				if (joint.connectedBody != null) return joint.connectedBody.rotation;
@@ -776,12 +772,8 @@ namespace RootMotion.Dynamics {
 		}
 		
 		// Get the rotation of the target
-		private Quaternion targetLocalRotation {
-			get {
-				return Quaternion.Inverse(targetParentRotation * toParentSpace) * target.rotation;
-			}
-		}
-		
+		private Quaternion targetLocalRotation => Quaternion.Inverse(targetParentRotation * toParentSpace) * target.rotation;
+
 		// Convert a local rotation to local joint space rotation
 		private Quaternion LocalToJointSpace(Quaternion localRotation) {
 			return toJointSpaceInverse * Quaternion.Inverse(localRotation) * toJointSpaceDefault;

@@ -36,7 +36,7 @@ namespace RootMotion.FinalIK {
 
 			// Set everything to 0
 			public void Reset() {
-				this.lastRootPosition = grounding.root.transform.position;
+				lastRootPosition = grounding.root.transform.position;
 				lastTime = Time.deltaTime;
 				IKOffset = Vector3.zero;
 				heightOffset = 0f;
@@ -45,7 +45,7 @@ namespace RootMotion.FinalIK {
 			// Should be called each time the pelvis is (re)activated
 			public void OnEnable() {
 				if (!initiated) return;
-				this.lastRootPosition = grounding.root.transform.position;
+				lastRootPosition = grounding.root.transform.position;
 				lastTime = Time.time;
 			}
 			

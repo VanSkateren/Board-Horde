@@ -19,8 +19,8 @@ namespace Dreamteck.Splines
         private List<TS_Mesh> combineMeshes = new List<TS_Mesh>();
         private int meshCount = 0;
 
-        Matrix4x4 vertexMatrix = new Matrix4x4();
-        Matrix4x4 normalMatrix = new Matrix4x4();
+        private Matrix4x4 vertexMatrix = new Matrix4x4();
+        private Matrix4x4 normalMatrix = new Matrix4x4();
 
 #if UNITY_EDITOR
         public override void EditorAwake()
@@ -92,7 +92,7 @@ namespace Dreamteck.Splines
             Generate();
         }
 
-        void Generate()
+        private void Generate()
         {
             meshCount = 0;
             for (int i = 0; i < channels.Count; i++)
@@ -329,7 +329,7 @@ namespace Dreamteck.Splines
 
             public double clipFrom
             {
-                get { return _clipFrom; }
+                get => _clipFrom;
                 set {
                     if (value != _clipFrom)
                     {
@@ -341,7 +341,7 @@ namespace Dreamteck.Splines
 
             public double clipTo
             {
-                get { return _clipTo; }
+                get => _clipTo;
                 set
                 {
                     if (value != _clipTo)
@@ -354,7 +354,7 @@ namespace Dreamteck.Splines
 
             public bool randomOffset
             {
-                get { return _randomOffset; }
+                get => _randomOffset;
                 set
                 {
                     if (value != _randomOffset)
@@ -367,7 +367,7 @@ namespace Dreamteck.Splines
 
             public bool overrideMaterialID
             {
-                get { return _overrideMaterialID; }
+                get => _overrideMaterialID;
                 set
                 {
                     if (value != _overrideMaterialID)
@@ -380,7 +380,7 @@ namespace Dreamteck.Splines
 
             public int targetMaterialID
             {
-                get { return _targetMaterialID; }
+                get => _targetMaterialID;
                 set
                 {
                     if (value != _targetMaterialID)
@@ -393,7 +393,7 @@ namespace Dreamteck.Splines
 
             public bool randomRotation
             {
-                get { return _randomRotation; }
+                get => _randomRotation;
                 set
                 {
                     if (value != _randomRotation)
@@ -406,7 +406,7 @@ namespace Dreamteck.Splines
 
             public bool randomScale
             {
-                get { return _randomScale; }
+                get => _randomScale;
                 set
                 {
                     if (value != _randomScale)
@@ -419,7 +419,7 @@ namespace Dreamteck.Splines
 
             public bool uniformRandomScale
             {
-                get { return _uniformRandomScale; }
+                get => _uniformRandomScale;
                 set
                 {
                     if (value != _uniformRandomScale)
@@ -432,7 +432,7 @@ namespace Dreamteck.Splines
 
             public int offsetSeed
             {
-                get { return _offsetSeed; }
+                get => _offsetSeed;
                 set
                 {
                     if (value != _offsetSeed)
@@ -445,7 +445,7 @@ namespace Dreamteck.Splines
 
             public int rotationSeed
             {
-                get { return _rotationSeed; }
+                get => _rotationSeed;
                 set
                 {
                     if (value != _rotationSeed)
@@ -458,7 +458,7 @@ namespace Dreamteck.Splines
 
             public int scaleSeed
             {
-                get { return _scaleSeed; }
+                get => _scaleSeed;
                 set
                 {
                     if (value != _scaleSeed)
@@ -471,7 +471,7 @@ namespace Dreamteck.Splines
 
             public double spacing
             {
-                get { return _spacing; }
+                get => _spacing;
                 set
                 {
                     if (value != _spacing)
@@ -484,7 +484,7 @@ namespace Dreamteck.Splines
 
             public Vector2 minOffset
             {
-                get { return _minOffset; }
+                get => _minOffset;
                 set
                 {
                     if (value != _minOffset)
@@ -497,7 +497,7 @@ namespace Dreamteck.Splines
 
             public Vector2 maxOffset
             {
-                get { return _maxOffset; }
+                get => _maxOffset;
                 set
                 {
                     if (value != _maxOffset)
@@ -510,7 +510,7 @@ namespace Dreamteck.Splines
 
             public Vector3 minRotation
             {
-                get { return _minRotation; }
+                get => _minRotation;
                 set
                 {
                     if (value != _minRotation)
@@ -523,7 +523,7 @@ namespace Dreamteck.Splines
 
             public Vector3 maxRotation
             {
-                get { return _maxRotation; }
+                get => _maxRotation;
                 set
                 {
                     if (value != _maxRotation)
@@ -536,7 +536,7 @@ namespace Dreamteck.Splines
 
             public Vector3 minScale
             {
-                get { return _minScale; }
+                get => _minScale;
                 set
                 {
                     if (value != _minScale)
@@ -549,7 +549,7 @@ namespace Dreamteck.Splines
 
             public Vector3 maxScale
             {
-                get { return _maxScale; }
+                get => _maxScale;
                 set
                 {
                     if (value != _maxScale)
@@ -562,7 +562,7 @@ namespace Dreamteck.Splines
 
             public Type type
             {
-                get { return _type; }
+                get => _type;
                 set
                 {
                     if (value != _type)
@@ -575,7 +575,7 @@ namespace Dreamteck.Splines
 
             public bool randomOrder
             {
-                get { return _randomOrder; }
+                get => _randomOrder;
                 set
                 {
                     if (value != _randomOrder)
@@ -588,7 +588,7 @@ namespace Dreamteck.Splines
 
             public int randomSeed
             {
-                get { return _iterationSeed; }
+                get => _iterationSeed;
                 set
                 {
                     if (value != _iterationSeed)
@@ -600,7 +600,7 @@ namespace Dreamteck.Splines
             }
             public int count
             {
-                get { return _count; }
+                get => _count;
                 set
                 {
                     if (value != _count)
@@ -614,7 +614,7 @@ namespace Dreamteck.Splines
 
             public UVOverride overrideUVs
             {
-                get { return _overrideUVs; }
+                get => _overrideUVs;
                 set
                 {
                     if (value != _overrideUVs)
@@ -627,7 +627,7 @@ namespace Dreamteck.Splines
 
             public Vector2 uvOffset
             {
-                get { return _uvOffset; }
+                get => _uvOffset;
                 set
                 {
                     if (value != _uvOffset)
@@ -640,7 +640,7 @@ namespace Dreamteck.Splines
 
             public Vector2 uvScale
             {
-                get { return _uvScale; }
+                get => _uvScale;
                 set
                 {
                     if (value != _uvScale)
@@ -653,7 +653,7 @@ namespace Dreamteck.Splines
 
             public bool overrideNormal
             {
-                get { return _overrideNormal; }
+                get => _overrideNormal;
                 set
                 {
                     if (value != _overrideNormal)
@@ -666,7 +666,7 @@ namespace Dreamteck.Splines
 
             public Vector3 customNormal
             {
-                get { return _customNormal; }
+                get => _customNormal;
                 set
                 {
                     if (value != _customNormal)
@@ -693,7 +693,7 @@ namespace Dreamteck.Splines
                 Rebuild();
             }
 
-            void Init()
+            private void Init()
             {
                 _minScale = _maxScale = Vector3.one;
                 _minOffset = _maxOffset = Vector3.zero;
@@ -830,7 +830,7 @@ namespace Dreamteck.Splines
                 if (owner != null) owner.Rebuild(false);
             }
 
-            void Refresh()
+            private void Refresh()
             {
                 for (int i = 0; i < meshes.Count; i++) meshes[i].Refresh();
                 Rebuild();
@@ -910,10 +910,7 @@ namespace Dreamteck.Splines
 
                 public Mesh mesh
                 {
-                    get
-                    {
-                        return _mesh;
-                    }
+                    get => _mesh;
                     set
                     {
                         if (_mesh != value)
@@ -926,10 +923,7 @@ namespace Dreamteck.Splines
 
                 public Vector3 rotation
                 {
-                    get
-                    {
-                        return _rotation;
-                    }
+                    get => _rotation;
                     set
                     {
                         if (rotation != value)
@@ -942,10 +936,7 @@ namespace Dreamteck.Splines
 
                 public Vector2 offset
                 {
-                    get
-                    {
-                        return _offset;
-                    }
+                    get => _offset;
                     set
                     {
                         if (_offset != value)
@@ -958,10 +949,7 @@ namespace Dreamteck.Splines
 
                 public Vector3 scale
                 {
-                    get
-                    {
-                        return _scale;
-                    }
+                    get => _scale;
                     set
                     {
                         if (_scale != value)
@@ -974,10 +962,7 @@ namespace Dreamteck.Splines
 
                 public Vector2 uvScale
                 {
-                    get
-                    {
-                        return _uvScale;
-                    }
+                    get => _uvScale;
                     set
                     {
                         if (_uvScale != value)
@@ -990,10 +975,7 @@ namespace Dreamteck.Splines
 
                 public Vector2 uvOffset
                 {
-                    get
-                    {
-                        return _uvOffset;
-                    }
+                    get => _uvOffset;
                     set
                     {
                         if (_uvOffset != value)
@@ -1006,10 +988,7 @@ namespace Dreamteck.Splines
 
                 public float uvRotation
                 {
-                    get
-                    {
-                        return _uvRotation;
-                    }
+                    get => _uvRotation;
                     set
                     {
                         if (_uvRotation != value)
@@ -1022,7 +1001,7 @@ namespace Dreamteck.Splines
 
                 public MirrorMethod mirror
                 {
-                    get { return _mirror; }
+                    get => _mirror;
                     set
                     {
                         if (_mirror != value)
@@ -1035,7 +1014,7 @@ namespace Dreamteck.Splines
 
                 public bool flipFaces
                 {
-                    get { return _flipFaces; }
+                    get => _flipFaces;
                     set
                     {
                         if (_flipFaces != value)
@@ -1048,7 +1027,7 @@ namespace Dreamteck.Splines
 
                 public bool doubleSided
                 {
-                    get { return _doubleSided; }
+                    get => _doubleSided;
                     set
                     {
                         if (_doubleSided != value)
@@ -1164,7 +1143,7 @@ namespace Dreamteck.Splines
                     GroupVertices();
                 }
 
-                void FlipFaces()
+                private void FlipFaces()
                 {
                     TS_Mesh temp = new TS_Mesh();
                     temp.normals = normals;
@@ -1175,7 +1154,7 @@ namespace Dreamteck.Splines
                     temp = null;
                 }
 
-                void DoubleSided()
+                private void DoubleSided()
                 {
                     TS_Mesh temp = new TS_Mesh();
                     temp.vertices = vertices;
@@ -1254,7 +1233,7 @@ namespace Dreamteck.Splines
                     }
                 }
 
-                void CalculateBounds()
+                private void CalculateBounds()
                 {
                     Vector3 min = Vector3.zero;
                     Vector3 max = Vector3.zero;
@@ -1315,7 +1294,7 @@ namespace Dreamteck.Splines
                     CalculateTangents();
                 }
 
-                void TransformVertices()
+                private void TransformVertices()
                 {
                     Matrix4x4 vertexMatrix = new Matrix4x4();
                     vertexMatrix.SetTRS(_offset, Quaternion.Euler(_rotation), _scale);
@@ -1335,7 +1314,7 @@ namespace Dreamteck.Splines
                     }
                 }
 
-                void GroupVertices()
+                private void GroupVertices()
                 {
                     vertexGroups = new List<VertexGroup>();
                     for (int i = 0; i < vertices.Length; i++)
@@ -1357,7 +1336,7 @@ namespace Dreamteck.Splines
                     }
                 }
 
-                int FindInsertIndex(Vector3 pos, float value)
+                private int FindInsertIndex(Vector3 pos, float value)
                 {
                     int lower = 0;
                     int upper = vertexGroups.Count - 1;
@@ -1372,7 +1351,7 @@ namespace Dreamteck.Splines
                     return lower;
                 }
 
-                void CalculateTangents()
+                private void CalculateTangents()
                 {
                     if (vertices.Length == 0)
                     {

@@ -31,7 +31,7 @@ namespace SCPE
 
     internal sealed class InvertRenderer : PostProcessEffectRenderer<Invert>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

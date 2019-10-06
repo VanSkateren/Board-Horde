@@ -89,10 +89,7 @@ namespace KinematicCharacterController.Walkthrough.ClimbingLadders
         private ClimbingState _internalClimbingState;
         private ClimbingState _climbingState
         {
-            get
-            {
-                return _internalClimbingState;
-            }
+            get => _internalClimbingState;
             set
             {
                 _internalClimbingState = value;

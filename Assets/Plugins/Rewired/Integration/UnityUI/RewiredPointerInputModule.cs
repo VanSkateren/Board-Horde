@@ -76,23 +76,11 @@ namespace Rewired.Integration.UnityUI {
 
         private ITouchInputSource m_UserDefaultTouchInputSource;
         private UnityInputSource __m_DefaultInputSource;
-        private UnityInputSource defaultInputSource {
-            get {
-                return __m_DefaultInputSource != null ? __m_DefaultInputSource : __m_DefaultInputSource = new UnityInputSource();
-            }
-        }
+        private UnityInputSource defaultInputSource => __m_DefaultInputSource != null ? __m_DefaultInputSource : __m_DefaultInputSource = new UnityInputSource();
 
-        private IMouseInputSource defaultMouseInputSource {
-            get {
-                return defaultInputSource;
-            }
-        }
+        private IMouseInputSource defaultMouseInputSource => defaultInputSource;
 
-        protected ITouchInputSource defaultTouchInputSource {
-            get {
-                return defaultInputSource;
-            }
-        }
+        protected ITouchInputSource defaultTouchInputSource => defaultInputSource;
 
         protected bool IsDefaultMouse(IMouseInputSource mouse) {
             return defaultMouseInputSource == mouse;
@@ -301,7 +289,7 @@ namespace Rewired.Integration.UnityUI {
 
             pointerData.position = input.position;
 
-            pointerData.button = PlayerPointerEventData.InputButton.Left;
+            pointerData.button = PointerEventData.InputButton.Left;
 
             eventSystem.RaycastAll(pointerData, m_RaycastResultCache);
 
@@ -354,15 +342,15 @@ namespace Rewired.Integration.UnityUI {
         }
 
         public class MouseButtonEventData {
-            public PlayerPointerEventData.FramePressState buttonState;
+            public PointerEventData.FramePressState buttonState;
             public PlayerPointerEventData buttonData;
 
             public bool PressedThisFrame() {
-                return buttonState == PlayerPointerEventData.FramePressState.Pressed || buttonState == PlayerPointerEventData.FramePressState.PressedAndReleased;
+                return buttonState == PointerEventData.FramePressState.Pressed || buttonState == PointerEventData.FramePressState.PressedAndReleased;
             }
 
             public bool ReleasedThisFrame() {
-                return buttonState == PlayerPointerEventData.FramePressState.Released || buttonState == PlayerPointerEventData.FramePressState.PressedAndReleased;
+                return buttonState == PointerEventData.FramePressState.Released || buttonState == PointerEventData.FramePressState.PressedAndReleased;
             }
         }
 
@@ -394,7 +382,7 @@ namespace Rewired.Integration.UnityUI {
             }
 
             leftData.scrollDelta = mouseInputSource.wheelDelta;
-            leftData.button = PlayerPointerEventData.InputButton.Left;
+            leftData.button = PointerEventData.InputButton.Left;
             eventSystem.RaycastAll(leftData, m_RaycastResultCache);
             var raycast = FindFirstRaycast(m_RaycastResultCache);
             leftData.pointerCurrentRaycast = raycast;
@@ -404,19 +392,19 @@ namespace Rewired.Integration.UnityUI {
             PlayerPointerEventData rightData;
             GetPointerData(playerId, mouseIndex, kMouseRightId, out rightData, true, PointerEventType.Mouse);
             CopyFromTo(leftData, rightData);
-            rightData.button = PlayerPointerEventData.InputButton.Right;
+            rightData.button = PointerEventData.InputButton.Right;
 
             PlayerPointerEventData middleData;
             GetPointerData(playerId, mouseIndex, kMouseMiddleId, out middleData, true, PointerEventType.Mouse);
             CopyFromTo(leftData, middleData);
-            middleData.button = PlayerPointerEventData.InputButton.Middle;
+            middleData.button = PointerEventData.InputButton.Middle;
 
             // Do remaining buttons
             for(int i = 3; i < mouseInputSource.buttonCount; i++) {
                 PlayerPointerEventData data;
                 GetPointerData(playerId, mouseIndex, customButtonsStartingId + i, out data, true, PointerEventType.Mouse);
                 CopyFromTo(leftData, data);
-                data.button = (PlayerPointerEventData.InputButton)(-1);
+                data.button = (PointerEventData.InputButton)(-1);
             }
 
             m_MouseState.SetButtonState(0, StateForMouseButton(playerId, mouseIndex, 0), leftData);
@@ -573,13 +561,13 @@ namespace Rewired.Integration.UnityUI {
             private int m_Button = 0;
 
             public MouseButtonEventData eventData {
-                get { return m_EventData; }
-                set { m_EventData = value; }
+                get => m_EventData;
+                set => m_EventData = value;
             }
 
             public int button {
-                get { return m_Button; }
-                set { m_Button = value; }
+                get => m_Button;
+                set => m_Button = value;
             }
 
             private MouseButtonEventData m_EventData;

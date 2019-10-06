@@ -32,7 +32,7 @@ namespace Animancer
         /// <summary>The <see cref="RuntimeAnimatorController"/> which this state plays.</summary>
         public RuntimeAnimatorController Controller
         {
-            get { return _Controller; }
+            get => _Controller;
             set
             {
                 if (ReferenceEquals(_Controller, value))
@@ -51,8 +51,8 @@ namespace Animancer
         /// <summary>The <see cref="RuntimeAnimatorController"/> which this state plays.</summary>
         public override Object MainObject
         {
-            get { return Controller; }
-            set { Controller = (RuntimeAnimatorController)value; }
+            get => Controller;
+            set => Controller = (RuntimeAnimatorController)value;
         }
 
         /// <summary>The internal system which plays the <see cref="RuntimeAnimatorController"/>.</summary>
@@ -66,7 +66,8 @@ namespace Animancer
         /// used and will be ignored.
         /// </summary>
         [Obsolete("ControllerStates don't track the progress of a single animation so this event isn't used and will be ignored.")]
-        public override Action OnEnd { get { return null; } set { } }
+        public override Action OnEnd { get => null;
+            set { } }
 #pragma warning restore CS0809 // Obsolete member overrides non-obsolete member.
 
         /************************************************************************************************************************/
@@ -140,17 +141,17 @@ namespace Animancer
         /// <summary>
         /// The current <see cref="AnimatorStateInfo.length"/>.
         /// </summary>
-        public override float Length { get { return Playable.GetCurrentAnimatorStateInfo(0).length; } }
+        public override float Length => Playable.GetCurrentAnimatorStateInfo(0).length;
 
         /// <summary>
         /// Indicates whether this state will return a valid <see cref="Length"/> value.
         /// </summary>
-        public override bool HasLength { get { return Playable.IsValid(); } }
+        public override bool HasLength => Playable.IsValid();
 
         /// <summary>
         /// Indicates whether the current state will loop back to the start when it reaches the end.
         /// </summary>
-        public override bool IsLooping { get { return Playable.GetCurrentAnimatorStateInfo(0).loop; } }
+        public override bool IsLooping => Playable.GetCurrentAnimatorStateInfo(0).loop;
 
         /************************************************************************************************************************/
 
@@ -158,10 +159,7 @@ namespace Animancer
         /// Returns <see cref="Vector3.zero"/> since <see cref="AnimatorControllerPlayable"/> doesn't expose the
         /// average velocity.
         /// </summary>
-        public override Vector3 AverageVelocity
-        {
-            get { return Vector3.zero; }
-        }
+        public override Vector3 AverageVelocity => Vector3.zero;
 
         /************************************************************************************************************************/
 
@@ -204,7 +202,7 @@ namespace Animancer
         /// </summary>
         public override bool ApplyFootIK
         {
-            get { return false; }
+            get => false;
             set { }
         }
 
@@ -215,7 +213,7 @@ namespace Animancer
         /// </summary>
         public override bool ApplyAnimatorIK
         {
-            get { return false; }
+            get => false;
             set { }
         }
 
@@ -244,7 +242,7 @@ namespace Animancer
             /// </summary>
             public string Name
             {
-                get { return _Name; }
+                get => _Name;
                 set
                 {
                     _Name = value;
@@ -259,7 +257,7 @@ namespace Animancer
             /// </summary>
             public int Hash
             {
-                get { return _Hash; }
+                get => _Hash;
                 set
                 {
                     _Name = null;
@@ -392,7 +390,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of parameters being wrapped by this state.</summary>
-        public virtual int ParameterCount { get { return 0; } }
+        public virtual int ParameterCount => 0;
 
         /// <summary>Returns the hash of a parameter being wrapped by this state.</summary>
         /// <exception cref="NotSupportedException">Thrown if this state doesn't wrap any parameters.</exception>
@@ -473,7 +471,7 @@ namespace Animancer
             /************************************************************************************************************************/
 
             /// <summary>The number of parameters being managed by the target state.</summary>
-            public override int ParameterCount { get { return Parameters.Count; } }
+            public override int ParameterCount => Parameters.Count;
 
             /// <summary>Returns the name of a parameter being managed by the target state.</summary>
             /// <exception cref="NotSupportedException">Thrown if the target state doesn't manage any parameters.</exception>
@@ -530,8 +528,8 @@ namespace Animancer
             /// </summary>
             public RuntimeAnimatorController Controller
             {
-                get { return _Controller; }
-                set { _Controller = value; }
+                get => _Controller;
+                set => _Controller = value;
             }
 
             /************************************************************************************************************************/
@@ -540,7 +538,7 @@ namespace Animancer
             /// The <see cref="Controller"/> will be used as the <see cref="AnimancerState.Key"/> for the created state to be
             /// registered with.
             /// </summary>
-            public override object Key { get { return _Controller; } }
+            public override object Key => _Controller;
 
             /************************************************************************************************************************/
         }

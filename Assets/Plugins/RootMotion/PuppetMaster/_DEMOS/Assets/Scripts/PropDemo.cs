@@ -51,10 +51,6 @@ namespace RootMotion.Demos {
 			}
 		}
 
-		private PropRoot connectTo {
-			get {
-				return right? propRootRight: propRootLeft;
-			}
-		}
+		private PropRoot connectTo => right? propRootRight: propRootLeft;
 	}
 }

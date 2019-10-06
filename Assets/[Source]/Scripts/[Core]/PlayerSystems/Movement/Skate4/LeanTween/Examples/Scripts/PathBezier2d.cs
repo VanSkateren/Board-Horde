@@ -11,7 +11,7 @@ public class PathBezier2d : MonoBehaviour {
 
 	private LTBezierPath visualizePath;
 
-	void Start () {
+	private void Start () {
 		// move 
 		Vector3[] path = new Vector3[]{cubes[0].position,cubes[1].position,cubes[2].position,cubes[3].position};
 		// 90 degree test
@@ -23,7 +23,7 @@ public class PathBezier2d : MonoBehaviour {
 		LeanTween.moveLocal(dude2, path, 10f).setOrientToPath2d(true);
 	}
 
-	void OnDrawGizmos(){
+	private void OnDrawGizmos(){
 		// Debug.Log("drwaing");
 		Gizmos.color = Color.red;
 		if(visualizePath!=null)

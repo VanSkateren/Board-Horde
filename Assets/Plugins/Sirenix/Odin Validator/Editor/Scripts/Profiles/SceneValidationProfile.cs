@@ -37,10 +37,10 @@ namespace Sirenix.OdinValidator.Editor
             HashSet<string> excludeMap = new HashSet<string>();
 
             // Exclude scenes:
-            if (this.ExcludeScenePaths != null)
+            if (ExcludeScenePaths != null)
             {
-                string[] excludeDirectories = this.ExcludeScenePaths.Select(x => x.Trim('/')).Where(x => !string.IsNullOrEmpty(x) && Directory.Exists(x)).ToArray();
-                IEnumerable<string> excludeScenesFiles = this.ExcludeScenePaths.Where(x => File.Exists(x));
+                string[] excludeDirectories = ExcludeScenePaths.Select(x => x.Trim('/')).Where(x => !string.IsNullOrEmpty(x) && Directory.Exists(x)).ToArray();
+                IEnumerable<string> excludeScenesFiles = ExcludeScenePaths.Where(x => File.Exists(x));
                 if (excludeDirectories.Length > 0)
                 {
                     excludeMap.AddRange(AssetDatabase.FindAssets("t:SceneAsset", excludeDirectories).Select(x => AssetDatabase.GUIDToAssetPath(x)));
@@ -49,10 +49,10 @@ namespace Sirenix.OdinValidator.Editor
             }
 
             // Add scenes:
-            if (this.ScenePaths != null)
+            if (ScenePaths != null)
             {
-                string[] addDirectories = this.ScenePaths.Select(x => x.Trim('/')).Where(x => !string.IsNullOrEmpty(x) && Directory.Exists(x)).ToArray();
-                IEnumerable<string> addSceneFiles = this.ScenePaths.Where(x => File.Exists(x));
+                string[] addDirectories = ScenePaths.Select(x => x.Trim('/')).Where(x => !string.IsNullOrEmpty(x) && Directory.Exists(x)).ToArray();
+                IEnumerable<string> addSceneFiles = ScenePaths.Where(x => File.Exists(x));
 
                 if (addDirectories.Length > 0)
                 {
@@ -77,7 +77,7 @@ namespace Sirenix.OdinValidator.Editor
                 }
             }
 
-            if (this.IncludeScenesFromBuildOptions)
+            if (IncludeScenesFromBuildOptions)
             {
                 foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
                 {
@@ -88,7 +88,7 @@ namespace Sirenix.OdinValidator.Editor
                 }
             }
 
-            if (this.IncludeOpenScenes)
+            if (IncludeOpenScenes)
             {
                 SceneSetup[] setupScenes = EditorSceneManager.GetSceneManagerSetup();
 
@@ -117,7 +117,7 @@ namespace Sirenix.OdinValidator.Editor
                     openScene = false;
 
                     if (!setupScene.isActive)
-                        EditorSceneManager.SetActiveScene(EditorSceneManager.GetSceneByPath(setupScene.path));
+                        SceneManager.SetActiveScene(SceneManager.GetSceneByPath(setupScene.path));
 
                     break;
                 }
@@ -131,7 +131,7 @@ namespace Sirenix.OdinValidator.Editor
                 EditorSceneManager.OpenScene(address.ScenePath, OpenSceneMode.Single);
             }
 
-            GameObject go = this.GetGameObjectFromIndexPath(address);
+            GameObject go = GetGameObjectFromIndexPath(address);
 
             if (go != null)
             {
@@ -178,7 +178,7 @@ namespace Sirenix.OdinValidator.Editor
 
         public static IEnumerable<GameObject> SceneRoots(string scenePath)
         {
-            Scene scene = EditorSceneManager.GetSceneByPath(scenePath);
+            Scene scene = SceneManager.GetSceneByPath(scenePath);
 
             if (Scene_GetRootGameObjects_Method != null && scene.IsValid())
             {
@@ -206,11 +206,11 @@ namespace Sirenix.OdinValidator.Editor
                 yield break;
 
             UnityEngine.Object[] selection = Selection.objects;
-            List<string> scenesToTest = this.GetAllScenes().ToList();
+            List<string> scenesToTest = GetAllScenes().ToList();
             SceneSetup[] setup = EditorSceneManager.GetSceneManagerSetup();
 
             float partialProgress = 0f;
-            float partialProgressStepSize = 1f / (scenesToTest.Count + (this.IncludeAssetDependencies ? 1 : 0));
+            float partialProgressStepSize = 1f / (scenesToTest.Count + (IncludeAssetDependencies ? 1 : 0));
 
             for (int i = 0; i < scenesToTest.Count; i++)
             {
@@ -239,7 +239,7 @@ namespace Sirenix.OdinValidator.Editor
                             Source = go,
                             Results = result,
                             Progress = progress,
-                            SourceRecoveryData = this.GetRecoveryData(go, null, scene),
+                            SourceRecoveryData = GetRecoveryData(go, null, scene),
                         };
 
                         yield return entry;
@@ -257,7 +257,7 @@ namespace Sirenix.OdinValidator.Editor
                             {
                                 Name = "Missing Reference",
                                 Source = go,
-                                SourceRecoveryData = this.GetRecoveryData(go, component, scene),
+                                SourceRecoveryData = GetRecoveryData(go, component, scene),
                                 Profile = this,
                                 Progress = progress,
                                 Results = new List<ValidationResult>() { new ValidationResult()
@@ -279,7 +279,7 @@ namespace Sirenix.OdinValidator.Editor
                                 Source = component,
                                 Results = result,
                                 Progress = progress,
-                                SourceRecoveryData = this.GetRecoveryData(go, component, scene),
+                                SourceRecoveryData = GetRecoveryData(go, component, scene),
                             };
 
                             yield return entry;
@@ -297,7 +297,7 @@ namespace Sirenix.OdinValidator.Editor
                 EditorSceneManager.RestoreSceneManagerSetup(setup);
             }
 
-            if (this.IncludeAssetDependencies)
+            if (IncludeAssetDependencies)
             {
                 UnityEngine.Object[] scenes = scenesToTest
                     .ToHashSet()

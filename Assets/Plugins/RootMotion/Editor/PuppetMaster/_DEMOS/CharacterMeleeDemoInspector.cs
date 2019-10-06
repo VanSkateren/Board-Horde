@@ -8,8 +8,8 @@ namespace RootMotion.Demos {
 	[CustomEditor(typeof(CharacterMeleeDemo))]
 	public class CharacterMeleeDemoInspector : Editor {
 		
-		private CharacterMeleeDemo script { get { return target as CharacterMeleeDemo; }}
-		
+		private CharacterMeleeDemo script => target as CharacterMeleeDemo;
+
 		private GameObject replace;
 
 		private static Color pro = new Color(0.7f, 0.9f, 0.5f, 1f);
@@ -44,7 +44,7 @@ namespace RootMotion.Demos {
 
 						Debug.Log("You probably need to adjust the localPosition and localRotation of the Prop Root to match this character's hand.");
 
-						UserControlAI[] userControls = (UserControlAI[])GameObject.FindObjectsOfType<UserControlAI>();
+						UserControlAI[] userControls = (UserControlAI[])FindObjectsOfType<UserControlAI>();
 						foreach (UserControlAI ai in userControls) {
 							if (ai.moveTarget == null) {
 								ai.moveTarget = script.transform.parent.GetComponentInChildren<PuppetMaster>().muscles[0].joint.transform;

@@ -10,7 +10,7 @@ namespace Dreamteck.Splines
     {
         public float expand
         {
-            get { return _expand; }
+            get => _expand;
             set
             {
                 if (value != _expand)
@@ -23,7 +23,7 @@ namespace Dreamteck.Splines
 
         public float extrude
         {
-            get { return _extrude; }
+            get => _extrude;
             set
             {
                 if (value != _extrude)
@@ -36,7 +36,7 @@ namespace Dreamteck.Splines
 
         public double extrudeClipFrom
         {
-            get { return _extrudeFrom; }
+            get => _extrudeFrom;
             set
             {
                 if (value != _extrudeFrom)
@@ -49,7 +49,7 @@ namespace Dreamteck.Splines
 
         public double extrudeClipTo
         {
-            get { return _extrudeTo; }
+            get => _extrudeTo;
             set
             {
                 if (value != _extrudeTo)
@@ -62,7 +62,7 @@ namespace Dreamteck.Splines
 
         public Vector2 sideUvScale
         {
-            get { return _sideUvScale; }
+            get => _sideUvScale;
             set
             {
                 if (value != _sideUvScale)
@@ -76,7 +76,7 @@ namespace Dreamteck.Splines
 
         public Vector2 sideUvOffset
         {
-            get { return _sideUvOffset; }
+            get => _sideUvOffset;
             set
             {
                 if (value != _sideUvOffset)
@@ -89,7 +89,7 @@ namespace Dreamteck.Splines
 
         public SplineComputer extrudeComputer
         {
-            get { return _extrudeComputer; }
+            get => _extrudeComputer;
             set
             {
                 if (value != _extrudeComputer)
@@ -104,7 +104,7 @@ namespace Dreamteck.Splines
 
         public bool uniformUvs
         {
-            get { return _uniformUvs; }
+            get => _uniformUvs;
             set
             {
                 if (value != _uniformUvs)
@@ -322,13 +322,13 @@ namespace Dreamteck.Splines
             }
         }
 
-        void GenerateCapTris(bool flip)
+        private void GenerateCapTris(bool flip)
         {
             MeshUtility.Triangulate(projectedVerts, ref capTris);
             if (flip) MeshUtility.FlipTriangles(ref capTris);
         }
 
-        int WriteTris(ref int[] tris, ref int[] target, int vertexOffset, int trisOffset, bool flip)
+        private int WriteTris(ref int[] tris, ref int[] target, int vertexOffset, int trisOffset, bool flip)
         {
             for (int i = trisOffset; i < trisOffset + tris.Length; i+=3)
             {
@@ -348,7 +348,7 @@ namespace Dreamteck.Splines
             return trisOffset + tris.Length;
         }
 
-        bool IsClockwise(Vector2[] points2D)
+        private bool IsClockwise(Vector2[] points2D)
         {
             float sum = 0f;
             for (int i = 1; i < points2D.Length; i++)
@@ -361,7 +361,7 @@ namespace Dreamteck.Splines
             return sum <= 0f;
         }
 
-        void GetIdentityVerts(Vector3 center, Vector3 normal, bool clockwise)
+        private void GetIdentityVerts(Vector3 center, Vector3 normal, bool clockwise)
         {
             Quaternion vertsRotation = Quaternion.Inverse(Quaternion.LookRotation(normal));
             if (identityVertices.Length != clippedSamples.Length)
@@ -376,7 +376,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        void GetProjectedVertices(Vector3[] points, Vector3 normal, Vector3 center, int count = 0)
+        private void GetProjectedVertices(Vector3[] points, Vector3 normal, Vector3 center, int count = 0)
         {
             Quaternion rot = Quaternion.LookRotation(normal, Vector3.up);
             Vector3 up = rot * Vector3.up;

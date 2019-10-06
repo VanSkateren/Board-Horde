@@ -23,7 +23,7 @@ public class GeneralEasingTypes : MonoBehaviour {
         "EasePunch","EaseShake",
 	};
 
-	void Start () {
+	private void Start () {
 
 		demoEaseTypes();
 	}

@@ -42,7 +42,7 @@ namespace SCPE
 
     internal sealed class ScanlinesRenderer : PostProcessEffectRenderer<Scanlines>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

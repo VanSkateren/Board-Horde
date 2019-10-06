@@ -23,10 +23,7 @@ namespace Dreamteck.Splines {
         /// </summary>
         public bool isClosed
         {
-            get
-            {
-                return closed && points.Length >= 4;
-            }
+            get => closed && points.Length >= 4;
             set { }
         }
         /// <summary>

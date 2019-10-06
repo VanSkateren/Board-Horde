@@ -21,7 +21,7 @@ namespace RootMotion.FinalIK {
 			[Tooltip("Only used if this hit point gets hit when already processing another hit")]
 			[SerializeField] float crossFadeTime = 0.1f;
 
-			public bool inProgress { get { return timer < length; } }
+			public bool inProgress => timer < length;
 
 			protected float crossFader { get; private set; }
 			protected float timer { get; private set; }

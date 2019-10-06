@@ -8,7 +8,7 @@ namespace RootMotion.Dynamics {
 	[CustomEditor(typeof(PuppetMasterHumanoidConfig))]
 	public class PuppetMasterHumanoidConfigInspector : Editor {
 		
-		private PuppetMasterHumanoidConfig script { get { return target as PuppetMasterHumanoidConfig; } }
+		private PuppetMasterHumanoidConfig script => target as PuppetMasterHumanoidConfig;
 
 		public override void OnInspectorGUI() {
 			foreach (PuppetMasterHumanoidConfig.HumanoidMuscle m in script.muscles) {

@@ -8,7 +8,7 @@ namespace Michsky.UI.ModernUIPack
 
         void Start()
         {
-            buttonAnimator = this.GetComponent<Animator>();
+            buttonAnimator = GetComponent<Animator>();
         }
 
         public void HoverButton()

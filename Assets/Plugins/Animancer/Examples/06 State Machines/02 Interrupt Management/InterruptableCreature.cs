@@ -23,11 +23,11 @@ namespace Animancer.Examples
 
         [SerializeField]
         private AnimancerComponent _Animancer;
-        public AnimancerComponent Animancer { get { return _Animancer; } }
+        public AnimancerComponent Animancer => _Animancer;
 
         [SerializeField]
         private InterruptableCreatureState _Idle;
-        public InterruptableCreatureState Idle { get { return _Idle; } }
+        public InterruptableCreatureState Idle => _Idle;
 
         // Rigidbody.
         // Ground Detector.

@@ -35,7 +35,7 @@ public class PlayerState_Impact : PlayerState_OnBoard
 
 	public PlayerState_Impact(bool p_canGrind)
 	{
-		this._canGrind = p_canGrind;
+		_canGrind = p_canGrind;
 	}
 
 	public PlayerState_Impact(Vector3 p_inAirVelocity)
@@ -44,7 +44,7 @@ public class PlayerState_Impact : PlayerState_OnBoard
 
 	public override bool CanGrind()
 	{
-		return this._canGrind;
+		return _canGrind;
 	}
 
 	public override void Enter()
@@ -86,9 +86,9 @@ public class PlayerState_Impact : PlayerState_OnBoard
 			else
 			{
 				PlayerController.Instance.skaterController.skaterRigidbody.angularVelocity = Vector3.zero;
-				if (this.groundedFrameCount < this.groundedFrameMax)
+				if (groundedFrameCount < groundedFrameMax)
 				{
-					this.groundedFrameCount++;
+					groundedFrameCount++;
 					return;
 				}
 			}
@@ -113,18 +113,18 @@ public class PlayerState_Impact : PlayerState_OnBoard
 	public override void OnBrakeHeld()
 	{
 		PlayerController.Instance.AnimSetBraking(true);
-		base.DoTransition(typeof(PlayerState_Braking), null);
+		DoTransition(typeof(PlayerState_Braking), null);
 	}
 
 	public override void OnBrakePressed()
 	{
 		PlayerController.Instance.AnimSetBraking(true);
-		base.DoTransition(typeof(PlayerState_Braking), null);
+		DoTransition(typeof(PlayerState_Braking), null);
 	}
 
 	public override void OnEndImpact()
 	{
-		base.DoTransition(typeof(PlayerState_Riding), null);
+		DoTransition(typeof(PlayerState_Riding), null);
 	}
 
 	public override void OnFirstWheelDown()
@@ -133,9 +133,9 @@ public class PlayerState_Impact : PlayerState_OnBoard
 
 	public override void OnGrindDetected()
 	{
-		if (this._canGrind)
+		if (_canGrind)
 		{
-			base.DoTransition(typeof(PlayerState_Grinding), null);
+			DoTransition(typeof(PlayerState_Grinding), null);
 		}
 	}
 
@@ -148,7 +148,7 @@ public class PlayerState_Impact : PlayerState_OnBoard
 		if (!PlayerController.Instance.IsRespawning)
 		{
 			object[] pMongo = new object[] { p_mongo };
-			base.DoTransition(typeof(PlayerState_Pushing), pMongo);
+			DoTransition(typeof(PlayerState_Pushing), pMongo);
 		}
 	}
 
@@ -161,7 +161,7 @@ public class PlayerState_Impact : PlayerState_OnBoard
 		PlayerController.Instance.SetBackPivotRotation(0f);
 		PlayerController.Instance.SetPivotForwardRotation(0f, 40f);
 		PlayerController.Instance.SetPivotSideRotation(0f);
-		if (this._impactFinished)
+		if (_impactFinished)
 		{
 			if (p_leftStick.SetupDir > 0.8f || (new Vector2(p_leftStick.ToeAxis, p_leftStick.SetupDir)).magnitude > 0.8f && p_leftStick.SetupDir > 0.325f)
 			{
@@ -169,9 +169,9 @@ public class PlayerState_Impact : PlayerState_OnBoard
 				PlayerController.Instance.animationController.SetValue("EndImpact", true);
 				PlayerController.Instance.AnimSetNollie(PlayerController.Instance.GetNollie(false));
 				PlayerController.Instance.CrossFadeAnimation("Setup", 0.2f);
-				PlayerController.Instance.SetupDirection(p_leftStick, ref this._setupDir);
-				object[] pLeftStick = new object[] { p_leftStick, p_rightStick, p_leftStick.ForwardDir > 0.2f, this._setupDir };
-				base.DoTransition(typeof(PlayerState_Setup), pLeftStick);
+				PlayerController.Instance.SetupDirection(p_leftStick, ref _setupDir);
+				object[] pLeftStick = new object[] { p_leftStick, p_rightStick, p_leftStick.ForwardDir > 0.2f, _setupDir };
+				DoTransition(typeof(PlayerState_Setup), pLeftStick);
 				return;
 			}
 			if (p_rightStick.AugmentedSetupDir > 0.8f || (new Vector2(p_rightStick.ToeAxis, p_rightStick.SetupDir)).magnitude > 0.8f && p_rightStick.SetupDir > 0.325f)
@@ -180,9 +180,9 @@ public class PlayerState_Impact : PlayerState_OnBoard
 				PlayerController.Instance.animationController.SetValue("EndImpact", true);
 				PlayerController.Instance.AnimSetNollie(PlayerController.Instance.GetNollie(true));
 				PlayerController.Instance.CrossFadeAnimation("Setup", 0.2f);
-				PlayerController.Instance.SetupDirection(p_rightStick, ref this._setupDir);
-				object[] pRightStick = new object[] { p_rightStick, p_leftStick, p_rightStick.ForwardDir > 0.2f, this._setupDir };
-				base.DoTransition(typeof(PlayerState_Setup), pRightStick);
+				PlayerController.Instance.SetupDirection(p_rightStick, ref _setupDir);
+				object[] pRightStick = new object[] { p_rightStick, p_leftStick, p_rightStick.ForwardDir > 0.2f, _setupDir };
+				DoTransition(typeof(PlayerState_Setup), pRightStick);
 			}
 		}
 	}
@@ -195,28 +195,28 @@ public class PlayerState_Impact : PlayerState_OnBoard
 	public override void Update()
 	{
 		base.Update();
-		this._totalTimeInState += Time.deltaTime;
-		if (this._totalTimeInState > 5f)
+		_totalTimeInState += Time.deltaTime;
+		if (_totalTimeInState > 5f)
 		{
 			PlayerController.Instance.ForceBail();
 		}
-		if (this._grindTimer >= this._maxGrindTimer)
+		if (_grindTimer >= _maxGrindTimer)
 		{
-			this._canGrind = false;
+			_canGrind = false;
 		}
 		else
 		{
-			this._grindTimer += Time.deltaTime;
+			_grindTimer += Time.deltaTime;
 		}
-		if (!this._impactFinished)
+		if (!_impactFinished)
 		{
-			if (this._impactTimer >= this._maxImpactTime)
+			if (_impactTimer >= _maxImpactTime)
 			{
-				this._impactFinished = true;
+				_impactFinished = true;
 			}
 			else
 			{
-				this._impactTimer += Time.deltaTime;
+				_impactTimer += Time.deltaTime;
 			}
 		}
 		if (!PlayerController.Instance.IsGrounded() && !PlayerController.Instance.IsRespawning)
@@ -228,16 +228,16 @@ public class PlayerState_Impact : PlayerState_OnBoard
 			Vector3 vector3 = PlayerController.Instance.skaterController.PredictLanding(PlayerController.Instance.skaterController.skaterRigidbody.velocity);
 			PlayerController.Instance.skaterController.skaterRigidbody.AddForce(vector3, ForceMode.Impulse);
 			object[] objArray = new object[] { false, false };
-			base.DoTransition(typeof(PlayerState_InAir), objArray);
+			DoTransition(typeof(PlayerState_InAir), objArray);
 		}
 		else if (PlayerController.Instance.IsGrounded())
 		{
 			PlayerController.Instance.CacheRidingTransforms();
-			this._rollOffWait = 0f;
+			_rollOffWait = 0f;
 		}
 		if (PlayerController.Instance.IsCurrentAnimationPlaying("Riding"))
 		{
-			base.DoTransition(typeof(PlayerState_Riding), null);
+			DoTransition(typeof(PlayerState_Riding), null);
 		}
 		if (PlayerController.Instance.AngleToBoardTargetRotation() > 90f)
 		{

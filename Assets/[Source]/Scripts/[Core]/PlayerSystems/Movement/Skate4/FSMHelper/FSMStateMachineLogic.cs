@@ -22,48 +22,48 @@ namespace FSMHelper
 
 		public FSMStateMachineLogic(FSMStateType stateType, List<Type> childrenTypes, FSMStateMachine ownerSM, FSMStateMachineLogic parent)
 		{
-			this.m_StateClass = null;
-			this.m_StateType = stateType;
-			this.m_ChildrenTypes = childrenTypes;
-			this.m_Parent = parent;
-			this.m_OwnerSM = ownerSM;
+			m_StateClass = null;
+			m_StateType = stateType;
+			m_ChildrenTypes = childrenTypes;
+			m_Parent = parent;
+			m_OwnerSM = ownerSM;
 		}
 
 		public FSMStateMachineLogic(Type stateClass, FSMStateMachine ownerSM, FSMStateMachineLogic parent)
 		{
-			this.m_ChildrenTypes = new List<Type>();
-			this.m_StateClass = stateClass;
-			this.m_OwnerSM = ownerSM;
-			this.m_Parent = parent;
+			m_ChildrenTypes = new List<Type>();
+			m_StateClass = stateClass;
+			m_OwnerSM = ownerSM;
+			m_Parent = parent;
 		}
 
 		public void BothTriggersReleased(InputController.TurningMode turningMode)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].BothTriggersReleased(turningMode);
+				m_ChildSMs[i].BothTriggersReleased(turningMode);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.BothTriggersReleased(turningMode);
+				m_State.BothTriggersReleased(turningMode);
 			}
 		}
 
 		public void BroadcastMessage(object[] args)
 		{
-			this.m_OwnerSM.BroadcastMessage(args);
+			m_OwnerSM.BroadcastMessage(args);
 		}
 
 		public bool CanGrind()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].CanGrind();
+				flag = m_ChildSMs[i].CanGrind();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.CanGrind();
+				flag = m_State.CanGrind();
 			}
 			return flag;
 		}
@@ -71,41 +71,41 @@ namespace FSMHelper
 		public bool CapsuleEnabled()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].CapsuleEnabled();
+				flag = m_ChildSMs[i].CapsuleEnabled();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.CapsuleEnabled();
+				flag = m_State.CapsuleEnabled();
 			}
 			return flag;
 		}
 
 		public bool DoTransition(Type nextState, object[] args)
 		{
-			if (this.m_Parent == null)
+			if (m_Parent == null)
 			{
 				return false;
 			}
-			return this.m_Parent.RequestChildTransition(this, nextState, args);
+			return m_Parent.RequestChildTransition(this, nextState, args);
 		}
 
 		public void Enter(object[] args)
 		{
-			if (this.m_StateClass != null)
+			if (m_StateClass != null)
 			{
-				this.m_State = (BaseFSMState)Activator.CreateInstance(this.m_StateClass, args);
-				this.m_State._InternalSetOwnerLogic(this);
-				this.m_State.SetupDefinition(ref this.m_StateType, ref this.m_ChildrenTypes);
-				this.m_State.Enter();
+				m_State = (BaseFSMState)Activator.CreateInstance(m_StateClass, args);
+				m_State._InternalSetOwnerLogic(this);
+				m_State.SetupDefinition(ref m_StateType, ref m_ChildrenTypes);
+				m_State.Enter();
 			}
-			for (int i = 0; i < this.m_ChildrenTypes.Count; i++)
+			for (int i = 0; i < m_ChildrenTypes.Count; i++)
 			{
-				FSMStateMachineLogic fSMStateMachineLogic = new FSMStateMachineLogic(this.m_ChildrenTypes[i], this.m_OwnerSM, this);
-				this.m_ChildSMs.Add(fSMStateMachineLogic);
+				FSMStateMachineLogic fSMStateMachineLogic = new FSMStateMachineLogic(m_ChildrenTypes[i], m_OwnerSM, this);
+				m_ChildSMs.Add(fSMStateMachineLogic);
 				fSMStateMachineLogic.Enter(null);
-				if (this.m_StateType == FSMStateType.Type_OR)
+				if (m_StateType == FSMStateType.Type_OR)
 				{
 					break;
 				}
@@ -114,123 +114,123 @@ namespace FSMHelper
 
 		public void Exit()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].Exit();
+				m_ChildSMs[i].Exit();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.Exit();
+				m_State.Exit();
 			}
-			this.m_OwnerSM = null;
-			this.m_Parent = null;
-			this.m_State = null;
-			this.m_ChildSMs.Clear();
+			m_OwnerSM = null;
+			m_Parent = null;
+			m_State = null;
+			m_ChildSMs.Clear();
 		}
 
 		public void FixedUpdate()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].FixedUpdate();
+				m_ChildSMs[i].FixedUpdate();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.FixedUpdate();
+				m_State.FixedUpdate();
 			}
 		}
 
 		public string GetActiveStateTreeText(int level)
 		{
 			string str = "";
-			if (this.m_State != null)
+			if (m_State != null)
 			{
 				for (int i = 0; i < level * 4; i++)
 				{
 					str = string.Concat(str, " ");
 				}
-				str = string.Concat(str, this.m_State.ToString());
+				str = string.Concat(str, m_State.ToString());
 				str = string.Concat(str, "\n");
 			}
-			for (int j = 0; j < this.m_ChildSMs.Count; j++)
+			for (int j = 0; j < m_ChildSMs.Count; j++)
 			{
-				str = string.Concat(str, this.m_ChildSMs[j].GetActiveStateTreeText(level + 1));
+				str = string.Concat(str, m_ChildSMs[j].GetActiveStateTreeText(level + 1));
 			}
 			return str;
 		}
 
 		public float GetAugmentedAngle(StickInput p_stick)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				float augmentedAngle = this.m_ChildSMs[i].GetAugmentedAngle(p_stick);
+				float augmentedAngle = m_ChildSMs[i].GetAugmentedAngle(p_stick);
 				if (augmentedAngle != 0f)
 				{
 					return augmentedAngle;
 				}
 			}
-			if (this.m_State == null)
+			if (m_State == null)
 			{
 				return 0f;
 			}
-			return this.m_State.GetAugmentedAngle(p_stick);
+			return m_State.GetAugmentedAngle(p_stick);
 		}
 
 		public BaseFSMState GetParentState()
 		{
-			if (this.m_Parent == null)
+			if (m_Parent == null)
 			{
 				return null;
 			}
-			return this.m_Parent.m_State;
+			return m_Parent.m_State;
 		}
 
 		public StickInput GetPopStick()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				StickInput popStick = this.m_ChildSMs[i].GetPopStick();
+				StickInput popStick = m_ChildSMs[i].GetPopStick();
 				if (popStick)
 				{
 					return popStick;
 				}
 			}
-			if (this.m_State == null)
+			if (m_State == null)
 			{
 				return null;
 			}
-			return this.m_State.GetPopStick();
+			return m_State.GetPopStick();
 		}
 
 		public FSMStateMachine GetStateMachine()
 		{
-			return this.m_OwnerSM;
+			return m_OwnerSM;
 		}
 
 		public bool IsCurrentSpline(SplineComputer p_spline)
 		{
 			int num = 0;
-			if (num < this.m_ChildSMs.Count)
+			if (num < m_ChildSMs.Count)
 			{
-				return this.m_ChildSMs[num].IsCurrentSpline(p_spline);
+				return m_ChildSMs[num].IsCurrentSpline(p_spline);
 			}
-			if (this.m_State == null)
+			if (m_State == null)
 			{
 				return false;
 			}
-			return this.m_State.IsCurrentSpline(p_spline);
+			return m_State.IsCurrentSpline(p_spline);
 		}
 
 		public bool IsGrinding()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].IsGrinding();
+				flag = m_ChildSMs[i].IsGrinding();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.IsGrinding();
+				flag = m_State.IsGrinding();
 			}
 			return flag;
 		}
@@ -238,26 +238,26 @@ namespace FSMHelper
 		public bool IsInImpactState()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].IsInImpactState();
+				flag = m_ChildSMs[i].IsInImpactState();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.IsInImpactState();
+				flag = m_State.IsInImpactState();
 			}
 			return flag;
 		}
 
 		public bool IsInState(Type state)
 		{
-			if (this.m_StateClass == state)
+			if (m_StateClass == state)
 			{
 				return true;
 			}
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				if (this.m_ChildSMs[i].IsInState(state))
+				if (m_ChildSMs[i].IsInState(state))
 				{
 					return true;
 				}
@@ -268,13 +268,13 @@ namespace FSMHelper
 		public bool IsOnGroundState()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].IsOnGroundState();
+				flag = m_ChildSMs[i].IsOnGroundState();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.IsOnGroundState();
+				flag = m_State.IsOnGroundState();
 			}
 			return flag;
 		}
@@ -282,13 +282,13 @@ namespace FSMHelper
 		public bool IsPushing()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].IsPushing();
+				flag = m_ChildSMs[i].IsPushing();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.IsPushing();
+				flag = m_State.IsPushing();
 			}
 			return flag;
 		}
@@ -296,636 +296,636 @@ namespace FSMHelper
 		public bool LeftFootOff()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].LeftFootOff();
+				flag = m_ChildSMs[i].LeftFootOff();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.LeftFootOff();
+				flag = m_State.LeftFootOff();
 			}
 			return flag;
 		}
 
 		public void LeftTriggerHeld(float value, InputController.TurningMode turningMode)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].LeftTriggerHeld(value, turningMode);
+				m_ChildSMs[i].LeftTriggerHeld(value, turningMode);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.LeftTriggerHeld(value, turningMode);
+				m_State.LeftTriggerHeld(value, turningMode);
 			}
 		}
 
 		public void LeftTriggerPressed()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].LeftTriggerPressed();
+				m_ChildSMs[i].LeftTriggerPressed();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.LeftTriggerPressed();
+				m_State.LeftTriggerPressed();
 			}
 		}
 
 		public void LeftTriggerReleased()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].LeftTriggerReleased();
+				m_ChildSMs[i].LeftTriggerReleased();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.LeftTriggerReleased();
+				m_State.LeftTriggerReleased();
 			}
 		}
 
 		public void OnAllWheelsDown()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnAllWheelsDown();
+				m_ChildSMs[i].OnAllWheelsDown();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnAllWheelsDown();
+				m_State.OnAllWheelsDown();
 			}
 		}
 
 		public void OnAnimatorUpdate()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnAnimatorUpdate();
+				m_ChildSMs[i].OnAnimatorUpdate();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnAnimatorUpdate();
+				m_State.OnAnimatorUpdate();
 			}
 		}
 
 		public void OnBailed()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnBailed();
+				m_ChildSMs[i].OnBailed();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnBailed();
+				m_State.OnBailed();
 			}
 		}
 
 		public void OnBoardSeparatedFromTarget()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnBoardSeparatedFromTarget();
+				m_ChildSMs[i].OnBoardSeparatedFromTarget();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnBoardSeparatedFromTarget();
+				m_State.OnBoardSeparatedFromTarget();
 			}
 		}
 
 		public void OnBrakeHeld()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnBrakeHeld();
+				m_ChildSMs[i].OnBrakeHeld();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnBrakeHeld();
+				m_State.OnBrakeHeld();
 			}
 		}
 
 		public void OnBrakePressed()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnBrakePressed();
+				m_ChildSMs[i].OnBrakePressed();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnBrakePressed();
+				m_State.OnBrakePressed();
 			}
 		}
 
 		public void OnBrakeReleased()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnBrakeReleased();
+				m_ChildSMs[i].OnBrakeReleased();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnBrakeReleased();
+				m_State.OnBrakeReleased();
 			}
 		}
 
 		public void OnCanManual()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnCanManual();
+				m_ChildSMs[i].OnCanManual();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnCanManual();
+				m_State.OnCanManual();
 			}
 		}
 
 		public void OnCollisionEnterEvent()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnCollisionEnterEvent();
+				m_ChildSMs[i].OnCollisionEnterEvent();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnCollisionEnterEvent();
+				m_State.OnCollisionEnterEvent();
 			}
 		}
 
 		public void OnCollisionExitEvent()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnCollisionExitEvent();
+				m_ChildSMs[i].OnCollisionExitEvent();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnCollisionExitEvent();
+				m_State.OnCollisionExitEvent();
 			}
 		}
 
 		public void OnCollisionStayEvent()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnCollisionStayEvent();
+				m_ChildSMs[i].OnCollisionStayEvent();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnCollisionStayEvent();
+				m_State.OnCollisionStayEvent();
 			}
 		}
 
 		public void OnEndImpact()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnEndImpact();
+				m_ChildSMs[i].OnEndImpact();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnEndImpact();
+				m_State.OnEndImpact();
 			}
 		}
 
 		public void OnFirstWheelDown()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnFirstWheelDown();
+				m_ChildSMs[i].OnFirstWheelDown();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnFirstWheelDown();
+				m_State.OnFirstWheelDown();
 			}
 		}
 
 		public void OnFirstWheelUp()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnFirstWheelUp();
+				m_ChildSMs[i].OnFirstWheelUp();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnFirstWheelUp();
+				m_State.OnFirstWheelUp();
 			}
 		}
 
 		public void OnFlipStickCentered()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnFlipStickCentered();
+				m_ChildSMs[i].OnFlipStickCentered();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnFlipStickCentered();
+				m_State.OnFlipStickCentered();
 			}
 		}
 
 		public void OnFlipStickUpdate()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnFlipStickUpdate();
+				m_ChildSMs[i].OnFlipStickUpdate();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnFlipStickUpdate();
+				m_State.OnFlipStickUpdate();
 			}
 		}
 
 		public void OnForcePop()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnForcePop();
+				m_ChildSMs[i].OnForcePop();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnForcePop();
+				m_State.OnForcePop();
 			}
 		}
 
 		public void OnGrindDetected()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnGrindDetected();
+				m_ChildSMs[i].OnGrindDetected();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnGrindDetected();
+				m_State.OnGrindDetected();
 			}
 		}
 
 		public void OnGrindEnded()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnGrindEnded();
+				m_ChildSMs[i].OnGrindEnded();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnGrindEnded();
+				m_State.OnGrindEnded();
 			}
 		}
 
 		public void OnGrindStay()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnGrindStay();
+				m_ChildSMs[i].OnGrindStay();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnGrindStay();
+				m_State.OnGrindStay();
 			}
 		}
 
 		public void OnImpactUpdate()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnImpactUpdate();
+				m_ChildSMs[i].OnImpactUpdate();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnImpactUpdate();
+				m_State.OnImpactUpdate();
 			}
 		}
 
 		public void OnLeftStickCenteredUpdate()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnLeftStickCenteredUpdate();
+				m_ChildSMs[i].OnLeftStickCenteredUpdate();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnLeftStickCenteredUpdate();
+				m_State.OnLeftStickCenteredUpdate();
 			}
 		}
 
 		public void OnManualEnter(StickInput popStick, StickInput flipStick)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnManualEnter(popStick, flipStick);
+				m_ChildSMs[i].OnManualEnter(popStick, flipStick);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnManualEnter(popStick, flipStick);
+				m_State.OnManualEnter(popStick, flipStick);
 			}
 		}
 
 		public void OnManualExit()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnManualExit();
+				m_ChildSMs[i].OnManualExit();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnManualExit();
+				m_State.OnManualExit();
 			}
 		}
 
 		public void OnManualUpdate(StickInput popStick, StickInput flipStick)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnManualUpdate(popStick, flipStick);
+				m_ChildSMs[i].OnManualUpdate(popStick, flipStick);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnManualUpdate(popStick, flipStick);
+				m_State.OnManualUpdate(popStick, flipStick);
 			}
 		}
 
 		public void OnNextState()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnNextState();
+				m_ChildSMs[i].OnNextState();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnNextState();
+				m_State.OnNextState();
 			}
 		}
 
 		public void OnNoseManualEnter(StickInput popStick, StickInput flipStick)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnNoseManualEnter(popStick, flipStick);
+				m_ChildSMs[i].OnNoseManualEnter(popStick, flipStick);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnNoseManualEnter(popStick, flipStick);
+				m_State.OnNoseManualEnter(popStick, flipStick);
 			}
 		}
 
 		public void OnNoseManualExit()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnNoseManualExit();
+				m_ChildSMs[i].OnNoseManualExit();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnNoseManualExit();
+				m_State.OnNoseManualExit();
 			}
 		}
 
 		public void OnNoseManualUpdate(StickInput popStick, StickInput flipStick)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnNoseManualUpdate(popStick, flipStick);
+				m_ChildSMs[i].OnNoseManualUpdate(popStick, flipStick);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnNoseManualUpdate(popStick, flipStick);
+				m_State.OnNoseManualUpdate(popStick, flipStick);
 			}
 		}
 
 		public void OnPopStickCentered()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPopStickCentered();
+				m_ChildSMs[i].OnPopStickCentered();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPopStickCentered();
+				m_State.OnPopStickCentered();
 			}
 		}
 
 		public void OnPopStickUpdate()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPopStickUpdate();
+				m_ChildSMs[i].OnPopStickUpdate();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPopStickUpdate();
+				m_State.OnPopStickUpdate();
 			}
 		}
 
 		public void OnPredictedCollisionEvent()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPredictedCollisionEvent();
+				m_ChildSMs[i].OnPredictedCollisionEvent();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPredictedCollisionEvent();
+				m_State.OnPredictedCollisionEvent();
 			}
 		}
 
 		public void OnPreLandingEvent()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPreLandingEvent();
+				m_ChildSMs[i].OnPreLandingEvent();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPreLandingEvent();
+				m_State.OnPreLandingEvent();
 			}
 		}
 
 		public void OnPush()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPush();
+				m_ChildSMs[i].OnPush();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPush();
+				m_State.OnPush();
 			}
 		}
 
 		public void OnPushButtonHeld(bool mongo)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPushButtonHeld(mongo);
+				m_ChildSMs[i].OnPushButtonHeld(mongo);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPushButtonHeld(mongo);
+				m_State.OnPushButtonHeld(mongo);
 			}
 		}
 
 		public void OnPushButtonPressed(bool mongo)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPushButtonPressed(mongo);
+				m_ChildSMs[i].OnPushButtonPressed(mongo);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPushButtonPressed(mongo);
+				m_State.OnPushButtonPressed(mongo);
 			}
 		}
 
 		public void OnPushButtonReleased()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPushButtonReleased();
+				m_ChildSMs[i].OnPushButtonReleased();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPushButtonReleased();
+				m_State.OnPushButtonReleased();
 			}
 		}
 
 		public void OnPushEnd()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPushEnd();
+				m_ChildSMs[i].OnPushEnd();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPushEnd();
+				m_State.OnPushEnd();
 			}
 		}
 
 		public void OnPushLastCheck()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnPushLastCheck();
+				m_ChildSMs[i].OnPushLastCheck();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnPushLastCheck();
+				m_State.OnPushLastCheck();
 			}
 		}
 
 		public void OnRespawn()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnRespawn();
+				m_ChildSMs[i].OnRespawn();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnRespawn();
+				m_State.OnRespawn();
 			}
 		}
 
 		public void OnRightStickCenteredUpdate()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnRightStickCenteredUpdate();
+				m_ChildSMs[i].OnRightStickCenteredUpdate();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnRightStickCenteredUpdate();
+				m_State.OnRightStickCenteredUpdate();
 			}
 		}
 
 		public void OnStickFixedUpdate(StickInput stick1, StickInput stick2)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnStickFixedUpdate(stick1, stick2);
+				m_ChildSMs[i].OnStickFixedUpdate(stick1, stick2);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnStickFixedUpdate(stick1, stick2);
+				m_State.OnStickFixedUpdate(stick1, stick2);
 			}
 		}
 
 		public void OnStickPressed(bool right)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnStickPressed(right);
+				m_ChildSMs[i].OnStickPressed(right);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnStickPressed(right);
+				m_State.OnStickPressed(right);
 			}
 		}
 
 		public void OnStickUpdate(StickInput stick1, StickInput stick2)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnStickUpdate(stick1, stick2);
+				m_ChildSMs[i].OnStickUpdate(stick1, stick2);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnStickUpdate(stick1, stick2);
+				m_State.OnStickUpdate(stick1, stick2);
 			}
 		}
 
 		public void OnWheelsLeftGround()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].OnWheelsLeftGround();
+				m_ChildSMs[i].OnWheelsLeftGround();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.OnWheelsLeftGround();
+				m_State.OnWheelsLeftGround();
 			}
 		}
 
 		public bool Popped()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].Popped();
+				flag = m_ChildSMs[i].Popped();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.Popped();
+				flag = m_State.Popped();
 			}
 			return flag;
 		}
 
 		public void ReceiveMessage(object[] args)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].ReceiveMessage(args);
+				m_ChildSMs[i].ReceiveMessage(args);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.ReceiveMessage(args);
+				m_State.ReceiveMessage(args);
 			}
 		}
 
 		public bool RequestChildTransition(FSMStateMachineLogic child, Type nextState, object[] args)
 		{
-			if (this.m_StateType == FSMStateType.Type_AND)
+			if (m_StateType == FSMStateType.Type_AND)
 			{
 				return false;
 			}
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				if (this.m_ChildSMs[i] == child)
+				if (m_ChildSMs[i] == child)
 				{
-					for (int j = 0; j < this.m_ChildrenTypes.Count; j++)
+					for (int j = 0; j < m_ChildrenTypes.Count; j++)
 					{
-						if (this.m_ChildrenTypes[j] == nextState)
+						if (m_ChildrenTypes[j] == nextState)
 						{
-							this.m_ChildSMs[i].Exit();
-							this.m_ChildSMs[i] = new FSMStateMachineLogic(nextState, this.m_OwnerSM, this);
-							this.m_ChildSMs[i].Enter(args);
+							m_ChildSMs[i].Exit();
+							m_ChildSMs[i] = new FSMStateMachineLogic(nextState, m_OwnerSM, this);
+							m_ChildSMs[i].Enter(args);
 							return true;
 						}
 					}
@@ -938,134 +938,134 @@ namespace FSMHelper
 		public bool RightFootOff()
 		{
 			bool flag = false;
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				flag = this.m_ChildSMs[i].RightFootOff();
+				flag = m_ChildSMs[i].RightFootOff();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				flag = this.m_State.RightFootOff();
+				flag = m_State.RightFootOff();
 			}
 			return flag;
 		}
 
 		public void RightTriggerHeld(float value, InputController.TurningMode turningMode)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].RightTriggerHeld(value, turningMode);
+				m_ChildSMs[i].RightTriggerHeld(value, turningMode);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.RightTriggerHeld(value, turningMode);
+				m_State.RightTriggerHeld(value, turningMode);
 			}
 		}
 
 		public void RightTriggerPressed()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].RightTriggerPressed();
+				m_ChildSMs[i].RightTriggerPressed();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.RightTriggerPressed();
+				m_State.RightTriggerPressed();
 			}
 		}
 
 		public void RightTriggerReleased()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].RightTriggerReleased();
+				m_ChildSMs[i].RightTriggerReleased();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.RightTriggerReleased();
+				m_State.RightTriggerReleased();
 			}
 		}
 
 		public void SendEventBeginPop()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].SendEventBeginPop();
+				m_ChildSMs[i].SendEventBeginPop();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.SendEventBeginPop();
+				m_State.SendEventBeginPop();
 			}
 		}
 
 		public void SendEventEndFlipPeriod()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].SendEventEndFlipPeriod();
+				m_ChildSMs[i].SendEventEndFlipPeriod();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.SendEventEndFlipPeriod();
+				m_State.SendEventEndFlipPeriod();
 			}
 		}
 
 		public void SendEventExtend(float value)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].SendEventExtend(value);
+				m_ChildSMs[i].SendEventExtend(value);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.SendEventExtend(value);
+				m_State.SendEventExtend(value);
 			}
 		}
 
 		public void SendEventPop(float value)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].SendEventPop(value);
+				m_ChildSMs[i].SendEventPop(value);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.SendEventPop(value);
+				m_State.SendEventPop(value);
 			}
 		}
 
 		public void SendEventReleased()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].SendEventReleased();
+				m_ChildSMs[i].SendEventReleased();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.SendEventReleased();
+				m_State.SendEventReleased();
 			}
 		}
 
 		public void SetSpline(SplineComputer p_spline)
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].SetSpline(p_spline);
+				m_ChildSMs[i].SetSpline(p_spline);
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.SetSpline(p_spline);
+				m_State.SetSpline(p_spline);
 			}
 		}
 
 		public void Update()
 		{
-			for (int i = 0; i < this.m_ChildSMs.Count; i++)
+			for (int i = 0; i < m_ChildSMs.Count; i++)
 			{
-				this.m_ChildSMs[i].Update();
+				m_ChildSMs[i].Update();
 			}
-			if (this.m_State != null)
+			if (m_State != null)
 			{
-				this.m_State.Update();
+				m_State.Update();
 			}
 		}
 	}

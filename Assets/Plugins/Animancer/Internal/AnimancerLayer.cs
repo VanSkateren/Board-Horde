@@ -24,19 +24,19 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>A layer is its own root.</summary>
-        public override AnimancerLayer Layer { get { return this; } }
+        public override AnimancerLayer Layer => this;
 
         /// <summary>Returns null because layers always connect to the <see cref="AnimancerNode.Root"/>.</summary>
-        public override AnimancerNode Parent { get { return null; } }
+        public override AnimancerNode Parent => null;
 
         /// <summary>The <see cref="Root"/>'s <see cref="AnimationLayerMixerPlayable"/>.</summary>
-        protected override Playable ParentPlayable { get { return Root._LayerMixer; } }
+        protected override Playable ParentPlayable => Root._LayerMixer;
 
         /// <summary>Indicates whether child playables should stay connected to this mixer at all times.</summary>
-        public override bool KeepChildrenConnected { get { return Root.KeepPlayablesConnected; } }
+        public override bool KeepChildrenConnected => Root.KeepPlayablesConnected;
 
         /// <summary>The <see cref="Root"/>'s <see cref="AnimancerNode.KeepPlayablesConnected"/>.</summary>
-        public override bool StayConnectedWhenWeightless { get { return Root.KeepPlayablesConnected; } }
+        public override bool StayConnectedWhenWeightless => Root.KeepPlayablesConnected;
 
         /************************************************************************************************************************/
 
@@ -53,7 +53,7 @@ namespace Animancer
         /// </summary>
         public AnimancerState CurrentState
         {
-            get { return _CurrentState; }
+            get => _CurrentState;
             private set
             {
                 _CurrentState = value;
@@ -97,8 +97,8 @@ namespace Animancer
         /// </summary>
         public bool IsAdditive
         {
-            get { return Root.IsLayerAdditive(PortIndex); }
-            set { Root.SetLayerAdditive(PortIndex, value); }
+            get => Root.IsLayerAdditive(PortIndex);
+            set => Root.SetLayerAdditive(PortIndex, value);
         }
 
         /************************************************************************************************************************/
@@ -141,7 +141,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of states using this layer as their <see cref="AnimancerState.Parent"/>.</summary>
-        public override int ChildCount { get { return States.Count; } }
+        public override int ChildCount => States.Count;
 
         /// <summary>
         /// Returns the state connected to the specified 'portIndex' as a child of this layer.

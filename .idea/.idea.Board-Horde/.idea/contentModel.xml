@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Gebruiker\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Gebruiker\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Board-Horde.-1779314816.00" t="ExcludeRecursive" />
-    <e p="E:\[Projects]\[Group Projects]\Board-Horde" t="IncludeRecursive">
+    <e p="C:\[Projects]\[Group]\Board-Horde" t="IncludeRecursive">
       <e p="Animancer.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
@@ -43,13 +41,50 @@
               </e>
               <e p="PlayerSystems" t="Include">
                 <e p="Movement" t="Include">
+                  <e p="Board" t="Include">
+                    <e p="Material" t="Include">
+                      <e p="Toon.shader" t="Include" />
+                    </e>
+                    <e p="Scripts" t="Include">
+                      <e p="Abilities" t="Include">
+                        <e p="AirControlAbility.cs" t="Include" />
+                        <e p="BaseAbility.cs" t="Include" />
+                        <e p="BoostAbility.cs" t="Include" />
+                        <e p="DriftAbility.cs" t="Include" />
+                        <e p="JumpAbility.cs" t="Include" />
+                      </e>
+                      <e p="Camera" t="Include">
+                        <e p="CameraSystem.cs" t="Include" />
+                        <e p="SwitchToLoopCamera.cs" t="Include" />
+                      </e>
+                      <e p="Effects" t="Include">
+                        <e p="CvBodyMovement.cs" t="Include" />
+                        <e p="CvBoostPostProcessingEffect.cs" t="Include" />
+                        <e p="CvBoostTrails.cs" t="Include" />
+                        <e p="CvCollisionParticle.cs" t="Include" />
+                        <e p="CvJumpParticle.cs" t="Include" />
+                        <e p="CvSpeedCameraShake.cs" t="Include" />
+                        <e p="CvWheels.cs" t="Include" />
+                        <e p="CvWheelsBase.cs" t="Include" />
+                      </e>
+                      <e p="Physics" t="Include">
+                        <e p="CpAcceleration.cs" t="Include" />
+                        <e p="CpColliderData.cs" t="Include" />
+                        <e p="CpDrag.cs" t="Include" />
+                        <e p="CpInput.cs" t="Include" />
+                        <e p="CpLateralFriction.cs" t="Include" />
+                        <e p="CpMain.cs" t="Include" />
+                        <e p="CpStabilityForces.cs" t="Include" />
+                        <e p="CpTurning.cs" t="Include" />
+                        <e p="CpWheels.cs" t="Include" />
+                      </e>
+                    </e>
+                  </e>
                   <e p="Character" t="Include">
                     <e p="PlayerCamera.cs" t="Include" />
                     <e p="PlayerConfigs.cs" t="Include" />
                     <e p="PlayerController.cs" t="Include" />
                   </e>
-                  <e p="Player.cs" t="Include" />
-                  <e p="RaycastWheel.cs" t="Include" />
                   <e p="Skate4" t="Include">
                     <e p="AABBCheck.cs" t="Include" />
                     <e p="Bail.cs" t="Include" />
@@ -356,7 +391,6 @@
                     <e p="ExtensionMethods.cs" t="Include" />
                     <e p="KartController.cs" t="Include" />
                   </e>
-                  <e p="Skateboard.cs" t="Include" />
                 </e>
               </e>
               <e p="Utilities" t="Include">
@@ -577,6 +611,124 @@
             </e>
             <e p="Shaders" t="Include">
               <e p="AdditiveProjector.shader" t="Include" />
+              <e p="CDSky" t="Include">
+                <e p="CSky" t="Include">
+                  <e p="Documentation" t="Include">
+                    <e p="Changelog.txt" t="Include" />
+                    <e p="Readme.txt" t="Include" />
+                  </e>
+                  <e p="Resources" t="Include">
+                    <e p="CSky_AtmosphereCommon.cginc" t="Include" />
+                    <e p="CSky_Background.shader" t="Include" />
+                    <e p="CSky_Common.cginc" t="Include" />
+                    <e p="CSky_DefautlAtmosphere.shader" t="Include" />
+                    <e p="CSky_DefautlAtmosphericScattering.cginc" t="Include" />
+                    <e p="CSky_DefautlSkybox.shader" t="Include" />
+                    <e p="CSky_Moon.shader" t="Include" />
+                    <e p="CSky_PreethamAtmosphere.shader" t="Include" />
+                    <e p="CSky_PreethamAtmosphericScattering.cginc" t="Include" />
+                    <e p="CSky_PreethamSkybox.shader" t="Include" />
+                    <e p="CSky_SimpleClouds.shader" t="Include" />
+                    <e p="CSky_Stars.shader" t="Include" />
+                    <e p="CSky_StarsCommon.cginc" t="Include" />
+                    <e p="CSky_Sun.shader" t="Include" />
+                  </e>
+                  <e p="Scripts" t="Include">
+                    <e p="Classes" t="Include">
+                      <e p="Data" t="Include">
+                        <e p="CSky_SkySphereResources.cs" t="Include" />
+                      </e>
+                      <e p="DateTime" t="Include">
+                        <e p="!Runtime" t="Include">
+                          <e p="CSky_DateTime.cs" t="Include" />
+                        </e>
+                        <e p="Helper" t="Include">
+                          <e p="CSky_DateTimeHelper.cs" t="Include" />
+                        </e>
+                      </e>
+                      <e p="SImpleClouds" t="Include">
+                        <e p="CSky_SimpleClouds.cs" t="Include" />
+                      </e>
+                      <e p="SkySphere" t="Include">
+                        <e p="!Runtime" t="Include">
+                          <e p="CSky_SkySphere.cs" t="Include" />
+                          <e p="CSky_SkySphereCurvesAndGradients.cs" t="Include" />
+                        </e>
+                        <e p="Helper" t="Include">
+                          <e p="CSky_CelestialObject.cs" t="Include" />
+                          <e p="CSky_Helper.cs" t="Include" />
+                        </e>
+                        <e p="Partial" t="Include">
+                          <e p="CSky_Atmosphere.cs" t="Include" />
+                          <e p="CSky_Builder.cs" t="Include" />
+                          <e p="CSky_Celestials.cs" t="Include" />
+                          <e p="CSky_Lighting.cs" t="Include" />
+                        </e>
+                      </e>
+                      <e p="TimeOfDay" t="Include">
+                        <e p="CSky_CelestialsCalculations.cs" t="Include" />
+                        <e p="CSky_TimeOfDay.cs" t="Include" />
+                      </e>
+                    </e>
+                    <e p="Editor" t="Include">
+                      <e p="Common" t="Include">
+                        <e p="CSky_CommonEditor1.cs" t="Include" />
+                      </e>
+                      <e p="DateTime" t="Include">
+                        <e p="CSky_DateTimeEditor.cs" t="Include" />
+                      </e>
+                      <e p="SkySphere" t="Include">
+                        <e p="CSky_AtmosphereEditor.cs" t="Include" />
+                        <e p="CSky_CelestialsEditor.cs" t="Include" />
+                        <e p="CSky_LightingEditor.cs" t="Include" />
+                        <e p="CSky_ResourcesAndComponentsEditor.cs" t="Include" />
+                        <e p="CSky_SkySphereEditor.cs" t="Include" />
+                      </e>
+                      <e p="TimeOfDay" t="Include">
+                        <e p="CSky_TimeOfDay.cs" t="Include" />
+                      </e>
+                    </e>
+                    <e p="Enums" t="Include">
+                      <e p="CSky_Atmosphere.cs" t="Include" />
+                      <e p="CSky_EvaluteTimeMode.cs" t="Include" />
+                      <e p="CSky_Quality.cs" t="Include" />
+                    </e>
+                    <e p="Structs" t="Include">
+                      <e p="CSky_Math.cs" t="Include" />
+                      <e p="CSky_OrbitalElements.cs" t="Include" />
+                    </e>
+                  </e>
+                  <e p="Visual Art" t="Include">
+                    <e p="Textures" t="Include">
+                      <e p="Third Party" t="Include">
+                        <e p="MilkyWay" t="Include">
+                          <e p="Readme.txt" t="Include" />
+                        </e>
+                        <e p="Moon" t="Include">
+                          <e p="License.txt" t="Include" />
+                        </e>
+                      </e>
+                    </e>
+                  </e>
+                </e>
+                <e p="License.txt" t="Include" />
+                <e p="Utility" t="Include">
+                  <e p="Scripts" t="Include">
+                    <e p="Classes" t="Include">
+                      <e p="Attributes" t="Include">
+                        <e p="AC_CurveRange.cs" t="Include" />
+                      </e>
+                      <e p="Reflection Probe" t="Include">
+                        <e p="AC_ReflectionProbeRefresh.cs" t="Include" />
+                      </e>
+                    </e>
+                    <e p="Editor" t="Include">
+                      <e p="AC_CurveRangeDrawer.cs" t="Include" />
+                      <e p="AC_EditorGUIUtility.cs" t="Include" />
+                    </e>
+                  </e>
+                </e>
+              </e>
               <e p="CuttingShader" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="ClippableObject.cs" t="Include" />
@@ -634,6 +786,7 @@
               <e p="AutoGroundNormal.cs" t="Include" />
               <e p="Player.cs" t="Include" />
               <e p="Push.cs" t="Include" />
+              <e p="SceneLoader.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -2055,6 +2208,18 @@
             <e p="version.txt" t="Include" />
           </e>
         </e>
+        <e p="Samples" t="Include">
+          <e p="Polybrush" t="Include">
+            <e p="1.0.0" t="Include">
+              <e p="Shader Examples (Standard)" t="Include">
+                <e p="Shader" t="Include">
+                  <e p="StandardTextureBlend.shader" t="Include" />
+                  <e p="StandardVertexColor.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="SC Post Effects" t="Include">
           <e p="_Demo" t="Include">
             <e p="Scripts" t="Include">
@@ -2064,11 +2229,6 @@
             </e>
             <e p="Textures" t="Include">
               <e p="License.txt" t="Include" />
-            </e>
-          </e>
-          <e p="_Samples" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="VolumeTrigger.cs" t="Include" />
             </e>
           </e>
           <e p="Changelog.txt" t="Include" />
@@ -2476,6 +2636,34 @@
             </e>
           </e>
         </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Board-Horde.sln" t="IncludeFlat" />
       <e p="ExtendedTransformInspector.csproj" t="IncludeRecursive" />
@@ -2495,5 +2683,7 @@
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="UltEvents.csproj" t="IncludeRecursive" />
     </e>
+    <e p="C:\Users\bloem\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\bloem\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Board-Horde.-1324467952.00" t="ExcludeRecursive" />
   </component>
 </project>

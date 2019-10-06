@@ -15,7 +15,7 @@ namespace RootMotion.Demos {
 
 		private bool isAttacking;
 		private float attackTimer;
-		private Transform moveTarget { get { return targetPuppet.puppetMaster.muscles[0].joint.transform; }}
+		private Transform moveTarget => targetPuppet.puppetMaster.muscles[0].joint.transform;
 
 		protected override void Update () {
 			// Moving

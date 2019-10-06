@@ -10,8 +10,8 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(LegIK))]
 	public class LegIKInspector : IKInspector {
 		
-		private LegIK script { get { return target as LegIK; }}
-		
+		private LegIK script => target as LegIK;
+
 		protected override MonoBehaviour GetMonoBehaviour(out int executionOrder) {
 			executionOrder = 9997;
 			return script;

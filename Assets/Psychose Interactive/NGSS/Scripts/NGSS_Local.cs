@@ -91,13 +91,13 @@ public class NGSS_Local : MonoBehaviour
             return _LocalLight;
         }
     }
-    
-    void OnDisable()
+
+    private void OnDisable()
     {
         isInitialized = false;
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         if (IsNotSupported())
         {
@@ -109,7 +109,7 @@ public class NGSS_Local : MonoBehaviour
         Init();
     }
 
-    void Init()
+    private void Init()
     {
         if (isInitialized) { return; }
 
@@ -127,7 +127,7 @@ public class NGSS_Local : MonoBehaviour
         isInitialized = true;
     }
 
-    bool IsNotSupported()
+    private bool IsNotSupported()
     {
 #if UNITY_2018_1_OR_NEWER
         return (SystemInfo.graphicsDeviceType == GraphicsDeviceType.OpenGLES2);
@@ -138,7 +138,7 @@ public class NGSS_Local : MonoBehaviour
 #endif
     }
 
-    void Update()
+    private void Update()
     {
         if (LocalLight.shadows == LightShadows.None || LocalLight.type == LightType.Directional) { return; }
 
@@ -147,7 +147,7 @@ public class NGSS_Local : MonoBehaviour
         SetProperties(NGSS_MANAGE_GLOBAL_SETTINGS);
     }
 
-    void SetProperties(bool setLocalAndGlobalProperties)
+    private void SetProperties(bool setLocalAndGlobalProperties)
     {
         //Local
         LocalLight.shadowStrength = NGSS_SHADOWS_SOFTNESS;

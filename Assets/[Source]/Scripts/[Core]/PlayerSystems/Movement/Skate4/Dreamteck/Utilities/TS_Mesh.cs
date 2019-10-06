@@ -9,7 +9,7 @@ namespace Dreamteck
     {
         public int vertexCount
         {
-            get { return vertices.Length; }
+            get => vertices.Length;
             set { }
         }
         public Vector3[] vertices = new Vector3[0];

@@ -37,8 +37,8 @@ namespace Animancer.Examples
         /// </summary>
         public float Speed
         {
-            get { return _Mixer.State.Parameter; }
-            set { _Mixer.State.Parameter = value; }
+            get => _Mixer.State.Parameter;
+            set => _Mixer.State.Parameter = value;
         }
 
         /************************************************************************************************************************/

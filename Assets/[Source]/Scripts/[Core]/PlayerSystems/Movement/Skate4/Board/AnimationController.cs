@@ -21,14 +21,14 @@ public class AnimationController : MonoBehaviour
 
 	public void CrossFadeAnimation(string p_value, float p_transitionDuration)
 	{
-		this.skaterAnim.CrossFadeInFixedTime(p_value, p_transitionDuration);
-		this.ikAnim.CrossFadeInFixedTime(p_value, p_transitionDuration);
+		skaterAnim.CrossFadeInFixedTime(p_value, p_transitionDuration);
+		ikAnim.CrossFadeInFixedTime(p_value, p_transitionDuration);
 	}
 
 	public void ForceAnimation(string p_anim)
 	{
-		this.skaterAnim.Play(p_anim, 0, 0f);
-		this.ikAnim.Play(p_anim, 0, 0f);
+		skaterAnim.Play(p_anim, 0, 0f);
+		ikAnim.Play(p_anim, 0, 0f);
 	}
 
 	public void ForceBeginPop()
@@ -38,14 +38,14 @@ public class AnimationController : MonoBehaviour
 
 	public float GetAnimatorSpeed()
 	{
-		return this.skaterAnim.speed;
+		return skaterAnim.speed;
 	}
 
 	public void GetCurrentAnim()
 	{
 		float single = 0f;
 		string str = "";
-		AnimatorClipInfo[] currentAnimatorClipInfo = this.skaterAnim.GetCurrentAnimatorClipInfo(0);
+		AnimatorClipInfo[] currentAnimatorClipInfo = skaterAnim.GetCurrentAnimatorClipInfo(0);
 		for (int i = 0; i < (int)currentAnimatorClipInfo.Length; i++)
 		{
 			AnimatorClipInfo animatorClipInfo = currentAnimatorClipInfo[i];
@@ -55,19 +55,19 @@ public class AnimationController : MonoBehaviour
 				single = animatorClipInfo.weight;
 			}
 		}
-		this._activeAnimation = str;
+		_activeAnimation = str;
 	}
 
 	public void ScaleAnimSpeed(float p_speed)
 	{
-		this.skaterAnim.speed = p_speed;
-		this.ikAnim.speed = p_speed;
+		skaterAnim.speed = p_speed;
+		ikAnim.speed = p_speed;
 	}
 
 	public void SendEventBeginPop(string p_animName)
 	{
-		this.GetCurrentAnim();
-		if (p_animName == this._activeAnimation)
+		GetCurrentAnim();
+		if (p_animName == _activeAnimation)
 		{
 			PlayerController.Instance.playerSM.SendEventBeginPopSM();
 		}
@@ -88,7 +88,7 @@ public class AnimationController : MonoBehaviour
 
 	public void SendEventLastPushCheck(string p_animName)
 	{
-		if (p_animName == this._activeAnimation)
+		if (p_animName == _activeAnimation)
 		{
 			PlayerController.Instance.playerSM.OnPushLastCheckSM();
 		}
@@ -98,18 +98,18 @@ public class AnimationController : MonoBehaviour
 	{
 		float pAnimationEvent = p_animationEvent.floatParameter;
 		string str = p_animationEvent.stringParameter;
-		this.GetCurrentAnim();
+		GetCurrentAnim();
 	}
 
 	public void SendEventPush(string p_animName)
 	{
-		this.GetCurrentAnim();
+		GetCurrentAnim();
 		PlayerController.Instance.playerSM.OnPushSM();
 	}
 
 	public void SendEventPushEnd(string p_animName)
 	{
-		if (p_animName == this._activeAnimation)
+		if (p_animName == _activeAnimation)
 		{
 			PlayerController.Instance.playerSM.OnPushEndSM();
 		}
@@ -121,51 +121,51 @@ public class AnimationController : MonoBehaviour
 
 	public void SetGrindTweakValue(float p_tweak)
 	{
-		this.SetValue("GrindTweak", p_tweak);
+		SetValue("GrindTweak", p_tweak);
 	}
 
 	public void SetNollieSteezeIK(float p_value)
 	{
-		this._steezeAnim.SetFloat("Nollie", p_value);
+		_steezeAnim.SetFloat("Nollie", p_value);
 	}
 
 	public void SetSteezeValue(string p_animName, float p_value)
 	{
-		this._steezeAnim.SetFloat(p_animName, p_value);
+		_steezeAnim.SetFloat(p_animName, p_value);
 	}
 
 	public void SetTweakMagnitude(float p_frontMagnitude, float p_backMagnitude)
 	{
-		this.SetValue("TweakMagnitude", p_frontMagnitude - p_backMagnitude);
+		SetValue("TweakMagnitude", p_frontMagnitude - p_backMagnitude);
 	}
 
 	public void SetTweakValues(float p_forwardAxis, float p_toeAxis)
 	{
-		this.SetValue("ForwardTweak", p_forwardAxis);
-		this.SetValue("ToeSideTweak", p_toeAxis);
+		SetValue("ForwardTweak", p_forwardAxis);
+		SetValue("ToeSideTweak", p_toeAxis);
 	}
 
 	public void SetValue(string p_animName, bool p_value)
 	{
-		this.skaterAnim.SetBool(p_animName, p_value);
-		this.ikAnim.SetBool(p_animName, p_value);
+		skaterAnim.SetBool(p_animName, p_value);
+		ikAnim.SetBool(p_animName, p_value);
 	}
 
 	public void SetValue(string p_animName, float p_value)
 	{
-		this.skaterAnim.SetFloat(p_animName, p_value);
-		this.ikAnim.SetFloat(p_animName, p_value);
+		skaterAnim.SetFloat(p_animName, p_value);
+		ikAnim.SetFloat(p_animName, p_value);
 	}
 
 	public void SetValue(string p_animName, int p_value)
 	{
-		this.skaterAnim.SetInteger(p_animName, p_value);
-		this.ikAnim.SetInteger(p_animName, p_value);
+		skaterAnim.SetInteger(p_animName, p_value);
+		ikAnim.SetInteger(p_animName, p_value);
 	}
 
 	public void SetValue(string p_animName)
 	{
-		this.skaterAnim.SetTrigger(p_animName);
-		this.ikAnim.SetTrigger(p_animName);
+		skaterAnim.SetTrigger(p_animName);
+		ikAnim.SetTrigger(p_animName);
 	}
 }

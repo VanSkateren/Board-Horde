@@ -32,45 +32,45 @@ namespace Sirenix.OdinValidator.Editor
 
         public override string Name
         {
-            get { return this.Profile == null ? "" : this.Profile.Name; }
-            set { if (this.Profile != null) this.Profile.Name = value; }
+            get => Profile == null ? "" : Profile.Name;
+            set { if (Profile != null) Profile.Name = value; }
         }
 
         public override string Description
         {
-            get { return this.Profile == null ? "" : this.Profile.Description; }
-            set { if (this.Profile != null) this.Profile.Description = value; }
+            get => Profile == null ? "" : Profile.Description;
+            set { if (Profile != null) Profile.Description = value; }
         }
 
         public override IEnumerable<IValidationProfile> GetNestedValidationProfiles()
         {
-            if (this.Profile == null) yield break;
+            if (Profile == null) yield break;
 
-            foreach (IValidationProfile profile in this.Profile.GetNestedValidationProfiles())
+            foreach (IValidationProfile profile in Profile.GetNestedValidationProfiles())
                 yield return profile;
         }
 
         public override Texture GetProfileIcon()
         {
-            return this.Profile == null ? null : this.Profile.GetProfileIcon();
+            return Profile == null ? null : Profile.GetProfileIcon();
         }
 
         public override object GetSource(ValidationProfileResult entry)
         {
-            return this.Profile == null ? null : this.Profile.GetSource(entry);
+            return Profile == null ? null : Profile.GetSource(entry);
         }
 
         public override IEnumerable<ValidationProfileResult> Validate(ValidationRunner runner)
         {
-            if (this.Profile == null) yield break;
+            if (Profile == null) yield break;
 
-            foreach (ValidationProfileResult result in this.Profile.Validate(runner))
+            foreach (ValidationProfileResult result in Profile.Validate(runner))
                 yield return result;
         }
 
         public override IValidationProfile GetWrappedProfile()
         {
-            return this.Profile;
+            return Profile;
         }
     }
 }

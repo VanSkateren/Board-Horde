@@ -34,13 +34,14 @@ namespace Dreamteck.Splines.IO
         }
 
         public enum Element { All, Path, Polygon, Ellipse, Rectangle, Line }
-        List<SplineDefinition> paths = new List<SplineDefinition>();
-        List<SplineDefinition> polygons = new List<SplineDefinition>();
-        List<SplineDefinition> ellipses = new List<SplineDefinition>();
-        List<SplineDefinition> rectangles = new List<SplineDefinition>();
-        List<SplineDefinition> lines = new List<SplineDefinition>();
 
-        List<Transformation> transformBuffer = new List<Transformation>();
+        private List<SplineDefinition> paths = new List<SplineDefinition>();
+        private List<SplineDefinition> polygons = new List<SplineDefinition>();
+        private List<SplineDefinition> ellipses = new List<SplineDefinition>();
+        private List<SplineDefinition> rectangles = new List<SplineDefinition>();
+        private List<SplineDefinition> lines = new List<SplineDefinition>();
+
+        private List<Transformation> transformBuffer = new List<Transformation>();
 
         public SVG(string filePath)
         {
@@ -124,7 +125,7 @@ namespace Dreamteck.Splines.IO
             doc.Save(filePath);
         }
 
-        Vector2 MapPoint(Vector3 original, Axis ax)
+        private Vector2 MapPoint(Vector3 original, Axis ax)
         {
             switch (ax)
             {
@@ -135,7 +136,7 @@ namespace Dreamteck.Splines.IO
             return original;
         }
 
-        void Read(XmlDocument doc)
+        private void Read(XmlDocument doc)
         {
             transformBuffer.Clear();
             Traverse(doc.ChildNodes);
@@ -214,7 +215,7 @@ namespace Dreamteck.Splines.IO
             return splines;
         }
 
-        int ReadRectangle(XmlNode rectNode)
+        private int ReadRectangle(XmlNode rectNode)
         {
             float x = 0f, y = 0f, w = 0f, h = 0f, rx = -1f, ry = -1f;
             string attribute = GetAttributeContent(rectNode, "x");
@@ -260,7 +261,7 @@ namespace Dreamteck.Splines.IO
             return addedTransforms;
         }
 
-        int ReadLine(XmlNode lineNode)
+        private int ReadLine(XmlNode lineNode)
         {
             float startX = 0f, startY = 0f, endX = 0f, endY = 0f;
             string attribute = GetAttributeContent(lineNode, "x1");
@@ -287,7 +288,7 @@ namespace Dreamteck.Splines.IO
             return addedTransforms;
         }
 
-        int ReadEllipse(XmlNode ellipseNode)
+        private int ReadEllipse(XmlNode ellipseNode)
         {
             float x = 0f, y = 0f, rx = 0f, ry = 0f;
             string attribute = GetAttributeContent(ellipseNode, "cx");
@@ -326,7 +327,7 @@ namespace Dreamteck.Splines.IO
             return addedTransforms;
         }
 
-        int ReadPolygon(XmlNode polyNode, bool closed)
+        private int ReadPolygon(XmlNode polyNode, bool closed)
         {
             string contents = GetAttributeContent(polyNode, "points");
             if (contents == "ERROR") return 0;
@@ -355,7 +356,7 @@ namespace Dreamteck.Splines.IO
             return addedTransforms;
         }
 
-        int ParseTransformation(XmlNode node)
+        private int ParseTransformation(XmlNode node)
         {
             string transformAttribute = GetAttributeContent(node, "transform");
             if (transformAttribute == "ERROR") return 0;
@@ -364,7 +365,7 @@ namespace Dreamteck.Splines.IO
             return trs.Count;
         }
 
-        List<Transformation> ParseTransformations(string transformContent)
+        private List<Transformation> ParseTransformations(string transformContent)
         {
             List<Transformation> trs = new List<Transformation>();
             MatchCollection matches = Regex.Matches(transformContent.ToLower(), @"(?<function>translate|rotate|scale|skewx|skewy|matrix)\s*\((\s*(?<param>-?\s*\d+(\.\d+)?)\s*\,*\s*)+\)"); 
@@ -405,7 +406,7 @@ namespace Dreamteck.Splines.IO
             return trs;
         }
 
-        int ReadPath(XmlNode pathNode)
+        private int ReadPath(XmlNode pathNode)
         {
             string contents = GetAttributeContent(pathNode, "d");
             if (contents == "ERROR") return 0;
@@ -478,7 +479,7 @@ namespace Dreamteck.Splines.IO
             return addedTransforms;
         }
 
-        void PathStart(string name, string coords, bool relative)
+        private void PathStart(string name, string coords, bool relative)
         {
             if (buffer != null) WriteBufferTo(paths);
             buffer = new SplineDefinition(name, Spline.Type.Bezier);
@@ -491,12 +492,12 @@ namespace Dreamteck.Splines.IO
             }
         }
 
-        void PathClose()
+        private void PathClose()
         {
             buffer.closed = true;
         }
 
-        void PathLineTo(string coords, bool relative)
+        private void PathLineTo(string coords, bool relative)
         {
             Vector2[] vectors = ParseVector2(coords);
             foreach (Vector3 vector in vectors)
@@ -507,7 +508,7 @@ namespace Dreamteck.Splines.IO
             }
         }
 
-        void PathHorizontalLineTo(string coords, bool relative)
+        private void PathHorizontalLineTo(string coords, bool relative)
         {
             float[] floats = ParseFloat(coords);
             foreach (float f in floats)
@@ -518,7 +519,7 @@ namespace Dreamteck.Splines.IO
             }
         }
 
-        void PathVerticalLineTo(string coords, bool relative)
+        private void PathVerticalLineTo(string coords, bool relative)
         {
             float[] floats = ParseFloat(coords);
             foreach (float f in floats)
@@ -529,7 +530,7 @@ namespace Dreamteck.Splines.IO
             }
         }
 
-        void PathCurveTo(string coords, PathSegment.Type type, bool relative)
+        private void PathCurveTo(string coords, PathSegment.Type type, bool relative)
         {
             PathSegment[] segment = ParsePathSegment(coords, type);
             for (int i = 0; i < segment.Length; i++)
@@ -579,14 +580,14 @@ namespace Dreamteck.Splines.IO
             }
         }
 
-        void WriteBufferTo(List<SplineDefinition> list)
+        private void WriteBufferTo(List<SplineDefinition> list)
         {
             buffer.Transform(transformBuffer); 
             list.Add(buffer);
             buffer = null;
         }
 
-        PathSegment[] ParsePathSegment(string coord, PathSegment.Type type)
+        private PathSegment[] ParsePathSegment(string coord, PathSegment.Type type)
         {
             List<float> list = ParseFloatArray(coord.Substring(1));
             int count = 0;
@@ -617,7 +618,7 @@ namespace Dreamteck.Splines.IO
             return data;
         }
 
-        string EncodePath(SplineDefinition definition, Axis ax)
+        private string EncodePath(SplineDefinition definition, Axis ax)
         {
             string text = "M";
             for (int i = 0; i < definition.pointCount; i++)
@@ -637,7 +638,7 @@ namespace Dreamteck.Splines.IO
             return text;
         }
 
-        string EncodePolygon(SplineDefinition definition, Axis ax)
+        private string EncodePolygon(SplineDefinition definition, Axis ax)
         {
             string text = "";
             for (int i = 0; i < definition.pointCount; i++)
@@ -649,7 +650,7 @@ namespace Dreamteck.Splines.IO
             return text;
         }
 
-        string GetAttributeContent(XmlNode node, string attributeName)
+        private string GetAttributeContent(XmlNode node, string attributeName)
         {
             for (int j = 0; j < node.Attributes.Count; j++)
             {

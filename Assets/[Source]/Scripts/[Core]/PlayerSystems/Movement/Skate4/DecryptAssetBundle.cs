@@ -26,12 +26,12 @@ public class DecryptAssetBundle : MonoBehaviour
 	private void Start()
 	{
 		string str = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "/SkaterXL/Maps");
-		this.asset = AssetBundle.LoadFromFile(Path.Combine(str, this.targetAsset));
-		if (this.asset == null)
+		asset = AssetBundle.LoadFromFile(Path.Combine(str, targetAsset));
+		if (asset == null)
 		{
 			Debug.LogError("Could Not Load AssetBundle");
 			return;
 		}
-		this.LoadAsset(this.asset);
+		LoadAsset(asset);
 	}
 }

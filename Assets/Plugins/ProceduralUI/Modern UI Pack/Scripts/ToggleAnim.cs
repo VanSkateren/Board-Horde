@@ -17,7 +17,7 @@ namespace Michsky.UI.ModernUIPack
 
         void Start()
         {
-            this.toggleObject.GetComponent<Toggle>();
+            toggleObject.GetComponent<Toggle>();
             toggleObject.onValueChanged.AddListener(TaskOnClick);
 
             // Backup plan :p

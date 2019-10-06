@@ -21,7 +21,7 @@ namespace SCPE
 #endif
         public static void ExecuteMenuItem()
         {
-            HelpWindow.ShowWindow();
+            ShowWindow();
         }
 
         //Window properties
@@ -82,8 +82,8 @@ namespace SCPE
 
         private void SetWindowHeight(float height)
         {
-            this.maxSize = new Vector2(width, height);
-            this.minSize = new Vector2(width, height);
+            maxSize = new Vector2(width, height);
+            minSize = new Vector2(width, height);
         }
 
         //Store values in the volatile SessionState

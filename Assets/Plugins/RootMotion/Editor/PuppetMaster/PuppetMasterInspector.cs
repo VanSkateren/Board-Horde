@@ -7,7 +7,7 @@ namespace RootMotion.Dynamics {
 	[CustomEditor(typeof(PuppetMaster))]
 	public class PuppetMasterInspector : Editor {
 
-		private PuppetMaster script { get { return target as PuppetMaster; }}
+		private PuppetMaster script => target as PuppetMaster;
 		private Transform animatedCharacter;
 		private bool isValid;
 		private int characterControllerLayer = 8;

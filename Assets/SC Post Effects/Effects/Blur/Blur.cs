@@ -53,10 +53,10 @@ namespace SCPE
 
     internal sealed class BlurRenderer : PostProcessEffectRenderer<Blur>
     {
-        Shader shader;
-        int screenCopyID;
+        private Shader shader;
+        private int screenCopyID;
 
-        enum Pass
+        private enum Pass
         {
             Blend,
             Gaussian,

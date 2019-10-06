@@ -14,7 +14,7 @@ namespace Dreamteck.Splines
     {
         public int slices
         {
-            get { return _slices; }
+            get => _slices;
             set
             {
                 if (value != _slices)
@@ -48,7 +48,7 @@ namespace Dreamteck.Splines
             mesh.name = "spline";
         }
 
-        void Start()
+        private void Start()
         {
             if (Camera.current != null) orthographic = Camera.current.orthographic;
         }
@@ -82,7 +82,7 @@ namespace Dreamteck.Splines
             WriteMesh();
         }
 
-        void OnWillRenderObject()
+        private void OnWillRenderObject()
         {
             if (!autoOrient) return;
             if (updateFrameInterval > 0)

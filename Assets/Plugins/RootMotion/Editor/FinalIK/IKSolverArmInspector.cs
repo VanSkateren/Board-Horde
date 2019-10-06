@@ -65,15 +65,15 @@ namespace RootMotion.FinalIK {
 			Handles.DrawLine(solver.forearm.transform.position, solver.hand.transform.position);
 
 			// Joints
-			Inspector.SphereCap(0, solver.chest.transform.position, Quaternion.identity, GetHandleSize(solver.chest.transform.position));
-			Inspector.SphereCap(0, solver.shoulder.transform.position, Quaternion.identity, GetHandleSize(solver.shoulder.transform.position));
-			Inspector.SphereCap(0, solver.upperArm.transform.position, Quaternion.identity, GetHandleSize(solver.upperArm.transform.position));
-			Inspector.SphereCap(0, solver.forearm.transform.position, Quaternion.identity, GetHandleSize(solver.forearm.transform.position));
-			Inspector.SphereCap(0, solver.hand.transform.position, Quaternion.identity, GetHandleSize(solver.hand.transform.position));
+			SphereCap(0, solver.chest.transform.position, Quaternion.identity, GetHandleSize(solver.chest.transform.position));
+			SphereCap(0, solver.shoulder.transform.position, Quaternion.identity, GetHandleSize(solver.shoulder.transform.position));
+			SphereCap(0, solver.upperArm.transform.position, Quaternion.identity, GetHandleSize(solver.upperArm.transform.position));
+			SphereCap(0, solver.forearm.transform.position, Quaternion.identity, GetHandleSize(solver.forearm.transform.position));
+			SphereCap(0, solver.hand.transform.position, Quaternion.identity, GetHandleSize(solver.hand.transform.position));
 
 			if (Application.isPlaying && (solver.IKPositionWeight > 0 || solver.IKRotationWeight > 0)) {
 				if (modifiable) {
-					Inspector.CubeCap(0, solver.IKPosition, solver.IKRotation, GetHandleSize(solver.IKPosition));
+					CubeCap(0, solver.IKPosition, solver.IKRotation, GetHandleSize(solver.IKPosition));
 					
 					// Manipulating position and rotation
 					switch(Tools.current) {

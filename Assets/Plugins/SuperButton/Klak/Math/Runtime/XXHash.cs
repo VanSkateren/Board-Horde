@@ -66,11 +66,7 @@ namespace Klak.Math
 
         public int seed;
 
-        public static XXHash RandomHash {
-            get {
-                return new XXHash((int)XXHash.GetHash(0xcafe, _counter++));
-            }
-        }
+        public static XXHash RandomHash => new XXHash((int)GetHash(0xcafe, _counter++));
 
         public XXHash(int seed)
         {

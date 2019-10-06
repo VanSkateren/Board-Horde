@@ -30,8 +30,8 @@ namespace Dynamic_Static
         /// </summary>
         public Color Color
         {
-            get { return color; }
-            set { color = value; }
+            get => color;
+            set => color = value;
         }
         #endregion
 

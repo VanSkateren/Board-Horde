@@ -51,7 +51,7 @@ namespace SCPE
 
     internal sealed class ColorizeRenderer : PostProcessEffectRenderer<Colorize>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

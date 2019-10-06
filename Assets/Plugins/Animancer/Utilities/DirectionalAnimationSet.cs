@@ -19,7 +19,7 @@ namespace Animancer
         private AnimationClip _Up;
 
         /// <summary>The animation facing up.</summary>
-        public AnimationClip Up { get { return _Up; } }
+        public AnimationClip Up => _Up;
 
         /// <summary>Sets the <see cref="Up"/> animation.</summary>
         /// <remarks>This is not simply a property setter because the animations will usually not need to be changed by scripts.</remarks>
@@ -35,7 +35,7 @@ namespace Animancer
         private AnimationClip _Right;
 
         /// <summary>The animation facing right.</summary>
-        public AnimationClip Right { get { return _Right; } }
+        public AnimationClip Right => _Right;
 
         /// <summary>Sets the <see cref="Right"/> animation.</summary>
         /// <remarks>This is not simply a property setter because the animations will usually not need to be changed by scripts.</remarks>
@@ -51,7 +51,7 @@ namespace Animancer
         private AnimationClip _Down;
 
         /// <summary>The animation facing down.</summary>
-        public AnimationClip Down { get { return _Down; } }
+        public AnimationClip Down => _Down;
 
         /// <summary>Sets the <see cref="Down"/> animation.</summary>
         /// <remarks>This is not simply a property setter because the animations will usually not need to be changed by scripts.</remarks>
@@ -67,7 +67,7 @@ namespace Animancer
         private AnimationClip _Left;
 
         /// <summary>The animation facing left.</summary>
-        public AnimationClip Left { get { return _Left; } }
+        public AnimationClip Left => _Left;
 
         /// <summary>Sets the <see cref="Left"/> animation.</summary>
         /// <remarks>This is not simply a property setter because the animations will usually not need to be changed by scripts.</remarks>
@@ -103,7 +103,7 @@ namespace Animancer
         /************************************************************************************************************************/
 
         /// <summary>The number of animations in this set.</summary>
-        public virtual int ClipCount { get { return 4; } }
+        public virtual int ClipCount => 4;
 
         /************************************************************************************************************************/
 

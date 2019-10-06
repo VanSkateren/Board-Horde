@@ -56,7 +56,7 @@ namespace Michsky.UI.ModernUIPack
 
         void Start()
         {
-            dropdownAnimator = this.GetComponent<Animator>();
+            dropdownAnimator = GetComponent<Animator>();
             itemList = itemParent.GetComponent<VerticalLayoutGroup>();
 
             for (int i = 0; i < dropdownItems.Count; ++i)

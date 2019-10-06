@@ -50,7 +50,7 @@ namespace Dreamteck.Splines.IO
             }
         }
 
-        void Read(string[] lines)
+        private void Read(string[] lines)
         {
             int expectedElementCount = 0;
             foreach (ColumnType col in columns)
@@ -146,30 +146,30 @@ namespace Dreamteck.Splines.IO
             }
         }
 
-        void AddTitle(ref string[] content, string title)
+        private void AddTitle(ref string[] content, string title)
         {
             if (!string.IsNullOrEmpty(content[0])) content[0] += ",";
             content[0] += title;
         }
 
-        void AddVector3Title(ref string[] content, string prefix)
+        private void AddVector3Title(ref string[] content, string prefix)
         {
             AddTitle(ref content, prefix + "X," + prefix + "Y," + prefix + "Z");
         }
 
-        void AddColorTitle(ref string[] content, string prefix)
+        private void AddColorTitle(ref string[] content, string prefix)
         {
             AddTitle(ref content, prefix + "R," + prefix + "G," + prefix + "B" + prefix + "A");
         }
 
-        void AddVector3(ref string[] content, int index, Vector3 vector)
+        private void AddVector3(ref string[] content, int index, Vector3 vector)
         {
             AddFloat(ref content, index, vector.x);
             AddFloat(ref content, index, vector.y);
             AddFloat(ref content, index, vector.z);
         }
 
-        void AddColor(ref string[] content, int index, Color color)
+        private void AddColor(ref string[] content, int index, Color color)
         {
             AddFloat(ref content, index, color.r);
             AddFloat(ref content, index, color.g);
@@ -177,7 +177,7 @@ namespace Dreamteck.Splines.IO
             AddFloat(ref content, index, color.a);
         }
 
-        void AddFloat(ref string[] content, int index, float value)
+        private void AddFloat(ref string[] content, int index, float value)
         {
             if (!string.IsNullOrEmpty(content[index])) content[index] += ",";
             content[index] += value.ToString();

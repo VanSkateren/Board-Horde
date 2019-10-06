@@ -82,19 +82,19 @@ public class InputThread : MonoBehaviour
 	{
 		get
 		{
-			if (this._lastPos - 1 < this._maxLength)
+			if (_lastPos - 1 < _maxLength)
 			{
-				int num = this._lastPos;
+				int num = _lastPos;
 			}
 			else
 			{
-				int num1 = this._maxLength;
+				int num1 = _maxLength;
 			}
-			if (this._lastPos - 1 < 0)
+			if (_lastPos - 1 < 0)
 			{
 				return 0;
 			}
-			return this._lastPos - 1;
+			return _lastPos - 1;
 		}
 	}
 
@@ -103,79 +103,43 @@ public class InputThread : MonoBehaviour
 		get
 		{
 			TimeSpan timeSpan;
-			this._tempx = 0f;
-			this._tempy = 0f;
-			if (this._lastPosClamp < 2)
+			_tempx = 0f;
+			_tempy = 0f;
+			if (_lastPosClamp < 2)
 			{
 				return Vector2.zero;
 			}
-			for (int i = 1; i < this._lastPosClamp; i++)
+			for (int i = 1; i < _lastPosClamp; i++)
 			{
-				float single = this._tempx;
-				float single1 = this.inputsOut[i].rightX - this.inputsOut[i - 1].rightX;
-				timeSpan = TimeSpan.FromTicks(this.inputsOut[i - 1].time - this.inputsOut[i].time);
-				this._tempx = single + single1 / (float)timeSpan.Seconds;
+				float single = _tempx;
+				float single1 = inputsOut[i].rightX - inputsOut[i - 1].rightX;
+				timeSpan = TimeSpan.FromTicks(inputsOut[i - 1].time - inputsOut[i].time);
+				_tempx = single + single1 / (float)timeSpan.Seconds;
 			}
-			this._velxAvg = this._tempx / (float)this._lastPosClamp;
-			for (int j = 1; j < this._lastPosClamp; j++)
+			_velxAvg = _tempx / (float)_lastPosClamp;
+			for (int j = 1; j < _lastPosClamp; j++)
 			{
-				float single2 = this._tempx;
-				float single3 = this.inputsOut[j].rightY - this.inputsOut[j - 1].rightY;
-				timeSpan = TimeSpan.FromTicks(this.inputsOut[j - 1].time - this.inputsOut[j].time);
-				this._tempx = single2 + single3 / (float)timeSpan.Seconds;
+				float single2 = _tempx;
+				float single3 = inputsOut[j].rightY - inputsOut[j - 1].rightY;
+				timeSpan = TimeSpan.FromTicks(inputsOut[j - 1].time - inputsOut[j].time);
+				_tempx = single2 + single3 / (float)timeSpan.Seconds;
 			}
-			this._velyAvg = this._tempx / (float)this._lastPosClamp;
-			return new Vector2(this._velxAvg, this._velyAvg);
+			_velyAvg = _tempx / (float)_lastPosClamp;
+			return new Vector2(_velxAvg, _velyAvg);
 		}
 	}
 
-	public Vector2 lastPosLeft
-	{
-		get
-		{
-			return new Vector2(this.inputsOut[this._lastPosClamp].leftX, this.inputsOut[this._lastPosClamp].leftY);
-		}
-	}
+	public Vector2 lastPosLeft => new Vector2(inputsOut[_lastPosClamp].leftX, inputsOut[_lastPosClamp].leftY);
 
-	public Vector2 lastPosRight
-	{
-		get
-		{
-			return new Vector2(this.inputsOut[this._lastPosClamp].rightX, this.inputsOut[this._lastPosClamp].rightY);
-		}
-	}
+	public Vector2 lastPosRight => new Vector2(inputsOut[_lastPosClamp].rightX, inputsOut[_lastPosClamp].rightY);
 
-	public Vector2 maxVelLastUpdateLeft
-	{
-		get
-		{
-			return this.MaxVelLastUpdate(false);
-		}
-	}
+	public Vector2 maxVelLastUpdateLeft => MaxVelLastUpdate(false);
 
-	public Vector2 maxVelLastUpdateRight
-	{
-		get
-		{
-			return this.MaxVelLastUpdate(true);
-		}
-	}
+	public Vector2 maxVelLastUpdateRight => MaxVelLastUpdate(true);
 
-	public float x
-	{
-		get
-		{
-			return this.inputsOut[this._lastPosClamp].rightX;
-		}
-	}
+	public float x => inputsOut[_lastPosClamp].rightX;
 
-	public float xdel
-	{
-		get
-		{
-			return this.inputsOut[this._lastPosClamp].rightX - this.inputsOut[0].rightX;
-		}
-	}
+	public float xdel => inputsOut[_lastPosClamp].rightX - inputsOut[0].rightX;
 
 	public InputThread()
 	{
@@ -183,37 +147,37 @@ public class InputThread : MonoBehaviour
 
 	private void Awake()
 	{
-		if (!this.playerIndexSet || !this.prevState.IsConnected)
+		if (!playerIndexSet || !prevState.IsConnected)
 		{
 			for (int i = 0; i < 4; i++)
 			{
 				PlayerIndex playerIndex = (PlayerIndex)i;
 				if (!GamePad.GetState(playerIndex, GamePadDeadZone.None).IsConnected)
 				{
-					this.directInput = true;
+					directInput = true;
 				}
 				else
 				{
-					this.directInput = false;
+					directInput = false;
 					this.playerIndex = playerIndex;
-					this.playerIndexSet = true;
+					playerIndexSet = true;
 				}
 			}
 		}
-		for (int j = 0; j < (int)this.inputsIn.Length; j++)
+		for (int j = 0; j < (int)inputsIn.Length; j++)
 		{
-			this.inputsIn[j] = new InputThread.InputStruct();
+			inputsIn[j] = new InputThread.InputStruct();
 		}
-		for (int k = 0; k < (int)this.inputsOut.Length; k++)
+		for (int k = 0; k < (int)inputsOut.Length; k++)
 		{
-			this.inputsOut[k] = new InputThread.InputStruct();
+			inputsOut[k] = new InputThread.InputStruct();
 		}
-		this._lastFrameData = new InputThread.InputStruct();
-		this._threadActive = true;
-		this._updateThread = new Thread(new ThreadStart(this.SuperFastLoop));
-		this._updateThread.Start();
-		this._time = Time.time;
-		this.reset = new AutoResetEvent(false);
+		_lastFrameData = new InputThread.InputStruct();
+		_threadActive = true;
+		_updateThread = new Thread(new ThreadStart(SuperFastLoop));
+		_updateThread.Start();
+		_time = Time.time;
+		reset = new AutoResetEvent(false);
 	}
 
 	private void EmptyQueue()
@@ -227,161 +191,161 @@ public class InputThread : MonoBehaviour
 
 	private void InputUpdate()
 	{
-		this.prevState = this.state;
-		this.state = GamePad.GetState(this.playerIndex);
-		if (this._pos < this._maxLength)
+		prevState = state;
+		state = GamePad.GetState(playerIndex);
+		if (_pos < _maxLength)
 		{
-			if (this.state.IsConnected)
+			if (state.IsConnected)
 			{
-				InputThread.InputStruct inputStruct = this.inputsIn[this._pos];
-				InputFilter inputFilter = this.leftXFilter;
-				GamePadThumbSticks thumbSticks = this.state.ThumbSticks;
+				InputThread.InputStruct inputStruct = inputsIn[_pos];
+				InputFilter inputFilter = leftXFilter;
+				GamePadThumbSticks thumbSticks = state.ThumbSticks;
 				GamePadThumbSticks.StickValue left = thumbSticks.Left;
 				inputStruct.leftX = inputFilter.Filter((double)left.X);
-				InputThread.InputStruct inputStruct1 = this.inputsIn[this._pos];
-				InputFilter inputFilter1 = this.leftYFilter;
-				thumbSticks = this.state.ThumbSticks;
+				InputThread.InputStruct inputStruct1 = inputsIn[_pos];
+				InputFilter inputFilter1 = leftYFilter;
+				thumbSticks = state.ThumbSticks;
 				left = thumbSticks.Left;
 				inputStruct1.leftY = inputFilter1.Filter((double)left.Y);
-				InputThread.InputStruct inputStruct2 = this.inputsIn[this._pos];
-				InputFilter inputFilter2 = this.rightXFilter;
-				thumbSticks = this.state.ThumbSticks;
+				InputThread.InputStruct inputStruct2 = inputsIn[_pos];
+				InputFilter inputFilter2 = rightXFilter;
+				thumbSticks = state.ThumbSticks;
 				left = thumbSticks.Right;
 				inputStruct2.rightX = inputFilter2.Filter((double)left.X);
-				InputThread.InputStruct inputStruct3 = this.inputsIn[this._pos];
-				InputFilter inputFilter3 = this.rightYFilter;
-				thumbSticks = this.state.ThumbSticks;
+				InputThread.InputStruct inputStruct3 = inputsIn[_pos];
+				InputFilter inputFilter3 = rightYFilter;
+				thumbSticks = state.ThumbSticks;
 				left = thumbSticks.Right;
 				inputStruct3.rightY = inputFilter3.Filter((double)left.Y);
-				this.inputsIn[this._pos].time = DateTime.UtcNow.Ticks;
-				this.inputsIn[this._pos].leftXVel = this.GetVel(this.inputsIn[this._pos].leftX, this._lastFrameData.leftX, this.inputsIn[this._pos].time, this._lastFrameData.time);
-				this.inputsIn[this._pos].leftYVel = this.GetVel(this.inputsIn[this._pos].leftY, this._lastFrameData.leftY, this.inputsIn[this._pos].time, this._lastFrameData.time);
-				this.inputsIn[this._pos].rightXVel = this.GetVel(this.inputsIn[this._pos].rightX, this._lastFrameData.rightX, this.inputsIn[this._pos].time, this._lastFrameData.time);
-				this.inputsIn[this._pos].rightYVel = this.GetVel(this.inputsIn[this._pos].rightY, this._lastFrameData.rightY, this.inputsIn[this._pos].time, this._lastFrameData.time);
-				this._lastFrameData.leftX = this.inputsIn[this._pos].leftX;
-				this._lastFrameData.leftY = this.inputsIn[this._pos].leftY;
-				this._lastFrameData.rightX = this.inputsIn[this._pos].rightX;
-				this._lastFrameData.rightY = this.inputsIn[this._pos].rightY;
-				this._lastFrameData.time = this.inputsIn[this._pos].time;
-				this._pos++;
+				inputsIn[_pos].time = DateTime.UtcNow.Ticks;
+				inputsIn[_pos].leftXVel = GetVel(inputsIn[_pos].leftX, _lastFrameData.leftX, inputsIn[_pos].time, _lastFrameData.time);
+				inputsIn[_pos].leftYVel = GetVel(inputsIn[_pos].leftY, _lastFrameData.leftY, inputsIn[_pos].time, _lastFrameData.time);
+				inputsIn[_pos].rightXVel = GetVel(inputsIn[_pos].rightX, _lastFrameData.rightX, inputsIn[_pos].time, _lastFrameData.time);
+				inputsIn[_pos].rightYVel = GetVel(inputsIn[_pos].rightY, _lastFrameData.rightY, inputsIn[_pos].time, _lastFrameData.time);
+				_lastFrameData.leftX = inputsIn[_pos].leftX;
+				_lastFrameData.leftY = inputsIn[_pos].leftY;
+				_lastFrameData.rightX = inputsIn[_pos].rightX;
+				_lastFrameData.rightY = inputsIn[_pos].rightY;
+				_lastFrameData.time = inputsIn[_pos].time;
+				_pos++;
 				return;
 			}
-			this.inputsIn[this._pos].leftX = this.leftXFilter.Filter((double)((Mathf.Abs(this.inputController.player.GetAxis("LeftStickX")) < 0.1f ? 0f : this.inputController.player.GetAxis("LeftStickX"))));
-			this.inputsIn[this._pos].leftY = this.leftYFilter.Filter((double)this.inputController.player.GetAxis("LeftStickY"));
-			this.inputsIn[this._pos].rightX = this.rightXFilter.Filter((double)((Mathf.Abs(this.inputController.player.GetAxis("RightStickX")) < 0.1f ? 0f : this.inputController.player.GetAxis("RightStickX"))));
-			this.inputsIn[this._pos].rightY = this.rightYFilter.Filter((double)this.inputController.player.GetAxis("RightStickY"));
-			this.inputsIn[this._pos].time = DateTime.UtcNow.Ticks;
-			this.inputsIn[this._pos].leftXVel = this.GetVel(this.inputsIn[this._pos].leftX, this._lastFrameData.leftX, this.inputsIn[this._pos].time, this._lastFrameData.time);
-			this.inputsIn[this._pos].leftYVel = this.GetVel(this.inputsIn[this._pos].leftY, this._lastFrameData.leftY, this.inputsIn[this._pos].time, this._lastFrameData.time);
-			this.inputsIn[this._pos].rightXVel = this.GetVel(this.inputsIn[this._pos].rightX, this._lastFrameData.rightX, this.inputsIn[this._pos].time, this._lastFrameData.time);
-			this.inputsIn[this._pos].rightYVel = this.GetVel(this.inputsIn[this._pos].rightY, this._lastFrameData.rightY, this.inputsIn[this._pos].time, this._lastFrameData.time);
-			this._lastFrameData.leftX = this.inputsIn[this._pos].leftX;
-			this._lastFrameData.leftY = this.inputsIn[this._pos].leftY;
-			this._lastFrameData.rightX = this.inputsIn[this._pos].rightX;
-			this._lastFrameData.rightY = this.inputsIn[this._pos].rightY;
-			this._lastFrameData.time = this.inputsIn[this._pos].time;
-			this._pos++;
+			inputsIn[_pos].leftX = leftXFilter.Filter((double)((Mathf.Abs(inputController.player.GetAxis("LeftStickX")) < 0.1f ? 0f : inputController.player.GetAxis("LeftStickX"))));
+			inputsIn[_pos].leftY = leftYFilter.Filter((double)inputController.player.GetAxis("LeftStickY"));
+			inputsIn[_pos].rightX = rightXFilter.Filter((double)((Mathf.Abs(inputController.player.GetAxis("RightStickX")) < 0.1f ? 0f : inputController.player.GetAxis("RightStickX"))));
+			inputsIn[_pos].rightY = rightYFilter.Filter((double)inputController.player.GetAxis("RightStickY"));
+			inputsIn[_pos].time = DateTime.UtcNow.Ticks;
+			inputsIn[_pos].leftXVel = GetVel(inputsIn[_pos].leftX, _lastFrameData.leftX, inputsIn[_pos].time, _lastFrameData.time);
+			inputsIn[_pos].leftYVel = GetVel(inputsIn[_pos].leftY, _lastFrameData.leftY, inputsIn[_pos].time, _lastFrameData.time);
+			inputsIn[_pos].rightXVel = GetVel(inputsIn[_pos].rightX, _lastFrameData.rightX, inputsIn[_pos].time, _lastFrameData.time);
+			inputsIn[_pos].rightYVel = GetVel(inputsIn[_pos].rightY, _lastFrameData.rightY, inputsIn[_pos].time, _lastFrameData.time);
+			_lastFrameData.leftX = inputsIn[_pos].leftX;
+			_lastFrameData.leftY = inputsIn[_pos].leftY;
+			_lastFrameData.rightX = inputsIn[_pos].rightX;
+			_lastFrameData.rightY = inputsIn[_pos].rightY;
+			_lastFrameData.time = inputsIn[_pos].time;
+			_pos++;
 		}
 	}
 
 	private Vector2 MaxVelLastUpdate(bool right)
 	{
-		this._velxMax = 0f;
-		this._velyMax = 0f;
-		for (int i = 1; i < this._lastPosClamp; i++)
+		_velxMax = 0f;
+		_velyMax = 0f;
+		for (int i = 1; i < _lastPosClamp; i++)
 		{
-			this._velxTemp = (right ? this.inputsOut[i].rightXVel : this.inputsOut[i].leftXVel);
-			if (Mathf.Abs(this._velxTemp) > Mathf.Abs(this._velxMax))
+			_velxTemp = (right ? inputsOut[i].rightXVel : inputsOut[i].leftXVel);
+			if (Mathf.Abs(_velxTemp) > Mathf.Abs(_velxMax))
 			{
-				this._velxMax = this._velxTemp;
+				_velxMax = _velxTemp;
 			}
 		}
-		for (int j = 1; j < this._lastPosClamp; j++)
+		for (int j = 1; j < _lastPosClamp; j++)
 		{
-			this._velyTemp = (right ? this.inputsOut[j].rightYVel : this.inputsOut[j].leftYVel);
-			if (Mathf.Abs(this._velyTemp) > Mathf.Abs(this._velyMax))
+			_velyTemp = (right ? inputsOut[j].rightYVel : inputsOut[j].leftYVel);
+			if (Mathf.Abs(_velyTemp) > Mathf.Abs(_velyMax))
 			{
-				this._velyMax = this._velyTemp;
+				_velyMax = _velyTemp;
 			}
 		}
-		return new Vector2(this._velxMax, this._velyMax);
+		return new Vector2(_velxMax, _velyMax);
 	}
 
 	private void OnApplicationQuit()
 	{
-		this._threadActive = false;
-		this._updateThread.Abort();
-		this._updateThread.Join();
+		_threadActive = false;
+		_updateThread.Abort();
+		_updateThread.Join();
 	}
 
 	private void OnDestroy()
 	{
-		this._threadActive = false;
-		this._updateThread.Abort();
-		this._updateThread.Join();
+		_threadActive = false;
+		_updateThread.Abort();
+		_updateThread.Join();
 	}
 
 	private void OnDisable()
 	{
-		this._threadActive = false;
-		this._updateThread.Abort();
-		this._updateThread.Join();
+		_threadActive = false;
+		_updateThread.Abort();
+		_updateThread.Join();
 	}
 
 	private void SuperFastLoop()
 	{
 		long ticks = DateTime.UtcNow.Ticks;
-		this.count = 0;
-		while (this._threadActive)
+		count = 0;
+		while (_threadActive)
 		{
 			if (DateTime.UtcNow.Ticks - ticks >= (long)10000000)
 			{
-				this.ThreadedUpdatesPerSecond = this.count;
-				this.count = 0;
+				ThreadedUpdatesPerSecond = count;
+				count = 0;
 				ticks = DateTime.UtcNow.Ticks;
 			}
-			this.count++;
-			this.InputUpdate();
-			this.reset.WaitOne(this.refreshRate);
+			count++;
+			InputUpdate();
+			reset.WaitOne(refreshRate);
 		}
 	}
 
 	public void Update()
 	{
-		if (!this.playerIndexSet || !this.prevState.IsConnected)
+		if (!playerIndexSet || !prevState.IsConnected)
 		{
 			for (int i = 0; i < 4; i++)
 			{
 				PlayerIndex playerIndex = (PlayerIndex)i;
 				if (!GamePad.GetState(playerIndex, GamePadDeadZone.None).IsConnected)
 				{
-					this.directInput = true;
+					directInput = true;
 				}
 				else
 				{
-					this.directInput = false;
+					directInput = false;
 					this.playerIndex = playerIndex;
-					this.playerIndexSet = true;
+					playerIndexSet = true;
 				}
 			}
 		}
-		PlayerController.Instance.inputController.debugUI.SetThreadActive(this._threadActive);
-		if (Time.time - this._time >= 1f)
+		PlayerController.Instance.inputController.debugUI.SetThreadActive(_threadActive);
+		if (Time.time - _time >= 1f)
 		{
-			this.RegularUpdatesPerSecond = this._updateCount;
-			this._updateCount = 0;
-			this._time = Time.time;
+			RegularUpdatesPerSecond = _updateCount;
+			_updateCount = 0;
+			_time = Time.time;
 		}
-		this._updateCount++;
-		this.inputTimer += Time.deltaTime;
-		if (this.inputTimer > this.inputInterval)
+		_updateCount++;
+		inputTimer += Time.deltaTime;
+		if (inputTimer > inputInterval)
 		{
-			this.inputTimer = 0f;
-			lock (this._threadLock)
+			inputTimer = 0f;
+			lock (_threadLock)
 			{
-				this._lastPos = this._pos;
-				Array.Copy(this.inputsIn, this.inputsOut, (int)this.inputsIn.Length);
-				this._pos = 0;
+				_lastPos = _pos;
+				Array.Copy(inputsIn, inputsOut, (int)inputsIn.Length);
+				_pos = 0;
 			}
 		}
 	}

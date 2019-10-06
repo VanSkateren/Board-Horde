@@ -48,7 +48,7 @@ namespace SCPE
 
     internal sealed class TubeDistortionRenderer : PostProcessEffectRenderer<TubeDistortion>
     {
-        Shader shader;
+        private Shader shader;
 
         public override void Init()
         {

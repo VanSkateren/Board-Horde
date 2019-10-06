@@ -58,11 +58,7 @@ namespace Klak.Wiring
 
         Queue<float> _timeQueue = new Queue<float>();
 
-        float CurrentTime {
-            get {
-                return _timeUnit == TimeUnit.Second ? Time.time : Time.frameCount;
-            }
-        }
+        float CurrentTime => _timeUnit == TimeUnit.Second ? Time.time : Time.frameCount;
 
         #endregion
 

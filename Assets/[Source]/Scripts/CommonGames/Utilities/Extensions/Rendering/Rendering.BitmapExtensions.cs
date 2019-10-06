@@ -245,14 +245,8 @@ namespace CommonGames.Utilities.Extensions
 
             public Color this[int x, int y]
             {
-                get
-                {
-                    return data[x + y * width];
-                }
-                set
-                {
-                    data[x + y * width] = value; 
-                }
+                get => data[x + y * width];
+                set => data[x + y * width] = value;
             }
         }
 
@@ -263,8 +257,8 @@ namespace CommonGames.Utilities.Extensions
 
             public Point(int x, int y)
             {
-                this.X = x;
-                this.Y = y;
+                X = x;
+                Y = y;
             }
         }
 

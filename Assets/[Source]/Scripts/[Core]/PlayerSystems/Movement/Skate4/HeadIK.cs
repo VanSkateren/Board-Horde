@@ -29,14 +29,14 @@ public class HeadIK : MonoBehaviour
 
 	private void LateUpdate()
 	{
-		if (!this.IsAllowedAnimation() || !PlayerController.Instance.IsGrounded() || !PlayerController.Instance.IsAnimSwitch || PlayerController.Instance.playerSM.IsPushingSM())
+		if (!IsAllowedAnimation() || !PlayerController.Instance.IsGrounded() || !PlayerController.Instance.IsAnimSwitch || PlayerController.Instance.playerSM.IsPushingSM())
 		{
-			this.currentRot.rotation = Quaternion.Slerp(this.currentRot.rotation, this.head.rotation, Time.deltaTime * this.speed);
+			currentRot.rotation = Quaternion.Slerp(currentRot.rotation, head.rotation, Time.deltaTime * speed);
 		}
 		else
 		{
-			this.currentRot.rotation = Quaternion.Slerp(this.currentRot.rotation, (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? this.targetRot.rotation : this.goofyTargetRot.rotation), Time.deltaTime * this.speed);
+			currentRot.rotation = Quaternion.Slerp(currentRot.rotation, (SettingsManager.Instance.stance == SettingsManager.Stance.Regular ? targetRot.rotation : goofyTargetRot.rotation), Time.deltaTime * speed);
 		}
-		this.head.rotation = this.currentRot.rotation;
+		head.rotation = currentRot.rotation;
 	}
 }

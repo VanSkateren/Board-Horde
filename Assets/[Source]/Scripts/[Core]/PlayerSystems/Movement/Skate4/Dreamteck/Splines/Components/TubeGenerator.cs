@@ -14,7 +14,7 @@ namespace Dreamteck.Splines
 
         public int sides
         {
-            get { return _sides; }
+            get => _sides;
             set
             {
                 if (value != _sides)
@@ -29,7 +29,7 @@ namespace Dreamteck.Splines
         [System.Obsolete("Deprecated in 1.0.7. Use capMode instead")]
         public bool cap
         {
-            get { return _cap; }
+            get => _cap;
             set
             {
                 if (value != _cap)
@@ -42,7 +42,7 @@ namespace Dreamteck.Splines
 
         public CapMethod capMode
         {
-            get { return _capMode; }
+            get => _capMode;
             set
             {
                 if (value != _capMode)
@@ -55,7 +55,7 @@ namespace Dreamteck.Splines
 
         public int roundCapLatitude
         {
-            get { return _roundCapLatitude; }
+            get => _roundCapLatitude;
             set
             {
                 if (value < 1) value = 1;
@@ -69,7 +69,7 @@ namespace Dreamteck.Splines
 
         public float integrity
         {
-            get { return _integrity; }
+            get => _integrity;
             set
             {
                 if (value != _integrity)
@@ -82,7 +82,7 @@ namespace Dreamteck.Splines
 
         public float capUVScale
         {
-            get { return _capUVScale; }
+            get => _capUVScale;
             set
             {
                 if (value != _capUVScale)
@@ -182,7 +182,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        void Generate()
+        private void Generate()
         {
             int vertexIndex = 0;
             ResetUVDistance();
@@ -207,7 +207,7 @@ namespace Dreamteck.Splines
             MeshUtility.GeneratePlaneTriangles(ref tsMesh.triangles, _sides, clippedSamples.Length, false);
         }
 
-        void GenerateFlatCaps()
+        private void GenerateFlatCaps()
         {
             //Start Cap
             for (int i = 0; i < _sides+1; i++)
@@ -250,7 +250,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        void GenerateRoundCaps()
+        private void GenerateRoundCaps()
         {
             //Start Cap
             Vector3 center = clippedSamples[0].position;

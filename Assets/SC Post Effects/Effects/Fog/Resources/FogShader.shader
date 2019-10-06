@@ -93,8 +93,6 @@ Shader "Hidden/SC Post Effects/Fog"
 			dist = depth * _ProjectionParams.z;
 		//Start distance
 		dist -= _ProjectionParams.y;
-		//Density
-		dist *= _DensityParams.x;
 		return dist;
 	}
 
@@ -125,22 +123,26 @@ Shader "Hidden/SC Post Effects/Fog"
 
 		half4 screenColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoordStereo);
 
-		float rawDepth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, i.texcoordStereo);
-		float depth = Linear01Depth(rawDepth);
+		float depth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, i.texcoordStereo);
+		float linearDepth = Linear01Depth(depth);
 
 		float skyMask = 1;
-		if (depth > 0.99) skyMask = 0;
+		if (linearDepth > 0.99) skyMask = 0;
 
-		float3 worldPos = i.worldDirection * LinearEyeDepth(rawDepth) + _WorldSpaceCameraPos;
+		float3 worldPos = i.worldDirection * LinearEyeDepth(depth) + _WorldSpaceCameraPos;
 
 		//Fog start distance
 		float g = _DistanceParams.x;
 
 		//Distance fog
 		float distanceFog = 0;
+		float distanceWeight = 0;
 		if (_DistanceParams.z == 1) {
-			distanceFog = ComputeDistance(worldPos, depth);
-			g += distanceFog;
+			distanceFog = ComputeDistance(worldPos, linearDepth);
+
+			//Density (seperated so it doesn't affect the UV of a gradient texture)
+			distanceWeight = distanceFog * _DensityParams.x;
+			g += distanceWeight;
 		}
 
 		//Height fog
@@ -156,18 +158,17 @@ Shader "Hidden/SC Post Effects/Fog"
 			g += heightFog * noise;
 		}
 
-		//Fog density
+		//Fog density (Linear/Exp/ExpSqr)
 		half fogFac = ComputeFogFactor(max(0.0, g));
 
-		//Exclude skybox
-		if (depth > 0.99) fogFac = lerp(1.0, fogFac, _SkyboxParams.x);
-			
+		//Skybox influence
+		if (linearDepth > 0.99) fogFac = lerp(1.0, fogFac, _SkyboxParams.x);
 
 		//Color
 		float4 fogColor = _FogColor.rgba;
 		if (_SceneFogMode.z == 1)
 		{
-			fogColor = SAMPLE_TEXTURE2D(_ColorGradient, sampler_ColorGradient, float2(LinearEyeDepth(rawDepth) / _FarClippingPlane, 0));
+			fogColor = SAMPLE_TEXTURE2D(_ColorGradient, sampler_ColorGradient, float2(distanceFog / _FarClippingPlane, 0));
 		}
 		if (_SceneFogMode.z == 2) {
 			/*
@@ -218,7 +219,7 @@ Shader "Hidden/SC Post Effects/Fog"
 		return Combine(bloom, i.texcoordStereo);
 	}
 
-		float4 FragBlend(v2f i) : SV_Target
+	float4 FragBlend(v2f i) : SV_Target
 	{
 		half4 screenColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoordStereo);
 
@@ -234,7 +235,7 @@ Shader "Hidden/SC Post Effects/Fog"
 		return float4(blendedColor.rgb, screenColor.a);
 	}
 
-		float4 FragBlendScattering(v2f i) : SV_Target
+	float4 FragBlendScattering(v2f i) : SV_Target
 	{
 		half4 screenColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.texcoordStereo);
 		half4 bloom = SAMPLE_TEXTURE2D(_BloomTex, sampler_BloomTex, i.texcoordStereo) * _ScatteringParams.y;

@@ -11,8 +11,8 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(BipedIK))]
 	public class BipedIKInspector : Editor {
 		
-		private BipedIK script { get { return target as BipedIK; }}
-		
+		private BipedIK script => target as BipedIK;
+
 		private int selectedSolver = -1;
 		
 		private SerializedProperty references, solvers;

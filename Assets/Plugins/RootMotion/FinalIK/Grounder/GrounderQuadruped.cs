@@ -119,7 +119,7 @@ namespace RootMotion.FinalIK {
 			public Foot (IKSolver solver, Transform transform) {
 				this.solver = solver;
 				this.transform = transform;
-				this.leg = null;
+				leg = null;
 				rotation = transform.rotation;
 			}
 		}

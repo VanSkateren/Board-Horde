@@ -7,7 +7,7 @@ namespace SCPE
 {
     [ExecuteInEditMode]
     [RequireComponent(typeof(Light))]
-    sealed class SunshaftCaster : MonoBehaviour
+    internal sealed class SunshaftCaster : MonoBehaviour
     {
 #if SCPE
         [Range(0f, 10000f)]
@@ -25,11 +25,11 @@ namespace SCPE
 
         private void OnEnable()
         {
-            sunPosition = this.transform.position;
+            sunPosition = transform.position;
 
             if (!sunLight)
             {
-                sunLight = this.GetComponent<Light>();
+                sunLight = GetComponent<Light>();
                 if (sunLight)
                 {
                     color = sunLight.color;
@@ -56,7 +56,7 @@ namespace SCPE
             Gizmos.DrawRay(transform.position, sunPosition);
         }
 
-        void Update()
+        private void Update()
         {
             sunPosition = -transform.forward * ((infiniteDistance) ? 1E10f : distance);
             Sunshafts.sunPosition = sunPosition;
@@ -80,7 +80,7 @@ namespace SCPE
         private SerializedProperty distance;
         private SerializedProperty infiniteDistance;
 
-        void OnEnable()
+        private void OnEnable()
         {
             serializedObject = new SerializedObject(target);
 

@@ -7,10 +7,8 @@ namespace Dreamteck.Splines.IO
     public class SplineParser 
     {
         protected string fileName = "";
-        public string name
-        {
-            get { return fileName; }
-        }
+        public string name => fileName;
+
         internal class Transformation
         {
             protected static Matrix4x4 matrix = new Matrix4x4();
@@ -152,10 +150,7 @@ namespace Dreamteck.Splines.IO
             internal List<SplinePoint> points = new List<SplinePoint>();
             internal bool closed = false;
 
-            internal int pointCount
-            {
-                get { return points.Count; }
-            }
+            internal int pointCount => points.Count;
 
             internal Vector3 position = Vector3.zero;
             internal Vector3 tangent = Vector3.zero;

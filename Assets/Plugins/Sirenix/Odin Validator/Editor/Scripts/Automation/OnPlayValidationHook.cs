@@ -20,9 +20,9 @@ namespace Sirenix.OdinValidator.Editor
     {
         private static Dictionary<Action, Callback> SubscriptionMap = new Dictionary<Action, Callback>();
 
-        public string Name { get { return "On Play"; } }
+        public string Name => "On Play";
 
-        public void Hook(Action run)
+		public void Hook(Action run)
         {
             if (SubscriptionMap.ContainsKey(run)) return;
 

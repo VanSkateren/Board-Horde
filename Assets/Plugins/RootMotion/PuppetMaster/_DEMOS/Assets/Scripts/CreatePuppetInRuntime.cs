@@ -20,7 +20,7 @@ namespace RootMotion.Demos {
 		public int ragdollLayer;
 
 		void Start() {
-			Transform ragdoll = GameObject.Instantiate(ragdollPrefab, transform.position, transform.rotation) as Transform;
+			Transform ragdoll = Instantiate(ragdollPrefab, transform.position, transform.rotation) as Transform;
 			ragdoll.name = instanceName;
 
 			// This will duplicate the ragdoll character, remove the ragdoll components from the original and use it as the animated target.

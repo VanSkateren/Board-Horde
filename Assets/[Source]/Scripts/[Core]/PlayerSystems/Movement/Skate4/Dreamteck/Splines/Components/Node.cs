@@ -8,15 +8,9 @@ namespace Dreamteck.Splines
         [System.Serializable]
         public class Connection
         {
-            public SplineComputer computer
-            {
-                get { return _computer; }
-            }
+            public SplineComputer computer => _computer;
 
-            public int pointIndex
-            {
-                get { return _pointIndex; }
-            }
+            public int pointIndex => _pointIndex;
 
             public bool invertTangents = false;
 
@@ -50,7 +44,7 @@ namespace Dreamteck.Splines
 
         public bool transformNormals
         {
-            get { return _transformNormals; }
+            get => _transformNormals;
             set
             {
                 if (value != _transformNormals)
@@ -63,7 +57,7 @@ namespace Dreamteck.Splines
 
         public bool transformSize
         {
-            get { return _transformSize; }
+            get => _transformSize;
             set
             {
                 if (value != _transformSize)
@@ -76,7 +70,7 @@ namespace Dreamteck.Splines
 
         public bool transformTangents
         {
-            get { return _transformTangents; }
+            get => _transformTangents;
             set
             {
                 if (value != _transformTangents)
@@ -98,17 +92,17 @@ namespace Dreamteck.Splines
 
         private TS_Transform tsTransform;
 
-        void Awake()
+        private void Awake()
         {
             tsTransform = new TS_Transform(transform);
         }
 
-        void LateUpdate()
+        private void LateUpdate()
         {
             Run();
         }
 
-        void Update()
+        private void Update()
         {
             Run();
         }
@@ -171,7 +165,7 @@ namespace Dreamteck.Splines
             }
         }
 
-        void OnDestroy()
+        private void OnDestroy()
         {
             ClearConnections();
         }

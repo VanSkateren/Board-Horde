@@ -11,7 +11,7 @@ namespace RootMotion {
 		public static Texture2D lineTex = null;
 		private GUIStyle style;
 		
-		LargeHeader largeHeader { get { return ((LargeHeader) attribute); } }
+		LargeHeader largeHeader => ((LargeHeader) attribute);
 
 		// Get the height of the element
 		public override float GetHeight () 

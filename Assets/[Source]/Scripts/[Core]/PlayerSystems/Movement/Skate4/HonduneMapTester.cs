@@ -22,24 +22,24 @@ public class HonduneMapTester : MonoBehaviour
 
 	private void LoadAssetBundle(int selection)
 	{
-		MonoBehaviour.print(string.Concat("Loading ", this.assetFiles[selection]));
-		AssetBundle assetBundle = AssetBundle.LoadFromFile(this.assetFiles[selection]);
+		print(string.Concat("Loading ", assetFiles[selection]));
+		AssetBundle assetBundle = AssetBundle.LoadFromFile(assetFiles[selection]);
 		if (assetBundle == null)
 		{
 			Debug.Log("Failed to load AssetBundle!");
 			return;
 		}
 		Application.LoadLevel(Path.GetFileNameWithoutExtension(assetBundle.GetAllScenePaths()[0]));
-		base.Invoke("SetUpGrinds", 1f);
+		Invoke("SetUpGrinds", 1f);
 	}
 
 	private void OnGUI()
 	{
 		if (Input.GetKeyDown("m"))
 		{
-			this.showUI = true;
+			showUI = true;
 		}
-		if (!this.showUI)
+		if (!showUI)
 		{
 			return;
 		}
@@ -50,20 +50,20 @@ public class HonduneMapTester : MonoBehaviour
 		};
 		GUI.Label(new Rect((float)(Screen.width / 3), 0f, (float)(Screen.width / 3), 100f), "Hondune's Skater XL Map Importer", gUIStyle);
 		GUI.Label(new Rect((float)(Screen.width / 3), 50f, (float)(Screen.width / 3), 100f), "Brought to you by hondune.com");
-		if (this.assetFiles == null)
+		if (assetFiles == null)
 		{
 			return;
 		}
-		this.scrollPosition = GUI.BeginScrollView(new Rect((float)(Screen.width / 3), 100f, (float)(Screen.width / 3), (float)(Screen.height - 200)), this.scrollPosition, new Rect(0f, 0f, (float)(Screen.width / 3 - 20), (float)(25 * (int)this.assetFiles.Length)));
+		scrollPosition = GUI.BeginScrollView(new Rect((float)(Screen.width / 3), 100f, (float)(Screen.width / 3), (float)(Screen.height - 200)), scrollPosition, new Rect(0f, 0f, (float)(Screen.width / 3 - 20), (float)(25 * (int)assetFiles.Length)));
 		int num = 0;
-		for (int i = 0; i < (int)this.assetFiles.Length; i++)
+		for (int i = 0; i < (int)assetFiles.Length; i++)
 		{
-			if (!Path.GetFileName(this.assetFiles[i]).Contains(".") && Path.GetFileName(this.assetFiles[i]) != "AssetBundles")
+			if (!Path.GetFileName(assetFiles[i]).Contains(".") && Path.GetFileName(assetFiles[i]) != "AssetBundles")
 			{
-				if (GUI.Button(new Rect(10f, (float)(25 * num), (float)(Screen.width / 3 - 30), 20f), string.Concat("Load ", Path.GetFileName(this.assetFiles[i]))))
+				if (GUI.Button(new Rect(10f, (float)(25 * num), (float)(Screen.width / 3 - 30), 20f), string.Concat("Load ", Path.GetFileName(assetFiles[i]))))
 				{
-					this.LoadAssetBundle(i);
-					this.showUI = false;
+					LoadAssetBundle(i);
+					showUI = false;
 				}
 				num++;
 			}
@@ -77,17 +77,17 @@ public class HonduneMapTester : MonoBehaviour
 
 	private void SetUpGrinds()
 	{
-		this.prefab = GameObject.Find("Grinds");
-		if (this.prefab == null)
+		prefab = GameObject.Find("Grinds");
+		if (prefab == null)
 		{
-			if (this.prefab == null)
+			if (prefab == null)
 			{
-				base.Invoke("SetUpGrinds", 0.5f);
+				Invoke("SetUpGrinds", 0.5f);
 			}
 			return;
 		}
 		Transform gameObject = (new GameObject("Grind Triggers And Splines")).transform;
-		Transform[] componentsInChildren = this.prefab.GetComponentsInChildren<Transform>();
+		Transform[] componentsInChildren = prefab.GetComponentsInChildren<Transform>();
 		for (int i = 0; i < (int)componentsInChildren.Length; i++)
 		{
 			Transform transforms = componentsInChildren[i];
@@ -114,7 +114,7 @@ public class HonduneMapTester : MonoBehaviour
 					vector3.transform.localRotation = Quaternion.identity;
 					vector3.transform.localScale = new Vector3(0.08f, 0.08f, single);
 					vector3.transform.localPosition = (Vector3.forward * single) / 2f;
-					vector3.GetComponent<Renderer>().material = this.splineMat;
+					vector3.GetComponent<Renderer>().material = splineMat;
 					gameObject2.transform.parent = gameObject1;
 					Debug.DrawLine(child[k], child[k + 1], Color.red);
 				}
@@ -124,11 +124,11 @@ public class HonduneMapTester : MonoBehaviour
 
 	private void Start()
 	{
-		this.splineMat.SetFloat("_BlendMode", 1f);
-		this.splineMat.SetFloat("_SurfaceType", 1f);
-		this.splineMat.SetColor("_UnlitColor", new Color(1f, 0f, 0f, 1f));
-		this.splineMat.enableInstancing = true;
-		UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
-		this.assetFiles = Directory.GetFiles(string.Concat(Application.dataPath, "\\AssetBundles"));
+		splineMat.SetFloat("_BlendMode", 1f);
+		splineMat.SetFloat("_SurfaceType", 1f);
+		splineMat.SetColor("_UnlitColor", new Color(1f, 0f, 0f, 1f));
+		splineMat.enableInstancing = true;
+		DontDestroyOnLoad(gameObject);
+		assetFiles = Directory.GetFiles(string.Concat(Application.dataPath, "\\AssetBundles"));
 	}
 }

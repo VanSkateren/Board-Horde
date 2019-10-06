@@ -8,7 +8,7 @@ namespace RootMotion.FinalIK {
 	[CustomEditor(typeof(IKExecutionOrder))]
 	public class IKExecutionOrderInspector : Editor {
 
-		private IKExecutionOrder script { get { return target as IKExecutionOrder; }}
+		private IKExecutionOrder script => target as IKExecutionOrder;
 
 		private MonoScript monoScript;
 

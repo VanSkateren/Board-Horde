@@ -26,12 +26,12 @@ namespace Animancer
         public AnimancerState[] States { get; protected set; }
 
         /// <summary>The number of input ports in the <see cref="Mixer"/>.</summary>
-        public override int PortCount { get { return States.Length; } }
+        public override int PortCount => States.Length;
 
         /************************************************************************************************************************/
 
         /// <summary>Returns the <see cref="States"/> array.</summary>
-        public override IList<AnimancerState> ChildStates { get { return States; } }
+        public override IList<AnimancerState> ChildStates => States;
 
         /************************************************************************************************************************/
 
@@ -265,8 +265,8 @@ namespace Animancer
             /// </summary>
             public AnimationClip[] Clips
             {
-                get { return _Clips; }
-                set { _Clips = value; }
+                get => _Clips;
+                set => _Clips = value;
             }
 
             [SerializeField, HideInInspector]
@@ -279,8 +279,8 @@ namespace Animancer
             /// </summary>
             public float[] Speeds
             {
-                get { return _Speeds; }
-                set { _Speeds = value; }
+                get => _Speeds;
+                set => _Speeds = value;
             }
 
             /************************************************************************************************************************/

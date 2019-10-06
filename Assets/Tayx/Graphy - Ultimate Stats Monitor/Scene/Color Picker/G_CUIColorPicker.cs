@@ -32,7 +32,9 @@ namespace Tayx.Graphy.CustomizationScene
 {
     public class G_CUIColorPicker : MonoBehaviour
     {
-        public Color Color { get { return _color; } set { Setup( value ); } }
+        public Color Color { get => _color;
+            set => Setup( value );
+        }
         
         public void SetOnValueChangeCallback( System.Action<Color> onValueChange )
         {
@@ -220,8 +222,8 @@ namespace Tayx.Graphy.CustomizationScene
             var b = ( rng.Next() % 1000 ) / 1000.0f;
             Color = new Color( r, g, b );
         }
-    
-        void Awake()
+
+        private void Awake()
         {
             Color = new Color32(255, 0, 0, 128);
         }
@@ -238,7 +240,7 @@ namespace Tayx.Graphy.CustomizationScene
             });
         }
 
-        void Update()
+        private void Update()
         {
             if (_update != null) { _update(); }
         }

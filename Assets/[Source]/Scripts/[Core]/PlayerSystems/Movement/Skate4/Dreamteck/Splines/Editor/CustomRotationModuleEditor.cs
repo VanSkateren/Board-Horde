@@ -13,10 +13,7 @@ namespace Dreamteck.Splines
         private int selected = -1;
         private bool editRotation = false;
 
-        public CustomRotationModule.Key selectedKey
-        {
-            get { return group.keys[selected]; }
-        }
+        public CustomRotationModule.Key selectedKey => group.keys[selected];
 
         public CustomRotationModuleEditor(SplineUserEditor parent, CustomRotationModule input) : base(parent)
         {

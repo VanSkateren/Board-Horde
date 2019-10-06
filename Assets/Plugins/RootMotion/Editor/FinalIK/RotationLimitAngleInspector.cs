@@ -11,8 +11,8 @@ namespace RootMotion.FinalIK {
 	[CanEditMultipleObjects]
 	public class RotationLimitAngleInspector : RotationLimitInspector {
 		
-		private RotationLimitAngle script { get { return target as RotationLimitAngle; }}
-		
+		private RotationLimitAngle script => target as RotationLimitAngle;
+
 		#region Inspector
 		
 		public override void OnInspectorGUI() {

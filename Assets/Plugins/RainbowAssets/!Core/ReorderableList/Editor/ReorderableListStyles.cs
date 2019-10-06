@@ -98,17 +98,12 @@ namespace Borodar.ReorderableList {
 		/// <summary>
 		/// Gets color for the horizontal lines that appear between list items.
 		/// </summary>
-		public static Color HorizontalLineColor {
-			get { return EditorGUIUtility.isProSkin ? new Color(1f, 1f, 1f, 0.14f) : new Color(0.59f, 0.59f, 0.59f, 0.55f); }
-		}
+		public static Color HorizontalLineColor => EditorGUIUtility.isProSkin ? new Color(1f, 1f, 1f, 0.14f) : new Color(0.59f, 0.59f, 0.59f, 0.55f);
 
 		/// <summary>
 		/// Gets color of background for a selected list item.
 		/// </summary>
-		public static Color SelectionBackgroundColor {
-			get { return EditorGUIUtility.isProSkin ? new Color32(62, 95, 150, 255) : new Color32(62, 125, 231, 255); }
-		}
-
+		public static Color SelectionBackgroundColor => EditorGUIUtility.isProSkin ? new Color32(62, 95, 150, 255) : new Color32(62, 125, 231, 255);
 	}
 
 }

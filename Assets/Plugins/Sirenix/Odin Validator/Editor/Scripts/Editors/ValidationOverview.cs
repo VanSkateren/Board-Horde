@@ -49,122 +49,122 @@ namespace Sirenix.OdinValidator.Editor
 
         public ValidationOverview()
         {
-            this.Update();
+            Update();
         }
 
         public void ResetSortingSettings()
         {
-            this.SortBy = DisplayOptions.None;
-            this.SortAscending = false;
+            SortBy = DisplayOptions.None;
+            SortAscending = false;
         }
 
         public void Update()
         {
-            List<DisplayOptions> displayOptions = AllDisplayOptions.Where(option => (this.Display & option) == option).ToList();
+            List<DisplayOptions> displayOptions = AllDisplayOptions.Where(option => (Display & option) == option).ToList();
 
             // Create/adjust columns
-            if (this.columns == null)
+            if (columns == null)
             {
-                this.columns = new ResizableColumn[displayOptions.Count];
+                columns = new ResizableColumn[displayOptions.Count];
             }
             else
             {
-                Array.Resize(ref this.columns, displayOptions.Count);
+                Array.Resize(ref columns, displayOptions.Count);
             }
 
             for (int i = 0; i < displayOptions.Count; i++)
             {
-                this.columns[i] = this.GetColumn(displayOptions[i]);
+                columns[i] = GetColumn(displayOptions[i]);
             }
 
             // Create tree
             {
-                this.Tree = new OdinMenuTree();
-                this.Tree.Config.AutoHandleKeyboardNavigation = true;
-                this.Tree.Config.UseCachedExpandedStates = false;
-                this.Tree.Config.EXPERIMENTAL_INTERNAL_DrawFlatTreeFastNoLayout = true;
-                this.Tree.DefaultMenuStyle = OdinMenuStyle.TreeViewStyle;
+                Tree = new OdinMenuTree();
+                Tree.Config.AutoHandleKeyboardNavigation = true;
+                Tree.Config.UseCachedExpandedStates = false;
+                Tree.Config.EXPERIMENTAL_INTERNAL_DrawFlatTreeFastNoLayout = true;
+                Tree.DefaultMenuStyle = OdinMenuStyle.TreeViewStyle;
 
                 int itemCount = 0;
 
-                foreach (ValidationProfileResult profileResult in this.ProfileResults)
+                foreach (ValidationProfileResult profileResult in ProfileResults)
                 {
                     foreach (ValidationResult validationResult in profileResult.Results)
                     {
                         if (validationResult.ResultType != ValidationResultType.Error && validationResult.ResultType != ValidationResultType.Warning) continue;
 
-                        ValidationInfoMenuItem menuItem = new ValidationInfoMenuItem(this.Tree, validationResult, profileResult, this.columns, this.Display, itemCount++);
-                        this.Tree.MenuItems.Add(menuItem);
+                        ValidationInfoMenuItem menuItem = new ValidationInfoMenuItem(Tree, validationResult, profileResult, columns, Display, itemCount++);
+                        Tree.MenuItems.Add(menuItem);
                     }
                 }
 
-                this.Tree.Selection.SelectionChanged += changeEvent =>
+                Tree.Selection.SelectionChanged += changeEvent =>
                 {
                     if (changeEvent != SelectionChangedType.ItemAdded) return;
 
-                    if (this.OnProfileResultSelected != null)
+                    if (OnProfileResultSelected != null)
                     {
-                        ValidationInfoMenuItem menuItem = this.Tree.Selection.Last() as ValidationInfoMenuItem;
+                        ValidationInfoMenuItem menuItem = Tree.Selection.Last() as ValidationInfoMenuItem;
                         ValidationProfileResult profileResult = menuItem.ProfileResult;
 
-                        this.OnProfileResultSelected(profileResult);
+                        OnProfileResultSelected(profileResult);
                     }
                 };
             }
 
-            if (this.SortBy != DisplayOptions.None)
-                this.Sort();
+            if (SortBy != DisplayOptions.None)
+                Sort();
         }
 
         public void DrawOverview()
         {
-            if (Event.current.type == EventType.Layout && this.nextDisplay != null)
+            if (Event.current.type == EventType.Layout && nextDisplay != null)
             {
-                this.Display = this.nextDisplay.Value;
-                this.nextDisplay = null;
-                this.Update();
+                Display = nextDisplay.Value;
+                nextDisplay = null;
+                Update();
             }
 
-            if (Event.current.type == EventType.Layout && this.shouldSort)
+            if (Event.current.type == EventType.Layout && shouldSort)
             {
-                this.shouldSort = false;
-                this.Sort();
+                shouldSort = false;
+                Sort();
             }
 
             EnumBtnStyle = EnumBtnStyle ?? new GUIStyle(EditorStyles.toolbarDropDown);
             EnumBtnStyle.stretchHeight = true;
-            EnumBtnStyle.fixedHeight = this.Tree.Config.SearchToolbarHeight;
+            EnumBtnStyle.fixedHeight = Tree.Config.SearchToolbarHeight;
 
             GUILayout.BeginHorizontal(GUILayoutOptions.ExpandHeight());
             {
                 Rect rect = GUIHelper.GetCurrentLayoutRect();
-                Rect columnRect = rect.AddYMin(this.Tree.Config.SearchToolbarHeight);
+                Rect columnRect = rect.AddYMin(Tree.Config.SearchToolbarHeight);
 
                 GUILayout.BeginVertical(GUILayoutOptions.Width(rect.width).ExpandHeight());
                 {
-                    EditorGUI.DrawRect(columnRect.AddYMin(this.Tree.Config.DefaultMenuStyle.Height), SirenixGUIStyles.EditorWindowBackgroundColor);
+                    EditorGUI.DrawRect(columnRect.AddYMin(Tree.Config.DefaultMenuStyle.Height), SirenixGUIStyles.EditorWindowBackgroundColor);
 
                     GUILayout.BeginHorizontal();
-                    this.Tree.DrawSearchToolbar();
-                    Rect displayRect = GUILayoutUtility.GetRect(95, this.Tree.Config.SearchToolbarHeight, GUILayoutOptions.Width(95));
-                    displayRect.height = this.Tree.Config.SearchToolbarHeight;
+                    Tree.DrawSearchToolbar();
+                    Rect displayRect = GUILayoutUtility.GetRect(95, Tree.Config.SearchToolbarHeight, GUILayoutOptions.Width(95));
+                    displayRect.height = Tree.Config.SearchToolbarHeight;
                     displayRect.width -= 1;
 
-                    DisplayOptions newDisplay = EnumSelector<DisplayOptions>.DrawEnumField(displayRect, null, GUIHelper.TempContent("Data Columns"), this.Display, EnumBtnStyle);
-                    if (newDisplay != this.Display)
+                    DisplayOptions newDisplay = EnumSelector<DisplayOptions>.DrawEnumField(displayRect, null, GUIHelper.TempContent("Data Columns"), Display, EnumBtnStyle);
+                    if (newDisplay != Display)
                     {
-                        this.nextDisplay = newDisplay;
+                        nextDisplay = newDisplay;
                     }
 
                     GUILayout.EndHorizontal();
 
-                    GUITableUtilities.ResizeColumns(columnRect, this.columns);
-                    this.DrawColumnHeaders();
-                    this.Tree.DrawMenuTree();
+                    GUITableUtilities.ResizeColumns(columnRect, columns);
+                    DrawColumnHeaders();
+                    Tree.DrawMenuTree();
                 }
 
                 GUILayout.EndVertical();
-                GUITableUtilities.DrawColumnHeaderSeperators(columnRect, this.columns, SirenixGUIStyles.BorderColor);
+                GUITableUtilities.DrawColumnHeaderSeperators(columnRect, columns, SirenixGUIStyles.BorderColor);
 
                 GUILayout.Space(-5);
             }
@@ -174,18 +174,18 @@ namespace Sirenix.OdinValidator.Editor
         private void Sort()
         {
             // We can't just use list.Sort(), because we want a stable sort - LINQ's OrderBy provides that
-            List<OdinMenuItem> items = this.Tree.MenuItems.OrderBy(a => (ValidationInfoMenuItem)a, new ItemComparer(this.SortBy, this.SortAscending)).ToList();
-            this.Tree.MenuItems.Clear();
-            this.Tree.MenuItems.AddRange(items);
-            this.Tree.MarkDirty();
+            List<OdinMenuItem> items = Tree.MenuItems.OrderBy(a => (ValidationInfoMenuItem)a, new ItemComparer(SortBy, SortAscending)).ToList();
+            Tree.MenuItems.Clear();
+            Tree.MenuItems.AddRange(items);
+            Tree.MarkDirty();
         }
 
         private class ItemComparer : IComparer<ValidationInfoMenuItem>
         {
             public ItemComparer(DisplayOptions option, bool ascending)
             {
-                this.Option = option;
-                this.Ascending = ascending;
+                Option = option;
+                Ascending = ascending;
             }
 
             public DisplayOptions Option;
@@ -193,13 +193,13 @@ namespace Sirenix.OdinValidator.Editor
 
             public int Compare(ValidationInfoMenuItem a, ValidationInfoMenuItem b)
             {
-                int result = this.DoCompare(a, b);
-                return this.Ascending ? -result : result;
+                int result = DoCompare(a, b);
+                return Ascending ? -result : result;
             }
 
             private int DoCompare(ValidationInfoMenuItem a, ValidationInfoMenuItem b)
             {
-                switch (this.Option)
+                switch (Option)
                 {
                     case DisplayOptions.Message:
                         return a.ValidationResult.Message.CompareTo(b.ValidationResult.Message);
@@ -221,7 +221,7 @@ namespace Sirenix.OdinValidator.Editor
 
         private void DrawColumnHeaders()
         {
-            Rect columnsRect = GUILayoutUtility.GetRect(0, this.Tree.Config.DefaultMenuStyle.Height, GUILayoutOptions.ExpandWidth(true));
+            Rect columnsRect = GUILayoutUtility.GetRect(0, Tree.Config.DefaultMenuStyle.Height, GUILayoutOptions.ExpandWidth(true));
 
             EditorGUI.DrawRect(columnsRect, SirenixGUIStyles.DarkEditorBackground);
 
@@ -234,9 +234,9 @@ namespace Sirenix.OdinValidator.Editor
             {
                 DisplayOptions option = AllDisplayOptions[i];
 
-                if ((this.Display & option) == option)
+                if ((Display & option) == option)
                 {
-                    float width = this.columns[columnIndex].ColWidth;
+                    float width = columns[columnIndex].ColWidth;
                     Rect rect = new Rect(currentX, columnsRect.yMin + 3, width - 0.5f, columnsRect.height);
 
                     rect.xMax = Math.Min(rect.xMax, columnsRect.xMax);
@@ -247,35 +247,35 @@ namespace Sirenix.OdinValidator.Editor
 
                     if (GUI.Button(rect, GUIHelper.TempContent(labelText), SirenixGUIStyles.BoldLabel))
                     {
-                        if (this.SortBy == option)
+                        if (SortBy == option)
                         {
-                            this.SortAscending = !this.SortAscending;
+                            SortAscending = !SortAscending;
                         }
                         else
                         {
-                            this.SortBy = option;
-                            this.SortAscending = false;
+                            SortBy = option;
+                            SortAscending = false;
                         }
 
-                        this.shouldSort = true;
+                        shouldSort = true;
                     }
 
                     Rect iconRect = rect.AlignRight(rect.height).Padding(3).SubY(3);
                     EditorIcon icon;
 
-                    if (this.SortBy != option)
+                    if (SortBy != option)
                     {
                         icon = EditorIcons.TriangleRight;
                         GUIHelper.PushColor(GUI.color * 0.7f);
                     }
                     else
                     {
-                        icon = this.SortAscending ? EditorIcons.TriangleUp : EditorIcons.TriangleDown;
+                        icon = SortAscending ? EditorIcons.TriangleUp : EditorIcons.TriangleDown;
                     }
 
                     icon.Draw(iconRect);
 
-                    if (this.SortBy != option)
+                    if (SortBy != option)
                     {
                         GUIHelper.PopColor();
                     }
@@ -291,7 +291,7 @@ namespace Sirenix.OdinValidator.Editor
         private ResizableColumn GetColumn(DisplayOptions option)
         {
             ResizableColumn result;
-            if (!this.columnLookup.TryGetValue(option, out result))
+            if (!columnLookup.TryGetValue(option, out result))
             {
                 switch (option)
                 {
@@ -318,7 +318,7 @@ namespace Sirenix.OdinValidator.Editor
                         break;
                 }
 
-                this.columnLookup[option] = result;
+                columnLookup[option] = result;
             }
 
             return result;
@@ -335,30 +335,30 @@ namespace Sirenix.OdinValidator.Editor
 
             public ValidationInfoMenuItem(OdinMenuTree tree, ValidationResult validationResult, ValidationProfileResult profileResult, ResizableColumn[] columns, DisplayOptions displayOptions, int originalItemIndex) : base(tree, "", validationResult)
             {
-                this.ValidationResult = validationResult;
-                this.ProfileResult = profileResult;
-                this.Columns = columns;
-                this.DisplayOptions = displayOptions;
-                this.OriginalItemIndex = originalItemIndex;
+                ValidationResult = validationResult;
+                ProfileResult = profileResult;
+                Columns = columns;
+                DisplayOptions = displayOptions;
+                OriginalItemIndex = originalItemIndex;
 
-                if (this.ProfileResult.SourceRecoveryData is SceneValidationProfile.SceneAddress)
+                if (ProfileResult.SourceRecoveryData is SceneValidationProfile.SceneAddress)
                 {
-                    SceneValidationProfile.SceneAddress address = (SceneValidationProfile.SceneAddress)this.ProfileResult.SourceRecoveryData;
+                    SceneValidationProfile.SceneAddress address = (SceneValidationProfile.SceneAddress)ProfileResult.SourceRecoveryData;
                     SceneAsset sceneAsset = AssetDatabase.LoadAssetAtPath<SceneAsset>(address.ScenePath);
-                    this.SceneName = sceneAsset != null ? sceneAsset.name : "";
+                    SceneName = sceneAsset != null ? sceneAsset.name : "";
                 }
-                else this.SceneName = "";
+                else SceneName = "";
 
-                this.SearchString = string.Join(" ", AllDisplayOptions.Select(x => this.GetDisplayString(x)).ToArray());
+                SearchString = string.Join(" ", AllDisplayOptions.Select(x => GetDisplayString(x)).ToArray());
             }
 
             public override void DrawMenuItem(int indentLevel)
             {
                 base.DrawMenuItem(indentLevel);
 
-                if (!this.MenuItemIsBeingRendered || Event.current.type != EventType.Repaint) return;
+                if (!MenuItemIsBeingRendered || Event.current.type != EventType.Repaint) return;
 
-                Rect totalRect = this.Rect;
+                Rect totalRect = Rect;
 
                 int columnIndex = 0;
                 float currentX = totalRect.xMin;
@@ -367,16 +367,16 @@ namespace Sirenix.OdinValidator.Editor
                 {
                     DisplayOptions option = AllDisplayOptions[i];
 
-                    if ((this.DisplayOptions & option) == option)
+                    if ((DisplayOptions & option) == option)
                     {
-                        float width = this.Columns[columnIndex].ColWidth;
+                        float width = Columns[columnIndex].ColWidth;
                         Rect rect = new Rect(currentX, totalRect.yMin, width, totalRect.height);
 
                         if (option == DisplayOptions.Category)
                         {
                             rect = rect.AlignCenter(16, 16);
 
-                            switch (this.ValidationResult.ResultType)
+                            switch (ValidationResult.ResultType)
                             {
                                 case ValidationResultType.Valid:
                                     GUIHelper.PushColor(Color.green);
@@ -395,13 +395,13 @@ namespace Sirenix.OdinValidator.Editor
                         }
                         else
                         {
-                            rect.y = this.LabelRect.y;
-                            rect.yMax = this.LabelRect.yMax;
+                            rect.y = LabelRect.y;
+                            rect.yMax = LabelRect.yMax;
                             rect.x += 5;
                             rect.width -= 10;
 
-                            GUIStyle labelStyle = this.IsSelected ? this.Style.SelectedLabelStyle : this.Style.DefaultLabelStyle;
-                            GUI.Label(rect, GUIHelper.TempContent(this.GetDisplayString(option)), labelStyle);
+                            GUIStyle labelStyle = IsSelected ? Style.SelectedLabelStyle : Style.DefaultLabelStyle;
+                            GUI.Label(rect, GUIHelper.TempContent(GetDisplayString(option)), labelStyle);
                         }
 
                         currentX += width;
@@ -415,14 +415,14 @@ namespace Sirenix.OdinValidator.Editor
                 switch (option)
                 {
                     case DisplayOptions.Message:
-                        return this.ValidationResult.Message;
+                        return ValidationResult.Message;
                     case DisplayOptions.Path:
                         {
-                            string path = this.ValidationResult.GetFullPath();
+                            string path = ValidationResult.GetFullPath();
 
-                            if (string.IsNullOrEmpty(path) && this.ProfileResult.Source is UnityEngine.Object)
+                            if (string.IsNullOrEmpty(path) && ProfileResult.Source is UnityEngine.Object)
                             {
-                                UnityEngine.Object uObj = this.ProfileResult.Source as UnityEngine.Object;
+                                UnityEngine.Object uObj = ProfileResult.Source as UnityEngine.Object;
                                 if (AssetDatabase.Contains(uObj.GetInstanceID()))
                                 {
                                     path = AssetDatabase.GetAssetPath(uObj.GetInstanceID());
@@ -432,13 +432,13 @@ namespace Sirenix.OdinValidator.Editor
                             return path;
                         }
                     case DisplayOptions.Validator:
-                        return this.ValidationResult.Setup.Validator.GetType().GetNiceName();
+                        return ValidationResult.Setup.Validator.GetType().GetNiceName();
                     case DisplayOptions.Object:
-                        return this.ProfileResult.Name;
+                        return ProfileResult.Name;
                     case DisplayOptions.Scene:
-                        return this.SceneName;
+                        return SceneName;
                     case DisplayOptions.Category:
-                        switch (this.ValidationResult.ResultType)
+                        switch (ValidationResult.ResultType)
                         {
                             case ValidationResultType.Error:
                                 return "Error";

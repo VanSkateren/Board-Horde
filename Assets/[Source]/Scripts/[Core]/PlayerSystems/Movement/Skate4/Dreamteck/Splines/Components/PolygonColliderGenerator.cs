@@ -10,10 +10,7 @@ namespace Dreamteck.Splines
         public enum Type { Path, Shape }
         public Type type
         {
-            get
-            {
-                return _type;
-            }
+            get => _type;
             set
             {
                 if (value != _type)
@@ -26,7 +23,7 @@ namespace Dreamteck.Splines
 
         public float size
         {
-            get { return _size; }
+            get => _size;
             set
             {
                 if (value != _size)
@@ -39,7 +36,7 @@ namespace Dreamteck.Splines
 
         public float offset
         {
-            get { return _offset; }
+            get => _offset;
             set
             {
                 if (value != _offset)
@@ -144,7 +141,7 @@ namespace Dreamteck.Splines
             if (polygonCollider == null) return;
             for(int i = 0; i < vertices.Length; i++)
             {
-                vertices[i] = this.transform.InverseTransformPoint(vertices[i]);
+                vertices[i] = transform.InverseTransformPoint(vertices[i]);
             }
 #if UNITY_EDITOR
             if (!Application.isPlaying || updateRate <= 0f) polygonCollider.SetPath(0, vertices);

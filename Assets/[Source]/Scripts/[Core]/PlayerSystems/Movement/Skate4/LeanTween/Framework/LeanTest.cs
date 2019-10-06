@@ -9,7 +9,7 @@ public class LeanTester : MonoBehaviour {
 		StartCoroutine( timeoutCheck() );
 	}
 
-	IEnumerator timeoutCheck(){
+	private IEnumerator timeoutCheck(){
 		float pauseEndTime = Time.realtimeSinceStartup + timeout;
 	    while (Time.realtimeSinceStartup < pauseEndTime)
 	    {

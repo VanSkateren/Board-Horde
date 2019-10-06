@@ -16,7 +16,7 @@ namespace RootMotion
         public InspectorComment(string name)
         {
             this.name = name;
-            this.color = "white";
+            color = "white";
         }
 
         public InspectorComment(string name, string color)

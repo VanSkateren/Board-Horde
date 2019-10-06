@@ -309,7 +309,7 @@ public class MultiSceneEditor : Editor
 			: base(elements, elementType, true, false, true, true)
 		{
 			this.target = target;
-			this.list = elements;
+			list = elements;
 
 			drawElementCallback = DrawElement;
 			drawHeaderCallback = DrawHeader;

@@ -22,8 +22,8 @@ namespace Animancer
         /// </summary>
         public SpriteRenderer Renderer
         {
-            get { return _Renderer; }
-            set { _Renderer = value; }
+            get => _Renderer;
+            set => _Renderer = value;
         }
 
         /************************************************************************************************************************/

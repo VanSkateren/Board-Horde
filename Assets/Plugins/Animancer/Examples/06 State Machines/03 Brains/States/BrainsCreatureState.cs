@@ -25,9 +25,9 @@ namespace Animancer.Examples
         private BrainsCreature _Creature;
 
         /// <summary>The <see cref="BrainsCreature"/> that owns this state.</summary>
-        public BrainsCreature Creature { get { return _Creature; } }
+        public BrainsCreature Creature => _Creature;
 
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         protected override void Reset()
         {
             base.Reset();
@@ -37,11 +37,11 @@ namespace Animancer.Examples
 
         /************************************************************************************************************************/
 
-        public AnimancerComponent Animancer { get { return _Creature.Animancer; } }
+        public AnimancerComponent Animancer => _Creature.Animancer;
 
         /************************************************************************************************************************/
 
-        public StateMachine<BrainsCreatureState> OwnerStateMachine { get { return _Creature.StateMachine; } }
+        public StateMachine<BrainsCreatureState> OwnerStateMachine => _Creature.StateMachine;
 
         /************************************************************************************************************************/
     }

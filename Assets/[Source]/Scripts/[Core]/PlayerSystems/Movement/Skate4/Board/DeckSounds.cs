@@ -135,13 +135,7 @@ public class DeckSounds : MonoBehaviour
 
 	public float muteTimeStep = 0.02f;
 
-	public static DeckSounds Instance
-	{
-		get
-		{
-			return DeckSounds._instance;
-		}
-	}
+	public static DeckSounds Instance => _instance;
 
 	static DeckSounds()
 	{
@@ -153,16 +147,16 @@ public class DeckSounds : MonoBehaviour
 
 	private void Awake()
 	{
-		if (DeckSounds._instance == null)
+		if (_instance == null)
 		{
-			DeckSounds._instance = this;
+			_instance = this;
 		}
-		this._allSources = base.GetComponentsInChildren<AudioSource>();
+		_allSources = GetComponentsInChildren<AudioSource>();
 	}
 
 	public void DoBoardImpactGround(float vol)
 	{
-		if (this._boardImpactAllowed && vol > 0.01f)
+		if (_boardImpactAllowed && vol > 0.01f)
 		{
 			if (vol < 0.1f)
 			{
@@ -172,37 +166,37 @@ public class DeckSounds : MonoBehaviour
 			{
 				vol = 0.6f;
 			}
-			this.PlayRandomOneShotFromArray(this.boardImpacts, this.deckSource, vol);
-			this._boardImpactAllowed = false;
-			base.Invoke("ResetBoardImpactAllowed", 0.3f);
+			PlayRandomOneShotFromArray(boardImpacts, deckSource, vol);
+			_boardImpactAllowed = false;
+			Invoke("ResetBoardImpactAllowed", 0.3f);
 		}
 	}
 
 	public void DoLandingSound(float vol)
 	{
-		vol *= this.landVolMult;
-		this.PlayRandomOneShotFromArray(this.boardLand, this.deckSource, vol);
+		vol *= landVolMult;
+		PlayRandomOneShotFromArray(boardLand, deckSource, vol);
 	}
 
 	public void DoOllie(float scoop)
 	{
-		scoop = scoop * this.scoopMult / 30f;
+		scoop = scoop * scoopMult / 30f;
 		scoop = Mathf.Abs(scoop);
 		float single = scoop;
 		float single1 = 1f - single;
-		this.PlayRandomOneShotFromArray(this.ollieScooped, this.deckSource, single * 0.7f);
-		this.PlayRandomOneShotFromArray(this.ollieSlow, this.deckSource, single1 * 0.7f);
+		PlayRandomOneShotFromArray(ollieScooped, deckSource, single * 0.7f);
+		PlayRandomOneShotFromArray(ollieSlow, deckSource, single1 * 0.7f);
 	}
 
 	public void DoShoeFlipSlide()
 	{
-		this.PlayRandomFromArray(this.shoesMovementShort, this.shoesScrapeSource);
-		this.shoesScrapeSource.volume = 0f;
+		PlayRandomFromArray(shoesMovementShort, shoesScrapeSource);
+		shoesScrapeSource.volume = 0f;
 	}
 
 	public void DoShoeImpactBoardBack(float vol, bool isLeftShoe)
 	{
-		if (this._shoeBoardBackImpactAllowed && vol > 0.01f)
+		if (_shoeBoardBackImpactAllowed && vol > 0.01f)
 		{
 			if (vol < 0.1f)
 			{
@@ -212,15 +206,15 @@ public class DeckSounds : MonoBehaviour
 			{
 				vol = 0.6f;
 			}
-			this.PlayRandomOneShotFromArray(this.shoesBoardBackImpacts, (isLeftShoe ? this.leftShoeHitSource : this.rightShoeHitSource), vol);
-			this._shoeBoardBackImpactAllowed = false;
-			base.Invoke("ResetShoeBoardBackImpactAllowed", 0.1f);
+			PlayRandomOneShotFromArray(shoesBoardBackImpacts, (isLeftShoe ? leftShoeHitSource : rightShoeHitSource), vol);
+			_shoeBoardBackImpactAllowed = false;
+			Invoke("ResetShoeBoardBackImpactAllowed", 0.1f);
 		}
 	}
 
 	public void DoShoeImpactGround(float vol, bool isLeftShoe)
 	{
-		if (this._shoeGroundImpactAllowed && vol > 0.01f)
+		if (_shoeGroundImpactAllowed && vol > 0.01f)
 		{
 			if (vol < 0.05f)
 			{
@@ -230,58 +224,58 @@ public class DeckSounds : MonoBehaviour
 			{
 				vol = 0.45f;
 			}
-			this.PlayRandomOneShotFromArray(this.shoesImpactGroundSole, (isLeftShoe ? this.leftShoeHitSource : this.rightShoeHitSource), vol);
-			this._shoeGroundImpactAllowed = false;
-			base.Invoke("ResetShoeGroundImpactAllowed", 0.1f);
+			PlayRandomOneShotFromArray(shoesImpactGroundSole, (isLeftShoe ? leftShoeHitSource : rightShoeHitSource), vol);
+			_shoeGroundImpactAllowed = false;
+			Invoke("ResetShoeGroundImpactAllowed", 0.1f);
 		}
 	}
 
 	public void DoShoesImpactBoardBack(float vol)
 	{
-		this.shoesBoardHitSource.volume = 1f;
-		this.PlayRandomOneShotFromArray(this.shoesBoardBackImpacts, this.shoesBoardHitSource, vol);
+		shoesBoardHitSource.volume = 1f;
+		PlayRandomOneShotFromArray(shoesBoardBackImpacts, shoesBoardHitSource, vol);
 	}
 
 	private void DoSmoothMuteRolling()
 	{
-		this._muteLerp = this._muteLerp - this.muteTimeStep * 2.85f;
-		if (this._muteLerp < 0f)
+		_muteLerp = _muteLerp - muteTimeStep * 2.85f;
+		if (_muteLerp < 0f)
 		{
-			this._muteLerp = 0f;
+			_muteLerp = 0f;
 		}
-		this.wheelRollingLoopLowSource.volume = this._muteLerp * this._rollingLowVolCache;
-		this.wheelRollingLoopHighSource.volume = this._muteLerp * this._rollingLowVolCache;
-		if (this._muteLerp == 0f)
+		wheelRollingLoopLowSource.volume = _muteLerp * _rollingLowVolCache;
+		wheelRollingLoopHighSource.volume = _muteLerp * _rollingLowVolCache;
+		if (_muteLerp == 0f)
 		{
-			base.CancelInvoke();
-			this.wheelRollingLoopLowSource.mute = true;
-			this.wheelRollingLoopHighSource.mute = true;
+			CancelInvoke();
+			wheelRollingLoopLowSource.mute = true;
+			wheelRollingLoopHighSource.mute = true;
 		}
 	}
 
 	private void DoSmoothUnMuteRolling()
 	{
-		this._muteLerp += this.muteTimeStep;
-		if (this._muteLerp > 1f)
+		_muteLerp += muteTimeStep;
+		if (_muteLerp > 1f)
 		{
-			this._muteLerp = 1f;
+			_muteLerp = 1f;
 		}
-		this.wheelRollingLoopLowSource.volume = this._muteLerp * this._rollingLowVolCache;
-		this.wheelRollingLoopHighSource.volume = this._muteLerp * this._rollingHighVolCache;
-		if (this._muteLerp == 1f)
+		wheelRollingLoopLowSource.volume = _muteLerp * _rollingLowVolCache;
+		wheelRollingLoopHighSource.volume = _muteLerp * _rollingHighVolCache;
+		if (_muteLerp == 1f)
 		{
-			base.CancelInvoke();
+			CancelInvoke();
 		}
 	}
 
 	public void DoTutorialBoardImpact(float vol)
 	{
-		this.deckSource.PlayOneShot(this.tutorialBoardImpact, vol);
+		deckSource.PlayOneShot(tutorialBoardImpact, vol);
 	}
 
 	public void DoWheelImpactGround(float vol)
 	{
-		if (this._wheelImpactAllowed && vol > 0.01f)
+		if (_wheelImpactAllowed && vol > 0.01f)
 		{
 			if (vol < 0.1f)
 			{
@@ -291,9 +285,9 @@ public class DeckSounds : MonoBehaviour
 			{
 				vol = 0.6f;
 			}
-			this.PlayRandomOneShotFromArray(this.boardImpacts, this.deckSource, vol);
-			this._wheelImpactAllowed = false;
-			base.Invoke("ResetWheelImpactAllowed", 0.1f);
+			PlayRandomOneShotFromArray(boardImpacts, deckSource, vol);
+			_wheelImpactAllowed = false;
+			Invoke("ResetWheelImpactAllowed", 0.1f);
 		}
 	}
 
@@ -303,69 +297,69 @@ public class DeckSounds : MonoBehaviour
 
 	public void MuteAll()
 	{
-		AudioSource[] audioSourceArray = this._allSources;
+		AudioSource[] audioSourceArray = _allSources;
 		for (int i = 0; i < (int)audioSourceArray.Length; i++)
 		{
 			audioSourceArray[i].mute = true;
 		}
-		this._isMuted = true;
+		_isMuted = true;
 	}
 
 	public void OnMetalGrind(float impactForce)
 	{
-		if (this.grindState == DeckSounds.GrindState.none)
+		if (grindState == DeckSounds.GrindState.none)
 		{
 			Vector3 vector3 = Vector3.ProjectOnPlane(PlayerController.Instance.boardController.boardRigidbody.velocity, Vector3.up);
-			this.SetGrindingVolFromBoardSpeed(vector3.magnitude);
-			this.PlayRandomOneShotFromArray(this.metalGrindGeneralStart, this.grindHitSource, impactForce / 10f);
-			this.PlayRandomFromArray(this.metalGrindGeneralLoop, this.grindLoopSource);
-			this.grindState = DeckSounds.GrindState.metal;
+			SetGrindingVolFromBoardSpeed(vector3.magnitude);
+			PlayRandomOneShotFromArray(metalGrindGeneralStart, grindHitSource, impactForce / 10f);
+			PlayRandomFromArray(metalGrindGeneralLoop, grindLoopSource);
+			grindState = DeckSounds.GrindState.metal;
 		}
 	}
 
 	public void OnPivot()
 	{
-		this.PlayRandomOneShotFromArray(this.shoesPivotLight, this.shoesBoardHitSource, 1f);
+		PlayRandomOneShotFromArray(shoesPivotLight, shoesBoardHitSource, 1f);
 	}
 
 	public void OnPushImpact()
 	{
-		this.PlayRandomOneShotFromArray(this.shoesPushImpact, this.grindHitSource, UnityEngine.Random.Range(0.1f, 0.6f));
+		PlayRandomOneShotFromArray(shoesPushImpact, grindHitSource, UnityEngine.Random.Range(0.1f, 0.6f));
 	}
 
 	public void OnPushOff(float pushSpeed)
 	{
-		if (this.shoesScrapeSource.isPlaying)
+		if (shoesScrapeSource.isPlaying)
 		{
-			this.ShoePushOffSetMinVol(pushSpeed / 15f);
+			ShoePushOffSetMinVol(pushSpeed / 15f);
 			return;
 		}
-		this.shoesScrapeSource.volume = 0f;
-		this.PlayRandomFromArray(this.shoesMovementShort, this.shoesScrapeSource);
-		this.ShoePushOffSetMinVol(UnityEngine.Random.Range(this.pushOffVolLow, this.pushOffVolHigh));
+		shoesScrapeSource.volume = 0f;
+		PlayRandomFromArray(shoesMovementShort, shoesScrapeSource);
+		ShoePushOffSetMinVol(UnityEngine.Random.Range(pushOffVolLow, pushOffVolHigh));
 	}
 
 	public void OnSmoothConcreteGrind(float impactForce)
 	{
-		if (this.grindState == DeckSounds.GrindState.none)
+		if (grindState == DeckSounds.GrindState.none)
 		{
 			Vector3 vector3 = Vector3.ProjectOnPlane(PlayerController.Instance.boardController.boardRigidbody.velocity, Vector3.up);
-			this.SetGrindingVolFromBoardSpeed(vector3.magnitude);
-			this.PlayRandomOneShotFromArray(this.concreteGrindGeneralStart, this.grindHitSource, impactForce / 10f);
-			this.PlayRandomFromArray(this.concreteGrindGeneralLoop, this.grindLoopSource);
-			this.grindState = DeckSounds.GrindState.concrete;
+			SetGrindingVolFromBoardSpeed(vector3.magnitude);
+			PlayRandomOneShotFromArray(concreteGrindGeneralStart, grindHitSource, impactForce / 10f);
+			PlayRandomFromArray(concreteGrindGeneralLoop, grindLoopSource);
+			grindState = DeckSounds.GrindState.concrete;
 		}
 	}
 
 	public void OnWoodGrind(float impactForce)
 	{
-		if (this.grindState == DeckSounds.GrindState.none)
+		if (grindState == DeckSounds.GrindState.none)
 		{
 			Vector3 vector3 = Vector3.ProjectOnPlane(PlayerController.Instance.boardController.boardRigidbody.velocity, Vector3.up);
-			this.SetGrindingVolFromBoardSpeed(vector3.magnitude);
-			this.PlayRandomOneShotFromArray(this.woodGrindGeneralStart, this.grindHitSource, impactForce / 10f);
-			this.PlayRandomFromArray(this.woodGrindGeneralLoop, this.grindLoopSource);
-			this.grindState = DeckSounds.GrindState.wood;
+			SetGrindingVolFromBoardSpeed(vector3.magnitude);
+			PlayRandomOneShotFromArray(woodGrindGeneralStart, grindHitSource, impactForce / 10f);
+			PlayRandomFromArray(woodGrindGeneralLoop, grindLoopSource);
+			grindState = DeckSounds.GrindState.wood;
 		}
 	}
 
@@ -388,47 +382,47 @@ public class DeckSounds : MonoBehaviour
 
 	private void ResetBoardImpactAllowed()
 	{
-		this._boardImpactAllowed = true;
+		_boardImpactAllowed = true;
 	}
 
 	private void ResetShoeBoardBackImpactAllowed()
 	{
-		this._shoeBoardBackImpactAllowed = true;
+		_shoeBoardBackImpactAllowed = true;
 	}
 
 	private void ResetShoeGroundImpactAllowed()
 	{
-		this._shoeGroundImpactAllowed = true;
+		_shoeGroundImpactAllowed = true;
 	}
 
 	private void ResetWheelImpactAllowed()
 	{
-		this._wheelImpactAllowed = true;
+		_wheelImpactAllowed = true;
 	}
 
 	public void SetGrindingVolFromBoardSpeed(float p_velocity)
 	{
-		float pVelocity = p_velocity * this.grindVolMult;
-		if (pVelocity > this.grindVolMax)
+		float pVelocity = p_velocity * grindVolMult;
+		if (pVelocity > grindVolMax)
 		{
-			pVelocity = this.grindVolMax;
+			pVelocity = grindVolMax;
 		}
-		this.grindLoopSource.volume = pVelocity;
+		grindLoopSource.volume = pVelocity;
 	}
 
 	public void SetRollingVolFromRPS(PhysicMaterial mat, float rps)
 	{
 		if (mat != null)
 		{
-			if (this.wheelRollingLoopLowSource.clip != this.rollingSoundSlow)
+			if (wheelRollingLoopLowSource.clip != rollingSoundSlow)
 			{
-				this.wheelRollingLoopLowSource.clip = this.rollingSoundSlow;
-				this.wheelRollingLoopLowSource.Play();
+				wheelRollingLoopLowSource.clip = rollingSoundSlow;
+				wheelRollingLoopLowSource.Play();
 			}
-			if (this.wheelRollingLoopHighSource.clip != this.rollingSoundFast)
+			if (wheelRollingLoopHighSource.clip != rollingSoundFast)
 			{
-				this.wheelRollingLoopHighSource.clip = this.rollingSoundFast;
-				this.wheelRollingLoopHighSource.Play();
+				wheelRollingLoopHighSource.clip = rollingSoundFast;
+				wheelRollingLoopHighSource.Play();
 			}
 		}
 		float single = 0f;
@@ -448,103 +442,103 @@ public class DeckSounds : MonoBehaviour
 		{
 			single4 = 1f;
 		}
-		this.wheelRollingLoopLowSource.volume = single3 * (1f - single4);
-		this.wheelRollingLoopHighSource.volume = single3 * single4;
-		this.wheelRollingLoopLowFilter.cutoffFrequency = single3 * 22000f * this.rollFilterRamp;
-		this.wheelRollingLoopHighFilter.cutoffFrequency = this.wheelRollingLoopLowFilter.cutoffFrequency;
+		wheelRollingLoopLowSource.volume = single3 * (1f - single4);
+		wheelRollingLoopHighSource.volume = single3 * single4;
+		wheelRollingLoopLowFilter.cutoffFrequency = single3 * 22000f * rollFilterRamp;
+		wheelRollingLoopHighFilter.cutoffFrequency = wheelRollingLoopLowFilter.cutoffFrequency;
 	}
 
 	public void ShoeFlipFinish()
 	{
-		this.shoesScrapeSource.Stop();
-		this.shoesScrapeSource.volume = 1f;
+		shoesScrapeSource.Stop();
+		shoesScrapeSource.volume = 1f;
 	}
 
 	public void ShoeFlipSlideSetMinVol(float newVol)
 	{
-		if (newVol > this.shoesScrapeSource.volume)
+		if (newVol > shoesScrapeSource.volume)
 		{
-			this.shoesScrapeSource.volume = Mathf.Clamp(newVol, 0f, 0.7f);
+			shoesScrapeSource.volume = Mathf.Clamp(newVol, 0f, 0.7f);
 		}
 	}
 
 	public void ShoePushOffFinish()
 	{
-		this.shoesScrapeSource.volume = 0f;
+		shoesScrapeSource.volume = 0f;
 	}
 
 	private void ShoePushOffSetMinVol(float newVol)
 	{
-		if (newVol > this.shoesScrapeSource.volume)
+		if (newVol > shoesScrapeSource.volume)
 		{
-			this.shoesScrapeSource.volume = Mathf.Clamp(newVol, 0f, 0.2f);
+			shoesScrapeSource.volume = Mathf.Clamp(newVol, 0f, 0.2f);
 		}
 	}
 
 	public void SmoothMuteRolling()
 	{
-		this._rollingLowVolCache = this.wheelRollingLoopLowSource.volume;
-		this._rollingHighVolCache = this.wheelRollingLoopHighSource.volume;
-		base.CancelInvoke();
-		base.InvokeRepeating("DoSmoothMuteRolling", 0f, this.muteTimeStep);
+		_rollingLowVolCache = wheelRollingLoopLowSource.volume;
+		_rollingHighVolCache = wheelRollingLoopHighSource.volume;
+		CancelInvoke();
+		InvokeRepeating("DoSmoothMuteRolling", 0f, muteTimeStep);
 	}
 
 	public void SmoothUnMuteRolling()
 	{
-		base.CancelInvoke();
-		this.wheelRollingLoopLowSource.mute = false;
-		this.wheelRollingLoopHighSource.mute = false;
-		base.InvokeRepeating("DoSmoothUnMuteRolling", 0f, this.muteTimeStep);
+		CancelInvoke();
+		wheelRollingLoopLowSource.mute = false;
+		wheelRollingLoopHighSource.mute = false;
+		InvokeRepeating("DoSmoothUnMuteRolling", 0f, muteTimeStep);
 	}
 
 	public void StartBearingSound(float rps)
 	{
 		float single = rps / 30f * 0.4f;
-		this.PlayRandomOneShotFromArray(this.bearingSounds, this.bearingSource, Mathf.Clamp(single, 0.03f, 0.6f));
+		PlayRandomOneShotFromArray(bearingSounds, bearingSource, Mathf.Clamp(single, 0.03f, 0.6f));
 	}
 
 	public void StopBearingSounds()
 	{
-		this.bearingSource.Stop();
+		bearingSource.Stop();
 	}
 
 	public void StopGrind(float exitForce)
 	{
-		this.grindLoopSource.Stop();
+		grindLoopSource.Stop();
 		float single = 1f;
-		if (single > this.grindVolMax)
+		if (single > grindVolMax)
 		{
-			single = this.grindVolMax;
+			single = grindVolMax;
 		}
-		switch (this.grindState)
+		switch (grindState)
 		{
 			case DeckSounds.GrindState.wood:
 			{
-				this.PlayRandomOneShotFromArray(this.woodGrindGeneralEnd, this.grindHitSource, single * 0.6f);
+				PlayRandomOneShotFromArray(woodGrindGeneralEnd, grindHitSource, single * 0.6f);
 				break;
 			}
 			case DeckSounds.GrindState.metal:
 			{
-				this.PlayRandomOneShotFromArray(this.metalGrindGeneralEnd, this.grindHitSource, single * 0.6f);
+				PlayRandomOneShotFromArray(metalGrindGeneralEnd, grindHitSource, single * 0.6f);
 				break;
 			}
 			case DeckSounds.GrindState.concrete:
 			{
-				this.PlayRandomOneShotFromArray(this.concreteGrindGeneralEnd, this.grindHitSource, single * 0.6f);
+				PlayRandomOneShotFromArray(concreteGrindGeneralEnd, grindHitSource, single * 0.6f);
 				break;
 			}
 		}
-		this.grindState = DeckSounds.GrindState.none;
+		grindState = DeckSounds.GrindState.none;
 	}
 
 	public void UnMuteAll()
 	{
-		AudioSource[] audioSourceArray = this._allSources;
+		AudioSource[] audioSourceArray = _allSources;
 		for (int i = 0; i < (int)audioSourceArray.Length; i++)
 		{
 			audioSourceArray[i].mute = false;
 		}
-		this._isMuted = false;
+		_isMuted = false;
 	}
 
 	public void Update()

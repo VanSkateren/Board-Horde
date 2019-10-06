@@ -7,16 +7,16 @@ namespace DentedPixel.LTExamples{
 public class PathBezier : MonoBehaviour {
 
 	public Transform[] trans;
-	
-	LTBezierPath cr;
+
+	private LTBezierPath cr;
 	private GameObject avatar1;
 
-	void OnEnable(){
+	private void OnEnable(){
 		// create the path
 		cr = new LTBezierPath( new Vector3[] {trans[0].position, trans[2].position, trans[1].position, trans[3].position, trans[3].position, trans[5].position, trans[4].position, trans[6].position} );
 	}
 
-	void Start () {
+	private void Start () {
 		avatar1 = GameObject.Find("Avatar1");
 
 		// Tween automatically
@@ -26,7 +26,8 @@ public class PathBezier : MonoBehaviour {
 	}
 	
 	private float iter;
-	void Update () {
+
+	private void Update () {
 		// Or Update Manually
 		//cr.place2d( sprite1.transform, iter );
 
@@ -35,7 +36,7 @@ public class PathBezier : MonoBehaviour {
 			iter = 0.0f;
 	}
 
-	void OnDrawGizmos(){
+	private void OnDrawGizmos(){
 		// Debug.Log("drwaing");
 		if(cr!=null)
 			OnEnable();
