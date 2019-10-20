@@ -199,9 +199,13 @@ namespace Curve
 
 		private void DrawGizmos() 
 		{
-			const float __DELTA = 0.01f;
+			//const float __DELTA = 0.01f;
 			float __deltaUnit = radiusSize * 2f;
-			int __count = Mathf.FloorToInt(1f / __DELTA);
+			//int __count = Mathf.FloorToInt(1f / __DELTA);
+
+			int __count = Length.FloorToInt() + 1;
+
+			float __delta = Length;
 
 			if (_frames == null) 
 			{
@@ -212,7 +216,13 @@ namespace Curve
 			
 			for (int __index = 0; __index < __count; __index++)
 			{
-				float __t = __index * __DELTA;
+				float __t = __index / Length; // * __DELTA;
+
+				if(__t > 1)
+				{
+					__t = 1;
+				}
+
 				Vector3 __point = Curve.GetPointAt(__t);
 
 				if (pointDebug) 

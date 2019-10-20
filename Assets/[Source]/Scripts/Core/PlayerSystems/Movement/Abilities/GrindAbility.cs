@@ -133,6 +133,10 @@ namespace Core.PlayerSystems.Movement.Abilities
             Vector3 __posRelativeToWorld = __posRelativeToBar.GetRelativePositionFrom(_worldMatrix);
 
             CGDebug.DrawWireSphere(__posRelativeToWorld, radius: 1f).Color(Color.red);
+            
+            CGDebug.DrawWireSphere(__posRelativeToBar, radius: 2f).Color(Color.yellow).Matrix(_localMatrix);
+            
+            CGDebug.DrawWireSphere(Vector3.zero, radius: 1f).Color(Color.cyan);
 
             //__worldPos.y += 1f;
         

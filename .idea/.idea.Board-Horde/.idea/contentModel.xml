@@ -389,25 +389,6 @@
               <e p="Tools" t="Include">
                 <e p="CopyLightingSettings.cs" t="Include" />
                 <e p="Editor" t="Include">
-                  <e p="CustomizableFolders" t="Include">
-                    <e p="Scripts" t="Include">
-                      <e p="CustomFolderIcons.cs" t="Include" />
-                      <e p="IICon.cs" t="Include" />
-                      <e p="LayerIcon.cs" t="Include" />
-                      <e p="MultiLayerIcon.cs" t="Include" />
-                      <e p="Overlays" t="Include">
-                        <e p="EditOverlay.cs" t="Include" />
-                        <e p="FolderOverlay.cs" t="Include" />
-                        <e p="PreviewOverlay.cs" t="Include" />
-                      </e>
-                      <e p="RuleList.cs" t="Include" />
-                      <e p="Style.cs" t="Include" />
-                      <e p="Windows" t="Include">
-                        <e p="CreateFolderRuleWindow.cs" t="Include" />
-                        <e p="CustomFolderIconsWindow.cs" t="Include" />
-                      </e>
-                    </e>
-                  </e>
                   <e p="Transform Editor Extended" t="Include">
                     <e p="ExtendedTransformEditor.asmdef" t="Include" />
                     <e p="ExtendedTransformEditor.cs" t="Include" />
