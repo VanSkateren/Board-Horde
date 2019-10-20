@@ -10,20 +10,32 @@ using CommonGames.Utilities.CGTK;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
+using JetBrains.Annotations;
+
 namespace Core.PlayerSystems.Movement
 {
     public class VehicleCore : Singleton<VehicleCore>
     {
-        [OdinSerialize] public PlayerInputs Input { get; set; }
+        #region Variables
+        
+        [OdinSerialize] public PlayerInputs InputData { get; set; }
         [OdinSerialize] public VehicleSpeed SpeedData { get; set; }
+        
         public WheelData wheelData;
 
         [HideInInspector] public new Rigidbody rigidbody;
-        public Vector3 averageColliderSurfaceNormal;
-
+        
+        [HideInInspector] public Vector3 averageColliderSurfaceNormal;
+        
+        public static event Action<VehicleCore> LeavingGround_Event = vehicleCore => { };
+        public static event Action<VehicleCore> Landing_Event = vehicleCore => { };
+        
+        [PublicAPI]
+        [HideInInspector] public CGLock mayMove = new CGLock(0);
+        
         private bool _prevGroundedState;
-        public static event Action<VehicleCore> OnLeavingGround = vehicleCore => { };
-        public static event Action<VehicleCore> OnLanding = vehicleCore => { };
+        
+        #endregion
 
         private void Start()
         {
@@ -35,10 +47,10 @@ namespace Core.PlayerSystems.Movement
             switch (_prevGroundedState)
             {
                 case false when wheelData.grounded:
-                    OnLanding(this);
+                    Landing_Event(this);
                     break;
                 case true when !wheelData.grounded:
-                    OnLeavingGround(this);
+                    LeavingGround_Event(this);
                     break;
             }
 

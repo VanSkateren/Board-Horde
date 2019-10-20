@@ -10,7 +10,7 @@ namespace Core.PlayerSystems.Movement.Abilities
     {
         #region Variables
         
-        [SerializeField] private AnimationCurve driftCurve;
+        [SerializeField] private AnimationCurve driftCurve = AnimationCurve.Linear(timeStart: 0, valueStart: 0, timeEnd: 1, valueEnd: 1);
 
         [SerializeField] private float
             driftInDuration = 0.5f,
@@ -43,23 +43,6 @@ namespace Core.PlayerSystems.Movement.Abilities
                 };
                 */
             
-            //_isDrifting = Input.GetKey(abilityButton);
-            abilityAction.performed +=
-                ctx =>
-                {
-                    /*
-                    if (ctx.interaction is HoldInteraction)
-                    {
-                        _wannaDrift = true;
-                    }
-                    else
-                    {
-                        _wannaDrift = false;
-                    }
-                    
-                    _wannaDrift = false;
-                    */
-                };
             abilityAction.started +=
                 ctx =>
                 {
@@ -81,6 +64,8 @@ namespace Core.PlayerSystems.Movement.Abilities
 
         private void Update()
         {
+            if(!_vehicle.mayMove) return;
+
             CheckInput();
             UpdateAbility();
             //DoAbility();

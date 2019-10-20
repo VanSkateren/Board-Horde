@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using static CommonGames.Utilities.Extensions.GeneralExtensions;
+using static CommonGames.Utilities.Extensions.Constants;
 
 namespace CommonGames.Utilities.Extensions
 {

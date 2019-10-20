@@ -1,27 +1,30 @@
-﻿using UnityEngine.SceneManagement;
-using System;
+﻿using System;
 using System.Collections;
 using System.Reflection;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+using JetBrains.Annotations;
+
+using static CommonGames.Utilities.Extensions.Constants;
 
 namespace CommonGames.Utilities.Extensions
 {
-    using Random = System.Random;
+    using SRandom = System.Random;
 
     public static partial class GeneralExtensions
     {
-        #region Defaults
-        
-        public static Random Random { get; } = new Random();
-        
-        		
-        public sealed class CoroutineHandlerClass : EnsuredSingleton<CoroutineHandlerClass>{}
-        public static CoroutineHandlerClass CoroutineHandler => CoroutineHandlerClass.Instance;
-        	
-        public const float DEFAULT_TOGGLE_TIME = 0f;
-        public static readonly WaitForSeconds DefaultWait = new WaitForSeconds(DEFAULT_TOGGLE_TIME);
-        
-        #endregion
+        /// <summary>
+        /// Swaps values <paramref name="left"/> and <paramref name="right"/>
+        /// </summary>
+        public static void Swap<T>(ref T left, ref T right)
+        {
+            T __temp = right;
+            
+            right = left;
+            left = __temp;
+        }
 
         /// <summary>
         /// Do with target item.
@@ -29,27 +32,14 @@ namespace CommonGames.Utilities.Extensions
         public static void Do<T>(this T t, params Action<T>[] actions) => actions.For(x => x(t));
 
         /// <summary>
-        /// ¯\_(ツ)_/¯
-        /// </summary>
-        public static bool Maybe(this double d) => Random.NextDouble() < d;
-
-        /// <summary>
-        /// This might do something.
-        /// </summary>
-        /// <param name="d">¯\_(ツ)_/¯</param>
-        public static void Maybe(this double d, Action action)
-        {
-            while ((d-- + 1).Maybe())
-                action();
-        }
-
-        /// <summary>
         /// If bool is true, execute action.
         /// </summary>
         public static void If(this bool b, Action action)
         {
-            if (b)
+            if(b)
+            {
                 action();
+            }
         }
 
         /// <summary>
@@ -57,10 +47,14 @@ namespace CommonGames.Utilities.Extensions
         /// </summary>
         public static void IfElse(this bool b, Action onTrue, Action onFalse)
         {
-            if (b)
+            if(b)
+            {
                 onTrue();
+            }
             else
+            {
                 onFalse();
+            }
         }
 
         /// <summary>
@@ -68,9 +62,13 @@ namespace CommonGames.Utilities.Extensions
         /// </summary>
         public static void For(this int i, Func<int, bool> func, Action<int> action)
         {
-            for (int j = 0; j < i; j++)
-                if (func(i))
+            for(int j = 0; j < i; j++)
+            {
+                if(func(i))
+                {
                     action(i);
+                }
+            }
         }
 
         /// <summary>
@@ -78,8 +76,10 @@ namespace CommonGames.Utilities.Extensions
         /// </summary>
         public static void For(this int i, Action action)
         {
-            for (int j = 0; j < i; j++)
+            for(int j = 0; j < i; j++)
+            {
                 action();
+            }
         }
 
         /// <summary>
@@ -87,30 +87,32 @@ namespace CommonGames.Utilities.Extensions
         /// </summary>
         public static void For(this int i, Action<int> action)
         {
-            for (int j = 0; j < i; j++)
+            for(int j = 0; j < i; j++)
+            {
                 action(j);
+            }
         }
 
         /// <summary>
         /// Returns random value in range
         /// </summary>
-        public static float RandomRange(float min, float max, Random random = null)
+        public static float RandomRange(float min, float max, SRandom random = null)
         {
-            Random usedRandom = random ?? Random;
+            SRandom usedRandom = random ?? RANDOM;
             float lerp = (float)usedRandom.NextDouble();
             return Mathf.Lerp(min, max, lerp);
         }
 
-        public static Vector3 RandomVector3(float min, float max, Random random = null)
+        public static Vector3 RandomVector3(float min, float max, SRandom random = null)
         {
-            Random usedRandom = random ?? Random;
+            SRandom usedRandom = random ?? RANDOM;
             return new Vector3(
                 RandomRange(min, max, random), 
                 RandomRange(min, max, random), 
                 RandomRange(min, max, random));
         }
 
-        public static Vector3Int RandomVector3Int(float min, float max, Random random = null)
+        public static Vector3Int RandomVector3Int(float min, float max, SRandom random = null)
         {
             Vector3 vector = RandomVector3(min, max, random);
             return new Vector3Int(
@@ -135,13 +137,13 @@ namespace CommonGames.Utilities.Extensions
         /// </summary>
         public static void AddInstanceToSceneLoaded(Action action)
         {
-            void Wrapper(Scene scene, LoadSceneMode mode)
+            void __Wrapper(Scene scene, LoadSceneMode mode)
             {
                 action();
-                SceneManager.sceneLoaded -= Wrapper;
+                SceneManager.sceneLoaded -= __Wrapper;
             }
 
-            SceneManager.sceneLoaded += Wrapper;
+            SceneManager.sceneLoaded += __Wrapper;
         }
 
         /// <summary>
@@ -259,7 +261,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Returns Mathf.lerp(min, max, curve.Evaluate(f));
         /// </summary>
-        public float Get(float f) => Mathf.Lerp(min, max, curve.Evaluate(f));
+        public float Get(in float f) => Mathf.Lerp(min, max, curve.Evaluate(f));
 
         [SerializeField]
         private float min, max;
@@ -273,16 +275,23 @@ namespace CommonGames.Utilities.Extensions
     /// </summary>
     public struct CGLock
     {
-        private int value;
-        public bool Locked => value > 0;
+        private readonly int _value;
+        
+        [PublicAPI]
+        public bool Locked => _value > 0;
 
-        public CGLock(int value = 0) => this.value = value;
+        public CGLock(in int value = 0) => _value = value;
+        
+        public static CGLock operator +(in CGLock a, in CGLock b) => new CGLock(a._value + b._value);
+        public static CGLock operator -(in CGLock a, in CGLock b) => new CGLock(a._value - b._value);
+        
+        public static CGLock operator ++(in CGLock a) => new CGLock(a._value + 1);
+        public static CGLock operator --(in CGLock a) => new CGLock(a._value - 1);
 
-        public static CGLock operator ++(CGLock a) => new CGLock(a.value + 1);
-        public static CGLock operator --(CGLock a) => new CGLock(a.value - 1);
-
-        public static implicit operator int(CGLock a) => a.value;
-        public static implicit operator CGLock(int i) => new CGLock(i);
+        public static implicit operator int(in CGLock a) => a._value;
+        public static implicit operator CGLock(in int i) => new CGLock(i);
+        
+        public static implicit operator bool(in CGLock cgLock) => !cgLock.Locked;
     }
 
     /// <summary>
@@ -298,11 +307,10 @@ namespace CommonGames.Utilities.Extensions
 
         public T Invoke<T>()
         {
-            if (method == null)
-            {
-                Type type = behaviour.GetType();
-                method = type.GetMethod(name);
-            }
+            if(method != null) return (T)method.Invoke(behaviour, null);
+            
+            Type type = behaviour.GetType();
+            method = type.GetMethod(name);
             return (T)method.Invoke(behaviour, null);
         }
     }

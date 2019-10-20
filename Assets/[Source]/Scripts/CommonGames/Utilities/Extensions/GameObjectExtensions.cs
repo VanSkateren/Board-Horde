@@ -1,8 +1,10 @@
-﻿using UnityEngine.SceneManagement;
-using System;
+﻿using System;
 using System.Collections;
 using System.Reflection;
+
 using UnityEngine;
+
+using static CommonGames.Utilities.Extensions.Constants;
 
 namespace CommonGames.Utilities.Extensions
 {

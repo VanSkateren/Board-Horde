@@ -1,18 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
 
-using Random = System.Random;
+using UnityEngine;
+
+using JetBrains.Annotations;
+
+using static CommonGames.Utilities.Extensions.Constants;
+
+using SRandom = System.Random;
 
 namespace CommonGames.Utilities.Extensions
-{    
-
+{
     public static partial class ContainerExtensions
     {
         /// <summary>
         /// Get an item which returns true when overloaded in target function.
         /// </summary>
+        [PublicAPI]
         public static T Get<T>(this List<T> list, Func<T, bool> func)
         {
             foreach (T t in list)
@@ -24,6 +29,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Get index that returns true with with target function.
         /// </summary>
+        [PublicAPI]
         public static int GetIndex<T>(this List<T> list, Func<T, bool> func)
         {
             int __length = list.Count;
@@ -39,6 +45,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Get index that returns true with with target function.
         /// </summary>
+        [PublicAPI]
         public static int GetIndex<T>(this T[] array, Func<T, bool> func)
         {
             int __length = array.Length;
@@ -54,6 +61,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Get all items which returns true when overloaded in target function.
         /// </summary>
+        [PublicAPI]
         public static List<T> GetMultiple<T>(this List<T> list, Func<T, bool> func, List<T> other = null)
         {
             if (other == null)
@@ -67,6 +75,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Get an item which returns true when overloaded in target function.
         /// </summary>
+        [PublicAPI]
         public static T Get<T>(this T[] array, Func<T, bool> func)
         {
             int length = array.Length;
@@ -82,6 +91,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Get all items which returns true when overloaded in target function.
         /// </summary>
+        [PublicAPI]
         public static List<T> GetMultiple<T>(this T[] array, Func<T, bool> func, List<T> other = null)
         {
             if (other == null)
@@ -96,6 +106,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Order list by function.
         /// </summary>
+        [PublicAPI]
         public static void CGOrderBy<T>(this List<T> list, Func<T, int> func)
         {
             int listCount = list.Count, index;
@@ -123,6 +134,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// First order the list by the speciate function, then order it based on the normal function.
         /// </summary>
+        [PublicAPI]
         public static void CGOrderBySpeciated<T>(this List<T> list, Func<T, int> func, Func<T, int> speciate)
         {
             int listCount = list.Count, index;
@@ -155,16 +167,19 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Add values of other list to target list.
         /// </summary>
+        [PublicAPI]
         public static void CGAdd<T>(this List<T> list, List<T> other) => other.For(x => list.Add(x));
 
         /// <summary>
         /// Add values of other array to target list.
         /// </summary>
+        [PublicAPI]
         public static void CGAdd<T>(this List<T> list, T[] other) => other.For(x => list.Add(x));
 
         /// <summary>
         /// Add values of other list to target list that return true when overloaded with target function.
         /// </summary>
+        [PublicAPI]
         public static void CGAdd<T>(this List<T> list, List<T> other, Func<T, bool> func)
         {
             foreach (T t in other)
@@ -175,6 +190,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Add values of other list to target array that return true when overloaded with target function.
         /// </summary>
+        [PublicAPI]
         public static void CGAdd<T>(this List<T> list, T[] other, Func<T, bool> func)
         {
             foreach (T t in other)
@@ -185,6 +201,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Check if target list contains a value that returns true when overloaded with target function.
         /// </summary>
+        [PublicAPI]
         public static bool CGContains<T>(this List<T> list, Func<T, bool> func)
         {
             foreach (T t in list)
@@ -192,30 +209,69 @@ namespace CommonGames.Utilities.Extensions
                     return true;
             return false;
         }
+        
+        /// <summary> Looped indexer getter. </summary>
+        [PublicAPI]
+        public static T GetLooped<T>(this IList<T> list, int index)
+        {
+            if (index < 0)
+            {
+                index = list.Count % index;
+            }    
+            if (index >= list.Count)
+            {
+                index %= list.Count;
+                
+                //index = remainder of (index & list.count)
+                //So.. If list length = 10, and you try to access index 12, you'll get a remainder of 2.
+                //This is the index we will access instead of the one you were trying  to reach. 
+            }
+            return list[index];
+        }
+
+        /// <summary> Looped indexer setter, allows out of bounds indices, ignores IList.IsReadOnly </summary>
+        [PublicAPI]
+        public static void SetLooped<T>(this IList<T> list, int index, T value)
+        {
+            while (index < 0)
+            {
+                index += list.Count;
+            }
+            if (index >= list.Count)
+            {
+                index %= list.Count;
+            }
+            list[index] = value;
+        }
 
         /// <summary>
         /// Get first value from list.
         /// </summary>
+        [PublicAPI]
         public static T First<T>(this List<T> list) => list[0];
 
         /// <summary>
         /// Get last value from list.
         /// </summary>
+        [PublicAPI]
         public static T Last<T>(this List<T> list) => list[list.Count - 1];
 
         /// <summary>
         /// Get middle value from list.
         /// </summary>
+        [PublicAPI]
         public static T Middle<T>(this List<T> list) => list[Mathf.CeilToInt(list.Count / 2) - 1];
 
         /// <summary>
         /// Get middle value from list.
         /// </summary>
+        [PublicAPI]
         public static T Middle<T>(this T[] array) => array[Mathf.CeilToInt(array.Length / 2) - 1];
 
         /// <summary>
         /// Get first value from list and remove it from said list.
         /// </summary>
+        [PublicAPI]
         public static T Pop<T>(this List<T> list)
         {
             T item = list.First();
@@ -226,6 +282,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Execute a function for each item in target list.
         /// </summary>
+        [PublicAPI]
         public static void For<T>(this List<T> list, Action<T> action)
         {
             foreach (T item in list)
@@ -235,16 +292,18 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Execute a function for each item in target array.
         /// </summary>
+        [PublicAPI]
         public static void For<T>(this T[] array, Action<T, int> action)
         {
-            int length = array.Length;
-            for (int i = 0; i < length; i++)
+            int __length = array.Length;
+            for (int i = 0; i < __length; i++)
                 action(array[i], i);
         }
 
         /// <summary>
         /// Execute a function for each item in target list.
         /// </summary>
+        [PublicAPI]
         public static void For<T>(this List<T> list, Action<T, int> action)
         {
             int length = list.Count;
@@ -255,6 +314,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Execute a function for each item in target list.
         /// </summary>
+        [PublicAPI]
         public static void SafeFor<T>(this List<T> list, Action<T, int> action)
         {
             int length = list.Count;
@@ -271,6 +331,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Execute a function for each item in target array.
         /// </summary>
+        [PublicAPI]
         public static void For<T>(this T[] array, Action<T> action)
         {
             int length = array.Length;
@@ -281,6 +342,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Execute a function for each item in target array safely (it does expensive null-checks).
         /// </summary>
+        [PublicAPI]
         public static void SafeFor<T>(this T[] array, Action<T> action)
         {
             int length = array.Length;
@@ -296,6 +358,7 @@ namespace CommonGames.Utilities.Extensions
             }
         }
 
+        [PublicAPI]
         public static void CGRemoveAll<T>(this List<T> list, Func<T, bool> func)
         {
             int i = list.Count;
@@ -307,6 +370,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Check if target array contains a value that returns true when overloaded with target function.
         /// </summary>
+        [PublicAPI]
         public static bool Contains<T>(this List<T> list, T value)
         {
             foreach (T item in list)
@@ -318,6 +382,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Check if target array contains a value that returns true when overloaded with target function.
         /// </summary>
+        [PublicAPI]
         public static bool Contains<T>(this T[] array, T value)
         {
             int length = array.Length;
@@ -327,6 +392,7 @@ namespace CommonGames.Utilities.Extensions
             return false;
         }
 
+        [PublicAPI]
         public static void For<T>(this T[,] grid, Action<T, int, int> action)
         {
             int lengthX = grid.GetLength(0),
@@ -336,6 +402,7 @@ namespace CommonGames.Utilities.Extensions
                     action(grid[x, y], x, y);
         }
 
+        [PublicAPI]
         public static void For<T>(this T[,] grid, Action<T> action)
         {
             int lengthX = grid.GetLength(0),
@@ -348,6 +415,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Get the index of the highest returning value when overloaded in target function.
         /// </summary>
+        [PublicAPI]
         public static int GetTopIndex<T>(this T[] array, Func<T, double> func)
         {
             int index = -1, length = array.Length;
@@ -366,6 +434,7 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Get the index of the highest returning value when overloaded in target function.
         /// </summary>
+        [PublicAPI]
         public static int GetTopIndex<T>(List<T> list, Func<T, double> func)
         {
             int index = -1, length = list.Count;
@@ -384,11 +453,13 @@ namespace CommonGames.Utilities.Extensions
         /// <summary>
         /// Get a random item from target list.
         /// </summary>
-        public static T GetRandom<T>(this List<T> list, Random random = null) => list[(random ?? GeneralExtensions.Random).Next(0, list.Count - 1)];
+        [PublicAPI]
+        public static T GetRandom<T>(this List<T> list, SRandom random = null) => list[(random ?? RANDOM).Next(0, list.Count - 1)];
 
         /// <summary>
         /// Get a random item from target array.
         /// </summary>
-        public static T GetRandom<T>(this T[] array, Random random = null) => array[(random ?? GeneralExtensions.Random).Next(0, array.Length - 1)];
+        [PublicAPI]
+        public static T GetRandom<T>(this T[] array, SRandom random = null) => array[(random ?? RANDOM).Next(0, array.Length - 1)];
     }
 }

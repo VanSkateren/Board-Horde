@@ -93,8 +93,9 @@
             => Draw(new Gizmo(() => Gizmos.DrawLine(start, end)));
 
         [PublicAPI]
-        public static Gizmo DrawSphere(Vector3 center, float radius = default)
+        public static Gizmo DrawSphere(Vector3 center, float radius = 1f)
             => Draw(new Gizmo(() => Gizmos.DrawSphere(center, radius)));
+        [PublicAPI]
         public static Gizmo DrawWireSphere(Vector3 center, float radius = default)
             => Draw(new Gizmo(() => Gizmos.DrawWireSphere(center, radius)));
 

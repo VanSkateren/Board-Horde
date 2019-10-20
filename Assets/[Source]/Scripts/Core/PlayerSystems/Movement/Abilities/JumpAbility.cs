@@ -43,19 +43,25 @@ namespace Core.PlayerSystems.Movement.Abilities
 
         private void Awake()
         {
-            abilityAction.started +=
-                ctx =>
-                {
-                    _holdingJump = true;
-                };
-            abilityAction.canceled +=
-                ctx =>
-                {
-                    _holdingJump = false;
-                    _stoppedHoldingJump = true;
+            abilityAction.started += __StartedJump;
+            abilityAction.canceled += __StoppedJump;
+
+
+            void __StartedJump(InputAction.CallbackContext ctx)
+            {
+                if(_vehicle.mayMove > 0) return;
+                
+                _holdingJump = true;
+            }
+            void __StoppedJump(InputAction.CallbackContext ctx)
+            {
+                _holdingJump = false;
+                _stoppedHoldingJump = true;
                     
-                    DoAbility();
-                };
+                if(_vehicle.mayMove > 0) return;
+                    
+                DoAbility();
+            }
         }
 
         private void Update()

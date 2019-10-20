@@ -13,7 +13,9 @@ namespace Tubular
 	{
 		[SerializeField] private TubeGenerator _tubeGenerator = null;
 		[SerializeField] private MeshFilter _meshFilter = null;
-		[SerializeField] private MeshCollider _meshCollider = null;
+		[SerializeField] private MeshCollider 
+			_meshCollider = null, 
+			_trigger = null;
 
 		public const int TUBE_SEGMENTS_DEFAULT = 100;
 		
@@ -59,6 +61,13 @@ namespace Tubular
 
 			_meshFilter.sharedMesh = __mesh;
 			_meshCollider.sharedMesh = __mesh;
+
+			if(_trigger == null) return;
+			
+			Mesh __triggerMesh = Tubular.Build(__curve, tubeSegments, radius * 3f, radialSegments, closed);
+				
+			_trigger.sharedMesh = __mesh;
+			_trigger.isTrigger = true;
 		}
 
 	}

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
-//using UnityEngine.PlayerLoop;
+using UnityEngine.PlayerLoop;
 
 namespace Core.PlayerSystems.Movement.Abilities
 {
@@ -40,7 +40,7 @@ namespace Core.PlayerSystems.Movement.Abilities
         {
             if (Math.Abs(currentInput) < 0.01f) return;
 
-            if (_vehicle.wheelData.grounded || _vehicle.averageColliderSurfaceNormal!=Vector3.zero) return;
+            if (_vehicle.wheelData.grounded || (_vehicle.averageColliderSurfaceNormal != Vector3.zero)) return;
 
             float __rotationTorque = currentInput * torqueAmount * Time.fixedDeltaTime * airControlFactor;
             

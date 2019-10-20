@@ -20,6 +20,8 @@ using Sirenix.Serialization;
 using Sirenix.Serialization.Editor;
 #endif
 
+using JetBrains.Annotations;
+
 using Debug = CommonGames.Utilities.CGTK.CGDebug;
 
 #endif
@@ -35,9 +37,18 @@ namespace Curve
 
 	public partial class TubeGenerator : MonoBehaviour 
 	{
+		#region Variables
+		
 		public UltEvent refresh;
 		
 		public List<Vector3> Points => points;
+
+		public float Length { get; protected set; } = 0f;
+		
+		public float Units { get; protected set; } = 0f;
+
+		[ReadOnly]
+		public List<Vector3> generatedPoints;
 
 		[SerializeField] protected CurveType type = CurveType.CatmullRom;
 		
@@ -58,6 +69,10 @@ namespace Curve
 		}
 		
 		private List<FrenetFrame> _frames;
+		
+		#endregion
+
+		#region Methods
 
 		private void OnEnable() 
 		{
@@ -74,7 +89,69 @@ namespace Curve
 
 		private void Start() => Initialize();
 
+		[PublicAPI]
 		public void AddPoint(Vector3 point) => points.Add(point);
+		
+		private (Vector3 closestPosition, int closestIndex, Vector3 secondClosestPosition, int secondClosestIndex) GetTwoClosestPointsWithIndexes(in Vector3 point) 
+			=> generatedPoints.TwoClosestWithIndexes(point);
+
+		[PublicAPI]
+		public (Vector3 startPosition, Vector3 startDirection) GetInterpolatedStartPointAndDirection(in Vector3 position)
+		{
+			//Debug.Log("Check 01");
+			
+			(Vector3 __closestPoint, int __closestIndex, Vector3 __secondClosestPoint, int __secondClosestIndex) = GetTwoClosestPointsWithIndexes(position);
+			
+			//Debug.Log("Check 04");
+
+			float __distanceToClosest = position.DistanceTo(__closestPoint);
+			float __distanceToSecondClosest = position.DistanceTo(__secondClosestPoint);
+
+			float __combinedDistance = __distanceToClosest + __distanceToSecondClosest;
+
+			float __percent = (__distanceToClosest / __combinedDistance);
+
+			float __lerpedPoint = Mathf.Lerp(__closestIndex, __secondClosestIndex, __percent);
+
+			Debug.Log($"__closestIndex = {__closestIndex}");
+			Debug.Log($"__secondClosestIndex = {__secondClosestIndex}");
+			Debug.Log($"__percent = {__percent}");
+			Debug.Log($"__lerpedPoint = {__lerpedPoint}");
+
+			float __barPos = (__lerpedPoint / Length);
+
+			Vector3 __calculatedStartPosition = Curve.GetPointAt(__barPos);
+			
+			//Debug.Log("Check 05");
+
+			return (startPosition: __calculatedStartPosition, startDirection: Vector3.forward);
+		}
+		
+		/// <summary> Gets the appropriate start point on the tube for your position. </summary>
+		[PublicAPI]
+		public float GetStartPoint(in Vector3 position)
+		{
+			(Vector3 __closestPoint, int __closestIndex, Vector3 __secondClosestPoint, int __secondClosestIndex) = GetTwoClosestPointsWithIndexes(position);
+
+			float __distanceToClosest = position.DistanceTo(__closestPoint);
+			float __distanceToSecondClosest = position.DistanceTo(__secondClosestPoint);
+
+			float __combinedDistance = __distanceToClosest + __distanceToSecondClosest;
+
+			float __percent = (__distanceToClosest / __combinedDistance);
+
+			float __lerpedPoint = Mathf.Lerp(__closestIndex, __secondClosestIndex, __percent);
+
+			Debug.Log($"__closestIndex = {__closestIndex}");
+			Debug.Log($"__secondClosestIndex = {__secondClosestIndex}");
+			Debug.Log($"__percent = {__percent}");
+			Debug.Log($"__lerpedPoint = {__lerpedPoint}");
+
+			float __barPos = (__lerpedPoint / Length);
+
+			return __barPos;
+		}
+			
 
 		public void Initialize() => Curve = Build();
 
@@ -91,8 +168,22 @@ namespace Curve
 					break;
 			}
 
-			Debug.Log($"Points Combined Distance = {points.CombinedDistanceInOrder().ToString()}");
+
+			Length = points.CombinedDistanceInOrder();
 			
+			Units = Length.FloorToInt();
+
+			generatedPoints.Clear();
+			
+			for(int __index = 0; __index < Units; __index++)
+			{
+				if(__curve == null) continue;
+				
+				Vector3 __unitPos = __curve.GetPointAt(__index / (float) Units);
+				
+				generatedPoints.Add(__unitPos);
+			}
+
 			return __curve;
 		}
 
@@ -102,6 +193,7 @@ namespace Curve
 			{
 				Initialize();
 			}
+
 			DrawGizmos();
 		}
 
@@ -161,7 +253,9 @@ namespace Curve
 				Gizmos.DrawLine(__point, __point + __frame.Binormal * __deltaUnit);
 			}
 		}
-
+		
+		#endregion
+		
 	}
 
 	[CustomEditor (typeof(TubeGenerator))]

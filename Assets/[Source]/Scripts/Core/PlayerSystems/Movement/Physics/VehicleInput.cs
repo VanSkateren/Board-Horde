@@ -38,7 +38,7 @@ namespace Core.PlayerSystems.Movement
         protected override void Start()
         {
             base.Start();
-            _vehicle.Input = new PlayerInputs();
+            _vehicle.InputData = new PlayerInputs();
         }
         
         private void Update()
@@ -51,11 +51,11 @@ namespace Core.PlayerSystems.Movement
             moveInput = moveAction.ReadValue<Vector2>();
             
             //Forward/Reverse
-            //accelerateAxis = Input.GetAxis("Vertical");
-            _vehicle.Input.accelInput = moveInput.y;
+            //accelerateAxis = InputData.GetAxis("Vertical");
+            _vehicle.InputData.accelInput = moveInput.y;
 
             //Steering
-            _vehicle.Input.steeringInput = moveInput.x;
+            _vehicle.InputData.steeringInput = moveInput.x;
         }
         
         #endregion

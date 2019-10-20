@@ -11,6 +11,12 @@ namespace CommonGames.Utilities.Extensions
 		{
 			return Mathf.Abs(value);
 		}
+		
+		public static int ToAbs(this int value)
+		{
+			value = Mathf.Abs(value);
+			return value;
+		}
 
 		public static int ClosestPowerOfTwo(this int value)
 		{

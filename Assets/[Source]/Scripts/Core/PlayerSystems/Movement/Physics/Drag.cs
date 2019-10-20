@@ -29,7 +29,7 @@ namespace Core.PlayerSystems.Movement
             UpdateDrag(
                 _vehicle.rigidbody,
                 _vehicle.wheelData.grounded,
-                _vehicle.Input,
+                _vehicle.InputData,
                 _vehicle.SpeedData
             );
 

@@ -63,6 +63,8 @@ namespace Core.PlayerSystems.Movement.Abilities
 
         private void FixedUpdate()
         {
+            if(!_vehicle.mayMove) return;
+            
             if(!_readyForDash) return;
             
             DoAbility();

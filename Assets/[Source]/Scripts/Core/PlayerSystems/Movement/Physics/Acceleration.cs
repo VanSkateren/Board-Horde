@@ -28,12 +28,12 @@ namespace Core.PlayerSystems.Movement
         {
             CalculateSpeedData(_vehicle.rigidbody, _vehicle.SpeedData);
             _accelerationToApply =
-                GetAccelerationFromVelocityTimeCurve(velocityTimeCurve, _vehicle.Input, _vehicle.SpeedData);
+                GetAccelerationFromVelocityTimeCurve(velocityTimeCurve, _vehicle.InputData, _vehicle.SpeedData);
         }
 
         private void FixedUpdate()
         {
-            float __inputScaledAcceleration = Mathf.Abs(_vehicle.Input.accelInput) * _accelerationToApply;
+            float __inputScaledAcceleration = Mathf.Abs(_vehicle.InputData.accelInput) * _accelerationToApply;
             ApplyAcceleration(__inputScaledAcceleration, _vehicle.rigidbody, _vehicle.wheelData.grounded);
         }
 
@@ -140,10 +140,11 @@ namespace Core.PlayerSystems.Movement
     [Serializable]
     public class VehicleSpeed
     {
-        public float speed;
-        public float forwardSpeed;
-        public float sideSpeed;
-        public float topSpeed;
+        public float 
+            speed,
+            forwardSpeed,
+            sideSpeed,
+            topSpeed;
 
         public float ForwardSpeedPercent => (forwardSpeed.Abs() / topSpeed).Abs();
         public float SideSpeedPercent => Mathf.Abs(sideSpeed / topSpeed);

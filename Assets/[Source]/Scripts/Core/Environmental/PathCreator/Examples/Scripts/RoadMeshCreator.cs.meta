@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: d247a34065f4ad24fb4c36430b55d841
+guid: b275c3b78f8717c4cbc60f74a3247f67
+timeCreated: 1546381468
+licenseType: Pro
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - pathCreator: {instanceID: 0}

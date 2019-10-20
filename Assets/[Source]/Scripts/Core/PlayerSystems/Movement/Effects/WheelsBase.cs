@@ -23,7 +23,7 @@ namespace Core.PlayerSystems.Movement
         {
             foreach (WheelVisuals __wheelVisual in wheelVisuals)
             {
-                __wheelVisual.ProcessWheelVisuals(_vehicle.Input, _vehicle.SpeedData);
+                __wheelVisual.ProcessWheelVisuals(_vehicle.InputData, _vehicle.SpeedData);
             }
         }
 

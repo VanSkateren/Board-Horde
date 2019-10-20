@@ -14,7 +14,10 @@ namespace Core.PlayerSystems.Movement
 
         private void Update()
         {
-            UpdateCarBodyTransform();
+            if(_vehicle.mayMove <= 0)
+            {
+                UpdateCarBodyTransform();
+            }
         }
 
         private void UpdateCarBodyTransform()
@@ -26,16 +29,20 @@ namespace Core.PlayerSystems.Movement
             //Debug.Log(_vehicle.SpeedData.ForwardSpeedPercent.ToString());
             
             //CarBody Roll - Steering and Side Speed
-            roll.currentAngle = Mathf.Lerp(roll.currentAngle, roll.inputMaxAngle * _vehicle.Input.steeringInput,Time.deltaTime * 10);
-                //(Time.deltaTime * (10 * _vehicle.SpeedData.SpeedPercent)));
+            roll.currentAngle = Mathf.Lerp(roll.currentAngle, roll.inputMaxAngle * _vehicle.InputData.steeringInput,Time.deltaTime * 10);
+            //(Time.deltaTime * (10 * _vehicle.SpeedData.SpeedPercent)));
             
             float __currentBodyRoll = (roll.currentAngle - _vehicle.SpeedData.SideSpeedPercent * roll.speedMaxAngle) * _vehicle.SpeedData.SpeedPercent;
 
-            //CarBody Pitch - Accel and Forward Speed
-            pitch.currentAngle = Mathf.Lerp(pitch.currentAngle, _vehicle.Input.accelInput * pitch.inputMaxAngle,
-                Time.deltaTime * 10);
             
-            float __currentBodyPitch = pitch.currentAngle + Mathf.Clamp01(_vehicle.SpeedData.ForwardSpeedPercent) * pitch.speedMaxAngle;
+            /*
+            pitch.currentAngle = Mathf.Lerp(
+                pitch.currentAngle,=
+                (_vehicle.InputData.accelInput * pitch.inputMaxAngle),
+                (10 * Time.deltaTime));
+            */
+            
+            float __currentBodyPitch = pitch.currentAngle + (Mathf.Clamp01(_vehicle.SpeedData.ForwardSpeedPercent) * pitch.speedMaxAngle);
 
             modelBase.rotation = _vehicle.rigidbody.rotation * Quaternion.Euler(__currentBodyPitch, 0, __currentBodyRoll);
         }

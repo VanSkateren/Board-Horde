@@ -31,8 +31,10 @@ namespace Core.PlayerSystems.Movement
 
         private void FixedUpdate()
         {
+            if(!_vehicle.mayMove) return;
+
             ApplyTurningForce(
-                _vehicle.Input,
+                _vehicle.InputData,
                 _vehicle.SpeedData,
                 _vehicle.rigidbody,
                 _vehicle.wheelData.grounded
