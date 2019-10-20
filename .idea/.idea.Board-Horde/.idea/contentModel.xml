@@ -389,6 +389,25 @@
               <e p="Tools" t="Include">
                 <e p="CopyLightingSettings.cs" t="Include" />
                 <e p="Editor" t="Include">
+                  <e p="CustomizableFolders" t="Include">
+                    <e p="Scripts" t="Include">
+                      <e p="CustomFolderIcons.cs" t="Include" />
+                      <e p="IICon.cs" t="Include" />
+                      <e p="LayerIcon.cs" t="Include" />
+                      <e p="MultiLayerIcon.cs" t="Include" />
+                      <e p="Overlays" t="Include">
+                        <e p="EditOverlay.cs" t="Include" />
+                        <e p="FolderOverlay.cs" t="Include" />
+                        <e p="PreviewOverlay.cs" t="Include" />
+                      </e>
+                      <e p="RuleList.cs" t="Include" />
+                      <e p="Style.cs" t="Include" />
+                      <e p="Windows" t="Include">
+                        <e p="CreateFolderRuleWindow.cs" t="Include" />
+                        <e p="CustomFolderIconsWindow.cs" t="Include" />
+                      </e>
+                    </e>
+                  </e>
                   <e p="Transform Editor Extended" t="Include">
                     <e p="ExtendedTransformEditor.asmdef" t="Include" />
                     <e p="ExtendedTransformEditor.cs" t="Include" />
@@ -445,7 +464,7 @@
                     <e p="CGDebug.Logging.cs" t="Include" />
                     <e p="Drawing" t="Include">
                       <e p="CGDebug.Drawing.cs" t="Include" />
-                      <e p="CGDebug.Drawing.GizmoDrawer.cs" t="Include" />
+                      <e p="GizmoDrawer.cs" t="Include" />
                       <e p="Runtime" t="Include">
                         <e p="Constants.cs" t="Include" />
                         <e p="Drawer.cs" t="Include" />
@@ -541,6 +560,7 @@
                 <e p="DelayedInvoker.cs" t="Include" />
                 <e p="Extensions" t="Include">
                   <e p="BehaviourExtensions.cs" t="Include" />
+                  <e p="Constants.cs" t="Include" />
                   <e p="Containers" t="Include">
                     <e p="Extensions.ContainerExtensions.cs" t="Include" />
                   </e>
@@ -548,6 +568,7 @@
                   <e p="GeneralExtensions.cs" t="Include" />
                   <e p="Math" t="Include">
                     <e p="Math.FloatExtensions.cs" t="Include" />
+                    <e p="Math.GeometryExtensions.cs" t="Include" />
                     <e p="Math.IntegerExtensions.cs" t="Include" />
                     <e p="Math.Matrix4x4Extensions.cs" t="Include" />
                     <e p="Math.QuaternionExtensions.cs" t="Include" />
@@ -565,6 +586,7 @@
                     <e p="Rendering.BitmapExtensions.cs" t="Include" />
                     <e p="Rendering.CameraExtensions.cs" t="Include" />
                     <e p="Rendering.LODGroupExtensions.cs" t="Include" />
+                    <e p="Rendering.MeshExtensions.cs" t="Include" />
                     <e p="Rendering.RendererExtensions.cs" t="Include" />
                     <e p="Rendering.TextureExtensions.cs" t="Include" />
                   </e>
@@ -575,6 +597,9 @@
                     <e p="Threading.AwaitExtensions.cs" t="Include" />
                     <e p="Threading.IEnumeratorExtensions.cs" t="Include" />
                   </e>
+                </e>
+                <e p="Helpers" t="Include">
+                  <e p="SuvatHelper.cs" t="Include" />
                 </e>
                 <e p="IO" t="Include">
                   <e p="CSVReader.cs" t="Include" />
@@ -594,6 +619,7 @@
                   <e p="EnsuredSingleton.cs" t="Include" />
                   <e p="PersistentSingleton.cs" t="Include" />
                   <e p="Singleton.cs" t="Include" />
+                  <e p="SpawnedSingleton.cs" t="Include" />
                 </e>
                 <e p="UI" t="Include">
                   <e p="LayoutGroups" t="Include">
@@ -714,6 +740,7 @@
                     <e p="BaseScriptableAbility.cs" t="Include" />
                     <e p="DashAbility.cs" t="Include" />
                     <e p="DriftAbility.cs" t="Include" />
+                    <e p="GrindAbility.cs" t="Include" />
                     <e p="JumpAbility.cs" t="Include" />
                   </e>
                   <e p="Effects" t="Include">
@@ -739,8 +766,10 @@
                 </e>
               </e>
             </e>
+            <e p="GrindBar.cs" t="Include" />
             <e p="Shaders" t="Include">
               <e p="AdditiveProjector.shader" t="Include" />
+              <e p="CavityEffect.shader" t="Include" />
               <e p="CDSky" t="Include">
                 <e p="CSky" t="Include">
                   <e p="Documentation" t="Include">
@@ -859,6 +888,18 @@
                   </e>
                 </e>
               </e>
+              <e p="CommonGames" t="Include">
+                <e p="Cavity" t="Include">
+                  <e p="Cavity.cs" t="Include" />
+                  <e p="Cavity.shader" t="Include" />
+                </e>
+                <e p="GrayScale" t="Include">
+                  <e p="GrayScale.cs" t="Include" />
+                  <e p="GrayScale.shader" t="Include" />
+                </e>
+                <e p="SSAO.shader" t="Include" />
+                <e p="SSAOEffectHolder.cs" t="Include" />
+              </e>
               <e p="CuttingShader" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="ClippableObject.cs" t="Include" />
@@ -895,6 +936,8 @@
                 <e p="Gradients.shader" t="Include" />
                 <e p="Hemisphere.shader" t="Include" />
               </e>
+              <e p="Smear.shader" t="Include" />
+              <e p="SmearEffect.cs" t="Include" />
               <e p="Triplanar" t="Include">
                 <e p="Editor" t="Include">
                   <e p="StandardTriplanarInspector.cs" t="Include" />

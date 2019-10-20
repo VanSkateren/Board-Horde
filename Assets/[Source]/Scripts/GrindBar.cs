@@ -9,6 +9,11 @@ public class GrindBar : MonoBehaviour
 {
     [SerializeField] private Curve.TubeGenerator grindBar = null;
     
+    private void Reset()
+    {
+    grindBar = GetComponent<Curve.TubeGenerator>();
+    }
+    
     private void Start()
     {
         grindBar = grindBar ? grindBar : GetComponent<Curve.TubeGenerator>();

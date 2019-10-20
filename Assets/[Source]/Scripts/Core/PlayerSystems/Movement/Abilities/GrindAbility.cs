@@ -21,7 +21,7 @@ using Curve;
 
 namespace Core.PlayerSystems.Movement.Abilities
 {
-    using Utilities.Extensions;
+    //using Utilities.Extensions;
 
     public class GrindAbility : BaseAbility
     {

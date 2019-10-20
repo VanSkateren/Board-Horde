@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Utilities.Extensions
+using static CommonGames.Utilities.Extensions.Constants;
+
+namespace CommonGames.Utilities.Extensions
 {
     public static partial class Physics
     {

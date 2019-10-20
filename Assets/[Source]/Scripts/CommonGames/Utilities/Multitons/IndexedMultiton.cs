@@ -1,6 +1,5 @@
 ﻿using Sirenix.OdinInspector;
 using Sirenix.Serialization;
-using Utilities.Extensions;
 
 namespace CommonGames.Utilities
 {
